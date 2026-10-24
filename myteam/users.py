@@ -38,9 +38,12 @@ def approve_login(token, sender, chat_id, now=None):
     person, _ = Person.objects.get_or_create(telegram_id=sender['id'], defaults={'first_name': sender.get('first_name','')[:100], 'last_name': sender.get('last_name','')[:100]})
     person.username = sender.get('username', '')[:100]
     person.chat_id = chat_id
-    person.delivery_verified_at = now
+    # A /start establishes the private chat; an acknowledged outbound message verifies delivery.
+    if person.delivery_blocked:person.delivery_verified_at = None
     person.delivery_blocked = False
     person.save()
+    from .notifications import enqueue
+    enqueue(f'bot-connected:{attempt.id}','bot_connected',chat_id,'МАЙТИМ подключён. Вернитесь в браузер и нажмите «Я нажал Старт — продолжить».',person=person,now=now)
     attempt.person = person
     attempt.save(update_fields=['person'])
     return True

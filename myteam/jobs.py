@@ -1,15 +1,16 @@
 from datetime import timedelta
 from html import escape
 from django.db import transaction
-from .models import Round,RuntimeLock,Job,Notification,Unmatched,Incident
+from .models import Round,RuntimeLock,Job,Notification,Unmatched,Incident,Member
 from .rounds import ensure_round,upcoming_start,RuleError
 from .matching import prepare,validate_draft
 from .notifications import enqueue,owner_message
 from .activities import get_activity
+from .clock import MOSCOW
 from django.conf import settings
 
 def report(r):
-    lines=[f'МАЙТИМ · подготовка {r.starts_at:%d.%m} — {r.ends_at:%d.%m}',f'Записались: {r.enrollments.filter(active=True).count()}',f'Публикация: {r.starts_at.astimezone(__import__("myteam.clock",fromlist=["MOSCOW"]).MOSCOW):%d.%m %H:%M} МСК. Подтверждение не требуется.']
+    lines=[f'МАЙТИМ · подготовка {r.starts_at:%d.%m} — {r.ends_at:%d.%m}',f'Записались: {r.enrollments.filter(active=True).count()}',f'Публикация: {r.starts_at.astimezone(MOSCOW):%d.%m %H:%M} МСК. Подтверждение не требуется.']
     for meeting in r.meetings.prefetch_related('members__person'):
         names=[]
         for m in meeting.members.all():
@@ -52,7 +53,7 @@ def publish(round_id,clock):
     if clock.now()<r.starts_at or clock.now()>=r.ends_at:raise RuleError('Публикация вне допустимого периода.')
     validate_draft(r)
     from .analytics import event
-    for member in __import__('myteam.models',fromlist=['Member']).Member.objects.filter(round=r):
+    for member in Member.objects.filter(round=r):
         event(f'published:{member.id}','participation',member.person,r,{'meeting_id':str(member.meeting_id),'snapshot':member.snapshot,'activity':r.activity,'rules_version':r.rules_version},clock.now())
     r.state='published';r.published_at=clock.now();r.save(update_fields=['state','published_at'])
     activity=get_activity(r.activity)

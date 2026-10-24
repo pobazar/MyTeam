@@ -32,7 +32,7 @@ def owner_message(key, kind, text, round=None, now=None):
 def eligible(notification, now):
     if notification.person_id:
         p = Person.objects.get(pk=notification.person_id)
-        if not p.reachable or p.chat_id!=notification.chat_id:
+        if (notification.kind!='bot_connected' and not p.reachable) or p.chat_id!=notification.chat_id:
             return False
     if notification.kind.startswith('feedback'):
         r=notification.round
@@ -82,6 +82,8 @@ def drain(clock, transport=None, limit=20, force=False):
             n.status='sent'
             n.sent_at=clock.now()
             n.telegram_message_id=message_id
+            if n.kind=='bot_connected' and n.person_id:
+                Person.objects.filter(pk=n.person_id).update(delivery_verified_at=n.sent_at,delivery_blocked=False)
         n.leased_until=None
         with transaction.atomic():
             n.save(update_fields=['status','last_error','next_attempt_at','sent_at','telegram_message_id','leased_until'])

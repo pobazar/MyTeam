@@ -184,3 +184,6 @@ def operations_health(request):
     try:failures=inspect(Clock())
     except Exception:return JsonResponse({'status':'unavailable'},status=503)
     return JsonResponse({'status':'degraded' if failures else 'ok','checks':failures},status=503 if failures else 200)
+
+def csrf_failure(request,reason=''):
+    return render(request,'403.html',status=403)

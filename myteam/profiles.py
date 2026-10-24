@@ -10,7 +10,9 @@ def normalized(value):
     return ' '.join(re.findall(r'[a-z0-9]+', ''.join(CYR.get(c,c) for c in value)))
 
 def team_identity(raw):
-    key = normalized(raw)
+    # Generic word translation, never a directory of team names. Unknown words remain separate.
+    vocabulary={'komanda':'team','podderzhka':'support','razrabotka':'development','razrabotki':'development','prodazh':'sales','prodazhi':'sales','analitika':'analytics','analitiki':'analytics','klientskaya':'customer','klientskoi':'customer','rosta':'growth','rost':'growth'}
+    key = ' '.join(vocabulary.get(word,word) for word in normalized(raw).split())
     tokens = key.split()
     compact = ''.join(tokens)
     # Exact transliteration and punctuation; conservative abbreviation against existing names.

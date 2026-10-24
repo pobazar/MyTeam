@@ -14,6 +14,10 @@ class AuthTests(TestCase):
         LoginAttempt.objects.create(token_hash=digest('new'),expires_at=timezone.now()+timedelta(minutes=10))
         self.assertTrue(approve_login('new',{'id':12,'username':'new'},12))
         self.assertEqual(Person.objects.count(),1)
+        self.assertFalse(Person.objects.get().reachable)
+        from myteam.notifications import drain
+        from myteam.clock import Clock
+        drain(Clock(),lambda *args:123,force=True)
         self.assertTrue(Person.objects.get().reachable)
         LoginAttempt.objects.create(token_hash=digest('expired'),expires_at=timezone.now()-timedelta(seconds=1))
         self.assertFalse(approve_login('expired',{'id':13},13))
