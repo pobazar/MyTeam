@@ -51,6 +51,9 @@ def publish(round_id,clock):
     if not r.prepared_at or r.state!='prepared':raise RuleError('Нет завершённой подготовки.')
     if clock.now()<r.starts_at or clock.now()>=r.ends_at:raise RuleError('Публикация вне допустимого периода.')
     validate_draft(r)
+    from .analytics import event
+    for member in __import__('myteam.models',fromlist=['Member']).Member.objects.filter(round=r):
+        event(f'published:{member.id}','participation',member.person,r,{'meeting_id':str(member.meeting_id),'snapshot':member.snapshot,'activity':r.activity,'rules_version':r.rules_version},clock.now())
     r.state='published';r.published_at=clock.now();r.save(update_fields=['state','published_at'])
     activity=get_activity(r.activity)
     for meeting in r.meetings.prefetch_related('members__person'):

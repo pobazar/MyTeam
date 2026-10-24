@@ -139,3 +139,12 @@ class Incident(Entity):
 class TelegramUpdate(models.Model):
     update_id = models.BigIntegerField(primary_key=True)
     processed_at = models.DateTimeField(default=timezone.now)
+
+class AnalyticsEvent(Entity):
+    key = models.CharField(max_length=220, unique=True)
+    kind = models.CharField(max_length=50)
+    person = models.ForeignKey(Person, null=True, on_delete=models.PROTECT)
+    round = models.ForeignKey(Round, null=True, on_delete=models.PROTECT)
+    payload = models.JSONField(default=dict)
+    class Meta:
+        indexes = [models.Index(fields=['kind','created_at'])]
