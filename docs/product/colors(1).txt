@@ -1,0 +1,997 @@
+Platform: Desktop
+Text/Action
+Текст и иконки интерактивного текста на фонах base, elevation и neutral. Заменяет цвет engaging и accent
+Blue Darker 52 [#126DF7 100%]
+Blue Darker 70 [#66A3FF 100%]
+Text/Action On Dark
+Текст и иконки интерактивного текста на фонах base, elevation и neutral. Заменяет цвет engaging и accent
+Blue Darker 72 [#75AAFA 100%]
+Blue Darker 72 [#75AAFA 100%]
+Text/Negative
+Текст негативного лейбла, например падение цены акций или ошибка
+Red [#F52222 100%]
+Red Lighter 65 [#FF4D4D 100%]
+Text/Negative On Dark
+Текст негативного лейбла, например падение цены акций или ошибка
+Red Lighter 70 [#FF6666 100%]
+Red Lighter 70 [#FF6666 100%]
+Text/Positive
+Текст позитивного лейбла, например пополнение счета или рост цены акций
+Green Darker 32 [#00A328 100%]
+Green Lighter 44 [#00E037 100%]
+Text/Positive On Dark
+Текст позитивного лейбла, например пополнение счета или рост цены акций
+Green Lighter 44 [#00E037 100%]
+Green Lighter 44 [#00E037 100%]
+Text/Primary
+Основной текст и иконки на фонах base, elevation, neutral
+Black Alpha 80 [#000000 80%]
+White Alpha 90 [#FFFFFF 90%]
+Text/Primary On Accent 1
+Текст и иконки на фоне accent-1. Не меняется при смене темы.
+Black Lighter 20 [#333333 100%]
+Black Lighter 20 [#333333 100%]
+Text/Primary On Accent 2
+Текст и иконки на фоне accent-2. Не меняется при смене темы.
+White [#FFFFFF 100%]
+White [#FFFFFF 100%]
+Text/Primary On Dark
+Основной текст и иконки на темных фонах. Не меняется при смене темы.
+White [#FFFFFF 100%]
+White [#FFFFFF 100%]
+Text/Primary On Light
+Основной текст и иконки на светлых фонах, не меняется при смене темы
+Black Alpha 80 [#000000 80%]
+Black Alpha 80 [#000000 80%]
+Text/Primary On Opposite
+Текст и иконки на фоне opposite. Не меняется при смене темы.
+White [#FFFFFF 100%]
+Black [#000000 100%]
+Text/Primary On T-Bank
+Текст и иконки на фоне brand/tinkoff. Не меняется при смене темы.
+Black Lighter 20 [#333333 100%]
+Black Lighter 20 [#333333 100%]
+Text/Secondary
+Второстепенный текст на фонах base, elevation, neutral
+Black Alpha 54 [#000000 54%]
+White Alpha 70 [#FFFFFF 70%]
+Text/Secondary On Dark
+Второстепенный текст на темных фонах, не меняется при смене темы
+White Alpha 70 [#FFFFFF 70%]
+White Alpha 70 [#FFFFFF 70%]
+Text/Secondary On Light
+Второстепенный текст на светлых фонах, не меняется при смене темы
+Black Alpha 48 [#000000 48%]
+Black Alpha 48 [#000000 48%]
+Text/Tertiary
+Лейблы задизейбленных кнопок, дисклеймеры
+Black Alpha 40 [#000000 40%]
+White Alpha 50 [#FFFFFF 50%]
+Text/Tertiary On Dark
+Лейблы задизейбленных кнопок, дисклеймеры на светлых фонах, не меняется при смене темы
+White Alpha 50 [#FFFFFF 50%]
+White Alpha 50 [#FFFFFF 50%]
+Text/Tertiary On Light
+Лейблы задизейбленных кнопок, дисклеймеры на светлых фонах, не меняется при смене темы
+Black Alpha 40 [#000000 40%]
+Black Alpha 40 [#000000 40%]
+Text/Warning
+Предупреждающие текст или иконки
+Yellow Darker 48 [#EF8007 100%]
+Yellow Darker 54 [#FAB619 100%]
+Text/Warning On Dark
+Предупреждающие текст или иконки на тёмных фонах, не меняется при смене темы
+Yellow Darker 54 [#FAB619 100%]
+Yellow Darker 54 [#FAB619 100%]
+Border/Darkmode Only
+Обводка, отделяющая цветные элементы от фона в темной теме
+Null
+White Alpha 10 [#FFFFFF 10%]
+Border/Focus
+Только для веба. Бордеры при фокусировании с клавиатуры.
+Cool Gray Alpha 44 [#001024 44%]
+White [#FFFFFF 100%]
+Border/Focus On Dark
+Только для веба. Бордеры при фокусировании с клавиатуры темных элементов.
+White Alpha 30 [#FFFFFF 30%]
+White Alpha 30 [#FFFFFF 30%]
+Border/Hover
+Только для веба. Бордеры при наведении.
+Cool Gray Alpha 22 [#001024 22%]
+White Alpha 20 [#FFFFFF 20%]
+Border/Normal
+Бордеры и сепараторы на основных фонах
+Cool Gray Alpha 12 [#001024 12%]
+White Alpha 15 [#FFFFFF 15%]
+Border/Normal Opaque
+Бордеры и сепараторы на основных фонах без прозрачности
+Cool Gray Lighter 90 [#E1E3E4 100%]
+Black Lighter 25 [#414141 100%]
+Border/Normal Pale
+Бордеры и сепараторы на основных фонах
+Cool Gray Alpha 7 [#001024 7%]
+White Alpha 9 [#FFFFFF 9%]
+Border/Normal Pale Opaque
+Бордеры и сепараторы на основных фонах
+Cool Gray Lighter 94 [#EDEFF2 100%]
+Black Lighter 20 [#333333 100%]
+Border/Normal Strong
+Бордеры и сепараторы на основных фонах
+Cool Gray Alpha 32 [#001024 32%]
+White Alpha 40 [#FFFFFF 40%]
+Border/On Dark
+Обводка, отделяющая цветные элементы от темных фонов
+White Alpha 15 [#FFFFFF 15%]
+White Alpha 15 [#FFFFFF 15%]
+Border/On Light
+Обводка, отделяющая цветные элементы от светлого фонов
+Cool Gray Alpha 12 [#001024 12%]
+Cool Gray Alpha 12 [#001024 12%]
+Border/Selected
+Обводка выделенных элементов
+Yellow [#FFDD2D 100%]
+Yellow [#FFDD2D 100%]
+Border/Selected Grayscale
+Обводка выделенных элементов
+Cool Gray Lighter 36 [#575B61 100%]
+Cool Gray Lighter 93 [#EAECEE 100%]
+Background/Accent 1
+Фоны акцентных кнопок, бейджей и т.д.
+Yellow [#FFDD2D 100%]
+Yellow [#FFDD2D 100%]
+Background/Accent 2
+Фоны акцентных кнопок, бейджей и т.д.
+Blue [#428BF9 100%]
+Blue [#428BF9 100%]
+Background/Accent On Dark
+Контрастные контейнеры на темных фонах, не меняется при смене темы
+White [#FFFFFF 100%]
+White [#FFFFFF 100%]
+Background/Accent On Light
+Контрастные контейнеры на светлых фонах, не меняется при смене темы
+Black [#000000 100%]
+Black [#000000 100%]
+Background/Accent Opposite
+Фон, противоположный base: в белой теме — черный, в темной теме — белый
+Black [#000000 100%]
+White [#FFFFFF 100%]
+Background/Base
+Основной фон приложений. Отличается на iOS, Android и Desktop
+White [#FFFFFF 100%]
+Black Lighter 13 [#202020 100%]
+Background/Base Alt
+Альтернативный основной фон, в тёмной теме равен Base
+Cool Gray Lighter 97 [#F6F7F8 100%]
+Black Lighter 13 [#202020 100%]
+Background/Elevation 1
+Фон шторок, модальных экранов и карточек, лежащих на фоне base
+White [#FFFFFF 100%]
+Black Lighter 16 [#292929 100%]
+Background/Elevation 2
+Фон карточек, лежащих на фоне elevation-1
+White [#FFFFFF 100%]
+Black Lighter 20 [#333333 100%]
+Background/Elevation 3
+Фон элементов, возвышающихся над всем остальным контентом. Например, всплывающих подсказок
+White [#FFFFFF 100%]
+Black Lighter 32 [#525252 100%]
+Background/Neutral 1
+Прозрачные контейнеры с минимальным контрастом на фонах base, elevation и neutral. Второстепенные кнопки, карточки без тени, задизейбленные кнопки и т.д.
+Dark Blue Alpha 6 [#244A7F 6%]
+White Alpha 10 [#FFFFFF 10%]
+Background/Neutral 1 On Base
+Непрозрачные контейнеры с минимальным контрастом на фоне base, не имеющие тени в светлой теме
+Cool Gray Lighter 97 [#F6F7F8 100%]
+Cool Gray Lighter 18 [#2C2C2E 100%]
+Background/Neutral 1 On Dark
+Прозрачные контейнеры с минимальным контрастом на темных цветных фонах. Не меняется при переключении темы
+White Alpha 10 [#FFFFFF 10%]
+White Alpha 10 [#FFFFFF 10%]
+Background/Neutral 1 On Elevation 1
+Непрозрачные контейнеры с минимальным контрастом на фоне elevation-1, не имеющие тени в светлой теме
+Cool Gray Lighter 97 [#F6F7F8 100%]
+Black Lighter 22 [#383838 100%]
+Background/Neutral 1 On Light
+Прозрачные контейнеры с минимальным контрастом на светлых цветных фонах. Не меняется при переключении темы
+Black Alpha 3 [#000000 3%]
+Black Alpha 3 [#000000 3%]
+Background/Neutral 1 Opaque
+Непрозрачные контейнеры кнопок закрытия и удаления элементов
+Cool Gray Lighter 97 [#F6F7F8 100%]
+Black Lighter 20 [#333333 100%]
+Background/Neutral 2
+Прозрачные контейнеры маленьких размеров
+Dark Blue Alpha 8 [#244A7F 8%]
+White Alpha 15 [#FFFFFF 15%]
+Background/Neutral 2 On Dark
+Прозрачные контейнеры маленьких размеров
+White Alpha 15 [#FFFFFF 15%]
+White Alpha 15 [#FFFFFF 15%]
+Background/Neutral 3
+Прозрачные контейнеры со средним контрастом. Нажатое состояние элементов с цветом neutral-2
+Cool Gray Alpha 12 [#001024 12%]
+White Alpha 20 [#FFFFFF 20%]
+Background/Neutral 3 On Dark
+Прозрачные контейнеры со средним контрастом на светлых цветных фонах. Нажатое состояние элементов с цветом neutral-2
+White Alpha 20 [#FFFFFF 20%]
+White Alpha 20 [#FFFFFF 20%]
+Background/Neutral 3 On Light
+Прозрачные контейнеры со средним контрастом на светлых цветных фонах. Нажатое состояние элементов с цветом neutral-2
+Black Alpha 12 [#000000 12%]
+Black Alpha 12 [#000000 12%]
+Background/Neutral 4
+Прозрачные контейнеры со средним контрастом. Контейнер аватара с иконкой или текстом
+Cool Gray Alpha 22 [#001024 22%]
+White Alpha 30 [#FFFFFF 30%]
+Background/Neutral 4 On Light
+Прозрачные контейнеры со средним контрастом на светлых цветных фонах. Контейнер аватара с иконкой или текстом. Нажатое состояние элементов с цветом neutral-3
+Cool Gray Alpha 22 [#001024 22%]
+Cool Gray Alpha 22 [#001024 22%]
+Background/Neutral 6
+Прозрачные контейнеры с большим контрастом на темных цветных фонах
+Cool Gray Alpha 56 [#001024 56%]
+White Alpha 50 [#FFFFFF 50%]
+Background/Neutral 6 On Dark
+Прозрачные контейнеры с большим контрастом на темных цветных фонах
+White Alpha 50 [#FFFFFF 50%]
+White Alpha 50 [#FFFFFF 50%]
+Background/Overlay Glass
+Оверлей стеклянных поверхностей на светлых фонах
+Black Alpha 40 [#000000 40%]
+White Alpha 30 [#FFFFFF 30%]
+Background/Overlay Glass Matte
+Оверлей матовых стеклянных поверхностей, не меняется при смене темы
+White Alpha 80 [#FFFFFF 80%]
+Black Lighter 13 Alpha 80 [#202020 80%]
+Background/Overlay Glass On Dark
+Оверлей стеклянных поверхностей на темных фонах, не меняется при смене темы.
+White Alpha 30 [#FFFFFF 30%]
+White Alpha 30 [#FFFFFF 30%]
+Background/Overlay Glass On Light
+Оверлей стеклянных поверхностей на светлых фонах, не меняется при смене темы
+Black Alpha 40 [#000000 40%]
+Black Alpha 40 [#000000 40%]
+Background/Overlay On Image
+Оверлей поверх изображений, не меняется от темы
+Black Alpha 30 [#000000 30%]
+Black Alpha 30 [#000000 30%]
+Background/Thumbnail Card Badge
+Прозрачный контейнер бейджа на миниатюре карты. Временный компонентный токен, существует пока не зарелизятся токены 2.0.
+Black Alpha 12 [#000000 12%]
+Black Alpha 12 [#000000 12%]
+Status/Info
+Акцентный цвет фона для информационных блоков
+Blue [#428BF9 100%]
+Blue Darker 46 [#156ED4 100%]
+Status/Info Pale
+Контейнеры информационных блоков
+Blue Alpha 16 [#428BF9 16%]
+Blue Darker 70 Alpha 30 [#6BA4FA 30%]
+Status/Info Pale On Dark
+Контейнеры информационных блоков
+Blue Alpha 32 [#428BF9 32%]
+Blue Alpha 32 [#428BF9 32%]
+Status/Negative
+Акцентный цвет фона для негативных блоков
+Red [#F52222 100%]
+Red Darker 47 [#CD2324 100%]
+Status/Negative Pale
+Контейнеры негативных блоков
+Red Alpha 14 [#F52222 14%]
+Red Lighter 65 Alpha 30 [#FF4D4D 30%]
+Status/Negative Pale On Dark
+Контейнеры негативных блоков
+Red Alpha 32 [#F52222 32%]
+Red Alpha 32 [#F52222 32%]
+Status/Neutral
+Акцентный цвет фона для нейтральных фонах
+Cool Gray Lighter 51 [#79818C 100%]
+Cool Gray Lighter 61 [#959BA4 100%]
+Status/Neutral Pale
+Фоновый контейнер нейтральных статусных блоков
+Cool Gray Alpha 8 [#001024 8%]
+White Alpha 15 [#FFFFFF 15%]
+Status/Positive
+Акцентный цвет фона для позитивных блоков
+Green [#00B92D 100%]
+Green Darker 28 [#038C24 100%]
+Status/Positive Pale
+Контейнеры позитивных блоков
+Green Alpha 16 [#00B92D 16%]
+Green Lighter 42 Aplha 30 [#00D635 30%]
+Status/Positive Pale On Dark
+Контейнеры позитивных блоков
+Green Alpha 32 [#00B92D 32%]
+Green Alpha 32 [#00B92D 32%]
+Status/Warning
+Акцентный цвет фона для предупреждающих блоков
+Yellow Darker 50 [#FAA805 100%]
+Yellow Darker 50 [#FAA805 100%]
+Status/Warning Pale
+Контейнеры предупреждающих блоков
+Yellow Alpha 24 [#FFDD2D 24%]
+Yellow Darker 54 Alpha 30 [#FAB619 30%]
+Status/Warning Pale On Dark
+Контейнеры предупреждающих блоков
+Yellow Alpha 24 [#FFDD2D 24%]
+Yellow Alpha 24 [#FFDD2D 24%]
+Brand/All Airlines
+Фирменный цвет All Airlines
+[#27BEFF 100%]
+[#27BEFF 100%]
+Brand/All Airlines Alt 1
+Бледный оттенок фирменного цвета All Airlines
+[#CBEFFF 100%]
+[#CBEFFF 100%]
+Brand/Black
+Фирменный цвет T-Bank Black
+[#333333 100%]
+[#333333 100%]
+Brand/Mir Pay
+Цвет для кнопок Mir Pay
+[#006848 100%]
+[#006848 100%]
+Brand/Platinum
+Фирменный цвет T-Bank Platinum
+[#747B8F 100%]
+[#747B8F 100%]
+Brand/Premium
+Цвет подписки Premium. для фонов кнопок, бейджей и т.д.
+[#4972CF 100%]
+[#4972CF 100%]
+Brand/Private
+Фирменный цвет подписки Private
+[#212121 100%]
+[#212121 100%]
+Brand/Private Alt 1
+Допольнительный цвет подписки Private
+[#A1A1B2 100%]
+[#A1A1B2 100%]
+Brand/Pro
+Цвет подписки Pro. для фонов кнопок, бейджей и т.д.
+[#85E808 100%]
+[#85E808 100%]
+Brand/Pro Alt 1
+Альтернативный цвет подписки Pro
+[#333333 100%]
+[#333333 100%]
+Brand/T-Ai Assistant
+[#9A6BFF 100%]
+[#9A6BFF 100%]
+Brand/T-Bank
+Фирменный цвет. Используется, например, в бейдже подписки Team
+[#FFDD2D 100%]
+[#FFDD2D 100%]
+Brand/T-Business
+Фирменный цвет Бизнеса
+[#B58B60 100%]
+[#B58B60 100%]
+Brand/T-Business Alt 1
+Фирменный цвет Бизнеса
+[#E4D7C1 100%]
+[#E4D7C1 100%]
+Brand/T-Business Alt 2
+Фирменный цвет Бизнеса
+[#8D6040 100%]
+[#8D6040 100%]
+Brand/T-Insurance
+Фирменный цвет Страхования
+[#27AFA5 100%]
+[#27AFA5 100%]
+Brand/T-Insurance Alt 1
+Бледный оттенок фирменного цвета Страхования
+[#D0F4F2 100%]
+[#D0F4F2 100%]
+Brand/T-Invest
+Фирменный цвет Инвестиций
+[#41414D 100%]
+[#41414D 100%]
+Brand/T-Mobile
+Фирменный цвет T-Mobile
+[#5848C3 100%]
+[#5848C3 100%]
+Brand/T-Mobile Alt 1
+Фирменный цвет T-Mobile
+[#BAB3EC 100%]
+[#BAB3EC 100%]
+Brand/T-Mobile Alt 2
+Фирменный цвет T-Mobile
+[#EDE8F6 100%]
+[#EDE8F6 100%]
+Brand Element/Premium
+Цвет Premium для акцентных элементов, таких как текст, иконки, бордеры
+[#4972CF 100%]
+[#7DA4FF 100%]
+Brand Element/Premium Pale
+Цвет Premium для фонов и поверхностей
+[#4972CF 10%]
+[#7DA4FF 30%]
+Brand Element/Private
+Цвет Private для акцентных элементов, таких как текст, иконки, бордеры
+[#41414D 100%]
+[#F5F5F7 100%]
+Brand Element/Private Pale
+Цвет Private для фонов и поверхностей
+[#41414D 10%]
+[#F5F5F7 30%]
+Brand Element/Pro
+Цвет подписки Pro для акцентных элементов, таких как текст, иконки, бордеры
+[#68CF08 100%]
+[#85E808 100%]
+Brand Element/Pro Pale
+Цвет подписки Pro для фонов и поверхностей
+[#68CF08 10%]
+[#85E808 30%]
+Brand Element/T-Ai Assistant
+Цвет T-Ai Assistant для акцентных элементов, таких как текст, иконки, бордеры
+[#9A6BFF 100%]
+[#BD9EFF 100%]
+Brand Element/T-Ai Assistant Pale
+Цвет T-Ai Assistant для акцентных элементов, таких как текст, иконки, бордеры
+[#9A6BFF 10%]
+[#BD9EFF 30%]
+Brand Element/T-Business
+Цвет Т-Бизнес для акцентных элементов, таких как текст, иконки, бордеры
+[#8D6040 100%]
+[#D4B788 100%]
+Brand Element/T-Business Pale
+Цвет Т-Бизнеса для фонов и поверхностей
+[#8D6040 10%]
+[#D4B788 30%]
+Brand Element/T-Insurance
+Цвет Т-Страхования для акцентных элементов, таких как текст, иконки, бордеры
+[#27AFA5 100%]
+[#90E5DF 100%]
+Brand Element/T-Insurance Pale
+Цвет Т-Страхования для фонов и поверхностей
+[#27AFA5 10%]
+[#90E5DF 30%]
+Brand Element/T-Invest
+Цвет Т-Инвестиций для акцентных элементов, таких как текст, иконки, бордеры
+[#6A6A7C 100%]
+[#D4D1D8 100%]
+Brand Element/T-Invest Pale
+Цвет Т-Инвестиций для фонов и поверхностей
+[#6A6A7C 10%]
+[#D4D1D8 30%]
+Brand Element/T-Mobile
+Цвет Т-Мобайл для акцентных элементов, таких как текст, иконки, бордеры
+[#5848C3 100%]
+[#8D80E3 100%]
+Brand Element/T-Mobile Pale
+Цвет Т-Мобайл для фонов и поверхностей
+[#5848C3 10%]
+[#8D80E3 30%]
+Feed/Category Neutral
+Для ленты операций в МБ
+[#90ADBF 100%]
+[#90ADBF 100%]
+Feed/Category Neutral Pale
+Для ленты операций в МБ
+[#E5ECF4 100%]
+[#2E3036 100%]
+Service/Android/Ripple
+Только для android. Риппл-эффект для элементов с фонами base, elevation, neutral, engaging
+[#000000 4%]
+[#FFFFFF 10%]
+Service/Android/Ripple On Light
+Только для android. Риппл-эффект для элементов с цветными светлыми фонами
+[#000000 4%]
+[#FFFFFF 8%]
+Service/Android/Ripple On Dark
+Только для android. Риппл-эффект для элементов с цветными темными фонами
+[#FFFFFF 13%]
+[#FFFFFF 10%]
+Service/Android/Ripple On T-Bank
+Только для android. Риппл на фонах с цветом tinkoff
+[#FAB619 40%]
+[#FAB619 40%]
+Service/Android/Ripple On Opposite
+Только для android. Риппл-эффект для элементов с фоном opposite
+[#FFFFFF 13%]
+[#000000 8%]
+Service/Autofill Background
+Yellow Darker 88 [#FFF5C2 100%]
+Yellow Darker 26 [#614F23 100%]
+Service/Backdrop
+Затемнение на фоне модальных окон и шторок
+Black Alpha 70 [#000000 70%]
+Black Alpha 70 [#000000 70%]
+Service/Highlight Background
+Фон под выделенным текстом
+Yellow Alpha 32 [#FFDD2D 32%]
+Yellow Alpha 32 [#FFDD2D 32%]
+Service/Link On Dark Visited
+Purple [#D08FFF 100%]
+Purple [#D08FFF 100%]
+Service/Link On Light Visited
+Purple Darker 48 [#8B4EA6 100%]
+Purple Darker 48 [#8B4EA6 100%]
+Service/Link Visited
+Purple Darker 48 [#8B4EA6 100%]
+Purple [#D08FFF 100%]
+Service/Selection Background
+Фон под выделенным пользователем текстом
+Blue Alpha 24 [#428BF9 24%]
+Blue Alpha 24 [#428BF9 24%]
+Service/Skeleton
+Цвет для шиммеров, отображаемых при загрузке экрана
+Black Alpha 6 [#000000 6%]
+White Alpha 10 [#FFFFFF 10%]
+Service/Skeleton On Dark
+Скелетон на темном фоне, не меняется при переключении темы
+White Alpha 15 [#FFFFFF 15%]
+White Alpha 15 [#FFFFFF 15%]
+Service/Underline
+Подчеркивание для ссылок
+Blue Darker 79 [#97BFFC 100%]
+Blue Darker 70 [#66A3FF 100%]
+Service/Underline Grayscale
+Подчеркивание для монохромных ссылок
+Black Alpha 32 [#000000 32%]
+White Alpha 50 [#FFFFFF 50%]
+Service/Underline Grayscale On Dark
+Подчеркивание для монохромных ссылок на темном фоне. Не меняется при смене темы
+White Alpha 50 [#FFFFFF 50%]
+White Alpha 50 [#FFFFFF 50%]
+Service/Underline Grayscale On Light
+Подчеркивание для монохромных ссылок
+Black Alpha 32 [#000000 32%]
+Black Alpha 32 [#000000 32%]
+Component/Badge Notification
+Контейнеры нотификационных бейджей. Временный компонентный токен, существует пока не зарелизятся токены 2.0.
+Red [#F52222 100%]
+Red [#F52222 100%]
+Component/Button Close On Light
+Фон кнопки закрытия на светлом фоне. не меняется при переключении темы. бывший цвет neutral-3-on-light. Временный компонентный токен, существует пока не зарелизятся токены 2.0.
+Black Alpha 40 [#000000 40%]
+Black Alpha 40 [#000000 40%]
+Component/Button Vertical
+Фон tui-button [vertical]. Временный компонентный токен, существует пока не зарелизятся токены 2.0.
+Blue Alpha 8 [#428BF9 8%]
+Blue Alpha 16 [#428BF9 16%]
+Component/Navigation Bar/Background
+Цвет фона для имитации системного навбара iOS
+[#FFFFFF 80%]
+[#000000 80%]
+Component/Progress Bar
+Пустая полоска прогресс-баров. Временный компонентный токен, существует пока не зарелизятся токены 2.0.
+Cool Gray Alpha 6 [#001024 6%]
+White Alpha 15 [#FFFFFF 15%]
+Component/Tab Bar/Background
+Цвет фона для имитации системного таббара iOS
+[#F6F7F8 80%]
+[#1A1A1D 70%]
+Component/Tooltip
+Cool Gray Lighter 36 [#575B61 100%]
+White [#FFFFFF 100%]
+State/Background/Accent 1 Hover
+Только для веба. Фоны акцентных кнопок, бейджей и т.д. при наведении
+Yellow Darker 60 [#FFCD33 100%]
+Yellow Darker 60 [#FFCD33 100%]
+State/Background/Accent 1 Pressed
+Фоны акцентных кнопок, бейджей и т.д. при нажатии
+Yellow Darker 54 [#FAB619 100%]
+Yellow Darker 54 [#FAB619 100%]
+State/Background/Accent 2 Hover
+Только для веба. Фоны акцентных кнопок, бейджей и т.д. при нажатии
+Blue Darker 52 [#126DF7 100%]
+Blue Darker 52 [#126DF7 100%]
+State/Background/Accent 2 Pressed
+Фоны акцентных кнопок, бейджей и т.д.
+Blue Darker 46 [#156ED4 100%]
+Blue Darker 46 [#156ED4 100%]
+State/Background/Accent On Dark Hover
+Контрастные контейнеры при наведении на темных фонах, не меняется при смене темы.
+Cool Gray Lighter 97 [#F6F7F8 100%]
+Cool Gray Lighter 97 [#F6F7F8 100%]
+State/Background/Accent On Dark Pressed
+Контрастные контейнеры при нажатии на темных фонах, не меняется при смене темы.
+Cool Gray Lighter 93 [#EAECEE 100%]
+Cool Gray Lighter 93 [#EAECEE 100%]
+State/Background/Accent On Light Hover
+Контрастные контейнеры при наведении на светлых фонах, не меняется при смене темы.
+Black Lighter 16 [#292929 100%]
+Black Lighter 16 [#292929 100%]
+State/Background/Accent On Light Pressed
+Контрастные контейнеры при нажатии на светлых фонах, не меняется при смене темы.
+Black Lighter 22 [#383838 100%]
+Black Lighter 22 [#383838 100%]
+State/Background/Accent Opposite Hover
+Только для веба. Фон, противоположный base при наведении: в белой теме — черный, в темной теме — белый
+Cool Gray Lighter 18 [#2C2C2E 100%]
+Cool Gray Lighter 97 [#F6F7F8 100%]
+State/Background/Accent Opposite Pressed
+Фон, противоположный base при нажатии: в белой теме — черный, в темной теме — белый
+Cool Gray Lighter 36 [#575B61 100%]
+Cool Gray Lighter 93 [#EAECEE 100%]
+State/Background/Neutral 1 Hover
+Только для веба. Cостояние элементов c фоном neutral-1 при наведении
+Dark Blue Alpha 9 [#244A7F 9%]
+White Alpha 15 [#FFFFFF 15%]
+State/Background/Neutral 1 On Dark Hover
+Состояние при наведении элементов с фоном neutral-1-on-dark, не меняется при переключении темы
+White Alpha 15 [#FFFFFF 15%]
+White Alpha 15 [#FFFFFF 15%]
+State/Background/Neutral 1 On Light Hover
+Состояние при наведении элементов с фоном neutral-1-on-light, не меняется при переключении темы
+Black Alpha 6 [#000000 6%]
+Black Alpha 6 [#000000 6%]
+State/Background/Neutral 1 Pressed
+Нажатое состояние элементов с фоном neutral-1
+Dark Blue Alpha 11 [#244A7F 11%]
+White Alpha 20 [#FFFFFF 20%]
+State/Background/Neutral 1 On Dark Pressed
+Нажатое состояние элементов с фоном neutral-1-on-dark, не меняется при смене темы
+White Alpha 20 [#FFFFFF 20%]
+White Alpha 20 [#FFFFFF 20%]
+State/Background/Neutral 1 On Light Pressed
+Нажатое состояние элементов с фоном neutral-1-on-light, не меняется при переключении темы
+Black Alpha 12 [#000000 12%]
+Black Alpha 12 [#000000 12%]
+State/Background/Neutral 2 Hover
+Прозрачные контейнеры со средним контрастом. Нажатое состояние элементов с цветом neutral-2
+Dark Blue Alpha 10 [#244A7F 10%]
+White Alpha 20 [#FFFFFF 20%]
+State/Background/Overlay Glass On Dark Hover
+Оверлей стеклянных поверхностей при наведении на темных фонах, не меняется при смене темы.
+White Alpha 40 [#FFFFFF 40%]
+White Alpha 40 [#FFFFFF 40%]
+State/Background/Overlay Glass On Dark Pressed
+Оверлей стеклянных поверхностей при нажатии на темных фонах, не меняется при смене темы.
+White Alpha 50 [#FFFFFF 50%]
+White Alpha 50 [#FFFFFF 50%]
+State/Background/Overlay Glass On Light Hover
+Оверлей стеклянных поверхностей при наведении на светлых фонах, не меняется при смене темы.
+Black Alpha 48 [#000000 48%]
+Black Alpha 48 [#000000 48%]
+State/Background/Overlay Glass On Light Pressed
+Оверлей стеклянных поверхностей при нажатии на светлых фонах, не меняется при смене темы.
+Black Alpha 60 [#000000 60%]
+Black Alpha 60 [#000000 60%]
+State/Background/Neutral 2 Pressed
+Прозрачные контейнеры со средним контрастом. Нажатое состояние элементов с цветом neutral-2
+Dark Blue Alpha 12 [#244A7F 12%]
+White Alpha 25 [#FFFFFF 25%]
+State/Background/Neutral 2 On Dark Hover
+Прозрачные контейнеры маленьких размеров
+White Alpha 20 [#FFFFFF 20%]
+White Alpha 20 [#FFFFFF 20%]
+State/Background/Neutral 2 On Dark Pressed
+Прозрачные контейнеры маленьких размеров
+White Alpha 25 [#FFFFFF 25%]
+White Alpha 25 [#FFFFFF 25%]
+State/Background/Overlay Glass Hover
+Оверлей стеклянных поверхностей на светлых фонах
+Black Alpha 48 [#000000 48%]
+White Alpha 40 [#FFFFFF 40%]
+State/Background/Overlay Glass Pressed
+Оверлей стеклянных поверхностей на светлых фонах
+Black Alpha 60 [#000000 60%]
+White Alpha 50 [#FFFFFF 50%]
+State/Border/Normal Opaque Hover
+Бордеры и сепараторы на основных фонах без прозрачности
+Cool Gray Lighter 85 [#C7CBCF 100%]
+Black Lighter 30 [#4D4D4D 100%]
+State/Border/On Light Hover
+Обводка, отделяющая цветные элементы от светлого фонов
+Cool Gray Alpha 22 [#001024 22%]
+Cool Gray Alpha 22 [#001024 22%]
+State/Border/On Dark Hover
+Обводка, отделяющая цветные элементы от темных фонов
+White Alpha 20 [#FFFFFF 20%]
+White Alpha 20 [#FFFFFF 20%]
+State/Brand/Premium Pressed
+Цвет при нажатии для подписки Premium
+[#3460CA 100%]
+[#3460CA 100%]
+State/Component/Button Vertical Hover
+Фон tui-button [vertical]. Временный компонентный токен, существует пока не зарелизятся токены 2.0.
+Blue Alpha 12 [#428BF9 12%]
+Blue Alpha 20 [#428BF9 20%]
+State/Component/Button Vertical Pressed
+Фон tui-button [vertical] при нажатии и наведении. Временный компонентный токен, существует пока не зарелизятся токены 2.0.
+Blue Alpha 16 [#428BF9 16%]
+Blue Alpha 24 [#428BF9 24%]
+State/Service/Underline Hover
+Подчеркивание для ссылок
+Blue Darker 44 [#165ECA 100%]
+Blue Darker 74 [#7FB0FB 100%]
+State/Service/Underline Pressed
+Подчеркивание для ссылок
+Blue Darker 74 [#7FB0FB 100%]
+Blue Darker 46 [#156ED4 100%]
+State/Service/Underline Grayscale Hover
+Подчеркивание для монохромных ссылок
+Black Alpha 80 [#000000 80%]
+White Alpha 90 [#FFFFFF 90%]
+State/Service/Underline Grayscale Pressed
+Подчеркивание для монохромных ссылок
+Black Alpha 40 [#000000 40%]
+White Alpha 50 [#FFFFFF 50%]
+State/Service/Underline Grayscale On Dark Hover
+Подчеркивание для монохромных ссылок
+White [#FFFFFF 100%]
+White [#FFFFFF 100%]
+State/Service/Underline Grayscale On Dark Pressed
+Подчеркивание для монохромных ссылок
+White Alpha 50 [#FFFFFF 50%]
+White Alpha 50 [#FFFFFF 50%]
+State/Service/Underline Grayscale On Light Hover
+Подчеркивание для монохромных ссылок
+Black Alpha 80 [#000000 80%]
+Black Alpha 80 [#000000 80%]
+State/Service/Underline Grayscale On Light Pressed
+Подчеркивание для монохромных ссылок
+Black Alpha 40 [#000000 40%]
+Black Alpha 40 [#000000 40%]
+State/Status/Info Pale Hover
+Только для веба. Контейнеры информационных блоков при наведении
+Blue Alpha 24 [#428BF9 24%]
+Blue Darker 70 Alpha 40 [#6BA4FA 40%]
+State/Status/Info Pale Pressed
+Контейнеры информационных блоков при нажатии
+Blue Alpha 24 [#428BF9 24%]
+Blue Darker 70 Alpha 40 [#6BA4FA 40%]
+State/Status/Negative Pale Hover
+Только для веба. Контейнеры негативных блоков при наведении
+Red Alpha 24 [#F52222 24%]
+Red Lighter 65 Alpha 40 [#FF4D4D 40%]
+State/Status/Negative Pale Pressed
+Нажатое состояние negative в iOS
+Red Alpha 24 [#F52222 24%]
+Red Lighter 65 Alpha 40 [#FF4D4D 40%]
+State/Status/Neutral Pale Hover
+Фоновый контейнер нейтральных статусных блоков при наведении
+Cool Gray Alpha 12 [#001024 12%]
+White Alpha 25 [#FFFFFF 25%]
+State/Status/Neutral Pale Pressed
+Фоновый контейнер нейтральных статусных блоков при нажатии
+Cool Gray Alpha 18 [#001024 18%]
+White Alpha 30 [#FFFFFF 30%]
+State/Status/Positive Pale Hover
+Только для веба. Контейнеры позитивных блоков при наведении
+Green Alpha 24 [#00B92D 24%]
+Green Lighter 42 Aplha 40 [#00D635 40%]
+State/Status/Positive Pale Pressed
+Нажатое состояние positive в iOS
+Green Alpha 32 [#00B92D 32%]
+Green Lighter 42 Aplha 40 [#00D635 40%]
+State/Status/Warning Pale Hover
+Только для веба. Контейнеры предупреждающих блоков при наведении
+Yellow Alpha 40 [#FFDD2D 40%]
+Yellow Darker 54 Alpha 40 [#FAB619 40%]
+State/Status/Warning Pale Pressed
+Нажатое состояние контейнера предупреждающих блоков
+Yellow Alpha 40 [#FFDD2D 40%]
+Yellow Darker 54 Alpha 40 [#FAB619 40%]
+State/Status/Positive Pale On Dark Hover
+Контейнеры позитивных блоков
+Green Alpha 38 [#00B92D 38%]
+Green Alpha 38 [#00B92D 38%]
+State/Status/Positive Pale On Dark Pressed
+Контейнеры позитивных блоков
+Green Alpha 44 [#00B92D 44%]
+Green Alpha 44 [#00B92D 44%]
+State/Status/Negative Pale On Dark Hover
+Контейнеры негативных блоков
+Red Alpha 38 [#F52222 38%]
+Red Alpha 38 [#F52222 38%]
+State/Status/Negative Pale On Dark Pressed
+Контейнеры негативных блоков
+Red Alpha 44 [#F52222 44%]
+Red Alpha 44 [#F52222 44%]
+State/Status/Info Pale On Dark Hover
+Контейнеры информационных блоков
+Blue Alpha 38 [#428BF9 38%]
+Blue Alpha 38 [#428BF9 38%]
+State/Status/Info Pale On Dark Pressed
+Контейнеры информационных блоков
+Blue Alpha 44 [#428BF9 44%]
+Blue Alpha 44 [#428BF9 44%]
+State/Status/Warning Pale On Dark Hover
+Контейнеры предупреждающих блоков
+Yellow Alpha 28 [#FFDD2D 28%]
+Yellow Alpha 28 [#FFDD2D 28%]
+State/Status/Warning Pale On Dark Pressed
+Контейнеры предупреждающих блоков
+Yellow Alpha 32 [#FFDD2D 32%]
+Yellow Alpha 32 [#FFDD2D 32%]
+State/Status/Negative Hover
+Акцентный цвет фона для негативных блоков
+Red Darker 47 [#CD2324 100%]
+Red Darker 50 [#DA2526 100%]
+State/Status/Negative Pressed
+Акцентный цвет фона для негативных блоков
+Red Darker 32 [#9C0707 100%]
+Red Darker 53 [#DC3233 100%]
+State/Text/Action Hover
+Только для веба. Состояние текста при наведении
+Blue Darker 44 [#165ECA 100%]
+Blue Darker 74 [#7FB0FB 100%]
+State/Text/Action Pressed
+Нажатое состояние интерактивного текста. Заменяет цвет engaging-pressed и accent-pressed
+Blue Darker 40 [#1455B8 100%]
+Blue Darker 40 [#1455B8 100%]
+State/Text/Negative Hover
+Только для веба. Текст негативного лейбла при наведении на вебе
+Red Darker 47 [#CD2324 100%]
+Red Lighter 68 [#FF5C5C 100%]
+State/Text/Positive Hover
+Только для веба. Текст позитивного лейбла при нажатии
+Green Darker 28 [#038C24 100%]
+Green Lighter 48 [#00F53C 100%]
+State/Text/Primary Hover
+Only Web
+Black Alpha 50 [#000000 50%]
+White Alpha 70 [#FFFFFF 70%]
+State/Text/Primary Pressed
+Основной текст и иконки на фонах base, elevation, neutral при нажатии
+Black Alpha 40 [#000000 40%]
+White Alpha 50 [#FFFFFF 50%]
+State/Text/Secondary Hover
+Only Web
+Black Alpha 70 [#000000 70%]
+White Alpha 80 [#FFFFFF 80%]
+State/Text/Secondary Pressed
+Второстепенный текст на фонах base, elevation, neutral при нажатии
+Black Alpha 90 [#000000 90%]
+White Alpha 96 [#FFFFFF 96%]
+State/Text/Tertiary Hover
+Лейблы задизейбленных кнопок, дисклеймеры при наведении
+Black Alpha 60 [#000000 60%]
+White Alpha 70 [#FFFFFF 70%]
+State/Text/Tertiary Pressed
+Лейблы задизейбленных кнопок, дисклеймеры при нажатии
+Black Alpha 70 [#000000 70%]
+White Alpha 80 [#FFFFFF 80%]
+State/Text/Warning Hover
+Предупреждающие текст или иконки при наведении
+Yellow Darker 44 [#DD9403 100%]
+Yellow Darker 60 [#FFCD33 100%]
+State/Text/Primary On Light Hover
+Основной текст и иконки на светлых фонах, не меняется при смене темы
+Black Alpha 50 [#000000 50%]
+Black Alpha 50 [#000000 50%]
+State/Text/Primary On Light Pressed
+Основной текст и иконки на светлых фонах, не меняется при смене темы
+Black Alpha 40 [#000000 40%]
+Black Alpha 40 [#000000 40%]
+State/Text/Primary On Dark Hover
+Основной текст и иконки на темных фонах. Не меняется при смене темы.
+White Alpha 70 [#FFFFFF 70%]
+White Alpha 70 [#FFFFFF 70%]
+State/Text/Primary On Dark Pressed
+Основной текст и иконки на темных фонах. Не меняется при смене темы.
+White Alpha 50 [#FFFFFF 50%]
+White Alpha 50 [#FFFFFF 50%]
+Chart
+Chart/State
+positive-accent [Green]
+positive-accent [Green Lighter 42]
+positive-pale [Green Alpha 25]
+positive-pale [Green Lighter 42 Aplha 25]
+positive-prognosis [Green Alpha 50]
+positive-prognosis [Green Lighter 42 Aplha 50]
+negative-accent [Red]
+negative-accent [Red Lighter 65]
+negative-pale [Red Alpha 25]
+negative-pale [Red Lighter 65 Alpha 25]
+negative-prognosis [Red Alpha 50]
+negative-prognosis [Red Lighter 65 Alpha 50]
+warning-accent [Orange Darker 48]
+warning-accent [Yellow Darker 54]
+warning-pale [Orange Darker 48 Alpha 25]
+warning-pale [Yellow Darker 54 Alpha 25]
+warning-prognosis [Orange Darker 48 Alpha 50]
+warning-prognosis [Yellow Darker 54 Alpha 50]
+Chart/Series
+primary-accent [Blue]
+primary-accent [Blue Darker 70]
+primary-pale [Blue Alpha 25]
+primary-pale [Blue Darker 70 Alpha 25]
+primary-prognosis [Blue Alpha 50]
+primary-prognosis [Blue Darker 70 Alpha 50]
+additional1-accent [Turquoise Darker 36]
+additional1-accent [Turquoise Darker 40]
+additional1-pale [Turquoise Darker 36 Alpha 25]
+additional1-pale [Turquoise Darker 40 Alpha 25]
+additional1-prognosis [Turquoise Darker 36 Alpha 50]
+additional1-prognosis [Turquoise Darker 40 Alpha 50]
+additional2-accent [#986DD4 100%]
+additional2-accent [#B078FF 100%]
+additional2-pale [#986DD4 25%]
+additional2-pale [#B078FF 25%]
+additional2-prognosis [#986DD4 50%]
+additional2-prognosis [#B078FF 50%]
+Chart/Gray
+gray-primary [Black Lighter 20]
+gray-primary [Cool Gray Lighter 97]
+gray-no-data [Cool Gray Lighter 60]
+gray-no-data [Cool Gray Lighter 60]
+gray-prognosis [Cool Gray Lighter 85]
+gray-prognosis [Cool Gray Lighter 36]
+gray-inactive [Cool Gray Lighter 93]
+gray-inactive [Cool Gray Lighter 18]
+Categorical
+Categorical/Categorical 01
+Sea Blue [#2ABBF4 100%]
+Sea Blue [#2ABBF4 100%]
+Categorical/Categorical 02
+Purple Darker 72 [#C277F8 100%]
+Purple Darker 72 [#C277F8 100%]
+Categorical/Categorical 03
+Coral Darker 60 [#F5593D 100%]
+Coral Darker 60 [#F5593D 100%]
+Categorical/Categorical 04
+Turquoise [#0BD5C1 100%]
+Turquoise [#0BD5C1 100%]
+Categorical/Categorical 05
+Orange [#FFB74C 100%]
+Orange [#FFB74C 100%]
+Categorical/Categorical 06
+Purple [#D08FFF 100%]
+Purple [#D08FFF 100%]
+Categorical/Categorical 07
+Green Darker 32 [#00A328 100%]
+Green Darker 32 [#00A328 100%]
+Categorical/Categorical 08
+Blue Darker 70 [#66A3FF 100%]
+Blue Darker 70 [#66A3FF 100%]
+Categorical/Categorical 09
+Orange Darker 48 [#F59200 100%]
+Orange Darker 48 [#F59200 100%]
+Categorical/Categorical 10
+Purple Darker 56 [#A25BC3 100%]
+Purple Darker 56 [#A25BC3 100%]
+Categorical/Categorical 11
+Pink [#FF7A91 100%]
+Pink [#FF7A91 100%]
+Categorical/Categorical 12
+Sea Blue Darker 48 [#0B9CD5 100%]
+Sea Blue Darker 48 [#0B9CD5 100%]
+Categorical/Categorical 13
+Orange Darker 56 [#FFA51F 100%]
+Orange Darker 56 [#FFA51F 100%]
+Categorical/Categorical 14
+Purple Darker 60 [#AB6AC8 100%]
+Purple Darker 60 [#AB6AC8 100%]
+Categorical/Categorical 15
+Pink Darker 64 [#F6516C 100%]
+Pink Darker 64 [#F6516C 100%]
+Categorical/Categorical 16
+Emerald Darker 42 [#2EA866 100%]
+Emerald Darker 42 [#2EA866 100%]
+Categorical/Categorical 17
+Coral [#FF6347 100%]
+Coral [#FF6347 100%]
+Categorical/Categorical 18
+Purple Darker 48 [#8B4EA6 100%]
+Purple Darker 48 [#8B4EA6 100%]
+Categorical/Categorical 19
+Coral Darker 52 [#E74023 100%]
+Coral Darker 52 [#E74023 100%]
+Categorical/Categorical 20
+Emerald [#36C578 100%]
+Emerald [#36C578 100%]
+Categorical/Categorical 21
+Turquoise Darker 36 [#09AE9E 100%]
+Turquoise Darker 36 [#09AE9E 100%]
+Categorical/Categorical 22
+Pink Darker 60 [#F53D5C 100%]
+Pink Darker 60 [#F53D5C 100%]
+Categorical/Categorical 23
+Yellow Darker 60 [#FFCD33 100%]
+Yellow Darker 60 [#FFCD33 100%]
+Categorical/Categorical 24
+Turquoise Darker 40 [#0AC2AF 100%]
+Turquoise Darker 40 [#0AC2AF 100%]
+Categorical/Categorical 25
+Green Lighter 64 [#94D274 100%]
+Green Lighter 64 [#94D274 100%]
+Categorical/Categorical 26
+Sea Blue Lighter 66 [#5ACAF6 100%]
+Sea Blue Lighter 66 [#5ACAF6 100%]
+Categorical/Categorical 27
+Green Lighter 57 [#60C366 100%]
+Green Lighter 57 [#60C366 100%]
