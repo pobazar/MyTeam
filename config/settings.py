@@ -42,3 +42,5 @@ OWNER_CHAT_ID = os.getenv('OWNER_CHAT_ID', '')
 FEEDBACK_HOUR = int(os.getenv('FEEDBACK_HOUR', '12'))
 FEEDBACK_MINUTE = int(os.getenv('FEEDBACK_MINUTE', '0'))
 SEND_TELEGRAM = os.getenv('SEND_TELEGRAM', 'false').lower() == 'true'
+OPS_SECRET = os.getenv('OPS_SECRET', '')
+DB_WARNING_BYTES = int(os.getenv('DB_WARNING_BYTES', '0'))
