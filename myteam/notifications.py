@@ -3,11 +3,11 @@ from html import escape
 from django.conf import settings
 from django.db import transaction
 from django.utils import timezone
-from .models import Notification, Person, Feedback, Member
+from .models import Notification, Person, Feedback, Member, LoginAttempt
 from .telegram import send, DeliveryError
 
-def enqueue(key, kind, chat_id, text, person=None, round=None, now=None):
-    return Notification.objects.get_or_create(key=key, defaults={'kind':kind,'chat_id':chat_id,'text':text,'person':person,'round':round,'next_attempt_at':now or timezone.now()})[0]
+def enqueue(key, kind, chat_id, text, person=None, round=None, now=None, payload=None):
+    return Notification.objects.get_or_create(key=key, defaults={'payload':payload or {},'kind':kind,'chat_id':chat_id,'text':text,'person':person,'round':round,'next_attempt_at':now or timezone.now()})[0]
 
 def owner_message(key, kind, text, round=None, now=None):
     if not settings.OWNER_CHAT_ID or not settings.OWNER_TELEGRAM_ID:
@@ -32,8 +32,13 @@ def owner_message(key, kind, text, round=None, now=None):
 def eligible(notification, now):
     if notification.person_id:
         p = Person.objects.get(pk=notification.person_id)
-        if (notification.kind not in ('bot_connected','contacts') and not p.reachable) or p.chat_id!=notification.chat_id:
+        if (notification.kind not in ('bot_connected','contacts','bot_login') and not p.reachable) or p.chat_id!=notification.chat_id:
             return False
+    if notification.kind=='bot_login':
+        import uuid
+        try:attempt_id=uuid.UUID(notification.key.removeprefix('bot-login:'))
+        except ValueError:return False
+        if not LoginAttempt.objects.filter(pk=attempt_id,expires_at__gt=now,confirmed_at__isnull=True,consumed_at__isnull=True).exists():return False
     if notification.kind.startswith('feedback'):
         r=notification.round
         if not r or now>=r.ends_at:
@@ -73,7 +78,7 @@ def drain(clock, transport=None, limit=20, force=False, kinds=None):
             n.leased_until=now+timedelta(minutes=5)
             n.save(update_fields=['status','attempts','leased_until'])
         try:
-            message_id=transport(n.chat_id,n.text)
+            message_id=transport(n.chat_id,n.text,n.payload) if n.payload else transport(n.chat_id,n.text)
         except DeliveryError as e:
             n.last_error=e.code
             n.status='unknown' if e.uncertain else 'failed' if e.permanent or n.attempts>=8 else 'pending'
@@ -86,7 +91,7 @@ def drain(clock, transport=None, limit=20, force=False, kinds=None):
             n.telegram_message_id=message_id
         n.leased_until=None
         with transaction.atomic():
-            if n.status=='sent' and n.kind in ('bot_connected','contacts') and n.person_id:
+            if n.status=='sent' and n.kind in ('bot_connected','contacts','bot_login') and n.person_id:
                 Person.objects.filter(pk=n.person_id).update(delivery_verified_at=n.sent_at,delivery_blocked=False)
             n.save(update_fields=['status','last_error','next_attempt_at','sent_at','telegram_message_id','leased_until'])
         processed+=1

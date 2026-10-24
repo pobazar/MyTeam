@@ -6,6 +6,7 @@ from .clock import MOSCOW
 from .models import Member,Feedback,Achievement,Person,Job
 from .notifications import enqueue
 from .rounds import RuleError
+from .pages import web_url
 from .activities import get_activity
 
 class FeedbackForm(forms.Form):
@@ -62,6 +63,6 @@ def schedule_requests(r,clock):
                 f=Feedback.objects.filter(member=member).first()
                 if f and f.final:continue
                 title='Последнее напоминание' if kind=='feedback_last' else 'Как прошла встреча?'
-                enqueue(f'{kind}:{member.id}',kind,member.person.chat_id or member.person.telegram_id,f'МАЙТИМ · {title}\n{get_activity(r.activity,r.rules_version).title} {r.starts_at:%d.%m} — {r.ends_at:%d.%m}. Поделись впечатлениями: {settings.PUBLIC_URL}/meetings/{member.meeting_id}/feedback/',member.person,r,now)
+                enqueue(f'{kind}:{member.id}',kind,member.person.chat_id or member.person.telegram_id,f'МАЙТИМ · {title}\n{get_activity(r.activity,r.rules_version).title} {r.starts_at:%d.%m} — {r.ends_at:%d.%m}. Поделись впечатлениями: {web_url('/meetings/'+str(member.meeting_id)+'/feedback/')}',member.person,r,now)
 
             Job.objects.update_or_create(key=f'{kind}:{r.id}',defaults={'round':r,'completed_at':now,'error':''})

@@ -36,6 +36,8 @@ class Person(Entity):
         return f'{self.first_name} {self.last_name}'.strip()
 
 class LoginAttempt(Entity):
+    confirmation_code = models.CharField(max_length=6, default='', db_default='', blank=True)
+    confirmed_at = models.DateTimeField(null=True)
     token_hash = models.CharField(max_length=64, unique=True)
     expires_at = models.DateTimeField()
     person = models.ForeignKey(Person, null=True, on_delete=models.CASCADE)
@@ -117,6 +119,7 @@ class RuntimeLock(models.Model):
     heartbeat = models.DateTimeField(null=True)
 
 class Notification(Entity):
+    payload = models.JSONField(default=dict, db_default={})
     key = models.CharField(max_length=200, unique=True)
     kind = models.CharField(max_length=40)
     person = models.ForeignKey(Person, null=True, on_delete=models.PROTECT)

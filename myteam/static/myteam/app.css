@@ -29,3 +29,4 @@ footer { font-size: 14px; padding-block: 32px; }
 form.busy [data-busy] { display: inline; }
 [data-busy] { display: none; }
 @media (max-width: 480px) { nav { gap: 12px; font-size: 15px; } button, .button { width: 100%; text-align: center; } }
+.login-code { font-size: 36px; font-weight: 750; letter-spacing: .18em; font-variant-numeric: tabular-nums; }

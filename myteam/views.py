@@ -13,8 +13,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.db import transaction
 from django.utils.crypto import constant_time_compare
 from django.shortcuts import redirect, render
-from .users import begin_login, consume_login, login_required, approve_login
-from .models import TelegramUpdate
+from .users import begin_login, consume_login, login_required, approve_login, confirm_login, digest
+from .models import TelegramUpdate, LoginAttempt
 import json
 
 def login(request):
@@ -23,7 +23,7 @@ def login(request):
     if request.method == 'POST' and consume_login(request):
         return redirect('/')
     token = begin_login(request)
-    return render(request, 'myteam/login.html', {'bot_url': f'https://t.me/{settings.TELEGRAM_BOT_USERNAME}?start=l_{token}' if settings.TELEGRAM_BOT_USERNAME else '', 'error': 'Вход пока не подтверждён. Откройте бота, нажмите «Старт» и вернитесь сюда.' if request.method == 'POST' else ''})
+    return render(request, 'myteam/login.html', {'login_code':LoginAttempt.objects.get(token_hash=digest(token)).confirmation_code, 'bot_url': f'https://t.me/{settings.TELEGRAM_BOT_USERNAME}?start=l_{token}' if settings.TELEGRAM_BOT_USERNAME else '', 'error': 'Вход пока не подтверждён. Откройте бота, нажмите «Старт» и вернитесь сюда.' if request.method == 'POST' else ''})
 
 @require_POST
 def logout(request):
@@ -47,6 +47,18 @@ def telegram_webhook(request):
         _, created = TelegramUpdate.objects.get_or_create(update_id=update_id)
         if not created:
             return JsonResponse({'ok': True})
+        callback=data.get('callback_query')
+        if callback:
+            import uuid
+            sender=callback.get('from',{})
+            chat=callback.get('message',{}).get('chat',{})
+            accepted=False
+            if chat.get('type')=='private' and callback.get('data','').startswith('login:'):
+                try:attempt_id=uuid.UUID(callback['data'].removeprefix('login:'))
+                except ValueError:attempt_id=None
+                if attempt_id:accepted=confirm_login(attempt_id,sender,chat.get('id'))
+            transaction.on_commit(lambda: answer_login_callback(callback.get('id'),accepted))
+            return JsonResponse({'ok':True})
         message = data.get('message', {})
         sender, chat = message.get('from', {}), message.get('chat', {})
         text = message.get('text', '')
@@ -64,7 +76,7 @@ def telegram_webhook(request):
             send_contacts(sender['id'],chat['id'],meeting_id,update_id)
     # User-initiated replies can run immediately; scheduled broadcasts remain guarded.
     from .notifications import drain
-    drain(Clock(),limit=1,force=True,kinds=['bot_connected','contacts'])
+    drain(Clock(),limit=1,force=True,kinds=['bot_connected','contacts','bot_login'])
     return JsonResponse({'ok': True})
 
 from .profiles import ProfileForm
@@ -195,3 +207,17 @@ def operations_health(request):
 
 def csrf_failure(request,reason=''):
     return render(request,'403.html',status=403)
+
+@require_POST
+def login_status(request):
+    if request.session.get('person_id') or consume_login(request):
+        return JsonResponse({'authenticated':True,'next':'/'})
+    token=request.session.get('login_token')
+    valid=bool(token and LoginAttempt.objects.filter(token_hash=digest(token),expires_at__gt=Clock().now(),consumed_at__isnull=True,confirmation_code__gt='').exists())
+    return JsonResponse({'authenticated':False,'expired':not valid})
+
+def answer_login_callback(callback_id,accepted):
+    from .telegram import call,DeliveryError
+    if not callback_id:return
+    try:call('answerCallbackQuery',{'callback_query_id':callback_id,'text':'Вход подтверждён. Вернитесь на страницу МАЙТИМ.' if accepted else 'Ссылка истекла или принадлежит другому входу.'})
+    except DeliveryError:pass  # Confirmation is already durable; a failed toast never revokes it.
