@@ -53,3 +53,36 @@ def telegram_webhook(request):
         if text.startswith('/start l_'):
             approve_login(text.removeprefix('/start l_').strip(), sender, chat['id'])
     return JsonResponse({'ok': True})
+
+from .profiles import ProfileForm
+from django.db import transaction
+
+@login_required
+def profile(request):
+    form = ProfileForm(request.POST or None, instance=request.person)
+    notice = ''
+    if request.method == 'POST' and form.is_valid():
+        with transaction.atomic():
+            form.save()
+        notice = 'Профиль сохранён.'
+    return render(request, 'myteam/profile.html', {'person':request.person,'form':form,'notice':notice})
+
+ONBOARDING = [
+ ('Знакомься с коллегами','МАЙТИМ помогает узнавать людей за пределами своей команды — через разговоры, игры и встречи по интересам.'),
+ ('Участвуй, когда хочется','Каждую неделю — возможность пообщаться с коллегами. Форматы будут чередоваться. Участие добровольное: на каждую неделю ты записываешься сам, мы не продлеваем запись автоматически.'),
+ ('Выбери ближайшую активность','Посмотри, что запланировано, и запишись, если хочешь участвовать. После подготовки мероприятия мы пришлём в Telegram участников и всё необходимое для встречи.'),
+]
+@login_required
+def onboarding(request):
+    if request.person.onboarding_done:
+        return redirect('/')
+    step = min(max(int(request.session.get('onboarding_step',0)),0),2)
+    if request.method == 'POST':
+        if request.POST.get('action')=='skip' or step==2:
+            request.person.onboarding_done=True
+            request.person.save(update_fields=['onboarding_done'])
+            return redirect('/profile/')
+        step+=1
+        request.session['onboarding_step']=step
+    title,body=ONBOARDING[step]
+    return render(request,'myteam/onboarding.html',{'person':request.person,'heading':title,'body':body,'step':step+1})
