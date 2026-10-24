@@ -25,7 +25,7 @@ class MatchingTests(TestCase):
     def test_invalid_draft_is_rejected(self):
         r=ensure_round(datetime(2026,10,28,9,tzinfo=MOSCOW))
         for i in range(2):
-            p=Person.objects.create(telegram_id=i,first_name='А',last_name='Б',team='Т',city='М',city_key='m')
+            p=Person.objects.create(telegram_id=i+1,first_name='А',last_name='Б',team='Т',city='М',city_key='m')
             Enrollment.objects.create(person=p,round=r)
         prepare(r.id,FrozenClock(r.prepares_at))
         Member.objects.filter(round=r).first().delete()
