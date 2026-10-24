@@ -38,6 +38,9 @@ def eligible(notification, now):
         r=notification.round
         if not r or now>=r.ends_at:
             return False
+        if notification.kind=='feedback_first':
+            from .feedback import request_times
+            if now>=request_times(r)[1]:return False
         f=Feedback.objects.filter(member__person_id=notification.person_id, member__round=r).first()
         return not (f and f.final) and Member.objects.filter(person_id=notification.person_id,round=r).exists()
     if notification.kind in ('meeting','unmatched') and now>=notification.round.ends_at:
