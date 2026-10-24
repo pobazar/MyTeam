@@ -29,5 +29,5 @@ def call(method, payload):
         raise DeliveryError('telegram_rejected')
     return result['result']
 
-def send(chat_id, text):
-    return call('sendMessage', {'chat_id':chat_id,'text':text,'parse_mode':'HTML','link_preview_options':{'is_disabled':True}})['message_id']
+def send(chat_id, text, payload=None):
+    return call('sendMessage', {'chat_id':chat_id,'text':text,'parse_mode':'HTML','link_preview_options':{'is_disabled':True},**(payload or {})})['message_id']

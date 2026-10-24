@@ -8,6 +8,7 @@ from .notifications import enqueue,owner_message
 from .activities import get_activity
 from .clock import MOSCOW
 from django.conf import settings
+from .pages import web_url
 
 def report(r):
     lines=[f'МАЙТИМ · подготовка {r.starts_at:%d.%m} — {r.ends_at:%d.%m}',f'Записались: {r.enrollments.filter(active=True).count()}',f'Публикация: {r.starts_at.astimezone(MOSCOW):%d.%m %H:%M} МСК. Подтверждение не требуется.']
@@ -62,9 +63,9 @@ def publish(round_id,clock):
         same_city=len({m.snapshot['city_key'] for m in members})==1
         names='\n'.join(escape(f'{m.snapshot["first_name"]} {m.snapshot["last_name"]} · {m.snapshot["team"]} · {m.snapshot["city"]}') for m in members)
         for m in members:
-            enqueue(f'meeting:{m.id}','meeting',m.person.chat_id or m.person.telegram_id,f'МАЙТИМ · {activity.title} · {r.starts_at:%d.%m} — {r.ends_at:%d.%m}\n{names}\n{activity.instructions(same_city)}\n{settings.PUBLIC_URL}/meetings/{meeting.id}/',m.person,r,clock.now())
+            enqueue(f'meeting:{m.id}','meeting',m.person.chat_id or m.person.telegram_id,f'МАЙТИМ · {activity.title} · {r.starts_at:%d.%m} — {r.ends_at:%d.%m}\n{names}\n{activity.instructions(same_city)}\n{web_url('/meetings/'+str(meeting.id)+'/')}',m.person,r,clock.now())
     for item in Unmatched.objects.filter(round=r).select_related('person'):
-        enqueue(f'unmatched:{r.id}:{item.person_id}','unmatched',item.person.chat_id or item.person.telegram_id,f'МАЙТИМ · {r.starts_at:%d.%m} — {r.ends_at:%d.%m}: пока недостаточно участников для встречи. На следующий раунд можно записаться самостоятельно: {settings.PUBLIC_URL}/. Автоматической записи нет.',item.person,r,clock.now())
+        enqueue(f'unmatched:{r.id}:{item.person_id}','unmatched',item.person.chat_id or item.person.telegram_id,f'МАЙТИМ · {r.starts_at:%d.%m} — {r.ends_at:%d.%m}: пока недостаточно участников для встречи. На следующий раунд можно записаться самостоятельно: {web_url('/')}. Автоматической записи нет.',item.person,r,clock.now())
     ensure_round(r.starts_at+timedelta(days=7))
     complete_job('publish',r,clock.now())
     return r

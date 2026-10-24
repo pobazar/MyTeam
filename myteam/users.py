@@ -8,6 +8,10 @@ from django.shortcuts import redirect
 from django.utils import timezone
 from .models import Person, LoginAttempt
 
+def private_actor(sender,chat_id):
+    value=sender.get('id')
+    return isinstance(value,int) and not isinstance(value,bool) and value>0 and value==chat_id and not sender.get('is_bot')
+
 def digest(token):
     return hashlib.sha256(token.encode()).hexdigest()
 
@@ -22,18 +26,18 @@ def login_required(view):
 
 def begin_login(request):
     token = request.session.get('login_token')
-    if token and LoginAttempt.objects.filter(token_hash=digest(token), expires_at__gt=timezone.now(), consumed_at__isnull=True).exists():
+    if token and LoginAttempt.objects.filter(token_hash=digest(token), expires_at__gt=timezone.now(), consumed_at__isnull=True,confirmation_code__gt='').exists():
         return token
     token = secrets.token_urlsafe(24)
-    LoginAttempt.objects.create(token_hash=digest(token), expires_at=timezone.now()+timedelta(minutes=10))
+    LoginAttempt.objects.create(token_hash=digest(token), confirmation_code=f'{secrets.randbelow(1000000):06d}', expires_at=timezone.now()+timedelta(minutes=10))
     request.session['login_token'] = token
     return token
 
 @transaction.atomic
 def approve_login(token, sender, chat_id, now=None):
     now = now or timezone.now()
-    attempt = LoginAttempt.objects.select_for_update().filter(token_hash=digest(token), expires_at__gt=now, consumed_at__isnull=True, person__isnull=True).first()
-    if not attempt or sender.get('is_bot') or sender.get('id') != chat_id:
+    attempt = LoginAttempt.objects.select_for_update().filter(token_hash=digest(token), expires_at__gt=now, consumed_at__isnull=True, person__isnull=True,confirmation_code__gt='').first()
+    if not attempt or not private_actor(sender,chat_id):
         return False
     person, _ = Person.objects.get_or_create(telegram_id=sender['id'], defaults={'first_name': sender.get('first_name','')[:100], 'last_name': sender.get('last_name','')[:100]})
     person.username = sender.get('username', '')[:100]
@@ -43,7 +47,7 @@ def approve_login(token, sender, chat_id, now=None):
     person.delivery_blocked = False
     person.save()
     from .notifications import enqueue
-    enqueue(f'bot-connected:{attempt.id}','bot_connected',chat_id,'МАЙТИМ подключён. Вернитесь в браузер и нажмите «Я нажал Старт — продолжить».',person=person,now=now)
+    enqueue(f'bot-login:{attempt.id}','bot_login',chat_id,f'Вход в МАЙТИМ. Код: {attempt.confirmation_code}\nСравните код с кодом на странице входа. Подтверждайте только вход, который начали сами.',person=person,now=now,payload={'reply_markup':{'inline_keyboard':[[{'text':'Подтвердить вход','callback_data':f'login:{attempt.id}'}]]}})
     attempt.person = person
     attempt.save(update_fields=['person'])
     return True
@@ -53,7 +57,7 @@ def consume_login(request):
     token = request.session.get('login_token')
     if not token:
         return False
-    attempt = LoginAttempt.objects.select_for_update().filter(token_hash=digest(token), expires_at__gt=timezone.now(), consumed_at__isnull=True, person__isnull=False).first()
+    attempt = LoginAttempt.objects.select_for_update().filter(token_hash=digest(token), expires_at__gt=timezone.now(), consumed_at__isnull=True, person__isnull=False,confirmed_at__isnull=False).first()
     if not attempt:
         return False
     attempt.consumed_at = timezone.now()
@@ -63,4 +67,16 @@ def consume_login(request):
     rotate_token(request)
     request.session['person_id'] = str(attempt.person_id)
     del request.session['login_token']
+    return True
+
+@transaction.atomic
+def confirm_login(attempt_id, sender, chat_id, now=None):
+    now=now or timezone.now()
+    if not private_actor(sender,chat_id):return False
+    attempt=LoginAttempt.objects.select_for_update().select_related('person').filter(pk=attempt_id,expires_at__gt=now,consumed_at__isnull=True,person__telegram_id=sender['id'],person__chat_id=chat_id).first()
+    if not attempt:return False
+    Person.objects.filter(pk=attempt.person_id).update(delivery_verified_at=now,delivery_blocked=False)
+    if attempt.confirmed_at is None:
+        attempt.confirmed_at=now
+        attempt.save(update_fields=['confirmed_at'])
     return True

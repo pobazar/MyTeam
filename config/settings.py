@@ -14,7 +14,7 @@ if PRODUCTION:
 DEBUG = not PRODUCTION
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1,testserver').split(',')
 INSTALLED_APPS = ['django.contrib.contenttypes', 'django.contrib.sessions', 'django.contrib.staticfiles', 'myteam']
-MIDDLEWARE = ['django.middleware.security.SecurityMiddleware', 'whitenoise.middleware.WhiteNoiseMiddleware', 'django.contrib.sessions.middleware.SessionMiddleware', 'django.middleware.common.CommonMiddleware', 'django.middleware.csrf.CsrfViewMiddleware', 'django.middleware.clickjacking.XFrameOptionsMiddleware']
+MIDDLEWARE = ['django.middleware.security.SecurityMiddleware', 'whitenoise.middleware.WhiteNoiseMiddleware', 'myteam.pages.PagesSessionMiddleware', 'django.contrib.sessions.middleware.SessionMiddleware', 'django.middleware.common.CommonMiddleware', 'django.middleware.csrf.CsrfViewMiddleware', 'django.middleware.clickjacking.XFrameOptionsMiddleware']
 ROOT_URLCONF = 'config.urls'
 TEMPLATES = [{'BACKEND': 'django.template.backends.django.DjangoTemplates', 'APP_DIRS': True, 'OPTIONS': {'context_processors': ['django.template.context_processors.request', 'myteam.views.public_settings']}}]
 DATABASES = {'default': dj_database_url.config(default='sqlite:///' + str(BASE_DIR / 'local.sqlite3'), conn_max_age=60, ssl_require=PRODUCTION)}
@@ -53,3 +53,10 @@ SUPABASE_SERVICE_ROLE_KEY = os.getenv('SUPABASE_SERVICE_ROLE_KEY', '')
 
 if not 0 <= FEEDBACK_HOUR <= 23 or not 0 <= FEEDBACK_MINUTE <= 59:
     raise ImproperlyConfigured("Feedback time must be a valid Moscow hour/minute")
+
+from urllib.parse import urlsplit
+FRONTEND_URL = os.getenv('FRONTEND_URL', '')
+FRONTEND_ORIGINS = [urlsplit(FRONTEND_URL).scheme+'://'+urlsplit(FRONTEND_URL).netloc] if FRONTEND_URL else []
+if not PRODUCTION:FRONTEND_ORIGINS += ['http://127.0.0.1:8080','http://localhost:8080']
+CSRF_TRUSTED_ORIGINS = FRONTEND_ORIGINS
+CSRF_USE_SESSIONS = True

@@ -16,6 +16,7 @@ function bindForms() {
         document.body.replaceWith(page.body);
         history.replaceState(null, '', response.url);
         bindForms();
+        pollLogin();
         const status = document.querySelector('[role="status"], .errorlist');
         if (status) { status.setAttribute('tabindex', '-1'); status.focus(); }
       } catch (error) {
@@ -32,3 +33,25 @@ function bindForms() {
   });
 }
 bindForms();
+
+let loginTimer;
+let loginPending=false;
+async function pollLogin() {
+  clearTimeout(loginTimer);
+  const form=document.querySelector('[data-login-poll]');
+  if (!form || loginPending) return;
+  loginPending=true;
+  try {
+    const response=await fetch(form.dataset.loginPoll,{method:'POST',body:new FormData(form),credentials:'same-origin'});
+    if(response.ok){
+      const result=await response.json();
+      if(result.authenticated){location.assign('/');return;}
+      if(result.expired){document.querySelector('[data-login-status]').textContent='Срок кода закончился. Получи новый код.';document.querySelector('[data-login-expired]').hidden=false;return;}
+    }
+  } catch (_) { /* Retain the code and retry without replacing the page. */ }
+  finally { loginPending=false; }
+  loginTimer=setTimeout(pollLogin,2000);
+}
+pollLogin();
+window.addEventListener('focus',pollLogin);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)pollLogin();});

@@ -16,7 +16,7 @@ services:
       - key: APP_ENV
         value: production
       - key: SEND_TELEGRAM
-        value: 'false'
+        value: 'true'
       - key: SECRET_KEY
         sync: false
       - key: DATABASE_URL
@@ -33,6 +33,53 @@ services:
         sync: false
       - key: OPS_SECRET
         sync: false
-# Paid cron, only after explicit approval: schedule '* * * * *' (UTC),
-# command 'python manage.py tick', same app env, no website visits required.
-# Independent watchdog is .github/workflows/monitor.yml, not a timer in the web process.
+      - key: FRONTEND_URL
+        value: https://pobazar.github.io/MyTeam
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: OWNER_TELEGRAM_ID
+        sync: false
+      - key: OWNER_CHAT_ID
+        sync: false
+  - type: cron
+    name: myteam-cycle
+    runtime: python
+    plan: starter
+    region: ohio
+    schedule: "*/5 * * * *"
+    buildCommand: pip install -r requirements.txt
+    startCommand: python manage.py tick --delivery-limit 100 && python manage.py monitor
+    autoDeployTrigger: off
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: PYTHON_VERSION
+        value: 3.12.12
+      - key: SEND_TELEGRAM
+        value: 'true'
+      - key: DATABASE_URL
+        sync: false
+      - key: SECRET_KEY
+        sync: false
+      - key: TG_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_WEBHOOK_SECRET
+        sync: false
+      - key: TELEGRAM_BOT_USERNAME
+        sync: false
+      - key: PUBLIC_URL
+        sync: false
+      - key: FRONTEND_URL
+        value: https://pobazar.github.io/MyTeam
+      - key: OWNER_TELEGRAM_ID
+        sync: false
+      - key: OWNER_CHAT_ID
+        sync: false
+      - key: OPS_SECRET
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
