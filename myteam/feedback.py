@@ -49,20 +49,20 @@ def save_feedback(person_id,meeting_id,data,clock):
     return f
 
 def request_times(r):
-    monday=(r.starts_at.astimezone(MOSCOW)+timedelta(days=5)).replace(hour=settings.FEEDBACK_HOUR,minute=settings.FEEDBACK_MINUTE,second=0,microsecond=0)
-    return monday,r.ends_at.astimezone(MOSCOW)-timedelta(hours=12)
+    tuesday=(r.starts_at.astimezone(MOSCOW)+timedelta(days=6)).replace(hour=settings.FEEDBACK_HOUR,minute=settings.FEEDBACK_MINUTE,second=0,microsecond=0)
+    return tuesday,r.ends_at
 
 @transaction.atomic
 def schedule_requests(r,clock):
     if not r.published_at:return
     now=clock.now()
-    first,last=request_times(r)
-    for kind,due,expiry in (('feedback_first',first,last),('feedback_last',last,r.ends_at)):
-        if due<=now<expiry and not Job.objects.filter(key=f'{kind}:{r.id}',completed_at__isnull=False).exists():
-            for member in Member.objects.filter(round=r).select_related('person'):
-                f=Feedback.objects.filter(member=member).first()
-                if f and f.final:continue
-                title='Последнее напоминание' if kind=='feedback_last' else 'Как прошла встреча?'
-                enqueue(f'{kind}:{member.id}',kind,member.person.chat_id or member.person.telegram_id,f'МАЙТИМ · {title}\n{get_activity(r.activity,r.rules_version).title} {r.starts_at:%d.%m} — {r.ends_at:%d.%m}. Поделись впечатлениями: {web_url('/meetings/'+str(member.meeting_id)+'/feedback/')}',member.person,r,now)
-
-            Job.objects.update_or_create(key=f'{kind}:{r.id}',defaults={'round':r,'completed_at':now,'error':''})
+    due,expiry=request_times(r)
+    # Keep feedback_first identity so an already requested round is not requested again.
+    kind='feedback_first'
+    if not due<=now<expiry or Job.objects.filter(key=f'{kind}:{r.id}',completed_at__isnull=False).exists():return
+    for member in Member.objects.filter(round=r).select_related('person'):
+        if not member.person.reachable:continue
+        f=Feedback.objects.filter(member=member).first()
+        if f and f.final:continue
+        enqueue(f'{kind}:{member.id}',kind,member.person.chat_id or member.person.telegram_id,f'МАЙТИМ · Как прошла встреча?\n{get_activity(r.activity,r.rules_version).title} {r.starts_at:%d.%m} — {r.ends_at:%d.%m}. Поделись впечатлениями: {web_url('/meetings/'+str(member.meeting_id)+'/feedback/')}',member.person,r,now)
+    Job.objects.update_or_create(key=f'{kind}:{r.id}',defaults={'round':r,'completed_at':now,'error':''})

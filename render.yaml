@@ -1,5 +1,5 @@
 # Existing MyTeam Go service cannot change native runtime. This describes the replacement.
-# Do not create a new database or any paid service without approval.
+# Scheduled events run through GitHub Actions; no paid Render cron is required.
 services:
   - type: web
     name: myteam-backend
@@ -40,42 +40,4 @@ services:
       - key: OWNER_TELEGRAM_ID
         sync: false
       - key: OWNER_CHAT_ID
-        sync: false
-  - type: cron
-    name: myteam-cycle
-    runtime: python
-    plan: starter
-    region: ohio
-    schedule: "*/5 * * * *"
-    buildCommand: pip install -r requirements.txt
-    startCommand: python manage.py tick --delivery-limit 100 && python manage.py monitor
-    autoDeployTrigger: off
-    envVars:
-      - key: APP_ENV
-        value: production
-      - key: PYTHON_VERSION
-        value: 3.12.12
-      - key: SEND_TELEGRAM
-        value: 'true'
-      - key: DATABASE_URL
-        sync: false
-      - key: SECRET_KEY
-        sync: false
-      - key: TG_BOT_TOKEN
-        sync: false
-      - key: TELEGRAM_WEBHOOK_SECRET
-        sync: false
-      - key: TELEGRAM_BOT_USERNAME
-        sync: false
-      - key: PUBLIC_URL
-        sync: false
-      - key: FRONTEND_URL
-        value: https://pobazar.github.io/MyTeam
-      - key: OWNER_TELEGRAM_ID
-        sync: false
-      - key: OWNER_CHAT_ID
-        sync: false
-      - key: SUPABASE_URL
-        sync: false
-      - key: SUPABASE_SERVICE_ROLE_KEY
         sync: false

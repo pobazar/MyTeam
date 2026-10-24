@@ -6,6 +6,7 @@ from myteam.rounds import ensure_round,enroll,RuleError
 class RoundTests(TestCase):
     def setUp(self):
         self.r=ensure_round(datetime(2026,10,28,9,tzinfo=MOSCOW))
+        self.assertEqual(self.r.prepares_at,self.r.closes_at)
         self.p=Person.objects.create(telegram_id=1,first_name='А',last_name='Б',team='Команда',city='Москва',city_key='moskva',chat_id=1,delivery_verified_at=self.r.closes_at)
     def test_boundary_idempotency_and_no_automatic_enrollment(self):
         clock=FrozenClock(self.r.closes_at-timedelta(microseconds=1))

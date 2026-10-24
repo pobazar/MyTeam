@@ -1,0 +1,34 @@
+name: Weekly MyTeam events
+on:
+  schedule:
+    # GitHub cron uses UTC; Moscow is UTC+3 year-round.
+    - cron: '0 6 * * 2'   # Tue 09:00 MSK: one feedback request
+    - cron: '0 18 * * 2'  # Tue 21:00 MSK: close + prepare + owner report
+    - cron: '0 6 * * 3'   # Wed 09:00 MSK: publish meetings
+    - cron: '0 6 * * 4'   # Thu 09:00 MSK: invite users not enrolled
+  workflow_dispatch:
+    inputs:
+      verify_only:
+        description: 'Check real identity and database without running stages or sending messages'
+        type: boolean
+        default: true
+permissions:
+  contents: read
+  id-token: write
+concurrency:
+  group: myteam-weekly-events
+  cancel-in-progress: false
+jobs:
+  events:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 80
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run due events and recover temporary delivery failures
+        run: python scripts/run_schedule.py
+        env:
+          MYTEAM_VERIFY_ONLY: ${{ github.event_name == 'workflow_dispatch' && inputs.verify_only && 'true' || 'false' }}

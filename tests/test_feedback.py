@@ -12,8 +12,8 @@ class FeedbackTests(TestCase):
         test_privacy.PrivacyTests.setUp(self);publish(self.r.id,FrozenClock(self.r.starts_at));self.r.refresh_from_db()
     def test_reminder_boundaries_and_suppression_at_send(self):
         first,last=request_times(self.r)
-        self.assertEqual((first.weekday(),first.hour),(0,12))
-        self.assertEqual((last.weekday(),last.hour),(1,21))
+        self.assertEqual((first.weekday(),first.hour),(1,9))
+        self.assertEqual(last,self.r.ends_at)
         schedule_requests(self.r,FrozenClock(first-timedelta(microseconds=1)))
         self.assertEqual(Notification.objects.filter(kind='feedback_first').count(),0)
         schedule_requests(self.r,FrozenClock(first))
@@ -23,8 +23,9 @@ class FeedbackTests(TestCase):
         Notification.objects.filter(kind='meeting').delete()
         drain(FrozenClock(first),lambda *a:calls.append(a) or 1,force=True)
         self.assertEqual(len(calls),1)
-        schedule_requests(self.r,FrozenClock(last));self.assertEqual(Notification.objects.filter(kind='feedback_last').count(),1)
-        schedule_requests(self.r,FrozenClock(self.r.ends_at));self.assertEqual(Notification.objects.filter(kind='feedback_last').count(),1)
+        schedule_requests(self.r,FrozenClock(first+timedelta(hours=12)));self.assertEqual(Notification.objects.filter(kind='feedback_last').count(),0)
+        self.assertEqual(Notification.objects.filter(kind='feedback_first').count(),2)
+        schedule_requests(self.r,FrozenClock(self.r.ends_at));self.assertEqual(Notification.objects.filter(kind='feedback_last').count(),0)
     def test_achievement_change_and_deadline(self):
         now=FrozenClock(self.r.starts_at)
         data={'outcome':'yes','impression':'positive','again':'yes','comment':''}

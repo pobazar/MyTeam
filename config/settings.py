@@ -41,7 +41,7 @@ TELEGRAM_WEBHOOK_SECRET = os.getenv('TELEGRAM_WEBHOOK_SECRET', '')
 PUBLIC_URL = os.getenv('PUBLIC_URL', 'http://127.0.0.1:8000').rstrip('/')
 OWNER_TELEGRAM_ID = os.getenv('OWNER_TELEGRAM_ID', '')
 OWNER_CHAT_ID = os.getenv('OWNER_CHAT_ID', '')
-FEEDBACK_HOUR = int(os.getenv('FEEDBACK_HOUR', '12'))
+FEEDBACK_HOUR = int(os.getenv('FEEDBACK_HOUR', '9'))
 FEEDBACK_MINUTE = int(os.getenv('FEEDBACK_MINUTE', '0'))
 SEND_TELEGRAM = os.getenv('SEND_TELEGRAM', 'false').lower() == 'true'
 DB_WARNING_BYTES = int(os.getenv('DB_WARNING_BYTES', '0'))

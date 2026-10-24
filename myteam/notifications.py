@@ -39,13 +39,22 @@ def eligible(notification, now):
         try:attempt_id=uuid.UUID(notification.key.removeprefix('bot-login:'))
         except ValueError:return False
         if not LoginAttempt.objects.filter(pk=attempt_id,expires_at__gt=now,confirmed_at__isnull=True,consumed_at__isnull=True).exists():return False
+    # Old second reminders are never sent after the schedule change.
+    if notification.kind=='feedback_last':return False
+    if notification.kind=='signup_invite':
+        from .invitations import invitation_window
+        r=notification.round
+        if not r:return False
+        due,expiry=invitation_window(r)
+        from .models import Enrollment
+        return due<=now<expiry and r.state=='open' and not Enrollment.objects.filter(person_id=notification.person_id,round=r,active=True).exists()
     if notification.kind.startswith('feedback'):
         r=notification.round
         if not r or now>=r.ends_at:
             return False
         if notification.kind=='feedback_first':
             from .feedback import request_times
-            if now>=request_times(r)[1]:return False
+            if not request_times(r)[0]<=now<request_times(r)[1]:return False
         f=Feedback.objects.filter(member__person_id=notification.person_id, member__round=r).first()
         return not (f and f.final) and Member.objects.filter(person_id=notification.person_id,round=r).exists()
     if notification.kind in ('meeting','unmatched') and now>=notification.round.ends_at:

@@ -56,7 +56,7 @@ def publish(round_id,clock):
     from .analytics import event
     for member in Member.objects.filter(round=r):
         event(f'published:{member.id}','participation',member.person,r,{'meeting_id':str(member.meeting_id),'snapshot':member.snapshot,'activity':r.activity,'rules_version':r.rules_version},clock.now())
-    r.state='published';r.published_at=clock.now();r.save(update_fields=['state','published_at'])
+    r.state='published';r.published_at=clock.now();r.preparation_error='';r.save(update_fields=['state','published_at','preparation_error'])
     activity=get_activity(r.activity,r.rules_version)
     for meeting in r.meetings.prefetch_related('members__person'):
         members=list(meeting.members.all())
@@ -106,6 +106,8 @@ def tick(clock):
                     if not outcomes.filter(status__in=['pending','sending']).exists() and not Job.objects.filter(key=f'publication_report:{r.id}',completed_at__isnull=False).exists():
                         n=owner_message(f'published:{r.id}','owner_published',f'МАЙТИМ · раунд {r.starts_at:%d.%m}: опубликовано встреч {r.meetings.count()}, сообщений доставлено {outcomes.filter(status="sent").count()}, не доставлено/неизвестно {outcomes.exclude(status="sent").count()}.',r,now)
                         if n:complete_job('publication_report',r,now)
+                from .invitations import schedule_invites
+                schedule_invites(r,clock)
                 resolve_incident(f'round:{r.id}',clock)
         except Exception as error:
             # Do not persist exception text: DB/HTTP exceptions may contain credentials or personal data.

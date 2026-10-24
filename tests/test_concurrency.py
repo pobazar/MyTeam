@@ -1,7 +1,7 @@
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 from unittest import skipUnless
-from django.db import connection,close_old_connections
+from django.db import connection,connections,close_old_connections
 from django.test import TransactionTestCase
 from myteam.clock import MOSCOW,FrozenClock
 from myteam.models import Person,Enrollment,Member,Notification
@@ -15,7 +15,7 @@ class ConcurrencyTests(TransactionTestCase):
         def run(_):
             close_old_connections()
             try:return fn()
-            finally:close_old_connections()
+            finally:connections.close_all()
         with ThreadPoolExecutor(max_workers=2) as executor:return list(executor.map(run,range(2)))
     def setUp(self):
         self.r=ensure_round(datetime(2026,10,28,9,tzinfo=MOSCOW))

@@ -13,7 +13,7 @@ def upcoming_start(now):
 
 def ensure_round(start):
     start=start.astimezone(MOSCOW)
-    return Round.objects.get_or_create(starts_at=start,defaults={'ends_at':start+timedelta(days=7),'closes_at':start-timedelta(hours=12),'prepares_at':start-timedelta(hours=11)})[0]
+    return Round.objects.get_or_create(starts_at=start,defaults={'ends_at':start+timedelta(days=7),'closes_at':start-timedelta(hours=12),'prepares_at':start-timedelta(hours=12)})[0]
 
 @transaction.atomic
 def enroll(person_id,round_id,active,clock):
