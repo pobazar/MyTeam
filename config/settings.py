@@ -50,3 +50,6 @@ CSRF_FAILURE_VIEW = 'myteam.views.csrf_failure'
 LOGGING = {'version':1,'disable_existing_loggers':False,'handlers':{'null':{'class':'myteam.logging.SafeErrorHandler'}},'loggers':{'django.request':{'handlers':['null'],'propagate':False},'django.server':{'handlers':['null'],'propagate':False}}}
 SUPABASE_URL = os.getenv('SUPABASE_URL', '')
 SUPABASE_SERVICE_ROLE_KEY = os.getenv('SUPABASE_SERVICE_ROLE_KEY', '')
+
+if not 0 <= FEEDBACK_HOUR <= 23 or not 0 <= FEEDBACK_MINUTE <= 59:
+    raise ImproperlyConfigured("Feedback time must be a valid Moscow hour/minute")
