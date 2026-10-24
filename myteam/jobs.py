@@ -93,7 +93,7 @@ def tick(clock):
                     r.state='closed';r.save(update_fields=['state']);complete_job('close',r,now)
                 if now>=r.prepares_at and not r.prepared_at:
                     r=prepare(r.id,clock);complete_job('prepare',r,now)
-                if r.prepared_at and not r.published_at:
+                if r.prepared_at and not r.published_at and not Job.objects.filter(key=f'prepare_report:{r.id}',completed_at__isnull=False).exists():
                     n=owner_message(f'prepared:{r.id}','owner_prepared',report(r),r,now)
                     if n:complete_job('prepare_report',r,now)
                 if now>=r.starts_at and not r.published_at:
@@ -102,7 +102,7 @@ def tick(clock):
                 if r.published_at:
                     schedule_feedback(r,clock)
                     outcomes=Notification.objects.filter(round=r,kind__in=['meeting','unmatched'])
-                    if not outcomes.filter(status__in=['pending','sending']).exists():
+                    if not outcomes.filter(status__in=['pending','sending']).exists() and not Job.objects.filter(key=f'publication_report:{r.id}',completed_at__isnull=False).exists():
                         n=owner_message(f'published:{r.id}','owner_published',f'МАЙТИМ · раунд {r.starts_at:%d.%m}: опубликовано встреч {r.meetings.count()}, сообщений доставлено {outcomes.filter(status="sent").count()}, не доставлено/неизвестно {outcomes.exclude(status="sent").count()}.',r,now)
                         if n:complete_job('publication_report',r,now)
                 resolve_incident(f'round:{r.id}',clock)
