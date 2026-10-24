@@ -39,3 +39,21 @@ class JobTests(TestCase):
         tick(FrozenClock(r.ends_at+timedelta(days=3)))
         r.refresh_from_db();self.assertEqual(r.state,'expired')
         self.assertEqual(Notification.objects.count(),0)
+
+    def test_failed_write_rolls_back_draft_and_can_recover(self):
+        from unittest.mock import patch
+        from django.db import DatabaseError
+        from myteam.models import Incident
+        r=ensure_round(datetime(2026,10,28,9,tzinfo=MOSCOW))
+        for i in range(2):
+            p=Person.objects.create(telegram_id=i+1,first_name='А',last_name='Б',team='Т',city='М',city_key='m')
+            Enrollment.objects.create(person=p,round=r)
+        with patch('myteam.matching.Meeting.objects.create',side_effect=DatabaseError('simulated exhausted storage')):
+            tick(FrozenClock(r.prepares_at))
+        r.refresh_from_db();self.assertIsNone(r.prepared_at)
+        self.assertFalse(Member.objects.filter(round=r).exists())
+        self.assertEqual(Incident.objects.filter(resolved_at__isnull=True).count(),1)
+        tick(FrozenClock(r.prepares_at));r.refresh_from_db()
+        self.assertIsNotNone(r.prepared_at)
+        self.assertEqual(Member.objects.filter(round=r).count(),2)
+        self.assertEqual(Incident.objects.filter(resolved_at__isnull=False).count(),1)

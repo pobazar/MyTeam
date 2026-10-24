@@ -37,9 +37,12 @@ def select_groups(people, history, rng=None):
     if count%2==0:
         groups=pairs(list(range(count)))
     else:
-        triples=list(combinations(range(count),3))
-        # Bounded candidate search for large cohorts; exact triple enumeration through 21 people.
-        if count>21:triples=rng.sample(triples,min(128,len(triples)))
+        if count<=21:
+            triples=list(combinations(range(count),3))
+        else:
+            candidates=set()
+            while len(candidates)<128:candidates.add(tuple(sorted(rng.sample(range(count),3))))
+            triples=list(candidates)
         best=None
         for triple in triples:
             rest=pairs([i for i in range(count) if i not in triple])

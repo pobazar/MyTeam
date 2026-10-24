@@ -17,14 +17,6 @@ def feedback_event(sender,instance,**kwargs):
     f=instance
     event(f'feedback:{f.id}:{f.revision}','feedback',f.member.person,f.member.round,{k:getattr(f,k) for k in ('outcome','impression','again','comment','revision')},f.updated_at)
 
-@receiver(post_save,sender=Achievement)
-def awarded(sender,instance,created,**kwargs):
-    if created:event(f'achievement:{instance.id}:awarded','achievement_awarded',instance.person,payload={'key':instance.key})
-
-@receiver(post_delete,sender=Achievement)
-def revoked(sender,instance,**kwargs):
-    event(f'achievement:{instance.id}:revoked','achievement_revoked',instance.person,payload={'key':instance.key})
-
 @receiver(post_save,sender=Notification)
 def delivery(sender,instance,**kwargs):
     n=instance

@@ -60,6 +60,9 @@ def telegram_webhook(request):
             except ValueError:
                 return JsonResponse({'ok':True})
             send_contacts(sender['id'],chat['id'],meeting_id,update_id)
+    # User-initiated replies can run immediately; scheduled broadcasts remain guarded.
+    from .notifications import drain
+    drain(Clock(),limit=1,force=True,kinds=['bot_connected','contacts'])
     return JsonResponse({'ok': True})
 
 from .profiles import ProfileForm
@@ -181,6 +184,12 @@ def operations_health(request):
     if not settings.OPS_SECRET or not constant_time_compare(request.headers.get('Authorization',''),'Bearer '+settings.OPS_SECRET):
         return HttpResponse(status=403)
     from .monitoring import inspect
-    try:failures=inspect(Clock())
+    try:
+        failures=inspect(Clock())
+        from .storage import available
+        if not available():failures.append('storage_unavailable')
     except Exception:return JsonResponse({'status':'unavailable'},status=503)
     return JsonResponse({'status':'degraded' if failures else 'ok','checks':failures},status=503 if failures else 200)
+
+def csrf_failure(request,reason=''):
+    return render(request,'403.html',status=403)

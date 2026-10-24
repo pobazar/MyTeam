@@ -1,0 +1,38 @@
+# Existing MyTeam Go service cannot change native runtime. This describes the replacement.
+# Do not create a new database or any paid service without approval.
+services:
+  - type: web
+    name: myteam-web
+    runtime: python
+    plan: free
+    region: ohio
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
+    startCommand: python manage.py migrate --noinput && gunicorn config.wsgi:application --bind 0.0.0.0:$PORT --workers 2 --timeout 60
+    healthCheckPath: /health/live
+    autoDeployTrigger: off
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.12
+      - key: APP_ENV
+        value: production
+      - key: SEND_TELEGRAM
+        value: 'false'
+      - key: SECRET_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: TG_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_WEBHOOK_SECRET
+        sync: false
+      - key: TELEGRAM_BOT_USERNAME
+        sync: false
+      - key: PUBLIC_URL
+        sync: false
+      - key: ALLOWED_HOSTS
+        sync: false
+      - key: OPS_SECRET
+        sync: false
+# Paid cron, only after explicit approval: schedule '* * * * *' (UTC),
+# command 'python manage.py tick', same app env, no website visits required.
+# Independent watchdog is .github/workflows/monitor.yml, not a timer in the web process.
