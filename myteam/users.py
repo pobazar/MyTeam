@@ -59,6 +59,8 @@ def consume_login(request):
     attempt.consumed_at = timezone.now()
     attempt.save(update_fields=['consumed_at'])
     request.session.cycle_key()
+    from django.middleware.csrf import rotate_token
+    rotate_token(request)
     request.session['person_id'] = str(attempt.person_id)
     del request.session['login_token']
     return True

@@ -16,9 +16,10 @@ def team_identity(raw):
     tokens = key.split()
     compact = ''.join(tokens)
     # Exact transliteration and punctuation; conservative abbreviation against existing names.
+    if not compact:return None,'uncertain'
     all_groups = list(TeamGroup.objects.all())
     for group in all_groups:
-        if group.canonical.replace(' ','') == compact:
+        if group.canonical.replace(' ','') == compact or sorted(group.canonical.split())==sorted(tokens) or ''.join(sorted(group.canonical.split()))==compact:
             return group, 'exact'
     matches = [g for g in all_groups if len(compact) >= 3 and len(g.canonical.split()) >= 3 and ''.join(w[0] for w in g.canonical.split()) == compact]
     if len(matches) == 1:

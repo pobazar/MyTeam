@@ -27,6 +27,8 @@ def login(request):
 
 @require_POST
 def logout(request):
+    from django.middleware.csrf import rotate_token
+    rotate_token(request)
     request.session.flush()
     return redirect('/')
 
