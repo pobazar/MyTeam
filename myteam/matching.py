@@ -10,7 +10,7 @@ def snapshot(p):
 
 
 def validate_draft(r):
-    activity=get_activity(r.activity)
+    activity=get_activity(r.activity,r.rules_version)
     expected=set(r.enrollments.filter(active=True).values_list('person_id',flat=True))
     seen=[]
     meetings=list(r.meetings.prefetch_related('members'))
@@ -46,7 +46,7 @@ def prepare(round_id,clock):
     for meeting in Meeting.objects.filter(round__published_at__isnull=False).select_related('round').order_by('round__starts_at').prefetch_related('members'):
         age=int(meeting.round.starts_at.timestamp()//86400)
         for a,b in combinations(meeting.members.all(),2):history[frozenset((a.person_id,b.person_id))]=age
-    activity=get_activity(r.activity)
+    activity=get_activity(r.activity,r.rules_version)
     if len(people)<activity.minimum_participants:
         for person in people:Unmatched.objects.create(round=r,person=person)
     for group in activity.build_groups(people,history):

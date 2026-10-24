@@ -56,7 +56,7 @@ class Round(Entity):
     @property
     def activity_title(self):
         from .activities import get_activity
-        return get_activity(self.activity).title
+        return get_activity(self.activity,self.rules_version).title
     class Meta:
         constraints = [models.CheckConstraint(condition=Q(ends_at__gt=models.F('starts_at')), name='round_positive_period')]
 
@@ -98,7 +98,7 @@ class Feedback(Entity):
     @property
     def final(self):
         from .activities import get_activity
-        return get_activity(self.member.round.activity).final_feedback(self)
+        return get_activity(self.member.round.activity,self.member.round.rules_version).final_feedback(self)
 
 class Achievement(Entity):
     person = models.ForeignKey(Person, on_delete=models.PROTECT, related_name='achievements')

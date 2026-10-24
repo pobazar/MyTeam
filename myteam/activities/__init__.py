@@ -14,5 +14,9 @@ class Activity(Protocol):
     def instructions(self, same_city: bool) -> str: ...
 from .coffee import RandomCoffee
 ACTIVITIES: dict[str, Activity] = {'random_coffee': RandomCoffee()}
-def get_activity(key):
-    return ACTIVITIES[key]
+VERSIONS = {(activity.key,activity.version):activity for activity in ACTIVITIES.values()}
+def get_activity(key,version=None):
+    current=ACTIVITIES.get(key)
+    if current is not None and (version is None or current.version==version):
+        return current
+    return VERSIONS[key,version]

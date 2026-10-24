@@ -1,7 +1,7 @@
 from datetime import datetime
 from unittest.mock import patch
 from django.test import TestCase
-from myteam.activities import ACTIVITIES
+from myteam.activities import ACTIVITIES,get_activity
 from myteam.activities.coffee import RandomCoffee
 from myteam.clock import FrozenClock,MOSCOW
 from myteam.models import Person,Round,Enrollment,Member,Achievement
@@ -19,6 +19,7 @@ class ActivityContractTests(TestCase):
             def build_groups(self,people,history,rng=None):return [people] if len(people)>=4 else []
             def valid_distribution(self,count,sizes,unmatched):return sizes==[4] and unmatched==0
             def achievement_earned(self,person_id):return False
+        with self.assertRaises(KeyError):get_activity('random_coffee',99)
         with patch.dict(ACTIVITIES,{'isolated_format':IsolatedFormat()}):
             r=ensure_round(datetime(2026,10,28,9,tzinfo=MOSCOW));r.activity='isolated_format';r.save()
             for i in range(4):

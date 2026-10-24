@@ -28,7 +28,7 @@ def save_feedback(person_id,meeting_id,data,clock):
     m=Member.objects.select_for_update().select_related('round').get(person_id=person_id,meeting_id=meeting_id,round__published_at__isnull=False)
     if clock.now()<m.round.starts_at or clock.now()>=m.round.ends_at+timedelta(days=7):
         raise RuleError('Срок изменения обратной связи закончился. Ответ доступен для просмотра.')
-    activity=get_activity(m.round.activity)
+    activity=get_activity(m.round.activity,m.round.rules_version)
     form=activity.feedback_form(data)
     if not form.is_valid():raise RuleError('Проверьте обязательные ответы.')
     f,created=Feedback.objects.get_or_create(member=m,defaults={**form.cleaned_data,'updated_at':clock.now()})
@@ -62,6 +62,6 @@ def schedule_requests(r,clock):
                 f=Feedback.objects.filter(member=member).first()
                 if f and f.final:continue
                 title='Последнее напоминание' if kind=='feedback_last' else 'Как прошла встреча?'
-                enqueue(f'{kind}:{member.id}',kind,member.person.chat_id or member.person.telegram_id,f'МАЙТИМ · {title}\n{get_activity(r.activity).title} {r.starts_at:%d.%m} — {r.ends_at:%d.%m}. Поделись впечатлениями: {settings.PUBLIC_URL}/meetings/{member.meeting_id}/feedback/',member.person,r,now)
+                enqueue(f'{kind}:{member.id}',kind,member.person.chat_id or member.person.telegram_id,f'МАЙТИМ · {title}\n{get_activity(r.activity,r.rules_version).title} {r.starts_at:%d.%m} — {r.ends_at:%d.%m}. Поделись впечатлениями: {settings.PUBLIC_URL}/meetings/{member.meeting_id}/feedback/',member.person,r,now)
 
             Job.objects.update_or_create(key=f'{kind}:{r.id}',defaults={'round':r,'completed_at':now,'error':''})

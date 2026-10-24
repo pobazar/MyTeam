@@ -143,7 +143,7 @@ def meeting_detail(request,meeting_id):
     own=get_object_or_404(Member.objects.select_related('meeting','round'),person=request.person,meeting_id=meeting_id,round__published_at__isnull=False)
     members=list(own.meeting.members.all())
     same=len({m.snapshot['city_key'] for m in members})==1
-    activity=get_activity(own.round.activity)
+    activity=get_activity(own.round.activity,own.round.rules_version)
     return render(request,activity.card_template,{'person':request.person,'meeting':own.meeting,'round':own.round,'members':members,'instructions':activity.instructions(same),'contacts_url':f'https://t.me/{settings.TELEGRAM_BOT_USERNAME}?start=m_{meeting_id}'})
 
 @login_required
@@ -161,7 +161,7 @@ def feedback_view(request,meeting_id):
     existing=Feedback.objects.filter(member=m).first()
     readonly=Clock().now()>=m.round.ends_at+timedelta(days=7)
     initial={key:getattr(existing,key) for key in ('outcome','impression','again','comment')} if existing else {}
-    form=get_activity(m.round.activity).feedback_form(request.POST if request.method=='POST' else None,initial=initial)
+    form=get_activity(m.round.activity,m.round.rules_version).feedback_form(request.POST if request.method=='POST' else None,initial=initial)
     notice=''
     if request.method=='POST' and not readonly and form.is_valid():
         try:
