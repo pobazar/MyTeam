@@ -53,7 +53,10 @@ def drain(clock, transport=None, limit=20, force=False):
     transport = transport or send
     now=clock.now()
     # A crashed sender may have delivered its leased message: never silently resend.
-    Notification.objects.filter(status='sending',leased_until__lt=now).update(status='unknown',last_error='worker_interrupted_unknown')
+    with transaction.atomic():
+        for expired in Notification.objects.select_for_update(skip_locked=True).filter(status='sending',leased_until__lt=now):
+            expired.status='unknown';expired.last_error='worker_interrupted_unknown'
+            expired.save(update_fields=['status','last_error'])
     processed=0
     for _ in range(limit):
         with transaction.atomic():
@@ -80,6 +83,7 @@ def drain(clock, transport=None, limit=20, force=False):
             n.sent_at=clock.now()
             n.telegram_message_id=message_id
         n.leased_until=None
-        n.save(update_fields=['status','last_error','next_attempt_at','sent_at','telegram_message_id','leased_until'])
+        with transaction.atomic():
+            n.save(update_fields=['status','last_error','next_attempt_at','sent_at','telegram_message_id','leased_until'])
         processed+=1
     return processed
