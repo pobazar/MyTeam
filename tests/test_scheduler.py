@@ -56,3 +56,13 @@ class SchedulerTests(TestCase):
         with patch.object(scheduler.KEYS,'get_signing_key_from_jwt',side_effect=jwt.PyJWKClientConnectionError('isolated')),patch.object(scheduler,'tick') as tick:
             self.assertEqual(self.call().status_code,503)
             tick.assert_not_called()
+    @override_settings(SEND_TELEGRAM=True)
+    def test_in_flight_lease_keeps_runner_alive_until_recovery(self):
+        from datetime import timedelta
+        from django.utils import timezone
+        now=timezone.now()
+        Notification.objects.create(key='leased',kind='test',chat_id=1,text='test',status='sending',leased_until=now+timedelta(minutes=5),next_attempt_at=now)
+        with patch.object(scheduler.KEYS,'get_signing_key_from_jwt',return_value=SimpleNamespace(key=self.key.public_key())),patch.object(scheduler,'tick'),patch.object(scheduler,'drain',return_value=0):
+            response=self.call(mode='run')
+            self.assertEqual(response.json()['pending'],1)
+            self.assertGreater(response.json()['retry_after'],0)
