@@ -145,3 +145,24 @@ def meeting_detail(request,meeting_id):
 def history(request):
     entries=Member.objects.filter(person=request.person,round__published_at__isnull=False,round__ends_at__lte=Clock().now()).select_related('round','meeting').order_by('-round__starts_at')
     return render(request,'myteam/history.html',{'person':request.person,'entries':entries})
+
+from datetime import timedelta
+from .models import Feedback
+from .feedback import FeedbackForm,save_feedback
+
+@login_required
+def feedback_view(request,meeting_id):
+    m=get_object_or_404(Member.objects.select_related('round'),person=request.person,meeting_id=meeting_id,round__published_at__isnull=False)
+    existing=Feedback.objects.filter(member=m).first()
+    readonly=Clock().now()>=m.round.ends_at+timedelta(days=7)
+    initial={key:getattr(existing,key) for key in ('outcome','impression','again','comment')} if existing else {}
+    form=FeedbackForm(request.POST if request.method=='POST' else None,initial=initial)
+    notice=''
+    if request.method=='POST' and not readonly and form.is_valid():
+        try:
+            save_feedback(request.person.id,meeting_id,form.cleaned_data,Clock())
+            notice='Спасибо! Ответ сохранён.'
+        except RuleError as e:form.add_error(None,str(e))
+    if readonly:
+        for field in form.fields.values():field.disabled=True
+    return render(request,'myteam/feedback.html',{'person':request.person,'form':form,'readonly':readonly,'round':m.round,'notice':notice})
