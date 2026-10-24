@@ -86,3 +86,37 @@ def onboarding(request):
         request.session['onboarding_step']=step
     title,body=ONBOARDING[step]
     return render(request,'myteam/onboarding.html',{'person':request.person,'heading':title,'body':body,'step':step+1})
+
+from .models import Person, Round, Enrollment, Member
+from .rounds import enroll, RuleError
+from .clock import Clock
+
+@login_required
+def dashboard(request):
+    if not request.person.onboarding_done:return redirect('/onboarding/')
+    now=Clock().now()
+    r=Round.objects.filter(state='open',closes_at__gt=now).order_by('starts_at').first()
+    current=Member.objects.filter(person=request.person,round__published_at__isnull=False,round__starts_at__lte=now,round__ends_at__gt=now).select_related('meeting','round').first()
+    enrolled=bool(r and Enrollment.objects.filter(person=request.person,round=r,active=True).exists())
+    return render(request,'myteam/dashboard.html',{'person':request.person,'next_round':r,'current':current,'enrolled':enrolled,'notice':request.session.pop('notice','')})
+
+@login_required
+@require_POST
+def enrollment(request,round_id):
+    try:
+        active=request.POST.get('action')=='enroll'
+        if request.POST.get('action') not in ('enroll','cancel'):return HttpResponse(status=400)
+        enroll(request.person.id,round_id,active,Clock())
+        request.session['notice']='Ты записан только на этот раунд. На следующий нужно записаться отдельно.' if active else 'Запись отменена. Участвуй, когда захочется.'
+    except (RuleError,Round.DoesNotExist) as e:
+        request.session['notice']=str(e) if isinstance(e,RuleError) else 'Раунд не найден. Обновите страницу.'
+    return redirect('/')
+
+@login_required
+def reconnect(request):
+    request.session.flush()
+    return redirect('/login/')
+
+_original_home=home
+def home(request):
+    return dashboard(request) if request.session.get('person_id') else _original_home(request)
