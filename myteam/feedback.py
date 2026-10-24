@@ -25,7 +25,7 @@ class FeedbackForm(forms.Form):
 @transaction.atomic
 def save_feedback(person_id,meeting_id,data,clock):
     Person.objects.select_for_update().get(pk=person_id)
-    m=Member.objects.select_for_update().select_related('round').get(person_id=person_id,meeting_id=meeting_id,round__published_at__isnull=False)
+    m=Member.objects.select_for_update(of=('self',)).select_related('round').get(person_id=person_id,meeting_id=meeting_id,round__published_at__isnull=False)
     if clock.now()<m.round.starts_at or clock.now()>=m.round.ends_at+timedelta(days=7):
         raise RuleError('Срок изменения обратной связи закончился. Ответ доступен для просмотра.')
     activity=get_activity(m.round.activity,m.round.rules_version)
