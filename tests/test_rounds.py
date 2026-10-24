@@ -9,6 +9,8 @@ class RoundTests(TestCase):
         self.p=Person.objects.create(telegram_id=1,first_name='А',last_name='Б',team='Команда',city='Москва',city_key='moskva',chat_id=1,delivery_verified_at=self.r.closes_at)
     def test_boundary_idempotency_and_no_automatic_enrollment(self):
         clock=FrozenClock(self.r.closes_at-timedelta(microseconds=1))
+        enroll(self.p.id,self.r.id,False,clock)
+        self.assertEqual(Enrollment.objects.count(),0)
         for _ in range(2):enroll(self.p.id,self.r.id,True,clock)
         self.assertEqual(Enrollment.objects.count(),1)
         enroll(self.p.id,self.r.id,False,clock)
@@ -20,3 +22,14 @@ class RoundTests(TestCase):
     def test_incomplete_profile_cannot_enroll(self):
         self.p.last_name='';self.p.save()
         with self.assertRaises(RuleError):enroll(self.p.id,self.r.id,True,FrozenClock(self.r.closes_at-timedelta(days=1)))
+
+    def test_closed_signup_still_shows_existing_registration(self):
+        from unittest.mock import patch
+        self.p.onboarding_done=True;self.p.save()
+        enroll(self.p.id,self.r.id,True,FrozenClock(self.r.closes_at-timedelta(days=1)))
+        session=self.client.session;session['person_id']=str(self.p.id);session.save()
+        with patch('myteam.views.Clock.now',return_value=self.r.closes_at):
+            response=self.client.get('/')
+        self.assertContains(response,'Запись закрыта.')
+        self.assertContains(response,'Ты записан.')
+        self.assertNotContains(response,'Отменить запись')

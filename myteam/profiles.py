@@ -10,13 +10,16 @@ def normalized(value):
     return ' '.join(re.findall(r'[a-z0-9]+', ''.join(CYR.get(c,c) for c in value)))
 
 def team_identity(raw):
-    key = normalized(raw)
+    # Generic word translation, never a directory of team names. Unknown words remain separate.
+    vocabulary={'komanda':'team','podderzhka':'support','razrabotka':'development','razrabotki':'development','prodazh':'sales','prodazhi':'sales','analitika':'analytics','analitiki':'analytics','klientskaya':'customer','klientskoi':'customer','rosta':'growth','rost':'growth'}
+    key = ' '.join(vocabulary.get(word,word) for word in normalized(raw).split())
     tokens = key.split()
     compact = ''.join(tokens)
     # Exact transliteration and punctuation; conservative abbreviation against existing names.
+    if not compact:return None,'uncertain'
     all_groups = list(TeamGroup.objects.all())
     for group in all_groups:
-        if group.canonical.replace(' ','') == compact:
+        if group.canonical.replace(' ','') == compact or sorted(group.canonical.split())==sorted(tokens) or ''.join(sorted(group.canonical.split()))==compact:
             return group, 'exact'
     matches = [g for g in all_groups if len(compact) >= 3 and len(g.canonical.split()) >= 3 and ''.join(w[0] for w in g.canonical.split()) == compact]
     if len(matches) == 1:

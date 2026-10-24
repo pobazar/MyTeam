@@ -53,6 +53,10 @@ class Round(Entity):
     prepared_at = models.DateTimeField(null=True)
     published_at = models.DateTimeField(null=True)
     preparation_error = models.CharField(max_length=200, blank=True)
+    @property
+    def activity_title(self):
+        from .activities import get_activity
+        return get_activity(self.activity,self.rules_version).title
     class Meta:
         constraints = [models.CheckConstraint(condition=Q(ends_at__gt=models.F('starts_at')), name='round_positive_period')]
 
@@ -93,7 +97,8 @@ class Feedback(Entity):
     updated_at = models.DateTimeField(default=timezone.now)
     @property
     def final(self):
-        return self.outcome == 'no' or (self.outcome == 'yes' and bool(self.impression and self.again))
+        from .activities import get_activity
+        return get_activity(self.member.round.activity,self.member.round.rules_version).final_feedback(self)
 
 class Achievement(Entity):
     person = models.ForeignKey(Person, on_delete=models.PROTECT, related_name='achievements')

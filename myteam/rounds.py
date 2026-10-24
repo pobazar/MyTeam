@@ -23,6 +23,8 @@ def enroll(person_id,round_id,active,clock):
         raise RuleError('Запись закрыта. На следующий раунд можно будет записаться отдельно.')
     if active and (not p.complete or not p.reachable):
         raise RuleError('Заполните профиль и подключите сообщения бота перед записью.')
+    if not active and not Enrollment.objects.filter(person=p,round=r).exists():
+        return None
     e,created=Enrollment.objects.get_or_create(person=p,round=r,defaults={'active':active})
     if not created and e.active!=active:
         e.active=active

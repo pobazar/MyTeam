@@ -11,12 +11,19 @@ import urllib.error
 import zipfile
 
 STATE=Path('monitor-state/state.json')
+class SafeRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self,req,fp,code,msg,headers,newurl):
+        result=super().redirect_request(req,fp,code,msg,headers,newurl)
+        if result and __import__('urllib.parse',fromlist=['urlsplit']).urlsplit(req.full_url).hostname!=__import__('urllib.parse',fromlist=['urlsplit']).urlsplit(newurl).hostname:
+            result.remove_header('Authorization')
+        return result
+OPENER=urllib.request.build_opener(SafeRedirect())
 def request(url,token=None,payload=None,timeout=60):
     headers={'Accept':'application/json'}
     if token:headers['Authorization']='Bearer '+token
     data=json.dumps(payload).encode() if payload is not None else None
     if data:headers['Content-Type']='application/json'
-    with urllib.request.urlopen(urllib.request.Request(url,data=data,headers=headers),timeout=timeout) as r:return r.read()
+    with OPENER.open(urllib.request.Request(url,data=data,headers=headers),timeout=timeout) as r:return r.read()
 
 def restore():
     repo=os.environ['GITHUB_REPOSITORY']

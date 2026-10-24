@@ -27,6 +27,8 @@ def login(request):
 
 @require_POST
 def logout(request):
+    from django.middleware.csrf import rotate_token
+    rotate_token(request)
     request.session.flush()
     return redirect('/')
 
@@ -60,6 +62,9 @@ def telegram_webhook(request):
             except ValueError:
                 return JsonResponse({'ok':True})
             send_contacts(sender['id'],chat['id'],meeting_id,update_id)
+    # User-initiated replies can run immediately; scheduled broadcasts remain guarded.
+    from .notifications import drain
+    drain(Clock(),limit=1,force=True,kinds=['bot_connected','contacts'])
     return JsonResponse({'ok': True})
 
 from .profiles import ProfileForm
@@ -103,10 +108,10 @@ from .clock import Clock
 def dashboard(request):
     if not request.person.onboarding_done:return redirect('/onboarding/')
     now=Clock().now()
-    r=Round.objects.filter(state='open',closes_at__gt=now).order_by('starts_at').first()
+    r=Round.objects.filter(starts_at__gt=now).exclude(state='expired').order_by('starts_at').first()
     current=Member.objects.filter(person=request.person,round__published_at__isnull=False,round__starts_at__lte=now,round__ends_at__gt=now).select_related('meeting','round').first()
     enrolled=bool(r and Enrollment.objects.filter(person=request.person,round=r,active=True).exists())
-    return render(request,'myteam/dashboard.html',{'person':request.person,'next_round':r,'current':current,'enrolled':enrolled,'notice':request.session.pop('notice','')})
+    return render(request,'myteam/dashboard.html',{'person':request.person,'next_round':r,'current':current,'enrolled':enrolled,'registration_open':bool(r and r.state=='open' and now<r.closes_at),'notice':request.session.pop('notice','')})
 
 @login_required
 @require_POST
@@ -138,8 +143,8 @@ def meeting_detail(request,meeting_id):
     own=get_object_or_404(Member.objects.select_related('meeting','round'),person=request.person,meeting_id=meeting_id,round__published_at__isnull=False)
     members=list(own.meeting.members.all())
     same=len({m.snapshot['city_key'] for m in members})==1
-    activity=get_activity(own.round.activity)
-    return render(request,'myteam/meeting.html',{'person':request.person,'meeting':own.meeting,'round':own.round,'members':members,'instructions':activity.instructions(same),'contacts_url':f'https://t.me/{settings.TELEGRAM_BOT_USERNAME}?start=m_{meeting_id}'})
+    activity=get_activity(own.round.activity,own.round.rules_version)
+    return render(request,activity.card_template,{'person':request.person,'meeting':own.meeting,'round':own.round,'members':members,'instructions':activity.instructions(same),'contacts_url':f'https://t.me/{settings.TELEGRAM_BOT_USERNAME}?start=m_{meeting_id}'})
 
 @login_required
 def history(request):
@@ -156,7 +161,7 @@ def feedback_view(request,meeting_id):
     existing=Feedback.objects.filter(member=m).first()
     readonly=Clock().now()>=m.round.ends_at+timedelta(days=7)
     initial={key:getattr(existing,key) for key in ('outcome','impression','again','comment')} if existing else {}
-    form=FeedbackForm(request.POST if request.method=='POST' else None,initial=initial)
+    form=get_activity(m.round.activity,m.round.rules_version).feedback_form(request.POST if request.method=='POST' else None,initial=initial)
     notice=''
     if request.method=='POST' and not readonly and form.is_valid():
         try:
@@ -181,6 +186,12 @@ def operations_health(request):
     if not settings.OPS_SECRET or not constant_time_compare(request.headers.get('Authorization',''),'Bearer '+settings.OPS_SECRET):
         return HttpResponse(status=403)
     from .monitoring import inspect
-    try:failures=inspect(Clock())
+    try:
+        failures=inspect(Clock())
+        from .storage import available
+        if not available():failures.append('storage_unavailable')
     except Exception:return JsonResponse({'status':'unavailable'},status=503)
     return JsonResponse({'status':'degraded' if failures else 'ok','checks':failures},status=503 if failures else 200)
+
+def csrf_failure(request,reason=''):
+    return render(request,'403.html',status=403)
