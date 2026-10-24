@@ -32,7 +32,7 @@ def owner_message(key, kind, text, round=None, now=None):
 def eligible(notification, now):
     if notification.person_id:
         p = Person.objects.get(pk=notification.person_id)
-        if (notification.kind!='bot_connected' and not p.reachable) or p.chat_id!=notification.chat_id:
+        if (notification.kind not in ('bot_connected','contacts') and not p.reachable) or p.chat_id!=notification.chat_id:
             return False
     if notification.kind.startswith('feedback'):
         r=notification.round
@@ -47,7 +47,7 @@ def eligible(notification, now):
         return False
     return True
 
-def drain(clock, transport=None, limit=20, force=False):
+def drain(clock, transport=None, limit=20, force=False, kinds=None):
     if not settings.SEND_TELEGRAM and not force:
         return 0
     transport = transport or send
@@ -60,7 +60,9 @@ def drain(clock, transport=None, limit=20, force=False):
     processed=0
     for _ in range(limit):
         with transaction.atomic():
-            n=Notification.objects.select_for_update(skip_locked=True).filter(status='pending',next_attempt_at__lte=now).order_by('next_attempt_at','created_at').first()
+            candidates=Notification.objects.select_for_update(skip_locked=True).filter(status='pending',next_attempt_at__lte=now)
+            if kinds is not None:candidates=candidates.filter(kind__in=kinds)
+            n=candidates.order_by('next_attempt_at','created_at').first()
             if n is None:break
             if not eligible(n,now):
                 n.status='cancelled'
@@ -82,10 +84,10 @@ def drain(clock, transport=None, limit=20, force=False):
             n.status='sent'
             n.sent_at=clock.now()
             n.telegram_message_id=message_id
-            if n.kind=='bot_connected' and n.person_id:
-                Person.objects.filter(pk=n.person_id).update(delivery_verified_at=n.sent_at,delivery_blocked=False)
         n.leased_until=None
         with transaction.atomic():
+            if n.status=='sent' and n.kind in ('bot_connected','contacts') and n.person_id:
+                Person.objects.filter(pk=n.person_id).update(delivery_verified_at=n.sent_at,delivery_blocked=False)
             n.save(update_fields=['status','last_error','next_attempt_at','sent_at','telegram_message_id','leased_until'])
         processed+=1
     return processed

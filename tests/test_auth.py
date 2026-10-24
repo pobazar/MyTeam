@@ -33,3 +33,19 @@ class AuthTests(TestCase):
         self.assertNotIn('person_id',other.session)
         self.client.post('/login/')
         self.assertEqual(Person.objects.get().id.hex,str(self.client.session['person_id']).replace('-',''))
+
+class WebhookTests(TestCase):
+    @override_settings(TELEGRAM_WEBHOOK_SECRET='test-secret',SEND_TELEGRAM=False)
+    def test_signed_start_deduplicates_and_acknowledges_delivery(self):
+        from unittest.mock import patch
+        from myteam.models import Notification
+        self.client.get('/login/')
+        token=self.client.session['login_token']
+        payload={'update_id':42,'message':{'from':{'id':42},'chat':{'type':'private','id':42},'text':'/start l_'+token}}
+        with patch('myteam.notifications.send',return_value=7) as send:
+            for _ in range(2):
+                response=self.client.post('/telegram/webhook/',data=json.dumps(payload),content_type='application/json',HTTP_X_TELEGRAM_BOT_API_SECRET_TOKEN='test-secret')
+                self.assertEqual(response.status_code,200)
+        self.assertEqual(send.call_count,1)
+        self.assertTrue(Person.objects.get().reachable)
+        self.assertEqual(Notification.objects.get().status,'sent')

@@ -34,8 +34,15 @@ def save_feedback(person_id,meeting_id,data,clock):
         for k,v in form.cleaned_data.items():setattr(f,k,v)
         f.revision+=1;f.updated_at=clock.now();f.save()
     if Feedback.objects.filter(member__person_id=person_id,outcome='yes').exists():
-        Achievement.objects.get_or_create(person_id=person_id,key='first_coffee')
-    else:Achievement.objects.filter(person_id=person_id,key='first_coffee').delete()
+        achievement,awarded=Achievement.objects.get_or_create(person_id=person_id,key='first_coffee',defaults={'created_at':clock.now()})
+        if awarded:
+            from .analytics import event
+            event(f'achievement:{achievement.id}:awarded','achievement_awarded',m.person,m.round,{'key':'first_coffee'},clock.now())
+    else:
+        from .analytics import event
+        for achievement in Achievement.objects.filter(person_id=person_id,key='first_coffee'):
+            event(f'achievement:{achievement.id}:revoked','achievement_revoked',m.person,m.round,{'key':'first_coffee'},clock.now())
+            achievement.delete()
     return f
 
 def request_times(r):

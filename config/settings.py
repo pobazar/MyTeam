@@ -48,3 +48,5 @@ OPS_SECRET = os.getenv('OPS_SECRET', '')
 DB_WARNING_BYTES = int(os.getenv('DB_WARNING_BYTES', '0'))
 CSRF_FAILURE_VIEW = 'myteam.views.csrf_failure'
 LOGGING = {'version':1,'disable_existing_loggers':False,'handlers':{'null':{'class':'myteam.logging.SafeErrorHandler'}},'loggers':{'django.request':{'handlers':['null'],'propagate':False},'django.server':{'handlers':['null'],'propagate':False}}}
+SUPABASE_URL = os.getenv('SUPABASE_URL', '')
+SUPABASE_SERVICE_ROLE_KEY = os.getenv('SUPABASE_SERVICE_ROLE_KEY', '')
