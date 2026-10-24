@@ -34,6 +34,3 @@ class PagesTests(TestCase):
         self.assertEqual(response['Access-Control-Allow-Origin'],self.origin)
         self.assertNotIn('Access-Control-Allow-Credentials',response)
         self.assertEqual(self.client.options('/login/status/',HTTP_ORIGIN='https://untrusted.invalid',HTTP_ACCESS_CONTROL_REQUEST_METHOD='POST').status_code,403)
-    @override_settings(OPS_SECRET='operator-secret')
-    def test_operator_health_token_is_not_confused_with_user_session(self):
-        self.assertEqual(self.client.get('/health/operations',HTTP_AUTHORIZATION='Bearer operator-secret').status_code,503)

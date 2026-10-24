@@ -13,7 +13,7 @@ class PagesSessionMiddleware:
             response=HttpResponse(status=204 if allowed else 403)
         else:
             authorization=request.headers.get('Authorization','')
-            if authorization.startswith('Bearer ') and request.path!='/health/operations':
+            if authorization.startswith('Bearer '):
                 token=authorization.removeprefix('Bearer ')
                 if not re.fullmatch('[a-z0-9]{32}',token):
                     response=JsonResponse({'error':'invalid_session'},status=401)

@@ -2,7 +2,7 @@
 # Do not create a new database or any paid service without approval.
 services:
   - type: web
-    name: myteam-web
+    name: myteam-backend
     runtime: python
     plan: free
     region: ohio
@@ -30,8 +30,6 @@ services:
       - key: PUBLIC_URL
         sync: false
       - key: ALLOWED_HOSTS
-        sync: false
-      - key: OPS_SECRET
         sync: false
       - key: FRONTEND_URL
         value: https://pobazar.github.io/MyTeam
@@ -76,8 +74,6 @@ services:
       - key: OWNER_TELEGRAM_ID
         sync: false
       - key: OWNER_CHAT_ID
-        sync: false
-      - key: OPS_SECRET
         sync: false
       - key: SUPABASE_URL
         sync: false
