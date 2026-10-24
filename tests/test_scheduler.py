@@ -66,3 +66,42 @@ class SchedulerTests(TestCase):
             response=self.call(mode='run')
             self.assertEqual(response.json()['pending'],1)
             self.assertGreater(response.json()['retry_after'],0)
+    @override_settings(SEND_TELEGRAM=True,OWNER_TELEGRAM_ID='1',OWNER_CHAT_ID='1')
+    def test_oidc_endpoint_runs_complete_event_cycle_with_isolated_transport(self):
+        from datetime import datetime,timedelta
+        from myteam.clock import MOSCOW
+        from myteam.rounds import ensure_round
+        from myteam.models import Person,Enrollment,Member,Feedback,Achievement
+        from myteam.feedback import save_feedback
+        from myteam.clock import FrozenClock
+        r=ensure_round(datetime(2026,10,28,9,tzinfo=MOSCOW))
+        people=[Person.objects.create(telegram_id=i,chat_id=i,first_name='Имя',last_name='Фамилия',team='Команда',city='Москва',city_key='moskva',onboarding_done=True,delivery_verified_at=r.closes_at) for i in (1,2)]
+        for person in people:Enrollment.objects.create(person=person,round=r)
+        def run_at(instant):
+            with patch('myteam.clock.Clock.now',return_value=instant):
+                result=self.call(mode='run')
+                self.assertEqual(result.status_code,200)
+                return result.json()
+        with patch.object(scheduler.KEYS,'get_signing_key_from_jwt',return_value=SimpleNamespace(key=self.key.public_key())),patch('myteam.notifications.send',return_value=123):
+            run_at(r.closes_at)
+            r.refresh_from_db();self.assertEqual(r.state,'prepared')
+            self.assertEqual(Member.objects.filter(round=r).count(),2)
+            self.assertEqual(Notification.objects.filter(kind='owner_prepared',status='sent').count(),1)
+            run_at(r.starts_at);run_at(r.starts_at)
+            self.assertEqual(Notification.objects.filter(kind='meeting',status='sent').count(),2)
+            self.assertEqual(Notification.objects.filter(kind='owner_published',status='sent').count(),1)
+            upcoming=ensure_round(r.ends_at)
+            self.assertFalse(Enrollment.objects.filter(round=upcoming).exists())
+            Enrollment.objects.create(person=people[0],round=upcoming)
+            thursday=r.starts_at+timedelta(days=1)
+            run_at(thursday);run_at(thursday)
+            self.assertEqual(Notification.objects.filter(kind='signup_invite',status='sent',person=people[1]).count(),1)
+            self.assertFalse(Notification.objects.filter(kind='signup_invite',person=people[0]).exists())
+            meeting=Member.objects.get(round=r,person=people[0]).meeting_id
+            tuesday=r.starts_at+timedelta(days=6)
+            save_feedback(people[0].id,meeting,{'outcome':'yes','impression':'positive','again':'yes'},FrozenClock(tuesday))
+            run_at(tuesday);run_at(tuesday)
+            self.assertEqual(Notification.objects.filter(kind='feedback_first',status='sent',person=people[1]).count(),1)
+            self.assertFalse(Notification.objects.filter(kind='feedback_first',person=people[0]).exists())
+            self.assertEqual(Achievement.objects.count(),1)
+            self.assertFalse(Notification.objects.filter(kind='feedback_last').exists())
