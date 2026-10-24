@@ -1,0 +1,35 @@
+name: Independent MyTeam monitor
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: myteam-external-monitor
+  cancel-in-progress: false
+jobs:
+  monitor:
+    if: vars.MYTEAM_MONITOR_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/external_monitor.py
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PUBLIC_URL: ${{ vars.MYTEAM_PUBLIC_URL }}
+          OPS_SECRET: ${{ secrets.MYTEAM_OPS_SECRET }}
+          TG_BOT_TOKEN: ${{ secrets.MYTEAM_TG_BOT_TOKEN }}
+          OWNER_CHAT_ID: ${{ secrets.MYTEAM_OWNER_CHAT_ID }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: myteam-monitor-state
+          path: monitor-state/state.json
+          retention-days: 90
+          if-no-files-found: error

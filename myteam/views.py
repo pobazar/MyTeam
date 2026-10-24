@@ -166,3 +166,21 @@ def feedback_view(request,meeting_id):
     if readonly:
         for field in form.fields.values():field.disabled=True
     return render(request,'myteam/feedback.html',{'person':request.person,'form':form,'readonly':readonly,'round':m.round,'notice':notice})
+
+from django.db import connection
+
+def ready(request):
+    try:
+        with connection.cursor() as cursor:cursor.execute('SELECT 1')
+        Person.objects.exists()
+    except Exception:
+        return JsonResponse({'status':'unavailable'},status=503)
+    return JsonResponse({'status':'ok'})
+
+def operations_health(request):
+    if not settings.OPS_SECRET or not constant_time_compare(request.headers.get('Authorization',''),'Bearer '+settings.OPS_SECRET):
+        return HttpResponse(status=403)
+    from .monitoring import inspect
+    try:failures=inspect(Clock())
+    except Exception:return JsonResponse({'status':'unavailable'},status=503)
+    return JsonResponse({'status':'degraded' if failures else 'ok','checks':failures},status=503 if failures else 200)
