@@ -22,7 +22,7 @@ Cron-сервис фактически не создан. Его реальны�
 
 ## Внешний контроль и отложенные проверки
 
-Владелец вручную добавляет GitHub Actions Secrets: MYTEAM_OPS_SECRET из Render OPS_SECRET; MYTEAM_TG_BOT_TOKEN из TG_BOT_TOKEN; MYTEAM_OWNER_CHAT_ID=776767993. Variables: MYTEAM_PUBLIC_URL=https://myteam-web.onrender.com, MYTEAM_MONITOR_ENABLED=true после запуска cron. Текущая интеграция GitHub получает 403 при чтении/записи Secrets/Variables, их конфигурация не подтверждена. До успешного реального workflow watchdog не считается включённым.
+Владелец вручную добавляет только GitHub Actions Secrets: MYTEAM_OPS_SECRET из Render OPS_SECRET и MYTEAM_TG_BOT_TOKEN из TG_BOT_TOKEN. Проверенный Chat ID 776767993, адрес Pages и адрес API находятся в коде; workflow включён без Variables. Пока cron не запущен, монитор корректно сообщает об отсутствии heartbeat. Текущая интеграция GitHub получает 403 при чтении/записи Secrets/Variables, их конфигурация не подтверждена. До успешного реального workflow watchdog не считается включённым.
 
 Реальная проверка контактов двух аккаунтов без username отложена владельцем. Модульные проверки прав и inline-ссылок выполнены. Тестовые расписание и рассылки никогда не прогоняются на настоящих участниках.
 

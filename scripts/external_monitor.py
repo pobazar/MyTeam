@@ -10,6 +10,10 @@ import urllib.request
 import urllib.error
 import zipfile
 
+PAGES_URL = 'https://pobazar.github.io/MyTeam/'
+API_URL = 'https://myteam-web.onrender.com'
+OWNER_CHAT_ID = 776767993
+
 STATE=Path('monitor-state/state.json')
 class SafeRedirect(urllib.request.HTTPRedirectHandler):
     def redirect_request(self,req,fp,code,msg,headers,newurl):
@@ -35,7 +39,7 @@ def restore():
     with zipfile.ZipFile(io.BytesIO(blob)) as z:return json.loads(z.read('state.json'))
 
 def send(text):
-    body={'chat_id':int(os.environ['OWNER_CHAT_ID']),'text':text}
+    body={'chat_id':OWNER_CHAT_ID,'text':text}
     response=json.loads(request('https://api.telegram.org/bot'+os.environ['TG_BOT_TOKEN']+'/sendMessage',payload=body,timeout=20))
     return bool(response.get('ok'))
 
@@ -44,13 +48,14 @@ def main():
     state=restore()
     now=time.time()
     try:
-        data=json.loads(request(os.environ['PUBLIC_URL'].rstrip('/')+'/health/operations',os.environ['OPS_SECRET']))
+        request(PAGES_URL)
+        data=json.loads(request(API_URL+'/health/operations',os.environ['OPS_SECRET']))
         bad=data.get('status')!='ok'
     except Exception:bad=True
     previous=bool(state.get('open'))
     should_send=(bad and (not previous or now-state.get('last_sent',0)>86400)) or (not bad and previous)
     if should_send:
-        text='МАЙТИМ: сервис, БД или недельное расписание недоступны. Проверьте Render и health-check. Время UTC: '+time.strftime('%Y-%m-%d %H:%M',time.gmtime(now)) if bad else 'МАЙТИМ: работа сервиса и расписания восстановлена.'
+        text='МАЙТИМ: сайт, API, БД или недельное расписание недоступны. Проверьте Render и health-check. Время UTC: '+time.strftime('%Y-%m-%d %H:%M',time.gmtime(now)) if bad else 'МАЙТИМ: работа сервиса и расписания восстановлена.'
         try:
             if send(text):state.update(open=bad,last_sent=now)
         except Exception:
