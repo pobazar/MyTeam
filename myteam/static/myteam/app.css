@@ -1,0 +1,31 @@
+@import url('tokens.css');
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background-base-alt); color: var(--text-primary); font: 17px/1.6 system-ui, sans-serif; }
+header, main, footer { width: min(100% - 32px, 960px); margin-inline: auto; }
+header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-block: 24px; }
+.brand { color: var(--text-primary); font-size: 24px; font-weight: 850; text-decoration: none; letter-spacing: -.04em; }
+nav { display: flex; flex-wrap: wrap; gap: 18px; }
+a { color: var(--text-action); text-underline-offset: 4px; overflow-wrap: anywhere; }
+h1 { font-size: clamp(28px, 5vw, 42px); line-height: 1.2; margin-block: 16px 24px; letter-spacing: -.035em; }
+h2 { font-size: 23px; line-height: 1.35; margin-block: 0 16px; }
+h3 { font-size: 19px; }
+p { margin-block: 0 16px; }
+.card { background: var(--background-base); border: 1px solid var(--border-normal); border-radius: 20px; padding: clamp(20px, 4vw, 32px); margin-bottom: 24px; min-width: 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 24px; }
+label { display: block; font-weight: 600; margin-top: 16px; }
+input, select, textarea { font: inherit; width: 100%; min-width: 0; padding: 12px; border: 1px solid var(--border-normal); border-radius: 10px; background: var(--background-base); color: var(--text-primary); }
+textarea { min-height: 100px; resize: vertical; }
+button, .button { display: inline-block; border: 0; border-radius: 12px; padding: 13px 22px; min-height: 48px; font: inherit; font-weight: 650; cursor: pointer; background: var(--background-accent-1); color: var(--text-primary-on-accent-1); text-decoration: none; margin-block: 16px 0; max-width: 100%; }
+button:hover, .button:hover { background: var(--state-background-accent-1-hover); }
+button.secondary { background: var(--background-neutral-1); }
+button:disabled { opacity: .6; cursor: wait; }
+:focus-visible { outline: 3px solid var(--border-focus); outline-offset: 4px; }
+.muted, footer { color: var(--text-secondary); }
+.notice { padding: 16px; background: var(--background-base); border-left: 4px solid var(--background-accent-2); margin-block: 16px; }
+.error, .errorlist { color: var(--text-negative); }
+.errorlist { padding-left: 20px; }
+.badge { display: inline-block; background: var(--background-accent-1); color: var(--text-primary-on-accent-1); border-radius: 30px; padding: 8px 16px; }
+footer { font-size: 14px; padding-block: 32px; }
+form.busy [data-busy] { display: inline; }
+[data-busy] { display: none; }
+@media (max-width: 480px) { nav { gap: 12px; font-size: 15px; } button, .button { width: 100%; text-align: center; } }
