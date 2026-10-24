@@ -52,6 +52,14 @@ def telegram_webhook(request):
             return JsonResponse({'ok': True})
         if text.startswith('/start l_'):
             approve_login(text.removeprefix('/start l_').strip(), sender, chat['id'])
+        elif text.startswith('/start m_'):
+            from .contacts import send_contacts
+            import uuid
+            try:
+                meeting_id=uuid.UUID(text.removeprefix('/start m_').strip())
+            except ValueError:
+                return JsonResponse({'ok':True})
+            send_contacts(sender['id'],chat['id'],meeting_id,update_id)
     return JsonResponse({'ok': True})
 
 from .profiles import ProfileForm
@@ -120,3 +128,20 @@ def reconnect(request):
 _original_home=home
 def home(request):
     return dashboard(request) if request.session.get('person_id') else _original_home(request)
+
+from django.shortcuts import get_object_or_404
+from .activities import get_activity
+from .models import Meeting
+
+@login_required
+def meeting_detail(request,meeting_id):
+    own=get_object_or_404(Member.objects.select_related('meeting','round'),person=request.person,meeting_id=meeting_id,round__published_at__isnull=False)
+    members=list(own.meeting.members.all())
+    same=len({m.snapshot['city_key'] for m in members})==1
+    activity=get_activity(own.round.activity)
+    return render(request,'myteam/meeting.html',{'person':request.person,'meeting':own.meeting,'round':own.round,'members':members,'instructions':activity.instructions(same),'contacts_url':f'https://t.me/{settings.TELEGRAM_BOT_USERNAME}?start=m_{meeting_id}'})
+
+@login_required
+def history(request):
+    entries=Member.objects.filter(person=request.person,round__published_at__isnull=False,round__ends_at__lte=Clock().now()).select_related('round','meeting').order_by('-round__starts_at')
+    return render(request,'myteam/history.html',{'person':request.person,'entries':entries})
