@@ -9,6 +9,7 @@ import urllib.request
 
 API='https://myteam-backend-eu.onrender.com'
 ENDPOINT=API+'/internal/schedule/'
+SCHEDULES={'0 6 * * 2':'feedback','0 18 * * 2':'prepare','0 6 * * 3':'publish','0 6 * * 4':'invite'}
 
 def request(url,headers=None,data=None,timeout=45):
     # Never follow a redirect carrying the GitHub credential or signed identity.
@@ -24,20 +25,27 @@ def identity():
     return result['value']
 
 def main():
-    verify=os.getenv('MYTEAM_VERIFY_ONLY')=='true'
+    cron=os.getenv('MYTEAM_SCHEDULE','')
+    event=SCHEDULES.get(cron) if cron else os.getenv('MYTEAM_EVENT','verify')
+    if event not in ('verify','feedback','prepare','publish','invite'):
+        print('Unknown scheduler event; nothing executed.');return 1
+    verify=event=='verify'
+    body={'mode':'verify'} if verify else {'mode':'run','event':event}
+    if not verify and os.getenv('MYTEAM_ROUND_DATE'):body['round_date']=os.environ['MYTEAM_ROUND_DATE']
     deadline=time.monotonic()+70*60
     while time.monotonic()<deadline:
         try:
             # A cold free Render instance can take longer than a request timeout to wake up.
             request(API+'/health/ready',timeout=45)
             token=identity()
-            result=request(ENDPOINT,{'Content-Type':'application/json','X-Myteam-Scheduler-Token':token},json.dumps({'mode':'verify' if verify else 'run'}).encode())
+            result=request(ENDPOINT,{'Content-Type':'application/json','X-Myteam-Scheduler-Token':token},json.dumps(body).encode())
             if verify:
                 if result.get('status')!='verified':raise ValueError()
                 print('GitHub identity and backend database verified. No stages or deliveries executed.')
                 return 0
-            print('Event batch:',json.dumps({k:result.get(k) for k in ('status','processed','pending','stage_errors')}))
-            if result.get('status')=='ok' and result.get('pending')==0:return 0
+            if result.get('round_date'):body['round_date']=result['round_date']
+            print('Event batch:',json.dumps({k:result.get(k) for k in ('event','round_date','status','skipped','processed','pending','stage_errors')}))
+            if result.get('status') in ('ok','paused') and result.get('pending')==0:return 0
             delay=max(1,min(60,int(result.get('retry_after') or 30)))
         except urllib.error.HTTPError as error:
             # No exception bodies or URLs: they can contain credentials.
