@@ -16,14 +16,14 @@ class PagesSessionMiddleware:
             if authorization.startswith('Bearer '):
                 token=authorization.removeprefix('Bearer ')
                 if not re.fullmatch('[a-z0-9]{32}',token):
-                    response=JsonResponse({'error':'invalid_session'},status=401)
+                    response=JsonResponse({'status':'logged_out'}) if request.path=='/api/logout/' else JsonResponse({'error':'invalid_session'},status=401)
                 else:
                     from django.contrib.sessions.backends.db import SessionStore
                     session=SessionStore(session_key=token)
                     # Load once; Django reuses the cached data for CSRF and the view.
                     session.get('person_id')
                     if session.session_key!=token:
-                        response=JsonResponse({'error':'expired_session'},status=401)
+                        response=JsonResponse({'status':'logged_out'}) if request.path=='/api/logout/' else JsonResponse({'error':'expired_session'},status=401)
                     else:
                         request.session=session
                         response=self.get_response(request)
@@ -44,7 +44,8 @@ def bootstrap(request):
     if request.method!='GET' or request.headers.get('Origin') not in settings.FRONTEND_ORIGINS:
         return HttpResponse(status=403)
     if not request.session.session_key:request.session.create()
-    return JsonResponse({'session':request.session.session_key})
+    from django.middleware.csrf import get_token
+    return JsonResponse({'session':request.session.session_key,'csrf_token':get_token(request)})
 
 def web_url(path='/'):
     return settings.FRONTEND_URL.rstrip('/')+'/#'+path if settings.FRONTEND_URL else settings.PUBLIC_URL+path

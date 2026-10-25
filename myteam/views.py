@@ -120,36 +120,10 @@ from .clock import Clock
 
 @login_required
 def dashboard(request):
-    from .rounds import upcoming_start
-    from datetime import timedelta
-    from .models import Unmatched
-    now=Clock().now()
-    next_start=upcoming_start(now)
-    week_start=next_start-timedelta(days=7)
-    from django.db.models import Exists,OuterRef
-    rounds={item.starts_at:item for item in Round.objects.filter(starts_at__in=[week_start,next_start]).annotate(
-        is_enrolled=Exists(Enrollment.objects.filter(person=request.person,round_id=OuterRef('pk'),active=True)),
-        is_unmatched=Exists(Unmatched.objects.filter(person=request.person,round_id=OuterRef('pk'))))}
-    week=rounds.get(week_start)
-    r=rounds.get(next_start)
-    if r and r.state=='expired':r=None
-    current=Member.objects.filter(person=request.person,round=week,round__published_at__isnull=False).select_related('meeting','round','feedback').first() if week and week.published_at else None
-    current_enrolled=bool(week and week.is_enrolled)
-    answer=getattr(current,'feedback',None) if current else None
-    members=list(current.meeting.members.all()) if current else []
-    activity=get_activity(week.activity,week.rules_version) if week else None
-    enrolled=bool(r and r.is_enrolled)
-    return render(request,'myteam/dashboard.html',{
-        'person':request.person,'next_round':r,'next_start':next_start,'next_end':next_start+timedelta(days=7),
-        'current':current,'week':week,'week_start':week_start,'week_end':next_start,'answer':answer,
-        'finished':bool(answer and answer.final),'members':members,'current_enrolled':current_enrolled,
-        'unmatched':bool(week and week.is_unmatched),
-        'new_here':request.person.created_at>=week_start,'enrolled':enrolled,
-        'activity_template':activity.card_template if activity else '',
-        'instructions':activity.instructions(len({m.snapshot['city_key'] for m in members})==1) if current else '',
-        'contacts_url':f'https://t.me/{settings.TELEGRAM_BOT_USERNAME}?start=m_{current.meeting_id}' if current else '',
-        'registration_open':bool(r and r.state=='open' and now<r.closes_at),
-        'notice':request.session.pop('notice','')})
+    from .read_models import dashboard_context
+    data=dashboard_context(request.person,Clock().now())
+    data['notice']=request.session.pop('notice','')
+    return render(request,'myteam/dashboard.html',data)
 
 @login_required
 @require_POST
@@ -183,12 +157,8 @@ def meeting_detail(request,meeting_id):
 
 @login_required
 def history(request):
-    now=Clock().now()
-    entries=list(Member.objects.filter(person=request.person,round__published_at__isnull=False,round__ends_at__lte=now).select_related('round','feedback').order_by('-round__starts_at'))
-    for entry in entries:
-        entry.answer=getattr(entry,'feedback',None)
-        entry.ratable=not (entry.answer and entry.answer.final)
-    return render(request,'myteam/history.html',{'person':request.person,'entries':entries})
+    from .read_models import history_entries
+    return render(request,'myteam/history.html',{'person':request.person,'entries':history_entries(request.person,Clock().now())})
 
 from datetime import timedelta
 from .models import Feedback
@@ -225,6 +195,7 @@ def ready(request):
     return JsonResponse({'status':'ok'})
 
 def csrf_failure(request,reason=''):
+    if request.path.startswith('/api/'):return JsonResponse({'error':'csrf_failed'},status=403)
     return render(request,'403.html',status=403)
 
 @require_POST

@@ -16,13 +16,17 @@ def private_actor(sender,chat_id):
 def digest(token):
     return hashlib.sha256(token.encode()).hexdigest()
 
+def get_person(request,achievements=False):
+    person_id=request.session.get('person_id')
+    if not person_id:return None
+    people=Person.objects.all()
+    if achievements:people=people.annotate(has_first_coffee=Exists(Achievement.objects.filter(person_id=OuterRef('pk'),key='first_coffee')))
+    return people.filter(pk=person_id).first()
+
 def login_required(view):
     @wraps(view)
     def wrapped(request, *args, **kwargs):
-        people=Person.objects.all()
-        if view.__name__=='profile':
-            people=people.annotate(has_first_coffee=Exists(Achievement.objects.filter(person_id=OuterRef('pk'),key='first_coffee')))
-        request.person=people.filter(pk=request.session.get('person_id')).first() if request.session.get('person_id') else None
+        request.person=get_person(request,achievements=view.__name__=='profile')
         if not request.person:
             return redirect('/login/')
         if not request.person.onboarding_done and view.__name__!='onboarding':return redirect('/onboarding/')
