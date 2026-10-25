@@ -3,5 +3,8 @@ from myteam.clock import Clock
 from myteam.rounds import upcoming_start,ensure_round
 class Command(BaseCommand):
     def handle(self,*args,**options):
-        r=ensure_round(upcoming_start(Clock().now()))
+        from myteam.activity_plan import ensure_planned_rounds
+        now=Clock().now()
+        ensure_planned_rounds(now)
+        r=ensure_round(upcoming_start(now))
         self.stdout.write(f'Round: {r.starts_at.isoformat()}')
