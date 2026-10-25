@@ -1,0 +1,596 @@
+{
+  "source": "tui-tooltip (1).fig supplied by user, 2026-10-25",
+  "note": "Selected compact desktop and iOS default tooltip nodes; app uses click-through sequence after sign-in. This sequence is a product requirement, not a Figma interaction rule.",
+  "nodes": [
+    {
+      "guid": {
+        "sessionID": 5642,
+        "localID": 8290
+      },
+      "name": "position=top-left, appearance=default, resizable=off",
+      "type": "SYMBOL",
+      "size": {
+        "x": 130,
+        "y": 47.998046875
+      }
+    },
+    {
+      "guid": {
+        "sessionID": 5642,
+        "localID": 8291
+      },
+      "name": "tail",
+      "type": "FRAME",
+      "size": {
+        "x": 130,
+        "y": 3.998047113418579
+      },
+      "stackHorizontalPadding": 16
+    },
+    {
+      "guid": {
+        "sessionID": 5642,
+        "localID": 8292
+      },
+      "name": "tail",
+      "type": "VECTOR",
+      "size": {
+        "x": 12,
+        "y": 3.998047113418579
+      },
+      "fillPaints": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.34117648005485535,
+            "g": 0.35686275362968445,
+            "b": 0.3803921639919281,
+            "a": 1
+          },
+          "opacity": 1,
+          "visible": true,
+          "blendMode": "NORMAL",
+          "colorVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "4fc8c3a6b0e472d041c4176cc056f45072c199d1",
+                  "version": "8713:6"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          },
+          "authoredColor": {
+            "space": "DEFAULT",
+            "c0": 0.34117648005485535,
+            "c1": 0.35686275362968445,
+            "c2": 0.3803921639919281,
+            "c3": 1
+          }
+        }
+      ]
+    },
+    {
+      "guid": {
+        "sessionID": 5642,
+        "localID": 8293
+      },
+      "name": "container",
+      "type": "FRAME",
+      "size": {
+        "x": 130,
+        "y": 44
+      },
+      "cornerRadius": 12,
+      "stackHorizontalPadding": 16,
+      "stackVerticalPadding": 12,
+      "fillPaints": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.34117648005485535,
+            "g": 0.35686275362968445,
+            "b": 0.3803921639919281,
+            "a": 1
+          },
+          "opacity": 1,
+          "visible": true,
+          "blendMode": "NORMAL",
+          "colorVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "4fc8c3a6b0e472d041c4176cc056f45072c199d1",
+                  "version": "8713:6"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          },
+          "authoredColor": {
+            "space": "DEFAULT",
+            "c0": 0.34117648005485535,
+            "c1": 0.35686275362968445,
+            "c2": 0.3803921639919281,
+            "c3": 1
+          }
+        }
+      ]
+    },
+    {
+      "guid": {
+        "sessionID": 5642,
+        "localID": 8294
+      },
+      "name": "textCont",
+      "type": "FRAME",
+      "size": {
+        "x": 98,
+        "y": 20
+      }
+    },
+    {
+      "guid": {
+        "sessionID": 5642,
+        "localID": 8295
+      },
+      "name": "iconCont",
+      "type": "FRAME",
+      "size": {
+        "x": 16,
+        "y": 20
+      },
+      "stackVerticalPadding": 2
+    },
+    {
+      "guid": {
+        "sessionID": 5642,
+        "localID": 8296
+      },
+      "name": "placeholder-single",
+      "type": "INSTANCE",
+      "size": {
+        "x": 16,
+        "y": 16
+      },
+      "cornerRadius": 100,
+      "fillPaints": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 1
+          },
+          "opacity": 0.029999999329447746,
+          "visible": true,
+          "blendMode": "NORMAL",
+          "colorVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "036a2b0412dd5b6f149bb4859148eb562e56290e",
+                  "version": "6528:114"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          },
+          "authoredColor": {
+            "space": "DEFAULT",
+            "c0": 0,
+            "c1": 0,
+            "c2": 0,
+            "c3": 0.029999999329447746
+          }
+        }
+      ]
+    },
+    {
+      "guid": {
+        "sessionID": 5642,
+        "localID": 8297
+      },
+      "name": "title",
+      "type": "TEXT",
+      "size": {
+        "x": 98,
+        "y": 20
+      },
+      "fontSize": 13,
+      "lineHeight": {
+        "value": 20,
+        "units": "PIXELS"
+      },
+      "textData": {
+        "characters": "Some tooltip text",
+        "lines": [
+          {
+            "lineType": "PLAIN",
+            "styleId": 0,
+            "indentationLevel": 0,
+            "sourceDirectionality": "AUTO",
+            "listStartOffset": 0,
+            "isFirstLineOfList": false
+          }
+        ]
+      },
+      "fillPaints": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          },
+          "opacity": 1,
+          "visible": true,
+          "blendMode": "NORMAL",
+          "colorVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "dff2ae5b233066263db9984816409b3be07eac79",
+                  "version": "6528:887"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          },
+          "authoredColor": {
+            "space": "DEFAULT",
+            "c0": 1,
+            "c1": 1,
+            "c2": 1,
+            "c3": 1
+          }
+        }
+      ]
+    },
+    {
+      "guid": {
+        "sessionID": 5642,
+        "localID": 8298
+      },
+      "name": "container",
+      "type": "FRAME",
+      "size": {
+        "x": 98,
+        "y": 36
+      }
+    },
+    {
+      "guid": {
+        "sessionID": 5642,
+        "localID": 8299
+      },
+      "name": "tui-button [on-light-on-dark]",
+      "type": "INSTANCE",
+      "size": {
+        "x": 53,
+        "y": 32
+      },
+      "stackHorizontalPadding": 8,
+      "stackVerticalPadding": 4,
+      "fillPaints": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          },
+          "opacity": 0.30000001192092896,
+          "visible": true,
+          "blendMode": "NORMAL",
+          "colorVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "a031597190608af6af0d580bdbb26c56a35c6802",
+                  "version": "6528:948"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          },
+          "authoredColor": {
+            "space": "DEFAULT",
+            "c0": 1,
+            "c1": 1,
+            "c2": 1,
+            "c3": 0.30000001192092896
+          }
+        }
+      ]
+    },
+    {
+      "guid": {
+        "sessionID": 5642,
+        "localID": 12199
+      },
+      "name": "System=iOS, Appearance=default, Resizable=on, Position=Top Right",
+      "type": "SYMBOL",
+      "size": {
+        "x": 375,
+        "y": 58
+      }
+    },
+    {
+      "guid": {
+        "sessionID": 5642,
+        "localID": 12200
+      },
+      "name": "Tail",
+      "type": "INSTANCE",
+      "size": {
+        "x": 375,
+        "y": 16
+      },
+      "stackHorizontalPadding": 9
+    },
+    {
+      "guid": {
+        "sessionID": 5642,
+        "localID": 12201
+      },
+      "name": "Content",
+      "type": "FRAME",
+      "size": {
+        "x": 375,
+        "y": 42
+      },
+      "cornerRadius": 8,
+      "stackHorizontalPadding": 16,
+      "stackVerticalPadding": 12,
+      "fillPaints": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.25882354378700256,
+            "g": 0.545098066329956,
+            "b": 0.9764705896377563,
+            "a": 1
+          },
+          "opacity": 1,
+          "visible": true,
+          "blendMode": "NORMAL",
+          "colorVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "4fc8c3a6b0e472d041c4176cc056f45072c199d1",
+                  "version": "9288:12"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          },
+          "authoredColor": {
+            "space": "DEFAULT",
+            "c0": 0.25882354378700256,
+            "c1": 0.545098066329956,
+            "c2": 0.9764705896377563,
+            "c3": 1
+          }
+        }
+      ]
+    },
+    {
+      "guid": {
+        "sessionID": 5642,
+        "localID": 12202
+      },
+      "name": "Container",
+      "type": "FRAME",
+      "size": {
+        "x": 343,
+        "y": 18
+      }
+    },
+    {
+      "guid": {
+        "sessionID": 5642,
+        "localID": 12203
+      },
+      "name": "textCont",
+      "type": "FRAME",
+      "size": {
+        "x": 343,
+        "y": 18
+      }
+    },
+    {
+      "guid": {
+        "sessionID": 5642,
+        "localID": 12204
+      },
+      "name": "iconCont",
+      "type": "FRAME",
+      "size": {
+        "x": 16,
+        "y": 18
+      },
+      "stackVerticalPadding": 1
+    },
+    {
+      "guid": {
+        "sessionID": 5642,
+        "localID": 12205
+      },
+      "name": "placeholder-single",
+      "type": "INSTANCE",
+      "size": {
+        "x": 16,
+        "y": 16
+      },
+      "cornerRadius": 100,
+      "fillPaints": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 1
+          },
+          "opacity": 0.029999999329447746,
+          "visible": true,
+          "blendMode": "NORMAL",
+          "colorVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "036a2b0412dd5b6f149bb4859148eb562e56290e",
+                  "version": "6528:114"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          },
+          "authoredColor": {
+            "space": "DEFAULT",
+            "c0": 0,
+            "c1": 0,
+            "c2": 0,
+            "c3": 0.029999999329447746
+          }
+        }
+      ]
+    },
+    {
+      "guid": {
+        "sessionID": 5642,
+        "localID": 12206
+      },
+      "name": "Text",
+      "type": "TEXT",
+      "size": {
+        "x": 343,
+        "y": 18
+      },
+      "fontSize": 15,
+      "lineHeight": {
+        "value": 100,
+        "units": "PERCENT"
+      },
+      "textData": {
+        "characters": "Короткий и бодрый текст подсказки",
+        "lines": [
+          {
+            "lineType": "PLAIN",
+            "styleId": 0,
+            "indentationLevel": 0,
+            "sourceDirectionality": "AUTO",
+            "listStartOffset": 0,
+            "isFirstLineOfList": false
+          }
+        ]
+      },
+      "fillPaints": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          },
+          "opacity": 1,
+          "visible": true,
+          "blendMode": "NORMAL",
+          "colorVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "7b0b6cc10f74a823d78af60e69d27c002ed6bc07",
+                  "version": "6528:859"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          },
+          "authoredColor": {
+            "space": "DEFAULT",
+            "c0": 1,
+            "c1": 1,
+            "c2": 1,
+            "c3": 1
+          }
+        }
+      ]
+    },
+    {
+      "guid": {
+        "sessionID": 5642,
+        "localID": 12207
+      },
+      "name": "buttonCont",
+      "type": "FRAME",
+      "size": {
+        "x": 343,
+        "y": 34
+      }
+    },
+    {
+      "guid": {
+        "sessionID": 5642,
+        "localID": 12208
+      },
+      "name": "tui-button [on-light-on-dark]",
+      "type": "INSTANCE",
+      "size": {
+        "x": 57,
+        "y": 30
+      },
+      "cornerRadius": 100,
+      "stackHorizontalPadding": 7,
+      "stackVerticalPadding": 3,
+      "fillPaints": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          },
+          "opacity": 0.10000000149011612,
+          "visible": true,
+          "blendMode": "NORMAL",
+          "colorVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "5771905145c5b55e197e94f963973e806ca5eb99",
+                  "version": "6528:869"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          },
+          "authoredColor": {
+            "space": "DEFAULT",
+            "c0": 1,
+            "c1": 1,
+            "c2": 1,
+            "c3": 0.10000000149011612
+          }
+        }
+      ]
+    }
+  ]
+}
