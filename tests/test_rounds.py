@@ -31,6 +31,6 @@ class RoundTests(TestCase):
         session=self.client.session;session['person_id']=str(self.p.id);session.save()
         with patch('myteam.views.Clock.now',return_value=self.r.closes_at):
             response=self.client.get('/')
-        self.assertContains(response,'Запись закрыта.')
-        self.assertContains(response,'Ты записан.')
+        self.assertNotContains(response,'Запись закрыта.')
+        self.assertContains(response,'Ты записан на эту неделю')
         self.assertNotContains(response,'Отменить запись')
