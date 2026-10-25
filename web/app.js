@@ -1,6 +1,7 @@
 /* Pages owns the complete UI. The backend supplies JSON and enforces all permissions. */
 (() => {
   const api=document.querySelector('meta[name="myteam-api"]').content.replace(/\/$/,'');
+  const requestTimeoutMs=90000;
   const root=document.querySelector('#app'),main=document.querySelector('#main'),nav=document.querySelector('#account-nav');
   const panel=document.querySelector('#panel'),panelBody=document.querySelector('#panel-content'),panelTitle=document.querySelector('#panel-title');
   const screen=document.querySelector('#screen'),screenBody=document.querySelector('#screen-content'),screenTitle=document.querySelector('#screen-title'),back=document.querySelector('#screen-back'),barTitle=document.querySelector('#appbar-title');
@@ -33,7 +34,7 @@
   async function request(path,{method='GET',data,signal}={}){
     const version=authVersion,controller=new AbortController();let timedOut=false;
     const abort=()=>controller.abort();if(signal?.aborted)abort();else signal?.addEventListener('abort',abort,{once:true});
-    const timeout=setTimeout(()=>{timedOut=true;controller.abort();},20000);
+    const timeout=setTimeout(()=>{timedOut=true;controller.abort();},requestTimeoutMs);
     const headers={Accept:'application/json'};
     if(token)headers.Authorization='Bearer '+token;
     if(method!=='GET'){headers['Content-Type']='application/json';if(csrf)headers['X-CSRFToken']=csrf;}
@@ -333,7 +334,7 @@
     const oldToken=token,oldCsrf=csrf;intendedRoute='/';clearViews();resetCredentials();showIntro(0);
     if(!oldToken)return;
     const revoke=async()=>{
-      const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),15000);
+      const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),requestTimeoutMs);
       try{
         const response=await fetch(api+'/api/logout/',{method:'POST',credentials:'omit',redirect:'error',keepalive:true,signal:controller.signal,headers:{'Content-Type':'application/json',Authorization:'Bearer '+oldToken,'X-CSRFToken':oldCsrf||''},body:'{}'});
         if(!response.ok)throw Error();
