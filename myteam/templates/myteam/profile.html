@@ -14,11 +14,11 @@
   {% if not initial_setup %}
   <section class="card">
     <h2>Достижения</h2>
-    {% for achievement in person.achievements.all %}
+    {% if person.has_first_coffee %}
       <p class="badge">Первый кофе</p><p>Твоя первая подтверждённая встреча.</p>
-    {% empty %}
+    {% else %}
       <p class="muted">После первой состоявшейся встречи здесь появится «Первый кофе».</p>
-    {% endfor %}
+    {% endif %}
     <form method="post" action="/logout/">{% csrf_token %}<button type="submit" class="secondary">Выйти</button></form>
   </section>
   {% endif %}

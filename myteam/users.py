@@ -6,7 +6,8 @@ from django.conf import settings
 from django.db import transaction
 from django.shortcuts import redirect
 from django.utils import timezone
-from .models import Person, LoginAttempt
+from .models import Person, LoginAttempt, Achievement
+from django.db.models import Exists, OuterRef
 
 def private_actor(sender,chat_id):
     value=sender.get('id')
@@ -18,7 +19,10 @@ def digest(token):
 def login_required(view):
     @wraps(view)
     def wrapped(request, *args, **kwargs):
-        request.person = Person.objects.filter(pk=request.session.get('person_id')).first() if request.session.get('person_id') else None
+        people=Person.objects.all()
+        if view.__name__=='profile':
+            people=people.annotate(has_first_coffee=Exists(Achievement.objects.filter(person_id=OuterRef('pk'),key='first_coffee')))
+        request.person=people.filter(pk=request.session.get('person_id')).first() if request.session.get('person_id') else None
         if not request.person:
             return redirect('/login/')
         if not request.person.onboarding_done and view.__name__!='onboarding':return redirect('/onboarding/')
