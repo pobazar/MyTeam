@@ -5,7 +5,7 @@
 ## Фактически проверено
 
 - Frontend GitHub Pages: https://pobazar.github.io/MyTeam/ — build `built`, index/CSS/JS отвечают 200.
-- Backend Render https://myteam-web.onrender.com — новая версия `live`, health/live и health/ready отвечают 200. CORS bridge выдаёт сессию только разрешённому Pages origin.
+- Backend Render https://myteam-backend-eu.onrender.com — новая версия `live`, health/live и health/ready отвечают 200. CORS bridge выдаёт сессию только разрешённому Pages origin.
 - На production страница входа показывает код, CSRF-защищённый polling без подтверждения остаётся authenticated=false. Telegram webhook принимает message и callback_query. Реальный новый callback пользователя не подменяется тестовым запросом.
 - 38 тестов PostgreSQL и GitHub CI проходят: два недельных цикла, отсутствие автозаписи, повторы/одновременные scheduler и worker, ручная правка/пауза/повреждение черновика, feedback, ачивки, аналитика, nonce/подтверждение и чужой callback, CORS/CSRF, сессия без cross-site cookies.
 - Миграция 0001→0004 на данных сохраняет профиль, историю, feedback и ачивку. Проверены INSERT старого приложения благодаря DB defaults.

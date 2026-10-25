@@ -59,11 +59,11 @@ pg_database_size доступен PostgreSQL; DB_WARNING_BYTES задаётся 
 
 Pages уже настроен на main, корень репозитория. `.nojekyll` отключает обработку Django-шаблонов как Liquid. Индекс и JS статические; frontend API задан публичным origin Render. `FRONTEND_URL=https://pobazar.github.io/MyTeam` задаёт ссылки в уведомлениях вида /#/meetings/..., PUBLIC_URL остаётся адресом Render для webhook. Telegram webhook должен принимать message и callback_query.
 
-POST `/internal/schedule/` принимает только GitHub OIDC identity от workflow pobazar/MyTeam/.github/workflows/schedule.yml@refs/heads/main (repository_id=1431966263). Проверяются RS256/JWKS GitHub, issuer, audience=https://myteam-web.onrender.com, exp/iat/nbf, repo/ref и event_name. Заголовок X-Myteam-Scheduler-Token отделён от пользовательской сессии; browser Origin запрещён. Ни shared secret, ни токен бота/БД в GitHub не нужны. Actions имеет contents:read и id-token:write; стандартный Linux runner в публичном репозитории бесплатен.
+POST `/internal/schedule/` принимает только GitHub OIDC identity от workflow pobazar/MyTeam/.github/workflows/schedule.yml@refs/heads/main (repository_id=1431966263). Проверяются RS256/JWKS GitHub, issuer, audience=https://myteam-backend-eu.onrender.com, exp/iat/nbf, repo/ref и event_name. Заголовок X-Myteam-Scheduler-Token отделён от пользовательской сессии; browser Origin запрещён. Ни shared secret, ни токен бота/БД в GitHub не нужны. Actions имеет contents:read и id-token:write; стандартный Linux runner в публичном репозитории бесплатен.
 
 Платный Render cron заменён Actions по новому решению владельца, ресурс не создаётся и отсутствует в render.yaml. Служебный получатель ранее проверен getChat и private-доставкой: OWNER_TELEGRAM_ID=776767993, OWNER_CHAT_ID=776767993. Права владельца нельзя назначить через профиль.
 
-На Render сервис myteam-backend — Python API, а не хостинг интерфейса. Интерфейс размещён на GitHub Pages. Для Pages GitHub Secrets не требуются; токен бота и серверные ключи остаются только в Render.
+На Render сервис myteam-backend-eu — Python API, а не хостинг интерфейса. Интерфейс размещён на GitHub Pages. Для Pages GitHub Secrets не требуются; токен бота и серверные ключи остаются только в Render.
 
 ### Проверка и восстановление Actions
 
@@ -76,3 +76,11 @@ POST `/internal/schedule/` принимает только GitHub OIDC identity 
 ## Обновление профиля и оценки (0006)
 
 Миграция аддитивная: full_name с постоянным DB default='', rating nullable с CHECK 1–5. Не удалять legacy first_name/last_name/impression/again: они сохраняют старые профили, ответы и совместимость писателей во время выкладки. Имя в старом снимке не подменяется актуальным профилем. Изменение имени/команды/города после подготовки не пересобирает черновик. Первое заполнение результата доступно из истории без ограничения давности, окончательный ответ редактируется лишь до ends_at+7 дней. Положительный результат требует звёзд, отрицательный — причины; ранее сохранённые ответы не переписываются миграцией. GitHub Actions и расписание этим обновлением не меняются.
+
+## Размещение и задержки
+
+Основной API: https://myteam-backend-eu.onrender.com, Render Frankfurt. Supabase остался в eu-west-3 (Paris), та же схема/роль/данные. Прежний Ohio API временно оставлен для открытых старых вкладок; новые Pages, webhook и Actions используют EU. Его autoDeploy отключён. Не переключать БД, не сбрасывать сессии и не создавать пользователей при проверке производительности. Отдельный платный ресурс не использован.
+
+SessionMiddleware установлен перед PagesSessionMiddleware. Bearer загружает SessionStore один раз, далее CSRF/представление читают request-local cache. Отдельный exists() удалён; просроченная DB session по-прежнему получает 401. Обычное повторное открытие профиля/истории — 3 SQL; сохранение имени/города с неизменённой командой — 4 SQL. При смене команды нормализация и запись остаются транзакционными. CONN_MAX_AGE=600 уменьшает повторные TLS-подключения, число соединений ограничено процессами Gunicorn.
+
+Server-Timing содержит только время приложения, суммарное время SQL и число запросов, без текстов SQL/параметров/личных данных. Timing-Allow-Origin разрешён только frontend origin. Замеры до/после: [performance.md](performance.md). Free Render всё ещё может спать после простоя: первая загрузка не имеет гарантии низкой задержки.

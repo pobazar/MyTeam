@@ -1,11 +1,11 @@
-# Existing MyTeam Go service cannot change native runtime. This describes the replacement.
+# Frontend: GitHub Pages. Backend: Frankfurt, near the Supabase database in Paris.
 # Scheduled events run through GitHub Actions; no paid Render cron is required.
 services:
   - type: web
-    name: myteam-backend
+    name: myteam-backend-eu
     runtime: python
     plan: free
-    region: ohio
+    region: frankfurt
     buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
     startCommand: python manage.py migrate --noinput && python manage.py bootstrap_round && gunicorn config.wsgi:application --bind 0.0.0.0:$PORT --workers 2 --timeout 60
     healthCheckPath: /health/live

@@ -7,7 +7,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-API='https://myteam-web.onrender.com'
+API='https://myteam-backend-eu.onrender.com'
 ENDPOINT=API+'/internal/schedule/'
 
 def request(url,headers=None,data=None,timeout=45):
