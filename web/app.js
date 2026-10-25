@@ -7,6 +7,7 @@
   const mobileOS=/Android/i.test(navigator.userAgent)?'android':(/iPhone|iPad|iPod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1))?'ios':'generic';
   document.documentElement.dataset.platform=mobileOS;
   const toast=window.MyTeamToasts;
+  const hints=window.MyTeamActivityHints;
   const achievementDialog=document.querySelector('#achievement-dialog');
   const storage='myteam.session',hint='myteam.authenticated',stageHint='myteam.stage';
   let token=sessionStorage.getItem(storage),csrf=null,phase='intro',authenticated=Boolean(token&&sessionStorage.getItem(hint)!=='false');
@@ -53,13 +54,13 @@
       throw new ApiError(timedOut?'timeout':'network');
     }finally{clearTimeout(timeout);signal?.removeEventListener('abort',abort);}
   }
-  function resetCredentials(){toast.clear();authVersion++;token=null;csrf=null;authenticated=false;sessionStorage.removeItem(storage);sessionStorage.removeItem(hint);sessionStorage.removeItem(stageHint);}
+  function resetCredentials(){hints.reset();toast.clear();authVersion++;token=null;csrf=null;authenticated=false;sessionStorage.removeItem(storage);sessionStorage.removeItem(hint);sessionStorage.removeItem(stageHint);}
   function hash(path){history.replaceState(null,'',location.pathname+location.search+'#'+path);}
   function route(){const path=location.hash.slice(1)||'/';return path.startsWith('/')&&!path.startsWith('//')?path:'/';}
   function go(path){if(route()===path)routeChanged();else location.hash=path;}
   function closePanel(){closeAchievement();panelVersion++;panelAbort?.abort();if(panel.open)panel.close();toast.syncHost();panelBody.replaceChildren();}
   function stopLogin(){loginVersion++;clearTimeout(pollTimer);loginAbort?.abort();polling=false;}
-  function clearViews(){hideScreen();main.hidden=false;chrome('');mainVersion++;mainAbort?.abort();stopLogin();closePanel();mainReady=false;}
+  function clearViews(){hints.hide();hideScreen();main.hidden=false;chrome('');mainVersion++;mainAbort?.abort();stopLogin();closePanel();mainReady=false;}
   function chrome(title){
     root.dataset.view=phase;document.querySelector('#intro-progress').hidden=true;back.setAttribute('aria-label','Вернуться к активностям');
     const secondary=Boolean(title);document.querySelector('.appbar').classList.toggle('appbar-detail',secondary);back.hidden=!secondary;barTitle.hidden=!secondary&&phase!=='app';barTitle.textContent=title||'Активности';document.querySelector('.appbar').dataset.secondary=String(secondary);
@@ -101,13 +102,13 @@
     const target=$(main,'[data-login-content]');loading(target);const version=loginVersion;
     loginAbort=new AbortController();
     try{
-      if(alreadyAuthenticated){if(!csrf)await request('/api/activities/',{signal:loginAbort.signal});const body=await request('/api/onboarding/',{method:'POST',signal:loginAbort.signal});if(version===loginVersion)enterAccount(body);return;}
+      if(alreadyAuthenticated){if(!csrf)await request('/api/activities/',{signal:loginAbort.signal});const body=await request('/api/onboarding/',{method:'POST',signal:loginAbort.signal});if(version===loginVersion)enterAccount(body,true);return;}
       if(!token)await bootstrap(loginAbort.signal);
       let body;
       try{body=await request('/api/login/',{method:'POST',signal:loginAbort.signal});}
       catch(error){if(error.status!==401)throw error;resetCredentials();await bootstrap(loginAbort.signal);body=await request('/api/login/',{method:'POST',signal:loginAbort.signal});}
       if(version!==loginVersion)return;
-      if(body.state){enterAccount(body);return;}
+      if(body.state){enterAccount(body,true);return;}
       const card=clone('code');put(card,'[data-code]',body.code);
       if(!telegramLink($(card,'[data-bot]'),body.bot_url))put(card,'[data-login-status]','Вход пока недоступен. Попробуй ещё раз позже.');
       $(card,'[data-new-code]').onclick=()=>startLogin();target.replaceChildren(card);pollLogin(version);
@@ -119,14 +120,14 @@
     try{
       const body=await request('/api/login/status/',{method:'POST',signal:loginAbort.signal});
       if(version!==loginVersion)return;
-      if(body.state!=='waiting'){enterAccount(body);return;}
+      if(body.state!=='waiting'){enterAccount(body,true);return;}
       if(body.expired){put(main,'[data-login-status]','Срок кода закончился. Получи новый код.');$(main,'[data-new-code]').hidden=false;return;}
       put(main,'[data-login-status]','После подтверждения вернись сюда — вход завершится автоматически.');
     }catch(error){if(version!==loginVersion||error.code==='cancelled')return;if(error.status===401){sessionLost();return;}put(main,'[data-login-status]','Не удалось проверить вход. Повторяем попытку…');}
     finally{polling=false;}
     if(version===loginVersion&&phase==='login')pollTimer=setTimeout(()=>pollLogin(version),2000);
   }
-  function enterAccount(body){authenticated=true;sessionStorage.setItem(hint,'true');stopLogin();if(!acceptAccount(body))return;showApp();hash(intendedRoute);intendedRoute='/';loadActivities();routeChanged();}
+  function enterAccount(body,fromLogin=false){if(fromLogin)hints.arm();authenticated=true;sessionStorage.setItem(hint,'true');stopLogin();if(!acceptAccount(body))return;showApp();hash(intendedRoute);intendedRoute='/';loadActivities();routeChanged();}
   function showApp(){phase='app';hideScreen();main.hidden=false;chrome('');main.replaceChildren(clone('activities'));mainReady=false;}
   function showSetup(body){clearViews();phase='setup';chrome('');nav.hidden=true;hash('/');main.replaceChildren(element('h1','Давайте познакомимся'),element('p','Эти данные помогут нам точнее подбирать тебе участников для активностей.','muted'));const target=element('div','', 'setup');main.append(target);renderProfile(target,body,true);}
   async function loadSetup(){
@@ -136,6 +137,7 @@
     catch(error){if(version===mainVersion)catchLoad(error,target,loadSetup);}
   }
   async function loadActivities(){
+    hints.hide();
     if(!authenticated)return;
     if(phase!=='app')showApp();
     const target=$(main,'#activity-content');if(!target)return;
@@ -161,7 +163,7 @@
       const [title,text]=messages[current.kind]||messages.skipped;body.append(element('h2',title),element('p',text),element('p','Начни со следующей недели — запишись в соседнем блоке.','muted'));
     }
     renderNextActivity($(fragment,'[data-next-body]'),next);
-    target.replaceChildren(fragment);
+    target.replaceChildren(fragment);hints.show(main);
   }
   function renderNextActivity(target,next){
     if(!next.id){target.append(element('p','Запись пока не открыта. Загляни позже.','muted'));return;}
@@ -315,7 +317,7 @@
     }catch(error){if(version===panelVersion)catchLoad(error,panelBody,()=>loadFeedback(meetingId,fromHistory));}
   }
   function routeChanged(){
-    closeAchievement();
+    hints.hide();closeAchievement();
     if(phase!=='app'){if(phase==='intro'&&route()!=='/')showIntro(0,introAuthenticated);return;}
     const path=route();
     if(path==='/profile/'||path==='/history/'){loadScreen(path==='/profile/'?'profile':'history');return;}
@@ -325,7 +327,7 @@
       if(!fromHistory)returnActivities();
       else if(screen.hidden||screenKind!=='history')loadScreen('history');
       loadFeedback(match[1],new URLSearchParams(match[2]||'').get('from')==='history');return;}
-    closePanel();returnActivities();hash('/');if(!mainReady&&!mainAbort)loadActivities();
+    closePanel();returnActivities();hash('/');if(!mainReady&&!mainAbort)loadActivities();else hints.show(main);
   }
   function logout(){
     const oldToken=token,oldCsrf=csrf;intendedRoute='/';clearViews();resetCredentials();showIntro(0);
