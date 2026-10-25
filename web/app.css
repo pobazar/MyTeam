@@ -191,3 +191,40 @@ legend { font-weight: 500; margin-bottom: 16px; }
   .intro-actions { padding-inline: max(16px, env(safe-area-inset-left)) max(16px, env(safe-area-inset-right)); }
 }
 @media (max-height: 650px) { .intro-image { min-height: 200px; height: 220px; padding-block: 0; } }
+
+/* Profile sections match their real controls while loading; no redundant loading copy. */
+.loading-state { gap: 16px; }
+.loading-state > span:last-child { margin-top: 0; }
+.loading-state .skeleton::after, .skeleton-field .skeleton::after, .achievement-skeleton .skeleton::after, .skeleton-button::after { content: none; }
+.skeleton-short { width: 65%; }
+.skeleton-field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+.skeleton-label { width: 120px; height: 20px; }
+.skeleton-input { width: 100%; height: 58px; border-radius: 12px; }
+.skeleton-button { width: 132px; height: 56px; margin-top: 8px; border-radius: 12px; }
+.achievement-card { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; background: var(--background-neutral-1-opaque); padding: 12px; border-radius: 12px; }
+.achievement-card + .achievement-card { margin-top: 16px; }
+.achievement-card h3 { margin: 0; font-size: 20px; line-height: 24px; }
+.achievement-card p { margin: 0; font-size: 15px; line-height: 20px; }
+.achievement-art { display: grid; place-items: center; width: 88px; height: 88px; margin-bottom: 4px; border-radius: 50%; background: var(--background-base); }
+.achievement-art img { display: block; }
+.skeleton-art { width: 88px; height: 88px; border-radius: 50%; margin-bottom: 4px; }
+.skeleton-heading { width: 70%; height: 24px; }
+.skeleton-description { width: 100%; height: 20px; }
+.skeleton-description.skeleton-short { width: 65%; }
+.profile-grid > .card { margin-bottom: 0; }
+.profile-actions { margin-block: 24px; }
+.profile-actions button { margin: 0; }
+.enrollment-count { display: inline-flex; align-items: center; border-radius: 8px; padding: 6px 10px; background: var(--background-neutral-1); color: var(--text-secondary-on-light); font-size: 13px !important; line-height: 18px !important; }
+.outcome-buttons { display: flex; gap: 12px; }
+.outcome-buttons button { flex: 1; margin: 0; }
+.outcome-summary { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin: 24px 0; }
+.outcome-summary p { margin: 0; font-weight: 500; }
+.outcome-summary .text-button { margin: 0; padding: 8px 0; min-height: 44px; font-size: 15px; }
+.load-error { text-align: center; }
+.load-error [role="alert"] { color: var(--text-primary); }
+.load-error [data-retry] { margin-inline: auto; }
+@media (max-width: 720px) {
+  .profile-grid { gap: 24px; }
+  .profile-actions { margin-block: 24px; }
+  .skeleton-button { width: 100%; }
+}

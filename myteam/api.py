@@ -124,6 +124,7 @@ def activities(request):
         'contacts_url':c['contacts_url'] if kind=='active' else None,
     },'next':{'id':str(n.id) if n else None,'starts_at':c['next_start'],'ends_at':c['next_end'],
         'closes_at':n.closes_at if n else None,'activity_title':n.activity_title if n else None,
+        'enrollment_count':n.enrollment_count if n else 0,
         'enrolled':c['enrolled'],'registration_open':c['registration_open'],'reachable':request.person.reachable}})
 
 @require_POST

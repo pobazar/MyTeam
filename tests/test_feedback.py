@@ -38,3 +38,10 @@ class FeedbackTests(TestCase):
         with self.assertRaises(RuleError):save_feedback(self.people[0].id,self.meeting.id,{'outcome':'no','comment':'Не удалось найти общее время.'},FrozenClock(self.r.ends_at+timedelta(days=7)))
     def test_yes_requires_all_fields(self):
         self.assertFalse(FeedbackForm({'outcome':'yes'}).is_valid())
+
+    def test_no_reason_is_optional_and_rating_is_cleared(self):
+        form=FeedbackForm({'outcome':'no','rating':5,'comment':''})
+        self.assertTrue(form.is_valid());self.assertIsNone(form.cleaned_data['rating'])
+        answer=save_feedback(self.people[0].id,self.meeting.id,{'outcome':'no'},FrozenClock(self.r.starts_at))
+        self.assertTrue(answer.final);self.assertEqual(answer.comment,'');self.assertIsNone(answer.rating)
+        self.assertFalse(Achievement.objects.filter(person=self.people[0]).exists())

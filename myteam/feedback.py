@@ -19,7 +19,6 @@ class FeedbackForm(forms.Form):
             self.add_error('rating','Оцените активность от 1 до 5.')
         if data.get('outcome')=='no':
             data['rating']=None
-            if not data.get('comment'):self.add_error('comment','Расскажите, почему не получилось провести активность.')
         return data
 
 @transaction.atomic

@@ -25,10 +25,10 @@
           </fieldset>
         </div>
         <div data-comment-panel {% if not form.outcome.value or form.outcome.value == 'pending' %}hidden{% endif %}>
-          <label for="{{ form.comment.id_for_label }}" data-comment-label>{% if form.outcome.value == 'no' %}Почему не получилось?{% else %}Комментарий (необязательно){% endif %}</label>
+          <label for="{{ form.comment.id_for_label }}" data-comment-label>{% if form.outcome.value == 'no' %}Почему не получилось? (необязательно){% else %}Комментарий (необязательно){% endif %}</label>
           {{ form.comment.errors }}{{ form.comment }}
         </div>
-        <button type="submit">Сохранить результат</button><span data-busy role="status">Сохраняем…</span>
+        <button type="submit">Отправить</button><span data-busy role="status">Сохраняем…</span>
       </form>
       <p class="muted fine-print">Ответ виден только тебе и организатору, не другим участникам.</p>
     {% endif %}
