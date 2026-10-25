@@ -1,0 +1,190 @@
+{
+  "componentSet": "tui-rating",
+  "sources": [
+    "tui-rating.fig"
+  ],
+  "units": "Figma px (verify platform-specific dp/pt mapping)",
+  "components": [
+    "tui-rating"
+  ],
+  "variantCount": 6,
+  "variants": [
+    {
+      "component": "tui-rating",
+      "properties": {
+        "quantity": "0"
+      },
+      "appearance": "aba81fbd0"
+    },
+    {
+      "component": "tui-rating",
+      "properties": {
+        "quantity": "1"
+      },
+      "appearance": "aba81fbd0"
+    },
+    {
+      "component": "tui-rating",
+      "properties": {
+        "quantity": "2"
+      },
+      "appearance": "aba81fbd0"
+    },
+    {
+      "component": "tui-rating",
+      "properties": {
+        "quantity": "3"
+      },
+      "appearance": "aba81fbd0"
+    },
+    {
+      "component": "tui-rating",
+      "properties": {
+        "quantity": "4"
+      },
+      "appearance": "aba81fbd0"
+    },
+    {
+      "component": "tui-rating",
+      "properties": {
+        "quantity": "5"
+      },
+      "appearance": "aba81fbd0"
+    }
+  ],
+  "appearancePresets": {
+    "aba81fbd0": {
+      "size": {
+        "x": 264.0,
+        "y": 40.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 16.0
+    }
+  },
+  "anatomyExamples": [
+    {
+      "variant": {
+        "quantity": "0"
+      },
+      "tree": {
+        "role": "quantity=0",
+        "type": "SYMBOL",
+        "size": {
+          "x": 264.0,
+          "y": 40.0
+        },
+        "layout": "HORIZONTAL",
+        "gap": 16.0,
+        "children": [
+          {
+            "role": "container",
+            "type": "FRAME",
+            "size": {
+              "x": 40.0,
+              "y": 40.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 10.0,
+            "children": [
+              {
+                "role": "tui-ic-medium / star",
+                "type": "INSTANCE",
+                "size": {
+                  "x": 40.0,
+                  "y": 40.0
+                },
+                "usesComponent": "tui-ic-medium / star"
+              }
+            ]
+          },
+          {
+            "role": "container",
+            "type": "FRAME",
+            "size": {
+              "x": 40.0,
+              "y": 40.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 10.0,
+            "children": [
+              {
+                "role": "tui-ic-medium / star",
+                "type": "INSTANCE",
+                "size": {
+                  "x": 40.0,
+                  "y": 40.0
+                },
+                "usesComponent": "tui-ic-medium / star"
+              }
+            ]
+          },
+          {
+            "role": "container",
+            "type": "FRAME",
+            "size": {
+              "x": 40.0,
+              "y": 40.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 10.0,
+            "children": [
+              {
+                "role": "tui-ic-medium / star",
+                "type": "INSTANCE",
+                "size": {
+                  "x": 40.0,
+                  "y": 40.0
+                },
+                "usesComponent": "tui-ic-medium / star"
+              }
+            ]
+          },
+          {
+            "role": "container",
+            "type": "FRAME",
+            "size": {
+              "x": 40.0,
+              "y": 40.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 10.0,
+            "children": [
+              {
+                "role": "tui-ic-medium / star",
+                "type": "INSTANCE",
+                "size": {
+                  "x": 40.0,
+                  "y": 40.0
+                },
+                "usesComponent": "tui-ic-medium / star"
+              }
+            ]
+          },
+          {
+            "role": "container",
+            "type": "FRAME",
+            "size": {
+              "x": 40.0,
+              "y": 40.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 10.0,
+            "children": [
+              {
+                "role": "tui-ic-medium / star",
+                "type": "INSTANCE",
+                "size": {
+                  "x": 40.0,
+                  "y": 40.0
+                },
+                "usesComponent": "tui-ic-medium / star"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "guidance": []
+}

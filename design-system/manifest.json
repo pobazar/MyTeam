@@ -1,0 +1,109 @@
+{
+  "name": "TUI / Codex UI design specs",
+  "formatVersion": "1.0",
+  "sourceFiles": [
+    {
+      "file": "TUI Foundations.fig",
+      "nodesExamined": 71868,
+      "nativeVariantCount": 0
+    },
+    {
+      "file": "tui-button.fig",
+      "nodesExamined": 54808,
+      "nativeVariantCount": 1684
+    },
+    {
+      "file": "tui-cell.fig",
+      "nodesExamined": 72250,
+      "nativeVariantCount": 470
+    },
+    {
+      "file": "tui-card-medium.fig",
+      "nodesExamined": 24973,
+      "nativeVariantCount": 103
+    },
+    {
+      "file": "tui-card-large.fig",
+      "nodesExamined": 118677,
+      "nativeVariantCount": 130
+    },
+    {
+      "file": "tui-progress.fig",
+      "nodesExamined": 32651,
+      "nativeVariantCount": 860
+    },
+    {
+      "file": "tui-skeleton.fig",
+      "nodesExamined": 84089,
+      "nativeVariantCount": 79
+    },
+    {
+      "file": "tui-checkbox-block,tui-radio-block.fig",
+      "nodesExamined": 12724,
+      "nativeVariantCount": 324
+    },
+    {
+      "file": "tui-tooltip.fig",
+      "nodesExamined": 39782,
+      "nativeVariantCount": 96
+    },
+    {
+      "file": "tui-notification.fig",
+      "nodesExamined": 46536,
+      "nativeVariantCount": 114
+    },
+    {
+      "file": "tui-header.fig",
+      "nodesExamined": 37301,
+      "nativeVariantCount": 198
+    },
+    {
+      "file": "tui-rating.fig",
+      "nodesExamined": 1919,
+      "nativeVariantCount": 6
+    },
+    {
+      "file": "tui-onboarding-flow.fig",
+      "nodesExamined": 71540,
+      "nativeVariantCount": 52
+    }
+  ],
+  "componentFiles": [
+    "components/tui-button.json",
+    "components/tui-card-large.json",
+    "components/tui-card-medium.json",
+    "components/tui-cell.json",
+    "components/tui-checkbox-radio.json",
+    "components/tui-header.json",
+    "components/tui-notification.json",
+    "components/tui-onboarding-flow.json",
+    "components/tui-progress.json",
+    "components/tui-rating.json",
+    "components/tui-skeleton.json",
+    "components/tui-tooltip.json"
+  ],
+  "tokenFiles": [
+    "tokens/color-variables.json",
+    "tokens/colors.json",
+    "tokens/effects.json",
+    "tokens/metrics.json",
+    "tokens/typography.json"
+  ],
+  "coverage": {
+    "sharedStyles": 650,
+    "variables": 3767,
+    "variableCollections": 57,
+    "componentVariantCount": 4116
+  },
+  "extractionPolicy": {
+    "keep": "actual variant properties and state names, dimensions, layout, fills, typography, token aliases, limited anatomy examples and authored usage descriptions",
+    "deduplicate": "shared styles and variables consolidated; repeated native variants by component key; appearance presets factored out",
+    "excluded": "editor metadata, Figma internal canvas, imported unrelated component definitions, GUID/version/system IDs, vector geometry, raster assets, animation binary blobs, repeated demo content",
+    "limitations": [
+      "Figma units are px; do not assume exact dp/pt conversion without confirming target platform",
+      "Components may rely on external library tokens, including unresolved alias references",
+      "Vector/icon visual fidelity is not reconstructible from these JSON-only specs",
+      "Variant state behavior may require product decisions; names alone do not define interaction logic"
+    ]
+  }
+}

@@ -1,0 +1,1947 @@
+{
+  "componentSet": "tui-skeleton",
+  "sources": [
+    "tui-skeleton.fig"
+  ],
+  "units": "Figma px (verify platform-specific dp/pt mapping)",
+  "components": [
+    "tui-skeleton",
+    "tui-skeleton [text]"
+  ],
+  "variantCount": 79,
+  "variants": [
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "heading-l",
+        "system": "iOS"
+      },
+      "appearance": "060d6e3e8"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "numbers-xl",
+        "system": "iOS"
+      },
+      "appearance": "b280b3591"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "numbers-xl",
+        "system": "Android"
+      },
+      "appearance": "ba896f29c"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "numbers-m",
+        "system": "iOS"
+      },
+      "appearance": "57f88e58e"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "numbers-m",
+        "system": "Android"
+      },
+      "appearance": "6329bd045"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "heading-l",
+        "system": "Android"
+      },
+      "appearance": "59fb40282"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "heading-m",
+        "system": "iOS"
+      },
+      "appearance": "57f88e58e"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "heading-m",
+        "system": "Android"
+      },
+      "appearance": "6329bd045"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "heading-s",
+        "system": "iOS"
+      },
+      "appearance": "231a2d16c"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "heading-s",
+        "system": "Android"
+      },
+      "appearance": "54f82eb81"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "body-l",
+        "system": "iOS"
+      },
+      "appearance": "231a2d16c"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "body-l",
+        "system": "Android"
+      },
+      "appearance": "54f82eb81"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "body-m",
+        "system": "iOS"
+      },
+      "appearance": "c32b53b57"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "body-m",
+        "system": "Android"
+      },
+      "appearance": "ee1ccdad6"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "body-s",
+        "system": "iOS"
+      },
+      "appearance": "4bb05c2d6"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "body-s",
+        "system": "Android"
+      },
+      "appearance": "06785e88f"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-l",
+        "system": "iOS"
+      },
+      "appearance": "231a2d16c"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-l",
+        "system": "Android"
+      },
+      "appearance": "54f82eb81"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-m",
+        "system": "iOS"
+      },
+      "appearance": "c32b53b57"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-m",
+        "system": "Android"
+      },
+      "appearance": "ee1ccdad6"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-s",
+        "system": "iOS"
+      },
+      "appearance": "4bb05c2d6"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-s",
+        "system": "Android"
+      },
+      "appearance": "06785e88f"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-xs",
+        "system": "iOS"
+      },
+      "appearance": "397d8aa53"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-xxs",
+        "system": "iOS"
+      },
+      "appearance": "a2790dbf5"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-xs",
+        "system": "Android"
+      },
+      "appearance": "397d8aa53"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-xxs",
+        "system": "Android"
+      },
+      "appearance": "a2790dbf5"
+    },
+    {
+      "component": "tui-skeleton",
+      "properties": {
+        "keyframe": "1"
+      },
+      "appearance": "6c79983de"
+    },
+    {
+      "component": "tui-skeleton",
+      "properties": {
+        "keyframe": "2"
+      },
+      "appearance": "f4d25178f"
+    },
+    {
+      "component": "tui-skeleton",
+      "properties": {
+        "keyframe": "1"
+      },
+      "appearance": "2ea33ece4"
+    },
+    {
+      "component": "tui-skeleton",
+      "properties": {
+        "keyframe": "2"
+      },
+      "appearance": "6a299a7db"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "heading-1"
+      },
+      "appearance": "436fdf72e"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "heading-2"
+      },
+      "appearance": "01d1c2b6b"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "heading-3"
+      },
+      "appearance": "ccd9997fd"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "heading-4"
+      },
+      "appearance": "65a4ac7b8"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "heading-5"
+      },
+      "appearance": "2e59e1ffc"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "heading-6"
+      },
+      "appearance": "57f88e58e"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "body-xl"
+      },
+      "appearance": "166b9b6c5"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "body-l"
+      },
+      "appearance": "5aba5ffdd"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "body-m"
+      },
+      "appearance": "35896648d"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "body-s"
+      },
+      "appearance": "6c8fcdf4a"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "body-xs"
+      },
+      "appearance": "7d7800630"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "body-xxs"
+      },
+      "appearance": "7d7800630"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-l"
+      },
+      "appearance": "6fa8da81d"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-m"
+      },
+      "appearance": "0395ad425"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-s"
+      },
+      "appearance": "4bb05c2d6"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-xs"
+      },
+      "appearance": "a2790dbf5"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-xxs"
+      },
+      "appearance": "93c9e6972"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-caps-l"
+      },
+      "appearance": "6c8fcdf4a"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-caps-s"
+      },
+      "appearance": "7d7800630"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "numbers-xl"
+      },
+      "appearance": "ccd9997fd"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "numbers-m"
+      },
+      "appearance": "57f88e58e"
+    },
+    {
+      "component": "tui-skeleton",
+      "properties": {
+        "keyframe": "1"
+      },
+      "appearance": "6c79983de"
+    },
+    {
+      "component": "tui-skeleton",
+      "properties": {
+        "keyframe": "2"
+      },
+      "appearance": "f4d25178f"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "heading-l",
+        "system": "iOS"
+      },
+      "appearance": "060d6e3e8"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "numbers-xl",
+        "system": "iOS"
+      },
+      "appearance": "b280b3591"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "numbers-xl",
+        "system": "Android"
+      },
+      "appearance": "ba896f29c"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "numbers-m",
+        "system": "iOS"
+      },
+      "appearance": "57f88e58e"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "numbers-m",
+        "system": "Android"
+      },
+      "appearance": "6329bd045"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "heading-l",
+        "system": "Android"
+      },
+      "appearance": "59fb40282"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "heading-m",
+        "system": "iOS"
+      },
+      "appearance": "57f88e58e"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "heading-m",
+        "system": "Android"
+      },
+      "appearance": "6329bd045"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "heading-s",
+        "system": "iOS"
+      },
+      "appearance": "231a2d16c"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "heading-s",
+        "system": "Android"
+      },
+      "appearance": "54f82eb81"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "body-l",
+        "system": "iOS"
+      },
+      "appearance": "231a2d16c"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "body-l",
+        "system": "Android"
+      },
+      "appearance": "54f82eb81"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "body-m",
+        "system": "iOS"
+      },
+      "appearance": "c32b53b57"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "body-m",
+        "system": "Android"
+      },
+      "appearance": "ee1ccdad6"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "body-s",
+        "system": "iOS"
+      },
+      "appearance": "4bb05c2d6"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "body-s",
+        "system": "Android"
+      },
+      "appearance": "06785e88f"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-l",
+        "system": "iOS"
+      },
+      "appearance": "231a2d16c"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-l",
+        "system": "Android"
+      },
+      "appearance": "54f82eb81"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-m",
+        "system": "iOS"
+      },
+      "appearance": "c32b53b57"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-m",
+        "system": "Android"
+      },
+      "appearance": "ee1ccdad6"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-s",
+        "system": "iOS"
+      },
+      "appearance": "4bb05c2d6"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-s",
+        "system": "Android"
+      },
+      "appearance": "06785e88f"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-xs",
+        "system": "iOS"
+      },
+      "appearance": "397d8aa53"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-xxs",
+        "system": "iOS"
+      },
+      "appearance": "a2790dbf5"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-xs",
+        "system": "Android"
+      },
+      "appearance": "397d8aa53"
+    },
+    {
+      "component": "tui-skeleton [text]",
+      "properties": {
+        "text-style": "ui-xxs",
+        "system": "Android"
+      },
+      "appearance": "a2790dbf5"
+    }
+  ],
+  "appearancePresets": {
+    "060d6e3e8": {
+      "size": {
+        "x": 92.0,
+        "y": 36.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 6.0,
+      "paddingBottom": 6.0,
+      "crossAxisAlignment": "CENTER"
+    },
+    "b280b3591": {
+      "size": {
+        "x": 92.0,
+        "y": 41.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 7.0,
+      "paddingBottom": 7.0,
+      "crossAxisAlignment": "CENTER"
+    },
+    "ba896f29c": {
+      "size": {
+        "x": 92.0,
+        "y": 40.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 6.5,
+      "paddingBottom": 6.5,
+      "crossAxisAlignment": "CENTER"
+    },
+    "57f88e58e": {
+      "size": {
+        "x": 92.0,
+        "y": 24.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 4.0,
+      "paddingBottom": 4.0,
+      "crossAxisAlignment": "CENTER"
+    },
+    "6329bd045": {
+      "size": {
+        "x": 92.0,
+        "y": 23.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 3.5,
+      "paddingBottom": 3.5,
+      "crossAxisAlignment": "CENTER"
+    },
+    "59fb40282": {
+      "size": {
+        "x": 92.0,
+        "y": 33.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 5.5,
+      "paddingBottom": 5.5,
+      "crossAxisAlignment": "CENTER"
+    },
+    "231a2d16c": {
+      "size": {
+        "x": 92.0,
+        "y": 20.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 3.0,
+      "paddingBottom": 3.0,
+      "crossAxisAlignment": "CENTER"
+    },
+    "54f82eb81": {
+      "size": {
+        "x": 92.0,
+        "y": 19.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 2.5,
+      "paddingBottom": 2.5,
+      "crossAxisAlignment": "CENTER"
+    },
+    "c32b53b57": {
+      "size": {
+        "x": 92.0,
+        "y": 18.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 3.0,
+      "paddingBottom": 3.0,
+      "crossAxisAlignment": "CENTER"
+    },
+    "ee1ccdad6": {
+      "size": {
+        "x": 92.0,
+        "y": 16.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 2.5,
+      "paddingBottom": 2.5,
+      "crossAxisAlignment": "CENTER"
+    },
+    "4bb05c2d6": {
+      "size": {
+        "x": 92.0,
+        "y": 16.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 3.0,
+      "paddingBottom": 3.0,
+      "crossAxisAlignment": "CENTER"
+    },
+    "06785e88f": {
+      "size": {
+        "x": 92.0,
+        "y": 15.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 2.5,
+      "paddingBottom": 2.5,
+      "crossAxisAlignment": "CENTER"
+    },
+    "397d8aa53": {
+      "size": {
+        "x": 92.0,
+        "y": 14.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 2.0,
+      "paddingBottom": 2.0,
+      "crossAxisAlignment": "CENTER"
+    },
+    "a2790dbf5": {
+      "size": {
+        "x": 92.0,
+        "y": 13.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 2.0,
+      "paddingBottom": 2.0,
+      "crossAxisAlignment": "CENTER"
+    },
+    "6c79983de": {
+      "size": {
+        "x": 40.0,
+        "y": 40.0
+      },
+      "radius": 4.0,
+      "topLeftRadius": 4.0,
+      "topRightRadius": 4.0,
+      "bottomLeftRadius": 4.0,
+      "bottomRightRadius": 4.0,
+      "background": [
+        {
+          "type": "SOLID",
+          "opacity": 0.03,
+          "blendMode": "NORMAL",
+          "visible": true,
+          "color": "#000000",
+          "colorVariable": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                  "version": "1574:284"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          }
+        }
+      ]
+    },
+    "f4d25178f": {
+      "size": {
+        "x": 40.0,
+        "y": 40.0
+      },
+      "radius": 4.0,
+      "topLeftRadius": 4.0,
+      "topRightRadius": 4.0,
+      "bottomLeftRadius": 4.0,
+      "bottomRightRadius": 4.0,
+      "opacity": 0.5,
+      "background": [
+        {
+          "type": "SOLID",
+          "opacity": 0.03,
+          "blendMode": "NORMAL",
+          "visible": true,
+          "color": "#000000",
+          "colorVariable": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                  "version": "1574:284"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          }
+        }
+      ]
+    },
+    "2ea33ece4": {
+      "size": {
+        "x": 40.0,
+        "y": 40.0
+      },
+      "radius": 4.0,
+      "topLeftRadius": 4.0,
+      "topRightRadius": 4.0,
+      "bottomLeftRadius": 4.0,
+      "bottomRightRadius": 4.0,
+      "background": [
+        {
+          "type": "SOLID",
+          "opacity": 0.06,
+          "blendMode": "NORMAL",
+          "visible": true,
+          "color": "#000000",
+          "colorVariable": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                  "version": "6528:924"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          }
+        }
+      ]
+    },
+    "6a299a7db": {
+      "size": {
+        "x": 40.0,
+        "y": 40.0
+      },
+      "radius": 4.0,
+      "topLeftRadius": 4.0,
+      "topRightRadius": 4.0,
+      "bottomLeftRadius": 4.0,
+      "bottomRightRadius": 4.0,
+      "opacity": 0.5,
+      "background": [
+        {
+          "type": "SOLID",
+          "opacity": 0.06,
+          "blendMode": "NORMAL",
+          "visible": true,
+          "color": "#000000",
+          "colorVariable": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                  "version": "6528:924"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          }
+        }
+      ]
+    },
+    "436fdf72e": {
+      "size": {
+        "x": 92.0,
+        "y": 56.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 8.0,
+      "paddingBottom": 8.0,
+      "crossAxisAlignment": "CENTER"
+    },
+    "01d1c2b6b": {
+      "size": {
+        "x": 92.0,
+        "y": 48.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 6.5,
+      "paddingBottom": 6.5,
+      "crossAxisAlignment": "CENTER"
+    },
+    "ccd9997fd": {
+      "size": {
+        "x": 92.0,
+        "y": 40.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 5.5,
+      "paddingBottom": 5.5,
+      "crossAxisAlignment": "CENTER"
+    },
+    "65a4ac7b8": {
+      "size": {
+        "x": 92.0,
+        "y": 32.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 5.0,
+      "paddingBottom": 5.0,
+      "crossAxisAlignment": "CENTER"
+    },
+    "2e59e1ffc": {
+      "size": {
+        "x": 92.0,
+        "y": 28.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 4.5,
+      "paddingBottom": 4.5,
+      "crossAxisAlignment": "CENTER"
+    },
+    "166b9b6c5": {
+      "size": {
+        "x": 92.0,
+        "y": 28.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 6.5,
+      "paddingBottom": 6.5,
+      "crossAxisAlignment": "CENTER"
+    },
+    "5aba5ffdd": {
+      "size": {
+        "x": 92.0,
+        "y": 28.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 7.0,
+      "paddingBottom": 7.0,
+      "crossAxisAlignment": "CENTER"
+    },
+    "35896648d": {
+      "size": {
+        "x": 92.0,
+        "y": 24.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 6.0,
+      "paddingBottom": 6.0,
+      "crossAxisAlignment": "CENTER"
+    },
+    "6c8fcdf4a": {
+      "size": {
+        "x": 92.0,
+        "y": 20.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 5.0,
+      "paddingBottom": 5.0,
+      "crossAxisAlignment": "CENTER"
+    },
+    "7d7800630": {
+      "size": {
+        "x": 92.0,
+        "y": 16.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 3.5,
+      "paddingBottom": 3.5,
+      "crossAxisAlignment": "CENTER"
+    },
+    "6fa8da81d": {
+      "size": {
+        "x": 92.0,
+        "y": 24.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 5.0,
+      "paddingBottom": 5.0,
+      "crossAxisAlignment": "CENTER"
+    },
+    "0395ad425": {
+      "size": {
+        "x": 92.0,
+        "y": 20.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 4.0,
+      "paddingBottom": 4.0,
+      "crossAxisAlignment": "CENTER"
+    },
+    "93c9e6972": {
+      "size": {
+        "x": 92.0,
+        "y": 13.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 3.0,
+      "paddingBottom": 3.0,
+      "crossAxisAlignment": "CENTER"
+    }
+  },
+  "anatomyExamples": [
+    {
+      "variant": {
+        "text-style": "heading-l",
+        "system": "iOS"
+      },
+      "tree": {
+        "role": "text-style=heading-l, system=iOS",
+        "type": "SYMBOL",
+        "size": {
+          "x": 92.0,
+          "y": 36.0
+        },
+        "layout": "HORIZONTAL",
+        "gap": 10.0,
+        "verticalPadding": 6.0,
+        "paddingBottom": 6.0,
+        "crossAxisAlignment": "CENTER",
+        "children": [
+          {
+            "role": "tui-skeleton",
+            "type": "INSTANCE",
+            "size": {
+              "x": 92.0,
+              "y": 24.0
+            },
+            "radius": 4.0,
+            "topLeftRadius": 4.0,
+            "topRightRadius": 4.0,
+            "bottomLeftRadius": 4.0,
+            "bottomRightRadius": 4.0,
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 0.03,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#000000",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                        "version": "1574:284"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "usesComponent": "keyframe=1"
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "text-style": "numbers-xl",
+        "system": "iOS"
+      },
+      "tree": {
+        "role": "text-style=numbers-xl, system=iOS",
+        "type": "SYMBOL",
+        "size": {
+          "x": 92.0,
+          "y": 41.0
+        },
+        "layout": "HORIZONTAL",
+        "gap": 10.0,
+        "verticalPadding": 7.0,
+        "paddingBottom": 7.0,
+        "crossAxisAlignment": "CENTER",
+        "children": [
+          {
+            "role": "tui-skeleton",
+            "type": "INSTANCE",
+            "size": {
+              "x": 92.0,
+              "y": 27.0
+            },
+            "radius": 4.0,
+            "topLeftRadius": 4.0,
+            "topRightRadius": 4.0,
+            "bottomLeftRadius": 4.0,
+            "bottomRightRadius": 4.0,
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 0.03,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#000000",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                        "version": "1574:284"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "usesComponent": "keyframe=1"
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "text-style": "numbers-xl",
+        "system": "Android"
+      },
+      "tree": {
+        "role": "text-style=numbers-xl, system=Android",
+        "type": "SYMBOL",
+        "size": {
+          "x": 92.0,
+          "y": 40.0
+        },
+        "layout": "HORIZONTAL",
+        "gap": 10.0,
+        "verticalPadding": 6.5,
+        "paddingBottom": 6.5,
+        "crossAxisAlignment": "CENTER",
+        "children": [
+          {
+            "role": "tui-skeleton",
+            "type": "INSTANCE",
+            "size": {
+              "x": 92.0,
+              "y": 27.0
+            },
+            "radius": 4.0,
+            "topLeftRadius": 4.0,
+            "topRightRadius": 4.0,
+            "bottomLeftRadius": 4.0,
+            "bottomRightRadius": 4.0,
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 0.03,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#000000",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                        "version": "1574:284"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "usesComponent": "keyframe=1"
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "text-style": "numbers-m",
+        "system": "iOS"
+      },
+      "tree": {
+        "role": "text-style=numbers-m, system=iOS",
+        "type": "SYMBOL",
+        "size": {
+          "x": 92.0,
+          "y": 24.0
+        },
+        "layout": "HORIZONTAL",
+        "gap": 10.0,
+        "verticalPadding": 4.0,
+        "paddingBottom": 4.0,
+        "crossAxisAlignment": "CENTER",
+        "children": [
+          {
+            "role": "tui-skeleton",
+            "type": "INSTANCE",
+            "size": {
+              "x": 92.0,
+              "y": 16.0
+            },
+            "radius": 4.0,
+            "topLeftRadius": 4.0,
+            "topRightRadius": 4.0,
+            "bottomLeftRadius": 4.0,
+            "bottomRightRadius": 4.0,
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 0.03,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#000000",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                        "version": "1574:284"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "usesComponent": "keyframe=1"
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "text-style": "numbers-m",
+        "system": "Android"
+      },
+      "tree": {
+        "role": "text-style=numbers-m, system=Android",
+        "type": "SYMBOL",
+        "size": {
+          "x": 92.0,
+          "y": 23.0
+        },
+        "layout": "HORIZONTAL",
+        "gap": 10.0,
+        "verticalPadding": 3.5,
+        "paddingBottom": 3.5,
+        "crossAxisAlignment": "CENTER",
+        "children": [
+          {
+            "role": "tui-skeleton",
+            "type": "INSTANCE",
+            "size": {
+              "x": 92.0,
+              "y": 16.0
+            },
+            "radius": 4.0,
+            "topLeftRadius": 4.0,
+            "topRightRadius": 4.0,
+            "bottomLeftRadius": 4.0,
+            "bottomRightRadius": 4.0,
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 0.03,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#000000",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                        "version": "1574:284"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "usesComponent": "keyframe=1"
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "text-style": "heading-l",
+        "system": "Android"
+      },
+      "tree": {
+        "role": "text-style=heading-l, system=Android",
+        "type": "SYMBOL",
+        "size": {
+          "x": 92.0,
+          "y": 33.0
+        },
+        "layout": "HORIZONTAL",
+        "gap": 10.0,
+        "verticalPadding": 5.5,
+        "paddingBottom": 5.5,
+        "crossAxisAlignment": "CENTER",
+        "children": [
+          {
+            "role": "tui-skeleton",
+            "type": "INSTANCE",
+            "size": {
+              "x": 92.0,
+              "y": 22.0
+            },
+            "radius": 4.0,
+            "topLeftRadius": 4.0,
+            "topRightRadius": 4.0,
+            "bottomLeftRadius": 4.0,
+            "bottomRightRadius": 4.0,
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 0.03,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#000000",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                        "version": "1574:284"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "usesComponent": "keyframe=1"
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "text-style": "heading-s",
+        "system": "iOS"
+      },
+      "tree": {
+        "role": "text-style=heading-s, system=iOS",
+        "type": "SYMBOL",
+        "size": {
+          "x": 92.0,
+          "y": 20.0
+        },
+        "layout": "HORIZONTAL",
+        "gap": 10.0,
+        "verticalPadding": 3.0,
+        "paddingBottom": 3.0,
+        "crossAxisAlignment": "CENTER",
+        "children": [
+          {
+            "role": "tui-skeleton",
+            "type": "INSTANCE",
+            "size": {
+              "x": 92.0,
+              "y": 14.0
+            },
+            "radius": 4.0,
+            "topLeftRadius": 4.0,
+            "topRightRadius": 4.0,
+            "bottomLeftRadius": 4.0,
+            "bottomRightRadius": 4.0,
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 0.03,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#000000",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                        "version": "1574:284"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "usesComponent": "keyframe=1"
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "text-style": "heading-s",
+        "system": "Android"
+      },
+      "tree": {
+        "role": "text-style=heading-s, system=Android",
+        "type": "SYMBOL",
+        "size": {
+          "x": 92.0,
+          "y": 19.0
+        },
+        "layout": "HORIZONTAL",
+        "gap": 10.0,
+        "verticalPadding": 2.5,
+        "paddingBottom": 2.5,
+        "crossAxisAlignment": "CENTER",
+        "children": [
+          {
+            "role": "tui-skeleton",
+            "type": "INSTANCE",
+            "size": {
+              "x": 92.0,
+              "y": 14.0
+            },
+            "radius": 4.0,
+            "topLeftRadius": 4.0,
+            "topRightRadius": 4.0,
+            "bottomLeftRadius": 4.0,
+            "bottomRightRadius": 4.0,
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 0.03,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#000000",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                        "version": "1574:284"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "usesComponent": "keyframe=1"
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "text-style": "body-m",
+        "system": "iOS"
+      },
+      "tree": {
+        "role": "text-style=body-m, system=iOS",
+        "type": "SYMBOL",
+        "size": {
+          "x": 92.0,
+          "y": 18.0
+        },
+        "layout": "HORIZONTAL",
+        "gap": 10.0,
+        "verticalPadding": 3.0,
+        "paddingBottom": 3.0,
+        "crossAxisAlignment": "CENTER",
+        "children": [
+          {
+            "role": "tui-skeleton",
+            "type": "INSTANCE",
+            "size": {
+              "x": 92.0,
+              "y": 12.0
+            },
+            "radius": 4.0,
+            "topLeftRadius": 4.0,
+            "topRightRadius": 4.0,
+            "bottomLeftRadius": 4.0,
+            "bottomRightRadius": 4.0,
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 0.03,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#000000",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                        "version": "1574:284"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "usesComponent": "keyframe=1"
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "text-style": "body-m",
+        "system": "Android"
+      },
+      "tree": {
+        "role": "text-style=body-m, system=Android",
+        "type": "SYMBOL",
+        "size": {
+          "x": 92.0,
+          "y": 16.0
+        },
+        "layout": "HORIZONTAL",
+        "gap": 10.0,
+        "verticalPadding": 2.5,
+        "paddingBottom": 2.5,
+        "crossAxisAlignment": "CENTER",
+        "children": [
+          {
+            "role": "tui-skeleton",
+            "type": "INSTANCE",
+            "size": {
+              "x": 92.0,
+              "y": 11.0
+            },
+            "radius": 4.0,
+            "topLeftRadius": 4.0,
+            "topRightRadius": 4.0,
+            "bottomLeftRadius": 4.0,
+            "bottomRightRadius": 4.0,
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 0.03,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#000000",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                        "version": "1574:284"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "usesComponent": "keyframe=1"
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "text-style": "body-s",
+        "system": "iOS"
+      },
+      "tree": {
+        "role": "text-style=body-s, system=iOS",
+        "type": "SYMBOL",
+        "size": {
+          "x": 92.0,
+          "y": 16.0
+        },
+        "layout": "HORIZONTAL",
+        "gap": 10.0,
+        "verticalPadding": 3.0,
+        "paddingBottom": 3.0,
+        "crossAxisAlignment": "CENTER",
+        "children": [
+          {
+            "role": "tui-skeleton",
+            "type": "INSTANCE",
+            "size": {
+              "x": 92.0,
+              "y": 10.0
+            },
+            "radius": 4.0,
+            "topLeftRadius": 4.0,
+            "topRightRadius": 4.0,
+            "bottomLeftRadius": 4.0,
+            "bottomRightRadius": 4.0,
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 0.03,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#000000",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                        "version": "1574:284"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "usesComponent": "keyframe=1"
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "text-style": "body-s",
+        "system": "Android"
+      },
+      "tree": {
+        "role": "text-style=body-s, system=Android",
+        "type": "SYMBOL",
+        "size": {
+          "x": 92.0,
+          "y": 15.0
+        },
+        "layout": "HORIZONTAL",
+        "gap": 10.0,
+        "verticalPadding": 2.5,
+        "paddingBottom": 2.5,
+        "crossAxisAlignment": "CENTER",
+        "children": [
+          {
+            "role": "tui-skeleton",
+            "type": "INSTANCE",
+            "size": {
+              "x": 92.0,
+              "y": 10.0
+            },
+            "radius": 4.0,
+            "topLeftRadius": 4.0,
+            "topRightRadius": 4.0,
+            "bottomLeftRadius": 4.0,
+            "bottomRightRadius": 4.0,
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 0.03,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#000000",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                        "version": "1574:284"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "usesComponent": "keyframe=1"
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "text-style": "ui-xs",
+        "system": "iOS"
+      },
+      "tree": {
+        "role": "text-style=ui-xs, system=iOS",
+        "type": "SYMBOL",
+        "size": {
+          "x": 92.0,
+          "y": 14.0
+        },
+        "layout": "HORIZONTAL",
+        "gap": 10.0,
+        "verticalPadding": 2.0,
+        "paddingBottom": 2.0,
+        "crossAxisAlignment": "CENTER",
+        "children": [
+          {
+            "role": "tui-skeleton",
+            "type": "INSTANCE",
+            "size": {
+              "x": 92.0,
+              "y": 10.0
+            },
+            "radius": 4.0,
+            "topLeftRadius": 4.0,
+            "topRightRadius": 4.0,
+            "bottomLeftRadius": 4.0,
+            "bottomRightRadius": 4.0,
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 0.03,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#000000",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                        "version": "1574:284"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "usesComponent": "keyframe=1"
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "text-style": "ui-xxs",
+        "system": "iOS"
+      },
+      "tree": {
+        "role": "text-style=ui-xxs, system=iOS",
+        "type": "SYMBOL",
+        "size": {
+          "x": 92.0,
+          "y": 13.0
+        },
+        "layout": "HORIZONTAL",
+        "gap": 10.0,
+        "verticalPadding": 2.0,
+        "paddingBottom": 2.0,
+        "crossAxisAlignment": "CENTER",
+        "children": [
+          {
+            "role": "tui-skeleton",
+            "type": "INSTANCE",
+            "size": {
+              "x": 92.0,
+              "y": 9.0
+            },
+            "radius": 4.0,
+            "topLeftRadius": 4.0,
+            "topRightRadius": 4.0,
+            "bottomLeftRadius": 4.0,
+            "bottomRightRadius": 4.0,
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 0.03,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#000000",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                        "version": "1574:284"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "usesComponent": "keyframe=1"
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "text-style": "ui-xs",
+        "system": "Android"
+      },
+      "tree": {
+        "role": "text-style=ui-xs, system=Android",
+        "type": "SYMBOL",
+        "size": {
+          "x": 92.0,
+          "y": 14.0
+        },
+        "layout": "HORIZONTAL",
+        "gap": 10.0,
+        "verticalPadding": 2.0,
+        "paddingBottom": 2.0,
+        "crossAxisAlignment": "CENTER",
+        "children": [
+          {
+            "role": "tui-skeleton",
+            "type": "INSTANCE",
+            "size": {
+              "x": 92.0,
+              "y": 10.0
+            },
+            "radius": 4.0,
+            "topLeftRadius": 4.0,
+            "topRightRadius": 4.0,
+            "bottomLeftRadius": 4.0,
+            "bottomRightRadius": 4.0,
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 0.03,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#000000",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                        "version": "1574:284"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "usesComponent": "keyframe=1"
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "text-style": "ui-xxs",
+        "system": "Android"
+      },
+      "tree": {
+        "role": "text-style=ui-xxs, system=Android",
+        "type": "SYMBOL",
+        "size": {
+          "x": 92.0,
+          "y": 13.0
+        },
+        "layout": "HORIZONTAL",
+        "gap": 10.0,
+        "verticalPadding": 2.0,
+        "paddingBottom": 2.0,
+        "crossAxisAlignment": "CENTER",
+        "children": [
+          {
+            "role": "tui-skeleton",
+            "type": "INSTANCE",
+            "size": {
+              "x": 92.0,
+              "y": 9.0
+            },
+            "radius": 4.0,
+            "topLeftRadius": 4.0,
+            "topRightRadius": 4.0,
+            "bottomLeftRadius": 4.0,
+            "bottomRightRadius": 4.0,
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 0.03,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#000000",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                        "version": "1574:284"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "usesComponent": "keyframe=1"
+          }
+        ]
+      }
+    }
+  ],
+  "guidance": []
+}

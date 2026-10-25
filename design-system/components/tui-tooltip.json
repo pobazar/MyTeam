@@ -1,0 +1,2577 @@
+{
+  "componentSet": "tui-tooltip",
+  "sources": [
+    "tui-tooltip.fig"
+  ],
+  "units": "Figma px (verify platform-specific dp/pt mapping)",
+  "components": [
+    "tui-tooltip"
+  ],
+  "variantCount": 96,
+  "variants": [
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "top-left",
+        "appearance": "default",
+        "resizable": "off"
+      },
+      "appearance": "991c0a530"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "top",
+        "appearance": "default",
+        "resizable": "off"
+      },
+      "appearance": "991c0a530"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "top-left",
+        "appearance": "default",
+        "resizable": "on"
+      },
+      "appearance": "0ae454d4f"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "top-right",
+        "appearance": "default",
+        "resizable": "off"
+      },
+      "appearance": "991c0a530"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "top-right",
+        "appearance": "default",
+        "resizable": "on"
+      },
+      "appearance": "0ae454d4f"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "top",
+        "appearance": "default",
+        "resizable": "on"
+      },
+      "appearance": "0ae454d4f"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "left-top",
+        "appearance": "default",
+        "resizable": "off"
+      },
+      "appearance": "48a5641de"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "left-top",
+        "appearance": "default",
+        "resizable": "on"
+      },
+      "appearance": "521847062"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "left",
+        "appearance": "default",
+        "resizable": "on"
+      },
+      "appearance": "521847062"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "left-bottom",
+        "appearance": "default",
+        "resizable": "on"
+      },
+      "appearance": "521847062"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "left-top",
+        "appearance": "floating",
+        "resizable": "off"
+      },
+      "appearance": "096ed4b1e"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "left",
+        "appearance": "floating",
+        "resizable": "off"
+      },
+      "appearance": "096ed4b1e"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "left-bottom",
+        "appearance": "floating",
+        "resizable": "off"
+      },
+      "appearance": "096ed4b1e"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "left-top",
+        "appearance": "floating",
+        "resizable": "on"
+      },
+      "appearance": "211a9ed3f"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "left",
+        "appearance": "floating",
+        "resizable": "on"
+      },
+      "appearance": "211a9ed3f"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "left-bottom",
+        "appearance": "floating",
+        "resizable": "on"
+      },
+      "appearance": "211a9ed3f"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "right-top",
+        "appearance": "default",
+        "resizable": "off"
+      },
+      "appearance": "48a5641de"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "right",
+        "appearance": "default",
+        "resizable": "off"
+      },
+      "appearance": "48a5641de"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "right-bottom",
+        "appearance": "default",
+        "resizable": "off"
+      },
+      "appearance": "48a5641de"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "right-top",
+        "appearance": "default",
+        "resizable": "on"
+      },
+      "appearance": "521847062"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "right",
+        "appearance": "default",
+        "resizable": "on"
+      },
+      "appearance": "521847062"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "right-bottom",
+        "appearance": "default",
+        "resizable": "on"
+      },
+      "appearance": "521847062"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "right-top",
+        "appearance": "floating",
+        "resizable": "off"
+      },
+      "appearance": "096ed4b1e"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "right",
+        "appearance": "floating",
+        "resizable": "off"
+      },
+      "appearance": "096ed4b1e"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "right-bottom",
+        "appearance": "floating",
+        "resizable": "off"
+      },
+      "appearance": "096ed4b1e"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "right-top",
+        "appearance": "floating",
+        "resizable": "on"
+      },
+      "appearance": "211a9ed3f"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "right",
+        "appearance": "floating",
+        "resizable": "on"
+      },
+      "appearance": "211a9ed3f"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "right-bottom",
+        "appearance": "floating",
+        "resizable": "on"
+      },
+      "appearance": "211a9ed3f"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "top-left",
+        "appearance": "floating",
+        "resizable": "off"
+      },
+      "appearance": "683de13bf"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "top",
+        "appearance": "floating",
+        "resizable": "off"
+      },
+      "appearance": "683de13bf"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "top-left",
+        "appearance": "floating",
+        "resizable": "on"
+      },
+      "appearance": "96b12f8bc"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "top",
+        "appearance": "floating",
+        "resizable": "on"
+      },
+      "appearance": "96b12f8bc"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "top-right",
+        "appearance": "floating",
+        "resizable": "off"
+      },
+      "appearance": "683de13bf"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "top-right",
+        "appearance": "floating",
+        "resizable": "on"
+      },
+      "appearance": "96b12f8bc"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "bottom-left",
+        "appearance": "default",
+        "resizable": "off"
+      },
+      "appearance": "991c0a530"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "bottom-left",
+        "appearance": "default",
+        "resizable": "on"
+      },
+      "appearance": "0ae454d4f"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "bottom-right",
+        "appearance": "default",
+        "resizable": "off"
+      },
+      "appearance": "991c0a530"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "bottom",
+        "appearance": "default",
+        "resizable": "off"
+      },
+      "appearance": "991c0a530"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "bottom-right",
+        "appearance": "default",
+        "resizable": "on"
+      },
+      "appearance": "0ae454d4f"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "bottom",
+        "appearance": "default",
+        "resizable": "on"
+      },
+      "appearance": "0ae454d4f"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "bottom-left",
+        "appearance": "floating",
+        "resizable": "off"
+      },
+      "appearance": "683de13bf"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "bottom",
+        "appearance": "floating",
+        "resizable": "off"
+      },
+      "appearance": "683de13bf"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "bottom-left",
+        "appearance": "floating",
+        "resizable": "on"
+      },
+      "appearance": "96b12f8bc"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "bottom-right",
+        "appearance": "floating",
+        "resizable": "off"
+      },
+      "appearance": "683de13bf"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "bottom-right",
+        "appearance": "floating",
+        "resizable": "on"
+      },
+      "appearance": "96b12f8bc"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "bottom",
+        "appearance": "floating",
+        "resizable": "on"
+      },
+      "appearance": "96b12f8bc"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "left",
+        "appearance": "default",
+        "resizable": "off"
+      },
+      "appearance": "48a5641de"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "position": "left-bottom",
+        "appearance": "default",
+        "resizable": "off"
+      },
+      "appearance": "48a5641de"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "iOS",
+        "Appearance": "default",
+        "Resizable": "on",
+        "Position": "Top Right"
+      },
+      "appearance": "225a37905"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "iOS",
+        "Appearance": "floating",
+        "Resizable": "on",
+        "Position": "Top Right"
+      },
+      "appearance": "7fd666759"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "iOS",
+        "Appearance": "default",
+        "Resizable": "on",
+        "Position": "Top"
+      },
+      "appearance": "225a37905"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "iOS",
+        "Appearance": "floating",
+        "Resizable": "on",
+        "Position": "Top"
+      },
+      "appearance": "7fd666759"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "iOS",
+        "Appearance": "default",
+        "Resizable": "on",
+        "Position": "Top Left"
+      },
+      "appearance": "225a37905"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "iOS",
+        "Appearance": "floating",
+        "Resizable": "on",
+        "Position": "Top Left"
+      },
+      "appearance": "7fd666759"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "iOS",
+        "Appearance": "default",
+        "Resizable": "on",
+        "Position": "Bottom Right"
+      },
+      "appearance": "225a37905"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "iOS",
+        "Appearance": "floating",
+        "Resizable": "on",
+        "Position": "Bottom Right"
+      },
+      "appearance": "7fd666759"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "iOS",
+        "Appearance": "default",
+        "Resizable": "on",
+        "Position": "Bottom"
+      },
+      "appearance": "225a37905"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "iOS",
+        "Appearance": "floating",
+        "Resizable": "on",
+        "Position": "Bottom"
+      },
+      "appearance": "7fd666759"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "iOS",
+        "Appearance": "default",
+        "Resizable": "on",
+        "Position": "Bottom Left"
+      },
+      "appearance": "225a37905"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "iOS",
+        "Appearance": "floating",
+        "Resizable": "on",
+        "Position": "Bottom Left"
+      },
+      "appearance": "7fd666759"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "Android",
+        "Appearance": "default",
+        "Resizable": "on",
+        "Position": "Top Right"
+      },
+      "appearance": "1ad32a0f1"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "Android",
+        "Appearance": "floating",
+        "Resizable": "on",
+        "Position": "Top Right"
+      },
+      "appearance": "52240a89b"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "Android",
+        "Appearance": "default",
+        "Resizable": "on",
+        "Position": "Top"
+      },
+      "appearance": "1ad32a0f1"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "Android",
+        "Appearance": "floating",
+        "Resizable": "on",
+        "Position": "Top"
+      },
+      "appearance": "52240a89b"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "Android",
+        "Appearance": "default",
+        "Resizable": "on",
+        "Position": "Top Left"
+      },
+      "appearance": "1ad32a0f1"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "Android",
+        "Appearance": "floating",
+        "Resizable": "on",
+        "Position": "Top Left"
+      },
+      "appearance": "52240a89b"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "Android",
+        "Appearance": "default",
+        "Resizable": "on",
+        "Position": "Bottom Right"
+      },
+      "appearance": "1ad32a0f1"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "Android",
+        "Appearance": "floating",
+        "Resizable": "on",
+        "Position": "Bottom Right"
+      },
+      "appearance": "52240a89b"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "Android",
+        "Appearance": "default",
+        "Resizable": "on",
+        "Position": "Bottom"
+      },
+      "appearance": "1ad32a0f1"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "Android",
+        "Appearance": "floating",
+        "Resizable": "on",
+        "Position": "Bottom"
+      },
+      "appearance": "52240a89b"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "Android",
+        "Appearance": "default",
+        "Resizable": "on",
+        "Position": "Bottom Left"
+      },
+      "appearance": "1ad32a0f1"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "Android",
+        "Appearance": "floating",
+        "Resizable": "on",
+        "Position": "Bottom Left"
+      },
+      "appearance": "52240a89b"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "iOS",
+        "Appearance": "default",
+        "Resizable": "off",
+        "Position": "Top Right"
+      },
+      "appearance": "c99841095"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "iOS",
+        "Appearance": "floating",
+        "Resizable": "off",
+        "Position": "Top Right"
+      },
+      "appearance": "438710de0"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "iOS",
+        "Appearance": "default",
+        "Resizable": "off",
+        "Position": "Top"
+      },
+      "appearance": "c99841095"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "iOS",
+        "Appearance": "floating",
+        "Resizable": "off",
+        "Position": "Top"
+      },
+      "appearance": "438710de0"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "iOS",
+        "Appearance": "default",
+        "Resizable": "off",
+        "Position": "Top Left"
+      },
+      "appearance": "c99841095"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "iOS",
+        "Appearance": "floating",
+        "Resizable": "off",
+        "Position": "Top Left"
+      },
+      "appearance": "438710de0"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "iOS",
+        "Appearance": "default",
+        "Resizable": "off",
+        "Position": "Bottom Right"
+      },
+      "appearance": "c99841095"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "iOS",
+        "Appearance": "floating",
+        "Resizable": "off",
+        "Position": "Bottom Right"
+      },
+      "appearance": "438710de0"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "iOS",
+        "Appearance": "default",
+        "Resizable": "off",
+        "Position": "Bottom"
+      },
+      "appearance": "c99841095"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "iOS",
+        "Appearance": "floating",
+        "Resizable": "off",
+        "Position": "Bottom"
+      },
+      "appearance": "438710de0"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "iOS",
+        "Appearance": "default",
+        "Resizable": "off",
+        "Position": "Bottom Left"
+      },
+      "appearance": "c99841095"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "iOS",
+        "Appearance": "floating",
+        "Resizable": "off",
+        "Position": "Bottom Left"
+      },
+      "appearance": "438710de0"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "Android",
+        "Appearance": "default",
+        "Resizable": "off",
+        "Position": "Top Right"
+      },
+      "appearance": "ac46dd1cf"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "Android",
+        "Appearance": "floating",
+        "Resizable": "off",
+        "Position": "Top Right"
+      },
+      "appearance": "12e6243e9"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "Android",
+        "Appearance": "default",
+        "Resizable": "off",
+        "Position": "Top"
+      },
+      "appearance": "ac46dd1cf"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "Android",
+        "Appearance": "floating",
+        "Resizable": "off",
+        "Position": "Top"
+      },
+      "appearance": "12e6243e9"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "Android",
+        "Appearance": "default",
+        "Resizable": "off",
+        "Position": "Top Left"
+      },
+      "appearance": "ac46dd1cf"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "Android",
+        "Appearance": "floating",
+        "Resizable": "off",
+        "Position": "Top Left"
+      },
+      "appearance": "12e6243e9"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "Android",
+        "Appearance": "default",
+        "Resizable": "off",
+        "Position": "Bottom Right"
+      },
+      "appearance": "ac46dd1cf"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "Android",
+        "Appearance": "floating",
+        "Resizable": "off",
+        "Position": "Bottom Right"
+      },
+      "appearance": "12e6243e9"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "Android",
+        "Appearance": "default",
+        "Resizable": "off",
+        "Position": "Bottom"
+      },
+      "appearance": "ac46dd1cf"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "Android",
+        "Appearance": "floating",
+        "Resizable": "off",
+        "Position": "Bottom"
+      },
+      "appearance": "12e6243e9"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "Android",
+        "Appearance": "default",
+        "Resizable": "off",
+        "Position": "Bottom Left"
+      },
+      "appearance": "ac46dd1cf"
+    },
+    {
+      "component": "tui-tooltip",
+      "properties": {
+        "System": "Android",
+        "Appearance": "floating",
+        "Resizable": "off",
+        "Position": "Bottom Left"
+      },
+      "appearance": "12e6243e9"
+    }
+  ],
+  "appearancePresets": {
+    "991c0a530": {
+      "size": {
+        "x": 130.0,
+        "y": 47.998
+      },
+      "layout": "VERTICAL"
+    },
+    "0ae454d4f": {
+      "size": {
+        "x": 140.0,
+        "y": 47.998
+      },
+      "layout": "VERTICAL"
+    },
+    "48a5641de": {
+      "size": {
+        "x": 133.998,
+        "y": 44.0
+      },
+      "layout": "HORIZONTAL"
+    },
+    "521847062": {
+      "size": {
+        "x": 140.0,
+        "y": 44.0
+      },
+      "layout": "HORIZONTAL"
+    },
+    "096ed4b1e": {
+      "size": {
+        "x": 133.998,
+        "y": 44.0
+      },
+      "layout": "HORIZONTAL",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "offset": {
+            "x": 0.0,
+            "y": 5.0
+          },
+          "radius": 20.0,
+          "visible": true,
+          "blendMode": "NORMAL",
+          "spread": 0.0,
+          "showShadowBehindNode": false,
+          "radiusVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "84399b099dc3566a6558e0e1fb538fc6ea3cd4e6",
+                  "version": "2361:13"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "FLOAT"
+          },
+          "colorVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "0f0f141383bbf20d54895362a5911e748598faf4",
+                  "version": "8094:137"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          },
+          "yVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "63922259185e302e0b908a5c4bb03fb3f78603ea",
+                  "version": "2361:12"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "FLOAT"
+          },
+          "color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.1
+          },
+          "authoredColor": {
+            "space": "DEFAULT",
+            "c0": 0.0,
+            "c1": 0.0,
+            "c2": 0.0,
+            "c3": 0.1
+          }
+        }
+      ]
+    },
+    "211a9ed3f": {
+      "size": {
+        "x": 140.0,
+        "y": 44.0
+      },
+      "layout": "HORIZONTAL",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "offset": {
+            "x": 0.0,
+            "y": 5.0
+          },
+          "radius": 20.0,
+          "visible": true,
+          "blendMode": "NORMAL",
+          "spread": 0.0,
+          "showShadowBehindNode": false,
+          "radiusVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "84399b099dc3566a6558e0e1fb538fc6ea3cd4e6",
+                  "version": "2361:13"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "FLOAT"
+          },
+          "colorVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "0f0f141383bbf20d54895362a5911e748598faf4",
+                  "version": "8094:137"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          },
+          "yVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "63922259185e302e0b908a5c4bb03fb3f78603ea",
+                  "version": "2361:12"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "FLOAT"
+          },
+          "color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.1
+          },
+          "authoredColor": {
+            "space": "DEFAULT",
+            "c0": 0.0,
+            "c1": 0.0,
+            "c2": 0.0,
+            "c3": 0.1
+          }
+        }
+      ]
+    },
+    "683de13bf": {
+      "size": {
+        "x": 130.0,
+        "y": 47.998
+      },
+      "layout": "VERTICAL",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "offset": {
+            "x": 0.0,
+            "y": 5.0
+          },
+          "radius": 20.0,
+          "visible": true,
+          "blendMode": "NORMAL",
+          "spread": 0.0,
+          "showShadowBehindNode": false,
+          "radiusVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "84399b099dc3566a6558e0e1fb538fc6ea3cd4e6",
+                  "version": "2361:13"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "FLOAT"
+          },
+          "colorVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "0f0f141383bbf20d54895362a5911e748598faf4",
+                  "version": "8094:137"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          },
+          "yVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "63922259185e302e0b908a5c4bb03fb3f78603ea",
+                  "version": "2361:12"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "FLOAT"
+          },
+          "color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.1
+          },
+          "authoredColor": {
+            "space": "DEFAULT",
+            "c0": 0.0,
+            "c1": 0.0,
+            "c2": 0.0,
+            "c3": 0.1
+          }
+        }
+      ]
+    },
+    "96b12f8bc": {
+      "size": {
+        "x": 140.0,
+        "y": 47.998
+      },
+      "layout": "VERTICAL",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "offset": {
+            "x": 0.0,
+            "y": 5.0
+          },
+          "radius": 20.0,
+          "visible": true,
+          "blendMode": "NORMAL",
+          "spread": 0.0,
+          "showShadowBehindNode": false,
+          "radiusVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "84399b099dc3566a6558e0e1fb538fc6ea3cd4e6",
+                  "version": "2361:13"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "FLOAT"
+          },
+          "colorVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "0f0f141383bbf20d54895362a5911e748598faf4",
+                  "version": "8094:137"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          },
+          "yVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "63922259185e302e0b908a5c4bb03fb3f78603ea",
+                  "version": "2361:12"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "FLOAT"
+          },
+          "color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.1
+          },
+          "authoredColor": {
+            "space": "DEFAULT",
+            "c0": 0.0,
+            "c1": 0.0,
+            "c2": 0.0,
+            "c3": 0.1
+          }
+        }
+      ]
+    },
+    "225a37905": {
+      "size": {
+        "x": 375.0,
+        "y": 58.0
+      },
+      "layout": "VERTICAL",
+      "mainAxisAlignment": "CENTER",
+      "crossAxisAlignment": "CENTER"
+    },
+    "7fd666759": {
+      "size": {
+        "x": 375.0,
+        "y": 58.0
+      },
+      "layout": "VERTICAL",
+      "mainAxisAlignment": "CENTER",
+      "crossAxisAlignment": "CENTER",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "offset": {
+            "x": 0.0,
+            "y": 5.0
+          },
+          "radius": 20.0,
+          "visible": true,
+          "blendMode": "NORMAL",
+          "spread": 0.0,
+          "showShadowBehindNode": false,
+          "radiusVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "84399b099dc3566a6558e0e1fb538fc6ea3cd4e6",
+                  "version": "2361:13"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "FLOAT"
+          },
+          "colorVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "0f0f141383bbf20d54895362a5911e748598faf4",
+                  "version": "8094:137"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          },
+          "yVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "63922259185e302e0b908a5c4bb03fb3f78603ea",
+                  "version": "2361:12"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "FLOAT"
+          },
+          "color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.1
+          },
+          "authoredColor": {
+            "space": "DEFAULT",
+            "c0": 0.0,
+            "c1": 0.0,
+            "c2": 0.0,
+            "c3": 0.1
+          }
+        }
+      ]
+    },
+    "1ad32a0f1": {
+      "size": {
+        "x": 360.0,
+        "y": 56.0
+      },
+      "layout": "VERTICAL",
+      "mainAxisAlignment": "CENTER",
+      "crossAxisAlignment": "CENTER"
+    },
+    "52240a89b": {
+      "size": {
+        "x": 360.0,
+        "y": 56.0
+      },
+      "layout": "VERTICAL",
+      "mainAxisAlignment": "CENTER",
+      "crossAxisAlignment": "CENTER",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "offset": {
+            "x": 0.0,
+            "y": 5.0
+          },
+          "radius": 20.0,
+          "visible": true,
+          "blendMode": "NORMAL",
+          "spread": 0.0,
+          "showShadowBehindNode": false,
+          "radiusVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "84399b099dc3566a6558e0e1fb538fc6ea3cd4e6",
+                  "version": "2361:13"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "FLOAT"
+          },
+          "colorVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "0f0f141383bbf20d54895362a5911e748598faf4",
+                  "version": "8094:137"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          },
+          "yVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "63922259185e302e0b908a5c4bb03fb3f78603ea",
+                  "version": "2361:12"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "FLOAT"
+          },
+          "color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.1
+          },
+          "authoredColor": {
+            "space": "DEFAULT",
+            "c0": 0.0,
+            "c1": 0.0,
+            "c2": 0.0,
+            "c3": 0.1
+          }
+        }
+      ]
+    },
+    "c99841095": {
+      "size": {
+        "x": 294.0,
+        "y": 58.0
+      },
+      "layout": "VERTICAL",
+      "mainAxisAlignment": "CENTER",
+      "crossAxisAlignment": "CENTER"
+    },
+    "438710de0": {
+      "size": {
+        "x": 294.0,
+        "y": 58.0
+      },
+      "layout": "VERTICAL",
+      "mainAxisAlignment": "CENTER",
+      "crossAxisAlignment": "CENTER",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "offset": {
+            "x": 0.0,
+            "y": 5.0
+          },
+          "radius": 20.0,
+          "visible": true,
+          "blendMode": "NORMAL",
+          "spread": 0.0,
+          "showShadowBehindNode": false,
+          "radiusVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "84399b099dc3566a6558e0e1fb538fc6ea3cd4e6",
+                  "version": "2361:13"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "FLOAT"
+          },
+          "colorVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "0f0f141383bbf20d54895362a5911e748598faf4",
+                  "version": "8094:137"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          },
+          "yVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "63922259185e302e0b908a5c4bb03fb3f78603ea",
+                  "version": "2361:12"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "FLOAT"
+          },
+          "color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.1
+          },
+          "authoredColor": {
+            "space": "DEFAULT",
+            "c0": 0.0,
+            "c1": 0.0,
+            "c2": 0.0,
+            "c3": 0.1
+          }
+        }
+      ]
+    },
+    "ac46dd1cf": {
+      "size": {
+        "x": 272.0,
+        "y": 56.0
+      },
+      "layout": "VERTICAL",
+      "mainAxisAlignment": "CENTER",
+      "crossAxisAlignment": "CENTER"
+    },
+    "12e6243e9": {
+      "size": {
+        "x": 272.0,
+        "y": 56.0
+      },
+      "layout": "VERTICAL",
+      "mainAxisAlignment": "CENTER",
+      "crossAxisAlignment": "CENTER",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "offset": {
+            "x": 0.0,
+            "y": 5.0
+          },
+          "radius": 20.0,
+          "visible": true,
+          "blendMode": "NORMAL",
+          "spread": 0.0,
+          "showShadowBehindNode": false,
+          "radiusVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "84399b099dc3566a6558e0e1fb538fc6ea3cd4e6",
+                  "version": "2361:13"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "FLOAT"
+          },
+          "colorVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "0f0f141383bbf20d54895362a5911e748598faf4",
+                  "version": "8094:137"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          },
+          "yVar": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "63922259185e302e0b908a5c4bb03fb3f78603ea",
+                  "version": "2361:12"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "FLOAT"
+          },
+          "color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.1
+          },
+          "authoredColor": {
+            "space": "DEFAULT",
+            "c0": 0.0,
+            "c1": 0.0,
+            "c2": 0.0,
+            "c3": 0.1
+          }
+        }
+      ]
+    }
+  },
+  "anatomyExamples": [
+    {
+      "variant": {
+        "position": "top-left",
+        "appearance": "default",
+        "resizable": "off"
+      },
+      "tree": {
+        "role": "position=top-left, appearance=default, resizable=off",
+        "type": "SYMBOL",
+        "size": {
+          "x": 130.0,
+          "y": 47.998
+        },
+        "layout": "VERTICAL",
+        "children": [
+          {
+            "role": "tail",
+            "type": "FRAME",
+            "size": {
+              "x": 130.0,
+              "y": 3.998
+            },
+            "layout": "VERTICAL",
+            "gap": 10.0,
+            "horizontalPadding": 16.0,
+            "children": [
+              {
+                "role": "tail",
+                "type": "VECTOR",
+                "size": {
+                  "x": 12.0,
+                  "y": 3.998
+                },
+                "background": [
+                  {
+                    "type": "SOLID",
+                    "opacity": 1.0,
+                    "blendMode": "NORMAL",
+                    "visible": true,
+                    "color": "#575B61",
+                    "colorVariable": {
+                      "value": {
+                        "alias": {
+                          "assetRef": {
+                            "key": "4fc8c3a6b0e472d041c4176cc056f45072c199d1",
+                            "version": "8713:6"
+                          }
+                        }
+                      },
+                      "dataType": "ALIAS",
+                      "resolvedDataType": "COLOR"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "role": "container",
+            "type": "FRAME",
+            "size": {
+              "x": 130.0,
+              "y": 44.0
+            },
+            "radius": 12.0,
+            "topLeftRadius": 12.0,
+            "topRightRadius": 12.0,
+            "bottomLeftRadius": 12.0,
+            "bottomRightRadius": 12.0,
+            "layout": "VERTICAL",
+            "gap": 8.0,
+            "horizontalPadding": 16.0,
+            "verticalPadding": 12.0,
+            "paddingRight": 16.0,
+            "paddingBottom": 12.0,
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 1.0,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#575B61",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "4fc8c3a6b0e472d041c4176cc056f45072c199d1",
+                        "version": "8713:6"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "children": [
+              {
+                "role": "textCont",
+                "type": "FRAME",
+                "size": {
+                  "x": 98.0,
+                  "y": 20.0
+                },
+                "layout": "HORIZONTAL",
+                "gap": 8.0,
+                "children": [
+                  {
+                    "role": "iconCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 16.0,
+                      "y": 20.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "verticalPadding": 2.0,
+                    "paddingBottom": 2.0,
+                    "crossAxisAlignment": "CENTER",
+                    "children": [
+                      {
+                        "role": "placeholder-single",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 16.0,
+                          "y": 16.0
+                        },
+                        "radius": 100.0,
+                        "topLeftRadius": 100.0,
+                        "topRightRadius": 100.0,
+                        "bottomLeftRadius": 100.0,
+                        "bottomRightRadius": 100.0,
+                        "layout": "VERTICAL",
+                        "gap": 10.0,
+                        "crossAxisAlignment": "CENTER",
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 0.03,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#000000",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "036a2b0412dd5b6f149bb4859148eb562e56290e",
+                                    "version": "6528:114"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "usesComponent": "placeholder-single"
+                      }
+                    ]
+                  },
+                  {
+                    "role": "title",
+                    "type": "TEXT",
+                    "size": {
+                      "x": 98.0,
+                      "y": 20.0
+                    },
+                    "fontSize": 13.0,
+                    "font": {
+                      "family": "Neue Haas Unica W1G",
+                      "style": "Regular",
+                      "postscript": "NeueHaasUnicaW1G-Regular"
+                    },
+                    "lineHeight": {
+                      "value": 20.0,
+                      "units": "PIXELS"
+                    },
+                    "letterSpacing": {
+                      "value": 0.0,
+                      "units": "PIXELS"
+                    },
+                    "background": [
+                      {
+                        "type": "SOLID",
+                        "opacity": 1.0,
+                        "blendMode": "NORMAL",
+                        "visible": true,
+                        "color": "#FFFFFF",
+                        "colorVariable": {
+                          "value": {
+                            "alias": {
+                              "assetRef": {
+                                "key": "dff2ae5b233066263db9984816409b3be07eac79",
+                                "version": "6528:887"
+                              }
+                            }
+                          },
+                          "dataType": "ALIAS",
+                          "resolvedDataType": "COLOR"
+                        }
+                      }
+                    ],
+                    "exampleText": "Some tooltip text"
+                  }
+                ]
+              },
+              {
+                "role": "container",
+                "type": "FRAME",
+                "size": {
+                  "x": 98.0,
+                  "y": 36.0
+                },
+                "layout": "VERTICAL",
+                "gap": 10.0,
+                "paddingBottom": 4.0,
+                "children": [
+                  {
+                    "role": "tui-button [on-light-on-dark]",
+                    "type": "INSTANCE",
+                    "size": {
+                      "x": 53.0,
+                      "y": 32.0
+                    },
+                    "topLeftRadius": 8.0,
+                    "topRightRadius": 8.0,
+                    "bottomLeftRadius": 8.0,
+                    "bottomRightRadius": 8.0,
+                    "layout": "HORIZONTAL",
+                    "gap": 2.0,
+                    "horizontalPadding": 8.0,
+                    "verticalPadding": 4.0,
+                    "paddingRight": 8.0,
+                    "paddingBottom": 4.0,
+                    "mainAxisAlignment": "CENTER",
+                    "crossAxisAlignment": "CENTER",
+                    "background": [
+                      {
+                        "type": "SOLID",
+                        "opacity": 0.3,
+                        "blendMode": "NORMAL",
+                        "visible": true,
+                        "color": "#FFFFFF",
+                        "colorVariable": {
+                          "value": {
+                            "alias": {
+                              "assetRef": {
+                                "key": "a031597190608af6af0d580bdbb26c56a35c6802",
+                                "version": "6528:948"
+                              }
+                            }
+                          },
+                          "dataType": "ALIAS",
+                          "resolvedDataType": "COLOR"
+                        }
+                      }
+                    ],
+                    "effects": [
+                      {
+                        "type": "BACKGROUND_BLUR",
+                        "offset": {
+                          "x": 0.0,
+                          "y": 4.0
+                        },
+                        "radius": 32.0,
+                        "visible": true,
+                        "blendMode": "NORMAL",
+                        "spread": 0.0,
+                        "showShadowBehindNode": true,
+                        "color": {
+                          "r": 0.0,
+                          "g": 0.0,
+                          "b": 0.0,
+                          "a": 0.25
+                        },
+                        "authoredColor": {
+                          "space": "DEFAULT",
+                          "c0": 0.0,
+                          "c1": 0.0,
+                          "c2": 0.0,
+                          "c3": 0.25
+                        }
+                      }
+                    ],
+                    "usesComponent": "size=small, appearance=glass-on-dark, state=normal, skeleton=off"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "position": "left-top",
+        "appearance": "default",
+        "resizable": "off"
+      },
+      "tree": {
+        "role": "position=left-top, appearance=default, resizable=off",
+        "type": "SYMBOL",
+        "size": {
+          "x": 133.998,
+          "y": 44.0
+        },
+        "layout": "HORIZONTAL",
+        "children": [
+          {
+            "role": "tail",
+            "type": "FRAME",
+            "size": {
+              "x": 3.998,
+              "y": 44.0
+            },
+            "layout": "VERTICAL",
+            "gap": 10.0,
+            "verticalPadding": 16.0,
+            "children": [
+              {
+                "role": "tail",
+                "type": "VECTOR",
+                "size": {
+                  "x": 3.998,
+                  "y": 12.0
+                },
+                "background": [
+                  {
+                    "type": "SOLID",
+                    "opacity": 1.0,
+                    "blendMode": "NORMAL",
+                    "visible": true,
+                    "color": "#575B61",
+                    "colorVariable": {
+                      "value": {
+                        "alias": {
+                          "assetRef": {
+                            "key": "4fc8c3a6b0e472d041c4176cc056f45072c199d1",
+                            "version": "8713:6"
+                          }
+                        }
+                      },
+                      "dataType": "ALIAS",
+                      "resolvedDataType": "COLOR"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "role": "container",
+            "type": "FRAME",
+            "size": {
+              "x": 130.0,
+              "y": 44.0
+            },
+            "radius": 12.0,
+            "topLeftRadius": 12.0,
+            "topRightRadius": 12.0,
+            "bottomLeftRadius": 12.0,
+            "bottomRightRadius": 12.0,
+            "layout": "VERTICAL",
+            "gap": 8.0,
+            "horizontalPadding": 16.0,
+            "verticalPadding": 12.0,
+            "paddingRight": 16.0,
+            "paddingBottom": 12.0,
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 1.0,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#575B61",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "4fc8c3a6b0e472d041c4176cc056f45072c199d1",
+                        "version": "8713:6"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "children": [
+              {
+                "role": "textCont",
+                "type": "FRAME",
+                "size": {
+                  "x": 98.0,
+                  "y": 20.0
+                },
+                "layout": "HORIZONTAL",
+                "gap": 8.0,
+                "children": [
+                  {
+                    "role": "iconCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 16.0,
+                      "y": 20.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "verticalPadding": 2.0,
+                    "paddingBottom": 2.0,
+                    "crossAxisAlignment": "CENTER",
+                    "children": [
+                      {
+                        "role": "placeholder-single",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 16.0,
+                          "y": 16.0
+                        },
+                        "radius": 100.0,
+                        "topLeftRadius": 100.0,
+                        "topRightRadius": 100.0,
+                        "bottomLeftRadius": 100.0,
+                        "bottomRightRadius": 100.0,
+                        "layout": "VERTICAL",
+                        "gap": 10.0,
+                        "crossAxisAlignment": "CENTER",
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 0.03,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#000000",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "036a2b0412dd5b6f149bb4859148eb562e56290e",
+                                    "version": "6528:114"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "usesComponent": "placeholder-single"
+                      }
+                    ]
+                  },
+                  {
+                    "role": "title",
+                    "type": "TEXT",
+                    "size": {
+                      "x": 98.0,
+                      "y": 20.0
+                    },
+                    "fontSize": 13.0,
+                    "font": {
+                      "family": "Neue Haas Unica W1G",
+                      "style": "Regular",
+                      "postscript": "NeueHaasUnicaW1G-Regular"
+                    },
+                    "lineHeight": {
+                      "value": 20.0,
+                      "units": "PIXELS"
+                    },
+                    "letterSpacing": {
+                      "value": 0.0,
+                      "units": "PIXELS"
+                    },
+                    "background": [
+                      {
+                        "type": "SOLID",
+                        "opacity": 1.0,
+                        "blendMode": "NORMAL",
+                        "visible": true,
+                        "color": "#FFFFFF",
+                        "colorVariable": {
+                          "value": {
+                            "alias": {
+                              "assetRef": {
+                                "key": "dff2ae5b233066263db9984816409b3be07eac79",
+                                "version": "6528:887"
+                              }
+                            }
+                          },
+                          "dataType": "ALIAS",
+                          "resolvedDataType": "COLOR"
+                        }
+                      }
+                    ],
+                    "exampleText": "Some tooltip text"
+                  }
+                ]
+              },
+              {
+                "role": "container",
+                "type": "FRAME",
+                "size": {
+                  "x": 98.0,
+                  "y": 36.0
+                },
+                "layout": "VERTICAL",
+                "gap": 10.0,
+                "paddingBottom": 4.0,
+                "children": [
+                  {
+                    "role": "tui-button [on-light-on-dark]",
+                    "type": "INSTANCE",
+                    "size": {
+                      "x": 53.0,
+                      "y": 32.0
+                    },
+                    "topLeftRadius": 8.0,
+                    "topRightRadius": 8.0,
+                    "bottomLeftRadius": 8.0,
+                    "bottomRightRadius": 8.0,
+                    "layout": "HORIZONTAL",
+                    "gap": 2.0,
+                    "horizontalPadding": 8.0,
+                    "verticalPadding": 4.0,
+                    "paddingRight": 8.0,
+                    "paddingBottom": 4.0,
+                    "mainAxisAlignment": "CENTER",
+                    "crossAxisAlignment": "CENTER",
+                    "background": [
+                      {
+                        "type": "SOLID",
+                        "opacity": 0.3,
+                        "blendMode": "NORMAL",
+                        "visible": true,
+                        "color": "#FFFFFF",
+                        "colorVariable": {
+                          "value": {
+                            "alias": {
+                              "assetRef": {
+                                "key": "a031597190608af6af0d580bdbb26c56a35c6802",
+                                "version": "6528:948"
+                              }
+                            }
+                          },
+                          "dataType": "ALIAS",
+                          "resolvedDataType": "COLOR"
+                        }
+                      }
+                    ],
+                    "effects": [
+                      {
+                        "type": "BACKGROUND_BLUR",
+                        "offset": {
+                          "x": 0.0,
+                          "y": 4.0
+                        },
+                        "radius": 32.0,
+                        "visible": true,
+                        "blendMode": "NORMAL",
+                        "spread": 0.0,
+                        "showShadowBehindNode": true,
+                        "color": {
+                          "r": 0.0,
+                          "g": 0.0,
+                          "b": 0.0,
+                          "a": 0.25
+                        },
+                        "authoredColor": {
+                          "space": "DEFAULT",
+                          "c0": 0.0,
+                          "c1": 0.0,
+                          "c2": 0.0,
+                          "c3": 0.25
+                        }
+                      }
+                    ],
+                    "usesComponent": "size=small, appearance=glass-on-dark, state=normal, skeleton=off"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "System": "iOS",
+        "Appearance": "default",
+        "Resizable": "on",
+        "Position": "Top Right"
+      },
+      "tree": {
+        "role": "System=iOS, Appearance=default, Resizable=on, Position=Top Right",
+        "type": "SYMBOL",
+        "size": {
+          "x": 375.0,
+          "y": 58.0
+        },
+        "layout": "VERTICAL",
+        "mainAxisAlignment": "CENTER",
+        "crossAxisAlignment": "CENTER",
+        "children": [
+          {
+            "role": "Tail",
+            "type": "INSTANCE",
+            "size": {
+              "x": 375.0,
+              "y": 16.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 10.0,
+            "horizontalPadding": 9.0,
+            "paddingRight": 9.0,
+            "mainAxisAlignment": "MAX",
+            "crossAxisAlignment": "MAX",
+            "usesComponent": "Position=Up"
+          },
+          {
+            "role": "Content",
+            "type": "FRAME",
+            "size": {
+              "x": 375.0,
+              "y": 42.0
+            },
+            "radius": 8.0,
+            "topLeftRadius": 8.0,
+            "topRightRadius": 8.0,
+            "bottomLeftRadius": 8.0,
+            "bottomRightRadius": 8.0,
+            "layout": "HORIZONTAL",
+            "gap": 12.0,
+            "horizontalPadding": 16.0,
+            "verticalPadding": 12.0,
+            "paddingRight": 16.0,
+            "paddingBottom": 12.0,
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 1.0,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#428BF9",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "4fc8c3a6b0e472d041c4176cc056f45072c199d1",
+                        "version": "9288:12"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "children": [
+              {
+                "role": "Container",
+                "type": "FRAME",
+                "size": {
+                  "x": 343.0,
+                  "y": 18.0
+                },
+                "layout": "VERTICAL",
+                "gap": 12.0,
+                "mainAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "textCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 343.0,
+                      "y": 18.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 8.0,
+                    "children": [
+                      {
+                        "role": "iconCont",
+                        "type": "FRAME",
+                        "size": {
+                          "x": 16.0,
+                          "y": 18.0
+                        },
+                        "layout": "HORIZONTAL",
+                        "gap": 10.0,
+                        "verticalPadding": 1.0,
+                        "paddingBottom": 1.0,
+                        "crossAxisAlignment": "CENTER"
+                      },
+                      {
+                        "role": "Text",
+                        "type": "TEXT",
+                        "size": {
+                          "x": 343.0,
+                          "y": 18.0
+                        },
+                        "fontSize": 15.0,
+                        "font": {
+                          "family": "SF Pro Text",
+                          "style": "Regular",
+                          "postscript": "SFProText-Regular"
+                        },
+                        "lineHeight": {
+                          "value": 100.0,
+                          "units": "PERCENT"
+                        },
+                        "letterSpacing": {
+                          "value": -0.24,
+                          "units": "PIXELS"
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#FFFFFF",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "7b0b6cc10f74a823d78af60e69d27c002ed6bc07",
+                                    "version": "6528:859"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "exampleText": "Короткий и бодрый текст подсказки"
+                      }
+                    ]
+                  },
+                  {
+                    "role": "buttonCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 343.0,
+                      "y": 34.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "paddingBottom": 4.0,
+                    "children": [
+                      {
+                        "role": "tui-button [on-light-on-dark]",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 57.0,
+                          "y": 30.0
+                        },
+                        "radius": 100.0,
+                        "topLeftRadius": 100.0,
+                        "topRightRadius": 100.0,
+                        "bottomLeftRadius": 100.0,
+                        "bottomRightRadius": 100.0,
+                        "layout": "HORIZONTAL",
+                        "horizontalPadding": 7.0,
+                        "verticalPadding": 3.0,
+                        "paddingRight": 7.0,
+                        "paddingBottom": 3.0,
+                        "mainAxisAlignment": "CENTER",
+                        "crossAxisAlignment": "CENTER",
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 0.1,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#FFFFFF",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "5771905145c5b55e197e94f963973e806ca5eb99",
+                                    "version": "6528:869"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "usesComponent": "system=ios, size=small, appearance=secondary-grayscale-on-dark, state=normal, skeleton=off"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "System": "Android",
+        "Appearance": "default",
+        "Resizable": "on",
+        "Position": "Top Right"
+      },
+      "tree": {
+        "role": "System=Android, Appearance=default, Resizable=on, Position=Top Right",
+        "type": "SYMBOL",
+        "size": {
+          "x": 360.0,
+          "y": 56.0
+        },
+        "layout": "VERTICAL",
+        "mainAxisAlignment": "CENTER",
+        "crossAxisAlignment": "CENTER",
+        "children": [
+          {
+            "role": "Tail",
+            "type": "INSTANCE",
+            "size": {
+              "x": 360.0,
+              "y": 16.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 10.0,
+            "horizontalPadding": 9.0,
+            "paddingRight": 9.0,
+            "mainAxisAlignment": "MAX",
+            "crossAxisAlignment": "MAX",
+            "usesComponent": "Position=Up"
+          },
+          {
+            "role": "Content",
+            "type": "FRAME",
+            "size": {
+              "x": 360.0,
+              "y": 40.0
+            },
+            "radius": 8.0,
+            "topLeftRadius": 8.0,
+            "topRightRadius": 8.0,
+            "bottomLeftRadius": 8.0,
+            "bottomRightRadius": 8.0,
+            "layout": "HORIZONTAL",
+            "gap": 12.0,
+            "horizontalPadding": 16.0,
+            "verticalPadding": 12.0,
+            "paddingRight": 16.0,
+            "paddingBottom": 12.0,
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 1.0,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#428BF9",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "4fc8c3a6b0e472d041c4176cc056f45072c199d1",
+                        "version": "9288:12"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "children": [
+              {
+                "role": "Container",
+                "type": "FRAME",
+                "size": {
+                  "x": 328.0,
+                  "y": 16.0
+                },
+                "layout": "VERTICAL",
+                "gap": 12.0,
+                "mainAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "textCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 328.0,
+                      "y": 16.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 8.0,
+                    "children": [
+                      {
+                        "role": "iconCont",
+                        "type": "FRAME",
+                        "size": {
+                          "x": 16.0,
+                          "y": 18.0
+                        },
+                        "layout": "HORIZONTAL",
+                        "gap": 10.0,
+                        "verticalPadding": 1.0,
+                        "paddingBottom": 1.0,
+                        "crossAxisAlignment": "CENTER"
+                      },
+                      {
+                        "role": "Text",
+                        "type": "TEXT",
+                        "size": {
+                          "x": 328.0,
+                          "y": 16.0
+                        },
+                        "fontSize": 14.0,
+                        "font": {
+                          "family": "Roboto",
+                          "style": "Regular",
+                          "postscript": "Roboto-Regular"
+                        },
+                        "lineHeight": {
+                          "value": 100.0,
+                          "units": "PERCENT"
+                        },
+                        "letterSpacing": {
+                          "value": 0.0,
+                          "units": "PIXELS"
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#FFFFFF",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "7b0b6cc10f74a823d78af60e69d27c002ed6bc07",
+                                    "version": "6528:859"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "exampleText": "Короткий и бодрый текст подсказки"
+                      }
+                    ]
+                  },
+                  {
+                    "role": "buttonCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 328.0,
+                      "y": 34.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "paddingBottom": 4.0,
+                    "children": [
+                      {
+                        "role": "tui-button [on-light-on-dark]",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 54.0,
+                          "y": 30.0
+                        },
+                        "radius": 100.0,
+                        "topLeftRadius": 100.0,
+                        "topRightRadius": 100.0,
+                        "bottomLeftRadius": 100.0,
+                        "bottomRightRadius": 100.0,
+                        "layout": "HORIZONTAL",
+                        "horizontalPadding": 7.0,
+                        "verticalPadding": 3.0,
+                        "paddingRight": 7.0,
+                        "paddingBottom": 3.0,
+                        "crossAxisAlignment": "CENTER",
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 0.1,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#FFFFFF",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "5771905145c5b55e197e94f963973e806ca5eb99",
+                                    "version": "6528:869"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "usesComponent": "system=android, size=small, appearance=secondary-grayscale-on-dark, state=normal, skeleton=off"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "guidance": [
+    "Текст описания под заголовоком может быть в одну или несколько строк. Главное — сохранить отступы"
+  ]
+}

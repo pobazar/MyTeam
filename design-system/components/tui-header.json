@@ -1,0 +1,5941 @@
+{
+  "componentSet": "tui-header",
+  "sources": [
+    "tui-header.fig"
+  ],
+  "units": "Figma px (verify platform-specific dp/pt mapping)",
+  "components": [
+    "tui-header",
+    "tui-header [action]",
+    "tui-header [button]",
+    "tui-header [card-medium]",
+    "tui-header [card]",
+    "tui-header [large]",
+    "tui-header [switch]"
+  ],
+  "variantCount": 198,
+  "variants": [
+    {
+      "component": "tui-header [button]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "appearance": "28e0c5248"
+    },
+    {
+      "component": "tui-header [button]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "skeleton": "on"
+      },
+      "appearance": "28e0c5248"
+    },
+    {
+      "component": "tui-header [button]",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "appearance": "2a46e8422"
+    },
+    {
+      "component": "tui-header [button]",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "skeleton": "on"
+      },
+      "appearance": "a73ebbf7d"
+    },
+    {
+      "component": "tui-header [button]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "on",
+        "skeleton": "off"
+      },
+      "appearance": "28e0c5248"
+    },
+    {
+      "component": "tui-header [button]",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "on",
+        "skeleton": "off"
+      },
+      "appearance": "2a46e8422"
+    },
+    {
+      "component": "tui-header [button]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "appearance": "8caa0a3fe"
+    },
+    {
+      "component": "tui-header [button]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "on"
+      },
+      "appearance": "8caa0a3fe"
+    },
+    {
+      "component": "tui-header [button]",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "appearance": "8caa0a3fe"
+    },
+    {
+      "component": "tui-header [button]",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "on"
+      },
+      "appearance": "4ba516a2f"
+    },
+    {
+      "component": "tui-header [button]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "on",
+        "skeleton": "off"
+      },
+      "appearance": "8caa0a3fe"
+    },
+    {
+      "component": "tui-header [button]",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "on",
+        "skeleton": "off"
+      },
+      "appearance": "8caa0a3fe"
+    },
+    {
+      "component": "tui-header [button]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "on",
+        "skeleton": "off"
+      },
+      "appearance": "3b60941b1"
+    },
+    {
+      "component": "tui-header [button]",
+      "properties": {
+        "System": "Android",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "on",
+        "skeleton": "off"
+      },
+      "appearance": "3b60941b1"
+    },
+    {
+      "component": "tui-header [button]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "appearance": "3b60941b1"
+    },
+    {
+      "component": "tui-header [button]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "on"
+      },
+      "appearance": "3b60941b1"
+    },
+    {
+      "component": "tui-header [button]",
+      "properties": {
+        "System": "Android",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "appearance": "3b60941b1"
+    },
+    {
+      "component": "tui-header [button]",
+      "properties": {
+        "System": "Android",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "on"
+      },
+      "appearance": "49aff419a"
+    },
+    {
+      "component": "tui-header [action]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "appearance": "28e0c5248"
+    },
+    {
+      "component": "tui-header [action]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "skeleton": "on"
+      },
+      "appearance": "28e0c5248"
+    },
+    {
+      "component": "tui-header [action]",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "appearance": "2a46e8422"
+    },
+    {
+      "component": "tui-header [action]",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "skeleton": "on"
+      },
+      "appearance": "a73ebbf7d"
+    },
+    {
+      "component": "tui-header [action]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "on",
+        "skeleton": "off"
+      },
+      "appearance": "28e0c5248"
+    },
+    {
+      "component": "tui-header [action]",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "on",
+        "skeleton": "off"
+      },
+      "appearance": "2a46e8422"
+    },
+    {
+      "component": "tui-header [action]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "appearance": "8caa0a3fe"
+    },
+    {
+      "component": "tui-header [action]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "on"
+      },
+      "appearance": "8caa0a3fe"
+    },
+    {
+      "component": "tui-header [action]",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "appearance": "8caa0a3fe"
+    },
+    {
+      "component": "tui-header [action]",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "on"
+      },
+      "appearance": "4ba516a2f"
+    },
+    {
+      "component": "tui-header [action]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "on",
+        "skeleton": "off"
+      },
+      "appearance": "8caa0a3fe"
+    },
+    {
+      "component": "tui-header [action]",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "on",
+        "skeleton": "off"
+      },
+      "appearance": "8caa0a3fe"
+    },
+    {
+      "component": "tui-header [action]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "on",
+        "skeleton": "off"
+      },
+      "appearance": "3b60941b1"
+    },
+    {
+      "component": "tui-header [action]",
+      "properties": {
+        "System": "Android",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "on",
+        "skeleton": "off"
+      },
+      "appearance": "3b60941b1"
+    },
+    {
+      "component": "tui-header [action]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "appearance": "3b60941b1"
+    },
+    {
+      "component": "tui-header [action]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "on"
+      },
+      "appearance": "3b60941b1"
+    },
+    {
+      "component": "tui-header [action]",
+      "properties": {
+        "System": "Android",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "appearance": "3b60941b1"
+    },
+    {
+      "component": "tui-header [action]",
+      "properties": {
+        "System": "Android",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "on"
+      },
+      "appearance": "49aff419a"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "medium-h4",
+        "accessory": "none",
+        "skeleton": "off"
+      },
+      "appearance": "210fd91a2"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "medium-h4",
+        "accessory": "none",
+        "skeleton": "on"
+      },
+      "appearance": "210fd91a2"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "medium-h4",
+        "accessory": "button",
+        "skeleton": "off"
+      },
+      "appearance": "210fd91a2"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "medium-h4",
+        "accessory": "switch",
+        "skeleton": "off"
+      },
+      "appearance": "210fd91a2"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "medium-h4",
+        "accessory": "radiobutton",
+        "skeleton": "off"
+      },
+      "appearance": "210fd91a2"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "medium-h4",
+        "accessory": "checkbox",
+        "skeleton": "off"
+      },
+      "appearance": "210fd91a2"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "medium-h4",
+        "accessory": "action",
+        "skeleton": "off"
+      },
+      "appearance": "210fd91a2"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "medium-h4",
+        "accessory": "avatar",
+        "skeleton": "off"
+      },
+      "appearance": "210fd91a2"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-h5",
+        "accessory": "none",
+        "skeleton": "off"
+      },
+      "appearance": "39a46523f"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-h5",
+        "accessory": "none",
+        "skeleton": "on"
+      },
+      "appearance": "39a46523f"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-h5",
+        "accessory": "button",
+        "skeleton": "off"
+      },
+      "appearance": "39a46523f"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-h5",
+        "accessory": "switch",
+        "skeleton": "off"
+      },
+      "appearance": "39a46523f"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-h5",
+        "accessory": "radiobutton",
+        "skeleton": "off"
+      },
+      "appearance": "39a46523f"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-h5",
+        "accessory": "checkbox",
+        "skeleton": "off"
+      },
+      "appearance": "39a46523f"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-h5",
+        "accessory": "action",
+        "skeleton": "off"
+      },
+      "appearance": "39a46523f"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-h5",
+        "accessory": "avatar",
+        "skeleton": "off"
+      },
+      "appearance": "39a46523f"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-h6",
+        "accessory": "none",
+        "skeleton": "off"
+      },
+      "appearance": "73444ae9d"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-h6",
+        "accessory": "none",
+        "skeleton": "on"
+      },
+      "appearance": "73444ae9d"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-h6",
+        "accessory": "button",
+        "skeleton": "off"
+      },
+      "appearance": "73444ae9d"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-h6",
+        "accessory": "switch",
+        "skeleton": "off"
+      },
+      "appearance": "73444ae9d"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-h6",
+        "accessory": "radiobutton",
+        "skeleton": "off"
+      },
+      "appearance": "73444ae9d"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-h6",
+        "accessory": "checkbox",
+        "skeleton": "off"
+      },
+      "appearance": "73444ae9d"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-h6",
+        "accessory": "action",
+        "skeleton": "off"
+      },
+      "appearance": "73444ae9d"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-h6",
+        "accessory": "avatar",
+        "skeleton": "off"
+      },
+      "appearance": "73444ae9d"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-body-xl",
+        "accessory": "none",
+        "skeleton": "off"
+      },
+      "appearance": "39a46523f"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-body-l",
+        "accessory": "none",
+        "skeleton": "off"
+      },
+      "appearance": "3530954a7"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-body-m",
+        "accessory": "none",
+        "skeleton": "off"
+      },
+      "appearance": "e66c1f86c"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-body-xl",
+        "accessory": "none",
+        "skeleton": "on"
+      },
+      "appearance": "39a46523f"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-body-l",
+        "accessory": "none",
+        "skeleton": "on"
+      },
+      "appearance": "73444ae9d"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-body-m",
+        "accessory": "none",
+        "skeleton": "on"
+      },
+      "appearance": "a908e42fe"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-body-xl",
+        "accessory": "button",
+        "skeleton": "off"
+      },
+      "appearance": "39a46523f"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-body-l",
+        "accessory": "button",
+        "skeleton": "off"
+      },
+      "appearance": "3530954a7"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-body-m",
+        "accessory": "button",
+        "skeleton": "off"
+      },
+      "appearance": "e66c1f86c"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-body-xl",
+        "accessory": "switch",
+        "skeleton": "off"
+      },
+      "appearance": "39a46523f"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-body-l",
+        "accessory": "switch",
+        "skeleton": "off"
+      },
+      "appearance": "3530954a7"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-body-m",
+        "accessory": "switch",
+        "skeleton": "off"
+      },
+      "appearance": "e66c1f86c"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-body-xl",
+        "accessory": "radiobutton",
+        "skeleton": "off"
+      },
+      "appearance": "39a46523f"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-body-xl",
+        "accessory": "checkbox",
+        "skeleton": "off"
+      },
+      "appearance": "39a46523f"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-body-l",
+        "accessory": "radiobutton",
+        "skeleton": "off"
+      },
+      "appearance": "3530954a7"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-body-m",
+        "accessory": "radiobutton",
+        "skeleton": "off"
+      },
+      "appearance": "e66c1f86c"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-body-l",
+        "accessory": "checkbox",
+        "skeleton": "off"
+      },
+      "appearance": "3530954a7"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-body-m",
+        "accessory": "checkbox",
+        "skeleton": "off"
+      },
+      "appearance": "e66c1f86c"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-body-xl",
+        "accessory": "action",
+        "skeleton": "off"
+      },
+      "appearance": "39a46523f"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-body-l",
+        "accessory": "action",
+        "skeleton": "off"
+      },
+      "appearance": "3530954a7"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-body-m",
+        "accessory": "action",
+        "skeleton": "off"
+      },
+      "appearance": "e66c1f86c"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-body-xl",
+        "accessory": "avatar",
+        "skeleton": "off"
+      },
+      "appearance": "39a46523f"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-body-l",
+        "accessory": "avatar",
+        "skeleton": "off"
+      },
+      "appearance": "3530954a7"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "small-body-m",
+        "accessory": "avatar",
+        "skeleton": "off"
+      },
+      "appearance": "e66c1f86c"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "large-h3",
+        "accessory": "none",
+        "skeleton": "off"
+      },
+      "appearance": "7f7d10061"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "large-h3",
+        "accessory": "none",
+        "skeleton": "on"
+      },
+      "appearance": "7f7d10061"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "large-h3",
+        "accessory": "button",
+        "skeleton": "off"
+      },
+      "appearance": "7f7d10061"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "large-h3",
+        "accessory": "switch",
+        "skeleton": "off"
+      },
+      "appearance": "7f7d10061"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "large-h3",
+        "accessory": "radiobutton",
+        "skeleton": "off"
+      },
+      "appearance": "7f7d10061"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "large-h3",
+        "accessory": "checkbox",
+        "skeleton": "off"
+      },
+      "appearance": "7f7d10061"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "large-h3",
+        "accessory": "action",
+        "skeleton": "off"
+      },
+      "appearance": "7f7d10061"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "large-h3",
+        "accessory": "avatar",
+        "skeleton": "off"
+      },
+      "appearance": "7f7d10061"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "large-h2",
+        "accessory": "none",
+        "skeleton": "off"
+      },
+      "appearance": "bc6226e26"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "large-h2",
+        "accessory": "none",
+        "skeleton": "on"
+      },
+      "appearance": "bc6226e26"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "large-h2",
+        "accessory": "button",
+        "skeleton": "off"
+      },
+      "appearance": "bc6226e26"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "large-h2",
+        "accessory": "switch",
+        "skeleton": "off"
+      },
+      "appearance": "bc6226e26"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "large-h2",
+        "accessory": "radiobutton",
+        "skeleton": "off"
+      },
+      "appearance": "bc6226e26"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "large-h2",
+        "accessory": "checkbox",
+        "skeleton": "off"
+      },
+      "appearance": "bc6226e26"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "large-h2",
+        "accessory": "action",
+        "skeleton": "off"
+      },
+      "appearance": "bc6226e26"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "large-h2",
+        "accessory": "avatar",
+        "skeleton": "off"
+      },
+      "appearance": "bc6226e26"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "large-h1",
+        "accessory": "none",
+        "skeleton": "off"
+      },
+      "appearance": "88a93ed97"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "large-h1",
+        "accessory": "none",
+        "skeleton": "on"
+      },
+      "appearance": "88a93ed97"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "large-h1",
+        "accessory": "button",
+        "skeleton": "off"
+      },
+      "appearance": "88a93ed97"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "large-h1",
+        "accessory": "switch",
+        "skeleton": "off"
+      },
+      "appearance": "88a93ed97"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "large-h1",
+        "accessory": "radiobutton",
+        "skeleton": "off"
+      },
+      "appearance": "88a93ed97"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "large-h1",
+        "accessory": "checkbox",
+        "skeleton": "off"
+      },
+      "appearance": "88a93ed97"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "large-h1",
+        "accessory": "action",
+        "skeleton": "off"
+      },
+      "appearance": "88a93ed97"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "size": "large-h1",
+        "accessory": "avatar",
+        "skeleton": "off"
+      },
+      "appearance": "88a93ed97"
+    },
+    {
+      "component": "tui-header [large]",
+      "properties": {
+        "system": "iOS",
+        "show-description": "on",
+        "text-align": "start",
+        "skeleton": "off",
+        "extended": "off"
+      },
+      "appearance": "e5adc2661"
+    },
+    {
+      "component": "tui-header [large]",
+      "properties": {
+        "system": "iOS",
+        "show-description": "on",
+        "text-align": "start",
+        "skeleton": "on",
+        "extended": "off"
+      },
+      "appearance": "e5adc2661"
+    },
+    {
+      "component": "tui-header [large]",
+      "properties": {
+        "system": "iOS",
+        "show-description": "on",
+        "text-align": "center",
+        "skeleton": "off",
+        "extended": "off"
+      },
+      "appearance": "e5adc2661"
+    },
+    {
+      "component": "tui-header [large]",
+      "properties": {
+        "system": "iOS",
+        "show-description": "on",
+        "text-align": "center",
+        "skeleton": "on",
+        "extended": "off"
+      },
+      "appearance": "e5adc2661"
+    },
+    {
+      "component": "tui-header [large]",
+      "properties": {
+        "system": "Android",
+        "show-description": "on",
+        "text-align": "start",
+        "skeleton": "off",
+        "extended": "off"
+      },
+      "appearance": "ca4e908d8"
+    },
+    {
+      "component": "tui-header [large]",
+      "properties": {
+        "system": "Android",
+        "show-description": "on",
+        "text-align": "start",
+        "skeleton": "off",
+        "extended": "on"
+      },
+      "appearance": "ca4e908d8"
+    },
+    {
+      "component": "tui-header [large]",
+      "properties": {
+        "system": "Android",
+        "show-description": "on",
+        "text-align": "start",
+        "skeleton": "on",
+        "extended": "off"
+      },
+      "appearance": "ca4e908d8"
+    },
+    {
+      "component": "tui-header [large]",
+      "properties": {
+        "system": "Android",
+        "show-description": "on",
+        "text-align": "center",
+        "skeleton": "off",
+        "extended": "off"
+      },
+      "appearance": "ca4e908d8"
+    },
+    {
+      "component": "tui-header [large]",
+      "properties": {
+        "system": "Android",
+        "show-description": "on",
+        "text-align": "center",
+        "skeleton": "on",
+        "extended": "off"
+      },
+      "appearance": "ca4e908d8"
+    },
+    {
+      "component": "tui-header [large]",
+      "properties": {
+        "system": "iOS",
+        "show-description": "off",
+        "text-align": "start",
+        "skeleton": "off",
+        "extended": "off"
+      },
+      "appearance": "f2ecf37a0"
+    },
+    {
+      "component": "tui-header [large]",
+      "properties": {
+        "system": "iOS",
+        "show-description": "off",
+        "text-align": "start",
+        "skeleton": "off",
+        "extended": "on"
+      },
+      "appearance": "f2ecf37a0"
+    },
+    {
+      "component": "tui-header [large]",
+      "properties": {
+        "system": "iOS",
+        "show-description": "off",
+        "text-align": "start",
+        "skeleton": "on",
+        "extended": "off"
+      },
+      "appearance": "f2ecf37a0"
+    },
+    {
+      "component": "tui-header [large]",
+      "properties": {
+        "system": "iOS",
+        "show-description": "off",
+        "text-align": "center",
+        "skeleton": "off",
+        "extended": "off"
+      },
+      "appearance": "f2ecf37a0"
+    },
+    {
+      "component": "tui-header [large]",
+      "properties": {
+        "system": "iOS",
+        "show-description": "off",
+        "text-align": "center",
+        "skeleton": "on",
+        "extended": "off"
+      },
+      "appearance": "f2ecf37a0"
+    },
+    {
+      "component": "tui-header [large]",
+      "properties": {
+        "system": "Android",
+        "show-description": "off",
+        "text-align": "start",
+        "skeleton": "off",
+        "extended": "off"
+      },
+      "appearance": "e292f1b5e"
+    },
+    {
+      "component": "tui-header [large]",
+      "properties": {
+        "system": "Android",
+        "show-description": "off",
+        "text-align": "start",
+        "skeleton": "off",
+        "extended": "on"
+      },
+      "appearance": "e292f1b5e"
+    },
+    {
+      "component": "tui-header [large]",
+      "properties": {
+        "system": "Android",
+        "show-description": "off",
+        "text-align": "start",
+        "skeleton": "on",
+        "extended": "off"
+      },
+      "appearance": "e292f1b5e"
+    },
+    {
+      "component": "tui-header [large]",
+      "properties": {
+        "system": "Android",
+        "show-description": "off",
+        "text-align": "center",
+        "skeleton": "off",
+        "extended": "off"
+      },
+      "appearance": "e292f1b5e"
+    },
+    {
+      "component": "tui-header [large]",
+      "properties": {
+        "system": "Android",
+        "show-description": "off",
+        "text-align": "center",
+        "skeleton": "on",
+        "extended": "off"
+      },
+      "appearance": "e292f1b5e"
+    },
+    {
+      "component": "tui-header [large]",
+      "properties": {
+        "system": "iOS",
+        "show-description": "on",
+        "text-align": "start",
+        "skeleton": "off",
+        "extended": "on"
+      },
+      "appearance": "e5adc2661"
+    },
+    {
+      "component": "tui-header [card]",
+      "properties": {
+        "System": "iOS",
+        "Accessory": "Avatar",
+        "Extended": "Off",
+        "skeleton": "off"
+      },
+      "appearance": "6ccde8c47"
+    },
+    {
+      "component": "tui-header [card]",
+      "properties": {
+        "System": "iOS",
+        "Accessory": "Avatar",
+        "Extended": "On",
+        "skeleton": "off"
+      },
+      "appearance": "1ff6f100d"
+    },
+    {
+      "component": "tui-header [card]",
+      "properties": {
+        "System": "iOS",
+        "Accessory": "None",
+        "Extended": "On",
+        "skeleton": "on"
+      },
+      "appearance": "1ff6f100d"
+    },
+    {
+      "component": "tui-header [card]",
+      "properties": {
+        "System": "iOS",
+        "Accessory": "None",
+        "Extended": "On",
+        "skeleton": "off"
+      },
+      "appearance": "1ff6f100d"
+    },
+    {
+      "component": "tui-header [card]",
+      "properties": {
+        "System": "iOS",
+        "Accessory": "Button",
+        "Extended": "Off",
+        "skeleton": "off"
+      },
+      "appearance": "6ccde8c47"
+    },
+    {
+      "component": "tui-header [card]",
+      "properties": {
+        "System": "iOS",
+        "Accessory": "Button Link",
+        "Extended": "Off",
+        "skeleton": "off"
+      },
+      "appearance": "30198766b"
+    },
+    {
+      "component": "tui-header [card]",
+      "properties": {
+        "System": "iOS",
+        "Accessory": "Switch",
+        "Extended": "Off",
+        "skeleton": "off"
+      },
+      "appearance": "6ccde8c47"
+    },
+    {
+      "component": "tui-header [card]",
+      "properties": {
+        "System": "iOS",
+        "Accessory": "None",
+        "Extended": "Off",
+        "skeleton": "off"
+      },
+      "appearance": "6ccde8c47"
+    },
+    {
+      "component": "tui-header [card]",
+      "properties": {
+        "System": "iOS",
+        "Accessory": "None",
+        "Extended": "Off",
+        "skeleton": "on"
+      },
+      "appearance": "6ccde8c47"
+    },
+    {
+      "component": "tui-header [card]",
+      "properties": {
+        "System": "Android",
+        "Accessory": "Avatar",
+        "Extended": "Off",
+        "skeleton": "off"
+      },
+      "appearance": "82d570598"
+    },
+    {
+      "component": "tui-header [card]",
+      "properties": {
+        "System": "Android",
+        "Accessory": "Avatar",
+        "Extended": "On",
+        "skeleton": "off"
+      },
+      "appearance": "fd676414e"
+    },
+    {
+      "component": "tui-header [card]",
+      "properties": {
+        "System": "Android",
+        "Accessory": "None",
+        "Extended": "On",
+        "skeleton": "on"
+      },
+      "appearance": "fd676414e"
+    },
+    {
+      "component": "tui-header [card]",
+      "properties": {
+        "System": "Android",
+        "Accessory": "None",
+        "Extended": "On",
+        "skeleton": "off"
+      },
+      "appearance": "20777d5c2"
+    },
+    {
+      "component": "tui-header [card]",
+      "properties": {
+        "System": "Android",
+        "Accessory": "Button",
+        "Extended": "Off",
+        "skeleton": "off"
+      },
+      "appearance": "82d570598"
+    },
+    {
+      "component": "tui-header [card]",
+      "properties": {
+        "System": "Android",
+        "Accessory": "Button Link",
+        "Extended": "Off",
+        "skeleton": "off"
+      },
+      "appearance": "edfbe8d0d"
+    },
+    {
+      "component": "tui-header [card]",
+      "properties": {
+        "System": "Android",
+        "Accessory": "Switch",
+        "Extended": "Off",
+        "skeleton": "off"
+      },
+      "appearance": "82d570598"
+    },
+    {
+      "component": "tui-header [card]",
+      "properties": {
+        "System": "Android",
+        "Accessory": "None",
+        "Extended": "Off",
+        "skeleton": "off"
+      },
+      "appearance": "82d570598"
+    },
+    {
+      "component": "tui-header [card]",
+      "properties": {
+        "System": "Android",
+        "Accessory": "None",
+        "Extended": "Off",
+        "skeleton": "on"
+      },
+      "appearance": "82d570598"
+    },
+    {
+      "component": "tui-header [card-medium]",
+      "properties": {
+        "system": "iOS",
+        "show-badge": "on"
+      },
+      "appearance": "75050eeaf"
+    },
+    {
+      "component": "tui-header [card-medium]",
+      "properties": {
+        "system": "Android",
+        "show-badge": "on"
+      },
+      "appearance": "e87a3b6fc"
+    },
+    {
+      "component": "tui-header [card-medium]",
+      "properties": {
+        "system": "iOS",
+        "show-badge": "off"
+      },
+      "appearance": "5218a4370"
+    },
+    {
+      "component": "tui-header [card-medium]",
+      "properties": {
+        "system": "Android",
+        "show-badge": "off"
+      },
+      "appearance": "27443a9d1"
+    },
+    {
+      "component": "tui-header [switch]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "appearance": "28e0c5248"
+    },
+    {
+      "component": "tui-header [switch]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "skeleton": "on"
+      },
+      "appearance": "28e0c5248"
+    },
+    {
+      "component": "tui-header [switch]",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "appearance": "a73ebbf7d"
+    },
+    {
+      "component": "tui-header [switch]",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "skeleton": "on"
+      },
+      "appearance": "a73ebbf7d"
+    },
+    {
+      "component": "tui-header [switch]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "on",
+        "skeleton": "off"
+      },
+      "appearance": "28e0c5248"
+    },
+    {
+      "component": "tui-header [switch]",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "on",
+        "skeleton": "off"
+      },
+      "appearance": "2a46e8422"
+    },
+    {
+      "component": "tui-header [switch]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "appearance": "8caa0a3fe"
+    },
+    {
+      "component": "tui-header [switch]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "on"
+      },
+      "appearance": "8caa0a3fe"
+    },
+    {
+      "component": "tui-header [switch]",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "appearance": "8caa0a3fe"
+    },
+    {
+      "component": "tui-header [switch]",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "on"
+      },
+      "appearance": "4ba516a2f"
+    },
+    {
+      "component": "tui-header [switch]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "on",
+        "skeleton": "off"
+      },
+      "appearance": "8caa0a3fe"
+    },
+    {
+      "component": "tui-header [switch]",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "on",
+        "skeleton": "off"
+      },
+      "appearance": "8caa0a3fe"
+    },
+    {
+      "component": "tui-header [switch]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "on",
+        "skeleton": "off"
+      },
+      "appearance": "3b60941b1"
+    },
+    {
+      "component": "tui-header [switch]",
+      "properties": {
+        "System": "Android",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "on",
+        "skeleton": "off"
+      },
+      "appearance": "3b60941b1"
+    },
+    {
+      "component": "tui-header [switch]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "appearance": "3b60941b1"
+    },
+    {
+      "component": "tui-header [switch]",
+      "properties": {
+        "System": "iOS",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "on"
+      },
+      "appearance": "3b60941b1"
+    },
+    {
+      "component": "tui-header [switch]",
+      "properties": {
+        "System": "Android",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "appearance": "3b60941b1"
+    },
+    {
+      "component": "tui-header [switch]",
+      "properties": {
+        "System": "Android",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "on"
+      },
+      "appearance": "49aff419a"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "TextAlign": "start",
+        "skeleton": "off"
+      },
+      "appearance": "28e0c5248"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "TextAlign": "start",
+        "skeleton": "on"
+      },
+      "appearance": "28e0c5248"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "TextAlign": "center",
+        "skeleton": "off"
+      },
+      "appearance": "28e0c5248"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "TextAlign": "center",
+        "skeleton": "on"
+      },
+      "appearance": "28e0c5248"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "TextAlign": "start",
+        "skeleton": "off"
+      },
+      "appearance": "7d462ebcb"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "TextAlign": "start",
+        "skeleton": "on"
+      },
+      "appearance": "7d462ebcb"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "TextAlign": "center",
+        "skeleton": "off"
+      },
+      "appearance": "7d462ebcb"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "TextAlign": "center",
+        "skeleton": "on"
+      },
+      "appearance": "7d462ebcb"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "on",
+        "TextAlign": "start",
+        "skeleton": "off"
+      },
+      "appearance": "28e0c5248"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "on",
+        "TextAlign": "start",
+        "skeleton": "off"
+      },
+      "appearance": "4c8246583"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "TextAlign": "start",
+        "skeleton": "off"
+      },
+      "appearance": "8caa0a3fe"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "TextAlign": "start",
+        "skeleton": "on"
+      },
+      "appearance": "8caa0a3fe"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "TextAlign": "center",
+        "skeleton": "off"
+      },
+      "appearance": "8caa0a3fe"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "TextAlign": "center",
+        "skeleton": "on"
+      },
+      "appearance": "8caa0a3fe"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "TextAlign": "start",
+        "skeleton": "off"
+      },
+      "appearance": "7ebda736c"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "TextAlign": "start",
+        "skeleton": "on"
+      },
+      "appearance": "7ebda736c"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "TextAlign": "center",
+        "skeleton": "off"
+      },
+      "appearance": "7ebda736c"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "TextAlign": "center",
+        "skeleton": "on"
+      },
+      "appearance": "7ebda736c"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "on",
+        "TextAlign": "start",
+        "skeleton": "off"
+      },
+      "appearance": "8caa0a3fe"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "on",
+        "TextAlign": "start",
+        "skeleton": "off"
+      },
+      "appearance": "7ebda736c"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "iOS",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "on",
+        "TextAlign": "start",
+        "skeleton": "off"
+      },
+      "appearance": "3b60941b1"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "Android",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "on",
+        "TextAlign": "start",
+        "skeleton": "off"
+      },
+      "appearance": "dc0d85b5f"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "iOS",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "off",
+        "TextAlign": "start",
+        "skeleton": "off"
+      },
+      "appearance": "3b60941b1"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "iOS",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "off",
+        "TextAlign": "start",
+        "skeleton": "on"
+      },
+      "appearance": "3b60941b1"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "iOS",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "off",
+        "TextAlign": "center",
+        "skeleton": "off"
+      },
+      "appearance": "3b60941b1"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "iOS",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "off",
+        "TextAlign": "center",
+        "skeleton": "on"
+      },
+      "appearance": "3b60941b1"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "Android",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "off",
+        "TextAlign": "start",
+        "skeleton": "off"
+      },
+      "appearance": "1cec29116"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "Android",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "off",
+        "TextAlign": "start",
+        "skeleton": "on"
+      },
+      "appearance": "1cec29116"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "Android",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "off",
+        "TextAlign": "center",
+        "skeleton": "off"
+      },
+      "appearance": "1cec29116"
+    },
+    {
+      "component": "tui-header",
+      "properties": {
+        "System": "Android",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "off",
+        "TextAlign": "center",
+        "skeleton": "on"
+      },
+      "appearance": "1cec29116"
+    }
+  ],
+  "appearancePresets": {
+    "28e0c5248": {
+      "size": {
+        "x": 375.0,
+        "y": 76.0
+      },
+      "layout": "VERTICAL",
+      "gap": 8.0,
+      "horizontalPadding": 16.0,
+      "verticalPadding": 12.0,
+      "paddingRight": 16.0,
+      "paddingBottom": 12.0
+    },
+    "2a46e8422": {
+      "size": {
+        "x": 375.0,
+        "y": 75.0
+      },
+      "layout": "VERTICAL",
+      "gap": 8.0,
+      "horizontalPadding": 16.0,
+      "verticalPadding": 12.0,
+      "paddingRight": 16.0,
+      "paddingBottom": 12.0
+    },
+    "a73ebbf7d": {
+      "size": {
+        "x": 375.0,
+        "y": 74.0
+      },
+      "layout": "VERTICAL",
+      "gap": 8.0,
+      "horizontalPadding": 16.0,
+      "verticalPadding": 12.0,
+      "paddingRight": 16.0,
+      "paddingBottom": 12.0
+    },
+    "8caa0a3fe": {
+      "size": {
+        "x": 375.0,
+        "y": 48.0
+      },
+      "layout": "VERTICAL",
+      "gap": 8.0,
+      "horizontalPadding": 16.0,
+      "verticalPadding": 12.0,
+      "paddingRight": 16.0,
+      "paddingBottom": 12.0
+    },
+    "4ba516a2f": {
+      "size": {
+        "x": 375.0,
+        "y": 47.0
+      },
+      "layout": "VERTICAL",
+      "gap": 8.0,
+      "horizontalPadding": 16.0,
+      "verticalPadding": 12.0,
+      "paddingRight": 16.0,
+      "paddingBottom": 12.0
+    },
+    "3b60941b1": {
+      "size": {
+        "x": 375.0,
+        "y": 44.0
+      },
+      "layout": "VERTICAL",
+      "horizontalPadding": 16.0,
+      "verticalPadding": 12.0,
+      "paddingRight": 16.0,
+      "paddingBottom": 12.0
+    },
+    "49aff419a": {
+      "size": {
+        "x": 375.0,
+        "y": 43.0
+      },
+      "layout": "VERTICAL",
+      "horizontalPadding": 16.0,
+      "verticalPadding": 12.0,
+      "paddingRight": 16.0,
+      "paddingBottom": 12.0
+    },
+    "210fd91a2": {
+      "size": {
+        "x": 480.0,
+        "y": 60.0
+      },
+      "layout": "VERTICAL",
+      "gap": 8.0
+    },
+    "39a46523f": {
+      "size": {
+        "x": 480.0,
+        "y": 56.0
+      },
+      "layout": "VERTICAL",
+      "gap": 8.0
+    },
+    "73444ae9d": {
+      "size": {
+        "x": 480.0,
+        "y": 52.0
+      },
+      "layout": "VERTICAL",
+      "gap": 8.0
+    },
+    "3530954a7": {
+      "size": {
+        "x": 480.0,
+        "y": 48.0
+      },
+      "layout": "VERTICAL",
+      "gap": 8.0
+    },
+    "e66c1f86c": {
+      "size": {
+        "x": 480.0,
+        "y": 42.0
+      },
+      "layout": "VERTICAL",
+      "gap": 8.0
+    },
+    "a908e42fe": {
+      "size": {
+        "x": 480.0,
+        "y": 46.0
+      },
+      "layout": "VERTICAL",
+      "gap": 8.0
+    },
+    "7f7d10061": {
+      "size": {
+        "x": 480.0,
+        "y": 72.0
+      },
+      "layout": "VERTICAL",
+      "gap": 8.0
+    },
+    "bc6226e26": {
+      "size": {
+        "x": 480.0,
+        "y": 80.0
+      },
+      "layout": "VERTICAL",
+      "gap": 8.0
+    },
+    "88a93ed97": {
+      "size": {
+        "x": 480.0,
+        "y": 88.0
+      },
+      "layout": "VERTICAL",
+      "gap": 12.0
+    },
+    "e5adc2661": {
+      "size": {
+        "x": 375.0,
+        "y": 104.0
+      },
+      "layout": "VERTICAL",
+      "gap": 16.0,
+      "horizontalPadding": 16.0,
+      "verticalPadding": 8.0,
+      "paddingRight": 16.0,
+      "paddingBottom": 24.0
+    },
+    "ca4e908d8": {
+      "size": {
+        "x": 375.0,
+        "y": 100.0
+      },
+      "layout": "VERTICAL",
+      "gap": 16.0,
+      "horizontalPadding": 16.0,
+      "verticalPadding": 8.0,
+      "paddingRight": 16.0,
+      "paddingBottom": 24.0
+    },
+    "f2ecf37a0": {
+      "size": {
+        "x": 375.0,
+        "y": 102.0
+      },
+      "layout": "VERTICAL",
+      "gap": 16.0,
+      "horizontalPadding": 16.0,
+      "verticalPadding": 8.0,
+      "paddingRight": 16.0,
+      "paddingBottom": 24.0
+    },
+    "e292f1b5e": {
+      "size": {
+        "x": 375.0,
+        "y": 97.0
+      },
+      "layout": "VERTICAL",
+      "gap": 16.0,
+      "horizontalPadding": 16.0,
+      "verticalPadding": 8.0,
+      "paddingRight": 16.0,
+      "paddingBottom": 24.0
+    },
+    "6ccde8c47": {
+      "size": {
+        "x": 375.0,
+        "y": 80.0
+      },
+      "layout": "VERTICAL",
+      "gap": 8.0,
+      "horizontalPadding": 20.0,
+      "verticalPadding": 16.0,
+      "paddingRight": 16.0,
+      "paddingBottom": 12.0
+    },
+    "1ff6f100d": {
+      "size": {
+        "x": 375.0,
+        "y": 100.0
+      },
+      "layout": "VERTICAL",
+      "gap": 8.0,
+      "horizontalPadding": 20.0,
+      "verticalPadding": 16.0,
+      "paddingRight": 16.0,
+      "paddingBottom": 12.0
+    },
+    "30198766b": {
+      "size": {
+        "x": 375.0,
+        "y": 80.0
+      },
+      "layout": "VERTICAL",
+      "gap": 8.0,
+      "horizontalPadding": 20.0,
+      "verticalPadding": 16.0,
+      "paddingRight": 20.0,
+      "paddingBottom": 12.0
+    },
+    "82d570598": {
+      "size": {
+        "x": 375.0,
+        "y": 77.0
+      },
+      "layout": "VERTICAL",
+      "gap": 8.0,
+      "horizontalPadding": 20.0,
+      "verticalPadding": 16.0,
+      "paddingRight": 16.0,
+      "paddingBottom": 12.0
+    },
+    "fd676414e": {
+      "size": {
+        "x": 375.0,
+        "y": 96.0
+      },
+      "layout": "VERTICAL",
+      "gap": 8.0,
+      "horizontalPadding": 20.0,
+      "verticalPadding": 16.0,
+      "paddingRight": 16.0,
+      "paddingBottom": 12.0
+    },
+    "20777d5c2": {
+      "size": {
+        "x": 375.0,
+        "y": 98.0
+      },
+      "layout": "VERTICAL",
+      "gap": 8.0,
+      "horizontalPadding": 20.0,
+      "verticalPadding": 16.0,
+      "paddingRight": 16.0,
+      "paddingBottom": 12.0
+    },
+    "edfbe8d0d": {
+      "size": {
+        "x": 375.0,
+        "y": 77.0
+      },
+      "layout": "VERTICAL",
+      "gap": 8.0,
+      "horizontalPadding": 20.0,
+      "verticalPadding": 16.0,
+      "paddingRight": 20.0,
+      "paddingBottom": 12.0
+    },
+    "75050eeaf": {
+      "size": {
+        "x": 116.0,
+        "y": 38.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 4.0
+    },
+    "e87a3b6fc": {
+      "size": {
+        "x": 116.0,
+        "y": 35.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 4.0
+    },
+    "5218a4370": {
+      "size": {
+        "x": 116.0,
+        "y": 38.0
+      },
+      "layout": "VERTICAL",
+      "gap": 4.0
+    },
+    "27443a9d1": {
+      "size": {
+        "x": 116.0,
+        "y": 35.0
+      },
+      "layout": "VERTICAL",
+      "gap": 4.0
+    },
+    "7d462ebcb": {
+      "size": {
+        "x": 360.0,
+        "y": 74.0
+      },
+      "layout": "VERTICAL",
+      "gap": 8.0,
+      "horizontalPadding": 16.0,
+      "verticalPadding": 12.0,
+      "paddingRight": 16.0,
+      "paddingBottom": 12.0
+    },
+    "4c8246583": {
+      "size": {
+        "x": 360.0,
+        "y": 75.0
+      },
+      "layout": "VERTICAL",
+      "gap": 8.0,
+      "horizontalPadding": 16.0,
+      "verticalPadding": 12.0,
+      "paddingRight": 16.0,
+      "paddingBottom": 12.0
+    },
+    "7ebda736c": {
+      "size": {
+        "x": 360.0,
+        "y": 48.0
+      },
+      "layout": "VERTICAL",
+      "gap": 8.0,
+      "horizontalPadding": 16.0,
+      "verticalPadding": 12.0,
+      "paddingRight": 16.0,
+      "paddingBottom": 12.0
+    },
+    "dc0d85b5f": {
+      "size": {
+        "x": 360.0,
+        "y": 46.001
+      },
+      "layout": "VERTICAL",
+      "horizontalPadding": 16.0,
+      "verticalPadding": 12.0,
+      "paddingRight": 16.0,
+      "paddingBottom": 12.0
+    },
+    "1cec29116": {
+      "size": {
+        "x": 360.0,
+        "y": 44.0
+      },
+      "layout": "VERTICAL",
+      "horizontalPadding": 16.0,
+      "verticalPadding": 12.0,
+      "paddingRight": 16.0,
+      "paddingBottom": 12.0
+    }
+  },
+  "anatomyExamples": [
+    {
+      "variant": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "tree": {
+        "role": "System=iOS, Size=Medium, Description=on, Accessories=off, skeleton=off",
+        "type": "SYMBOL",
+        "size": {
+          "x": 375.0,
+          "y": 76.0
+        },
+        "layout": "VERTICAL",
+        "gap": 8.0,
+        "horizontalPadding": 16.0,
+        "verticalPadding": 12.0,
+        "paddingRight": 16.0,
+        "paddingBottom": 12.0,
+        "children": [
+          {
+            "role": "HeaderCont",
+            "type": "FRAME",
+            "size": {
+              "x": 343.0,
+              "y": 24.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 16.0,
+            "children": [
+              {
+                "role": "Header+Subheader",
+                "type": "FRAME",
+                "size": {
+                  "x": 270.0,
+                  "y": 24.0
+                },
+                "layout": "VERTICAL",
+                "gap": 8.0,
+                "mainAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "HeaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 270.0,
+                      "y": 24.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "children": [
+                      {
+                        "role": "HeaderText",
+                        "type": "TEXT",
+                        "size": {
+                          "x": 270.0,
+                          "y": 24.0
+                        },
+                        "fontSize": 20.0,
+                        "font": {
+                          "family": "SF Pro Display",
+                          "style": "Bold",
+                          "postscript": "SFProDisplay-Bold"
+                        },
+                        "lineHeight": {
+                          "value": 100.0,
+                          "units": "PERCENT"
+                        },
+                        "letterSpacing": {
+                          "value": 0.38,
+                          "units": "PIXELS"
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#333333",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "c5987816b848d51827e1368f05d1d05e7b0ed4d3",
+                                    "version": "1574:249"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "exampleText": "Header"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "role": "Accessory",
+                "type": "FRAME",
+                "size": {
+                  "x": 57.0,
+                  "y": 24.0
+                },
+                "layout": "HORIZONTAL",
+                "gap": 16.0,
+                "crossAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "ActionCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 57.0,
+                      "y": 32.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "mainAxisAlignment": "CENTER",
+                    "crossAxisAlignment": "CENTER",
+                    "background": [
+                      {
+                        "type": "SOLID",
+                        "opacity": 1.0,
+                        "blendMode": "NORMAL",
+                        "visible": false,
+                        "color": "#FFFFFF"
+                      }
+                    ],
+                    "children": [
+                      {
+                        "role": "tui-button",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 57.0,
+                          "y": 32.0
+                        },
+                        "radius": 100.0,
+                        "topLeftRadius": 100.0,
+                        "topRightRadius": 100.0,
+                        "bottomLeftRadius": 100.0,
+                        "bottomRightRadius": 100.0,
+                        "layout": "HORIZONTAL",
+                        "horizontalPadding": 7.0,
+                        "verticalPadding": 3.0,
+                        "paddingRight": 7.0,
+                        "paddingBottom": 3.0,
+                        "mainAxisAlignment": "CENTER",
+                        "crossAxisAlignment": "CENTER",
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#FFDD2D",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "ef357c4f74488894f5e2ada1a4acfdc960ffe339",
+                                    "version": "1574:372"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "usesComponent": "system=ios, size=small, appearance=primary-tinkoff, state=normal, skeleton=off"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "role": "Description",
+            "type": "FRAME",
+            "size": {
+              "x": 343.0,
+              "y": 20.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 10.0,
+            "crossAxisAlignment": "CENTER",
+            "children": [
+              {
+                "role": "DescriptionText",
+                "type": "TEXT",
+                "size": {
+                  "x": 343.0,
+                  "y": 20.0
+                },
+                "fontSize": 17.0,
+                "font": {
+                  "family": "SF Pro Text",
+                  "style": "Regular",
+                  "postscript": "SFProText-Regular"
+                },
+                "lineHeight": {
+                  "value": 100.0,
+                  "units": "PERCENT"
+                },
+                "letterSpacing": {
+                  "value": -0.41,
+                  "units": "PIXELS"
+                },
+                "background": [
+                  {
+                    "type": "SOLID",
+                    "opacity": 1.0,
+                    "blendMode": "NORMAL",
+                    "visible": true,
+                    "color": "#333333",
+                    "colorVariable": {
+                      "value": {
+                        "alias": {
+                          "assetRef": {
+                            "key": "c5987816b848d51827e1368f05d1d05e7b0ed4d3",
+                            "version": "1574:249"
+                          }
+                        }
+                      },
+                      "dataType": "ALIAS",
+                      "resolvedDataType": "COLOR"
+                    }
+                  }
+                ],
+                "exampleText": "Description"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "tree": {
+        "role": "System=Android, Size=Medium, Description=on, Accessories=off, skeleton=off",
+        "type": "SYMBOL",
+        "size": {
+          "x": 375.0,
+          "y": 75.0
+        },
+        "layout": "VERTICAL",
+        "gap": 8.0,
+        "horizontalPadding": 16.0,
+        "verticalPadding": 12.0,
+        "paddingRight": 16.0,
+        "paddingBottom": 12.0,
+        "children": [
+          {
+            "role": "HeaderCont",
+            "type": "FRAME",
+            "size": {
+              "x": 343.0,
+              "y": 24.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 16.0,
+            "children": [
+              {
+                "role": "Header+Subheader",
+                "type": "FRAME",
+                "size": {
+                  "x": 271.0,
+                  "y": 24.0
+                },
+                "layout": "VERTICAL",
+                "gap": 8.0,
+                "mainAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "HeaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 271.0,
+                      "y": 23.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "children": [
+                      {
+                        "role": "HeaderText",
+                        "type": "TEXT",
+                        "size": {
+                          "x": 271.0,
+                          "y": 23.0
+                        },
+                        "fontSize": 20.0,
+                        "font": {
+                          "family": "Roboto",
+                          "style": "Bold",
+                          "postscript": "Roboto-Bold"
+                        },
+                        "lineHeight": {
+                          "value": 100.0,
+                          "units": "PERCENT"
+                        },
+                        "letterSpacing": {
+                          "value": 0.0,
+                          "units": "PIXELS"
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#333333",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "c5987816b848d51827e1368f05d1d05e7b0ed4d3",
+                                    "version": "1574:249"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "exampleText": "Header"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "role": "Accessory",
+                "type": "FRAME",
+                "size": {
+                  "x": 56.0,
+                  "y": 24.0
+                },
+                "layout": "HORIZONTAL",
+                "gap": 16.0,
+                "crossAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "ActionCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 56.0,
+                      "y": 30.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "mainAxisAlignment": "CENTER",
+                    "crossAxisAlignment": "CENTER",
+                    "background": [
+                      {
+                        "type": "SOLID",
+                        "opacity": 1.0,
+                        "blendMode": "NORMAL",
+                        "visible": false,
+                        "color": "#FFFFFF"
+                      }
+                    ],
+                    "children": [
+                      {
+                        "role": "tui-button",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 56.0,
+                          "y": 30.0
+                        },
+                        "radius": 100.0,
+                        "topLeftRadius": 100.0,
+                        "topRightRadius": 100.0,
+                        "bottomLeftRadius": 100.0,
+                        "bottomRightRadius": 100.0,
+                        "layout": "HORIZONTAL",
+                        "horizontalPadding": 7.0,
+                        "verticalPadding": 3.0,
+                        "paddingRight": 7.0,
+                        "paddingBottom": 3.0,
+                        "crossAxisAlignment": "CENTER",
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#FFDD2D",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "ef357c4f74488894f5e2ada1a4acfdc960ffe339",
+                                    "version": "1574:372"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "usesComponent": "system=android, size=small, appearance=primary-tinkoff, state=normal, skeleton=off"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "role": "Description",
+            "type": "FRAME",
+            "size": {
+              "x": 343.0,
+              "y": 19.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 10.0,
+            "crossAxisAlignment": "CENTER",
+            "children": [
+              {
+                "role": "DescriptionText",
+                "type": "TEXT",
+                "size": {
+                  "x": 343.0,
+                  "y": 19.0
+                },
+                "fontSize": 16.0,
+                "font": {
+                  "family": "Roboto",
+                  "style": "Regular",
+                  "postscript": "Roboto-Regular"
+                },
+                "lineHeight": {
+                  "value": 100.0,
+                  "units": "PERCENT"
+                },
+                "letterSpacing": {
+                  "value": 0.0,
+                  "units": "PIXELS"
+                },
+                "background": [
+                  {
+                    "type": "SOLID",
+                    "opacity": 1.0,
+                    "blendMode": "NORMAL",
+                    "visible": true,
+                    "color": "#333333",
+                    "colorVariable": {
+                      "value": {
+                        "alias": {
+                          "assetRef": {
+                            "key": "c5987816b848d51827e1368f05d1d05e7b0ed4d3",
+                            "version": "1574:249"
+                          }
+                        }
+                      },
+                      "dataType": "ALIAS",
+                      "resolvedDataType": "COLOR"
+                    }
+                  }
+                ],
+                "exampleText": "Description"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "skeleton": "on"
+      },
+      "tree": {
+        "role": "System=Android, Size=Medium, Description=on, Accessories=off, skeleton=on",
+        "type": "SYMBOL",
+        "size": {
+          "x": 375.0,
+          "y": 74.0
+        },
+        "layout": "VERTICAL",
+        "gap": 8.0,
+        "horizontalPadding": 16.0,
+        "verticalPadding": 12.0,
+        "paddingRight": 16.0,
+        "paddingBottom": 12.0,
+        "children": [
+          {
+            "role": "HeaderCont",
+            "type": "FRAME",
+            "size": {
+              "x": 343.0,
+              "y": 23.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 16.0,
+            "children": [
+              {
+                "role": "Header+Subheader",
+                "type": "FRAME",
+                "size": {
+                  "x": 343.0,
+                  "y": 23.0
+                },
+                "layout": "VERTICAL",
+                "gap": 8.0,
+                "mainAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "HeaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 343.0,
+                      "y": 23.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "crossAxisAlignment": "CENTER",
+                    "children": [
+                      {
+                        "role": "skeleton-HeaderText",
+                        "type": "ROUNDED_RECTANGLE",
+                        "size": {
+                          "x": 80.0,
+                          "y": 16.0
+                        },
+                        "radius": 4.0,
+                        "topLeftRadius": 4.0,
+                        "topRightRadius": 4.0,
+                        "bottomLeftRadius": 4.0,
+                        "bottomRightRadius": 4.0,
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 0.03,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#000000",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                                    "version": "1574:284"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "role": "Description",
+            "type": "FRAME",
+            "size": {
+              "x": 343.0,
+              "y": 19.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 10.0,
+            "crossAxisAlignment": "CENTER",
+            "children": [
+              {
+                "role": "skeleton-DescriptionText",
+                "type": "ROUNDED_RECTANGLE",
+                "size": {
+                  "x": 120.0,
+                  "y": 12.0
+                },
+                "radius": 4.0,
+                "topLeftRadius": 4.0,
+                "topRightRadius": 4.0,
+                "bottomLeftRadius": 4.0,
+                "bottomRightRadius": 4.0,
+                "background": [
+                  {
+                    "type": "SOLID",
+                    "opacity": 0.03,
+                    "blendMode": "NORMAL",
+                    "visible": true,
+                    "color": "#000000",
+                    "colorVariable": {
+                      "value": {
+                        "alias": {
+                          "assetRef": {
+                            "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                            "version": "1574:284"
+                          }
+                        }
+                      },
+                      "dataType": "ALIAS",
+                      "resolvedDataType": "COLOR"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "tree": {
+        "role": "System=iOS, Size=Medium, Description=off, Accessories=off, skeleton=off",
+        "type": "SYMBOL",
+        "size": {
+          "x": 375.0,
+          "y": 48.0
+        },
+        "layout": "VERTICAL",
+        "gap": 8.0,
+        "horizontalPadding": 16.0,
+        "verticalPadding": 12.0,
+        "paddingRight": 16.0,
+        "paddingBottom": 12.0,
+        "children": [
+          {
+            "role": "HeaderCont",
+            "type": "FRAME",
+            "size": {
+              "x": 343.0,
+              "y": 24.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 16.0,
+            "children": [
+              {
+                "role": "Header+Subheader",
+                "type": "FRAME",
+                "size": {
+                  "x": 270.0,
+                  "y": 24.0
+                },
+                "layout": "VERTICAL",
+                "gap": 8.0,
+                "mainAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "HeaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 270.0,
+                      "y": 24.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "children": [
+                      {
+                        "role": "HeaderText",
+                        "type": "TEXT",
+                        "size": {
+                          "x": 270.0,
+                          "y": 24.0
+                        },
+                        "fontSize": 20.0,
+                        "font": {
+                          "family": "SF Pro Display",
+                          "style": "Bold",
+                          "postscript": "SFProDisplay-Bold"
+                        },
+                        "lineHeight": {
+                          "value": 100.0,
+                          "units": "PERCENT"
+                        },
+                        "letterSpacing": {
+                          "value": 0.38,
+                          "units": "PIXELS"
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#333333",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "c5987816b848d51827e1368f05d1d05e7b0ed4d3",
+                                    "version": "1574:249"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "exampleText": "Header"
+                      }
+                    ]
+                  },
+                  {
+                    "role": "SubheaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 270.0,
+                      "y": 18.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "children": [
+                      {
+                        "role": "SubheaderText",
+                        "type": "TEXT",
+                        "size": {
+                          "x": 270.0,
+                          "y": 18.0
+                        },
+                        "fontSize": 15.0,
+                        "font": {
+                          "family": "SF Pro Text",
+                          "style": "Regular",
+                          "postscript": "SFProText-Regular"
+                        },
+                        "lineHeight": {
+                          "value": 100.0,
+                          "units": "PERCENT"
+                        },
+                        "letterSpacing": {
+                          "value": -0.24,
+                          "units": "PIXELS"
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#9299A2",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "1d9c58c03e13b7dd66735dc6bf82ea75c38234d2",
+                                    "version": "1574:379"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "exampleText": "Subheader"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "role": "Accessory",
+                "type": "FRAME",
+                "size": {
+                  "x": 57.0,
+                  "y": 24.0
+                },
+                "layout": "HORIZONTAL",
+                "gap": 16.0,
+                "crossAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "ActionCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 57.0,
+                      "y": 32.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "mainAxisAlignment": "CENTER",
+                    "crossAxisAlignment": "CENTER",
+                    "background": [
+                      {
+                        "type": "SOLID",
+                        "opacity": 1.0,
+                        "blendMode": "NORMAL",
+                        "visible": false,
+                        "color": "#FFFFFF"
+                      }
+                    ],
+                    "children": [
+                      {
+                        "role": "tui-button",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 57.0,
+                          "y": 32.0
+                        },
+                        "radius": 100.0,
+                        "topLeftRadius": 100.0,
+                        "topRightRadius": 100.0,
+                        "bottomLeftRadius": 100.0,
+                        "bottomRightRadius": 100.0,
+                        "layout": "HORIZONTAL",
+                        "horizontalPadding": 7.0,
+                        "verticalPadding": 3.0,
+                        "paddingRight": 7.0,
+                        "paddingBottom": 3.0,
+                        "mainAxisAlignment": "CENTER",
+                        "crossAxisAlignment": "CENTER",
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#FFDD2D",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "ef357c4f74488894f5e2ada1a4acfdc960ffe339",
+                                    "version": "1574:372"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "usesComponent": "system=ios, size=small, appearance=primary-tinkoff, state=normal, skeleton=off"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "tree": {
+        "role": "System=Android, Size=Medium, Description=off, Accessories=off, skeleton=off",
+        "type": "SYMBOL",
+        "size": {
+          "x": 375.0,
+          "y": 48.0
+        },
+        "layout": "VERTICAL",
+        "gap": 8.0,
+        "horizontalPadding": 16.0,
+        "verticalPadding": 12.0,
+        "paddingRight": 16.0,
+        "paddingBottom": 12.0,
+        "children": [
+          {
+            "role": "HeaderCont",
+            "type": "FRAME",
+            "size": {
+              "x": 343.0,
+              "y": 24.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 16.0,
+            "children": [
+              {
+                "role": "Header+Subheader",
+                "type": "FRAME",
+                "size": {
+                  "x": 271.0,
+                  "y": 24.0
+                },
+                "layout": "VERTICAL",
+                "gap": 8.0,
+                "mainAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "HeaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 271.0,
+                      "y": 23.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "children": [
+                      {
+                        "role": "HeaderText",
+                        "type": "TEXT",
+                        "size": {
+                          "x": 271.0,
+                          "y": 23.0
+                        },
+                        "fontSize": 20.0,
+                        "font": {
+                          "family": "Roboto",
+                          "style": "Bold",
+                          "postscript": "Roboto-Bold"
+                        },
+                        "lineHeight": {
+                          "value": 100.0,
+                          "units": "PERCENT"
+                        },
+                        "letterSpacing": {
+                          "value": 0.0,
+                          "units": "PIXELS"
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#333333",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "c5987816b848d51827e1368f05d1d05e7b0ed4d3",
+                                    "version": "1574:249"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "exampleText": "Header"
+                      }
+                    ]
+                  },
+                  {
+                    "role": "SubheaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 271.0,
+                      "y": 16.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "children": [
+                      {
+                        "role": "SubheaderText",
+                        "type": "TEXT",
+                        "size": {
+                          "x": 271.0,
+                          "y": 16.0
+                        },
+                        "fontSize": 14.0,
+                        "font": {
+                          "family": "Roboto",
+                          "style": "Regular",
+                          "postscript": "Roboto-Regular"
+                        },
+                        "lineHeight": {
+                          "value": 100.0,
+                          "units": "PERCENT"
+                        },
+                        "letterSpacing": {
+                          "value": 0.0,
+                          "units": "PIXELS"
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#9299A2",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "1d9c58c03e13b7dd66735dc6bf82ea75c38234d2",
+                                    "version": "1574:379"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "exampleText": "Subheader"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "role": "Accessory",
+                "type": "FRAME",
+                "size": {
+                  "x": 56.0,
+                  "y": 24.0
+                },
+                "layout": "HORIZONTAL",
+                "gap": 16.0,
+                "crossAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "ActionCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 56.0,
+                      "y": 30.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "mainAxisAlignment": "CENTER",
+                    "crossAxisAlignment": "CENTER",
+                    "background": [
+                      {
+                        "type": "SOLID",
+                        "opacity": 1.0,
+                        "blendMode": "NORMAL",
+                        "visible": false,
+                        "color": "#FFFFFF"
+                      }
+                    ],
+                    "children": [
+                      {
+                        "role": "tui-button",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 56.0,
+                          "y": 30.0
+                        },
+                        "radius": 100.0,
+                        "topLeftRadius": 100.0,
+                        "topRightRadius": 100.0,
+                        "bottomLeftRadius": 100.0,
+                        "bottomRightRadius": 100.0,
+                        "layout": "HORIZONTAL",
+                        "horizontalPadding": 7.0,
+                        "verticalPadding": 3.0,
+                        "paddingRight": 7.0,
+                        "paddingBottom": 3.0,
+                        "crossAxisAlignment": "CENTER",
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#FFDD2D",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "ef357c4f74488894f5e2ada1a4acfdc960ffe339",
+                                    "version": "1574:372"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "usesComponent": "system=android, size=small, appearance=primary-tinkoff, state=normal, skeleton=off"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "on"
+      },
+      "tree": {
+        "role": "System=Android, Size=Medium, Description=off, Accessories=off, skeleton=on",
+        "type": "SYMBOL",
+        "size": {
+          "x": 375.0,
+          "y": 47.0
+        },
+        "layout": "VERTICAL",
+        "gap": 8.0,
+        "horizontalPadding": 16.0,
+        "verticalPadding": 12.0,
+        "paddingRight": 16.0,
+        "paddingBottom": 12.0,
+        "children": [
+          {
+            "role": "HeaderCont",
+            "type": "FRAME",
+            "size": {
+              "x": 343.0,
+              "y": 23.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 16.0,
+            "children": [
+              {
+                "role": "Header+Subheader",
+                "type": "FRAME",
+                "size": {
+                  "x": 343.0,
+                  "y": 23.0
+                },
+                "layout": "VERTICAL",
+                "gap": 8.0,
+                "mainAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "HeaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 343.0,
+                      "y": 23.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "crossAxisAlignment": "CENTER",
+                    "children": [
+                      {
+                        "role": "skeleton-HeaderText",
+                        "type": "ROUNDED_RECTANGLE",
+                        "size": {
+                          "x": 80.0,
+                          "y": 16.0
+                        },
+                        "radius": 4.0,
+                        "topLeftRadius": 4.0,
+                        "topRightRadius": 4.0,
+                        "bottomLeftRadius": 4.0,
+                        "bottomRightRadius": 4.0,
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 0.03,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#000000",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                                    "version": "1574:284"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "role": "SubheaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 271.0,
+                      "y": 16.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "children": [
+                      {
+                        "role": "SubheaderText",
+                        "type": "TEXT",
+                        "size": {
+                          "x": 271.0,
+                          "y": 16.0
+                        },
+                        "fontSize": 14.0,
+                        "font": {
+                          "family": "Roboto",
+                          "style": "Regular",
+                          "postscript": "Roboto-Regular"
+                        },
+                        "lineHeight": {
+                          "value": 100.0,
+                          "units": "PERCENT"
+                        },
+                        "letterSpacing": {
+                          "value": 0.0,
+                          "units": "PIXELS"
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#9299A2",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "1d9c58c03e13b7dd66735dc6bf82ea75c38234d2",
+                                    "version": "1574:379"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "exampleText": "Subheader"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "System": "iOS",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "on",
+        "skeleton": "off"
+      },
+      "tree": {
+        "role": "System=iOS, Size=Small, Description=off, Accessories=on, skeleton=off",
+        "type": "SYMBOL",
+        "size": {
+          "x": 375.0,
+          "y": 44.0
+        },
+        "layout": "VERTICAL",
+        "horizontalPadding": 16.0,
+        "verticalPadding": 12.0,
+        "paddingRight": 16.0,
+        "paddingBottom": 12.0,
+        "children": [
+          {
+            "role": "HeaderCont",
+            "type": "FRAME",
+            "size": {
+              "x": 343.0,
+              "y": 20.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 16.0,
+            "children": [
+              {
+                "role": "Header+Subheader",
+                "type": "FRAME",
+                "size": {
+                  "x": 192.0,
+                  "y": 20.0
+                },
+                "layout": "VERTICAL",
+                "gap": 4.0,
+                "mainAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "HeaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 192.0,
+                      "y": 20.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "children": [
+                      {
+                        "role": "HeaderText",
+                        "type": "TEXT",
+                        "size": {
+                          "x": 192.0,
+                          "y": 20.0
+                        },
+                        "fontSize": 17.0,
+                        "font": {
+                          "family": "SF Pro Text",
+                          "style": "Semibold",
+                          "postscript": "SFProText-Semibold"
+                        },
+                        "lineHeight": {
+                          "value": 100.0,
+                          "units": "PERCENT"
+                        },
+                        "letterSpacing": {
+                          "value": -0.41,
+                          "units": "PIXELS"
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#333333",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "c5987816b848d51827e1368f05d1d05e7b0ed4d3",
+                                    "version": "1574:249"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "exampleText": "Header"
+                      }
+                    ]
+                  },
+                  {
+                    "role": "SubheaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 190.0,
+                      "y": 16.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "children": [
+                      {
+                        "role": "SubheaderText",
+                        "type": "TEXT",
+                        "size": {
+                          "x": 190.0,
+                          "y": 16.0
+                        },
+                        "fontSize": 13.0,
+                        "font": {
+                          "family": "SF Pro Text",
+                          "style": "Regular",
+                          "postscript": "SFProText-Regular"
+                        },
+                        "lineHeight": {
+                          "value": 100.0,
+                          "units": "PERCENT"
+                        },
+                        "letterSpacing": {
+                          "value": -0.08,
+                          "units": "PIXELS"
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#9299A2",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "1d9c58c03e13b7dd66735dc6bf82ea75c38234d2",
+                                    "version": "1574:379"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "exampleText": "Subheader"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "role": "Accessory",
+                "type": "FRAME",
+                "size": {
+                  "x": 135.0,
+                  "y": 20.0
+                },
+                "layout": "HORIZONTAL",
+                "gap": 16.0,
+                "crossAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "BadgeCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 24.0,
+                      "y": 24.001
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "mainAxisAlignment": "CENTER",
+                    "crossAxisAlignment": "CENTER",
+                    "children": [
+                      {
+                        "role": "tui-badge notification",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 24.0,
+                          "y": 24.001
+                        },
+                        "radius": 20.0,
+                        "topLeftRadius": 20.0,
+                        "topRightRadius": 20.0,
+                        "bottomLeftRadius": 20.0,
+                        "bottomRightRadius": 20.0,
+                        "layout": "HORIZONTAL",
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#F52222",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "319b769813950427432128bee50f6fdc65475efa",
+                                    "version": "1574:364"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "usesComponent": "system=iOS, size=large"
+                      }
+                    ]
+                  },
+                  {
+                    "role": "HintCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 22.0,
+                      "y": 22.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "mainAxisAlignment": "CENTER",
+                    "crossAxisAlignment": "CENTER",
+                    "children": [
+                      {
+                        "role": "tui-button tooltip",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 22.0,
+                          "y": 22.0
+                        },
+                        "layout": "HORIZONTAL",
+                        "gap": 10.0,
+                        "mainAxisAlignment": "CENTER",
+                        "crossAxisAlignment": "CENTER",
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": false,
+                            "color": "#FFFFFF"
+                          }
+                        ],
+                        "usesComponent": "is-selected=off, is-pressed=off, icon=hint, system=ios"
+                      }
+                    ]
+                  },
+                  {
+                    "role": "ActionCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 57.0,
+                      "y": 32.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "mainAxisAlignment": "CENTER",
+                    "crossAxisAlignment": "CENTER",
+                    "background": [
+                      {
+                        "type": "SOLID",
+                        "opacity": 1.0,
+                        "blendMode": "NORMAL",
+                        "visible": false,
+                        "color": "#FFFFFF"
+                      }
+                    ],
+                    "children": [
+                      {
+                        "role": "tui-button",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 57.0,
+                          "y": 32.0
+                        },
+                        "radius": 100.0,
+                        "topLeftRadius": 100.0,
+                        "topRightRadius": 100.0,
+                        "bottomLeftRadius": 100.0,
+                        "bottomRightRadius": 100.0,
+                        "layout": "HORIZONTAL",
+                        "horizontalPadding": 7.0,
+                        "verticalPadding": 3.0,
+                        "paddingRight": 7.0,
+                        "paddingBottom": 3.0,
+                        "mainAxisAlignment": "CENTER",
+                        "crossAxisAlignment": "CENTER",
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#FFDD2D",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "ef357c4f74488894f5e2ada1a4acfdc960ffe339",
+                                    "version": "1574:372"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "usesComponent": "system=ios, size=small, appearance=primary-tinkoff, state=normal, skeleton=off"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "System": "Android",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "on",
+        "skeleton": "off"
+      },
+      "tree": {
+        "role": "System=Android, Size=Small, Description=off, Accessories=on, skeleton=off",
+        "type": "SYMBOL",
+        "size": {
+          "x": 375.0,
+          "y": 44.0
+        },
+        "layout": "VERTICAL",
+        "horizontalPadding": 16.0,
+        "verticalPadding": 12.0,
+        "paddingRight": 16.0,
+        "paddingBottom": 12.0,
+        "children": [
+          {
+            "role": "HeaderCont",
+            "type": "FRAME",
+            "size": {
+              "x": 343.0,
+              "y": 20.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 16.0,
+            "children": [
+              {
+                "role": "Header+Subheader",
+                "type": "FRAME",
+                "size": {
+                  "x": 195.0,
+                  "y": 20.0
+                },
+                "layout": "VERTICAL",
+                "gap": 4.0,
+                "mainAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "HeaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 195.0,
+                      "y": 19.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "children": [
+                      {
+                        "role": "HeaderText",
+                        "type": "TEXT",
+                        "size": {
+                          "x": 195.0,
+                          "y": 19.0
+                        },
+                        "fontSize": 16.0,
+                        "font": {
+                          "family": "Roboto",
+                          "style": "Medium",
+                          "postscript": ""
+                        },
+                        "lineHeight": {
+                          "value": 100.0,
+                          "units": "PERCENT"
+                        },
+                        "letterSpacing": {
+                          "value": 0.0,
+                          "units": "PIXELS"
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#333333",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "c5987816b848d51827e1368f05d1d05e7b0ed4d3",
+                                    "version": "1574:249"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "exampleText": "Header"
+                      }
+                    ]
+                  },
+                  {
+                    "role": "SubheaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 193.0,
+                      "y": 15.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "children": [
+                      {
+                        "role": "SubheaderText",
+                        "type": "TEXT",
+                        "size": {
+                          "x": 193.0,
+                          "y": 15.0
+                        },
+                        "fontSize": 13.0,
+                        "font": {
+                          "family": "Roboto",
+                          "style": "Regular",
+                          "postscript": "Roboto-Regular"
+                        },
+                        "lineHeight": {
+                          "value": 100.0,
+                          "units": "PERCENT"
+                        },
+                        "letterSpacing": {
+                          "value": 0.0,
+                          "units": "PIXELS"
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#9299A2",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "1d9c58c03e13b7dd66735dc6bf82ea75c38234d2",
+                                    "version": "1574:379"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "exampleText": "Subheader"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "role": "Accessory",
+                "type": "FRAME",
+                "size": {
+                  "x": 132.0,
+                  "y": 20.0
+                },
+                "layout": "HORIZONTAL",
+                "gap": 16.0,
+                "crossAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "BadgeCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 22.0,
+                      "y": 22.001
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "mainAxisAlignment": "CENTER",
+                    "crossAxisAlignment": "CENTER",
+                    "children": [
+                      {
+                        "role": "tui-badge notification",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 22.0,
+                          "y": 22.001
+                        },
+                        "radius": 20.0,
+                        "topLeftRadius": 20.0,
+                        "topRightRadius": 20.0,
+                        "bottomLeftRadius": 20.0,
+                        "bottomRightRadius": 20.0,
+                        "layout": "HORIZONTAL",
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#F52222",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "319b769813950427432128bee50f6fdc65475efa",
+                                    "version": "1574:364"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "usesComponent": "system=Android, size=large"
+                      }
+                    ]
+                  },
+                  {
+                    "role": "HintCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 22.0,
+                      "y": 22.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "mainAxisAlignment": "CENTER",
+                    "crossAxisAlignment": "CENTER",
+                    "children": [
+                      {
+                        "role": "tui-button tooltip",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 22.0,
+                          "y": 22.0
+                        },
+                        "layout": "HORIZONTAL",
+                        "gap": 10.0,
+                        "mainAxisAlignment": "CENTER",
+                        "crossAxisAlignment": "CENTER",
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": false,
+                            "color": "#FFFFFF"
+                          }
+                        ],
+                        "usesComponent": "is-selected=off, is-pressed=off, icon=hint, system=ios"
+                      }
+                    ]
+                  },
+                  {
+                    "role": "ActionCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 56.0,
+                      "y": 30.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "mainAxisAlignment": "CENTER",
+                    "crossAxisAlignment": "CENTER",
+                    "background": [
+                      {
+                        "type": "SOLID",
+                        "opacity": 1.0,
+                        "blendMode": "NORMAL",
+                        "visible": false,
+                        "color": "#FFFFFF"
+                      }
+                    ],
+                    "children": [
+                      {
+                        "role": "tui-button",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 56.0,
+                          "y": 30.0
+                        },
+                        "radius": 100.0,
+                        "topLeftRadius": 100.0,
+                        "topRightRadius": 100.0,
+                        "bottomLeftRadius": 100.0,
+                        "bottomRightRadius": 100.0,
+                        "layout": "HORIZONTAL",
+                        "horizontalPadding": 7.0,
+                        "verticalPadding": 3.0,
+                        "paddingRight": 7.0,
+                        "paddingBottom": 3.0,
+                        "crossAxisAlignment": "CENTER",
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#FFDD2D",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "ef357c4f74488894f5e2ada1a4acfdc960ffe339",
+                                    "version": "1574:372"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "usesComponent": "system=android, size=small, appearance=primary-tinkoff, state=normal, skeleton=off"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "System": "Android",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "on"
+      },
+      "tree": {
+        "role": "System=Android, Size=Small, Description=off, Accessories=off, skeleton=on",
+        "type": "SYMBOL",
+        "size": {
+          "x": 375.0,
+          "y": 43.0
+        },
+        "layout": "VERTICAL",
+        "horizontalPadding": 16.0,
+        "verticalPadding": 12.0,
+        "paddingRight": 16.0,
+        "paddingBottom": 12.0,
+        "children": [
+          {
+            "role": "HeaderCont",
+            "type": "FRAME",
+            "size": {
+              "x": 343.0,
+              "y": 19.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 16.0,
+            "children": [
+              {
+                "role": "Header+Subheader",
+                "type": "FRAME",
+                "size": {
+                  "x": 343.0,
+                  "y": 19.0
+                },
+                "layout": "VERTICAL",
+                "gap": 4.0,
+                "mainAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "HeaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 343.0,
+                      "y": 19.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "crossAxisAlignment": "CENTER",
+                    "children": [
+                      {
+                        "role": "skeleton-HeaderText",
+                        "type": "ROUNDED_RECTANGLE",
+                        "size": {
+                          "x": 80.0,
+                          "y": 12.0
+                        },
+                        "radius": 4.0,
+                        "topLeftRadius": 4.0,
+                        "topRightRadius": 4.0,
+                        "bottomLeftRadius": 4.0,
+                        "bottomRightRadius": 4.0,
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 0.03,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#000000",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                                    "version": "1574:284"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "role": "SubheaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 271.0,
+                      "y": 15.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "children": [
+                      {
+                        "role": "SubheaderText",
+                        "type": "TEXT",
+                        "size": {
+                          "x": 271.0,
+                          "y": 15.0
+                        },
+                        "fontSize": 13.0,
+                        "font": {
+                          "family": "Roboto",
+                          "style": "Regular",
+                          "postscript": "Roboto-Regular"
+                        },
+                        "lineHeight": {
+                          "value": 100.0,
+                          "units": "PERCENT"
+                        },
+                        "letterSpacing": {
+                          "value": 0.0,
+                          "units": "PIXELS"
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#9299A2",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "1d9c58c03e13b7dd66735dc6bf82ea75c38234d2",
+                                    "version": "1574:379"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "exampleText": "Subheader"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "tree": {
+        "role": "System=iOS, Size=Medium, Description=on, Accessories=off, skeleton=off",
+        "type": "SYMBOL",
+        "size": {
+          "x": 375.0,
+          "y": 76.0
+        },
+        "layout": "VERTICAL",
+        "gap": 8.0,
+        "horizontalPadding": 16.0,
+        "verticalPadding": 12.0,
+        "paddingRight": 16.0,
+        "paddingBottom": 12.0,
+        "children": [
+          {
+            "role": "HeaderCont",
+            "type": "FRAME",
+            "size": {
+              "x": 343.0,
+              "y": 24.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 16.0,
+            "children": [
+              {
+                "role": "Header+Subheader",
+                "type": "FRAME",
+                "size": {
+                  "x": 285.0,
+                  "y": 24.0
+                },
+                "layout": "VERTICAL",
+                "gap": 8.0,
+                "mainAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "HeaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 285.0,
+                      "y": 24.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "children": [
+                      {
+                        "role": "HeaderText",
+                        "type": "TEXT",
+                        "size": {
+                          "x": 285.0,
+                          "y": 24.0
+                        },
+                        "fontSize": 20.0,
+                        "font": {
+                          "family": "SF Pro Display",
+                          "style": "Bold",
+                          "postscript": "SFProDisplay-Bold"
+                        },
+                        "lineHeight": {
+                          "value": 100.0,
+                          "units": "PERCENT"
+                        },
+                        "letterSpacing": {
+                          "value": 0.38,
+                          "units": "PIXELS"
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#333333",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "c5987816b848d51827e1368f05d1d05e7b0ed4d3",
+                                    "version": "1574:249"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "exampleText": "Header"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "role": "Accessory",
+                "type": "FRAME",
+                "size": {
+                  "x": 42.0,
+                  "y": 24.0
+                },
+                "layout": "HORIZONTAL",
+                "gap": 16.0,
+                "crossAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "ActionCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 42.0,
+                      "y": 20.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "mainAxisAlignment": "CENTER",
+                    "crossAxisAlignment": "CENTER",
+                    "background": [
+                      {
+                        "type": "SOLID",
+                        "opacity": 1.0,
+                        "blendMode": "NORMAL",
+                        "visible": false,
+                        "color": "#FFFFFF"
+                      }
+                    ],
+                    "children": [
+                      {
+                        "role": "tui-button [link]",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 42.0,
+                          "y": 20.0
+                        },
+                        "radius": 100.0,
+                        "topLeftRadius": 100.0,
+                        "topRightRadius": 100.0,
+                        "bottomLeftRadius": 100.0,
+                        "bottomRightRadius": 100.0,
+                        "layout": "HORIZONTAL",
+                        "gap": 4.0,
+                        "usesComponent": "System=iOS, Content=Text, State=Normal"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "role": "Description",
+            "type": "FRAME",
+            "size": {
+              "x": 343.0,
+              "y": 20.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 10.0,
+            "crossAxisAlignment": "CENTER",
+            "children": [
+              {
+                "role": "DescriptionText",
+                "type": "TEXT",
+                "size": {
+                  "x": 343.0,
+                  "y": 20.0
+                },
+                "fontSize": 17.0,
+                "font": {
+                  "family": "SF Pro Text",
+                  "style": "Regular",
+                  "postscript": "SFProText-Regular"
+                },
+                "lineHeight": {
+                  "value": 100.0,
+                  "units": "PERCENT"
+                },
+                "letterSpacing": {
+                  "value": -0.41,
+                  "units": "PIXELS"
+                },
+                "background": [
+                  {
+                    "type": "SOLID",
+                    "opacity": 1.0,
+                    "blendMode": "NORMAL",
+                    "visible": true,
+                    "color": "#333333",
+                    "colorVariable": {
+                      "value": {
+                        "alias": {
+                          "assetRef": {
+                            "key": "c5987816b848d51827e1368f05d1d05e7b0ed4d3",
+                            "version": "1574:249"
+                          }
+                        }
+                      },
+                      "dataType": "ALIAS",
+                      "resolvedDataType": "COLOR"
+                    }
+                  }
+                ],
+                "exampleText": "Description"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "tree": {
+        "role": "System=Android, Size=Medium, Description=on, Accessories=off, skeleton=off",
+        "type": "SYMBOL",
+        "size": {
+          "x": 375.0,
+          "y": 75.0
+        },
+        "layout": "VERTICAL",
+        "gap": 8.0,
+        "horizontalPadding": 16.0,
+        "verticalPadding": 12.0,
+        "paddingRight": 16.0,
+        "paddingBottom": 12.0,
+        "children": [
+          {
+            "role": "HeaderCont",
+            "type": "FRAME",
+            "size": {
+              "x": 343.0,
+              "y": 24.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 16.0,
+            "children": [
+              {
+                "role": "Header+Subheader",
+                "type": "FRAME",
+                "size": {
+                  "x": 292.0,
+                  "y": 24.0
+                },
+                "layout": "VERTICAL",
+                "gap": 8.0,
+                "mainAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "HeaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 292.0,
+                      "y": 23.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "children": [
+                      {
+                        "role": "HeaderText",
+                        "type": "TEXT",
+                        "size": {
+                          "x": 292.0,
+                          "y": 23.0
+                        },
+                        "fontSize": 20.0,
+                        "font": {
+                          "family": "Roboto",
+                          "style": "Bold",
+                          "postscript": "Roboto-Bold"
+                        },
+                        "lineHeight": {
+                          "value": 100.0,
+                          "units": "PERCENT"
+                        },
+                        "letterSpacing": {
+                          "value": 0.0,
+                          "units": "PIXELS"
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#333333",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "c5987816b848d51827e1368f05d1d05e7b0ed4d3",
+                                    "version": "1574:249"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "exampleText": "Header"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "role": "Accessory",
+                "type": "FRAME",
+                "size": {
+                  "x": 35.0,
+                  "y": 24.0
+                },
+                "layout": "HORIZONTAL",
+                "gap": 16.0,
+                "crossAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "ActionCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 35.0,
+                      "y": 19.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "mainAxisAlignment": "CENTER",
+                    "crossAxisAlignment": "CENTER",
+                    "background": [
+                      {
+                        "type": "SOLID",
+                        "opacity": 1.0,
+                        "blendMode": "NORMAL",
+                        "visible": false,
+                        "color": "#FFFFFF"
+                      }
+                    ],
+                    "children": [
+                      {
+                        "role": "tui-button [link]",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 35.0,
+                          "y": 19.0
+                        },
+                        "radius": 16.0,
+                        "topLeftRadius": 16.0,
+                        "topRightRadius": 16.0,
+                        "bottomLeftRadius": 16.0,
+                        "bottomRightRadius": 16.0,
+                        "layout": "HORIZONTAL",
+                        "usesComponent": "System=Android, Content=Text, State=Normal"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "role": "Description",
+            "type": "FRAME",
+            "size": {
+              "x": 343.0,
+              "y": 19.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 10.0,
+            "crossAxisAlignment": "CENTER",
+            "children": [
+              {
+                "role": "DescriptionText",
+                "type": "TEXT",
+                "size": {
+                  "x": 343.0,
+                  "y": 19.0
+                },
+                "fontSize": 16.0,
+                "font": {
+                  "family": "Roboto",
+                  "style": "Regular",
+                  "postscript": "Roboto-Regular"
+                },
+                "lineHeight": {
+                  "value": 100.0,
+                  "units": "PERCENT"
+                },
+                "letterSpacing": {
+                  "value": 0.0,
+                  "units": "PIXELS"
+                },
+                "background": [
+                  {
+                    "type": "SOLID",
+                    "opacity": 1.0,
+                    "blendMode": "NORMAL",
+                    "visible": true,
+                    "color": "#333333",
+                    "colorVariable": {
+                      "value": {
+                        "alias": {
+                          "assetRef": {
+                            "key": "c5987816b848d51827e1368f05d1d05e7b0ed4d3",
+                            "version": "1574:249"
+                          }
+                        }
+                      },
+                      "dataType": "ALIAS",
+                      "resolvedDataType": "COLOR"
+                    }
+                  }
+                ],
+                "exampleText": "Description"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "on",
+        "Accessories": "off",
+        "skeleton": "on"
+      },
+      "tree": {
+        "role": "System=Android, Size=Medium, Description=on, Accessories=off, skeleton=on",
+        "type": "SYMBOL",
+        "size": {
+          "x": 375.0,
+          "y": 74.0
+        },
+        "layout": "VERTICAL",
+        "gap": 8.0,
+        "horizontalPadding": 16.0,
+        "verticalPadding": 12.0,
+        "paddingRight": 16.0,
+        "paddingBottom": 12.0,
+        "children": [
+          {
+            "role": "HeaderCont",
+            "type": "FRAME",
+            "size": {
+              "x": 343.0,
+              "y": 23.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 16.0,
+            "children": [
+              {
+                "role": "Header+Subheader",
+                "type": "FRAME",
+                "size": {
+                  "x": 343.0,
+                  "y": 23.0
+                },
+                "layout": "VERTICAL",
+                "gap": 8.0,
+                "mainAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "HeaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 343.0,
+                      "y": 23.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "crossAxisAlignment": "CENTER",
+                    "children": [
+                      {
+                        "role": "skeleton-HeaderText",
+                        "type": "ROUNDED_RECTANGLE",
+                        "size": {
+                          "x": 80.0,
+                          "y": 16.0
+                        },
+                        "radius": 4.0,
+                        "topLeftRadius": 4.0,
+                        "topRightRadius": 4.0,
+                        "bottomLeftRadius": 4.0,
+                        "bottomRightRadius": 4.0,
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 0.03,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#000000",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                                    "version": "1574:284"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "role": "Description",
+            "type": "FRAME",
+            "size": {
+              "x": 343.0,
+              "y": 19.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 10.0,
+            "crossAxisAlignment": "CENTER",
+            "children": [
+              {
+                "role": "skeleton-DescriptionText",
+                "type": "ROUNDED_RECTANGLE",
+                "size": {
+                  "x": 120.0,
+                  "y": 12.0
+                },
+                "radius": 4.0,
+                "topLeftRadius": 4.0,
+                "topRightRadius": 4.0,
+                "bottomLeftRadius": 4.0,
+                "bottomRightRadius": 4.0,
+                "background": [
+                  {
+                    "type": "SOLID",
+                    "opacity": 0.03,
+                    "blendMode": "NORMAL",
+                    "visible": true,
+                    "color": "#000000",
+                    "colorVariable": {
+                      "value": {
+                        "alias": {
+                          "assetRef": {
+                            "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                            "version": "1574:284"
+                          }
+                        }
+                      },
+                      "dataType": "ALIAS",
+                      "resolvedDataType": "COLOR"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "System": "iOS",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "tree": {
+        "role": "System=iOS, Size=Medium, Description=off, Accessories=off, skeleton=off",
+        "type": "SYMBOL",
+        "size": {
+          "x": 375.0,
+          "y": 48.0
+        },
+        "layout": "VERTICAL",
+        "gap": 8.0,
+        "horizontalPadding": 16.0,
+        "verticalPadding": 12.0,
+        "paddingRight": 16.0,
+        "paddingBottom": 12.0,
+        "children": [
+          {
+            "role": "HeaderCont",
+            "type": "FRAME",
+            "size": {
+              "x": 343.0,
+              "y": 24.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 16.0,
+            "children": [
+              {
+                "role": "Header+Subheader",
+                "type": "FRAME",
+                "size": {
+                  "x": 285.0,
+                  "y": 24.0
+                },
+                "layout": "VERTICAL",
+                "gap": 8.0,
+                "mainAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "HeaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 285.0,
+                      "y": 24.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "children": [
+                      {
+                        "role": "HeaderText",
+                        "type": "TEXT",
+                        "size": {
+                          "x": 285.0,
+                          "y": 24.0
+                        },
+                        "fontSize": 20.0,
+                        "font": {
+                          "family": "SF Pro Display",
+                          "style": "Bold",
+                          "postscript": "SFProDisplay-Bold"
+                        },
+                        "lineHeight": {
+                          "value": 100.0,
+                          "units": "PERCENT"
+                        },
+                        "letterSpacing": {
+                          "value": 0.38,
+                          "units": "PIXELS"
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#333333",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "c5987816b848d51827e1368f05d1d05e7b0ed4d3",
+                                    "version": "1574:249"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "exampleText": "Header"
+                      }
+                    ]
+                  },
+                  {
+                    "role": "SubheaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 285.0,
+                      "y": 18.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "children": [
+                      {
+                        "role": "SubheaderText",
+                        "type": "TEXT",
+                        "size": {
+                          "x": 285.0,
+                          "y": 18.0
+                        },
+                        "fontSize": 15.0,
+                        "font": {
+                          "family": "SF Pro Text",
+                          "style": "Regular",
+                          "postscript": "SFProText-Regular"
+                        },
+                        "lineHeight": {
+                          "value": 100.0,
+                          "units": "PERCENT"
+                        },
+                        "letterSpacing": {
+                          "value": -0.24,
+                          "units": "PIXELS"
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#9299A2",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "1d9c58c03e13b7dd66735dc6bf82ea75c38234d2",
+                                    "version": "1574:379"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "exampleText": "Subheader"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "role": "Accessory",
+                "type": "FRAME",
+                "size": {
+                  "x": 42.0,
+                  "y": 24.0
+                },
+                "layout": "HORIZONTAL",
+                "gap": 16.0,
+                "crossAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "ActionCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 42.0,
+                      "y": 20.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "mainAxisAlignment": "CENTER",
+                    "crossAxisAlignment": "CENTER",
+                    "background": [
+                      {
+                        "type": "SOLID",
+                        "opacity": 1.0,
+                        "blendMode": "NORMAL",
+                        "visible": false,
+                        "color": "#FFFFFF"
+                      }
+                    ],
+                    "children": [
+                      {
+                        "role": "tui-button [link]",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 42.0,
+                          "y": 20.0
+                        },
+                        "radius": 100.0,
+                        "topLeftRadius": 100.0,
+                        "topRightRadius": 100.0,
+                        "bottomLeftRadius": 100.0,
+                        "bottomRightRadius": 100.0,
+                        "layout": "HORIZONTAL",
+                        "gap": 4.0,
+                        "usesComponent": "System=iOS, Content=Text, State=Normal"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "off"
+      },
+      "tree": {
+        "role": "System=Android, Size=Medium, Description=off, Accessories=off, skeleton=off",
+        "type": "SYMBOL",
+        "size": {
+          "x": 375.0,
+          "y": 48.0
+        },
+        "layout": "VERTICAL",
+        "gap": 8.0,
+        "horizontalPadding": 16.0,
+        "verticalPadding": 12.0,
+        "paddingRight": 16.0,
+        "paddingBottom": 12.0,
+        "children": [
+          {
+            "role": "HeaderCont",
+            "type": "FRAME",
+            "size": {
+              "x": 343.0,
+              "y": 24.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 16.0,
+            "children": [
+              {
+                "role": "Header+Subheader",
+                "type": "FRAME",
+                "size": {
+                  "x": 292.0,
+                  "y": 24.0
+                },
+                "layout": "VERTICAL",
+                "gap": 8.0,
+                "mainAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "HeaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 292.0,
+                      "y": 23.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "children": [
+                      {
+                        "role": "HeaderText",
+                        "type": "TEXT",
+                        "size": {
+                          "x": 292.0,
+                          "y": 23.0
+                        },
+                        "fontSize": 20.0,
+                        "font": {
+                          "family": "Roboto",
+                          "style": "Bold",
+                          "postscript": "Roboto-Bold"
+                        },
+                        "lineHeight": {
+                          "value": 100.0,
+                          "units": "PERCENT"
+                        },
+                        "letterSpacing": {
+                          "value": 0.0,
+                          "units": "PIXELS"
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#333333",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "c5987816b848d51827e1368f05d1d05e7b0ed4d3",
+                                    "version": "1574:249"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "exampleText": "Header"
+                      }
+                    ]
+                  },
+                  {
+                    "role": "SubheaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 288.0,
+                      "y": 16.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "children": [
+                      {
+                        "role": "SubheaderText",
+                        "type": "TEXT",
+                        "size": {
+                          "x": 288.0,
+                          "y": 16.0
+                        },
+                        "fontSize": 14.0,
+                        "font": {
+                          "family": "Roboto",
+                          "style": "Regular",
+                          "postscript": "Roboto-Regular"
+                        },
+                        "lineHeight": {
+                          "value": 100.0,
+                          "units": "PERCENT"
+                        },
+                        "letterSpacing": {
+                          "value": 0.0,
+                          "units": "PIXELS"
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#9299A2",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "1d9c58c03e13b7dd66735dc6bf82ea75c38234d2",
+                                    "version": "1574:379"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "exampleText": "Subheader"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "role": "Accessory",
+                "type": "FRAME",
+                "size": {
+                  "x": 35.0,
+                  "y": 24.0
+                },
+                "layout": "HORIZONTAL",
+                "gap": 16.0,
+                "crossAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "ActionCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 35.0,
+                      "y": 19.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "mainAxisAlignment": "CENTER",
+                    "crossAxisAlignment": "CENTER",
+                    "background": [
+                      {
+                        "type": "SOLID",
+                        "opacity": 1.0,
+                        "blendMode": "NORMAL",
+                        "visible": false,
+                        "color": "#FFFFFF"
+                      }
+                    ],
+                    "children": [
+                      {
+                        "role": "tui-button [link]",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 35.0,
+                          "y": 19.0
+                        },
+                        "radius": 16.0,
+                        "topLeftRadius": 16.0,
+                        "topRightRadius": 16.0,
+                        "bottomLeftRadius": 16.0,
+                        "bottomRightRadius": 16.0,
+                        "layout": "HORIZONTAL",
+                        "usesComponent": "System=Android, Content=Text, State=Normal"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "System": "Android",
+        "Size": "Medium",
+        "Description": "off",
+        "Accessories": "off",
+        "skeleton": "on"
+      },
+      "tree": {
+        "role": "System=Android, Size=Medium, Description=off, Accessories=off, skeleton=on",
+        "type": "SYMBOL",
+        "size": {
+          "x": 375.0,
+          "y": 47.0
+        },
+        "layout": "VERTICAL",
+        "gap": 8.0,
+        "horizontalPadding": 16.0,
+        "verticalPadding": 12.0,
+        "paddingRight": 16.0,
+        "paddingBottom": 12.0,
+        "children": [
+          {
+            "role": "HeaderCont",
+            "type": "FRAME",
+            "size": {
+              "x": 343.0,
+              "y": 23.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 16.0,
+            "children": [
+              {
+                "role": "Header+Subheader",
+                "type": "FRAME",
+                "size": {
+                  "x": 343.0,
+                  "y": 23.0
+                },
+                "layout": "VERTICAL",
+                "gap": 8.0,
+                "mainAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "HeaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 343.0,
+                      "y": 23.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "crossAxisAlignment": "CENTER",
+                    "children": [
+                      {
+                        "role": "skeleton-HeaderText",
+                        "type": "ROUNDED_RECTANGLE",
+                        "size": {
+                          "x": 80.0,
+                          "y": 16.0
+                        },
+                        "radius": 4.0,
+                        "topLeftRadius": 4.0,
+                        "topRightRadius": 4.0,
+                        "bottomLeftRadius": 4.0,
+                        "bottomRightRadius": 4.0,
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 0.03,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#000000",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                                    "version": "1574:284"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "role": "SubheaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 288.0,
+                      "y": 16.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "children": [
+                      {
+                        "role": "SubheaderText",
+                        "type": "TEXT",
+                        "size": {
+                          "x": 288.0,
+                          "y": 16.0
+                        },
+                        "fontSize": 14.0,
+                        "font": {
+                          "family": "Roboto",
+                          "style": "Regular",
+                          "postscript": "Roboto-Regular"
+                        },
+                        "lineHeight": {
+                          "value": 100.0,
+                          "units": "PERCENT"
+                        },
+                        "letterSpacing": {
+                          "value": 0.0,
+                          "units": "PIXELS"
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#9299A2",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "1d9c58c03e13b7dd66735dc6bf82ea75c38234d2",
+                                    "version": "1574:379"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "exampleText": "Subheader"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "System": "iOS",
+        "Size": "Small",
+        "Description": "off",
+        "Accessories": "on",
+        "skeleton": "off"
+      },
+      "tree": {
+        "role": "System=iOS, Size=Small, Description=off, Accessories=on, skeleton=off",
+        "type": "SYMBOL",
+        "size": {
+          "x": 375.0,
+          "y": 44.0
+        },
+        "layout": "VERTICAL",
+        "horizontalPadding": 16.0,
+        "verticalPadding": 12.0,
+        "paddingRight": 16.0,
+        "paddingBottom": 12.0,
+        "children": [
+          {
+            "role": "HeaderCont",
+            "type": "FRAME",
+            "size": {
+              "x": 343.0,
+              "y": 20.0
+            },
+            "layout": "HORIZONTAL",
+            "gap": 16.0,
+            "children": [
+              {
+                "role": "Header+Subheader",
+                "type": "FRAME",
+                "size": {
+                  "x": 207.0,
+                  "y": 20.0
+                },
+                "layout": "VERTICAL",
+                "gap": 4.0,
+                "mainAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "HeaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 207.0,
+                      "y": 20.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "children": [
+                      {
+                        "role": "HeaderText",
+                        "type": "TEXT",
+                        "size": {
+                          "x": 207.0,
+                          "y": 20.0
+                        },
+                        "fontSize": 17.0,
+                        "font": {
+                          "family": "SF Pro Text",
+                          "style": "Semibold",
+                          "postscript": "SFProText-Semibold"
+                        },
+                        "lineHeight": {
+                          "value": 100.0,
+                          "units": "PERCENT"
+                        },
+                        "letterSpacing": {
+                          "value": -0.41,
+                          "units": "PIXELS"
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#333333",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "c5987816b848d51827e1368f05d1d05e7b0ed4d3",
+                                    "version": "1574:249"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "exampleText": "Header"
+                      }
+                    ]
+                  },
+                  {
+                    "role": "SubheaderTextCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 205.0,
+                      "y": 16.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "children": [
+                      {
+                        "role": "SubheaderText",
+                        "type": "TEXT",
+                        "size": {
+                          "x": 205.0,
+                          "y": 16.0
+                        },
+                        "fontSize": 13.0,
+                        "font": {
+                          "family": "SF Pro Text",
+                          "style": "Regular",
+                          "postscript": "SFProText-Regular"
+                        },
+                        "lineHeight": {
+                          "value": 100.0,
+                          "units": "PERCENT"
+                        },
+                        "letterSpacing": {
+                          "value": -0.08,
+                          "units": "PIXELS"
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#9299A2",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "1d9c58c03e13b7dd66735dc6bf82ea75c38234d2",
+                                    "version": "1574:379"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "exampleText": "Subheader"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "role": "Accessory",
+                "type": "FRAME",
+                "size": {
+                  "x": 120.0,
+                  "y": 20.0
+                },
+                "layout": "HORIZONTAL",
+                "gap": 16.0,
+                "crossAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "BadgeCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 24.0,
+                      "y": 24.001
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "mainAxisAlignment": "CENTER",
+                    "crossAxisAlignment": "CENTER",
+                    "children": [
+                      {
+                        "role": "tui-badge notification",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 24.0,
+                          "y": 24.001
+                        },
+                        "radius": 20.0,
+                        "topLeftRadius": 20.0,
+                        "topRightRadius": 20.0,
+                        "bottomLeftRadius": 20.0,
+                        "bottomRightRadius": 20.0,
+                        "layout": "HORIZONTAL",
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#F52222",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "319b769813950427432128bee50f6fdc65475efa",
+                                    "version": "1574:364"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "usesComponent": "system=iOS, size=large"
+                      }
+                    ]
+                  },
+                  {
+                    "role": "HintCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 22.0,
+                      "y": 22.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "mainAxisAlignment": "CENTER",
+                    "crossAxisAlignment": "CENTER",
+                    "children": [
+                      {
+                        "role": "tui-button tooltip",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 22.0,
+                          "y": 22.0
+                        },
+                        "layout": "HORIZONTAL",
+                        "gap": 10.0,
+                        "mainAxisAlignment": "CENTER",
+                        "crossAxisAlignment": "CENTER",
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": false,
+                            "color": "#FFFFFF"
+                          }
+                        ],
+                        "usesComponent": "is-selected=off, is-pressed=off, icon=hint, system=ios"
+                      }
+                    ]
+                  },
+                  {
+                    "role": "ActionCont",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 42.0,
+                      "y": 20.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "mainAxisAlignment": "CENTER",
+                    "crossAxisAlignment": "CENTER",
+                    "background": [
+                      {
+                        "type": "SOLID",
+                        "opacity": 1.0,
+                        "blendMode": "NORMAL",
+                        "visible": false,
+                        "color": "#FFFFFF"
+                      }
+                    ],
+                    "children": [
+                      {
+                        "role": "tui-button [link]",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 42.0,
+                          "y": 20.0
+                        },
+                        "radius": 100.0,
+                        "topLeftRadius": 100.0,
+                        "topRightRadius": 100.0,
+                        "bottomLeftRadius": 100.0,
+                        "bottomRightRadius": 100.0,
+                        "layout": "HORIZONTAL",
+                        "gap": 4.0,
+                        "usesComponent": "System=iOS, Content=Text, State=Normal"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "guidance": [],
+  "implementationNames": {
+    "tui-header": [
+      "ased"
+    ]
+  }
+}

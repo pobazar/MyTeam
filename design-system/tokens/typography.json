@@ -1,0 +1,3911 @@
+[
+  {
+    "name": ".Body/L",
+    "description": "Токен для наборного текста",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Regular",
+      "postscript": "SFPro-Regular"
+    },
+    "fontSize": 17.0,
+    "lineHeight": {
+      "value": 24.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": -0.43,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Body/L Bold",
+    "description": "Токен для наборного текста",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Bold",
+      "postscript": "SFPro-Bold"
+    },
+    "fontSize": 17.0,
+    "lineHeight": {
+      "value": 24.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": -0.43,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Body/M",
+    "description": "Токен для наборного текста",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Regular",
+      "postscript": "SFPro-Regular"
+    },
+    "fontSize": 15.0,
+    "lineHeight": {
+      "value": 20.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": -0.23,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Body/M Bold",
+    "description": "Токен для наборного текста",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Medium",
+      "postscript": "SFPro-Medium"
+    },
+    "fontSize": 15.0,
+    "lineHeight": {
+      "value": 20.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": -0.23,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Body/S",
+    "description": "Токен для наборного текста",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Regular",
+      "postscript": "SFPro-Regular"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 18.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": -0.08,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Body/S Bold",
+    "description": "Токен для наборного текста",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Medium",
+      "postscript": "SFPro-Medium"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 18.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": -0.08,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Body/XS",
+    "description": "Токен для наборного текста",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Regular",
+      "postscript": "SFPro-Regular"
+    },
+    "fontSize": 12.0,
+    "lineHeight": {
+      "value": 17.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Body/XS Bold",
+    "description": "Токен для наборного текста",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Medium",
+      "postscript": "SFPro-Medium"
+    },
+    "fontSize": 12.0,
+    "lineHeight": {
+      "value": 17.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Caps/2XS",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Regular",
+      "postscript": "SFPro-Regular"
+    },
+    "fontSize": 11.0,
+    "lineHeight": {
+      "value": 13.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.06,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "textCase": "UPPER",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Caps/2XS Bold",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Medium",
+      "postscript": "SFPro-Medium"
+    },
+    "fontSize": 11.0,
+    "lineHeight": {
+      "value": 13.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.06,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "textCase": "UPPER",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Caps/S",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Regular",
+      "postscript": "SFPro-Regular"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 16.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": -0.08,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "textCase": "UPPER",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Caps/S Bold",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Medium",
+      "postscript": "SFPro-Medium"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 16.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": -0.08,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "textCase": "UPPER",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Code/M",
+    "description": "Токен для код вставок, только для веба",
+    "fontName": {
+      "family": "JetBrains Mono",
+      "style": "Regular",
+      "postscript": "JetBrainsMonoRoman-Regular"
+    },
+    "fontSize": 15.0,
+    "lineHeight": {
+      "value": 20.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Code/S",
+    "description": "Токен для код вставок, только для веба",
+    "fontName": {
+      "family": "JetBrains Mono",
+      "style": "Regular",
+      "postscript": "JetBrainsMonoRoman-Regular"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 16.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Heading Desktop/H1",
+    "description": "Токен для заголовков в вебе. В мобилке меняется на Heading Mobile/L",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Bold",
+      "postscript": "SFPro-Bold"
+    },
+    "fontSize": 30.0,
+    "lineHeight": {
+      "value": 36.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.4,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Heading Desktop/H2",
+    "description": "Токен для заголовков в вебе. В мобилке меняется на Heading Mobile/L",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Bold",
+      "postscript": "SFPro-Bold"
+    },
+    "fontSize": 30.0,
+    "lineHeight": {
+      "value": 36.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.4,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Heading Desktop/H3",
+    "description": "Токен для заголовков в вебе. В мобилке меняется на Heading Mobile/L",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Bold",
+      "postscript": "SFPro-Bold"
+    },
+    "fontSize": 30.0,
+    "lineHeight": {
+      "value": 36.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.4,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Heading Desktop/H4",
+    "description": "Токен для заголовков в вебе. В мобилке меняется на Heading Mobile/M",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Bold",
+      "postscript": "SFPro-Bold"
+    },
+    "fontSize": 20.0,
+    "lineHeight": {
+      "value": 24.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": -0.45,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Heading Desktop/H5",
+    "description": "Токен для заголовков в вебе. В мобилке меняется на Heading Mobile/M",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Bold",
+      "postscript": "SFPro-Bold"
+    },
+    "fontSize": 20.0,
+    "lineHeight": {
+      "value": 24.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": -0.45,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Heading Desktop/H6",
+    "description": "Токен для заголовков в вебе. В мобилке меняется на Heading Mobile/S",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Semibold",
+      "postscript": "SFPro-Semibold"
+    },
+    "fontSize": 17.0,
+    "lineHeight": {
+      "value": 20.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": -0.43,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Heading Mobile/L",
+    "description": "Токен для заголовков в вебе. В декстопе меняется на Heading Desktop/H1",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Bold",
+      "postscript": "SFPro-Bold"
+    },
+    "fontSize": 30.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.4,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Heading Mobile/M",
+    "description": "Токен для заголовков в вебе. В декстопе меняется на Heading Desktop/H4",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Bold",
+      "postscript": "SFPro-Bold"
+    },
+    "fontSize": 20.0,
+    "lineHeight": {
+      "value": 24.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": -0.45,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Heading Mobile/S",
+    "description": "Токен для заголовков в вебе. В декстопе меняется на Heading Desktop/H6",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Medium",
+      "postscript": "SFPro-Medium"
+    },
+    "fontSize": 17.0,
+    "lineHeight": {
+      "value": 20.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": -0.43,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Heading Mobile/S Bold",
+    "description": "Токен для заголовков в вебе. В декстопе меняется на Heading Desktop/H6",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Bold",
+      "postscript": "SFPro-Bold"
+    },
+    "fontSize": 17.0,
+    "lineHeight": {
+      "value": 20.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": -0.43,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Heading/H1",
+    "fontName": {
+      "family": "Tinkoff Sans",
+      "style": "Bold",
+      "postscript": "TinkoffSans-Bold"
+    },
+    "fontSize": 50.0,
+    "lineHeight": {
+      "value": 56.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Heading/H2",
+    "fontName": {
+      "family": "Tinkoff Sans",
+      "style": "Medium",
+      "postscript": "TinkoffSans-Medium"
+    },
+    "fontSize": 36.0,
+    "lineHeight": {
+      "value": 40.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Number/2XL",
+    "fontName": {
+      "family": "SF Pro Rounded",
+      "style": "Bold",
+      "postscript": "SFProRounded-Bold"
+    },
+    "fontSize": 48.0,
+    "lineHeight": {
+      "value": 57.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.35,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Number/M",
+    "fontName": {
+      "family": "SF Pro Rounded",
+      "style": "Bold",
+      "postscript": "SFProRounded-Bold"
+    },
+    "fontSize": 20.0,
+    "lineHeight": {
+      "value": 24.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.36,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".Number/XL",
+    "fontName": {
+      "family": "SF Pro Rounded",
+      "style": "Bold",
+      "postscript": "SFProRounded-Bold"
+    },
+    "fontSize": 30.0,
+    "lineHeight": {
+      "value": 36.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.37,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".UI/2XS",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Regular",
+      "postscript": "SFPro-Regular"
+    },
+    "fontSize": 11.0,
+    "lineHeight": {
+      "value": 13.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.06,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".UI/2XS Bold",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Bold",
+      "postscript": "SFPro-Bold"
+    },
+    "fontSize": 11.0,
+    "lineHeight": {
+      "value": 13.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.06,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".UI/3XS",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Regular",
+      "postscript": "SFPro-Regular"
+    },
+    "fontSize": 9.0,
+    "lineHeight": {
+      "value": 11.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.17,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".UI/3XS Bold",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Bold",
+      "postscript": "SFPro-Bold"
+    },
+    "fontSize": 9.0,
+    "lineHeight": {
+      "value": 11.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.17,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".UI/L",
+    "description": "Токен для интерфейсов и компонентов",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Regular",
+      "postscript": "SFPro-Regular"
+    },
+    "fontSize": 17.0,
+    "lineHeight": {
+      "value": 20.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": -0.43,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".UI/L Bold",
+    "description": "Токен для интерфейсов и компонентов",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Bold",
+      "postscript": "SFPro-Bold"
+    },
+    "fontSize": 17.0,
+    "lineHeight": {
+      "value": 20.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": -0.43,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".UI/M",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Regular",
+      "postscript": "SFPro-Regular"
+    },
+    "fontSize": 15.0,
+    "lineHeight": {
+      "value": 18.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": -0.23,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".UI/M Bold",
+    "description": "Токен для интерфейсов и компонентов",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Medium",
+      "postscript": "SFPro-Medium"
+    },
+    "fontSize": 15.0,
+    "lineHeight": {
+      "value": 18.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": -0.23,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".UI/S",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Regular",
+      "postscript": "SFPro-Regular"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 16.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": -0.08,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".UI/S Bold",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Medium",
+      "postscript": "SFPro-Medium"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 16.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": -0.08,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".UI/XS",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Regular",
+      "postscript": "SFPro-Regular"
+    },
+    "fontSize": 12.0,
+    "lineHeight": {
+      "value": 14.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": ".UI/XS Bold",
+    "fontName": {
+      "family": "SF Pro",
+      "style": "Medium",
+      "postscript": "SFPro-Medium"
+    },
+    "fontSize": 12.0,
+    "lineHeight": {
+      "value": 14.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Android System/Appbar",
+    "fontName": {
+      "family": "Roboto",
+      "style": "Medium",
+      "postscript": "Roboto-Medium"
+    },
+    "fontSize": 20.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Android/Body L",
+    "fontName": {
+      "family": "Roboto",
+      "style": "Regular",
+      "postscript": "Roboto-Regular"
+    },
+    "fontSize": 16.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Android/Body M",
+    "fontName": {
+      "family": "Roboto",
+      "style": "Regular",
+      "postscript": "Roboto-Regular"
+    },
+    "fontSize": 14.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#C4C4C4"
+      }
+    ]
+  },
+  {
+    "name": "Android/Body M Bold",
+    "description": "многострочный текст",
+    "fontName": {
+      "family": "Roboto",
+      "style": "Medium",
+      "postscript": "Roboto-Medium"
+    },
+    "fontSize": 14.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Android/Body S",
+    "fontName": {
+      "family": "Roboto",
+      "style": "Regular",
+      "postscript": "Roboto-Regular"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Android/Heading L",
+    "fontName": {
+      "family": "Roboto",
+      "style": "Bold",
+      "postscript": "Roboto-Bold"
+    },
+    "fontSize": 28.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Android/Heading M",
+    "fontName": {
+      "family": "Roboto",
+      "style": "Bold",
+      "postscript": "Roboto-Bold"
+    },
+    "fontSize": 20.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Android/Heading S",
+    "fontName": {
+      "family": "Roboto",
+      "style": "Medium",
+      "postscript": ""
+    },
+    "fontSize": 16.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Android/Heading S Bold",
+    "fontName": {
+      "family": "Roboto",
+      "style": "Bold",
+      "postscript": "Roboto-Bold"
+    },
+    "fontSize": 16.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Android/Numbers M",
+    "fontName": {
+      "family": "Open Runde",
+      "style": "Bold",
+      "postscript": "OpenRunde-Bold"
+    },
+    "fontSize": 20.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Android/Numbers XL",
+    "description": "Балансы",
+    "fontName": {
+      "family": "Open Runde",
+      "style": "Bold",
+      "postscript": "OpenRunde-Bold"
+    },
+    "fontSize": 30.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Android/UI CAPS",
+    "fontName": {
+      "family": "Roboto",
+      "style": "Medium",
+      "postscript": "Roboto-Medium"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "textCase": "UPPER",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Android/UI L",
+    "fontName": {
+      "family": "Roboto",
+      "style": "Regular",
+      "postscript": ""
+    },
+    "fontSize": 16.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PERCENT"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Android/UI M",
+    "fontName": {
+      "family": "Roboto",
+      "style": "Regular",
+      "postscript": ""
+    },
+    "fontSize": 14.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Android/UI M Bold",
+    "fontName": {
+      "family": "Roboto",
+      "style": "Medium",
+      "postscript": "Roboto-Medium"
+    },
+    "fontSize": 14.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Android/UI S",
+    "fontName": {
+      "family": "Roboto",
+      "style": "Regular",
+      "postscript": "Roboto-Regular"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#C4C4C4"
+      }
+    ]
+  },
+  {
+    "name": "Android/UI S Bold",
+    "fontName": {
+      "family": "Roboto",
+      "style": "Medium",
+      "postscript": "Roboto-Medium"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#C4C4C4"
+      }
+    ]
+  },
+  {
+    "name": "Android/UI XS",
+    "fontName": {
+      "family": "Roboto",
+      "style": "Regular",
+      "postscript": "Roboto-Regular"
+    },
+    "fontSize": 12.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#C4C4C4"
+      }
+    ]
+  },
+  {
+    "name": "Android/UI XS Bold",
+    "fontName": {
+      "family": "Roboto",
+      "style": "Medium",
+      "postscript": ""
+    },
+    "fontSize": 12.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Android/UI XXS",
+    "fontName": {
+      "family": "Roboto",
+      "style": "Regular",
+      "postscript": ""
+    },
+    "fontSize": 11.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Android/UI XXS Bold",
+    "fontName": {
+      "family": "Roboto",
+      "style": "Bold",
+      "postscript": "RobotoRoman-Bold"
+    },
+    "fontSize": 11.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Body 1 - 16",
+    "fontName": {
+      "family": "Roboto",
+      "style": "Regular",
+      "postscript": "Roboto-Regular"
+    },
+    "fontSize": 16.0,
+    "lineHeight": {
+      "value": 20.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Body/Bold",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Semibold",
+      "postscript": "SFProText-Semibold"
+    },
+    "fontSize": 17.0,
+    "lineHeight": {
+      "value": 22.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": -0.408,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "bold 15",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Bold",
+      "postscript": "SFProText-Bold"
+    },
+    "fontSize": 15.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PERCENT"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#C4C4C4"
+      }
+    ]
+  },
+  {
+    "name": "Deprecated/iOS/(deprecated) Body XL,L Bold",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Bold",
+      "postscript": "SFProText-Bold"
+    },
+    "fontSize": 17.0,
+    "lineHeight": {
+      "value": 24.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": -0.41,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop / 11 Body XS",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Regular",
+      "postscript": "NeueHaasUnicaW1G-Regular"
+    },
+    "fontSize": 11.0,
+    "lineHeight": {
+      "value": 16.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.4,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 4.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#C4C4C4"
+      }
+    ]
+  },
+  {
+    "name": "Desktop / 13 Body S",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Regular",
+      "postscript": "NeueHaasUnicaW1G-Regular"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 20.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 4.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop / 15 Body M 20",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Regular",
+      "postscript": "NeueHaasUnicaW1G-Regular"
+    },
+    "fontSize": 15.0,
+    "lineHeight": {
+      "value": 20.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 4.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Body L",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Regular",
+      "postscript": "NeueHaasUnicaW1G-Regular"
+    },
+    "fontSize": 17.0,
+    "lineHeight": {
+      "value": 28.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 12.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Body L Bold",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Medium",
+      "postscript": "NeueHaasUnicaW1G-Medium"
+    },
+    "fontSize": 17.0,
+    "lineHeight": {
+      "value": 28.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 8.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Body L True",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Medium",
+      "postscript": "NeueHaasUnicaW1G-Medium"
+    },
+    "fontSize": 17.0,
+    "lineHeight": {
+      "value": 28.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 8.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Body M",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Regular",
+      "postscript": "NeueHaasUnicaW1G-Regular"
+    },
+    "fontSize": 15.0,
+    "lineHeight": {
+      "value": 24.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 8.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Body M Bold",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Medium",
+      "postscript": "NeueHaasUnicaW1G-Medium"
+    },
+    "fontSize": 15.0,
+    "lineHeight": {
+      "value": 24.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 8.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Body M True",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Medium",
+      "postscript": "NeueHaasUnicaW1G-Medium"
+    },
+    "fontSize": 15.0,
+    "lineHeight": {
+      "value": 24.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 8.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Body S",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Regular",
+      "postscript": "NeueHaasUnicaW1G-Regular"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 20.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 4.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Body S 16",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Regular",
+      "postscript": "NeueHaasUnicaW1G-Regular"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 16.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 4.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Body S Bold",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Medium",
+      "postscript": "NeueHaasUnicaW1G-Medium"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 20.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Body S True",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Medium",
+      "postscript": "NeueHaasUnicaW1G-Medium"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 20.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Body X",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Regular",
+      "postscript": "NeueHaasUnicaW1G-Regular"
+    },
+    "fontSize": 19.0,
+    "lineHeight": {
+      "value": 28.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 12.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Body X True",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Medium",
+      "postscript": "NeueHaasUnicaW1G-Medium"
+    },
+    "fontSize": 19.0,
+    "lineHeight": {
+      "value": 28.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 12.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Body XL",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Regular",
+      "postscript": "NeueHaasUnicaW1G-Regular"
+    },
+    "fontSize": 19.0,
+    "lineHeight": {
+      "value": 28.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 12.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Body XL Bold",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Medium",
+      "postscript": "NeueHaasUnicaW1G-Medium"
+    },
+    "fontSize": 19.0,
+    "lineHeight": {
+      "value": 28.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 12.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Body XS",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Regular",
+      "postscript": "NeueHaasUnicaW1G-Regular"
+    },
+    "fontSize": 11.0,
+    "lineHeight": {
+      "value": 16.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.4,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 4.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Body XXS",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Regular",
+      "postscript": "NeueHaasUnicaW1G-Regular"
+    },
+    "fontSize": 9.0,
+    "lineHeight": {
+      "value": 16.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.4,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 4.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Caption L True",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Medium",
+      "postscript": "NeueHaasUnicaW1G-Medium"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 20.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.9,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "textCase": "UPPER",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Caption S True",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Medium",
+      "postscript": "NeueHaasUnicaW1G-Medium"
+    },
+    "fontSize": 11.0,
+    "lineHeight": {
+      "value": 16.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 1.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "textCase": "UPPER",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Heading 1",
+    "fontName": {
+      "family": "T-Sans",
+      "style": "Bold",
+      "postscript": "TSans-Bold"
+    },
+    "fontSize": 50.0,
+    "lineHeight": {
+      "value": 56.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 24.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Heading 2",
+    "fontName": {
+      "family": "T-Sans",
+      "style": "Bold",
+      "postscript": "TSans-Bold"
+    },
+    "fontSize": 44.0,
+    "lineHeight": {
+      "value": 48.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 24.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Heading 3",
+    "fontName": {
+      "family": "Tinkoff Sans",
+      "style": "Medium",
+      "postscript": "TinkoffSans-Medium"
+    },
+    "fontSize": 36.0,
+    "lineHeight": {
+      "value": 40.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 16.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#C4C4C4"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Heading 4",
+    "fontName": {
+      "family": "T-Sans",
+      "style": "Medium",
+      "postscript": "T-Sans-Medium"
+    },
+    "fontSize": 28.0,
+    "lineHeight": {
+      "value": 32.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 16.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Heading 5",
+    "fontName": {
+      "family": "Tinkoff Sans",
+      "style": "Medium",
+      "postscript": "TinkoffSans-Medium"
+    },
+    "fontSize": 24.0,
+    "lineHeight": {
+      "value": 28.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 12.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Heading 6",
+    "fontName": {
+      "family": "T-Sans",
+      "style": "Medium",
+      "postscript": "T-Sans-Medium"
+    },
+    "fontSize": 20.0,
+    "lineHeight": {
+      "value": 24.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 8.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Numbers M",
+    "fontName": {
+      "family": "Tinkoff Sans",
+      "style": "Medium",
+      "postscript": "TinkoffSans-Medium"
+    },
+    "fontSize": 20.0,
+    "lineHeight": {
+      "value": 24.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 12.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/Numbers XL",
+    "fontName": {
+      "family": "Tinkoff Sans",
+      "style": "Medium",
+      "postscript": "TinkoffSans-Medium"
+    },
+    "fontSize": 36.0,
+    "lineHeight": {
+      "value": 40.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 16.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/UI Caps L",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Regular",
+      "postscript": "NeueHaasUnicaW1G-Regular"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 20.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 1.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "textCase": "UPPER",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/UI Caps L Bold",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Medium",
+      "postscript": "NeueHaasUnicaW1G-Medium"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 20.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.9,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "textCase": "UPPER",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/UI Caps S",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Regular",
+      "postscript": "NeueHaasUnicaW1G-Regular"
+    },
+    "fontSize": 11.0,
+    "lineHeight": {
+      "value": 16.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 1.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "textCase": "UPPER",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/UI L",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Regular",
+      "postscript": "NeueHaasUnicaW1G-Regular"
+    },
+    "fontSize": 17.0,
+    "lineHeight": {
+      "value": 24.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 12.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/UI L Bold",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Medium",
+      "postscript": "NeueHaasUnicaW1G-Medium"
+    },
+    "fontSize": 17.0,
+    "lineHeight": {
+      "value": 24.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 12.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/UI M",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Regular",
+      "postscript": "NeueHaasUnicaW1G-Regular"
+    },
+    "fontSize": 15.0,
+    "lineHeight": {
+      "value": 20.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 8.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/UI M Bold",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Medium",
+      "postscript": "NeueHaasUnicaW1G-Medium"
+    },
+    "fontSize": 15.0,
+    "lineHeight": {
+      "value": 20.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 8.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/UI S",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Regular",
+      "postscript": "NeueHaasUnicaW1G-Regular"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 16.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 4.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/UI S Bold",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Medium",
+      "postscript": "NeueHaasUnicaW1G-Medium"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 16.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/UI XS",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Regular",
+      "postscript": "NeueHaasUnicaW1G-Regular"
+    },
+    "fontSize": 11.0,
+    "lineHeight": {
+      "value": 13.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 4.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/UI XS Bold",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Medium",
+      "postscript": "NeueHaasUnicaW1G-Medium"
+    },
+    "fontSize": 11.0,
+    "lineHeight": {
+      "value": 13.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.4,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 4.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Desktop/UI XXS",
+    "fontName": {
+      "family": "Neue Haas Unica W1G",
+      "style": "Regular",
+      "postscript": "NeueHaasUnicaW1G-Regular"
+    },
+    "fontSize": 9.0,
+    "lineHeight": {
+      "value": 13.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "paragraphSpacing": 4.0,
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS Accessibility/Body L",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Regular",
+      "postscript": "SFProText-Regular"
+    },
+    "fontSize": 30.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": -0.41,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS Accessibility/Body M",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Regular",
+      "postscript": "SFProText-Regular"
+    },
+    "fontSize": 27.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": -0.24,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS Accessibility/Heading M",
+    "fontName": {
+      "family": "SF Pro Display",
+      "style": "Bold",
+      "postscript": "SFProDisplay-Bold"
+    },
+    "fontSize": 36.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.38,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS Accessibility/UI M Bold",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Semibold",
+      "postscript": "SFProText-Semibold"
+    },
+    "fontSize": 27.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": -0.24,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS Accessibility/UI S",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Regular",
+      "postscript": "SFProText-Regular"
+    },
+    "fontSize": 23.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": -0.08,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS Accessibility/UI S Bold",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Semibold",
+      "postscript": "SFProText-Semibold"
+    },
+    "fontSize": 23.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": -0.08,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS Accessibility/UI XS",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Regular",
+      "postscript": "SFProText-Regular"
+    },
+    "fontSize": 21.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS/Body L",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Regular",
+      "postscript": "SFProText-Regular"
+    },
+    "fontSize": 17.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": -0.41,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS/Body L Bold",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Bold",
+      "postscript": "SFProText-Bold"
+    },
+    "fontSize": 17.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": -0.41,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS/Body M",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Regular",
+      "postscript": "SFProText-Regular"
+    },
+    "fontSize": 15.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": -0.24,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS/Body M Bold",
+    "description": "Наборный многострочный текст",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Semibold",
+      "postscript": "SFProText-Semibold"
+    },
+    "fontSize": 15.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": -0.24,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS/Body S",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Regular",
+      "postscript": "SFProText-Regular"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": -0.08,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS/Body S Bold",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Semibold",
+      "postscript": "SFProText-Semibold"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": -0.08,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS/Body XXS",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Regular",
+      "postscript": "SFProText-Regular"
+    },
+    "fontSize": 11.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS/Heading L",
+    "fontName": {
+      "family": "SF Pro Display",
+      "style": "Bold",
+      "postscript": "SFProDisplay-Bold"
+    },
+    "fontSize": 30.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.36,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS/Heading Large",
+    "description": "В этот стиль превращаются десктопные h1,h2,h3",
+    "fontName": {
+      "family": "SF Pro Display",
+      "style": "Bold",
+      "postscript": "SFProDisplay-Bold"
+    },
+    "fontSize": 30.0,
+    "lineHeight": {
+      "value": 36.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.36,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS/Heading M",
+    "fontName": {
+      "family": "SF Pro Display",
+      "style": "Bold",
+      "postscript": "SFProDisplay-Bold"
+    },
+    "fontSize": 20.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.38,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS/Heading Medium",
+    "description": "В этот стиль превращаются десктопные h4,h5",
+    "fontName": {
+      "family": "SF Pro Display",
+      "style": "Bold",
+      "postscript": "SFProDisplay-Bold"
+    },
+    "fontSize": 20.0,
+    "lineHeight": {
+      "value": 24.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.38,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS/Heading S",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Semibold",
+      "postscript": "SFProText-Semibold"
+    },
+    "fontSize": 17.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": -0.41,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS/Heading S Bold",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Bold",
+      "postscript": "SFProText-Bold"
+    },
+    "fontSize": 17.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": -0.41,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS/Numbers 2XL",
+    "description": "Балансы",
+    "fontName": {
+      "family": "SF Pro Rounded",
+      "style": "Bold",
+      "postscript": "SFProRounded-Bold"
+    },
+    "fontSize": 48.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.357,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS/Numbers M",
+    "fontName": {
+      "family": "SF Pro Rounded",
+      "style": "Bold",
+      "postscript": "SFProRounded-Bold"
+    },
+    "fontSize": 20.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.357,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS/Numbers XL",
+    "description": "Балансы",
+    "fontName": {
+      "family": "SF Pro Rounded",
+      "style": "Bold",
+      "postscript": "SFProRounded-Bold"
+    },
+    "fontSize": 30.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.357,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS/UI CAPS",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Medium",
+      "postscript": "SFProText-Medium"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.56,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "textCase": "UPPER",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS/UI L",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Regular",
+      "postscript": "SFProText-Regular"
+    },
+    "fontSize": 17.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": -0.41,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS/UI M",
+    "description": "Для однострочных лейблов",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Regular",
+      "postscript": "SFProText-Regular"
+    },
+    "fontSize": 15.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": -0.24,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS/UI M Bold",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Semibold",
+      "postscript": "SFProText-Semibold"
+    },
+    "fontSize": 15.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": -0.24,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS/UI S",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Regular",
+      "postscript": "SFProText-Regular"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": -0.08,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#C4C4C4"
+      }
+    ]
+  },
+  {
+    "name": "iOS/UI S Bold",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Semibold",
+      "postscript": "SFProText-Semibold"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": -0.08,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS/UI XS",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Regular",
+      "postscript": "SFProText-Regular"
+    },
+    "fontSize": 12.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#C4C4C4"
+      }
+    ]
+  },
+  {
+    "name": "iOS/UI XS Bold",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Semibold",
+      "postscript": "SFProText-Semibold"
+    },
+    "fontSize": 12.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS/UI XXS",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Regular",
+      "postscript": "SFProText-Regular"
+    },
+    "fontSize": 11.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PERCENT"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "iOS/UI XXS Bold",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Bold",
+      "postscript": "SFProText-Bold"
+    },
+    "fontSize": 11.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": -0.1,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "medium 11",
+    "fontName": {
+      "family": "SF Pro Text",
+      "style": "Medium",
+      "postscript": "SFProText-Medium"
+    },
+    "fontSize": 11.0,
+    "lineHeight": {
+      "value": 100.0,
+      "units": "PERCENT"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PERCENT"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Mobile/Body S",
+    "fontName": {
+      "family": "Roboto",
+      "style": "Regular",
+      "postscript": "Roboto-Regular"
+    },
+    "fontSize": 13.0,
+    "lineHeight": {
+      "value": 20.0,
+      "units": "PIXELS"
+    },
+    "letterSpacing": {
+      "value": 0.0,
+      "units": "PIXELS"
+    },
+    "textAlignVertical": "TOP",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  }
+]
