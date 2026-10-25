@@ -29,14 +29,15 @@
     if(tip&&anchor?.isConnected&&host===root)return;
     hide();host=root;anchor=card.querySelector('.eyebrow')||card;
     anchor.scrollIntoView({block:'nearest',behavior:'instant'});
-    tip=document.createElement('button');tip.type='button';tip.id='activity-hint';tip.className='activity-hint';
-    tip.textContent=steps[step][1];
-    tip.setAttribute('aria-label',steps[step][1]+(step===0?'. Следующая подсказка':'. Закрыть подсказку'));
+    tip=document.createElement('div');tip.id='activity-hint';tip.className='activity-hint';
+    const text=document.createElement('span');text.textContent=steps[step][1];
+    const ok=document.createElement('button');ok.type='button';ok.className='activity-hint-ok';ok.textContent='OK';
+    tip.append(text,ok);
     anchor.setAttribute('aria-describedby',tip.id);
-    tip.onclick=()=>{
-      const focused=document.activeElement===tip;
+    ok.onclick=()=>{
+      const focused=document.activeElement===ok;
       hide();
-      if(step===0){sessionStorage.setItem(key,'1');show(root);if(focused)tip?.focus({preventScroll:true});}
+      if(step===0){sessionStorage.setItem(key,'1');show(root);if(focused)tip?.querySelector('button')?.focus({preventScroll:true});}
       else {sessionStorage.removeItem(key);if(focused){const target=card.querySelector('button,a')||root.querySelector('h1');target?.focus({preventScroll:true});}}
     };
     document.body.append(tip);position();
