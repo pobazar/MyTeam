@@ -1,7 +1,7 @@
 from django.test import TestCase,Client,override_settings
 from django.contrib.sessions.backends.db import SessionStore
 from django.utils import timezone
-from myteam.models import Person
+from myteam.models import Person,Achievement
 from myteam.profiles import team_identity
 
 @override_settings(FRONTEND_ORIGINS=['https://pobazar.github.io'])
@@ -13,11 +13,14 @@ class RequestPerformanceTests(TestCase):
         self.headers={'HTTP_ORIGIN':'https://pobazar.github.io','HTTP_AUTHORIZATION':'Bearer '+self.session.session_key}
         self.client=Client();self.client.get('/profile/',**self.headers);self.client.cookies.clear()
     def test_profile_and_history_load_session_once(self):
+        Achievement.objects.create(person=self.person,key='first_coffee')
+        # A newly earned badge appears without a stale cache or an extra SQL read.
         # Profile joins the badge test into the person query; history has one data query.
         for path,count in (('/profile/',2),('/history/',3)):
             with self.subTest(path=path),self.assertNumQueries(count):
                 response=self.client.get(path,**self.headers)
                 self.assertEqual(response.status_code,200)
+            if path=='/profile/':self.assertContains(response,'<p class="badge">Первый кофе</p>',html=True)
             self.client.cookies.clear()
         self.assertIn('app;dur=',response['Server-Timing'])
         self.assertEqual(response['Timing-Allow-Origin'],'https://pobazar.github.io')
