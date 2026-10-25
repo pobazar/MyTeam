@@ -82,12 +82,12 @@ class ParticipantFlowTests(TestCase):
             self.assertRedirects(response,'/history/',fetch_redirect_response=False)
             response=self.client.get('/history/')
             self.assertContains(response,'★★★★★');self.assertNotContains(response,'Оценить активность')
-    def test_no_result_requires_reason_and_history_shows_failure(self):
+    def test_no_result_allows_optional_reason_and_history_shows_failure(self):
         r,m=self.published()
-        self.assertFalse(FeedbackForm({'outcome':'no'}).is_valid())
+        self.assertTrue(FeedbackForm({'outcome':'no'}).is_valid())
         self.assertFalse(FeedbackForm({'outcome':'yes','rating':6}).is_valid())
         self.assertFalse(FeedbackForm({'outcome':'pending'}).is_valid())
-        save_feedback(self.p.id,m.meeting_id,{'outcome':'no','comment':'Не совпало время'},FrozenClock(self.now))
+        save_feedback(self.p.id,m.meeting_id,{'outcome':'no','comment':''},FrozenClock(self.now))
         self.assertFalse(Achievement.objects.filter(person=self.p).exists())
         with patch('myteam.clock.Clock.now',return_value=r.ends_at):
             response=self.client.get('/history/')

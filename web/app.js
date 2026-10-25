@@ -121,6 +121,7 @@
       if(version!==loginVersion)return;
       if(body.state!=='waiting'){enterAccount(body);return;}
       if(body.expired){put(main,'[data-login-status]','Срок кода закончился. Получи новый код.');$(main,'[data-new-code]').hidden=false;return;}
+      put(main,'[data-login-status]','После подтверждения вернись сюда — вход завершится автоматически.');
     }catch(error){if(version!==loginVersion||error.code==='cancelled')return;if(error.status===401){sessionLost();return;}put(main,'[data-login-status]','Не удалось проверить вход. Повторяем попытку…');}
     finally{polling=false;}
     if(version===loginVersion&&phase==='login')pollTimer=setTimeout(()=>pollLogin(version),2000);
@@ -159,32 +160,45 @@
       const messages={new:['Добро пожаловать!','Ты только присоединился. Запись на текущую неделю уже завершена, поэтому активной встречи пока нет.'],skipped:['Эту неделю ты пропускаешь','На текущую неделю ты не записался. Всё в порядке — участие добровольное.'],preparing:['Ты записан на эту неделю','Готовим состав и инструкции. Они появятся здесь после публикации.'],unmatched:['В этот раз без активности','Ты записался, но участников не хватило для формирования группы.'],expired:['Активность не состоялась','На этой неделе не удалось запустить активность. Можно записаться на следующую неделю.']};
       const [title,text]=messages[current.kind]||messages.skipped;body.append(element('h2',title),element('p',text),element('p','Начни со следующей недели — запишись в соседнем блоке.','muted'));
     }
-    const upcoming=$(fragment,'[data-next-body]');
-    if(next.id){
-      upcoming.append(element('p',next.activity_title));
-      if(Number.isInteger(next.enrollment_count)&&next.enrollment_count>=0)upcoming.append(element('p',`Уже записались: ${next.enrollment_count}`,'enrollment-count'));
-      upcoming.append(element('p',`Запишись до ${day(next.closes_at)}, вторника, 21:00 МСК.`,'muted'));
-      if(!next.registration_open){upcoming.append(element('p','Запись закрыта.'),element('p',next.enrolled?`Ты записан. Состав появится ${day(next.starts_at)} в 09:00 МСК.`:'На этот раунд записаться уже нельзя.','muted'));}
-      else if(!next.reachable){const button=element('button','Подключить сообщения для участия','secondary');button.type='button';button.onclick=()=>{logout();};upcoming.append(button);}
-      else{
-        if(next.enrolled)upcoming.append(element('p','Ты записан на следующую неделю.'));
-        const button=element('button',next.enrolled?'Отменить запись':'Записаться','secondary');button.type='button';
-        button.onclick=async()=>{
-          if(button.disabled)return;button.disabled=true;
-          try{
-            const result=await request('/api/rounds/'+next.id+'/enrollment/',{method:'POST',data:{action:next.enrolled?'cancel':'enroll'}});
-            if(result.status!=='saved'){acceptAccount(result);throw new ApiError('invalid_response');}
-            toast.success(next.enrolled?'Запись отменена':'Ты записан на активность');await loadActivities();
-          }catch(error){
-            if(error.code==='cancelled')return;
-            if(error.status===401)sessionLost();
-            toast.error(error.code==='enrollment_closed'?'Запись на эту неделю закрыта':next.enrolled?'Не удалось отменить запись. Попробуй ещё раз':'Не удалось записаться. Попробуй ещё раз');
-          }finally{button.disabled=false;}
-        };
-        upcoming.append(button);
-      }
-    }else upcoming.append(element('p','Запись пока не открыта. Загляни позже.','muted'));
+    renderNextActivity($(fragment,'[data-next-body]'),next);
     target.replaceChildren(fragment);
+  }
+  function renderNextActivity(target,next){
+    if(!next.id){target.append(element('p','Запись пока не открыта. Загляни позже.','muted'));return;}
+    target.append(element('p',next.activity_title));
+    const hasCount=Number.isInteger(next.enrollment_count)&&next.enrollment_count>=0;
+    const count=element('p','', 'enrollment-count');if(hasCount)target.append(count);
+    const status=element('p','','muted');target.append(status);
+    let button;
+    const sync=()=>{
+      if(hasCount)count.textContent=`Уже записались: ${next.enrollment_count}`;
+      status.textContent=next.enrolled?'Ты уже записан':next.registration_open?`Запишись до ${day(next.closes_at)}, вторника, 21:00 МСК.`:'Запись закрыта.';
+      if(button)button.textContent=next.enrolled?'Отменить запись':'Записаться';
+    };
+    if(!next.registration_open){
+      if(next.enrolled)target.append(element('p',`Состав появится ${day(next.starts_at)} в 09:00 МСК.`,'muted'));
+    }else if(!next.reachable){
+      const reconnect=element('button','Подключить сообщения для участия','secondary');reconnect.type='button';reconnect.onclick=logout;target.append(reconnect);
+    }else{
+      button=element('button','','secondary');button.type='button';
+      button.onclick=async()=>{
+        if(button.disabled)return;
+        const wasEnrolled=next.enrolled;button.disabled=true;button.setAttribute('aria-busy','true');
+        try{
+          const result=await request('/api/rounds/'+next.id+'/enrollment/',{method:'POST',data:{action:wasEnrolled?'cancel':'enroll'}});
+          if(result.status!=='saved'||typeof result.enrolled!=='boolean'){if(result.state)acceptAccount(result);throw new ApiError('invalid_response');}
+          next.enrolled=result.enrolled;
+          if(hasCount&&wasEnrolled!==next.enrolled)next.enrollment_count=Math.max(0,next.enrollment_count+(next.enrolled?1:-1));
+          sync();toast.success(next.enrolled?'Ты записан на активность':'Запись отменена');
+        }catch(error){
+          if(error.code==='cancelled')return;
+          if(error.status===401)sessionLost();
+          toast.error(error.code==='enrollment_closed'?'Запись на эту неделю закрыта':wasEnrolled?'Не удалось отменить запись. Попробуй ещё раз':'Не удалось записаться. Попробуй ещё раз');
+        }finally{button.disabled=false;button.removeAttribute('aria-busy');}
+      };
+      target.append(button);
+    }
+    sync();
   }
   function openPanel(title,back='/'){
     closeAchievement();
@@ -203,6 +217,19 @@
       if(kind==='profile')renderProfile(screenBody,body,false);else renderHistory(body.entries);window.scrollTo(0,previousScroll);
     }catch(error){if(version===screenVersion)catchLoad(error,screenBody,()=>loadScreen(kind));}
   }
+  function bindValidation(form,message){
+    form.addEventListener('invalid',event=>{
+      event.preventDefault();const field=event.target;field.setAttribute('aria-invalid','true');
+      const note=form.querySelector(`[data-field-error="${field.name}"]`);
+      if(note){note.textContent=field.name==='rating'?'Оцени активность от 1 до 5.':field.validity.valueMissing?'Заполни это поле.':'Проверь значение.';note.hidden=false;}
+      toast.error(message);requestAnimationFrame(()=>form.querySelector('[aria-invalid]')?.focus({preventScroll:true}));
+    },true);
+    form.addEventListener('input',event=>{
+      const field=event.target;if(!field.name||!field.validity?.valid)return;
+      form.querySelectorAll(`[name="${field.name}"]`).forEach(node=>node.removeAttribute('aria-invalid'));
+      const note=form.querySelector(`[data-field-error="${field.name}"]`);if(note){note.hidden=true;note.textContent='';}
+    });
+  }
   function clearErrors(form){form.querySelectorAll('[data-field-error]').forEach(node=>{node.hidden=true;node.textContent='';});form.querySelectorAll('[aria-invalid]').forEach(node=>node.removeAttribute('aria-invalid'));$(form,'[data-form-message]').replaceChildren();}
   function formError(form,error,message){
     if(error.code==='cancelled')return;
@@ -220,7 +247,7 @@
   function renderProfile(target,data,setup){
     const fragment=clone('profile');
     if(setup){$(fragment,'[data-achievements]').hidden=true;$(fragment,'[data-profile-actions]').hidden=true;$(fragment,'.profile-grid').classList.add('setup-profile');put(fragment,'[data-profile-heading]','Немного о тебе');put(fragment,'[data-submit]','Продолжить');}
-    const form=$(fragment,'[data-profile-form]');form.addEventListener('invalid',()=>toast.error('Проверь поля профиля'),true);Object.entries(data.profile).forEach(([name,value])=>{if(form.elements[name])form.elements[name].value=value;});
+    const form=$(fragment,'[data-profile-form]');bindValidation(form,'Проверь поля профиля');Object.entries(data.profile).forEach(([name,value])=>{if(form.elements[name])form.elements[name].value=value;});
     const awards=$(fragment,'[data-awards]');put(fragment,'[data-awards-count]',data.achievements?.length||0);
     if(!data.achievements?.length)awards.append(element('p','Здесь будут появляться ваши достижения.','muted'));
     else data.achievements.forEach(award=>{const card=clone('achievement'),button=$(card,'button');button.setAttribute('aria-label',award.title+' — подробнее');button.title=award.title;if(award.key!=='first_coffee')$(card,'img').src='web/icons/star-active.svg';button.onclick=()=>openAchievement(award);awards.append(card);});
@@ -270,7 +297,7 @@
       const fragment=clone('feedback');put(fragment,'[data-activity]',data.activity_title+' · '+dates(data.starts_at,data.ends_at));const form=$(fragment,'form');
       if(data.readonly){form.hidden=true;const note=$(fragment,'[data-readonly]');note.hidden=false;note.textContent='Срок изменения результата закончился.'+(data.answer?.rating?` Твоя оценка: ${data.answer.rating} из 5.`:'');}
       else{
-        form.addEventListener('invalid',()=>toast.error('Проверь поля оценки'),true);
+        bindValidation(form,'Проверь поля оценки');
         if(data.answer){form.elements.outcome.value=['yes','no'].includes(data.answer.outcome)?data.answer.outcome:'';const rating=form.querySelector(`[name="rating"][value="${Number(data.answer.rating)}"]`);if(rating)rating.checked=true;form.elements.comment.value=data.answer.comment||'';}
         form.onsubmit=async event=>{
           event.preventDefault();if(form.dataset.busy||!form.reportValidity())return;clearErrors(form);form.dataset.busy='true';const button=$(form,'[data-submit]');button.disabled=true;button.textContent='Сохраняем…';
