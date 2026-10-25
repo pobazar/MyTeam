@@ -29,7 +29,7 @@ python manage.py collectstatic --noinput
 
 ```sh
 python manage.py bootstrap_round
-python manage.py tick
+python manage.py tick --event prepare  # только подготовка; остальные: publish, feedback, invite
 python manage.py deliver
 python manage.py monitor
 ```
