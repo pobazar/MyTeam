@@ -67,6 +67,12 @@ def telegram_webhook(request):
             return JsonResponse({'ok': True})
         if text.startswith('/start l_'):
             approve_login(text.removeprefix('/start l_').strip(), sender, chat['id'])
+        elif text.startswith('/start c_'):
+            from .contacts import send_member_contact
+            import uuid
+            try:member_id=uuid.UUID(text.removeprefix('/start c_').strip())
+            except ValueError:return JsonResponse({'ok':True})
+            send_member_contact(sender['id'],chat['id'],member_id,update_id)
         elif text.startswith('/start m_'):
             from .contacts import send_contacts
             import uuid
@@ -168,7 +174,7 @@ from .feedback import FeedbackForm,save_feedback
 def feedback_view(request,meeting_id):
     m=get_object_or_404(Member.objects.select_related('round'),person=request.person,meeting_id=meeting_id,round__published_at__isnull=False)
     existing=Feedback.objects.filter(member=m).first()
-    readonly=bool(existing and existing.final and Clock().now()>=m.round.ends_at+timedelta(days=7))
+    readonly=bool(existing and existing.final)
     initial={key:getattr(existing,key) for key in ('outcome','rating','comment')} if existing else {}
     if initial.get('outcome')=='pending':initial['outcome']=''
     return_to='history' if request.POST.get('return_to',request.GET.get('from'))=='history' else 'activities'

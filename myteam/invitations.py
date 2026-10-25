@@ -21,5 +21,5 @@ def schedule_invites(r,clock):
     enrolled=Enrollment.objects.filter(round=r,active=True).values('person_id')
     people=Person.objects.filter(onboarding_done=True,chat_id__isnull=False,delivery_verified_at__isnull=False,delivery_blocked=False).exclude(id__in=enrolled)
     for person in people:
-        enqueue(f'signup_invite:{r.id}:{person.id}','signup_invite',person.chat_id,f'МАЙТИМ · {r.activity_title} · {r.starts_at:%d.%m} — {r.ends_at:%d.%m}\nХочешь познакомиться с коллегами на следующей неделе? Запишись до вторника, 21:00 МСК: {web_url('/')}\nУчастие добровольное. Запись только на этот раунд.',person,r,now)
+        enqueue(f'signup_invite:{r.id}:{person.id}','signup_invite',person.chat_id,f'МАЙТИМ · {r.activity_title} · {r.starts_at:%d.%m} — {(r.ends_at-timedelta(hours=12)):%d.%m}\nХочешь познакомиться с коллегами на следующей неделе? Запишись до вторника, 21:00 МСК: {web_url('/')}\nУчастие добровольное. Запись только на этот раунд.',person,r,now)
     Job.objects.update_or_create(key=key,defaults={'round':r,'completed_at':now,'error':''})

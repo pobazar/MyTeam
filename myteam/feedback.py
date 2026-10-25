@@ -26,11 +26,12 @@ def save_feedback(person_id,meeting_id,data,clock):
     Person.objects.select_for_update().get(pk=person_id)
     m=Member.objects.select_for_update(of=('self',)).select_related('round').get(person_id=person_id,meeting_id=meeting_id,round__published_at__isnull=False)
     existing=Feedback.objects.filter(member=m).first()
-    if clock.now()<m.round.starts_at or (existing and existing.final and clock.now()>=m.round.ends_at+timedelta(days=7)):
-        raise RuleError('Срок изменения обратной связи закончился. Ответ доступен для просмотра.')
     activity=get_activity(m.round.activity,m.round.rules_version)
     form=activity.feedback_form(data)
     if not form.is_valid():raise RuleError('Проверьте обязательные ответы.')
+    if existing and existing.final:
+        if all(getattr(existing,key)==value for key,value in form.cleaned_data.items()):return existing
+        raise RuleError('Результат уже отправлен. Изменить его нельзя.')
     f,created=Feedback.objects.get_or_create(member=m,defaults={**form.cleaned_data,'updated_at':clock.now()})
     if not created and any(getattr(f,k)!=v for k,v in form.cleaned_data.items()):
         for k,v in form.cleaned_data.items():setattr(f,k,v)
@@ -63,5 +64,5 @@ def schedule_requests(r,clock):
         if not member.person.reachable:continue
         f=Feedback.objects.filter(member=member).first()
         if f and f.final:continue
-        enqueue(f'{kind}:{member.id}',kind,member.person.chat_id or member.person.telegram_id,f'МАЙТИМ · Как прошла встреча?\n{get_activity(r.activity,r.rules_version).title} {r.starts_at:%d.%m} — {r.ends_at:%d.%m}. Поделись впечатлениями: {web_url('/meetings/'+str(member.meeting_id)+'/feedback/')}',member.person,r,now)
+        enqueue(f'{kind}:{member.id}',kind,member.person.chat_id or member.person.telegram_id,f'МАЙТИМ · Как прошла активность?\n{get_activity(r.activity,r.rules_version).title} {r.starts_at:%d.%m} — {(r.ends_at-timedelta(hours=12)):%d.%m}. Поделись впечатлениями: {web_url('/meetings/'+str(member.meeting_id)+'/feedback/')}',member.person,r,now)
     Job.objects.update_or_create(key=f'{kind}:{r.id}',defaults={'round':r,'completed_at':now,'error':''})

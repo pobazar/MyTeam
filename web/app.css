@@ -252,3 +252,6 @@ body:has(#achievement-dialog[open]) { overflow: hidden; }
   #achievement-dialog { padding: 48px 24px 28px; }
   #achievement-title { font-size: 24px; line-height: 28px; }
 }
+
+.participant-contact { align-self: flex-start; padding: 8px 0; }
+.organizer-label { color: var(--text-primary); font-weight: 600; }

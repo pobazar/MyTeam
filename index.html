@@ -5,13 +5,13 @@
   <meta name="myteam-api" content="https://myteam-backend-eu.onrender.com">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://myteam-backend-eu.onrender.com; img-src 'self' data:; base-uri 'none'; form-action 'none'">
   <title>МАЙТИМ</title>
-  <link rel="stylesheet" href="web/tokens.css?v=20261025-review">
-  <link rel="stylesheet" href="web/app.css?v=20261025-review">
-  <link rel="stylesheet" href="web/appbar.css?v=20261025-review">
-  <link rel="stylesheet" href="web/toasts.css?v=20261025-review">
-  <script src="web/toasts.js?v=20261025-review" defer></script>
-  <script src="myteam/static/myteam/interactions.js?v=20261025-review" defer></script>
-  <script src="web/app.js?v=20261025-review" defer></script>
+  <link rel="stylesheet" href="web/tokens.css?v=20261025-coffee">
+  <link rel="stylesheet" href="web/app.css?v=20261025-coffee">
+  <link rel="stylesheet" href="web/appbar.css?v=20261025-coffee">
+  <link rel="stylesheet" href="web/toasts.css?v=20261025-coffee">
+  <script src="web/toasts.js?v=20261025-coffee" defer></script>
+  <script src="myteam/static/myteam/interactions.js?v=20261025-coffee" defer></script>
+  <script src="web/app.js?v=20261025-coffee" defer></script>
 </head>
 <body>
 <div id="app" data-view="intro">
@@ -42,7 +42,7 @@
 <template id="tpl-error"><section class="card load-error"><p role="alert">Не удалось загрузить данные. Попробуй ещё раз.</p><button type="button" data-retry>Повторить</button></section></template>
 <template id="tpl-activities"><h1>Активности</h1><div id="activity-content" aria-live="polite"><div class="weeks-grid"><section class="card current-week"><p class="eyebrow">Текущая активность</p><div class="loading-state" role="status" aria-label="Загрузка данных"><span class="skeleton" aria-hidden="true"></span><span class="skeleton skeleton-short" aria-hidden="true"></span></div></section><aside class="card next-week"><p class="eyebrow">Следующая активность</p><div class="loading-state" role="status" aria-label="Загрузка следующей активности"><span class="skeleton" aria-hidden="true"></span></div></aside></div></div></template>
 <template id="tpl-weeks"><div class="weeks-grid"><section class="card current-week"><p class="eyebrow">Текущая активность</p><p class="muted" data-current-dates></p><div data-current-body></div></section><aside class="card next-week"><p class="eyebrow">Следующая активность</p><h2 data-next-dates></h2><div data-next-body></div></aside></div></template>
-<template id="tpl-active"><h2 data-title></h2><h3>Кто участвует</h3><ul class="participants" data-participants></ul><h3>Что делать на этой неделе</h3><p data-instructions></p><a class="button secondary" data-contacts>Связаться через Telegram</a><div class="activity-result"><h3>Как всё прошло?</h3><p class="muted">Когда проведёшь активность, поделись результатом — это поможет сделать следующие недели интереснее.</p><button type="button" data-feedback>Поделиться результатом</button></div></template>
+<template id="tpl-active"><h2 data-title></h2><h3>Кто участвует</h3><ul class="participants" data-participants></ul><h3>Что делать на этой неделе</h3><p data-instructions></p><div class="activity-result"><h3>Как всё прошло?</h3><p class="muted">Когда проведёшь активность, поделись результатом — это поможет сделать следующие недели интереснее.</p><button type="button" data-feedback>Поделиться результатом</button></div></template>
 <template id="tpl-login"><div class="setup"><h1 class="sr-only" tabindex="-1">Авторизация</h1><div data-login-content></div></div></template>
 <template id="tpl-code"><section class="card"><p>Сравни этот код с кодом в сообщении бота и подтверди вход в чате.</p><p class="login-code" data-code></p><a class="button" data-bot target="_blank" rel="noopener">Открыть Telegram</a><p class="muted fine-print" data-login-status>После подтверждения вернись сюда — вход завершится автоматически.</p><button class="secondary" type="button" data-new-code hidden>Получить новый код</button></section></template>
 <template id="tpl-profile"><div class="profile-page"><div class="profile-grid"><section class="card"><h2 data-profile-heading>Твои данные</h2><form data-profile-form><div data-form-message></div><p><label for="profile-name">Как вас зовут</label><input id="profile-name" name="full_name" autocomplete="name" maxlength="250" required><span class="error" data-field-error="full_name" hidden></span></p><p><label for="profile-team">Команда</label><input id="profile-team" name="team" maxlength="200" required><span class="error" data-field-error="team" hidden></span></p><p><label for="profile-city">Город, где вы сейчас</label><input id="profile-city" name="city" maxlength="150" required><span class="error" data-field-error="city" hidden></span></p><button type="submit" data-submit>Сохранить</button></form></section><section class="card" data-achievements><h2 class="achievements-heading">Мои достижения <span data-awards-count></span></h2><div class="achievements-grid" data-awards></div></section></div><div class="profile-actions" data-profile-actions><button type="button" class="secondary" data-logout>Выйти</button></div></div></template>

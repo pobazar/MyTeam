@@ -5,10 +5,18 @@ from django.db.models import Exists,OuterRef,Count,Subquery,IntegerField,Value
 from django.db.models.functions import Coalesce
 from .activities import get_activity
 
+def display_week_start(now):
+    from .rounds import upcoming_start
+    upcoming=upcoming_start(now)
+    return upcoming if now>=upcoming-timedelta(hours=12) else upcoming-timedelta(days=7)
+
+def display_end(start):
+    return start+timedelta(days=7,hours=-12)
+
 def dashboard_context(person,now):
     from .rounds import upcoming_start
-    next_start=upcoming_start(now)
-    week_start=next_start-timedelta(days=7)
+    week_start=display_week_start(now)
+    next_start=week_start+timedelta(days=7)
     counts=Enrollment.objects.filter(round_id=OuterRef('pk'),active=True).order_by().values('round_id').annotate(total=Count('pk')).values('total')
     rounds={item.starts_at:item for item in Round.objects.filter(starts_at__in=[week_start,next_start]).annotate(
         enrollment_count=Coalesce(Subquery(counts),Value(0),output_field=IntegerField()),
@@ -24,11 +32,11 @@ def dashboard_context(person,now):
     activity=get_activity(week.activity,week.rules_version) if week else None
     enrolled=bool(r and r.is_enrolled)
     return {
-        'person':person,'next_round':r,'next_start':next_start,'next_end':next_start+timedelta(days=7),
-        'current':current,'week':week,'week_start':week_start,'week_end':next_start,'answer':answer,
+        'person':person,'next_round':r,'next_start':next_start,'next_end':display_end(next_start),
+        'current':current,'week':week,'week_start':week_start,'week_end':display_end(week_start),'answer':answer,
         'finished':bool(answer and answer.final),'members':members,'current_enrolled':current_enrolled,
         'unmatched':bool(week and week.is_unmatched),
-        'new_here':person.created_at>=week_start,'enrolled':enrolled,
+        'new_here':person.created_at>=week_start,'enrolled':enrolled,'awaiting_publication':now<week_start,
         'activity_template':activity.card_template if activity else '',
         'instructions':activity.instructions(len({m.snapshot['city_key'] for m in members})==1) if current else '',
         'contacts_url':f'https://t.me/{settings.TELEGRAM_BOT_USERNAME}?start=m_{current.meeting_id}' if current else '',
@@ -37,7 +45,7 @@ def dashboard_context(person,now):
 
 
 def history_entries(person,now):
-    entries=list(Member.objects.filter(person=person,round__published_at__isnull=False,round__ends_at__lte=now).select_related('round','feedback').order_by('-round__starts_at'))
+    entries=list(Member.objects.filter(person=person,round__published_at__isnull=False,round__starts_at__lt=display_week_start(now)).select_related('round','feedback').order_by('-round__starts_at'))
     for entry in entries:
         entry.answer=getattr(entry,'feedback',None)
         entry.ratable=not (entry.answer and entry.answer.final)

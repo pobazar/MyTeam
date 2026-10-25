@@ -1,7 +1,7 @@
 from datetime import datetime
 from django.test import TestCase
 from myteam.clock import MOSCOW,FrozenClock
-from myteam.models import Person,Enrollment,AnalyticsEvent
+from myteam.models import Person,Enrollment,AnalyticsEvent,Feedback
 from myteam.rounds import ensure_round,enroll
 from myteam.matching import prepare
 from myteam.jobs import publish
@@ -17,8 +17,9 @@ class AnalyticsTests(TestCase):
         prepare(r.id,FrozenClock(r.prepares_at));publish(r.id,FrozenClock(r.starts_at));publish(r.id,FrozenClock(r.starts_at))
         self.assertEqual(AnalyticsEvent.objects.filter(kind='participation').count(),2)
         meeting=r.meetings.get()
-        for data in ({'outcome':'yes','rating':5},{'outcome':'no','comment':'Не удалось найти общее время.'},{'outcome':'no','comment':'Не удалось найти общее время.'}):
+        Feedback.objects.create(member=meeting.members.get(person=p),outcome='pending')
+        for data in ({'outcome':'yes','rating':5},{'outcome':'yes','rating':5}):
             save_feedback(p.id,meeting.id,data,FrozenClock(r.starts_at))
         self.assertEqual(AnalyticsEvent.objects.filter(kind='feedback').count(),2)
         self.assertEqual(AnalyticsEvent.objects.filter(kind='achievement_awarded').count(),1)
-        self.assertEqual(AnalyticsEvent.objects.filter(kind='achievement_revoked').count(),1)
+        self.assertEqual(AnalyticsEvent.objects.filter(kind='achievement_revoked').count(),0)
