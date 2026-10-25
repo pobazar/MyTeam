@@ -5,10 +5,11 @@
   <meta name="myteam-api" content="https://myteam-backend-eu.onrender.com">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://myteam-backend-eu.onrender.com; img-src 'self' data:; base-uri 'none'; form-action 'none'">
   <title>МАЙТИМ</title>
-  <link rel="stylesheet" href="web/tokens.css?v=20261025-onboarding">
-  <link rel="stylesheet" href="web/app.css?v=20261025-onboarding">
+  <link rel="stylesheet" href="web/tokens.css?v=20261025-appbar">
+  <link rel="stylesheet" href="web/app.css?v=20261025-appbar">
+  <link rel="stylesheet" href="web/appbar.css?v=20261025-appbar">
   <script src="myteam/static/myteam/interactions.js" defer></script>
-  <script src="web/app.js?v=20261025-onboarding" defer></script>
+  <script src="web/app.js?v=20261025-appbar" defer></script>
 </head>
 <body>
 <div id="app" data-view="intro">
@@ -27,11 +28,11 @@
   <main id="main">
     <div class="intro-flow"><div class="intro-image"><div class="intro-art" aria-hidden="true"><span>М</span><span>Ы</span></div></div><div class="intro-content"><p class="sr-only" data-step>Знакомство · 1 из 3</p><h1 data-heading tabindex="-1">Знакомься с коллегами</h1><p data-body>МАЙТИМ помогает узнавать людей за пределами своей команды — через разговоры, игры и встречи по интересам.</p></div><div class="intro-actions"><button type="button" data-intro-next>Дальше</button><div data-auth-message></div></div></div>
   </main>
-  <main id="screen" hidden tabindex="-1"><h1 id="screen-title" tabindex="-1"></h1><div id="screen-content" aria-live="polite"></div></main>
+  <main id="screen" hidden tabindex="-1"><h1 id="screen-title" class="sr-only" tabindex="-1"></h1><div id="screen-content" aria-live="polite"></div></main>
   <footer>Небольшой эксперимент для нашей команды. Иногда что-то может работать неидеально — если заметишь проблему, дай знать.</footer>
 </div>
 <dialog id="panel" aria-labelledby="panel-title">
-  <div class="panel-header"><h1 id="panel-title"></h1><button type="button" id="panel-close" class="icon-button" aria-label="Вернуться к активностям" title="Закрыть"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+  <div class="panel-header appbar-detail" data-modal="true"><h1 id="panel-title"></h1><button type="button" id="panel-close" class="icon-button" aria-label="Закрыть оценку" title="Закрыть"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
   <div id="panel-content"></div>
 </dialog>
 <template id="tpl-intro"><div class="intro-flow"><div class="intro-image"><div class="intro-art" aria-hidden="true"><span>М</span><span>Ы</span></div></div><div class="intro-content"><p class="sr-only" data-step>Знакомство · 1 из 3</p><h1 data-heading tabindex="-1">Знакомься с коллегами</h1><p data-body>МАЙТИМ помогает узнавать людей за пределами своей команды — через разговоры, игры и встречи по интересам.</p></div><div class="intro-actions"><button type="button" data-intro-next>Дальше</button><div data-auth-message></div></div></div></template>
@@ -40,7 +41,7 @@
 <template id="tpl-activities"><h1>Активности</h1><div id="activity-content" aria-live="polite"><div class="weeks-grid"><section class="card current-week"><p class="eyebrow">Текущая неделя</p><div class="loading-state" role="status"><span class="skeleton" aria-hidden="true"></span><span>Загружаем активность…</span></div></section><aside class="card next-week"><p class="eyebrow">Следующая неделя</p><p class="muted">Загружаем запись…</p></aside></div></div></template>
 <template id="tpl-weeks"><div class="weeks-grid"><section class="card current-week"><p class="eyebrow">Текущая неделя</p><p class="muted" data-current-dates></p><div data-current-body></div></section><aside class="card next-week"><p class="eyebrow">Следующая неделя</p><h2 data-next-dates></h2><div data-next-body></div><p class="muted fine-print">Участие добровольное. Запись только на эту неделю, без автоматического продления.</p></aside></div></template>
 <template id="tpl-active"><h2 data-title></h2><h3>Кто участвует</h3><ul class="participants" data-participants></ul><h3>Что делать на этой неделе</h3><p data-instructions></p><a class="button secondary" data-contacts>Связаться через Telegram</a><div class="activity-result"><h3>Как всё прошло?</h3><p class="muted">Когда проведёшь активность, поделись результатом — это поможет сделать следующие недели интереснее.</p><button type="button" data-feedback>Поделиться результатом</button></div></template>
-<template id="tpl-login"><div class="setup"><button class="text-button" type="button" data-back-intro>← Назад</button><h1>Вход через Telegram</h1><div data-login-content></div></div></template>
+<template id="tpl-login"><div class="setup"><h1 class="sr-only" tabindex="-1">Вход через Telegram</h1><div data-login-content></div></div></template>
 <template id="tpl-code"><section class="card"><p>Сравни этот код с кодом в сообщении бота и подтверди вход в чате.</p><p class="login-code" data-code></p><a class="button" data-bot target="_blank" rel="noopener">Открыть Telegram</a><p class="muted fine-print" data-login-status>После подтверждения вернись сюда — вход завершится автоматически.</p><button class="secondary" type="button" data-new-code hidden>Получить новый код</button></section></template>
 <template id="tpl-profile"><div class="profile-grid"><section class="card"><h2 data-profile-heading>Твои данные</h2><form data-profile-form><div data-form-message></div><p><label for="profile-name">Как вас зовут</label><input id="profile-name" name="full_name" autocomplete="name" maxlength="250" required><span class="error" data-field-error="full_name" hidden></span></p><p><label for="profile-team">Команда</label><input id="profile-team" name="team" maxlength="200" required><span class="error" data-field-error="team" hidden></span></p><p><label for="profile-city">Город, где вы сейчас</label><input id="profile-city" name="city" maxlength="150" required><span class="error" data-field-error="city" hidden></span></p><button type="submit" data-submit>Сохранить</button></form></section><section class="card" data-achievements><h2>Достижения</h2><div data-awards></div><button type="button" class="secondary" data-logout>Выйти</button></section></div></template>
 <template id="tpl-history-item"><section class="card history-entry"><div><h2 data-title></h2><p class="muted" data-dates></p></div><div data-result></div></section></template>

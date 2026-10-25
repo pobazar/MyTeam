@@ -1,0 +1,59 @@
+/* Source: design-system/appbar. Detailed screens use Title + Back/Close, no duplicated large title. */
+.appbar-detail { --appbar-side: 100px; }
+.appbar.appbar-detail { background: var(--background-base); box-shadow: none; }
+.appbar-detail .appbar-inner { min-height: 64px; gap: 20px; }
+.appbar-detail #appbar-title,
+.panel-header.appbar-detail h1 { position: absolute; inset-inline: var(--appbar-side); top: 50%; transform: translateY(-50%); margin: 0; font-size: 20px; line-height: 24px; font-weight: 500; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: clip; pointer-events: none; opacity: 1 !important; }
+.appbar-detail.title-overflow #appbar-title,
+.appbar-detail .title-overflow #appbar-title,
+.panel-header.appbar-detail.title-overflow h1 { text-align: left; mask-image: linear-gradient(to right, #000 calc(100% - 20px), transparent); }
+.appbar-detail .back-button { min-height: 44px; margin: 0; padding: 10px 0; }
+.appbar-detail .back-button:hover,
+.panel-header.appbar-detail .icon-button:hover { background: transparent; color: var(--text-link-hover); }
+.appbar-detail .back-button:active,
+.panel-header.appbar-detail .icon-button:active { color: var(--text-action-pressed); }
+.panel-header.appbar-detail { min-height: 64px; margin: 0 -8px 16px; padding: 0; gap: 20px; align-items: center; justify-content: flex-end; box-shadow: none; }
+.panel-header.appbar-detail h1 { font-size: 20px; line-height: 24px; }
+.panel-header.appbar-detail .icon-button { width: 44px; height: 44px; min-height: 44px; padding: 10px; }
+#panel .panel-header.appbar-detail { padding-top: 8px; min-height: 72px; }
+@media (max-width: 720px) {
+  .appbar.appbar-detail { padding-top: env(safe-area-inset-top); }
+  .appbar-detail .appbar-inner { width: calc(100% - 32px); min-height: 56px; gap: 0; }
+  .appbar-detail .back-button { width: 44px; min-height: 44px; padding: 10px; margin-left: -6px; }
+  .appbar-detail #appbar-title,
+  .panel-header.appbar-detail h1 { inset-inline: var(--appbar-side, 60px); font-size: 17px; line-height: 20px; font-weight: 600; }
+  .panel-header.appbar-detail { margin-inline: -4px; justify-content: flex-start; gap: 0; }
+  #panel .panel-header.appbar-detail { min-height: 64px; }
+  [data-platform="android"] .appbar-detail .appbar-inner { width: 100%; }
+  [data-platform="android"] .appbar-detail .back-button { width: 56px; min-height: 56px; margin: 0; padding: 16px; border-radius: 0; }
+  [data-platform="android"] .appbar-detail #appbar-title,
+  [data-platform="android"] .panel-header.appbar-detail h1 { inset-inline: 72px 16px; text-align: left; font: 500 20px/24px Roboto, var(--font-body); }
+  [data-platform="android"] .panel-header.appbar-detail h1 { inset-inline-start: 56px; }
+  [data-platform="android"] .appbar-detail .back-button:hover,
+  [data-platform="android"] .appbar-detail .back-button:active,
+  [data-platform="android"] .panel-header.appbar-detail .icon-button:active { background: var(--background-neutral-1-hover); }
+  /* iOS web approximation of iOS 26; glass actions stay inside the AppBar. */
+  [data-platform="ios"] .appbar.appbar-detail { background: transparent; isolation: isolate; }
+  [data-platform="ios"] .appbar-detail .appbar-inner { padding-block: 16px 10px; min-height: 70px; }
+  [data-platform="ios"] .appbar-detail #appbar-title { top: calc(50% + 3px); }
+  [data-platform="ios"] .appbar-detail .back-button,
+  [data-platform="ios"] .panel-header.appbar-detail .icon-button { margin: 0; border-radius: 999px; background: var(--appbar-glass, #ffffffb3); color: var(--text-primary); box-shadow: inset 0 0 8px #ffffff1a; transition: transform 150ms ease, background-color 150ms linear; }
+  [data-platform="ios"] .appbar-detail .back-button:active,
+  [data-platform="ios"] .panel-header.appbar-detail .icon-button:active { transform: scale(1.08); }
+  [data-platform="ios"] .appbar-detail.title-overflow #appbar-title,
+  [data-platform="ios"] .appbar-detail .title-overflow #appbar-title { inset-inline-start: 60px; inset-inline-end: 0; }
+  [data-platform="ios"] .panel-header.appbar-detail { padding-inline: 0; }
+  [data-platform="ios"] #panel .panel-header.appbar-detail { min-height: 70px; padding-block: 16px 10px; }
+  [data-platform="ios"] .panel-header.appbar-detail.title-overflow h1 { inset-inline-end: 0; }
+  [data-platform="ios"] .panel-header.appbar-detail h1 { top: calc(50% + 3px); }
+  @supports (backdrop-filter: blur(4px)) {
+    [data-platform="ios"] .appbar-detail .back-button,
+    [data-platform="ios"] .panel-header.appbar-detail .icon-button { backdrop-filter: blur(4px) saturate(1.3) brightness(1.05); }
+    [data-platform="ios"] .appbar.appbar-detail::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(var(--background-base), transparent); backdrop-filter: blur(12px); opacity: var(--appbar-scroll, 0); transition: opacity 150ms linear; pointer-events: none; }
+  }
+}
+@media (min-width: 428px) and (max-width: 720px) {
+  [data-platform="ios"] .appbar-detail .appbar-inner { width: calc(100% - 40px); padding-top: 20px; min-height: 74px; }
+  [data-platform="ios"] .appbar-detail #appbar-title { top: calc(50% + 5px); }
+}
+@media (prefers-reduced-motion: reduce) { .appbar-detail * { transition: none !important; } }
