@@ -1,0 +1,718 @@
+{
+  "source": "tui-onboarding-placeholders.fig",
+  "sha256": "abccc5f15b21f71941c2085ae9f419935d7c1f41792e8e2f37c21da49517cf92",
+  "canvasVersion": 106,
+  "decodedNodeCount": 70721,
+  "notes": [
+    "The visible page contains examples, not a separate written guideline.",
+    "iOS and Android Image Centered masters are current; iPad is marked legacy.",
+    "Desktop adaptation uses a centered 540px surface inspired by the iPad example, not a native desktop master.",
+    "System status and bottom bars are excluded from the web implementation."
+  ],
+  "selectedMasters": [
+    {
+      "id": "17364:18348",
+      "type": "SYMBOL",
+      "name": "system=iOS, template=Image Centered",
+      "size": {
+        "x": 375,
+        "y": 812
+      },
+      "stackMode": "VERTICAL",
+      "children": [
+        {
+          "id": "17364:18398",
+          "type": "INSTANCE",
+          "name": "system-status-bar",
+          "size": {
+            "x": 375,
+            "y": 54
+          },
+          "stackMode": "VERTICAL",
+          "master": "15886:12631"
+        },
+        {
+          "id": "17364:18399",
+          "type": "FRAME",
+          "name": "container",
+          "size": {
+            "x": 375,
+            "y": 758
+          },
+          "stackMode": "VERTICAL",
+          "children": [
+            {
+              "id": "17364:18400",
+              "type": "FRAME",
+              "name": "Image",
+              "size": {
+                "x": 375,
+                "y": 379
+              },
+              "stackSpacing": 280,
+              "stackPrimaryAlignItems": "CENTER",
+              "stackCounterAlignItems": "CENTER",
+              "children": [
+                {
+                  "id": "17364:18401",
+                  "type": "FRAME",
+                  "name": "ImgContainer",
+                  "size": {
+                    "x": 375,
+                    "y": 379
+                  },
+                  "stackMode": "HORIZONTAL",
+                  "stackSpacing": 10,
+                  "stackVerticalPadding": 24,
+                  "stackPrimaryAlignItems": "CENTER",
+                  "stackCounterAlignItems": "CENTER",
+                  "children": [
+                    {
+                      "id": "17364:18402",
+                      "type": "INSTANCE",
+                      "name": "tui-illustrations-common / Light / phone-check",
+                      "size": {
+                        "x": 220,
+                        "y": 220
+                      },
+                      "master": "5527:12039"
+                    }
+                  ]
+                },
+                {
+                  "id": "17364:18403",
+                  "type": "FRAME",
+                  "name": "Fade",
+                  "size": {
+                    "x": 375,
+                    "y": 64
+                  },
+                  "children": [
+                    {
+                      "id": "17364:18404",
+                      "type": "ROUNDED_RECTANGLE",
+                      "name": "Mask",
+                      "size": {
+                        "x": 375,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "id": "17364:18405",
+                      "type": "ROUNDED_RECTANGLE",
+                      "name": "Color",
+                      "size": {
+                        "x": 375,
+                        "y": 64
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "17364:18406",
+              "type": "FRAME",
+              "name": "Content",
+              "size": {
+                "x": 375,
+                "y": 379
+              },
+              "stackMode": "VERTICAL",
+              "stackVerticalPadding": 8,
+              "children": [
+                {
+                  "id": "17364:18407",
+                  "type": "INSTANCE",
+                  "name": "tui-header [large]",
+                  "size": {
+                    "x": 375,
+                    "y": 371
+                  },
+                  "stackMode": "VERTICAL",
+                  "stackSpacing": 16,
+                  "stackHorizontalPadding": 16,
+                  "stackVerticalPadding": 16,
+                  "stackPaddingRight": 16,
+                  "stackPaddingBottom": 24,
+                  "master": "17364:15354"
+                }
+              ]
+            },
+            {
+              "id": "17364:18408",
+              "type": "FRAME",
+              "name": "navbar",
+              "size": {
+                "x": 375,
+                "y": 56
+              },
+              "stackMode": "VERTICAL",
+              "stackSpacing": 10,
+              "stackPrimaryAlignItems": "CENTER",
+              "children": [
+                {
+                  "id": "17364:18409",
+                  "type": "INSTANCE",
+                  "name": "tui-app-bar",
+                  "size": {
+                    "x": 375,
+                    "y": 56
+                  },
+                  "stackMode": "HORIZONTAL",
+                  "stackCounterAlignItems": "CENTER",
+                  "master": "17364:15640"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "17364:18410",
+          "type": "INSTANCE",
+          "name": "tui-floating-container",
+          "size": {
+            "x": 375,
+            "y": 114
+          },
+          "stackMode": "VERTICAL",
+          "master": "17364:18243"
+        }
+      ]
+    },
+    {
+      "id": "17364:18364",
+      "type": "SYMBOL",
+      "name": "system=Android, template=Image Centered",
+      "size": {
+        "x": 360,
+        "y": 800
+      },
+      "stackMode": "VERTICAL",
+      "children": [
+        {
+          "id": "17364:18627",
+          "type": "INSTANCE",
+          "name": "system-status-bar",
+          "size": {
+            "x": 360,
+            "y": 32
+          },
+          "master": "15886:12630"
+        },
+        {
+          "id": "17364:18628",
+          "type": "FRAME",
+          "name": "container",
+          "size": {
+            "x": 360,
+            "y": 768
+          },
+          "stackMode": "VERTICAL",
+          "children": [
+            {
+              "id": "17364:18629",
+              "type": "FRAME",
+              "name": "Image",
+              "size": {
+                "x": 360,
+                "y": 384
+              },
+              "stackSpacing": 280,
+              "stackPrimaryAlignItems": "CENTER",
+              "stackCounterAlignItems": "CENTER",
+              "children": [
+                {
+                  "id": "17364:18630",
+                  "type": "FRAME",
+                  "name": "ImgContainer",
+                  "size": {
+                    "x": 360,
+                    "y": 384
+                  },
+                  "stackMode": "HORIZONTAL",
+                  "stackSpacing": 10,
+                  "stackVerticalPadding": 24,
+                  "stackPrimaryAlignItems": "CENTER",
+                  "stackCounterAlignItems": "CENTER",
+                  "children": [
+                    {
+                      "id": "17364:18631",
+                      "type": "INSTANCE",
+                      "name": "tui-illustrations-common / Light / phone-check",
+                      "size": {
+                        "x": 220,
+                        "y": 220
+                      },
+                      "master": "5527:12039"
+                    }
+                  ]
+                },
+                {
+                  "id": "17364:18632",
+                  "type": "FRAME",
+                  "name": "Fade",
+                  "size": {
+                    "x": 360,
+                    "y": 64
+                  },
+                  "children": [
+                    {
+                      "id": "17364:18633",
+                      "type": "ROUNDED_RECTANGLE",
+                      "name": "Mask",
+                      "size": {
+                        "x": 360,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "id": "17364:18634",
+                      "type": "ROUNDED_RECTANGLE",
+                      "name": "Color",
+                      "size": {
+                        "x": 360,
+                        "y": 64
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "17364:18635",
+              "type": "FRAME",
+              "name": "Content",
+              "size": {
+                "x": 360,
+                "y": 384
+              },
+              "stackMode": "VERTICAL",
+              "stackVerticalPadding": 8,
+              "children": [
+                {
+                  "id": "17364:18636",
+                  "type": "INSTANCE",
+                  "name": "tui-header [large]",
+                  "size": {
+                    "x": 360,
+                    "y": 376
+                  },
+                  "stackMode": "VERTICAL",
+                  "stackSpacing": 16,
+                  "stackHorizontalPadding": 16,
+                  "stackVerticalPadding": 16,
+                  "stackPaddingRight": 16,
+                  "stackPaddingBottom": 24,
+                  "master": "17364:15358"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "17364:18637",
+          "type": "INSTANCE",
+          "name": "tui-floating-container",
+          "size": {
+            "x": 360,
+            "y": 94
+          },
+          "stackMode": "VERTICAL",
+          "master": "17364:18246"
+        },
+        {
+          "id": "17364:18638",
+          "type": "FRAME",
+          "name": "navbar",
+          "size": {
+            "x": 360,
+            "y": 56
+          },
+          "stackMode": "VERTICAL",
+          "stackSpacing": 10,
+          "children": [
+            {
+              "id": "17364:18639",
+              "type": "INSTANCE",
+              "name": "tui-app-bar",
+              "size": {
+                "x": 360,
+                "y": 56
+              },
+              "stackMode": "HORIZONTAL",
+              "master": "17364:15667"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "16785:24729",
+      "type": "SYMBOL",
+      "name": "System=iOS (iPad), template=Image Centered",
+      "size": {
+        "x": 768,
+        "y": 1024
+      },
+      "stackPrimaryAlignItems": "CENTER",
+      "stackCounterAlignItems": "CENTER",
+      "children": [
+        {
+          "id": "16785:24762",
+          "type": "ROUNDED_RECTANGLE",
+          "name": "card-bg",
+          "size": {
+            "x": 499,
+            "y": 10
+          }
+        },
+        {
+          "id": "16785:24763",
+          "type": "FRAME",
+          "name": "container",
+          "size": {
+            "x": 540,
+            "y": 620
+          },
+          "stackMode": "VERTICAL",
+          "children": [
+            {
+              "id": "16785:24764",
+              "type": "FRAME",
+              "name": "Image",
+              "size": {
+                "x": 540,
+                "y": 310
+              },
+              "stackSpacing": 280,
+              "stackPrimaryAlignItems": "CENTER",
+              "stackCounterAlignItems": "CENTER",
+              "children": [
+                {
+                  "id": "16785:24765",
+                  "type": "FRAME",
+                  "name": "centered",
+                  "size": {
+                    "x": 540,
+                    "y": 310
+                  },
+                  "stackMode": "HORIZONTAL",
+                  "stackSpacing": 10,
+                  "stackVerticalPadding": 24,
+                  "stackPrimaryAlignItems": "CENTER",
+                  "stackCounterAlignItems": "CENTER",
+                  "children": [
+                    {
+                      "id": "16785:24766",
+                      "type": "INSTANCE",
+                      "name": "tui-illustrations-common / Light / phone-check",
+                      "size": {
+                        "x": 220,
+                        "y": 220
+                      },
+                      "stackHorizontalPadding": 32,
+                      "stackVerticalPadding": 32,
+                      "stackPaddingRight": 32,
+                      "stackPaddingBottom": 32,
+                      "master": "5527:12039"
+                    }
+                  ]
+                },
+                {
+                  "id": "16785:24767",
+                  "type": "FRAME",
+                  "name": "navbar",
+                  "size": {
+                    "x": 540,
+                    "y": 44
+                  },
+                  "stackMode": "VERTICAL",
+                  "stackSpacing": 10,
+                  "children": [
+                    {
+                      "id": "16785:24768",
+                      "type": "INSTANCE",
+                      "name": "tui-app-bar",
+                      "size": {
+                        "x": 540,
+                        "y": 44
+                      },
+                      "stackMode": "HORIZONTAL",
+                      "stackCounterAlignItems": "CENTER",
+                      "master": "15886:16196"
+                    }
+                  ]
+                },
+                {
+                  "id": "16785:24769",
+                  "type": "FRAME",
+                  "name": "Fade",
+                  "size": {
+                    "x": 540,
+                    "y": 64
+                  },
+                  "children": [
+                    {
+                      "id": "16785:24770",
+                      "type": "ROUNDED_RECTANGLE",
+                      "name": "Mask",
+                      "size": {
+                        "x": 540,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "id": "16785:24771",
+                      "type": "ROUNDED_RECTANGLE",
+                      "name": "Color",
+                      "size": {
+                        "x": 540,
+                        "y": 64
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "16785:24772",
+              "type": "FRAME",
+              "name": "Content",
+              "size": {
+                "x": 540,
+                "y": 310
+              },
+              "stackMode": "VERTICAL",
+              "stackVerticalPadding": 8,
+              "children": [
+                {
+                  "id": "16785:24773",
+                  "type": "INSTANCE",
+                  "name": "tui-header [large]",
+                  "size": {
+                    "x": 540,
+                    "y": 302
+                  },
+                  "stackMode": "VERTICAL",
+                  "stackSpacing": 16,
+                  "stackHorizontalPadding": 16,
+                  "stackVerticalPadding": 16,
+                  "stackPaddingRight": 16,
+                  "stackPaddingBottom": 24,
+                  "master": "16785:24490"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "16785:24774",
+          "type": "INSTANCE",
+          "name": "tui-floating-container",
+          "size": {
+            "x": 540,
+            "y": 80
+          },
+          "stackMode": "VERTICAL",
+          "master": "16785:23986"
+        }
+      ]
+    },
+    {
+      "id": "17364:18243",
+      "type": "SYMBOL",
+      "name": "system=iOS, content=action, background=off",
+      "size": {
+        "x": 375,
+        "y": 114
+      },
+      "stackMode": "VERTICAL",
+      "children": [
+        {
+          "id": "17364:18323",
+          "type": "FRAME",
+          "name": "fade",
+          "size": {
+            "x": 375,
+            "y": 0.0010000000474974513
+          },
+          "children": [
+            {
+              "id": "17364:18324",
+              "type": "FRAME",
+              "name": "container",
+              "size": {
+                "x": 375,
+                "y": 170
+              },
+              "children": [
+                {
+                  "id": "17364:18325",
+                  "type": "ROUNDED_RECTANGLE",
+                  "name": "Shade",
+                  "size": {
+                    "x": 375,
+                    "y": 170
+                  }
+                },
+                {
+                  "id": "17364:18326",
+                  "type": "ROUNDED_RECTANGLE",
+                  "name": "Color",
+                  "size": {
+                    "x": 375,
+                    "y": 170
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "17364:18327",
+          "type": "FRAME",
+          "name": "Buttons cont",
+          "size": {
+            "x": 375,
+            "y": 80
+          },
+          "stackMode": "VERTICAL",
+          "stackSpacing": 8,
+          "stackHorizontalPadding": 16,
+          "stackPaddingRight": 16,
+          "stackPaddingBottom": 24,
+          "children": [
+            {
+              "id": "17364:18328",
+              "type": "INSTANCE",
+              "name": "tui-button",
+              "size": {
+                "x": 343,
+                "y": 56
+              },
+              "stackMode": "HORIZONTAL",
+              "stackHorizontalPadding": 16,
+              "stackVerticalPadding": 16,
+              "stackPaddingRight": 16,
+              "stackPaddingBottom": 16,
+              "stackPrimaryAlignItems": "CENTER",
+              "stackCounterAlignItems": "CENTER",
+              "master": "17364:16764"
+            }
+          ]
+        },
+        {
+          "id": "17364:18329",
+          "type": "INSTANCE",
+          "name": "system-bottom-bar",
+          "size": {
+            "x": 375,
+            "y": 34
+          },
+          "stackMode": "VERTICAL",
+          "master": "17364:18089"
+        }
+      ]
+    },
+    {
+      "id": "17364:18246",
+      "type": "SYMBOL",
+      "name": "system=Android, content=action, background=off",
+      "size": {
+        "x": 360,
+        "y": 94
+      },
+      "stackMode": "VERTICAL",
+      "children": [
+        {
+          "id": "17364:18336",
+          "type": "FRAME",
+          "name": "fade",
+          "size": {
+            "x": 360,
+            "y": 0.0010000000474974513
+          },
+          "children": [
+            {
+              "id": "17364:18337",
+              "type": "FRAME",
+              "name": "container",
+              "size": {
+                "x": 360,
+                "y": 151
+              },
+              "children": [
+                {
+                  "id": "17364:18338",
+                  "type": "ROUNDED_RECTANGLE",
+                  "name": "Shade",
+                  "size": {
+                    "x": 360,
+                    "y": 151
+                  }
+                },
+                {
+                  "id": "17364:18339",
+                  "type": "ROUNDED_RECTANGLE",
+                  "name": "Color",
+                  "size": {
+                    "x": 360,
+                    "y": 151
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "17364:18340",
+          "type": "FRAME",
+          "name": "Buttons cont",
+          "size": {
+            "x": 360,
+            "y": 80
+          },
+          "stackMode": "VERTICAL",
+          "stackSpacing": 8,
+          "stackHorizontalPadding": 16,
+          "stackPaddingRight": 16,
+          "stackPaddingBottom": 24,
+          "children": [
+            {
+              "id": "17364:18341",
+              "type": "INSTANCE",
+              "name": "tui-button",
+              "size": {
+                "x": 328,
+                "y": 56
+              },
+              "stackMode": "HORIZONTAL",
+              "stackHorizontalPadding": 16,
+              "stackVerticalPadding": 16,
+              "stackPaddingRight": 16,
+              "stackPaddingBottom": 16,
+              "stackPrimaryAlignItems": "CENTER",
+              "stackCounterAlignItems": "CENTER",
+              "master": "17364:16809"
+            }
+          ]
+        },
+        {
+          "id": "17364:18342",
+          "type": "INSTANCE",
+          "name": "system-bottom-bar",
+          "size": {
+            "x": 360,
+            "y": 14
+          },
+          "stackMode": "VERTICAL",
+          "stackSpacing": 10,
+          "stackPrimaryAlignItems": "CENTER",
+          "stackCounterAlignItems": "CENTER",
+          "master": "17364:18071"
+        }
+      ]
+    }
+  ]
+}

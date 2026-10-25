@@ -5,16 +5,17 @@
   <meta name="myteam-api" content="https://myteam-backend-eu.onrender.com">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://myteam-backend-eu.onrender.com; img-src 'self' data:; base-uri 'none'; form-action 'none'">
   <title>МАЙТИМ</title>
-  <link rel="stylesheet" href="web/tokens.css?v=20261025-tui">
-  <link rel="stylesheet" href="web/app.css?v=20261025-tui">
+  <link rel="stylesheet" href="web/tokens.css?v=20261025-onboarding">
+  <link rel="stylesheet" href="web/app.css?v=20261025-onboarding">
   <script src="myteam/static/myteam/interactions.js" defer></script>
-  <script src="web/app.js?v=20261025-tui" defer></script>
+  <script src="web/app.js?v=20261025-onboarding" defer></script>
 </head>
 <body>
-<div id="app">
+<div id="app" data-view="intro">
   <header class="appbar">
     <div class="appbar-inner">
     <button id="screen-back" type="button" class="back-button" aria-label="Вернуться к активностям" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg><span>Назад</span></button>
+    <progress id="intro-progress" class="intro-progress" max="3" value="1" aria-label="Шаг знакомства" hidden></progress>
     <span id="appbar-title" aria-hidden="true" hidden></span>
     <a class="brand" href="#/" aria-label="МАЙТИМ — главная">МАЙТИМ ·</a>
     <nav id="account-nav" aria-label="Разделы" hidden>
@@ -24,7 +25,7 @@
     </div>
   </header>
   <main id="main">
-    <div class="setup"><p class="eyebrow">Знакомство · 1 из 3</p><h1>Знакомься с коллегами</h1><section class="card"><p>МАЙТИМ помогает узнавать людей за пределами своей команды — через разговоры, игры и встречи по интересам.</p><button type="button" data-intro-next>Дальше</button></section></div>
+    <div class="intro-flow"><div class="intro-image"><div class="intro-art" aria-hidden="true"><span>М</span><span>Ы</span></div></div><div class="intro-content"><p class="sr-only" data-step>Знакомство · 1 из 3</p><h1 data-heading tabindex="-1">Знакомься с коллегами</h1><p data-body>МАЙТИМ помогает узнавать людей за пределами своей команды — через разговоры, игры и встречи по интересам.</p></div><div class="intro-actions"><button type="button" data-intro-next>Дальше</button><div data-auth-message></div></div></div>
   </main>
   <main id="screen" hidden tabindex="-1"><h1 id="screen-title" tabindex="-1"></h1><div id="screen-content" aria-live="polite"></div></main>
   <footer>Небольшой эксперимент для нашей команды. Иногда что-то может работать неидеально — если заметишь проблему, дай знать.</footer>
@@ -33,7 +34,7 @@
   <div class="panel-header"><h1 id="panel-title"></h1><button type="button" id="panel-close" class="icon-button" aria-label="Вернуться к активностям" title="Закрыть"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
   <div id="panel-content"></div>
 </dialog>
-<template id="tpl-intro"><div class="setup"><progress class="intro-progress" max="3" value="1" aria-label="Шаг знакомства"></progress><p class="eyebrow" data-step></p><h1 data-heading></h1><section class="card intro-card"><div class="intro-art" aria-hidden="true"><span>М</span><span>Ы</span></div><p data-body></p><button type="button" data-intro-next>Дальше</button></section><div data-auth-message></div></div></template>
+<template id="tpl-intro"><div class="intro-flow"><div class="intro-image"><div class="intro-art" aria-hidden="true"><span>М</span><span>Ы</span></div></div><div class="intro-content"><p class="sr-only" data-step>Знакомство · 1 из 3</p><h1 data-heading tabindex="-1">Знакомься с коллегами</h1><p data-body>МАЙТИМ помогает узнавать людей за пределами своей команды — через разговоры, игры и встречи по интересам.</p></div><div class="intro-actions"><button type="button" data-intro-next>Дальше</button><div data-auth-message></div></div></div></template>
 <template id="tpl-loading"><div class="loading-state" role="status"><span class="skeleton" aria-hidden="true"></span><span>Загружаем…</span></div></template>
 <template id="tpl-error"><section class="card load-error"><p class="error" role="alert">Не удалось загрузить данные. Попробуй ещё раз.</p><button type="button" data-retry>Повторить</button></section></template>
 <template id="tpl-activities"><h1>Активности</h1><div id="activity-content" aria-live="polite"><div class="weeks-grid"><section class="card current-week"><p class="eyebrow">Текущая неделя</p><div class="loading-state" role="status"><span class="skeleton" aria-hidden="true"></span><span>Загружаем активность…</span></div></section><aside class="card next-week"><p class="eyebrow">Следующая неделя</p><p class="muted">Загружаем запись…</p></aside></div></div></template>

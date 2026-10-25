@@ -59,6 +59,7 @@
   function stopLogin(){loginVersion++;clearTimeout(pollTimer);loginAbort?.abort();polling=false;}
   function clearViews(){hideScreen();main.hidden=false;chrome('');mainVersion++;mainAbort?.abort();stopLogin();closePanel();mainReady=false;}
   function chrome(title){
+    root.dataset.view=phase;document.querySelector('#intro-progress').hidden=true;back.setAttribute('aria-label','Вернуться к активностям');
     const secondary=Boolean(title);back.hidden=!secondary;barTitle.hidden=phase!=='app';barTitle.textContent=title||'Активности';document.querySelector('.appbar').dataset.secondary=String(secondary);
     document.querySelector('.brand').hidden=secondary;nav.hidden=phase!=='app'||secondary;
     document.title=title?title+' · МАЙТИМ':'МАЙТИМ';
@@ -69,11 +70,13 @@
     if(wasScreen){window.scrollTo(0,activityScroll);main.querySelector('h1')?.focus({preventScroll:true});}
   }
   function showIntro(step=0,alreadyAuthenticated=false){
-    clearViews();phase='intro';introStep=step;introAuthenticated=alreadyAuthenticated;nav.hidden=true;hash('/');
-    const fragment=clone('intro');$(fragment,'progress').value=step+1;put(fragment,'[data-step]',`Знакомство · ${step+1} из 3`);put(fragment,'[data-heading]',steps[step][0]);put(fragment,'[data-body]',steps[step][1]);
+    clearViews();phase='intro';root.dataset.view='intro';introStep=step;introAuthenticated=alreadyAuthenticated;nav.hidden=true;hash('/');
+    const progress=document.querySelector('#intro-progress');progress.hidden=false;progress.value=step+1;progress.setAttribute('aria-valuetext',`Шаг ${step+1} из 3`);
+    back.hidden=step===0;back.setAttribute('aria-label','Предыдущий шаг');barTitle.hidden=true;document.querySelector('.brand').hidden=true;
+    const fragment=clone('intro');fragment.querySelector('.intro-flow').dataset.introStep=step+1;put(fragment,'[data-step]',`Знакомство · ${step+1} из 3`);put(fragment,'[data-heading]',steps[step][0]);put(fragment,'[data-body]',steps[step][1]);
     const button=$(fragment,'[data-intro-next]');button.textContent=step===2?(alreadyAuthenticated?'Продолжить':'Войти через Telegram'):'Дальше';
     button.onclick=()=>step<2?showIntro(step+1,alreadyAuthenticated):startLogin(alreadyAuthenticated);
-    main.replaceChildren(fragment);window.scrollTo(0,0);
+    main.replaceChildren(fragment);window.scrollTo(0,0);$(main,'h1').focus({preventScroll:true});
   }
   function fail(target,retry,message){const fragment=clone('error');if(message)put(fragment,'[role="alert"]',message);$(fragment,'[data-retry]').onclick=retry;target.replaceChildren(fragment);}
   function loading(target){target.replaceChildren(clone('loading'));}
@@ -92,7 +95,7 @@
     const body=await request('/bridge/bootstrap/',{signal});token=body.session;sessionStorage.setItem(storage,token);sessionStorage.setItem(hint,'false');
   }
   async function startLogin(alreadyAuthenticated=false){
-    stopLogin();phase='login';nav.hidden=true;closePanel();const fragment=clone('login');$(fragment,'[data-back-intro]').onclick=()=>showIntro(0,alreadyAuthenticated);main.replaceChildren(fragment);
+    stopLogin();phase='login';chrome('');nav.hidden=true;closePanel();const fragment=clone('login');$(fragment,'[data-back-intro]').onclick=()=>showIntro(0,alreadyAuthenticated);main.replaceChildren(fragment);
     const target=$(main,'[data-login-content]');loading(target);const version=loginVersion;
     loginAbort=new AbortController();
     try{
@@ -122,9 +125,9 @@
   }
   function enterAccount(body){authenticated=true;sessionStorage.setItem(hint,'true');stopLogin();if(!acceptAccount(body))return;showApp();hash(intendedRoute);intendedRoute='/';loadActivities();routeChanged();}
   function showApp(){phase='app';hideScreen();main.hidden=false;chrome('');main.replaceChildren(clone('activities'));mainReady=false;}
-  function showSetup(body){clearViews();phase='setup';nav.hidden=true;hash('/');main.replaceChildren(element('h1','Давайте познакомимся'),element('p','Заполни три поля, чтобы перейти к активностям.','muted'));const target=element('div','', 'setup');main.append(target);renderProfile(target,body,true);}
+  function showSetup(body){clearViews();phase='setup';chrome('');nav.hidden=true;hash('/');main.replaceChildren(element('h1','Давайте познакомимся'),element('p','Заполни три поля, чтобы перейти к активностям.','muted'));const target=element('div','', 'setup');main.append(target);renderProfile(target,body,true);}
   async function loadSetup(){
-    clearViews();phase='setup-loading';nav.hidden=true;hash('/');main.replaceChildren(element('h1','Давайте познакомимся'));
+    clearViews();phase='setup-loading';chrome('');nav.hidden=true;hash('/');main.replaceChildren(element('h1','Давайте познакомимся'));
     const target=element('div','', 'setup');main.append(target);loading(target);const version=++mainVersion;mainAbort=new AbortController();
     try{const body=await request('/api/profile/',{signal:mainAbort.signal});if(version!==mainVersion)return;if(!acceptAccount(body))return;enterAccount(body);}
     catch(error){if(version===mainVersion)catchLoad(error,target,loadSetup);}
@@ -271,7 +274,7 @@
     };
     revoke();
   }
-  back.onclick=()=>go('/');
+  back.onclick=()=>phase==='intro'?showIntro(Math.max(0,introStep-1),introAuthenticated):go('/');
   let scrollPending=false;window.addEventListener('scroll',()=>{if(scrollPending)return;scrollPending=true;requestAnimationFrame(()=>{root.classList.toggle('scrolled',window.scrollY>48);scrollPending=false;});},{passive:true});
   nav.querySelectorAll('[data-open]').forEach(button=>button.onclick=()=>go('/'+button.dataset.open+'/'));
   document.querySelector('#panel-close').onclick=()=>go(closeTarget);
