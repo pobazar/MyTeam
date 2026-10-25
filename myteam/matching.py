@@ -36,6 +36,8 @@ def validate_draft(r):
 
 @transaction.atomic
 def prepare(round_id,clock):
+    from .rotation import lock_rotation
+    lock_rotation()
     r=Round.objects.select_for_update().get(pk=round_id)
     if r.prepared_at:
         return r

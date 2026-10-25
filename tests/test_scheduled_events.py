@@ -27,11 +27,8 @@ class ScheduledEventTests(TestCase):
         ids=set(Member.objects.filter(round=self.r).values_list('id',flat=True))
         execute('prepare',FrozenClock(instant))
         self.assertEqual(ids,set(Member.objects.filter(round=self.r).values_list('id',flat=True)))
-    def test_publish_never_prepares_implicitly_and_can_recover_explicitly(self):
+    def test_publish_recovers_absent_draft_when_prepare_action_was_missed(self):
         clock=FrozenClock(self.r.starts_at)
-        self.assertTrue(execute('publish',clock).error)
-        self.assertFalse(Member.objects.exists());self.r.refresh_from_db();self.assertIsNone(self.r.prepared_at)
-        self.assertFalse(execute('prepare',clock).error)
         self.assertFalse(execute('publish',clock).error)
         self.r.refresh_from_db();self.assertIsNotNone(self.r.published_at)
         count=Notification.objects.filter(kind='meeting').count()
@@ -66,7 +63,8 @@ class ScheduledEventTests(TestCase):
             self.assertIsNone(result.round);self.assertEqual(result.status,'outside_window')
             self.assertEqual(Round.objects.count(),before_count)
             result=execute(event,FrozenClock(expiry),'2026-10-28')
-            self.assertIsNone(result.round)
+            if event=='publish':self.assertEqual(result.status,'cancelled')
+            else:self.assertIsNone(result.round)
         for value in ('2026-10-27','2026-2-04','not-a-date'):
             with self.assertRaises(ValueError):target_start('invite',self.r.starts_at,value)
     def test_paused_publication_preserves_manual_draft(self):

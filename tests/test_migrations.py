@@ -18,8 +18,8 @@ class MigrationTests(TransactionTestCase):
         upcoming=old.get_model('myteam','Round').objects.create(starts_at=now+timedelta(days=7),ends_at=now+timedelta(days=14),closes_at=now+timedelta(days=7,hours=-12),prepares_at=now+timedelta(days=7,hours=-11))
         executor=MigrationExecutor(connection)
         with patch('django.utils.timezone.now',return_value=now-timedelta(days=1)):
-            executor.migrate([('myteam','0006_profile_name_and_activity_rating')])
-        new=executor.loader.project_state([('myteam','0006_profile_name_and_activity_rating')]).apps
+            executor.migrate([('myteam','0007_round_selection_and_cancellation')])
+        new=executor.loader.project_state([('myteam','0007_round_selection_and_cancellation')]).apps
         migrated=new.get_model('myteam','Round').objects.get(pk=upcoming.id)
         self.assertEqual(migrated.prepares_at,migrated.closes_at)
         self.assertEqual(new.get_model('myteam','Round').objects.get(pk=r.id).prepares_at,r.prepares_at)
@@ -33,8 +33,13 @@ class MigrationTests(TransactionTestCase):
         from myteam.models import Person,Feedback
         self.assertEqual(Person.objects.get(pk=p.id).display_name,'Имя Фамилия')
         self.assertTrue(Feedback.objects.get(pk=f.id).final)
-        MigrationExecutor(connection).migrate([('myteam','0006_profile_name_and_activity_rating')])
+        MigrationExecutor(connection).migrate([('myteam','0007_round_selection_and_cancellation')])
         self.assertEqual(new.get_model('myteam','Person').objects.count(),1)
+        previous=MigrationExecutor(connection).loader.project_state([('myteam','0006_profile_name_and_activity_rating')]).apps
+        legacy_round=previous.get_model('myteam','Round').objects.create(starts_at=now+timedelta(days=21),ends_at=now+timedelta(days=28),closes_at=now+timedelta(days=21,hours=-12),prepares_at=now+timedelta(days=21,hours=-12))
+        from myteam.models import Round
+        self.assertEqual(Round.objects.get(pk=legacy_round.id).selection,{})
+        self.assertEqual(Round.objects.get(pk=legacy_round.id).cancellation_reason,'')
         # The original ORM writer omits full_name; the DB default preserves compatibility.
         legacy=old.get_model('myteam','Person').objects.create(telegram_id=43,first_name='Другой',last_name='Участник')
         self.assertEqual(Person.objects.get(pk=legacy.id).full_name,'')

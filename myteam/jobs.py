@@ -44,6 +44,8 @@ def complete_job(key,r,now):
 
 @transaction.atomic
 def publish(round_id,clock):
+    from .rotation import lock_rotation
+    lock_rotation()
     r=Round.objects.select_for_update().get(pk=round_id)
     if r.published_at:return r
     if r.publication_paused:raise RuleError('Публикация приостановлена владельцем.')

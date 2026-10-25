@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime,timedelta
 from django.test import TestCase
 from myteam.clock import FrozenClock,MOSCOW
 from myteam.models import Person,Enrollment,Member,Unmatched,TeamGroup
@@ -7,7 +7,7 @@ from myteam.matching import prepare,validate_draft,select_groups
 class MatchingTests(TestCase):
     def test_sizes_and_restart_preserve_manual_snapshot(self):
         for count in (0,1,2,3,4,5,8,9):
-            r=ensure_round(datetime(2027,1,6+count,9,tzinfo=MOSCOW))
+            r=ensure_round(datetime(2027,1,6,9,tzinfo=MOSCOW)+timedelta(weeks=count))
             for i in range(count):
                 p=Person.objects.create(telegram_id=count*100+i,first_name='А',last_name='Б',team='Т',city='Город',city_key='gorod')
                 Enrollment.objects.create(person=p,round=r)
