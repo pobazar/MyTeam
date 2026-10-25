@@ -1,5 +1,4 @@
 from datetime import timedelta
-from django.conf import settings
 from .models import Round,Enrollment,Member,Unmatched
 from django.db.models import Exists,OuterRef,Count,Subquery,IntegerField,Value
 from django.db.models.functions import Coalesce
@@ -29,6 +28,8 @@ def dashboard_context(person,now):
     current_enrolled=bool(week and week.is_enrolled)
     answer=getattr(current,'feedback',None) if current else None
     members=list(current.meeting.members.all()) if current else []
+    from .contacts import participant_url
+    for member in members:member.contact_url=participant_url(member.snapshot) if member.person_id!=person.id else None
     activity=get_activity(week.activity,week.rules_version) if week else None
     enrolled=bool(r and r.is_enrolled)
     return {
@@ -39,7 +40,6 @@ def dashboard_context(person,now):
         'new_here':person.created_at>=week_start,'enrolled':enrolled,'awaiting_publication':now<week_start,
         'activity_template':activity.card_template if activity else '',
         'instructions':activity.instructions(len({m.snapshot['city_key'] for m in members})==1) if current else '',
-        'contacts_url':f'https://t.me/{settings.TELEGRAM_BOT_USERNAME}?start=m_{current.meeting_id}' if current else '',
         'registration_open':bool(r and r.state=='open' and now<r.closes_at),
     }
 
