@@ -73,11 +73,21 @@ class DataApiTests(TestCase):
     def test_data_flow_enrollment_publication_feedback_history_and_privacy(self):
         p=self.authenticate();start=datetime(2026,10,28,9,tzinfo=MOSCOW)
         r=ensure_round(start)
+        with patch('myteam.clock.Clock.now',return_value=r.closes_at-timedelta(days=1)):
+            self.assertEqual(self.call('/api/activities/').json()['next']['enrollment_count'],0)
         other=Person.objects.create(telegram_id=72,full_name='Михаил',team='Разработка',city='Казань',city_key='kazan',onboarding_done=True)
         Enrollment.objects.create(person=other,round=r)
+        cancelled=Person.objects.create(telegram_id=74)
+        Enrollment.objects.create(person=cancelled,round=r,active=False)
+        Enrollment.objects.create(person=cancelled,round=ensure_round(r.ends_at))
         with patch('myteam.clock.Clock.now',return_value=r.closes_at-timedelta(days=1)):
+            self.assertEqual(self.call('/api/activities/').json()['next']['enrollment_count'],1)
             self.assertEqual(self.call(f'/api/rounds/{r.id}/enrollment/',{'action':'enroll'}).status_code,200)
-            self.assertTrue(self.call('/api/activities/').json()['next']['enrolled'])
+            upcoming=self.call('/api/activities/').json()['next']
+            self.assertTrue(upcoming['enrolled']);self.assertEqual(upcoming['enrollment_count'],2)
+            self.call(f'/api/rounds/{r.id}/enrollment/',{'action':'cancel'})
+            self.assertEqual(self.call('/api/activities/').json()['next']['enrollment_count'],1)
+            self.call(f'/api/rounds/{r.id}/enrollment/',{'action':'enroll'})
         tick(FrozenClock(r.prepares_at));tick(FrozenClock(start))
         with patch('myteam.clock.Clock.now',return_value=start):
             data=self.call('/api/activities/').json();self.assertEqual(data['current']['kind'],'active')
@@ -90,10 +100,24 @@ class DataApiTests(TestCase):
         with patch('myteam.clock.Clock.now',return_value=r.ends_at):
             entries=self.call('/api/history/').json()['entries'];self.assertEqual(len(entries),1)
             self.assertEqual(entries[0]['answer']['rating'],4);self.assertFalse(entries[0]['can_rate'])
-        self.assertFalse(Enrollment.objects.exclude(round=r).exists())
+        self.assertFalse(Enrollment.objects.filter(person=p).exclude(round=r).exists())
         third=Person.objects.create(telegram_id=73,full_name='Другой',team='Т',city='М',city_key='m',onboarding_done=True)
         s=SessionStore(self.token);s['person_id']=str(third.id);s.save()
         self.assertEqual(self.call(f'/api/meetings/{meeting}/feedback/').status_code,404)
+    def test_no_feedback_without_reason_is_saved_as_final(self):
+        p=self.authenticate();r=ensure_round(datetime(2026,10,28,9,tzinfo=MOSCOW))
+        other=Person.objects.create(telegram_id=72,full_name='Михаил',team='Разработка',city='Казань',city_key='kazan')
+        for person in (p,other):Enrollment.objects.create(person=person,round=r)
+        tick(FrozenClock(r.prepares_at));tick(FrozenClock(r.starts_at))
+        meeting=Member.objects.get(person=p,round=r).meeting_id
+        with patch('myteam.clock.Clock.now',return_value=r.starts_at):
+            response=self.call(f'/api/meetings/{meeting}/feedback/',{'outcome':'no','comment':''})
+            self.assertEqual(response.status_code,200)
+            self.assertTrue(response.json()['answer']['final'])
+            self.assertIsNone(response.json()['answer']['rating'])
+            self.assertEqual(Feedback.objects.get(member__person=p).comment,'')
+            self.assertEqual(self.call('/api/activities/').json()['current']['kind'],'completed')
+        self.assertFalse(Achievement.objects.filter(person=p).exists())
     def test_unauthenticated_data_read_does_not_create_anonymous_sessions(self):
         from django.contrib.sessions.models import Session
         before=Session.objects.count()

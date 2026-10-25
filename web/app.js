@@ -16,8 +16,8 @@
   if(window.top!==window.self){main.textContent='Откройте МАЙТИМ в отдельной вкладке.';return;}
   const steps=[
     ['Знакомься с коллегами','МАЙТИМ помогает узнавать людей за пределами своей команды — через разговоры, игры и встречи по интересам.'],
-    ['Участвуй, когда хочется','Каждую неделю — возможность пообщаться с коллегами. Участие добровольное: на каждую неделю ты записываешься сам, мы не продлеваем запись автоматически.'],
-    ['Выбери ближайшую активность','Посмотри, что запланировано, и запишись, если хочешь участвовать. Мы пришлём в Telegram участников и всё необходимое для активности.'],
+    ['Участвуй, когда хочется','Каждую неделю — разнообразные активности, чтобы пообщаться с коллегами. Участие добровольное: ты записываешься сам, без автоматического продления.'],
+    ['Всё важное — в Telegram','Мы пришлём в Telegram участников, инструкции и уведомления о ходе активности. Так ты будешь знать, что делать дальше.'],
   ];
   const $=(node,selector)=>node.querySelector(selector);
   function clone(id){return document.querySelector('#tpl-'+id).content.cloneNode(true);}
@@ -80,7 +80,7 @@
     main.replaceChildren(fragment);window.scrollTo(0,0);$(main,'h1').focus({preventScroll:true});
   }
   function fail(target,retry,message){const fragment=clone('error');if(message)put(fragment,'[role="alert"]',message);$(fragment,'[data-retry]').onclick=retry;target.replaceChildren(fragment);}
-  function loading(target){target.replaceChildren(clone('loading'));}
+  function loading(target,kind='loading'){target.replaceChildren(clone(kind));}
   function sessionLost(){resetCredentials();showIntro(0);}
   function acceptAccount(body){
     if(body.state==='needs_onboarding'){sessionStorage.setItem(stageHint,'needs_onboarding');authenticated=true;sessionStorage.setItem(hint,'true');showIntro(0,true);return false;}
@@ -96,7 +96,7 @@
     const body=await request('/bridge/bootstrap/',{signal});token=body.session;sessionStorage.setItem(storage,token);sessionStorage.setItem(hint,'false');
   }
   async function startLogin(alreadyAuthenticated=false){
-    stopLogin();phase='login';introAuthenticated=alreadyAuthenticated;chrome('Вход через Telegram');back.setAttribute('aria-label','Вернуться к знакомству');nav.hidden=true;closePanel();const fragment=clone('login');main.replaceChildren(fragment);main.querySelector('h1').focus({preventScroll:true});window.scrollTo(0,0);
+    stopLogin();phase='login';introAuthenticated=alreadyAuthenticated;chrome('Авторизация');back.setAttribute('aria-label','Вернуться к знакомству');nav.hidden=true;closePanel();const fragment=clone('login');main.replaceChildren(fragment);main.querySelector('h1').focus({preventScroll:true});window.scrollTo(0,0);
     const target=$(main,'[data-login-content]');loading(target);const version=loginVersion;
     loginAbort=new AbortController();
     try{
@@ -160,7 +160,9 @@
     }
     const upcoming=$(fragment,'[data-next-body]');
     if(next.id){
-      upcoming.append(element('p',next.activity_title),element('p',`Запишись до ${day(next.closes_at)}, вторника, 21:00 МСК.`,'muted'));
+      upcoming.append(element('p',next.activity_title));
+      if(Number.isInteger(next.enrollment_count)&&next.enrollment_count>=0)upcoming.append(element('p',`Уже записались: ${next.enrollment_count}`,'enrollment-count'));
+      upcoming.append(element('p',`Запишись до ${day(next.closes_at)}, вторника, 21:00 МСК.`,'muted'));
       if(!next.registration_open){upcoming.append(element('p','Запись закрыта.'),element('p',next.enrolled?`Ты записан. Состав появится ${day(next.starts_at)} в 09:00 МСК.`:'На этот раунд записаться уже нельзя.','muted'));}
       else if(!next.reachable){const button=element('button','Подключить сообщения для участия','secondary');button.type='button';button.onclick=()=>{logout();};upcoming.append(button);}
       else{
@@ -193,7 +195,7 @@
     closePanel();
     if(screen.hidden)activityScroll=window.scrollY;
     screenVersion++;screenAbort?.abort();screenAbort=new AbortController();const version=screenVersion;
-    screenKind=kind;main.hidden=true;screen.hidden=false;screenTitle.textContent=kind==='profile'?'Профиль':'История активностей';chrome(screenTitle.textContent);loading(screenBody);window.scrollTo(0,previousScroll);screenTitle.focus({preventScroll:true});
+    screenKind=kind;main.hidden=true;screen.hidden=false;screenTitle.textContent=kind==='profile'?'Профиль':'История активностей';chrome(screenTitle.textContent);loading(screenBody,kind==='profile'?'profile-loading':'loading');window.scrollTo(0,previousScroll);screenTitle.focus({preventScroll:true});
     try{
       const body=await request('/api/'+kind+'/',{signal:screenAbort.signal});if(version!==screenVersion)return;if(!acceptAccount(body))return;
       if(kind==='profile')renderProfile(screenBody,body,false);else renderHistory(body.entries);window.scrollTo(0,previousScroll);
@@ -215,11 +217,11 @@
   }
   function renderProfile(target,data,setup){
     const fragment=clone('profile');
-    if(setup){$(fragment,'[data-achievements]').hidden=true;$(fragment,'.profile-grid').classList.add('setup-profile');put(fragment,'[data-profile-heading]','Немного о тебе');put(fragment,'[data-submit]','Продолжить');}
+    if(setup){$(fragment,'[data-achievements]').hidden=true;$(fragment,'[data-profile-actions]').hidden=true;$(fragment,'.profile-grid').classList.add('setup-profile');put(fragment,'[data-profile-heading]','Немного о тебе');put(fragment,'[data-submit]','Продолжить');}
     const form=$(fragment,'[data-profile-form]');form.addEventListener('invalid',()=>toast.error('Проверь поля профиля'),true);Object.entries(data.profile).forEach(([name,value])=>{if(form.elements[name])form.elements[name].value=value;});
     const awards=$(fragment,'[data-awards]');
-    if(!data.achievements?.length)awards.append(element('p','После первой состоявшейся встречи здесь появится «Первый кофе».','muted'));
-    else data.achievements.forEach(award=>awards.append(element('p',award.title,'badge'),element('p',award.description)));
+    if(!data.achievements?.length)awards.append(element('p','Здесь будут появляться ваши достижения.','muted'));
+    else data.achievements.forEach(award=>{const card=clone('achievement');put(card,'[data-award-title]',award.title);put(card,'[data-award-description]',award.description);awards.append(card);});
     $(fragment,'[data-logout]').onclick=logout;
     form.onsubmit=async event=>{
       event.preventDefault();if(form.dataset.busy||!form.reportValidity())return;clearErrors(form);form.dataset.busy='true';const button=$(form,'[data-submit]'),label=button.textContent;button.disabled=true;button.textContent='Сохраняем…';const version=authVersion;
@@ -255,7 +257,7 @@
       if(data.readonly){form.hidden=true;const note=$(fragment,'[data-readonly]');note.hidden=false;note.textContent='Срок изменения результата закончился.'+(data.answer?.rating?` Твоя оценка: ${data.answer.rating} из 5.`:'');}
       else{
         form.addEventListener('invalid',()=>toast.error('Проверь поля оценки'),true);
-        if(data.answer){const outcome=form.querySelector(`[name="outcome"][value="${data.answer.outcome==='yes'?'yes':data.answer.outcome==='no'?'no':''}"]`);if(outcome)outcome.checked=true;const rating=form.querySelector(`[name="rating"][value="${Number(data.answer.rating)}"]`);if(rating)rating.checked=true;form.elements.comment.value=data.answer.comment||'';}
+        if(data.answer){form.elements.outcome.value=['yes','no'].includes(data.answer.outcome)?data.answer.outcome:'';const rating=form.querySelector(`[name="rating"][value="${Number(data.answer.rating)}"]`);if(rating)rating.checked=true;form.elements.comment.value=data.answer.comment||'';}
         form.onsubmit=async event=>{
           event.preventDefault();if(form.dataset.busy||!form.reportValidity())return;clearErrors(form);form.dataset.busy='true';const button=$(form,'[data-submit]');button.disabled=true;button.textContent='Сохраняем…';
           try{
@@ -265,7 +267,7 @@
             if(version!==panelVersion||!document.contains(form))return;
             loadActivities();go(fromHistory?'/history/':'/');
           }catch(error){formError(form,error,'Не удалось отправить оценку. Попробуй ещё раз');}
-          finally{delete form.dataset.busy;button.disabled=false;button.textContent='Сохранить результат';}
+          finally{delete form.dataset.busy;button.disabled=false;button.textContent='Отправить';}
         };
       }
       panelBody.replaceChildren(fragment);window.bindActivityFeedback(panelBody);

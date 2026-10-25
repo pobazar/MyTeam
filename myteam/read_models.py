@@ -1,14 +1,17 @@
 from datetime import timedelta
 from django.conf import settings
 from .models import Round,Enrollment,Member,Unmatched
-from django.db.models import Exists,OuterRef
+from django.db.models import Exists,OuterRef,Count,Subquery,IntegerField,Value
+from django.db.models.functions import Coalesce
 from .activities import get_activity
 
 def dashboard_context(person,now):
     from .rounds import upcoming_start
     next_start=upcoming_start(now)
     week_start=next_start-timedelta(days=7)
+    counts=Enrollment.objects.filter(round_id=OuterRef('pk'),active=True).order_by().values('round_id').annotate(total=Count('pk')).values('total')
     rounds={item.starts_at:item for item in Round.objects.filter(starts_at__in=[week_start,next_start]).annotate(
+        enrollment_count=Coalesce(Subquery(counts),Value(0),output_field=IntegerField()),
         is_enrolled=Exists(Enrollment.objects.filter(person=person,round_id=OuterRef('pk'),active=True)),
         is_unmatched=Exists(Unmatched.objects.filter(person=person,round_id=OuterRef('pk'))))}
     week=rounds.get(week_start)
