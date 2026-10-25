@@ -5,10 +5,7 @@ from .models import Round,RuntimeLock,Job,Notification,Unmatched,Incident,Member
 from .rounds import ensure_round,upcoming_start,RuleError
 from .matching import prepare,validate_draft
 from .notifications import enqueue,owner_message
-from .activities import get_activity
 from .clock import MOSCOW
-from django.conf import settings
-from .pages import web_url
 
 def report(r):
     lines=[f'МАЙТИМ · подготовка {r.starts_at:%d.%m} — {(r.ends_at-timedelta(hours=12)):%d.%m}',f'Записались: {r.enrollments.filter(active=True).count()}',f'Публикация: {r.starts_at.astimezone(MOSCOW):%d.%m %H:%M} МСК. Подтверждение не требуется.']
@@ -57,17 +54,18 @@ def publish(round_id,clock):
     for member in Member.objects.filter(round=r):
         event(f'published:{member.id}','participation',member.person,r,{'meeting_id':str(member.meeting_id),'snapshot':member.snapshot,'activity':r.activity,'rules_version':r.rules_version},clock.now())
     r.state='published';r.published_at=clock.now();r.preparation_error='';r.save(update_fields=['state','published_at','preparation_error'])
-    activity=get_activity(r.activity,r.rules_version)
     for meeting in r.meetings.prefetch_related('members__person'):
         members=list(meeting.members.all())
         from .meeting_roles import persist_organizer
         organizer=persist_organizer(meeting,members)
-        same_city=len({m.snapshot['city_key'] for m in members})==1
-        names='\n'.join(escape(f'{m.snapshot.get("full_name") or (m.snapshot["first_name"]+" "+m.snapshot["last_name"])} · {m.snapshot["team"]} · {m.snapshot["city"]}')+(' — организатор' if str(m.person_id)==organizer else '') for m in members)
+        from .user_messages import assignment
         for m in members:
-            enqueue(f'meeting:{m.id}','meeting',m.person.chat_id or m.person.telegram_id,f'МАЙТИМ · {activity.title} · {r.starts_at:%d.%m} — {(r.ends_at-timedelta(hours=12)):%d.%m}\n{names}\n{('Ты организуешь встречу: предложи участникам время и место или ссылку на звонок. ' if str(m.person_id)==organizer else '')}{activity.instructions(same_city)}\n{web_url('/meetings/'+str(meeting.id)+'/')}',m.person,r,clock.now())
+            text,payload=assignment(r,meeting,members,organizer,m)
+            enqueue(f'meeting:{m.id}','meeting',m.person.chat_id or m.person.telegram_id,text,m.person,r,clock.now(),payload=payload)
+    from .user_messages import unmatched
     for item in Unmatched.objects.filter(round=r).select_related('person'):
-        enqueue(f'unmatched:{r.id}:{item.person_id}','unmatched',item.person.chat_id or item.person.telegram_id,f'МАЙТИМ · {r.starts_at:%d.%m} — {(r.ends_at-timedelta(hours=12)):%d.%m}: пока недостаточно участников для встречи. На следующий раунд можно записаться самостоятельно: {web_url('/')}. Автоматической записи нет.',item.person,r,clock.now())
+        text,payload=unmatched(r)
+        enqueue(f'unmatched:{r.id}:{item.person_id}','unmatched',item.person.chat_id or item.person.telegram_id,text,item.person,r,clock.now(),payload=payload)
     ensure_round(r.starts_at+timedelta(days=7))
     complete_job('publish',r,clock.now())
     return r

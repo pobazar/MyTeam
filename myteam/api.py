@@ -14,6 +14,7 @@ from .feedback import save_feedback
 from .activities import get_activity
 from .rounds import enroll,RuleError
 from .read_models import dashboard_context,history_entries
+from .contacts import participant_url
 
 def response(request,data,status=200):
     return JsonResponse({**data,'csrf_token':get_token(request)},status=status)
@@ -123,7 +124,7 @@ def activities(request):
         'activity_title':week.activity_title if week else None,'meeting_id':str(current.meeting_id) if current else None,
         'answer':answer_data(c['answer']),
         'participants':[{'name':m.snapshot.get('full_name') or f'{m.snapshot.get("first_name", "")} {m.snapshot.get("last_name", "")}'.strip(),'team':m.snapshot['team'],'city':m.snapshot['city'],'is_you':m.person_id==request.person.id,'is_organizer':str(m.person_id)==organizer,
-            'contacts_url':f'https://t.me/{settings.TELEGRAM_BOT_USERNAME}?start=c_{m.id}' if m.person_id!=request.person.id else None} for m in c['members']] if kind=='active' else [],
+            'contacts_url':participant_url(m.snapshot) if m.person_id!=request.person.id else None} for m in c['members']] if kind=='active' else [],
         'instructions':c['instructions'] if kind=='active' else None,
         'same_city':len({m.snapshot['city_key'] for m in c['members']})==1 if current else None,
     },'next':{'id':str(n.id) if n else None,'starts_at':c['next_start'],'ends_at':c['next_end'],

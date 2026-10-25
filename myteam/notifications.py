@@ -30,6 +30,7 @@ def owner_message(key, kind, text, round=None, now=None):
     return result
 
 def eligible(notification, now):
+    if notification.kind=='contacts':return False  # Retired intermediary bot messages.
     if notification.person_id:
         p = Person.objects.get(pk=notification.person_id)
         if (notification.kind not in ('bot_connected','contacts','bot_login') and not p.reachable) or p.chat_id!=notification.chat_id:

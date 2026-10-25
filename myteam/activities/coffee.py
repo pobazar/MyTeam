@@ -22,6 +22,8 @@ class RandomCoffee:
     def feedback_form(self,*args,**kwargs):
         from myteam.feedback import FeedbackForm
         return FeedbackForm(*args,**kwargs)
+    def organizer_instructions(self):
+        return 'Ты организуешь встречу: предложи участникам время и место или ссылку на звонок. '
     def instructions(self, same_city):
         where = 'Вы в одном городе — встретьтесь офлайн за кофе. Организатор предложит удобное место и время. Если встретиться лично не получится, можно созвониться.' if same_city else 'Вы в разных городах — встретьтесь онлайн. Организатор предложит время и удобный сервис звонка.'
         return where + ' Напишите друг другу в Telegram и выберите время. Рекомендуем 20–30 минут. О чём поговорить: чем занимается ваша команда? Что недавно вдохновило? В какое место стоит попутешествовать?'

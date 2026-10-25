@@ -54,6 +54,10 @@ def telegram_webhook(request):
             sender=callback.get('from',{})
             chat=callback.get('message',{}).get('chat',{})
             accepted=False
+            if callback.get('data','').startswith('enroll:'):
+                from .telegram_enrollment import handle_callback
+                handle_callback(callback,Clock())
+                return JsonResponse({'ok':True})
             if chat.get('type')=='private' and callback.get('data','').startswith('login:'):
                 try:attempt_id=uuid.UUID(callback['data'].removeprefix('login:'))
                 except ValueError:attempt_id=None
@@ -67,23 +71,9 @@ def telegram_webhook(request):
             return JsonResponse({'ok': True})
         if text.startswith('/start l_'):
             approve_login(text.removeprefix('/start l_').strip(), sender, chat['id'])
-        elif text.startswith('/start c_'):
-            from .contacts import send_member_contact
-            import uuid
-            try:member_id=uuid.UUID(text.removeprefix('/start c_').strip())
-            except ValueError:return JsonResponse({'ok':True})
-            send_member_contact(sender['id'],chat['id'],member_id,update_id)
-        elif text.startswith('/start m_'):
-            from .contacts import send_contacts
-            import uuid
-            try:
-                meeting_id=uuid.UUID(text.removeprefix('/start m_').strip())
-            except ValueError:
-                return JsonResponse({'ok':True})
-            send_contacts(sender['id'],chat['id'],meeting_id,update_id)
     # User-initiated replies can run immediately; scheduled broadcasts remain guarded.
     from .notifications import drain
-    drain(Clock(),limit=1,force=True,kinds=['bot_connected','contacts','bot_login'])
+    drain(Clock(),limit=1,force=True,kinds=['bot_connected','bot_login'])
     return JsonResponse({'ok': True})
 
 from .profiles import ProfileForm
