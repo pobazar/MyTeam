@@ -1,0 +1,21 @@
+{
+  "component": "tui-appbar",
+  "platform": "iOS 26 web/PWA/WebView",
+  "source": "tui-appbar.fig, page Для web-разработчиков",
+  "status": "Reference fragments from guide, not standalone production-ready implementation",
+  "styleFragments": [
+    "background: rgba(255, 255, 255, 0.7);\nbackdrop-filter: blur(4px) saturate(6) brightness(1.05);\nbox-shadow: 0 8px 32px rgba(0, 0, 0, 0.09);",
+    "::before {\n      box-shadow: inset 0 0 8px\n      var(--tui-background-ios-liquid-glass-glow);\n      opacity: 0.1;\n    }\n\n:after {\n      padding: 1px;\n      background: var(--tui-background-button-ios-liquid-glass-bevel-gradient);\n      mask-image: linear-gradient(#000 0 0), linear-gradient(#000 0 0);\n      mask-origin: content-box, border-box;\n      mask-clip: content-box, border-box;\n      /* stylelint-disable-next-line */\n      -webkit-mask-composite: xor;\n      mask-composite: exclude;\n      filter: brightness(1.05);\n}",
+    "--tui-background-ios-liquid-glass: #ffffffb3;\n--tui-background-ios-liquid-glass-glow: #fff;\n--tui-background-button-ios-liquid-glass-bevel-gradient: linear-gradient(\n      319deg,\n      #fff 4%,\n      #fff 19%,\n      #ffffff1f 40%,\n      #ffffff05 45%,\n      #fff0 48%,\n      #fff0 50%,\n      #fff0 52%,\n      #ffffff05 55%,\n      #ffffff1f 60%,\n      #fff 80%,\n      #fff 96%\n    );\n  }",
+    "--tui-background-ios-liquid-glass: #ffffff1a;\n--tui-background-ios-liquid-glass-glow: #1f1f1fcc;\n--tui-background-button-ios-liquid-glass-bevel-gradient: linear-gradient(\n      319deg,\n      #fff3 4%,\n      #ffffff1f 19%,\n      #ffffff0a 40%,\n      #ffffff05 45%,\n      #fff0 48%,\n      #fff0 50%,\n      #fff0 52%,\n      #ffffff05 55%,\n      #ffffff0a 60%,\n      #ffffff1f 80%,\n      #fff3 96%\n    );",
+    ".container {\n    color: var(--tui-text-ios-liquid-glass);\n    display: flex;\n    flex-flow: row nowrap;\n    align-items: center;\n    gap: 4px;\n    border-radius: var(--t-appbar-height);\n    height: var(--t-appbar-height);\n    background: var(--tui-background-ios-liquid-glass);\n    backdrop-filter: blur(4px) saturate(1.3) brightness(1.05);\n    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.09);\n    position: relative;\n    justify-content: center;\n    transition: transform var(--tui-animation-duration-fast) var(--tui-animation-curve-expressive-entrance),\n      background-color var(--tui-animation-duration-fastest) ease, color var(--tui-animation-duration-fastest) ease,\n      box-shadow var(--tui-animation-duration-fastest) ease, backdrop-filter var(--tui-animation-duration-fastest) ease;",
+    ":active {\n      transform: scale(1.25);\n      filter: brightness(1.5);\n      background: rgb(from var(--tui-background-ios-liquid-glass) r g b / 0.3);   \n}",
+    "@keyframes appbar-enter-fade {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n\n@keyframes appbar-icon-deblur {\n  from {\n    filter: blur(16px);\n    -webkit-filter: blur(16px);\n  }\n  to {\n    filter: blur(0);\n    -webkit-filter: blur(0);\n  }\n}",
+    ".step {\n  position: absolute;\n  z-index: calc(-1 * var(--t-step));\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: calc(120px - 6px * var(--t-step));\n  backdrop-filter: blur(calc(0.06px * var(--t-step)));\n  will-change: backdrop-filter;\n  border-radius: var(--bottom-sheet-border-radius);\n}"
+  ],
+  "importantRules": {
+    "webGlassIsApproximation": true,
+    "neverUseDetachedGlassButtons": true,
+    "lightDarkThemeVaries": true
+  }
+}

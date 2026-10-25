@@ -60,9 +60,9 @@
   function clearViews(){hideScreen();main.hidden=false;chrome('');mainVersion++;mainAbort?.abort();stopLogin();closePanel();mainReady=false;}
   function chrome(title){
     root.dataset.view=phase;document.querySelector('#intro-progress').hidden=true;back.setAttribute('aria-label','Вернуться к активностям');
-    const secondary=Boolean(title);back.hidden=!secondary;barTitle.hidden=phase!=='app';barTitle.textContent=title||'Активности';document.querySelector('.appbar').dataset.secondary=String(secondary);
+    const secondary=Boolean(title);document.querySelector('.appbar').classList.toggle('appbar-detail',secondary);back.hidden=!secondary;barTitle.hidden=!secondary&&phase!=='app';barTitle.textContent=title||'Активности';document.querySelector('.appbar').dataset.secondary=String(secondary);
     document.querySelector('.brand').hidden=secondary;nav.hidden=phase!=='app'||secondary;
-    document.title=title?title+' · МАЙТИМ':'МАЙТИМ';
+    document.title=title?title+' · МАЙТИМ':'МАЙТИМ';requestAnimationFrame(fitAppbarTitles);
   }
   function hideScreen(){screenVersion++;screenAbort?.abort();screenAbort=null;screen.hidden=true;screenKind=null;screenBody.replaceChildren();}
   function returnActivities(){
@@ -95,7 +95,7 @@
     const body=await request('/bridge/bootstrap/',{signal});token=body.session;sessionStorage.setItem(storage,token);sessionStorage.setItem(hint,'false');
   }
   async function startLogin(alreadyAuthenticated=false){
-    stopLogin();phase='login';chrome('');nav.hidden=true;closePanel();const fragment=clone('login');$(fragment,'[data-back-intro]').onclick=()=>showIntro(0,alreadyAuthenticated);main.replaceChildren(fragment);
+    stopLogin();phase='login';introAuthenticated=alreadyAuthenticated;chrome('Вход через Telegram');back.setAttribute('aria-label','Вернуться к знакомству');nav.hidden=true;closePanel();const fragment=clone('login');main.replaceChildren(fragment);main.querySelector('h1').focus({preventScroll:true});window.scrollTo(0,0);
     const target=$(main,'[data-login-content]');loading(target);const version=loginVersion;
     loginAbort=new AbortController();
     try{
@@ -172,8 +172,8 @@
     target.replaceChildren(fragment);
   }
   function openPanel(title,back='/'){
-    panelVersion++;panelAbort?.abort();panelAbort=new AbortController();closeTarget=back;panelTitle.textContent=title;loading(panelBody);if(!panel.open)panel.showModal();
-    document.querySelector('#panel-close').setAttribute('aria-label',back==='/history/'?'Вернуться к истории':'Вернуться к активностям');
+    panelVersion++;panelAbort?.abort();panelAbort=new AbortController();closeTarget=back;panelTitle.textContent=title;loading(panelBody);if(!panel.open)panel.showModal();requestAnimationFrame(fitAppbarTitles);
+    document.querySelector('#panel-close').setAttribute('aria-label','Закрыть оценку');
     return panelVersion;
   }
   async function loadScreen(kind){
@@ -226,7 +226,7 @@
     });
   }
   async function loadFeedback(meetingId,fromHistory){
-    const version=openPanel('Как прошла активность?',fromHistory?'/history/':'/');
+    const version=openPanel('Оценка активности',fromHistory?'/history/':'/');
     try{
       const data=await request('/api/meetings/'+meetingId+'/feedback/',{signal:panelAbort.signal});if(version!==panelVersion)return;if(!acceptAccount(data))return;
       const fragment=clone('feedback');put(fragment,'[data-activity]',data.activity_title+' · '+dates(data.starts_at,data.ends_at));const form=$(fragment,'form');
@@ -274,8 +274,28 @@
     };
     revoke();
   }
-  back.onclick=()=>phase==='intro'?showIntro(Math.max(0,introStep-1),introAuthenticated):go('/');
-  let scrollPending=false;window.addEventListener('scroll',()=>{if(scrollPending)return;scrollPending=true;requestAnimationFrame(()=>{root.classList.toggle('scrolled',window.scrollY>48);scrollPending=false;});},{passive:true});
+  function fitAppbarTitles(){
+    const mobile=matchMedia('(max-width: 720px)').matches;
+    const header=panel.querySelector('.panel-header'),close=document.querySelector('#panel-close');
+    if(mobile&&header.firstElementChild!==close)header.prepend(close);
+    else if(!mobile&&header.lastElementChild!==close)header.append(close);
+    for(const container of [document.querySelector('.appbar-inner'),header]){
+      const title=container===header?panelTitle:barTitle;
+      if(!container.getBoundingClientRect().width||title.hidden)continue;
+      const button=container===header?close:back;
+      const side=button.hidden?0:button.getBoundingClientRect().width;
+      const guard=mobile?(mobileOS==='ios'?Math.max(60,side):side+16):Math.max(100,side+20);
+      container.style.setProperty('--appbar-side',guard+'px');
+      const available=container.clientWidth-2*guard;
+      const range=document.createRange();range.selectNodeContents(title);
+      container.classList.toggle('title-overflow',range.getBoundingClientRect().width>Math.max(0,available));
+    }
+  }
+  const appbarResize=new ResizeObserver(()=>fitAppbarTitles());
+  appbarResize.observe(document.querySelector('.appbar-inner'));appbarResize.observe(panel.querySelector('.panel-header'));
+  window.addEventListener('resize',fitAppbarTitles,{passive:true});
+  back.onclick=()=>phase==='intro'?showIntro(Math.max(0,introStep-1),introAuthenticated):phase==='login'?showIntro(2,introAuthenticated):go('/');
+  let scrollPending=false;window.addEventListener('scroll',()=>{if(scrollPending)return;scrollPending=true;requestAnimationFrame(()=>{root.classList.toggle('scrolled',window.scrollY>48);root.style.setProperty('--appbar-scroll',Math.min(1,window.scrollY/32));scrollPending=false;});},{passive:true});
   nav.querySelectorAll('[data-open]').forEach(button=>button.onclick=()=>go('/'+button.dataset.open+'/'));
   document.querySelector('#panel-close').onclick=()=>go(closeTarget);
   panel.addEventListener('cancel',event=>{event.preventDefault();go(closeTarget);});

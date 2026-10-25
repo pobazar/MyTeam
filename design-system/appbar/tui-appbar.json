@@ -1,0 +1,2238 @@
+{
+  "component": "tui-appbar",
+  "source": "tui-appbar.fig",
+  "description": "Navigation area at the top of an application screen.",
+  "scope": "Only tui-appbar. Does not include imported dependencies or other uploaded design-system components.",
+  "units": "Figma px, not automatically platform dp/pt; map using native platform conventions",
+  "designRules": {
+    "platform": {
+      "iOSNative": "Use system UINavigationBar rather than visually copying Figma; for iOS 26 system glass and scrolling are native.",
+      "AndroidNative": "Custom TUI AppBar follows Material Design 2 navigation bar layout; use native system ripple on presses (XML or Compose).",
+      "PWAWebView": "Implement device-dependent version: visually imitate iOS 26 on iOS web, TUI Material-2-like AppBar on Android web; liquid glass in web is approximation."
+    },
+    "composition": {
+      "regions": [
+        "left/start-action",
+        "middle/content",
+        "right/end-action"
+      ],
+      "left": "Back / Close / Action / none by available variant; docs note the left region may be empty.",
+      "middle": "Title, title+subtitle, progress or custom content; title defaults, custom slot is allowed.",
+      "right": "Icon button(s), text action, close or none. iOS supports one or two grouped buttons or separate buttons.",
+      "avoid": "iOS glass action buttons should not be detached and used outside AppBar."
+    },
+    "responsive": {
+      "ios26HorizontalAndTopPaddingPx": {
+        "default": 16,
+        "widthAtLeast428Px": 20,
+        "plusSystemSafeAreaTop": true
+      },
+      "ios26TextActionHorizontalPaddingPx": {
+        "default": 12,
+        "widthAtLeast428Px": 16
+      },
+      "ios26BottomPadding": "fixed, see component samples",
+      "ios26TitleOverflow": "center across whole AppBar while it fits symmetric free area; otherwise left-align into available space",
+      "ios18CustomMobileLayout": "left and right regions equalized to the larger natural width; min side region 60px; center fills remainder",
+      "androidTitleOverflow": "left-aligned and fades when it does not fit; optional whole-bar centered title",
+      "desktop": "recommend width >=720px; height may grow; center title while it fits, otherwise fade"
+    },
+    "scroll": {
+      "iosNative": "system scrolling effect; style can be soft (progressive blur) or hard (solid backing); use scrollView.topEdgeEffect.isHidden = true to disable when applicable.",
+      "iosWeb": "progressive blur is implemented with blurred layers and gradient overlay; appears with linear 150ms animation; may be disabled when no title",
+      "titleAppearance": {
+        "opacity": [
+          0,
+          1
+        ],
+        "durationToken": "fast",
+        "easingToken": "productive-standard"
+      },
+      "backgroundTransition": {
+        "startScrollPx": 0,
+        "endScrollPx": 32,
+        "interpolation": "linear"
+      },
+      "dynamicAnchors": "When anchor leaves visible region under AppBar, update title with fade; first threshold configurable, subsequent offset 200% of AppBar height.",
+      "scrollShadow": "Do not add a shadow to the AppBar when scrolled (legacy guidance)."
+    },
+    "interaction": {
+      "androidNative": "Use system ripple; web uses action-hover background on press.",
+      "desktop": "On hover use action-hover text color; on press action-pressed.",
+      "iosWeb": "Glass buttons scale on press; when two actions share a container, scale whole container.",
+      "iosTouchAreaPx": [
+        44,
+        44
+      ]
+    },
+    "accessibility": {
+      "readingOrder": "left to right, sequential per element",
+      "androidMaxTextScale": "130% of base typography; icon enlarged 1.25× only at 150% system text scale",
+      "iosNativeTextScaling": "system controls it",
+      "figmaPreviewCaveat": "Scaled-font preview is illustrative and can differ from production."
+    },
+    "customization": {
+      "color": "all elements may be recolored; native iOS auto-adapts button style, web must select light/dark button variant manually",
+      "typography": "font size and weight can be customized",
+      "modal": "enable top indent in sheet, modal or browser; show-top-indent and appbar variable mode available."
+    }
+  },
+  "platformExamples": {
+    "Android": {
+      "role": "system=Android, middle=Title, left=Back, right=Icon",
+      "type": "symbol",
+      "sizePx": [
+        360,
+        56
+      ],
+      "direction": "HORIZONTAL",
+      "mainSizing": "FIXED",
+      "children": [
+        {
+          "role": "Container",
+          "type": "frame",
+          "sizePx": [
+            360,
+            56
+          ],
+          "direction": "HORIZONTAL",
+          "crossAlign": "CENTER",
+          "mainSizing": "FIXED",
+          "children": [
+            {
+              "role": "Left",
+              "type": "frame",
+              "sizePx": [
+                56,
+                56
+              ],
+              "direction": "HORIZONTAL",
+              "paddingLeftPx": 16,
+              "paddingRightPx": 16,
+              "crossAlign": "CENTER",
+              "children": [
+                {
+                  "role": "Icon left",
+                  "type": "frame",
+                  "sizePx": [
+                    24,
+                    24
+                  ]
+                }
+              ]
+            },
+            {
+              "role": "Middle",
+              "type": "frame",
+              "sizePx": [
+                248,
+                56
+              ],
+              "direction": "VERTICAL",
+              "paddingLeftPx": 16,
+              "paddingTopPx": 8,
+              "paddingBottomPx": 8,
+              "mainAlign": "CENTER",
+              "mainSizing": "FIXED",
+              "children": [
+                {
+                  "role": "Title",
+                  "type": "frame",
+                  "sizePx": [
+                    40,
+                    23
+                  ],
+                  "direction": "HORIZONTAL",
+                  "gapPx": 4,
+                  "mainAlign": "CENTER",
+                  "crossAlign": "CENTER",
+                  "crossSizing": "RESIZE_TO_FIT_WITH_IMPLICIT_SIZE"
+                }
+              ]
+            },
+            {
+              "role": "Right",
+              "type": "frame",
+              "sizePx": [
+                56,
+                56
+              ],
+              "direction": "HORIZONTAL",
+              "paddingLeftPx": 16,
+              "paddingRightPx": 16,
+              "mainAlign": "MAX",
+              "crossAlign": "CENTER",
+              "children": [
+                {
+                  "role": "RightIconsCont",
+                  "type": "frame",
+                  "sizePx": [
+                    24,
+                    24
+                  ],
+                  "direction": "HORIZONTAL",
+                  "gapPx": 24,
+                  "crossAlign": "CENTER",
+                  "crossSizing": "RESIZE_TO_FIT"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "iOS 18": {
+      "role": "system=iOS 18, middle=Title, left=Back, right=Text",
+      "type": "symbol",
+      "sizePx": [
+        375,
+        44
+      ],
+      "direction": "HORIZONTAL",
+      "crossAlign": "CENTER",
+      "mainSizing": "FIXED",
+      "children": [
+        {
+          "role": "Container",
+          "type": "frame",
+          "sizePx": [
+            375,
+            44
+          ],
+          "direction": "HORIZONTAL",
+          "crossAlign": "CENTER",
+          "mainSizing": "FIXED",
+          "children": [
+            {
+              "role": "Left",
+              "type": "frame",
+              "sizePx": [
+                125,
+                44
+              ],
+              "direction": "HORIZONTAL",
+              "crossAlign": "CENTER",
+              "mainSizing": "FIXED",
+              "children": [
+                {
+                  "role": "Icon left",
+                  "type": "frame",
+                  "sizePx": [
+                    32,
+                    44
+                  ]
+                }
+              ]
+            },
+            {
+              "role": "Middle",
+              "type": "frame",
+              "sizePx": [
+                125,
+                44
+              ],
+              "direction": "VERTICAL",
+              "mainAlign": "CENTER",
+              "crossAlign": "CENTER",
+              "mainSizing": "FIXED",
+              "children": [
+                {
+                  "role": "Title",
+                  "type": "frame",
+                  "sizePx": [
+                    36,
+                    20
+                  ],
+                  "direction": "HORIZONTAL",
+                  "gapPx": 4,
+                  "mainAlign": "CENTER",
+                  "crossAlign": "CENTER",
+                  "crossSizing": "RESIZE_TO_FIT_WITH_IMPLICIT_SIZE"
+                }
+              ]
+            },
+            {
+              "role": "Right",
+              "type": "frame",
+              "sizePx": [
+                125,
+                44
+              ],
+              "direction": "HORIZONTAL",
+              "gapPx": 10,
+              "mainAlign": "MAX",
+              "crossAlign": "CENTER",
+              "mainSizing": "FIXED",
+              "children": [
+                {
+                  "role": "RightActionCont",
+                  "type": "frame",
+                  "sizePx": [
+                    65,
+                    44
+                  ],
+                  "direction": "HORIZONTAL",
+                  "gapPx": 10,
+                  "paddingRightPx": 16,
+                  "mainAlign": "CENTER",
+                  "crossAlign": "CENTER"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "iOS 26": {
+      "role": "system=iOS 26, middle=Title, left=Back, right=Icon",
+      "type": "symbol",
+      "sizePx": [
+        375,
+        54
+      ],
+      "direction": "VERTICAL",
+      "paddingLeftPx": 16,
+      "paddingRightPx": 16,
+      "paddingBottomPx": 10,
+      "mainAlign": "CENTER",
+      "children": [
+        {
+          "role": "Container",
+          "type": "frame",
+          "sizePx": [
+            343,
+            44
+          ],
+          "direction": "HORIZONTAL",
+          "crossAlign": "CENTER",
+          "mainSizing": "FIXED",
+          "crossSizing": "RESIZE_TO_FIT_WITH_IMPLICIT_SIZE",
+          "children": [
+            {
+              "role": "Left",
+              "type": "frame",
+              "sizePx": [
+                114.333,
+                44
+              ],
+              "direction": "HORIZONTAL",
+              "crossAlign": "CENTER",
+              "mainSizing": "FIXED",
+              "children": [
+                {
+                  "role": "system-btn",
+                  "type": "instance",
+                  "sizePx": [
+                    44,
+                    44
+                  ],
+                  "direction": "HORIZONTAL",
+                  "gapPx": -4,
+                  "paddingLeftPx": 7,
+                  "paddingRightPx": 7,
+                  "mainAlign": "CENTER",
+                  "crossAlign": "CENTER",
+                  "radiusPx": 296
+                }
+              ]
+            },
+            {
+              "role": "Middle",
+              "type": "frame",
+              "sizePx": [
+                114.333,
+                44
+              ],
+              "direction": "VERTICAL",
+              "mainAlign": "CENTER",
+              "crossAlign": "CENTER",
+              "mainSizing": "FIXED",
+              "children": [
+                {
+                  "role": "Title",
+                  "type": "text",
+                  "sizePx": [
+                    36,
+                    20
+                  ],
+                  "textExample": "Title",
+                  "font": {
+                    "family": "SF Pro Text",
+                    "weight": "Semibold",
+                    "sizePx": 17,
+                    "lineHeight": {
+                      "value": 100,
+                      "units": "PERCENT"
+                    }
+                  },
+                  "color": "#333333",
+                  "tokenExternal": true
+                }
+              ]
+            },
+            {
+              "role": "Right",
+              "type": "frame",
+              "sizePx": [
+                114.333,
+                44
+              ],
+              "direction": "HORIZONTAL",
+              "gapPx": 10,
+              "mainAlign": "MAX",
+              "crossAlign": "CENTER",
+              "mainSizing": "FIXED",
+              "children": [
+                {
+                  "role": "system-btn",
+                  "type": "instance",
+                  "sizePx": [
+                    44,
+                    44
+                  ],
+                  "direction": "HORIZONTAL",
+                  "gapPx": 24,
+                  "paddingLeftPx": 10,
+                  "paddingRightPx": 10,
+                  "mainAlign": "CENTER",
+                  "crossAlign": "CENTER",
+                  "radiusPx": 296
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "Desktop": {
+      "role": "middle=title, right=none",
+      "type": "symbol",
+      "sizePx": [
+        1104,
+        64
+      ],
+      "direction": "HORIZONTAL",
+      "crossAlign": "CENTER",
+      "mainSizing": "FIXED",
+      "crossSizing": "RESIZE_TO_FIT_WITH_IMPLICIT_SIZE",
+      "children": [
+        {
+          "role": "content-stack",
+          "type": "frame",
+          "sizePx": [
+            1104,
+            64
+          ],
+          "direction": "HORIZONTAL",
+          "gapPx": 20,
+          "crossAlign": "CENTER",
+          "mainSizing": "FIXED",
+          "children": [
+            {
+              "role": "left-stack",
+              "type": "frame",
+              "sizePx": [
+                354.667,
+                64
+              ],
+              "direction": "HORIZONTAL",
+              "crossAlign": "CENTER",
+              "mainSizing": "FIXED",
+              "children": [
+                {
+                  "role": "left-icon-cont",
+                  "type": "frame",
+                  "sizePx": [
+                    18,
+                    64
+                  ],
+                  "direction": "HORIZONTAL",
+                  "gapPx": 10,
+                  "paddingTopPx": 22,
+                  "paddingRightPx": 2,
+                  "paddingBottomPx": 20,
+                  "crossAlign": "CENTER"
+                },
+                {
+                  "role": "left-text-cont",
+                  "type": "frame",
+                  "sizePx": [
+                    336.667,
+                    64
+                  ],
+                  "direction": "HORIZONTAL",
+                  "gapPx": 10,
+                  "crossAlign": "CENTER",
+                  "mainSizing": "FIXED"
+                }
+              ]
+            },
+            {
+              "role": "middle-stack",
+              "type": "frame",
+              "sizePx": [
+                354.667,
+                42
+              ],
+              "direction": "VERTICAL",
+              "gapPx": 4,
+              "paddingTopPx": 8,
+              "paddingBottomPx": 10,
+              "mainAlign": "CENTER",
+              "crossAlign": "CENTER",
+              "children": [
+                {
+                  "role": "title-layout",
+                  "type": "frame",
+                  "sizePx": [
+                    354.667,
+                    24
+                  ],
+                  "direction": "HORIZONTAL",
+                  "gapPx": 4,
+                  "mainAlign": "CENTER",
+                  "crossAlign": "CENTER",
+                  "mainSizing": "FIXED",
+                  "crossSizing": "RESIZE_TO_FIT_WITH_IMPLICIT_SIZE"
+                }
+              ]
+            },
+            {
+              "role": "right-stack",
+              "type": "frame",
+              "sizePx": [
+                354.667,
+                64
+              ],
+              "direction": "HORIZONTAL",
+              "gapPx": 10,
+              "mainAlign": "MAX",
+              "crossAlign": "CENTER",
+              "mainSizing": "FIXED"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "variants": {
+    "primary": [
+      {
+        "platform": "iOS 18",
+        "middle": "Title",
+        "left": "Close",
+        "right": "Text",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS 18",
+        "middle": "Progress",
+        "left": "Close",
+        "right": "Text",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS 18",
+        "middle": "None",
+        "left": "Close",
+        "right": "Text",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS 18",
+        "middle": "Title",
+        "left": "Close",
+        "right": "Icon",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS 18",
+        "middle": "Progress",
+        "left": "Close",
+        "right": "Icon",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS 18",
+        "middle": "None",
+        "left": "Close",
+        "right": "Icon",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS 18",
+        "middle": "Title",
+        "left": "Close",
+        "right": "None",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS 18",
+        "middle": "None",
+        "left": "Close",
+        "right": "None",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS 18",
+        "middle": "Progress",
+        "left": "Close",
+        "right": "None",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS 18",
+        "middle": "Title",
+        "left": "Back",
+        "right": "Text",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS 18",
+        "middle": "Progress",
+        "left": "Back",
+        "right": "Text",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS 18",
+        "middle": "None",
+        "left": "Back",
+        "right": "Text",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS 18",
+        "middle": "Title",
+        "left": "Back",
+        "right": "Icon",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS 18",
+        "middle": "Progress",
+        "left": "Back",
+        "right": "Icon",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS 18",
+        "middle": "None",
+        "left": "Back",
+        "right": "Icon",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS 18",
+        "middle": "Title",
+        "left": "Back",
+        "right": "None",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS 18",
+        "middle": "Progress",
+        "left": "Back",
+        "right": "None",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS 18",
+        "middle": "None",
+        "left": "Back",
+        "right": "None",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS 18",
+        "middle": "Title",
+        "left": "None",
+        "right": "Text",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS 18",
+        "middle": "Progress",
+        "left": "None",
+        "right": "Text",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS 18",
+        "middle": "None",
+        "left": "None",
+        "right": "Text",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS 18",
+        "middle": "Title",
+        "left": "None",
+        "right": "Icon",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS 18",
+        "middle": "None",
+        "left": "None",
+        "right": "Icon",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS 18",
+        "middle": "None",
+        "left": "None",
+        "right": "None",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Title",
+        "left": "Back",
+        "right": "Icon",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Title",
+        "left": "Back",
+        "right": "Text",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Title",
+        "left": "Close",
+        "right": "Text",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Title",
+        "left": "Close",
+        "right": "Icon",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Title",
+        "left": "Back",
+        "right": "None",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Title",
+        "left": "Close",
+        "right": "None",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "None",
+        "left": "Close",
+        "right": "None",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Title",
+        "left": "None",
+        "right": "Icon",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Title",
+        "left": "None",
+        "right": "Text",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Progress",
+        "left": "Back",
+        "right": "Icon",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Progress",
+        "left": "Close",
+        "right": "Icon",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Progress",
+        "left": "Close",
+        "right": "Text",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Progress",
+        "left": "Back",
+        "right": "Text",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "None",
+        "left": "Back",
+        "right": "Text",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "None",
+        "left": "None",
+        "right": "Text",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Progress",
+        "left": "None",
+        "right": "Text",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "None",
+        "left": "Back",
+        "right": "Icon",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "None",
+        "left": "Close",
+        "right": "Icon",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "None",
+        "left": "Close",
+        "right": "Text",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Progress",
+        "left": "Back",
+        "right": "None",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Progress",
+        "left": "Close",
+        "right": "None",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "None",
+        "left": "Back",
+        "right": "None",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "None",
+        "left": "None",
+        "right": "None",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "None",
+        "left": "None",
+        "right": "Icon",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "iOS 26",
+        "middle": "Title",
+        "left": "Back",
+        "right": "Icon",
+        "sizePx": [
+          375,
+          54
+        ]
+      },
+      {
+        "platform": "iOS 26",
+        "middle": "None",
+        "left": "Back",
+        "right": "Icon",
+        "sizePx": [
+          375,
+          54
+        ]
+      },
+      {
+        "platform": "iOS 26",
+        "middle": "Progress",
+        "left": "Back",
+        "right": "Icon",
+        "sizePx": [
+          375,
+          54
+        ]
+      },
+      {
+        "platform": "iOS 26",
+        "middle": "Progress",
+        "left": "Back",
+        "right": "Text",
+        "sizePx": [
+          375,
+          54
+        ]
+      },
+      {
+        "platform": "iOS 26",
+        "middle": "Progress",
+        "left": "None",
+        "right": "Text",
+        "sizePx": [
+          375,
+          54
+        ]
+      },
+      {
+        "platform": "iOS 26",
+        "middle": "Title",
+        "left": "Back",
+        "right": "Text",
+        "sizePx": [
+          375,
+          54
+        ]
+      },
+      {
+        "platform": "iOS 26",
+        "middle": "None",
+        "left": "Back",
+        "right": "Text",
+        "sizePx": [
+          375,
+          54
+        ]
+      },
+      {
+        "platform": "iOS 26",
+        "middle": "Title",
+        "left": "None",
+        "right": "Icon",
+        "sizePx": [
+          375,
+          54
+        ]
+      },
+      {
+        "platform": "iOS 26",
+        "middle": "None",
+        "left": "None",
+        "right": "Icon",
+        "sizePx": [
+          375,
+          54
+        ]
+      },
+      {
+        "platform": "iOS 26",
+        "middle": "Title",
+        "left": "Close",
+        "right": "Icon",
+        "sizePx": [
+          375,
+          54
+        ]
+      },
+      {
+        "platform": "iOS 26",
+        "middle": "None",
+        "left": "Close",
+        "right": "Icon",
+        "sizePx": [
+          375,
+          54
+        ]
+      },
+      {
+        "platform": "iOS 26",
+        "middle": "Progress",
+        "left": "Close",
+        "right": "Icon",
+        "sizePx": [
+          375,
+          54
+        ]
+      },
+      {
+        "platform": "iOS 26",
+        "middle": "Progress",
+        "left": "Close",
+        "right": "Text",
+        "sizePx": [
+          375,
+          54
+        ]
+      },
+      {
+        "platform": "iOS 26",
+        "middle": "Title",
+        "left": "Close",
+        "right": "Text",
+        "sizePx": [
+          375,
+          54
+        ]
+      },
+      {
+        "platform": "iOS 26",
+        "middle": "None",
+        "left": "Close",
+        "right": "Text",
+        "sizePx": [
+          375,
+          54
+        ]
+      },
+      {
+        "platform": "iOS 26",
+        "middle": "Title",
+        "left": "None",
+        "right": "Text",
+        "sizePx": [
+          375,
+          54
+        ]
+      },
+      {
+        "platform": "iOS 26",
+        "middle": "None",
+        "left": "None",
+        "right": "Text",
+        "sizePx": [
+          375,
+          54
+        ]
+      },
+      {
+        "platform": "iOS 26",
+        "middle": "Title",
+        "left": "Close",
+        "right": "None",
+        "sizePx": [
+          375,
+          54
+        ]
+      },
+      {
+        "platform": "iOS 26",
+        "middle": "Title",
+        "left": "Back",
+        "right": "None",
+        "sizePx": [
+          375,
+          54
+        ]
+      },
+      {
+        "platform": "iOS 26",
+        "middle": "Title",
+        "left": "None",
+        "right": "None",
+        "sizePx": [
+          375,
+          54
+        ]
+      },
+      {
+        "platform": "iOS 26",
+        "middle": "Progress",
+        "left": "Back",
+        "right": "None",
+        "sizePx": [
+          375,
+          54
+        ]
+      },
+      {
+        "platform": "iOS 26",
+        "middle": "Progress",
+        "left": "Close",
+        "right": "None",
+        "sizePx": [
+          375,
+          54
+        ]
+      },
+      {
+        "platform": "iOS 26",
+        "middle": "None",
+        "left": "Back",
+        "right": "None",
+        "sizePx": [
+          375,
+          54
+        ]
+      },
+      {
+        "platform": "iOS 26",
+        "middle": "None",
+        "left": "Close",
+        "right": "None",
+        "sizePx": [
+          375,
+          54
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Title",
+        "left": "None",
+        "right": "None",
+        "sizePx": [
+          360,
+          56
+        ]
+      },
+      {
+        "platform": "iOS 18",
+        "middle": "Title",
+        "left": "None",
+        "right": "None",
+        "sizePx": [
+          375,
+          44
+        ]
+      }
+    ],
+    "additionalFromOtherAppbarSet": [
+      {
+        "platform": "iOS",
+        "middle": "Title",
+        "left": "Action",
+        "right": "Action",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Title",
+        "left": "Close",
+        "right": "Action",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Title + Subtitle",
+        "left": "Action",
+        "right": "Action",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Title + Subtitle",
+        "left": "Close",
+        "right": "Action",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Progress",
+        "left": "Action",
+        "right": "Action",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Progress",
+        "left": "Close",
+        "right": "Action",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "None",
+        "left": "Action",
+        "right": "Action",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "None",
+        "left": "Close",
+        "right": "Action",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Title",
+        "left": "Action",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Title",
+        "left": "Close",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Title + Subtitle",
+        "left": "Action",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Title + Subtitle",
+        "left": "Close",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Progress",
+        "left": "Close",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Progress",
+        "left": "Action",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "None",
+        "left": "Action",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "None",
+        "left": "Close",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Title",
+        "left": "Action",
+        "right": "None",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Title",
+        "left": "Close",
+        "right": "None",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "None",
+        "left": "Close",
+        "right": "None",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Title + Subtitle",
+        "left": "Action",
+        "right": "None",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Title + Subtitle",
+        "left": "Close",
+        "right": "None",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Progress",
+        "left": "Action",
+        "right": "None",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Progress",
+        "left": "Close",
+        "right": "None",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "None",
+        "left": "Action",
+        "right": "None",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Title",
+        "left": "Back",
+        "right": "Action",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Title + Subtitle",
+        "left": "Back",
+        "right": "Action",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Progress",
+        "left": "Back",
+        "right": "Action",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "None",
+        "left": "Back",
+        "right": "Action",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Title",
+        "left": "Back",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Title + Subtitle",
+        "left": "Back",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Progress",
+        "left": "Back",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "None",
+        "left": "Back",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Title",
+        "left": "Back",
+        "right": "None",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Title",
+        "left": "Back",
+        "right": "Close",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Title + Subtitle",
+        "left": "Back",
+        "right": "None",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Progress",
+        "left": "Back",
+        "right": "None",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Progress",
+        "left": "Back",
+        "right": "Close",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "None",
+        "left": "Back",
+        "right": "None",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Title",
+        "left": "None",
+        "right": "Action",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Title + Subtitle",
+        "left": "None",
+        "right": "Action",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Progress",
+        "left": "None",
+        "right": "Action",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "None",
+        "left": "None",
+        "right": "Action",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Title",
+        "left": "None",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Title + Subtitle",
+        "left": "None",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Progress",
+        "left": "None",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "None",
+        "left": "None",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "None",
+        "left": "None",
+        "right": "Close",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Title",
+        "left": "None",
+        "right": "None",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Title + Subtitle",
+        "left": "None",
+        "right": "None",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "Progress",
+        "left": "None",
+        "right": "None",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "iOS",
+        "middle": "None",
+        "left": "None",
+        "right": "None",
+        "sizePx": [
+          375,
+          44
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Title",
+        "left": "Back",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Title",
+        "left": "Back",
+        "right": "Action",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Title",
+        "left": "Close",
+        "right": "Action",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Title",
+        "left": "Close",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Title",
+        "left": "Back",
+        "right": "Close",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Title",
+        "left": "None",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Title",
+        "left": "None",
+        "right": "Action",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Title + Subtitle",
+        "left": "Back",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Title + Subtitle",
+        "left": "Close",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Title + Subtitle",
+        "left": "None",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Title + Subtitle",
+        "left": "Back",
+        "right": "None",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Title + Subtitle",
+        "left": "Close",
+        "right": "None",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Title + Subtitle",
+        "left": "None",
+        "right": "None",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Progress",
+        "left": "Back",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Progress",
+        "left": "Close",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Progress",
+        "left": "Close",
+        "right": "Action",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Progress",
+        "left": "Back",
+        "right": "Action",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "None",
+        "left": "Back",
+        "right": "Action",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "None",
+        "left": "None",
+        "right": "Action",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Progress",
+        "left": "None",
+        "right": "Action",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "None",
+        "left": "Back",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "None",
+        "left": "Close",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "None",
+        "left": "Close",
+        "right": "Action",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Progress",
+        "left": "Back",
+        "right": "Close",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Progress",
+        "left": "None",
+        "right": "None",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "Progress",
+        "left": "None",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "None",
+        "left": "None",
+        "right": "Icons",
+        "sizePx": [
+          375,
+          56
+        ]
+      },
+      {
+        "platform": "Android",
+        "middle": "None",
+        "left": "None",
+        "right": "Close",
+        "sizePx": [
+          375,
+          56
+        ]
+      }
+    ],
+    "desktop": [
+      {
+        "platform": "Desktop",
+        "middle": "title",
+        "left": "",
+        "right": "none",
+        "sizePx": [
+          1104,
+          64
+        ]
+      },
+      {
+        "platform": "Desktop",
+        "middle": "title",
+        "left": "",
+        "right": "icon",
+        "sizePx": [
+          1104,
+          64
+        ]
+      },
+      {
+        "platform": "Desktop",
+        "middle": "title",
+        "left": "",
+        "right": "text",
+        "sizePx": [
+          1104,
+          64
+        ]
+      },
+      {
+        "platform": "Desktop",
+        "middle": "progress-bar",
+        "left": "",
+        "right": "text",
+        "sizePx": [
+          1104,
+          64
+        ]
+      },
+      {
+        "platform": "Desktop",
+        "middle": "progress-bar",
+        "left": "",
+        "right": "icon",
+        "sizePx": [
+          1104,
+          64
+        ]
+      },
+      {
+        "platform": "Desktop",
+        "middle": "progress-bar",
+        "left": "",
+        "right": "none",
+        "sizePx": [
+          1104,
+          64
+        ]
+      },
+      {
+        "platform": "Desktop",
+        "middle": "none",
+        "left": "",
+        "right": "text",
+        "sizePx": [
+          1104,
+          64
+        ]
+      },
+      {
+        "platform": "Desktop",
+        "middle": "none",
+        "left": "",
+        "right": "icon",
+        "sizePx": [
+          1104,
+          64
+        ]
+      },
+      {
+        "platform": "Desktop",
+        "middle": "none",
+        "left": "",
+        "right": "none",
+        "sizePx": [
+          1104,
+          64
+        ]
+      }
+    ],
+    "notes": "Primary list is an actual published-looking appbar component set, additional list is from a second internal appbar set. Not a Cartesian product: only enumerated combinations are represented."
+  },
+  "typographyExamples": {
+    "Android": [
+      {
+        "usedFor": [
+          "title"
+        ],
+        "family": "Roboto",
+        "weight": "Medium",
+        "sizePx": 20,
+        "lineHeight": {
+          "value": 100,
+          "units": "PERCENT"
+        },
+        "color": "#333333"
+      },
+      {
+        "usedFor": [
+          "actionright"
+        ],
+        "family": "Roboto",
+        "weight": "Regular",
+        "sizePx": 16,
+        "lineHeight": {
+          "value": 100,
+          "units": "PERCENT"
+        },
+        "color": "#428BF9"
+      }
+    ],
+    "iOS 18": [
+      {
+        "usedFor": [
+          "actionleft",
+          "actionright"
+        ],
+        "family": "SF Pro Text",
+        "weight": "Regular",
+        "sizePx": 17,
+        "lineHeight": {
+          "value": 100,
+          "units": "PERCENT"
+        },
+        "color": "#428BF9"
+      },
+      {
+        "usedFor": [
+          "title"
+        ],
+        "family": "SF Pro Text",
+        "weight": "Semibold",
+        "sizePx": 17,
+        "lineHeight": {
+          "value": 100,
+          "units": "PERCENT"
+        },
+        "color": "#333333"
+      }
+    ],
+    "iOS 26": [
+      {
+        "usedFor": [
+          "title"
+        ],
+        "family": "SF Pro Text",
+        "weight": "Semibold",
+        "sizePx": 17,
+        "lineHeight": {
+          "value": 100,
+          "units": "PERCENT"
+        },
+        "color": "#333333"
+      }
+    ]
+  },
+  "localVariables": {
+    "height": {
+      "type": "FLOAT",
+      "byMode": {
+        "default": 44,
+        "modal-view": 56
+      }
+    },
+    "show-top-indent": {
+      "type": "BOOLEAN",
+      "byMode": {
+        "default": false,
+        "modal-view": true
+      }
+    }
+  },
+  "externalReferences": "Some Figma styles point at external libraries, so example HEX values may not be token-authoritative across themes."
+}
