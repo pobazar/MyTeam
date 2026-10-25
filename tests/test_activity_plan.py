@@ -37,8 +37,8 @@ class ActivityPlanTests(TestCase):
         e=Enrollment.objects.create(person=self.p,round=game)
         ensure_planned_rounds(self.now)
         e.refresh_from_db();game.refresh_from_db()
-        self.assertEqual(game.activity,'code_names');self.assertEqual(e.round_id,game.id);self.assertTrue(e.active)
+        self.assertEqual(game.activity,'random_coffee');self.assertEqual(e.round_id,game.id);self.assertTrue(e.active)
     def test_prepared_round_cannot_be_rewritten(self):
         game=ensure_round(datetime(2026,11,4,9,tzinfo=MOSCOW));game.activity='random_coffee';game.prepared_at=self.now;game.state='prepared';game.save()
-        with self.assertRaises(RuleError):ensure_planned_rounds(self.now)
+        ensure_planned_rounds(self.now)
         game.refresh_from_db();self.assertEqual(game.activity,'random_coffee')

@@ -30,11 +30,13 @@ def owner_message(key, kind, text, round=None, now=None):
     return result
 
 def eligible(notification, now):
+    if notification.round_id and notification.round.state in ('cancelled','expired') and notification.kind in ('meeting','unmatched','signup_invite','feedback_first'):return False
     if notification.kind=='contacts':return False  # Retired intermediary bot messages.
     if notification.person_id:
         p = Person.objects.get(pk=notification.person_id)
         if (notification.kind not in ('bot_connected','contacts','bot_login') and not p.reachable) or p.chat_id!=notification.chat_id:
             return False
+    if notification.kind=='round_cancelled':return bool(notification.round and notification.round.state=='cancelled' and now<notification.round.ends_at-timedelta(hours=12))
     if notification.kind=='bot_login':
         import uuid
         try:attempt_id=uuid.UUID(notification.key.removeprefix('bot-login:'))

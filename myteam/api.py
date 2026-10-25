@@ -111,7 +111,9 @@ def answer_data(answer):
 def activities(request):
     c=dashboard_context(request.person,Clock().now())
     current=c['current'];week=c['week'];n=c['next_round']
-    if c['awaiting_publication']:kind='preparing' if c['current_enrolled'] else 'upcoming'
+    if week and week.state=='cancelled':kind='cancelled'
+    elif week and week.publication_paused and (week.selection or {}).get('pause_origin')!='placeholder' and not week.published_at:kind='paused'
+    elif c['awaiting_publication']:kind='preparing' if c['current_enrolled'] else 'upcoming'
     elif c['finished']:kind='completed'
     elif current:kind='active'
     elif c['unmatched']:kind='unmatched'
@@ -129,7 +131,7 @@ def activities(request):
         'same_city':len({m.snapshot['city_key'] for m in c['members']})==1 if current else None,
     },'next':{'id':str(n.id) if n else None,'starts_at':c['next_start'],'ends_at':c['next_end'],
         'closes_at':n.closes_at if n else None,'activity_title':n.activity_title if n else None,
-        'enrollment_count':n.enrollment_count if n else 0,
+        'available':bool(n and n.activity!='unavailable'),'enrollment_count':n.enrollment_count if n else 0,
         'enrolled':c['enrolled'],'registration_open':c['registration_open'],'reachable':request.person.reachable}})
 
 @require_POST

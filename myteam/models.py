@@ -54,15 +54,19 @@ class Round(Entity):
     prepares_at = models.DateTimeField()
     activity = models.CharField(max_length=40, default='random_coffee')
     rules_version = models.PositiveSmallIntegerField(default=1)
-    state = models.CharField(max_length=20, default='open', choices=[(s,s) for s in ('open','closed','prepared','published','completed','expired')])
+    state = models.CharField(max_length=20, default='open', choices=[(s,s) for s in ('open','closed','prepared','published','completed','expired','cancelled')])
     publication_paused = models.BooleanField(default=False)
     prepared_at = models.DateTimeField(null=True)
     published_at = models.DateTimeField(null=True)
     preparation_error = models.CharField(max_length=200, blank=True)
+    selection = models.JSONField(default=dict,blank=True,db_default={})
+    cancelled_at = models.DateTimeField(null=True,blank=True)
+    cancellation_reason = models.CharField(max_length=40,blank=True,db_default='')
     @property
     def activity_title(self):
         from .activities import get_activity
-        return get_activity(self.activity,self.rules_version).title
+        try:return get_activity(self.activity,self.rules_version).title
+        except KeyError:return (self.selection or {}).get('title','Активность')
     class Meta:
         constraints = [models.CheckConstraint(condition=Q(ends_at__gt=models.F('starts_at')), name='round_positive_period')]
 

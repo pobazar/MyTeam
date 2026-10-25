@@ -17,10 +17,15 @@ def dashboard_context(person,now):
     week_start=display_week_start(now)
     next_start=week_start+timedelta(days=7)
     counts=Enrollment.objects.filter(round_id=OuterRef('pk'),active=True).order_by().values('round_id').annotate(total=Count('pk')).values('total')
-    rounds={item.starts_at:item for item in Round.objects.filter(starts_at__in=[week_start,next_start]).annotate(
+    query=Round.objects.filter(starts_at__in=[week_start,next_start]).annotate(
         enrollment_count=Coalesce(Subquery(counts),Value(0),output_field=IntegerField()),
         is_enrolled=Exists(Enrollment.objects.filter(person=person,round_id=OuterRef('pk'),active=True)),
-        is_unmatched=Exists(Unmatched.objects.filter(person=person,round_id=OuterRef('pk'))))}
+        is_unmatched=Exists(Unmatched.objects.filter(person=person,round_id=OuterRef('pk'))))
+    rounds={item.starts_at:item for item in query}
+    if next_start not in rounds or rounds[next_start].activity=='unavailable':
+        from .rounds import ensure_round
+        ensure_round(next_start)
+        rounds[next_start]=query.get(starts_at=next_start)
     week=rounds.get(week_start)
     r=rounds.get(next_start)
     if r and r.state=='expired':r=None
@@ -30,7 +35,8 @@ def dashboard_context(person,now):
     members=list(current.meeting.members.all()) if current else []
     from .contacts import participant_url
     for member in members:member.contact_url=participant_url(member.snapshot) if member.person_id!=person.id else None
-    activity=get_activity(week.activity,week.rules_version) if week else None
+    try:activity=get_activity(week.activity,week.rules_version) if week else None
+    except KeyError:activity=None
     enrolled=bool(r and r.is_enrolled)
     return {
         'person':person,'next_round':r,'next_start':next_start,'next_end':display_end(next_start),
@@ -39,8 +45,8 @@ def dashboard_context(person,now):
         'unmatched':bool(week and week.is_unmatched),
         'new_here':person.created_at>=week_start,'enrolled':enrolled,'awaiting_publication':now<week_start,
         'activity_template':activity.card_template if activity else '',
-        'instructions':activity.instructions(len({m.snapshot['city_key'] for m in members})==1) if current else '',
-        'registration_open':bool(r and r.state=='open' and now<r.closes_at),
+        'instructions':activity.instructions(len({m.snapshot['city_key'] for m in members})==1) if current and activity else '',
+        'registration_open':bool(r and r.activity!='unavailable' and r.state=='open' and now<r.closes_at),
     }
 
 

@@ -9,7 +9,7 @@ import urllib.request
 
 API='https://myteam-backend-eu.onrender.com'
 ENDPOINT=API+'/internal/schedule/'
-SCHEDULES={'0 6 * * 2':'feedback','0 18 * * 2':'prepare','0 6 * * 3':'publish','0 6 * * 4':'invite'}
+SCHEDULES={'0 6 * * 2':'feedback','0 18 * * 2':'prepare','0 6 * * 3':'publish','30 6 * * 3':'publish','5 12 * * 3':'publish','0 6 * * 4':'invite'}
 
 def request(url,headers=None,data=None,timeout=45):
     # Never follow a redirect carrying the GitHub credential or signed identity.
@@ -45,7 +45,9 @@ def main():
                 return 0
             if result.get('round_date'):body['round_date']=result['round_date']
             print('Event batch:',json.dumps({k:result.get(k) for k in ('event','round_date','status','skipped','processed','pending','stage_errors')}))
-            if result.get('status') in ('ok','paused') and result.get('pending')==0:return 0
+            if result.get('pending')==0:
+                if result.get('status') in ('ok','paused','cancelled'):return 0
+                if result.get('status')=='blocked':return 1
             delay=max(1,min(60,int(result.get('retry_after') or 30)))
         except urllib.error.HTTPError as error:
             # No exception bodies or URLs: they can contain credentials.

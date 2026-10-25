@@ -1,6 +1,8 @@
 import json
 import time
 from types import SimpleNamespace
+from datetime import datetime
+from myteam.clock import MOSCOW
 from unittest.mock import patch
 import jwt
 from cryptography.hazmat.primitives.asymmetric import rsa
@@ -45,7 +47,7 @@ class SchedulerTests(TestCase):
         from django.utils import timezone
         from myteam.rounds import ensure_round
         from myteam.scheduled_events import Outcome
-        r=ensure_round(timezone.now())
+        r=ensure_round(datetime(2026,10,28,9,tzinfo=MOSCOW))
         Notification.objects.create(key='isolated',kind='signup_invite',round=r,chat_id=1,text='test',next_attempt_at=timezone.now())
         with patch.object(scheduler.KEYS,'get_signing_key_from_jwt',return_value=SimpleNamespace(key=self.key.public_key())),patch.object(scheduler,'execute') as tick,patch.object(scheduler,'drain',return_value=0) as drain:
             tick.return_value=Outcome(r.starts_at,r)
@@ -72,7 +74,7 @@ class SchedulerTests(TestCase):
         now=timezone.now()
         from myteam.rounds import ensure_round
         from myteam.scheduled_events import Outcome
-        r=ensure_round(now)
+        r=ensure_round(datetime(2026,10,28,9,tzinfo=MOSCOW))
         Notification.objects.create(key='leased',kind='signup_invite',round=r,chat_id=1,text='test',status='sending',leased_until=now+timedelta(minutes=5),next_attempt_at=now)
         with patch.object(scheduler.KEYS,'get_signing_key_from_jwt',return_value=SimpleNamespace(key=self.key.public_key())),patch.object(scheduler,'execute',return_value=Outcome(r.starts_at,r)),patch.object(scheduler,'drain',return_value=0):
             response=self.call(mode='run')
