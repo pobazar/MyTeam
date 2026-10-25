@@ -15,7 +15,7 @@ class TeamGroup(Entity):
 class Person(Entity):
     telegram_id = models.BigIntegerField(unique=True)
     username = models.CharField(max_length=100, blank=True)
-    full_name = models.CharField(max_length=250, blank=True, db_default='')
+    full_name = models.CharField(max_length=250, blank=True, default='', db_default='')
     first_name = models.CharField(max_length=100, blank=True)
     last_name = models.CharField(max_length=100, blank=True)
     team = models.CharField(max_length=200, blank=True)

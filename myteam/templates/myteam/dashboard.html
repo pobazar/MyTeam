@@ -54,7 +54,7 @@
         <form method="post" action="/rounds/{{ next_round.id }}/enrollment/">
           {% csrf_token %}
           {% if enrolled %}
-            <p class="enrolled-state">Ты записан на эту неделю.</p>
+            <p class="enrolled-state">Ты записан на следующую неделю.</p>
             <input type="hidden" name="action" value="cancel"><button type="submit" class="secondary">Отменить запись</button>
           {% else %}
             <input type="hidden" name="action" value="enroll"><button type="submit" class="secondary">Записаться</button>

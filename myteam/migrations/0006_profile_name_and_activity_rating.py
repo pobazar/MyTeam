@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='person',
             name='full_name',
-            field=models.CharField(blank=True, db_default='', max_length=250),
+            field=models.CharField(blank=True, default='', db_default='', max_length=250),
         ),
         migrations.AddConstraint(
             model_name='feedback',
