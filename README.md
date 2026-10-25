@@ -54,3 +54,5 @@ python scripts/serve_pages.py
 Незалогиненный сайт всегда начинает с трёх статических шагов онбординга. Только затем явно запрашивается Telegram-код, после входа обязателен профиль. Logout сразу возвращает к введению и отзывает серверную сессию в фоне, без редиректа на код.
 
 Актуальные дизайн-гайдлайны и платформенная адаптация: [design.md](docs/technical/design.md).
+
+Актуальные скриншоты для ревью: [71 состояние на desktop](https://pobazar.github.io/MyTeam/docs/qa/review/). Прогон: `scripts/qa/review-browser.cjs`; сборка галереи: `scripts/qa/build-review.py`.
