@@ -25,7 +25,7 @@
   function element(tag,text,className){const node=document.createElement(tag);node.textContent=text;if(className)node.className=className;return node;}
   const day=value=>new Intl.DateTimeFormat('ru-RU',{day:'numeric',month:'long',timeZone:'Europe/Moscow'}).format(new Date(value));
   const dates=(a,b)=>day(a)+' — '+day(b);
-  function ratingResult(value){const fragment=clone('rating-result'),node=$(fragment,'.stars-result');node.setAttribute('aria-label',`Оценка ${value} из 5`);node.querySelectorAll('svg').forEach((star,index)=>star.classList.toggle('selected',index<value));return node;}
+  function ratingResult(value){const fragment=clone('rating-result'),node=$(fragment,'.stars-result');node.setAttribute('aria-label',`Оценка ${value} из 5`);node.querySelectorAll('[data-rating-star]').forEach((star,index)=>star.classList.toggle('selected',index<value));return node;}
   function telegramLink(link,value){try{const url=new URL(value);if(url.protocol!=='https:'||url.hostname!=='t.me')throw Error();link.href=url.href;return true;}catch{link.hidden=true;return false;}}
   class ApiError extends Error{constructor(code,status=0,data={}){super(code);this.code=code;this.status=status;this.data=data;}}
   async function request(path,{method='GET',data,signal}={}){
