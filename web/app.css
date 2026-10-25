@@ -155,3 +155,35 @@ legend { font-weight: 500; margin-bottom: 16px; }
 .stars-result svg { width: 24px; height: 24px; fill: var(--background-neutral-3); }
 .stars-result svg.selected { fill: var(--background-accent-1); }
 #panel { max-width: calc(100% - 24px); }
+
+/* tui-onboarding-placeholders.fig: Image Centered, separate content and floating action. */
+#app[data-view="intro"] { width: min(540px, 100%); margin: 40px auto; min-height: clamp(680px, calc(100svh - 80px), 760px); background: var(--background-base); border-radius: 24px; }
+#app[data-view="intro"] .appbar { border-radius: 24px 24px 0 0; }
+#app[data-view="intro"] .appbar-inner { width: calc(100% - 32px); min-height: 56px; justify-content: center; }
+#app[data-view="intro"] #screen-back { position: absolute; left: 0; padding: 12px; width: 48px; margin: 0; }
+#app[data-view="intro"] #screen-back span { display: none; }
+#app[data-view="intro"] #intro-progress { position: static; width: 120px; margin: 0; }
+#app[data-view="intro"] .brand, #app[data-view="intro"] footer { display: none; }
+#app[data-view="intro"] #main { width: 100%; display: flex; padding: 0; }
+.intro-flow { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.intro-image { min-height: 260px; height: clamp(260px, 42svh, 360px); display: grid; place-items: center; flex-shrink: 0; padding: 24px 16px; }
+.intro-image .intro-art { width: 220px; height: 220px; margin: 0; }
+.intro-flow[data-intro-step="2"] .intro-art span { transform: rotate(8deg); }
+.intro-flow[data-intro-step="2"] .intro-art span + span { transform: rotate(-8deg); }
+.intro-flow[data-intro-step="3"] .intro-art span { transform: rotate(-4deg); }
+.intro-flow[data-intro-step="3"] .intro-art span + span { transform: rotate(4deg); }
+.intro-content { padding: 24px 16px; }
+.intro-content h1 { font-size: 30px; line-height: 36px; letter-spacing: -.4px; margin-bottom: 16px; }
+.intro-content p { margin-bottom: 0; }
+.intro-actions { margin-top: auto; padding: 16px 16px max(24px, env(safe-area-inset-bottom)); background: var(--background-base); border-radius: 0 0 24px 24px; }
+.intro-actions button { width: 100%; margin: 0; }
+.intro-actions [data-auth-message]:not(:empty) { padding-top: 16px; }
+@media (max-width: 720px) {
+  body:has(#app[data-view="intro"]) { background: var(--background-base); }
+  #app[data-view="intro"] { width: 100%; min-height: 100svh; margin: 0; border-radius: 0; }
+  #app[data-view="intro"] .appbar, .intro-actions { border-radius: 0; }
+  #app[data-view="intro"] .appbar-inner { min-height: 56px; }
+  .intro-content { padding-inline: max(16px, env(safe-area-inset-left)) max(16px, env(safe-area-inset-right)); }
+  .intro-actions { padding-inline: max(16px, env(safe-area-inset-left)) max(16px, env(safe-area-inset-right)); }
+}
+@media (max-height: 650px) { .intro-image { min-height: 200px; height: 220px; padding-block: 0; } }
