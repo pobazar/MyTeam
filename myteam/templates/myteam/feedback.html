@@ -1,1 +1,37 @@
-{% extends 'myteam/base.html' %}{% block content %}<h1>Как прошёл твой кофе?</h1><section class="card"><p>{{ round.activity_title }} · {{ round.starts_at|date:'j E' }} — {{ round.ends_at|date:'j E' }}</p><p>Используем обратную связь, чтобы делать следующие мероприятия интереснее для участников.</p>{% if readonly %}<p class="notice">Срок редактирования закончился. Твой ответ сохранён.</p>{% endif %}<form method="post">{% csrf_token %}{{ form.as_p }}{% if not readonly %}<button type="submit">Сохранить ответ</button><span data-busy role="status">Сохраняем…</span>{% endif %}</form><p class="muted">Ответы не видны собеседникам.</p></section>{% endblock %}
+{% extends 'myteam/base.html' %}
+{% block content %}
+<div class="setup">
+  <a class="back-link" href="{% if return_to == 'history' %}/history/{% else %}/{% endif %}">← {% if return_to == 'history' %}К истории{% else %}К активностям{% endif %}</a>
+  <h1>Как прошла активность?</h1>
+  <section class="card">
+    <p>{{ round.activity_title }} · {{ round.starts_at|date:'j E' }} — {{ round.ends_at|date:'j E' }}</p>
+    {% if readonly %}
+      <p class="notice">Срок изменения результата закончился.{% if form.initial.rating %} Твоя оценка: {{ form.initial.rating }} из 5.{% endif %}</p>
+    {% else %}
+      <form method="post" data-activity-feedback>
+        {% csrf_token %}<input type="hidden" name="return_to" value="{{ return_to }}">
+        {{ form.non_field_errors }}
+        <fieldset class="outcome-choice">
+          <legend>{{ form.outcome.label }}</legend>{{ form.outcome.errors }}{{ form.outcome }}
+        </fieldset>
+        <div data-rating-panel {% if form.outcome.value != 'yes' %}hidden{% endif %}>
+          <fieldset class="rating-choice">
+            <legend>{{ form.rating.label }}</legend>{{ form.rating.errors }}
+            <div class="star-options">
+              {% for radio in form.rating %}
+                <label class="star-option">{{ radio.tag }}<span aria-hidden="true">★</span><span class="sr-only">{{ radio.choice_label }}</span></label>
+              {% endfor %}
+            </div>
+          </fieldset>
+        </div>
+        <div data-comment-panel {% if not form.outcome.value or form.outcome.value == 'pending' %}hidden{% endif %}>
+          <label for="{{ form.comment.id_for_label }}" data-comment-label>{% if form.outcome.value == 'no' %}Почему не получилось?{% else %}Комментарий (необязательно){% endif %}</label>
+          {{ form.comment.errors }}{{ form.comment }}
+        </div>
+        <button type="submit">Сохранить результат</button><span data-busy role="status">Сохраняем…</span>
+      </form>
+      <p class="muted fine-print">Ответ виден только тебе и организатору, не другим участникам.</p>
+    {% endif %}
+  </section>
+</div>
+{% endblock %}

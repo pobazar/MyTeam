@@ -1,4 +1,5 @@
 function bindForms() {
+  window.bindActivityFeedback(document);
   document.querySelectorAll('form').forEach(form => {
     form.addEventListener('submit', async event => {
       if (form.method.toLowerCase() !== 'post') return;

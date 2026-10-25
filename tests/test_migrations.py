@@ -18,8 +18,8 @@ class MigrationTests(TransactionTestCase):
         upcoming=old.get_model('myteam','Round').objects.create(starts_at=now+timedelta(days=7),ends_at=now+timedelta(days=14),closes_at=now+timedelta(days=7,hours=-12),prepares_at=now+timedelta(days=7,hours=-11))
         executor=MigrationExecutor(connection)
         with patch('django.utils.timezone.now',return_value=now-timedelta(days=1)):
-            executor.migrate([('myteam','0005_schedule_revision')])
-        new=executor.loader.project_state([('myteam','0005_schedule_revision')]).apps
+            executor.migrate([('myteam','0006_profile_name_and_activity_rating')])
+        new=executor.loader.project_state([('myteam','0006_profile_name_and_activity_rating')]).apps
         migrated=new.get_model('myteam','Round').objects.get(pk=upcoming.id)
         self.assertEqual(migrated.prepares_at,migrated.closes_at)
         self.assertEqual(new.get_model('myteam','Round').objects.get(pk=r.id).prepares_at,r.prepares_at)
@@ -27,8 +27,18 @@ class MigrationTests(TransactionTestCase):
         self.assertEqual(new.get_model('myteam','Member').objects.get(pk=m.id).snapshot['team'],'Первоначальная')
         self.assertEqual(new.get_model('myteam','Feedback').objects.get(pk=f.id).comment,'Сохранить')
         self.assertTrue(new.get_model('myteam','Achievement').objects.filter(pk=achievement.id).exists())
-        MigrationExecutor(connection).migrate([('myteam','0005_schedule_revision')])
+        self.assertIsNone(new.get_model('myteam','Feedback').objects.get(pk=f.id).rating)
+        self.assertEqual(new.get_model('myteam','Feedback').objects.get(pk=f.id).impression,'positive')
+        self.assertEqual(new.get_model('myteam','Person').objects.get(pk=p.id).full_name,'')
+        from myteam.models import Person,Feedback
+        self.assertEqual(Person.objects.get(pk=p.id).display_name,'Имя Фамилия')
+        self.assertTrue(Feedback.objects.get(pk=f.id).final)
+        MigrationExecutor(connection).migrate([('myteam','0006_profile_name_and_activity_rating')])
         self.assertEqual(new.get_model('myteam','Person').objects.count(),1)
+        # The original ORM writer omits full_name; the DB default preserves compatibility.
+        legacy=old.get_model('myteam','Person').objects.create(telegram_id=43,first_name='Другой',last_name='Участник')
+        self.assertEqual(Person.objects.get(pk=legacy.id).full_name,'')
+        self.assertEqual(Person.objects.get(pk=legacy.id).display_name,'Другой Участник')
         # Old writers can still INSERT while additive migrations deploy.
         import uuid
         with connection.cursor() as cursor:

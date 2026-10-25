@@ -16,7 +16,7 @@ def report(r):
         names=[]
         for m in meeting.members.all():
             s=m.snapshot
-            names.append(escape(f'{s["first_name"]} {s["last_name"]} · {s["team"]} · {s["city"]}'))
+            names.append(escape(f'{s.get("full_name") or (s["first_name"]+" "+s["last_name"])} · {s["team"]} · {s["city"]}'))
             if s.get('team_confidence') in ('uncertain','separate','unknown'):lines.append('Команда сопоставлена неуверенно: '+escape(s['team']))
             if not m.person.reachable:lines.append('Не подтверждён канал доставки: '+escape(str(m.person)))
         lines.append(' / '.join(names))
@@ -61,7 +61,7 @@ def publish(round_id,clock):
     for meeting in r.meetings.prefetch_related('members__person'):
         members=list(meeting.members.all())
         same_city=len({m.snapshot['city_key'] for m in members})==1
-        names='\n'.join(escape(f'{m.snapshot["first_name"]} {m.snapshot["last_name"]} · {m.snapshot["team"]} · {m.snapshot["city"]}') for m in members)
+        names='\n'.join(escape(f'{m.snapshot.get("full_name") or (m.snapshot["first_name"]+" "+m.snapshot["last_name"])} · {m.snapshot["team"]} · {m.snapshot["city"]}') for m in members)
         for m in members:
             enqueue(f'meeting:{m.id}','meeting',m.person.chat_id or m.person.telegram_id,f'МАЙТИМ · {activity.title} · {r.starts_at:%d.%m} — {r.ends_at:%d.%m}\n{names}\n{activity.instructions(same_city)}\n{web_url('/meetings/'+str(meeting.id)+'/')}',m.person,r,clock.now())
     for item in Unmatched.objects.filter(round=r).select_related('person'):

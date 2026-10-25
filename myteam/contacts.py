@@ -10,7 +10,7 @@ def send_contacts(sender_id,chat_id,meeting_id,update_id):
     for m in others:
         s=m.snapshot
         # Telegram supports inline ID mentions for people who previously contacted this bot.
-        lines.append(f'<a href="tg://user?id={int(s["telegram_id"])}">{escape(s["first_name"]+" "+s["last_name"])}</a> · '+escape(s['team']))
+        lines.append(f'<a href="tg://user?id={int(s["telegram_id"])}">{escape(s.get("full_name") or (s["first_name"]+" "+s["last_name"]))}</a> · '+escape(s['team']))
     lines.append('Нажми на имя, чтобы открыть профиль и написать в Telegram.')
     enqueue(f'contacts:{update_id}','contacts',chat_id,'\n'.join(lines),own.person,own.round)
     return True

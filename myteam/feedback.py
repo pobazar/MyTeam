@@ -10,24 +10,24 @@ from .pages import web_url
 from .activities import get_activity
 
 class FeedbackForm(forms.Form):
-    outcome=forms.ChoiceField(label='Удалось встретиться?',choices=[('','Выбери ответ'),('yes','Да'),('pending','Пока нет'),('no','Не получилось')])
-    impression=forms.ChoiceField(label='Если да: как прошла встреча?',required=False,choices=[('','Выбери ответ'),('positive','Понравилось'),('neutral','Нейтрально'),('negative','Не понравилось')])
-    again=forms.ChoiceField(label='Если да: хочется поучаствовать ещё?',required=False,choices=[('','Выбери ответ'),('yes','Да'),('maybe','Возможно'),('no','Нет')])
-    comment=forms.CharField(label='Комментарий (необязательно)',max_length=3000,required=False,widget=forms.Textarea)
+    outcome=forms.ChoiceField(label='Получилось провести активность?',choices=[('yes','Да'),('no','Нет')],widget=forms.RadioSelect)
+    rating=forms.TypedChoiceField(label='Оцените активность',required=False,choices=[(str(i),f'{i} из 5') for i in range(1,6)],coerce=int,empty_value=None,widget=forms.RadioSelect)
+    comment=forms.CharField(label='Комментарий',max_length=3000,required=False,widget=forms.Textarea(attrs={'rows':3}))
     def clean(self):
         data=super().clean()
-        if data.get('outcome')=='yes':
-            for key in ('impression','again'):
-                if not data.get(key):self.add_error(key,'Выбери ответ, чтобы подтвердить встречу.')
-        else:
-            data['impression']='';data['again']=''
+        if data.get('outcome')=='yes' and not data.get('rating'):
+            self.add_error('rating','Оцените активность от 1 до 5.')
+        if data.get('outcome')=='no':
+            data['rating']=None
+            if not data.get('comment'):self.add_error('comment','Расскажите, почему не получилось провести активность.')
         return data
 
 @transaction.atomic
 def save_feedback(person_id,meeting_id,data,clock):
     Person.objects.select_for_update().get(pk=person_id)
     m=Member.objects.select_for_update(of=('self',)).select_related('round').get(person_id=person_id,meeting_id=meeting_id,round__published_at__isnull=False)
-    if clock.now()<m.round.starts_at or clock.now()>=m.round.ends_at+timedelta(days=7):
+    existing=Feedback.objects.filter(member=m).first()
+    if clock.now()<m.round.starts_at or (existing and existing.final and clock.now()>=m.round.ends_at+timedelta(days=7)):
         raise RuleError('Срок изменения обратной связи закончился. Ответ доступен для просмотра.')
     activity=get_activity(m.round.activity,m.round.rules_version)
     form=activity.feedback_form(data)

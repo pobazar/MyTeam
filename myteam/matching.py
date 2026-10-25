@@ -6,7 +6,7 @@ from .activities import get_activity
 from .activities.coffee import select_groups
 
 def snapshot(p):
-    return {'first_name':p.first_name,'last_name':p.last_name,'team':p.team,'team_group':str(p.team_group_id) if p.team_group_id else None,'team_confidence':p.team_confidence,'city':p.city,'city_key':p.city_key,'telegram_id':p.telegram_id,'username':p.username}
+    return {'full_name':p.display_name,'first_name':p.first_name,'last_name':p.last_name,'team':p.team,'team_group':str(p.team_group_id) if p.team_group_id else None,'team_confidence':p.team_confidence,'city':p.city,'city_key':p.city_key,'telegram_id':p.telegram_id,'username':p.username}
 
 
 def validate_draft(r):
@@ -19,7 +19,8 @@ def validate_draft(r):
         if any(m.round_id!=r.id for m in members):
             raise RuleError('Некорректный размер или принадлежность группы.')
         for m in members:
-            if not all(m.snapshot.get(k) for k in ('first_name','last_name','team','city','city_key','telegram_id')):
+            has_name=bool(m.snapshot.get('full_name') or (m.snapshot.get('first_name') and m.snapshot.get('last_name')))
+            if not has_name or not all(m.snapshot.get(k) for k in ('team','city','city_key','telegram_id')):
                 raise RuleError('Неполный снимок профиля.')
         seen.extend(m.person_id for m in members)
     if Member.objects.filter(round=r).exclude(meeting__round=r).exists():raise RuleError('Связи раунда повреждены.')

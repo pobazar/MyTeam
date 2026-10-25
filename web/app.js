@@ -50,6 +50,7 @@
     }
   }
   function bind(){
+    window.bindActivityFeedback(root);
     root.querySelectorAll('a[href]').forEach(link=>{
       const url=new URL(link.getAttribute('href'),api+'/');
       if(url.origin!==new URL(api).origin)return;

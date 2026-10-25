@@ -15,7 +15,7 @@ def enrollment_event(sender,instance,**kwargs):
 @receiver(post_save,sender=Feedback)
 def feedback_event(sender,instance,**kwargs):
     f=instance
-    event(f'feedback:{f.id}:{f.revision}','feedback',f.member.person,f.member.round,{k:getattr(f,k) for k in ('outcome','impression','again','comment','revision')},f.updated_at)
+    event(f'feedback:{f.id}:{f.revision}','feedback',f.member.person,f.member.round,{k:getattr(f,k) for k in ('outcome','rating','impression','again','comment','revision')},f.updated_at)
 
 @receiver(post_save,sender=Notification)
 def delivery(sender,instance,**kwargs):

@@ -18,7 +18,7 @@ class FeedbackTests(TestCase):
         self.assertEqual(Notification.objects.filter(kind='feedback_first').count(),0)
         schedule_requests(self.r,FrozenClock(first))
         self.assertEqual(Notification.objects.filter(kind='feedback_first').count(),2)
-        save_feedback(self.people[0].id,self.meeting.id,{'outcome':'no'},FrozenClock(first))
+        save_feedback(self.people[0].id,self.meeting.id,{'outcome':'no','comment':'Не удалось найти общее время.'},FrozenClock(first))
         calls=[]
         Notification.objects.filter(kind='meeting').delete()
         drain(FrozenClock(first),lambda *a:calls.append(a) or 1,force=True)
@@ -28,13 +28,13 @@ class FeedbackTests(TestCase):
         schedule_requests(self.r,FrozenClock(self.r.ends_at));self.assertEqual(Notification.objects.filter(kind='feedback_last').count(),0)
     def test_achievement_change_and_deadline(self):
         now=FrozenClock(self.r.starts_at)
-        data={'outcome':'yes','impression':'positive','again':'yes','comment':''}
+        data={'outcome':'yes','rating':5,'comment':''}
         for _ in range(2):save_feedback(self.people[0].id,self.meeting.id,data,now)
         self.assertEqual(Achievement.objects.count(),1)
         self.assertEqual(Feedback.objects.get().revision,1)
-        save_feedback(self.people[0].id,self.meeting.id,{'outcome':'pending'},now)
+        save_feedback(self.people[0].id,self.meeting.id,{'outcome':'no','comment':'Не удалось найти общее время.'},now)
         self.assertEqual(Achievement.objects.count(),0)
-        self.assertFalse(Feedback.objects.get().final)
-        with self.assertRaises(RuleError):save_feedback(self.people[0].id,self.meeting.id,{'outcome':'no'},FrozenClock(self.r.ends_at+timedelta(days=7)))
+        self.assertTrue(Feedback.objects.get().final)
+        with self.assertRaises(RuleError):save_feedback(self.people[0].id,self.meeting.id,{'outcome':'no','comment':'Не удалось найти общее время.'},FrozenClock(self.r.ends_at+timedelta(days=7)))
     def test_yes_requires_all_fields(self):
         self.assertFalse(FeedbackForm({'outcome':'yes'}).is_valid())

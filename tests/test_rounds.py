@@ -21,7 +21,7 @@ class RoundTests(TestCase):
         next_round=ensure_round(self.r.starts_at+timedelta(days=7))
         self.assertFalse(Enrollment.objects.filter(round=next_round).exists())
     def test_incomplete_profile_cannot_enroll(self):
-        self.p.last_name='';self.p.save()
+        self.p.first_name='';self.p.last_name='';self.p.save()
         with self.assertRaises(RuleError):enroll(self.p.id,self.r.id,True,FrozenClock(self.r.closes_at-timedelta(days=1)))
 
     def test_closed_signup_still_shows_existing_registration(self):

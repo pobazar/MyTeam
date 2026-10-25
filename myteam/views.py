@@ -1,6 +1,7 @@
 from django.http import HttpResponse, JsonResponse
 def public_settings(request):
-    return {}
+    person=getattr(request,'person',None)
+    return {'navigation_allowed':bool(person and person.onboarding_done and person.complete)}
 def home(request):
     from django.shortcuts import render
     return render(request, 'myteam/home.html')
@@ -84,13 +85,15 @@ from django.db import transaction
 
 @login_required
 def profile(request):
-    form = ProfileForm(request.POST or None, instance=request.person)
+    initial_setup=not request.person.complete
+    form = ProfileForm(request.POST if request.method=='POST' else None, instance=request.person)
     notice = ''
     if request.method == 'POST' and form.is_valid():
         with transaction.atomic():
             form.save()
+        if initial_setup:return redirect('/')
         notice = 'Профиль сохранён.'
-    return render(request, 'myteam/profile.html', {'person':request.person,'form':form,'notice':notice})
+    return render(request, 'myteam/profile.html', {'person':request.person,'form':form,'notice':notice,'initial_setup':initial_setup,'navigation_allowed':not initial_setup})
 
 ONBOARDING = [
  ('Знакомься с коллегами','МАЙТИМ помогает узнавать людей за пределами своей команды — через разговоры, игры и встречи по интересам.'),
@@ -103,7 +106,7 @@ def onboarding(request):
         return redirect('/')
     step = min(max(int(request.session.get('onboarding_step',0)),0),2)
     if request.method == 'POST':
-        if request.POST.get('action')=='skip' or step==2:
+        if step==2:
             request.person.onboarding_done=True
             request.person.save(update_fields=['onboarding_done'])
             return redirect('/profile/')
@@ -118,12 +121,31 @@ from .clock import Clock
 
 @login_required
 def dashboard(request):
-    if not request.person.onboarding_done:return redirect('/onboarding/')
+    from .rounds import upcoming_start
+    from datetime import timedelta
+    from .models import Unmatched
     now=Clock().now()
-    r=Round.objects.filter(starts_at__gt=now).exclude(state='expired').order_by('starts_at').first()
-    current=Member.objects.filter(person=request.person,round__published_at__isnull=False,round__starts_at__lte=now,round__ends_at__gt=now).select_related('meeting','round').first()
+    next_start=upcoming_start(now)
+    week_start=next_start-timedelta(days=7)
+    week=Round.objects.filter(starts_at=week_start).first()
+    r=Round.objects.filter(starts_at=next_start).exclude(state='expired').first()
+    current=Member.objects.filter(person=request.person,round=week,round__published_at__isnull=False).select_related('meeting','round','feedback').first() if week else None
+    current_enrolled=bool(week and Enrollment.objects.filter(person=request.person,round=week,active=True).exists())
+    answer=getattr(current,'feedback',None) if current else None
+    members=list(current.meeting.members.all()) if current else []
+    activity=get_activity(week.activity,week.rules_version) if week else None
     enrolled=bool(r and Enrollment.objects.filter(person=request.person,round=r,active=True).exists())
-    return render(request,'myteam/dashboard.html',{'person':request.person,'next_round':r,'current':current,'enrolled':enrolled,'registration_open':bool(r and r.state=='open' and now<r.closes_at),'notice':request.session.pop('notice','')})
+    return render(request,'myteam/dashboard.html',{
+        'person':request.person,'next_round':r,'next_start':next_start,'next_end':next_start+timedelta(days=7),
+        'current':current,'week':week,'week_start':week_start,'week_end':next_start,'answer':answer,
+        'finished':bool(answer and answer.final),'members':members,'current_enrolled':current_enrolled,
+        'unmatched':bool(week and Unmatched.objects.filter(person=request.person,round=week).exists()),
+        'new_here':request.person.created_at>=week_start,'enrolled':enrolled,
+        'activity_template':activity.card_template if activity else '',
+        'instructions':activity.instructions(len({m.snapshot['city_key'] for m in members})==1) if current else '',
+        'contacts_url':f'https://t.me/{settings.TELEGRAM_BOT_USERNAME}?start=m_{current.meeting_id}' if current else '',
+        'registration_open':bool(r and r.state=='open' and now<r.closes_at),
+        'notice':request.session.pop('notice','')})
 
 @login_required
 @require_POST
@@ -152,15 +174,16 @@ from .models import Meeting
 
 @login_required
 def meeting_detail(request,meeting_id):
-    own=get_object_or_404(Member.objects.select_related('meeting','round'),person=request.person,meeting_id=meeting_id,round__published_at__isnull=False)
-    members=list(own.meeting.members.all())
-    same=len({m.snapshot['city_key'] for m in members})==1
-    activity=get_activity(own.round.activity,own.round.rules_version)
-    return render(request,activity.card_template,{'person':request.person,'meeting':own.meeting,'round':own.round,'members':members,'instructions':activity.instructions(same),'contacts_url':f'https://t.me/{settings.TELEGRAM_BOT_USERNAME}?start=m_{meeting_id}'})
+    own=get_object_or_404(Member.objects.select_related('round'),person=request.person,meeting_id=meeting_id,round__published_at__isnull=False)
+    return redirect('/history/' if own.round.ends_at<=Clock().now() else '/')
 
 @login_required
 def history(request):
-    entries=Member.objects.filter(person=request.person,round__published_at__isnull=False,round__ends_at__lte=Clock().now()).select_related('round','meeting').order_by('-round__starts_at')
+    now=Clock().now()
+    entries=list(Member.objects.filter(person=request.person,round__published_at__isnull=False,round__ends_at__lte=now).select_related('round','meeting','feedback').order_by('-round__starts_at'))
+    for entry in entries:
+        entry.answer=getattr(entry,'feedback',None)
+        entry.ratable=not (entry.answer and entry.answer.final)
     return render(request,'myteam/history.html',{'person':request.person,'entries':entries})
 
 from datetime import timedelta
@@ -171,18 +194,21 @@ from .feedback import FeedbackForm,save_feedback
 def feedback_view(request,meeting_id):
     m=get_object_or_404(Member.objects.select_related('round'),person=request.person,meeting_id=meeting_id,round__published_at__isnull=False)
     existing=Feedback.objects.filter(member=m).first()
-    readonly=Clock().now()>=m.round.ends_at+timedelta(days=7)
-    initial={key:getattr(existing,key) for key in ('outcome','impression','again','comment')} if existing else {}
+    readonly=bool(existing and existing.final and Clock().now()>=m.round.ends_at+timedelta(days=7))
+    initial={key:getattr(existing,key) for key in ('outcome','rating','comment')} if existing else {}
+    if initial.get('outcome')=='pending':initial['outcome']=''
+    return_to='history' if request.POST.get('return_to',request.GET.get('from'))=='history' else 'activities'
     form=get_activity(m.round.activity,m.round.rules_version).feedback_form(request.POST if request.method=='POST' else None,initial=initial)
     notice=''
     if request.method=='POST' and not readonly and form.is_valid():
         try:
             save_feedback(request.person.id,meeting_id,form.cleaned_data,Clock())
-            notice='Спасибо! Ответ сохранён.'
+            request.session['notice']='Спасибо! Результат активности сохранён.'
+            return redirect('/history/' if return_to=='history' else '/')
         except RuleError as e:form.add_error(None,str(e))
     if readonly:
         for field in form.fields.values():field.disabled=True
-    return render(request,'myteam/feedback.html',{'person':request.person,'form':form,'readonly':readonly,'round':m.round,'notice':notice})
+    return render(request,'myteam/feedback.html',{'person':request.person,'form':form,'readonly':readonly,'round':m.round,'notice':notice,'return_to':return_to})
 
 from django.db import connection
 

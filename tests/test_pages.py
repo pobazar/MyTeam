@@ -25,7 +25,7 @@ class PagesTests(TestCase):
         self.assertTrue(response.json()['authenticated'])
         fresh=response['X-Myteam-Session'];self.assertNotEqual(session,fresh)
         client.cookies.clear()
-        self.assertEqual(client.get('/profile/',HTTP_ORIGIN=self.origin,HTTP_AUTHORIZATION='Bearer '+fresh).status_code,200)
+        self.assertEqual(client.get('/profile/',HTTP_ORIGIN=self.origin,HTTP_AUTHORIZATION='Bearer '+fresh).status_code,302)
         self.assertEqual(client.get('/profile/',HTTP_ORIGIN=self.origin,HTTP_AUTHORIZATION='Bearer '+session).status_code,401)
     def test_cors_and_csrf_are_not_opened_to_other_sites(self):
         self.assertEqual(self.client.get('/bridge/bootstrap/',HTTP_ORIGIN='https://untrusted.invalid').status_code,403)

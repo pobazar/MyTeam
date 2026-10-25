@@ -99,7 +99,7 @@ class SchedulerTests(TestCase):
             self.assertFalse(Notification.objects.filter(kind='signup_invite',person=people[0]).exists())
             meeting=Member.objects.get(round=r,person=people[0]).meeting_id
             tuesday=r.starts_at+timedelta(days=6)
-            save_feedback(people[0].id,meeting,{'outcome':'yes','impression':'positive','again':'yes'},FrozenClock(tuesday))
+            save_feedback(people[0].id,meeting,{'outcome':'yes','rating':5},FrozenClock(tuesday))
             run_at(tuesday);run_at(tuesday)
             self.assertEqual(Notification.objects.filter(kind='feedback_first',status='sent',person=people[1]).count(),1)
             self.assertFalse(Notification.objects.filter(kind='feedback_first',person=people[0]).exists())

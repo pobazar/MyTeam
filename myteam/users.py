@@ -21,6 +21,8 @@ def login_required(view):
         request.person = Person.objects.filter(pk=request.session.get('person_id')).first() if request.session.get('person_id') else None
         if not request.person:
             return redirect('/login/')
+        if not request.person.onboarding_done and view.__name__!='onboarding':return redirect('/onboarding/')
+        if request.person.onboarding_done and not request.person.complete and view.__name__ not in ('onboarding','profile'):return redirect('/profile/')
         return view(request, *args, **kwargs)
     return wrapped
 

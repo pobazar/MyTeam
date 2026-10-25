@@ -1,1 +1,21 @@
-{% extends 'myteam/base.html' %}{% block content %}<h1>Твои встречи</h1>{% for entry in entries %}<section class="card"><h2>{{ entry.round.activity_title }}</h2><p>{{ entry.round.starts_at|date:'j E Y' }} — {{ entry.round.ends_at|date:'j E Y' }}</p><a href="/meetings/{{ entry.meeting_id }}/">Посмотреть встречу</a></section>{% empty %}<section class="card"><p class="muted">Прошедших встреч пока нет. Здесь сохранится история твоих знакомств.</p></section>{% endfor %}{% endblock %}
+{% extends 'myteam/base.html' %}
+{% block content %}
+<h1>История активностей</h1>
+{% for entry in entries %}
+  <section class="card history-entry">
+    <div><h2>{{ entry.round.activity_title }}</h2><p class="muted">{{ entry.round.starts_at|date:'j E Y' }} — {{ entry.round.ends_at|date:'j E Y' }}</p></div>
+    <div>
+      {% if entry.answer.final %}
+        {% if entry.answer.outcome == 'yes' %}
+          {% if entry.answer.rating %}<p class="stars-result" aria-label="Оценка {{ entry.answer.rating }} из 5">{{ entry.answer.stars }}</p>
+          {% else %}<p>Активность проведена. Ответ сохранён.</p>{% endif %}
+        {% else %}<p>Не получилось провести активность.</p>{% endif %}
+      {% elif entry.ratable %}
+        <a class="button secondary" href="/meetings/{{ entry.meeting_id }}/feedback/?from=history">Оценить активность</a>
+      {% endif %}
+    </div>
+  </section>
+{% empty %}
+  <section class="card"><p class="muted">Здесь появятся недели, в которых ты участвовал. Пропущенные недели в историю не попадают.</p></section>
+{% endfor %}
+{% endblock %}

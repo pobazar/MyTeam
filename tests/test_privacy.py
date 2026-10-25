@@ -20,7 +20,7 @@ class PrivacyTests(TestCase):
         url=f'/meetings/{self.meeting.id}/'
         self.assertEqual(self.client.get(url).status_code,404)
         publish(self.r.id,FrozenClock(self.r.starts_at))
-        self.assertEqual(self.client.get(url).status_code,200)
+        self.assertEqual(self.client.get(url).status_code,302)
         self.login(self.people[2]);self.assertEqual(self.client.get(url).status_code,404)
     def test_contacts_without_username_are_scoped_to_members(self):
         publish(self.r.id,FrozenClock(self.r.starts_at))

@@ -15,6 +15,7 @@ class TeamGroup(Entity):
 class Person(Entity):
     telegram_id = models.BigIntegerField(unique=True)
     username = models.CharField(max_length=100, blank=True)
+    full_name = models.CharField(max_length=250, blank=True, db_default='')
     first_name = models.CharField(max_length=100, blank=True)
     last_name = models.CharField(max_length=100, blank=True)
     team = models.CharField(max_length=200, blank=True)
@@ -27,13 +28,16 @@ class Person(Entity):
     delivery_blocked = models.BooleanField(default=False)
     onboarding_done = models.BooleanField(default=False)
     @property
+    def display_name(self):
+        return self.full_name.strip() or f'{self.first_name} {self.last_name}'.strip()
+    @property
     def complete(self):
-        return all(v.strip() for v in (self.first_name, self.last_name, self.team, self.city_key))
+        return all(v.strip() for v in (self.display_name, self.team, self.city_key))
     @property
     def reachable(self):
         return self.chat_id is not None and self.delivery_verified_at is not None and not self.delivery_blocked
     def __str__(self):
-        return f'{self.first_name} {self.last_name}'.strip()
+        return self.display_name
 
 class LoginAttempt(Entity):
     confirmation_code = models.CharField(max_length=6, default='', db_default='', blank=True)
@@ -92,11 +96,17 @@ class Unmatched(Entity):
 class Feedback(Entity):
     member = models.OneToOneField(Member, on_delete=models.PROTECT, related_name='feedback')
     outcome = models.CharField(max_length=10, choices=[('yes','Да'),('pending','Пока нет'),('no','Не получилось')])
+    rating = models.PositiveSmallIntegerField(null=True, blank=True)
     impression = models.CharField(max_length=15, blank=True)
     again = models.CharField(max_length=15, blank=True)
     comment = models.TextField(blank=True, max_length=3000)
     revision = models.PositiveIntegerField(default=1)
     updated_at = models.DateTimeField(default=timezone.now)
+    class Meta:
+        constraints = [models.CheckConstraint(condition=Q(rating__isnull=True) | Q(rating__gte=1, rating__lte=5), name='feedback_rating_1_to_5')]
+    @property
+    def stars(self):
+        return '★' * self.rating + '☆' * (5-self.rating) if self.rating else ''
     @property
     def final(self):
         from .activities import get_activity

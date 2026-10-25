@@ -8,14 +8,14 @@ class RandomCoffee:
     title = 'Random Coffee'
     minimum_participants = 2
     achievement_key = 'first_coffee'
-    card_template = 'myteam/meeting.html'
+    card_template = 'myteam/activity_details.html'
     def build_groups(self,people,history,rng=None):
         return select_groups(people,history,rng)
     def valid_distribution(self,count,sizes,unmatched):
         if count<2:return not sizes and unmatched==count
         return unmatched==0 and all(s in (2,3) for s in sizes) and sum(sizes)==count and sizes.count(3)==count%2
     def final_feedback(self,answer):
-        return answer.outcome=='no' or (answer.outcome=='yes' and bool(answer.impression and answer.again))
+        return answer.outcome=='no' or (answer.outcome=='yes' and bool(answer.rating or (answer.impression and answer.again)))
     def achievement_earned(self,person_id):
         from myteam.models import Feedback
         return Feedback.objects.filter(member__person_id=person_id,member__round__activity=self.key,outcome='yes').exists()

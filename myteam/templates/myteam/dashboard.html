@@ -1,1 +1,71 @@
-{% extends 'myteam/base.html' %}{% block content %}<h1>Привет, {{ person.first_name }}</h1><div class="grid"><section class="card"><h2>Твоя встреча сейчас</h2>{% if current %}<p>{{ current.round.activity_title }} · {{ current.round.starts_at|date:'j E' }} — {{ current.round.ends_at|date:'j E' }}</p><a class="button" href="/meetings/{{ current.meeting_id }}/">Открыть встречу</a>{% else %}<p class="muted">Сейчас у тебя нет активной встречи. Можно присоединиться к следующему раунду.</p>{% endif %}</section><section class="card"><h2>Следующая встреча</h2>{% if next_round %}<p>{{ next_round.starts_at|date:'j E' }} — {{ next_round.ends_at|date:'j E' }}</p><p>Запишись до {{ next_round.closes_at|date:'j E' }}, вторника, 21:00 МСК.</p><p class="muted">Участие добровольное. Запись только на этот раунд — на следующий нужно записаться отдельно.</p>{% if not registration_open %}<p>Запись закрыта.</p>{% if enrolled %}<p>Ты записан. Состав встречи появится {{ next_round.starts_at|date:'j E' }} в 09:00 МСК.</p>{% else %}<p class="muted">На следующий раунд можно будет записаться отдельно.</p>{% endif %}{% elif not person.complete %}<a href="/profile/">Заполни профиль, чтобы записаться</a>{% elif not person.reachable %}<a href="/reconnect/">Подключи сообщения бота</a>{% else %}<form method="post" action="/rounds/{{ next_round.id }}/enrollment/">{% csrf_token %}{% if enrolled %}<p>Ты записан на этот раунд.</p><input type="hidden" name="action" value="cancel"><button type="submit" class="secondary">Отменить запись</button>{% else %}<input type="hidden" name="action" value="enroll"><button type="submit">Записаться</button>{% endif %}<span data-busy role="status">Сохраняем…</span></form>{% endif %}{% else %}<p class="muted">Открытой записи пока нет. Загляни позже.</p>{% endif %}</section></div>{% endblock %}
+{% extends 'myteam/base.html' %}
+{% block content %}
+<h1>Твои активности</h1>
+<div class="weeks-grid">
+  <section class="card current-week">
+    <p class="eyebrow">Текущая неделя</p>
+    <p class="muted">{{ week_start|date:'j E' }} — {{ week_end|date:'j E' }}</p>
+    {% if finished %}
+      {% if answer.outcome == 'yes' %}
+        <h2>Спасибо за участие!</h2><p>{{ current.round.activity_title }} — результат сохранён.</p>
+        {% if answer.rating %}<p class="stars-result" aria-label="Оценка {{ answer.rating }} из 5">{{ answer.stars }}</p>{% endif %}
+      {% else %}
+        <h2>Спасибо за ответ</h2><p>На этой неделе не получилось провести активность. Мы сохранили твой ответ.</p>
+      {% endif %}
+      <p class="muted">На следующей неделе будет новая возможность поучаствовать.</p>
+    {% elif current %}
+      <h2>{{ current.round.activity_title }}</h2>
+      {% include activity_template %}
+      <div class="activity-result">
+        <h3>Как всё прошло?</h3>
+        <p class="muted">Когда проведёшь активность, поделись результатом — это поможет сделать следующие недели интереснее.</p>
+        <a class="button" href="/meetings/{{ current.meeting_id }}/feedback/">Поделиться результатом</a>
+      </div>
+    {% elif unmatched %}
+      <h2>В этот раз без активности</h2><p>Ты записался, но участников не хватило для формирования группы.</p>
+      <p class="muted">Можно попробовать снова на следующей неделе — запишись в блоке следующей недели.</p>
+    {% elif current_enrolled %}
+      {% if week.state == 'expired' %}
+        <h2>Активность не состоялась</h2><p>На этой неделе не удалось запустить активность. Можно записаться на следующую неделю.</p>
+      {% else %}
+        <h2>Ты записан на эту неделю</h2><p>Готовим состав и инструкции. Они появятся здесь после публикации.</p>
+      {% endif %}
+    {% elif new_here %}
+      <h2>Добро пожаловать!</h2><p>Ты только присоединился. Запись на текущую неделю уже завершена, поэтому активной встречи пока нет.</p>
+      <p class="muted">Начни со следующей недели — запишись в соседнем блоке.</p>
+    {% else %}
+      <h2>Эту неделю ты пропускаешь</h2><p>На текущую неделю ты не записался. Всё в порядке — участие добровольное.</p>
+      <p class="muted">Присоединяйся на следующей неделе, если захочется.</p>
+    {% endif %}
+  </section>
+  <aside class="card next-week">
+    <p class="eyebrow">Следующая неделя</p>
+    <h2>{{ next_start|date:'j E' }} — {{ next_end|date:'j E' }}</h2>
+    {% if next_round %}
+      <p>{{ next_round.activity_title }}</p>
+      <p class="muted">Запишись до {{ next_round.closes_at|date:'j E' }}, вторника, 21:00 МСК.</p>
+      {% if not registration_open %}
+        <p>Запись закрыта.</p>
+        {% if enrolled %}<p>Ты записан. Состав появится {{ next_round.starts_at|date:'j E' }} в 09:00 МСК.</p>
+        {% else %}<p class="muted">На этот раунд записаться уже нельзя.</p>{% endif %}
+      {% elif not person.reachable %}
+        <a href="/reconnect/">Подключить сообщения для участия</a>
+      {% else %}
+        <form method="post" action="/rounds/{{ next_round.id }}/enrollment/">
+          {% csrf_token %}
+          {% if enrolled %}
+            <p class="enrolled-state">Ты записан на эту неделю.</p>
+            <input type="hidden" name="action" value="cancel"><button type="submit" class="secondary">Отменить запись</button>
+          {% else %}
+            <input type="hidden" name="action" value="enroll"><button type="submit" class="secondary">Записаться</button>
+          {% endif %}
+          <span data-busy role="status">Сохраняем…</span>
+        </form>
+      {% endif %}
+    {% else %}
+      <p class="muted">Запись пока не открыта. Загляни позже.</p>
+    {% endif %}
+    <p class="muted fine-print">Участие добровольное. Запись только на эту неделю, без автоматического продления.</p>
+  </aside>
+</div>
+{% endblock %}

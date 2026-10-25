@@ -46,10 +46,12 @@ def normalize_city(raw):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Person
-        fields = ['first_name','last_name','team','city']
-        labels = {'first_name':'Имя','last_name':'Фамилия','team':'Команда','city':'Город, где вы сейчас'}
+        fields = ['full_name','team','city']
+        labels = {'full_name':'Как вас зовут','team':'Команда','city':'Город, где вы сейчас'}
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)
+        if self.instance.pk:self.initial['full_name']=self.instance.display_name
+        self.fields['full_name'].widget.attrs['autocomplete']='name'
         for field in self.fields.values():field.required=True
     def clean_city(self):
         value=self.cleaned_data['city'].strip()

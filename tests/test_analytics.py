@@ -17,7 +17,7 @@ class AnalyticsTests(TestCase):
         prepare(r.id,FrozenClock(r.prepares_at));publish(r.id,FrozenClock(r.starts_at));publish(r.id,FrozenClock(r.starts_at))
         self.assertEqual(AnalyticsEvent.objects.filter(kind='participation').count(),2)
         meeting=r.meetings.get()
-        for data in ({'outcome':'yes','impression':'positive','again':'yes'},{'outcome':'pending'},{'outcome':'pending'}):
+        for data in ({'outcome':'yes','rating':5},{'outcome':'no','comment':'Не удалось найти общее время.'},{'outcome':'no','comment':'Не удалось найти общее время.'}):
             save_feedback(p.id,meeting.id,data,FrozenClock(r.starts_at))
         self.assertEqual(AnalyticsEvent.objects.filter(kind='feedback').count(),2)
         self.assertEqual(AnalyticsEvent.objects.filter(kind='achievement_awarded').count(),1)

@@ -28,6 +28,6 @@ class ActivityContractTests(TestCase):
             prepare(r.id,FrozenClock(r.prepares_at));publish(r.id,FrozenClock(r.starts_at))
             self.assertEqual(r.meetings.count(),1)
             self.assertEqual(Member.objects.count(),4)
-            save_feedback(p.id,r.meetings.get().id,{'outcome':'yes','impression':'positive','again':'yes'},FrozenClock(r.starts_at))
+            save_feedback(p.id,r.meetings.get().id,{'outcome':'yes','rating':5},FrozenClock(r.starts_at))
             self.assertFalse(Achievement.objects.exists())
             self.assertEqual(r.activity_title,'Изолированный формат')
