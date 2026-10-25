@@ -8,7 +8,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from .clock import Clock
-from .jobs import tick
+from .scheduled_events import EVENTS,execute,notification_kinds,publication_report
 from .models import Notification, Round
 from .notifications import drain
 
@@ -41,31 +41,35 @@ def run(request):
     if len(request.body)>1024:return JsonResponse({'error':'invalid_request'},status=400)
     try:body=json.loads(request.body)
     except (ValueError,UnicodeDecodeError):return JsonResponse({'error':'invalid_request'},status=400)
-    if not isinstance(body,dict) or set(body)!={'mode'} or body['mode'] not in ('verify','run'):
-        return JsonResponse({'error':'invalid_request'},status=400)
-    if body['mode']=='verify':
-        # Real auth + DB check with no tick, outbox changes, participants or messages.
+    if not isinstance(body,dict):return JsonResponse({'error':'invalid_request'},status=400)
+    if body=={'mode':'verify'}:
         Round.objects.exists()
         return JsonResponse({'status':'verified','telegram_enabled':settings.SEND_TELEGRAM})
-    clock=Clock()
-    tick(clock)
-    processed=0
-    deadline=time.monotonic()+15
+    if (not {'mode','event'}<=set(body) or set(body)-{'mode','event','round_date'} or
+        body.get('mode')!='run' or body.get('event') not in EVENTS or
+        ('round_date' in body and not isinstance(body['round_date'],str))):
+        return JsonResponse({'error':'invalid_request'},status=400)
+    clock=Clock();event=body['event']
+    try:outcome=execute(event,clock,body.get('round_date'))
+    except (ValueError,TypeError):return JsonResponse({'error':'invalid_round_date'},status=400)
+    base={'event':event,'round_date':outcome.start.date().isoformat()}
+    if outcome.round is None:
+        return JsonResponse({**base,'status':'ok','skipped':outcome.status,'processed':0,'pending':0,'stage_errors':0})
+    r=outcome.round;kinds=notification_kinds(event)
+    processed=0;deadline=time.monotonic()+15
     for _ in range(20):
         if time.monotonic()>=deadline:break
-        count=drain(clock,limit=1)
+        count=drain(clock,limit=1,kinds=kinds,round_id=r.id)
         processed+=count
         if not count:break
-    # Publication delivery report may become due after draining the participant messages.
-    tick(clock)
-    pending=Notification.objects.filter(status='pending')
+    if event=='publish':publication_report(r.id,clock)
+    scoped=Notification.objects.filter(round=r,kind__in=kinds)
+    pending=scoped.filter(status='pending')
     next_at=pending.aggregate(value=Min('next_attempt_at'))['value']
     delay=max(1,min(60,int((next_at-clock.now()).total_seconds())+1)) if next_at else 0
-    # Wait for a crashed in-flight sender's lease before reporting the outbox complete.
-    sending=Notification.objects.filter(status='sending').count()
+    sending=scoped.filter(status='sending').count()
     if sending:delay=delay or 30
-    errors=Round.objects.exclude(state__in=['completed','expired']).exclude(preparation_error='').count()
     if pending.exists() and not settings.SEND_TELEGRAM:
         return JsonResponse({'error':'telegram_delivery_disabled'},status=503)
-    return JsonResponse({'status':'retry' if errors else 'ok','processed':processed,
-        'pending':pending.count()+sending,'retry_after':delay,'stage_errors':errors})
+    return JsonResponse({**base,'status':'retry' if outcome.error else outcome.status,'processed':processed,
+        'pending':pending.count()+sending,'retry_after':delay,'stage_errors':int(outcome.error)})

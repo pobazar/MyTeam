@@ -62,14 +62,17 @@ def eligible(notification, now):
         return False
     return True
 
-def drain(clock, transport=None, limit=20, force=False, kinds=None):
+def drain(clock, transport=None, limit=20, force=False, kinds=None, round_id=None):
     if not settings.SEND_TELEGRAM and not force:
         return 0
     transport = transport or send
     now=clock.now()
     # A crashed sender may have delivered its leased message: never silently resend.
     with transaction.atomic():
-        for expired in Notification.objects.select_for_update(skip_locked=True).filter(status='sending',leased_until__lt=now):
+        expired_senders=Notification.objects.select_for_update(skip_locked=True).filter(status='sending',leased_until__lt=now)
+        if kinds is not None:expired_senders=expired_senders.filter(kind__in=kinds)
+        if round_id is not None:expired_senders=expired_senders.filter(round_id=round_id)
+        for expired in expired_senders:
             expired.status='unknown';expired.last_error='worker_interrupted_unknown'
             expired.save(update_fields=['status','last_error'])
     processed=0
@@ -77,6 +80,7 @@ def drain(clock, transport=None, limit=20, force=False, kinds=None):
         with transaction.atomic():
             candidates=Notification.objects.select_for_update(skip_locked=True).filter(status='pending',next_attempt_at__lte=now)
             if kinds is not None:candidates=candidates.filter(kind__in=kinds)
+            if round_id is not None:candidates=candidates.filter(round_id=round_id)
             n=candidates.order_by('next_attempt_at','created_at').first()
             if n is None:break
             if not eligible(n,now):

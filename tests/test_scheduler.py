@@ -20,16 +20,18 @@ class SchedulerTests(TestCase):
             workflow_ref=scheduler.WORKFLOW,event_name='workflow_dispatch')
         claims.update(changes)
         return jwt.encode(claims,self.key,algorithm='RS256',headers={'kid':'isolated'})
-    def call(self,token=None,mode='verify',**headers):
-        return Client(enforce_csrf_checks=True).post('/internal/schedule/',json.dumps({'mode':mode}),content_type='application/json',HTTP_X_MYTEAM_SCHEDULER_TOKEN=token or self.token(),**headers)
+    def call(self,token=None,mode='verify',event='invite',**headers):
+        body={'mode':mode}
+        if mode=='run':body['event']=event
+        return Client(enforce_csrf_checks=True).post('/internal/schedule/',json.dumps(body),content_type='application/json',HTTP_X_MYTEAM_SCHEDULER_TOKEN=token or self.token(),**headers)
     def test_real_rsa_identity_verify_is_non_mutating(self):
-        with patch.object(scheduler.KEYS,'get_signing_key_from_jwt',return_value=SimpleNamespace(key=self.key.public_key())),patch.object(scheduler,'tick') as tick,patch.object(scheduler,'drain') as drain:
+        with patch.object(scheduler.KEYS,'get_signing_key_from_jwt',return_value=SimpleNamespace(key=self.key.public_key())),patch.object(scheduler,'execute') as tick,patch.object(scheduler,'drain') as drain:
             response=self.call()
             self.assertEqual(response.status_code,200)
             self.assertEqual(response.json()['status'],'verified')
             tick.assert_not_called();drain.assert_not_called()
     def test_untrusted_claims_expiry_signature_and_browser_are_rejected(self):
-        with patch.object(scheduler.KEYS,'get_signing_key_from_jwt',return_value=SimpleNamespace(key=self.key.public_key())),patch.object(scheduler,'tick') as tick:
+        with patch.object(scheduler.KEYS,'get_signing_key_from_jwt',return_value=SimpleNamespace(key=self.key.public_key())),patch.object(scheduler,'execute') as tick:
             for change in ({'repository_id':'1'},{'repository':'attacker/MyTeam'},{'ref':'refs/heads/feature'},{'workflow_ref':scheduler.WORKFLOW.replace('schedule.yml','other.yml')},{'event_name':'pull_request'},{'aud':'wrong'},{'iss':'wrong'},{'exp':int(time.time())-1}):
                 with self.subTest(change=change):self.assertEqual(self.call(self.token(**change)).status_code,403)
             wrong=rsa.generate_private_key(public_exponent=65537,key_size=2048)
@@ -41,19 +43,26 @@ class SchedulerTests(TestCase):
     @override_settings(SEND_TELEGRAM=True)
     def test_run_drains_bounded_batches_and_reports_remaining_work(self):
         from django.utils import timezone
-        Notification.objects.create(key='isolated',kind='test',chat_id=1,text='test',next_attempt_at=timezone.now())
-        with patch.object(scheduler.KEYS,'get_signing_key_from_jwt',return_value=SimpleNamespace(key=self.key.public_key())),patch.object(scheduler,'tick') as tick,patch.object(scheduler,'drain',return_value=0) as drain:
+        from myteam.rounds import ensure_round
+        from myteam.scheduled_events import Outcome
+        r=ensure_round(timezone.now())
+        Notification.objects.create(key='isolated',kind='signup_invite',round=r,chat_id=1,text='test',next_attempt_at=timezone.now())
+        with patch.object(scheduler.KEYS,'get_signing_key_from_jwt',return_value=SimpleNamespace(key=self.key.public_key())),patch.object(scheduler,'execute') as tick,patch.object(scheduler,'drain',return_value=0) as drain:
+            tick.return_value=Outcome(r.starts_at,r)
             response=self.call(mode='run');self.assertEqual(response.status_code,200)
             self.assertEqual(response.json()['pending'],1)
-            self.assertEqual(tick.call_count,2)
+            self.assertEqual(tick.call_count,1)
             drain.assert_called_once()
     def test_unknown_mode_or_clock_override_is_not_accepted(self):
         with patch.object(scheduler.KEYS,'get_signing_key_from_jwt',return_value=SimpleNamespace(key=self.key.public_key())):
             self.assertEqual(self.call(mode='anything').status_code,400)
+            headers={'HTTP_X_MYTEAM_SCHEDULER_TOKEN':self.token()}
+            for body in ({'mode':'run'},{'mode':'run','event':'all'},{'mode':'run','event':'invite','round_date':'2026-10-27'},{'mode':'run','event':'invite','round_date':123}):
+                self.assertEqual(self.client.post('/internal/schedule/',json.dumps(body),content_type='application/json',**headers).status_code,400)
             response=self.client.post('/internal/schedule/',json.dumps({'mode':'run','now':'2026-10-28T09:00:00+03:00'}),content_type='application/json',HTTP_X_MYTEAM_SCHEDULER_TOKEN=self.token())
             self.assertEqual(response.status_code,400)
     def test_identity_provider_outage_is_retryable_without_running_work(self):
-        with patch.object(scheduler.KEYS,'get_signing_key_from_jwt',side_effect=jwt.PyJWKClientConnectionError('isolated')),patch.object(scheduler,'tick') as tick:
+        with patch.object(scheduler.KEYS,'get_signing_key_from_jwt',side_effect=jwt.PyJWKClientConnectionError('isolated')),patch.object(scheduler,'execute') as tick:
             self.assertEqual(self.call().status_code,503)
             tick.assert_not_called()
     @override_settings(SEND_TELEGRAM=True)
@@ -61,8 +70,11 @@ class SchedulerTests(TestCase):
         from datetime import timedelta
         from django.utils import timezone
         now=timezone.now()
-        Notification.objects.create(key='leased',kind='test',chat_id=1,text='test',status='sending',leased_until=now+timedelta(minutes=5),next_attempt_at=now)
-        with patch.object(scheduler.KEYS,'get_signing_key_from_jwt',return_value=SimpleNamespace(key=self.key.public_key())),patch.object(scheduler,'tick'),patch.object(scheduler,'drain',return_value=0):
+        from myteam.rounds import ensure_round
+        from myteam.scheduled_events import Outcome
+        r=ensure_round(now)
+        Notification.objects.create(key='leased',kind='signup_invite',round=r,chat_id=1,text='test',status='sending',leased_until=now+timedelta(minutes=5),next_attempt_at=now)
+        with patch.object(scheduler.KEYS,'get_signing_key_from_jwt',return_value=SimpleNamespace(key=self.key.public_key())),patch.object(scheduler,'execute',return_value=Outcome(r.starts_at,r)),patch.object(scheduler,'drain',return_value=0):
             response=self.call(mode='run')
             self.assertEqual(response.json()['pending'],1)
             self.assertGreater(response.json()['retry_after'],0)
@@ -77,30 +89,30 @@ class SchedulerTests(TestCase):
         r=ensure_round(datetime(2026,10,28,9,tzinfo=MOSCOW))
         people=[Person.objects.create(telegram_id=i,chat_id=i,first_name='Имя',last_name='Фамилия',team='Команда',city='Москва',city_key='moskva',onboarding_done=True,delivery_verified_at=r.closes_at) for i in (1,2)]
         for person in people:Enrollment.objects.create(person=person,round=r)
-        def run_at(instant):
+        def run_at(instant,event):
             with patch('myteam.clock.Clock.now',return_value=instant):
-                result=self.call(mode='run')
+                result=self.call(mode='run',event=event)
                 self.assertEqual(result.status_code,200)
                 return result.json()
         with patch.object(scheduler.KEYS,'get_signing_key_from_jwt',return_value=SimpleNamespace(key=self.key.public_key())),patch('myteam.notifications.send',return_value=123):
-            run_at(r.closes_at)
+            run_at(r.closes_at,'prepare')
             r.refresh_from_db();self.assertEqual(r.state,'prepared')
             self.assertEqual(Member.objects.filter(round=r).count(),2)
             self.assertEqual(Notification.objects.filter(kind='owner_prepared',status='sent').count(),1)
-            run_at(r.starts_at);run_at(r.starts_at)
+            run_at(r.starts_at,'publish');run_at(r.starts_at,'publish')
             self.assertEqual(Notification.objects.filter(kind='meeting',status='sent').count(),2)
             self.assertEqual(Notification.objects.filter(kind='owner_published',status='sent').count(),1)
             upcoming=ensure_round(r.ends_at)
             self.assertFalse(Enrollment.objects.filter(round=upcoming).exists())
             Enrollment.objects.create(person=people[0],round=upcoming)
             thursday=r.starts_at+timedelta(days=1)
-            run_at(thursday);run_at(thursday)
+            run_at(thursday,'invite');run_at(thursday,'invite')
             self.assertEqual(Notification.objects.filter(kind='signup_invite',status='sent',person=people[1]).count(),1)
             self.assertFalse(Notification.objects.filter(kind='signup_invite',person=people[0]).exists())
             meeting=Member.objects.get(round=r,person=people[0]).meeting_id
             tuesday=r.starts_at+timedelta(days=6)
             save_feedback(people[0].id,meeting,{'outcome':'yes','rating':5},FrozenClock(tuesday))
-            run_at(tuesday);run_at(tuesday)
+            run_at(tuesday,'feedback');run_at(tuesday,'feedback')
             self.assertEqual(Notification.objects.filter(kind='feedback_first',status='sent',person=people[1]).count(),1)
             self.assertFalse(Notification.objects.filter(kind='feedback_first',person=people[0]).exists())
             self.assertEqual(Achievement.objects.count(),1)

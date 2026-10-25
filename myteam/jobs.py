@@ -20,7 +20,7 @@ def report(r):
     for item in Unmatched.objects.filter(round=r).select_related('person'):lines.append('Без собеседника: '+escape(str(item.person)))
     return '\n'.join(lines)
 
-def record_incident(key,summary,clock):
+def record_incident(key,summary,clock,round=None,kind='incident'):
     incident,created=Incident.objects.get_or_create(key=key,defaults={'summary':summary,'opened_at':clock.now()})
     if not created:
         incident.occurrences+=1
@@ -28,16 +28,16 @@ def record_incident(key,summary,clock):
             incident.opened_at=clock.now();incident.resolved_at=None;incident.last_alert_at=None
         incident.summary=summary
     if not incident.last_alert_at or clock.now()-incident.last_alert_at>=timedelta(hours=24):
-        n=owner_message(f'incident:{key}:{incident.opened_at.isoformat()}:{clock.now().date()}','incident','МАЙТИМ: '+escape(summary)+'\nПроверьте состояние раунда и журналы сервиса.',now=clock.now())
+        n=owner_message(f'incident:{key}:{incident.opened_at.isoformat()}:{clock.now().date()}',kind,'МАЙТИМ: '+escape(summary)+'\nПроверьте состояние раунда и журналы сервиса.',round=round,now=clock.now())
         if n:incident.last_alert_at=clock.now()
     incident.save()
     return incident
 
-def resolve_incident(key,clock):
+def resolve_incident(key,clock,round=None,kind='recovery'):
     incident=Incident.objects.filter(key=key,resolved_at__isnull=True).first()
     if incident:
         incident.resolved_at=clock.now();incident.save(update_fields=['resolved_at'])
-        if incident.last_alert_at:owner_message(f'resolved:{incident.id}:{incident.opened_at.isoformat()}','recovery','МАЙТИМ: проблема устранена — '+escape(incident.summary),now=clock.now())
+        if incident.last_alert_at:owner_message(f'resolved:{incident.id}:{incident.opened_at.isoformat()}',kind,'МАЙТИМ: проблема устранена — '+escape(incident.summary),round=round,now=clock.now())
 
 def complete_job(key,r,now):
     Job.objects.update_or_create(key=f'{key}:{r.id}',defaults={'round':r,'completed_at':now,'error':''})

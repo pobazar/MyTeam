@@ -8,10 +8,15 @@ on:
     - cron: '0 6 * * 4'   # Thu 09:00 MSK: invite users not enrolled
   workflow_dispatch:
     inputs:
-      verify_only:
-        description: 'Check real identity and database without running stages or sending messages'
-        type: boolean
-        default: true
+      event:
+        description: 'Event to run; verify checks access without changing data or sending messages'
+        type: choice
+        options: [verify, feedback, prepare, publish, invite]
+        default: verify
+      round_date:
+        description: 'Optional Wednesday YYYY-MM-DD to recover a specific round within its allowed time window'
+        type: string
+        required: false
 permissions:
   contents: read
   id-token: write
@@ -31,4 +36,6 @@ jobs:
       - name: Run due events and recover temporary delivery failures
         run: python scripts/run_schedule.py
         env:
-          MYTEAM_VERIFY_ONLY: ${{ github.event_name == 'workflow_dispatch' && inputs.verify_only && 'true' || 'false' }}
+          MYTEAM_SCHEDULE: ${{ github.event.schedule }}
+          MYTEAM_EVENT: ${{ inputs.event || 'verify' }}
+          MYTEAM_ROUND_DATE: ${{ inputs.round_date }}
