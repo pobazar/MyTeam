@@ -1,0 +1,2907 @@
+{
+  "componentSet": "tui-onboarding-flow",
+  "sources": [
+    "tui-onboarding-flow.fig"
+  ],
+  "units": "Figma px (verify platform-specific dp/pt mapping)",
+  "components": [
+    "tui-onboarding-flow"
+  ],
+  "variantCount": 52,
+  "variants": [
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "System": "iOS (iPhone X)",
+        "Template": "Phone Top"
+      },
+      "appearance": "efd793252"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "System": "iOS (iPhone X)",
+        "Template": "Phone Bottom"
+      },
+      "appearance": "efd793252"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "System": "iOS (iPhone X)",
+        "Template": "Image Centered"
+      },
+      "appearance": "efd793252"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "System": "iOS (iPhone X)",
+        "Template": "Image Full Cover"
+      },
+      "appearance": "efd793252"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "System": "iOS (iPhone X)",
+        "Template": "Image with Padding"
+      },
+      "appearance": "efd793252"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "System": "iOS (iPhone X)",
+        "Template": "Custom Content"
+      },
+      "appearance": "efd793252"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "System": "iOS (iPad)",
+        "Template": "Phone Top"
+      },
+      "appearance": "56f37b625"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "System": "iOS (iPad)",
+        "Template": "Phone Bottom"
+      },
+      "appearance": "56f37b625"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "System": "iOS (iPad)",
+        "Template": "Image Centered"
+      },
+      "appearance": "56f37b625"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "System": "iOS (iPad)",
+        "Template": "Image Full Cover"
+      },
+      "appearance": "56f37b625"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "System": "iOS (iPad)",
+        "Template": "Image with Padding"
+      },
+      "appearance": "56f37b625"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "System": "iOS (iPad)",
+        "Template": "Custom Content"
+      },
+      "appearance": "56f37b625"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "System": "iOS (iPhone 8)",
+        "Template": "Phone Top"
+      },
+      "appearance": "f5bdfd3bc"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "System": "iOS (iPhone 8)",
+        "Template": "Phone Bottom"
+      },
+      "appearance": "f5bdfd3bc"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "System": "iOS (iPhone 8)",
+        "Template": "Image Centered"
+      },
+      "appearance": "f5bdfd3bc"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "System": "iOS (iPhone 8)",
+        "Template": "Image Full Cover"
+      },
+      "appearance": "f5bdfd3bc"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "System": "iOS (iPhone 8)",
+        "Template": "Image with Padding"
+      },
+      "appearance": "f5bdfd3bc"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "System": "Android",
+        "Template": "Phone Top"
+      },
+      "appearance": "337e55530"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "System": "Android",
+        "Template": "Phone Bottom"
+      },
+      "appearance": "337e55530"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "System": "Android",
+        "Template": "Image Centered"
+      },
+      "appearance": "337e55530"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "System": "Android",
+        "Template": "Image Full Cover"
+      },
+      "appearance": "337e55530"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "System": "Android",
+        "Template": "Image with Padding"
+      },
+      "appearance": "337e55530"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "System": "Android",
+        "Template": "Custom Content"
+      },
+      "appearance": "337e55530"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "System": "iOS (iPhone 8)",
+        "Template": "Custom Content"
+      },
+      "appearance": "f5bdfd3bc"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "orientation": "vertical",
+        "template": "image-centered"
+      },
+      "appearance": "8b9af0ccb"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "orientation": "vertical",
+        "template": "image-full-cover"
+      },
+      "appearance": "8b9af0ccb"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "orientation": "vertical",
+        "template": "screen-top"
+      },
+      "appearance": "8b9af0ccb"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "orientation": "horizontal",
+        "template": "image-full-cover"
+      },
+      "appearance": "8b9af0ccb"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "orientation": "vertical",
+        "template": "screen-bottom"
+      },
+      "appearance": "8b9af0ccb"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "orientation": "horizontal",
+        "template": "image-centered"
+      },
+      "appearance": "8b9af0ccb"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "system": "PWA/Webview - bottomsheet",
+        "template": "Image Centered"
+      },
+      "appearance": "f69a2e6f8"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "system": "PWA/Webview - bottomsheet",
+        "template": "Image Full Cover"
+      },
+      "appearance": "f69a2e6f8"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "system": "PWA/Webview - bottomsheet",
+        "template": "Phone Top"
+      },
+      "appearance": "f69a2e6f8"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "system": "PWA/Webview - bottomsheet",
+        "template": "Phone Bottom"
+      },
+      "appearance": "f69a2e6f8"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "system": "PWA/Webview - bottomsheet",
+        "template": "Image with Padding"
+      },
+      "appearance": "f69a2e6f8"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "system": "PWA/Webview - fullscreen",
+        "template": "Image Centered"
+      },
+      "appearance": "a26cd6855"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "system": "PWA/Webview - fullscreen",
+        "template": "Image Full Cover"
+      },
+      "appearance": "a26cd6855"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "system": "PWA/Webview - fullscreen",
+        "template": "Image with Padding"
+      },
+      "appearance": "a26cd6855"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "system": "PWA/Webview - fullscreen",
+        "template": "Phone Top"
+      },
+      "appearance": "a26cd6855"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "system": "PWA/Webview - fullscreen",
+        "template": "Phone Bottom"
+      },
+      "appearance": "a26cd6855"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "system": "Android",
+        "template": "Phone Top"
+      },
+      "appearance": "337e55530"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "system": "Android",
+        "template": "Phone Bottom"
+      },
+      "appearance": "337e55530"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "system": "Android",
+        "template": "Image Centered"
+      },
+      "appearance": "337e55530"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "system": "Android",
+        "template": "Image Full Cover"
+      },
+      "appearance": "337e55530"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "system": "Android",
+        "template": "Image with Padding"
+      },
+      "appearance": "337e55530"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "system": "Android",
+        "template": "Custom Content"
+      },
+      "appearance": "337e55530"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "system": "iOS (iPad)",
+        "template": "Phone Top"
+      },
+      "appearance": "56f37b625"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "system": "iOS (iPad)",
+        "template": "Phone Bottom"
+      },
+      "appearance": "56f37b625"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "system": "iOS (iPad)",
+        "template": "Image Centered"
+      },
+      "appearance": "56f37b625"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "system": "iOS (iPad)",
+        "template": "Image Full Cover"
+      },
+      "appearance": "56f37b625"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "system": "iOS (iPad)",
+        "template": "Image with Padding"
+      },
+      "appearance": "56f37b625"
+    },
+    {
+      "component": "tui-onboarding-flow",
+      "properties": {
+        "system": "iOS (iPad)",
+        "template": "Custom Content"
+      },
+      "appearance": "56f37b625"
+    }
+  ],
+  "appearancePresets": {
+    "efd793252": {
+      "size": {
+        "x": 375.0,
+        "y": 812.0
+      },
+      "background": [
+        {
+          "type": "SOLID",
+          "opacity": 1.0,
+          "blendMode": "NORMAL",
+          "visible": true,
+          "color": "#FFFFFF",
+          "colorVariable": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "241ca726fafd57881fc16572cac2fe352b7f86f7",
+                  "version": "1574:376"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          }
+        }
+      ]
+    },
+    "56f37b625": {
+      "size": {
+        "x": 768.0,
+        "y": 1024.0
+      },
+      "mainAxisAlignment": "CENTER",
+      "crossAxisAlignment": "CENTER",
+      "background": [
+        {
+          "type": "SOLID",
+          "opacity": 0.2,
+          "blendMode": "NORMAL",
+          "visible": true,
+          "color": "#000000"
+        }
+      ]
+    },
+    "f5bdfd3bc": {
+      "size": {
+        "x": 375.0,
+        "y": 667.0
+      },
+      "background": [
+        {
+          "type": "SOLID",
+          "opacity": 1.0,
+          "blendMode": "NORMAL",
+          "visible": true,
+          "color": "#FFFFFF",
+          "colorVariable": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "241ca726fafd57881fc16572cac2fe352b7f86f7",
+                  "version": "1574:376"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          }
+        }
+      ]
+    },
+    "337e55530": {
+      "size": {
+        "x": 360.0,
+        "y": 800.0
+      },
+      "background": [
+        {
+          "type": "SOLID",
+          "opacity": 1.0,
+          "blendMode": "NORMAL",
+          "visible": true,
+          "color": "#000000"
+        }
+      ]
+    },
+    "8b9af0ccb": {
+      "size": {
+        "x": 1280.0,
+        "y": 768.0
+      },
+      "layout": "HORIZONTAL",
+      "gap": 10.0,
+      "verticalPadding": 64.0,
+      "paddingBottom": 64.0,
+      "mainAxisAlignment": "CENTER",
+      "crossAxisAlignment": "CENTER",
+      "background": [
+        {
+          "type": "SOLID",
+          "opacity": 0.7,
+          "blendMode": "NORMAL",
+          "visible": true,
+          "color": "#000000",
+          "colorVariable": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "d039cad36709dad4a0452b17a041e29f60b73518",
+                  "version": "1574:286"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          }
+        }
+      ],
+      "effects": [
+        {
+          "type": "BACKGROUND_BLUR",
+          "offset": {
+            "x": 0.0,
+            "y": 4.0
+          },
+          "radius": 32.0,
+          "visible": true,
+          "blendMode": "NORMAL",
+          "spread": 0.0,
+          "showShadowBehindNode": false,
+          "color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.25
+          },
+          "authoredColor": {
+            "space": "DEFAULT",
+            "c0": 0.0,
+            "c1": 0.0,
+            "c2": 0.0,
+            "c3": 0.25
+          }
+        }
+      ]
+    },
+    "f69a2e6f8": {
+      "size": {
+        "x": 375.0,
+        "y": 812.0
+      },
+      "background": [
+        {
+          "type": "SOLID",
+          "opacity": 0.5,
+          "blendMode": "NORMAL",
+          "visible": true,
+          "color": "#000000",
+          "colorVariable": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "d039cad36709dad4a0452b17a041e29f60b73518",
+                  "version": "10327:270"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          }
+        }
+      ]
+    },
+    "a26cd6855": {
+      "size": {
+        "x": 375.0,
+        "y": 812.0
+      },
+      "background": [
+        {
+          "type": "SOLID",
+          "opacity": 1.0,
+          "blendMode": "NORMAL",
+          "visible": true,
+          "color": "#FFFFFF",
+          "colorVariable": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "1a7832ae46bca46eedf2749ccbe2dda27e313d7a",
+                  "version": "10327:179"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          }
+        }
+      ]
+    }
+  },
+  "anatomyExamples": [
+    {
+      "variant": {
+        "System": "iOS (iPhone X)",
+        "Template": "Phone Top"
+      },
+      "tree": {
+        "role": "System=iOS (iPhone X), Template=Phone Top",
+        "type": "SYMBOL",
+        "size": {
+          "x": 375.0,
+          "y": 812.0
+        },
+        "background": [
+          {
+            "type": "SOLID",
+            "opacity": 1.0,
+            "blendMode": "NORMAL",
+            "visible": true,
+            "color": "#FFFFFF",
+            "colorVariable": {
+              "value": {
+                "alias": {
+                  "assetRef": {
+                    "key": "241ca726fafd57881fc16572cac2fe352b7f86f7",
+                    "version": "1574:376"
+                  }
+                }
+              },
+              "dataType": "ALIAS",
+              "resolvedDataType": "COLOR"
+            }
+          }
+        ],
+        "children": [
+          {
+            "role": "container",
+            "type": "FRAME",
+            "size": {
+              "x": 375.0,
+              "y": 758.0
+            },
+            "topLeftRadius": 10.0,
+            "topRightRadius": 10.0,
+            "layout": "VERTICAL",
+            "children": [
+              {
+                "role": "Image",
+                "type": "FRAME",
+                "size": {
+                  "x": 375.0,
+                  "y": 379.0
+                },
+                "topLeftRadius": 10.0,
+                "topRightRadius": 10.0,
+                "gap": 280.0,
+                "mainAxisAlignment": "CENTER",
+                "crossAxisAlignment": "CENTER",
+                "background": [
+                  {
+                    "type": "SOLID",
+                    "opacity": 1.0,
+                    "blendMode": "NORMAL",
+                    "visible": true,
+                    "color": "#FFFFFF",
+                    "colorVariable": {
+                      "value": {
+                        "alias": {
+                          "assetRef": {
+                            "key": "241ca726fafd57881fc16572cac2fe352b7f86f7",
+                            "version": "1574:376"
+                          }
+                        }
+                      },
+                      "dataType": "ALIAS",
+                      "resolvedDataType": "COLOR"
+                    }
+                  }
+                ],
+                "children": [
+                  {
+                    "role": "ImgContainer",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 375.0,
+                      "y": 379.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "verticalPadding": 72.0,
+                    "mainAxisAlignment": "CENTER",
+                    "children": [
+                      {
+                        "role": "template-phone-frame",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 236.0,
+                          "y": 490.0
+                        },
+                        "radius": 28.0,
+                        "topLeftRadius": 28.0,
+                        "topRightRadius": 28.0,
+                        "bottomLeftRadius": 28.0,
+                        "bottomRightRadius": 28.0,
+                        "layout": "HORIZONTAL",
+                        "gap": 10.0,
+                        "horizontalPadding": 8.0,
+                        "verticalPadding": 8.0,
+                        "paddingRight": 8.0,
+                        "paddingBottom": 8.0,
+                        "mainAxisAlignment": "CENTER",
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 0.06,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#001024",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "0db84cc31aa0800d5e2efb834727004b34f45fbf",
+                                    "version": "1574:362"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "usesComponent": "template-phone-frame"
+                      }
+                    ]
+                  },
+                  {
+                    "role": "Fade",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 375.0,
+                      "y": 64.0
+                    },
+                    "children": [
+                      {
+                        "role": "Mask",
+                        "type": "ROUNDED_RECTANGLE",
+                        "size": {
+                          "x": 375.0,
+                          "y": 64.0
+                        },
+                        "background": [
+                          {
+                            "type": "GRADIENT_LINEAR",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "stops": [
+                              {
+                                "position": 0.0,
+                                "color": "#00000000"
+                              },
+                              {
+                                "position": 1.0,
+                                "color": "#000000"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "role": "Color",
+                        "type": "ROUNDED_RECTANGLE",
+                        "size": {
+                          "x": 375.0,
+                          "y": 64.0
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#F6F7F8",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "b92a008ec386050bbcfef1be9cfaf754a02d18c7",
+                                    "version": "1574:375"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "role": "Content",
+                "type": "FRAME",
+                "size": {
+                  "x": 375.0,
+                  "y": 379.0
+                },
+                "layout": "VERTICAL",
+                "verticalPadding": 8.0,
+                "children": [
+                  {
+                    "role": "tui-header [large]",
+                    "type": "INSTANCE",
+                    "size": {
+                      "x": 375.0,
+                      "y": 371.0
+                    },
+                    "layout": "VERTICAL",
+                    "gap": 16.0,
+                    "horizontalPadding": 16.0,
+                    "verticalPadding": 16.0,
+                    "paddingRight": 16.0,
+                    "paddingBottom": 24.0,
+                    "usesComponent": "System=iOS, Description=on, TextAlign=start, skeleton=off, Extended=off"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "role": "tui-floating-container",
+            "type": "INSTANCE",
+            "size": {
+              "x": 375.0,
+              "y": 114.0
+            },
+            "layout": "VERTICAL",
+            "usesComponent": "System=iOS, Type=Action, Background=off"
+          },
+          {
+            "role": "system-status-bar",
+            "type": "INSTANCE",
+            "size": {
+              "x": 375.0,
+              "y": 54.0
+            },
+            "usesComponent": "Appearance=Modal Stack, System=iOS (iPhone X)"
+          },
+          {
+            "role": "navbar",
+            "type": "FRAME",
+            "size": {
+              "x": 375.0,
+              "y": 56.0
+            },
+            "topLeftRadius": 10.0,
+            "topRightRadius": 10.0,
+            "layout": "VERTICAL",
+            "gap": 10.0,
+            "mainAxisAlignment": "CENTER",
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 1.0,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#FFFFFF",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "241ca726fafd57881fc16572cac2fe352b7f86f7",
+                        "version": "1574:376"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "effects": [
+              {
+                "type": "BACKGROUND_BLUR",
+                "offset": {
+                  "x": 0.0,
+                  "y": 4.0
+                },
+                "radius": 40.0,
+                "visible": true,
+                "blendMode": "NORMAL",
+                "spread": 0.0,
+                "showShadowBehindNode": true,
+                "color": {
+                  "r": 0.0,
+                  "g": 0.0,
+                  "b": 0.0,
+                  "a": 0.25
+                },
+                "authoredColor": {
+                  "space": "DEFAULT",
+                  "c0": 0.0,
+                  "c1": 0.0,
+                  "c2": 0.0,
+                  "c3": 0.25
+                }
+              }
+            ],
+            "children": [
+              {
+                "role": "tui-appbar",
+                "type": "INSTANCE",
+                "size": {
+                  "x": 375.0,
+                  "y": 56.0
+                },
+                "layout": "HORIZONTAL",
+                "crossAxisAlignment": "CENTER",
+                "usesComponent": "System=iOS, Middle=Progress, Left=Back, Right=None"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "System": "iOS (iPad)",
+        "Template": "Phone Top"
+      },
+      "tree": {
+        "role": "System=iOS (iPad), Template=Phone Top",
+        "type": "SYMBOL",
+        "size": {
+          "x": 768.0,
+          "y": 1024.0
+        },
+        "mainAxisAlignment": "CENTER",
+        "crossAxisAlignment": "CENTER",
+        "background": [
+          {
+            "type": "SOLID",
+            "opacity": 0.2,
+            "blendMode": "NORMAL",
+            "visible": true,
+            "color": "#000000"
+          }
+        ],
+        "children": [
+          {
+            "role": "card-bg",
+            "type": "ROUNDED_RECTANGLE",
+            "size": {
+              "x": 499.0,
+              "y": 10.0
+            },
+            "topLeftRadius": 10.0,
+            "topRightRadius": 10.0,
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 1.0,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#FFFFFF"
+              },
+              {
+                "type": "SOLID",
+                "opacity": 0.35,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#000000"
+              }
+            ]
+          },
+          {
+            "role": "container",
+            "type": "FRAME",
+            "size": {
+              "x": 540.0,
+              "y": 620.0
+            },
+            "radius": 10.0,
+            "topLeftRadius": 10.0,
+            "topRightRadius": 10.0,
+            "bottomLeftRadius": 10.0,
+            "bottomRightRadius": 10.0,
+            "layout": "VERTICAL",
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 1.0,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#FFFFFF",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "241ca726fafd57881fc16572cac2fe352b7f86f7",
+                        "version": "1574:376"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "children": [
+              {
+                "role": "navbar",
+                "type": "FRAME",
+                "size": {
+                  "x": 540.0,
+                  "y": 44.0
+                },
+                "topLeftRadius": 10.0,
+                "topRightRadius": 10.0,
+                "layout": "VERTICAL",
+                "gap": 10.0,
+                "effects": [
+                  {
+                    "type": "BACKGROUND_BLUR",
+                    "offset": {
+                      "x": 0.0,
+                      "y": 4.0
+                    },
+                    "radius": 40.0,
+                    "visible": true,
+                    "blendMode": "NORMAL",
+                    "spread": 0.0,
+                    "showShadowBehindNode": true,
+                    "color": {
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0,
+                      "a": 0.25
+                    },
+                    "authoredColor": {
+                      "space": "DEFAULT",
+                      "c0": 0.0,
+                      "c1": 0.0,
+                      "c2": 0.0,
+                      "c3": 0.25
+                    }
+                  }
+                ],
+                "children": [
+                  {
+                    "role": "tui-appbar",
+                    "type": "INSTANCE",
+                    "size": {
+                      "x": 540.0,
+                      "y": 44.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "crossAxisAlignment": "CENTER",
+                    "usesComponent": "System=iOS, Middle=Progress, Left=Back, Right=None"
+                  }
+                ]
+              },
+              {
+                "role": "Image",
+                "type": "FRAME",
+                "size": {
+                  "x": 540.0,
+                  "y": 266.0
+                },
+                "topLeftRadius": 10.0,
+                "topRightRadius": 10.0,
+                "gap": 280.0,
+                "mainAxisAlignment": "CENTER",
+                "crossAxisAlignment": "CENTER",
+                "background": [
+                  {
+                    "type": "SOLID",
+                    "opacity": 1.0,
+                    "blendMode": "NORMAL",
+                    "visible": true,
+                    "color": "#FFFFFF",
+                    "colorVariable": {
+                      "value": {
+                        "alias": {
+                          "assetRef": {
+                            "key": "241ca726fafd57881fc16572cac2fe352b7f86f7",
+                            "version": "1574:376"
+                          }
+                        }
+                      },
+                      "dataType": "ALIAS",
+                      "resolvedDataType": "COLOR"
+                    }
+                  }
+                ],
+                "children": [
+                  {
+                    "role": "ImgContainer",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 540.0,
+                      "y": 266.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "verticalPadding": 16.0,
+                    "mainAxisAlignment": "CENTER",
+                    "children": [
+                      {
+                        "role": "template-phone-frame",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 236.0,
+                          "y": 490.0
+                        },
+                        "radius": 28.0,
+                        "topLeftRadius": 28.0,
+                        "topRightRadius": 28.0,
+                        "bottomLeftRadius": 28.0,
+                        "bottomRightRadius": 28.0,
+                        "layout": "HORIZONTAL",
+                        "gap": 10.0,
+                        "horizontalPadding": 8.0,
+                        "verticalPadding": 8.0,
+                        "paddingRight": 8.0,
+                        "paddingBottom": 8.0,
+                        "mainAxisAlignment": "CENTER",
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 0.06,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#001024",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "0db84cc31aa0800d5e2efb834727004b34f45fbf",
+                                    "version": "1574:362"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "usesComponent": "template-phone-frame"
+                      }
+                    ]
+                  },
+                  {
+                    "role": "Fade",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 540.0,
+                      "y": 64.0
+                    },
+                    "children": [
+                      {
+                        "role": "Mask",
+                        "type": "ROUNDED_RECTANGLE",
+                        "size": {
+                          "x": 540.0,
+                          "y": 64.0
+                        },
+                        "background": [
+                          {
+                            "type": "GRADIENT_LINEAR",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "stops": [
+                              {
+                                "position": 0.0,
+                                "color": "#00000000"
+                              },
+                              {
+                                "position": 1.0,
+                                "color": "#000000"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "role": "Color",
+                        "type": "ROUNDED_RECTANGLE",
+                        "size": {
+                          "x": 540.0,
+                          "y": 64.0
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#F6F7F8",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "b92a008ec386050bbcfef1be9cfaf754a02d18c7",
+                                    "version": "1574:375"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "role": "Content",
+                "type": "FRAME",
+                "size": {
+                  "x": 540.0,
+                  "y": 310.0
+                },
+                "layout": "VERTICAL",
+                "verticalPadding": 8.0,
+                "children": [
+                  {
+                    "role": "tui-header [large]",
+                    "type": "INSTANCE",
+                    "size": {
+                      "x": 540.0,
+                      "y": 302.0
+                    },
+                    "layout": "VERTICAL",
+                    "gap": 16.0,
+                    "horizontalPadding": 16.0,
+                    "verticalPadding": 16.0,
+                    "paddingRight": 16.0,
+                    "paddingBottom": 24.0,
+                    "usesComponent": "System=iOS, Description=on, TextAlign=start, skeleton=off, Extended=off"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "role": "[deprecated] tui-floating-container",
+            "type": "INSTANCE",
+            "size": {
+              "x": 540.0,
+              "y": 80.0
+            },
+            "layout": "VERTICAL",
+            "usesComponent": "System=iOS, Type=Action, Home Indicator=off, Property 4=off"
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "System": "iOS (iPhone 8)",
+        "Template": "Phone Top"
+      },
+      "tree": {
+        "role": "System=iOS (iPhone 8), Template=Phone Top",
+        "type": "SYMBOL",
+        "size": {
+          "x": 375.0,
+          "y": 667.0
+        },
+        "background": [
+          {
+            "type": "SOLID",
+            "opacity": 1.0,
+            "blendMode": "NORMAL",
+            "visible": true,
+            "color": "#FFFFFF",
+            "colorVariable": {
+              "value": {
+                "alias": {
+                  "assetRef": {
+                    "key": "241ca726fafd57881fc16572cac2fe352b7f86f7",
+                    "version": "1574:376"
+                  }
+                }
+              },
+              "dataType": "ALIAS",
+              "resolvedDataType": "COLOR"
+            }
+          }
+        ],
+        "children": [
+          {
+            "role": "container",
+            "type": "FRAME",
+            "size": {
+              "x": 375.0,
+              "y": 627.0
+            },
+            "layout": "VERTICAL",
+            "children": [
+              {
+                "role": "Image",
+                "type": "FRAME",
+                "size": {
+                  "x": 375.0,
+                  "y": 313.5
+                },
+                "topLeftRadius": 10.0,
+                "topRightRadius": 10.0,
+                "gap": 280.0,
+                "mainAxisAlignment": "CENTER",
+                "crossAxisAlignment": "CENTER",
+                "background": [
+                  {
+                    "type": "SOLID",
+                    "opacity": 1.0,
+                    "blendMode": "NORMAL",
+                    "visible": true,
+                    "color": "#FFFFFF",
+                    "colorVariable": {
+                      "value": {
+                        "alias": {
+                          "assetRef": {
+                            "key": "241ca726fafd57881fc16572cac2fe352b7f86f7",
+                            "version": "1574:376"
+                          }
+                        }
+                      },
+                      "dataType": "ALIAS",
+                      "resolvedDataType": "COLOR"
+                    }
+                  }
+                ],
+                "children": [
+                  {
+                    "role": "ImgContainer",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 375.0,
+                      "y": 314.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "verticalPadding": 72.0,
+                    "mainAxisAlignment": "CENTER",
+                    "children": [
+                      {
+                        "role": "template-phone-frame",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 236.0,
+                          "y": 490.0
+                        },
+                        "radius": 28.0,
+                        "topLeftRadius": 28.0,
+                        "topRightRadius": 28.0,
+                        "bottomLeftRadius": 28.0,
+                        "bottomRightRadius": 28.0,
+                        "layout": "HORIZONTAL",
+                        "gap": 10.0,
+                        "horizontalPadding": 8.0,
+                        "verticalPadding": 8.0,
+                        "paddingRight": 8.0,
+                        "paddingBottom": 8.0,
+                        "mainAxisAlignment": "CENTER",
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 0.06,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#001024",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "0db84cc31aa0800d5e2efb834727004b34f45fbf",
+                                    "version": "1574:362"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "usesComponent": "template-phone-frame"
+                      }
+                    ]
+                  },
+                  {
+                    "role": "Fade",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 375.0,
+                      "y": 64.0
+                    },
+                    "children": [
+                      {
+                        "role": "Mask",
+                        "type": "ROUNDED_RECTANGLE",
+                        "size": {
+                          "x": 375.0,
+                          "y": 64.0
+                        },
+                        "background": [
+                          {
+                            "type": "GRADIENT_LINEAR",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "stops": [
+                              {
+                                "position": 0.0,
+                                "color": "#00000000"
+                              },
+                              {
+                                "position": 1.0,
+                                "color": "#000000"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "role": "Color",
+                        "type": "ROUNDED_RECTANGLE",
+                        "size": {
+                          "x": 375.0,
+                          "y": 64.0
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#F6F7F8",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "b92a008ec386050bbcfef1be9cfaf754a02d18c7",
+                                    "version": "1574:375"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "role": "Content",
+                "type": "FRAME",
+                "size": {
+                  "x": 375.0,
+                  "y": 313.5
+                },
+                "layout": "VERTICAL",
+                "verticalPadding": 8.0,
+                "children": [
+                  {
+                    "role": "tui-header [large]",
+                    "type": "INSTANCE",
+                    "size": {
+                      "x": 375.0,
+                      "y": 305.5
+                    },
+                    "layout": "VERTICAL",
+                    "gap": 16.0,
+                    "horizontalPadding": 16.0,
+                    "verticalPadding": 16.0,
+                    "paddingRight": 16.0,
+                    "paddingBottom": 24.0,
+                    "usesComponent": "System=iOS, Description=on, TextAlign=start, skeleton=off, Extended=off"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "role": "system-status-bar",
+            "type": "INSTANCE",
+            "size": {
+              "x": 375.0,
+              "y": 40.0
+            },
+            "usesComponent": "Appearance=Modal Stack, System=iOS (iPhone 8)"
+          },
+          {
+            "role": "navbar",
+            "type": "FRAME",
+            "size": {
+              "x": 375.0,
+              "y": 56.0
+            },
+            "topLeftRadius": 10.0,
+            "topRightRadius": 10.0,
+            "layout": "VERTICAL",
+            "gap": 10.0,
+            "mainAxisAlignment": "CENTER",
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 1.0,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#FFFFFF",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "241ca726fafd57881fc16572cac2fe352b7f86f7",
+                        "version": "1574:376"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "effects": [
+              {
+                "type": "BACKGROUND_BLUR",
+                "offset": {
+                  "x": 0.0,
+                  "y": 4.0
+                },
+                "radius": 40.0,
+                "visible": true,
+                "blendMode": "NORMAL",
+                "spread": 0.0,
+                "showShadowBehindNode": true,
+                "color": {
+                  "r": 0.0,
+                  "g": 0.0,
+                  "b": 0.0,
+                  "a": 0.25
+                },
+                "authoredColor": {
+                  "space": "DEFAULT",
+                  "c0": 0.0,
+                  "c1": 0.0,
+                  "c2": 0.0,
+                  "c3": 0.25
+                }
+              }
+            ],
+            "children": [
+              {
+                "role": "tui-appbar",
+                "type": "INSTANCE",
+                "size": {
+                  "x": 375.0,
+                  "y": 56.0
+                },
+                "topLeftRadius": 10.0,
+                "topRightRadius": 10.0,
+                "layout": "HORIZONTAL",
+                "crossAxisAlignment": "CENTER",
+                "usesComponent": "System=iOS, Middle=Progress, Left=Back, Right=None"
+              }
+            ]
+          },
+          {
+            "role": "[deprecated] tui-floating-container",
+            "type": "INSTANCE",
+            "size": {
+              "x": 375.0,
+              "y": 80.0
+            },
+            "layout": "VERTICAL",
+            "usesComponent": "System=iOS, Type=Action, Home Indicator=off, Property 4=off"
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "System": "Android",
+        "Template": "Phone Top"
+      },
+      "tree": {
+        "role": "System=Android, Template=Phone Top",
+        "type": "SYMBOL",
+        "size": {
+          "x": 360.0,
+          "y": 800.0
+        },
+        "background": [
+          {
+            "type": "SOLID",
+            "opacity": 1.0,
+            "blendMode": "NORMAL",
+            "visible": true,
+            "color": "#000000"
+          }
+        ],
+        "children": [
+          {
+            "role": "container",
+            "type": "FRAME",
+            "size": {
+              "x": 360.0,
+              "y": 768.0
+            },
+            "layout": "VERTICAL",
+            "children": [
+              {
+                "role": "Image",
+                "type": "FRAME",
+                "size": {
+                  "x": 360.0,
+                  "y": 384.0
+                },
+                "topLeftRadius": 10.0,
+                "topRightRadius": 10.0,
+                "gap": 280.0,
+                "mainAxisAlignment": "CENTER",
+                "crossAxisAlignment": "CENTER",
+                "background": [
+                  {
+                    "type": "SOLID",
+                    "opacity": 1.0,
+                    "blendMode": "NORMAL",
+                    "visible": true,
+                    "color": "#FFFFFF",
+                    "colorVariable": {
+                      "value": {
+                        "alias": {
+                          "assetRef": {
+                            "key": "241ca726fafd57881fc16572cac2fe352b7f86f7",
+                            "version": "1574:376"
+                          }
+                        }
+                      },
+                      "dataType": "ALIAS",
+                      "resolvedDataType": "COLOR"
+                    }
+                  }
+                ],
+                "children": [
+                  {
+                    "role": "ImgContainer",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 360.0,
+                      "y": 384.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "verticalPadding": 72.0,
+                    "mainAxisAlignment": "CENTER",
+                    "children": [
+                      {
+                        "role": "template-phone-frame",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 236.0,
+                          "y": 505.0
+                        },
+                        "radius": 28.0,
+                        "topLeftRadius": 28.0,
+                        "topRightRadius": 28.0,
+                        "bottomLeftRadius": 28.0,
+                        "bottomRightRadius": 28.0,
+                        "layout": "HORIZONTAL",
+                        "gap": 10.0,
+                        "horizontalPadding": 8.0,
+                        "verticalPadding": 8.0,
+                        "paddingRight": 8.0,
+                        "paddingBottom": 8.0,
+                        "mainAxisAlignment": "CENTER",
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 0.06,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#001024",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "0db84cc31aa0800d5e2efb834727004b34f45fbf",
+                                    "version": "1574:362"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ],
+                        "usesComponent": "template-phone-frame"
+                      }
+                    ]
+                  },
+                  {
+                    "role": "Fade",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 360.0,
+                      "y": 64.0
+                    },
+                    "children": [
+                      {
+                        "role": "Mask",
+                        "type": "ROUNDED_RECTANGLE",
+                        "size": {
+                          "x": 360.0,
+                          "y": 64.0
+                        },
+                        "background": [
+                          {
+                            "type": "GRADIENT_LINEAR",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "stops": [
+                              {
+                                "position": 0.0,
+                                "color": "#00000000"
+                              },
+                              {
+                                "position": 1.0,
+                                "color": "#000000"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "role": "Color",
+                        "type": "ROUNDED_RECTANGLE",
+                        "size": {
+                          "x": 360.0,
+                          "y": 64.0
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#F6F7F8",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "b92a008ec386050bbcfef1be9cfaf754a02d18c7",
+                                    "version": "1574:375"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "role": "Content",
+                "type": "FRAME",
+                "size": {
+                  "x": 360.0,
+                  "y": 384.0
+                },
+                "layout": "VERTICAL",
+                "verticalPadding": 8.0,
+                "background": [
+                  {
+                    "type": "SOLID",
+                    "opacity": 1.0,
+                    "blendMode": "NORMAL",
+                    "visible": true,
+                    "color": "#FFFFFF",
+                    "colorVariable": {
+                      "value": {
+                        "alias": {
+                          "assetRef": {
+                            "key": "241ca726fafd57881fc16572cac2fe352b7f86f7",
+                            "version": "1574:376"
+                          }
+                        }
+                      },
+                      "dataType": "ALIAS",
+                      "resolvedDataType": "COLOR"
+                    }
+                  }
+                ],
+                "children": [
+                  {
+                    "role": "tui-header [large]",
+                    "type": "INSTANCE",
+                    "size": {
+                      "x": 360.0,
+                      "y": 376.0
+                    },
+                    "layout": "VERTICAL",
+                    "gap": 16.0,
+                    "horizontalPadding": 16.0,
+                    "verticalPadding": 16.0,
+                    "paddingRight": 16.0,
+                    "paddingBottom": 24.0,
+                    "usesComponent": "System=Android, Description=on, TextAlign=start, skeleton=off, Extended=off"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "role": "[deprecated] tui-floating-container",
+            "type": "INSTANCE",
+            "size": {
+              "x": 360.0,
+              "y": 80.0
+            },
+            "layout": "VERTICAL",
+            "usesComponent": "System=Android, Type=Action, Home Indicator=off, Property 4=off"
+          },
+          {
+            "role": "navbar",
+            "type": "FRAME",
+            "size": {
+              "x": 360.0,
+              "y": 56.0
+            },
+            "topLeftRadius": 12.0,
+            "topRightRadius": 12.0,
+            "layout": "VERTICAL",
+            "gap": 10.0,
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 1.0,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#FFFFFF",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "241ca726fafd57881fc16572cac2fe352b7f86f7",
+                        "version": "1574:376"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "children": [
+              {
+                "role": "tui-appbar",
+                "type": "INSTANCE",
+                "size": {
+                  "x": 360.0,
+                  "y": 56.0
+                },
+                "layout": "HORIZONTAL",
+                "usesComponent": "System=Android, Middle=Progress, Left=Back, Right=None"
+              }
+            ]
+          },
+          {
+            "role": "system-status-bar",
+            "type": "INSTANCE",
+            "size": {
+              "x": 360.0,
+              "y": 32.0
+            },
+            "usesComponent": "Appearance=Dark Bg, System=Android"
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "orientation": "vertical",
+        "template": "image-centered"
+      },
+      "tree": {
+        "role": "orientation=vertical, template=image-centered",
+        "type": "SYMBOL",
+        "size": {
+          "x": 1280.0,
+          "y": 768.0
+        },
+        "layout": "HORIZONTAL",
+        "gap": 10.0,
+        "verticalPadding": 64.0,
+        "paddingBottom": 64.0,
+        "mainAxisAlignment": "CENTER",
+        "crossAxisAlignment": "CENTER",
+        "background": [
+          {
+            "type": "SOLID",
+            "opacity": 0.7,
+            "blendMode": "NORMAL",
+            "visible": true,
+            "color": "#000000",
+            "colorVariable": {
+              "value": {
+                "alias": {
+                  "assetRef": {
+                    "key": "d039cad36709dad4a0452b17a041e29f60b73518",
+                    "version": "1574:286"
+                  }
+                }
+              },
+              "dataType": "ALIAS",
+              "resolvedDataType": "COLOR"
+            }
+          }
+        ],
+        "effects": [
+          {
+            "type": "BACKGROUND_BLUR",
+            "offset": {
+              "x": 0.0,
+              "y": 4.0
+            },
+            "radius": 32.0,
+            "visible": true,
+            "blendMode": "NORMAL",
+            "spread": 0.0,
+            "showShadowBehindNode": false,
+            "color": {
+              "r": 0.0,
+              "g": 0.0,
+              "b": 0.0,
+              "a": 0.25
+            },
+            "authoredColor": {
+              "space": "DEFAULT",
+              "c0": 0.0,
+              "c1": 0.0,
+              "c2": 0.0,
+              "c3": 0.25
+            }
+          }
+        ],
+        "children": [
+          {
+            "role": "blur",
+            "type": "ROUNDED_RECTANGLE",
+            "size": {
+              "x": 1280.0,
+              "y": 768.0
+            },
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 0.002,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#000000"
+              }
+            ],
+            "effects": [
+              {
+                "type": "BACKGROUND_BLUR",
+                "offset": {
+                  "x": 0.0,
+                  "y": 4.0
+                },
+                "radius": 32.0,
+                "visible": true,
+                "blendMode": "NORMAL",
+                "spread": 0.0,
+                "showShadowBehindNode": false,
+                "color": {
+                  "r": 0.0,
+                  "g": 0.0,
+                  "b": 0.0,
+                  "a": 0.25
+                },
+                "authoredColor": {
+                  "space": "DEFAULT",
+                  "c0": 0.0,
+                  "c1": 0.0,
+                  "c2": 0.0,
+                  "c3": 0.25
+                }
+              }
+            ]
+          },
+          {
+            "role": "Container",
+            "type": "FRAME",
+            "size": {
+              "x": 600.0,
+              "y": 516.0
+            },
+            "radius": 24.0,
+            "topLeftRadius": 24.0,
+            "topRightRadius": 24.0,
+            "bottomLeftRadius": 24.0,
+            "bottomRightRadius": 24.0,
+            "layout": "VERTICAL",
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 1.0,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#FFFFFF",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "241ca726fafd57881fc16572cac2fe352b7f86f7",
+                        "version": "4350:0"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "effects": [
+              {
+                "type": "DROP_SHADOW",
+                "offset": {
+                  "x": 0.0,
+                  "y": 20.0
+                },
+                "radius": 50.0,
+                "visible": true,
+                "blendMode": "NORMAL",
+                "spread": 0.0,
+                "showShadowBehindNode": false,
+                "radiusVar": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "77f01f003073e04ac37fa1af2dcb5982ffa78930",
+                        "version": "2361:24"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "FLOAT"
+                },
+                "colorVar": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "5fa3e330213e0f2da51ee5ad4136248a9a56ba1b",
+                        "version": "2361:23"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                },
+                "yVar": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "e61d7d24b3cc43e5e49b9ce2d258c32d0c65d223",
+                        "version": "2365:26"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "FLOAT"
+                },
+                "color": {
+                  "r": 0.0,
+                  "g": 0.0,
+                  "b": 0.0,
+                  "a": 0.21
+                },
+                "authoredColor": {
+                  "space": "DEFAULT",
+                  "c0": 0.0,
+                  "c1": 0.0,
+                  "c2": 0.0,
+                  "c3": 0.21
+                }
+              }
+            ],
+            "children": [
+              {
+                "role": "Image",
+                "type": "FRAME",
+                "size": {
+                  "x": 600.0,
+                  "y": 280.0
+                },
+                "children": [
+                  {
+                    "role": "ImageContainer",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 600.0,
+                      "y": 280.0
+                    },
+                    "layout": "VERTICAL",
+                    "mainAxisAlignment": "CENTER",
+                    "crossAxisAlignment": "CENTER",
+                    "children": [
+                      {
+                        "role": "tui-illustrations-common / Light / passport-alert",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 220.0,
+                          "y": 220.0
+                        },
+                        "strokeWidth": 1.273,
+                        "usesComponent": "tui-illustrations-common / Light / passport-alert"
+                      },
+                      {
+                        "role": "Fade",
+                        "type": "FRAME",
+                        "size": {
+                          "x": 600.0,
+                          "y": 64.0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "role": "Content+Footer",
+                "type": "FRAME",
+                "size": {
+                  "x": 600.0,
+                  "y": 236.0
+                },
+                "layout": "VERTICAL",
+                "gap": 28.0,
+                "horizontalPadding": 40.0,
+                "verticalPadding": 40.0,
+                "paddingRight": 40.0,
+                "paddingBottom": 40.0,
+                "crossAxisAlignment": "CENTER",
+                "children": [
+                  {
+                    "role": "Content",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 520.0,
+                      "y": 72.0
+                    },
+                    "layout": "VERTICAL",
+                    "gap": 16.0,
+                    "children": [
+                      {
+                        "role": "tui-header",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 520.0,
+                          "y": 72.0
+                        },
+                        "layout": "VERTICAL",
+                        "gap": 8.0,
+                        "paddingBottom": 8.0,
+                        "crossAxisAlignment": "CENTER",
+                        "usesComponent": "size=medium-h4, accessory=none, skeleton=off"
+                      },
+                      {
+                        "role": "Placeholder",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 520.0,
+                          "y": 50.0
+                        },
+                        "layout": "VERTICAL",
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": false,
+                            "color": "#FFFFFF"
+                          }
+                        ],
+                        "usesComponent": "Placeholder"
+                      }
+                    ]
+                  },
+                  {
+                    "role": "Footer",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 520.0,
+                      "y": 56.0
+                    },
+                    "layout": "VERTICAL",
+                    "gap": 20.0,
+                    "crossAxisAlignment": "CENTER",
+                    "children": [
+                      {
+                        "role": "buttons",
+                        "type": "FRAME",
+                        "size": {
+                          "x": 520.0,
+                          "y": 56.0
+                        },
+                        "layout": "VERTICAL",
+                        "gap": 12.0,
+                        "crossAxisAlignment": "CENTER"
+                      },
+                      {
+                        "role": "disclaimer",
+                        "type": "FRAME",
+                        "size": {
+                          "x": 520.0,
+                          "y": 36.0
+                        },
+                        "layout": "HORIZONTAL",
+                        "gap": 10.0,
+                        "mainAxisAlignment": "CENTER",
+                        "crossAxisAlignment": "CENTER"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "role": "tui-button [back]",
+                "type": "INSTANCE",
+                "size": {
+                  "x": 30.0,
+                  "y": 30.0
+                },
+                "radius": 16.0,
+                "topLeftRadius": 16.0,
+                "topRightRadius": 16.0,
+                "bottomLeftRadius": 16.0,
+                "bottomRightRadius": 16.0,
+                "layout": "HORIZONTAL",
+                "gap": 10.0,
+                "horizontalPadding": 7.0,
+                "verticalPadding": 7.0,
+                "paddingRight": 7.0,
+                "paddingBottom": 7.0,
+                "background": [
+                  {
+                    "type": "SOLID",
+                    "opacity": 0.06,
+                    "blendMode": "NORMAL",
+                    "visible": true,
+                    "color": "#244A7F",
+                    "colorVariable": {
+                      "value": {
+                        "alias": {
+                          "assetRef": {
+                            "key": "d468661b4928f785ef8034b99adad89be04d911a",
+                            "version": "1574:387"
+                          }
+                        }
+                      },
+                      "dataType": "ALIAS",
+                      "resolvedDataType": "COLOR"
+                    }
+                  }
+                ],
+                "usesComponent": "state=Normal, appearance=default, size=small"
+              },
+              {
+                "role": "tui-button [close]",
+                "type": "INSTANCE",
+                "size": {
+                  "x": 30.0,
+                  "y": 30.0
+                },
+                "radius": 16.0,
+                "topLeftRadius": 16.0,
+                "topRightRadius": 16.0,
+                "bottomLeftRadius": 16.0,
+                "bottomRightRadius": 16.0,
+                "layout": "HORIZONTAL",
+                "gap": 10.0,
+                "horizontalPadding": 7.0,
+                "verticalPadding": 7.0,
+                "paddingRight": 7.0,
+                "paddingBottom": 7.0,
+                "background": [
+                  {
+                    "type": "SOLID",
+                    "opacity": 0.06,
+                    "blendMode": "NORMAL",
+                    "visible": true,
+                    "color": "#244A7F",
+                    "colorVariable": {
+                      "value": {
+                        "alias": {
+                          "assetRef": {
+                            "key": "d468661b4928f785ef8034b99adad89be04d911a",
+                            "version": "1574:387"
+                          }
+                        }
+                      },
+                      "dataType": "ALIAS",
+                      "resolvedDataType": "COLOR"
+                    }
+                  }
+                ],
+                "usesComponent": "state=Normal, appearance=default, size=small"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "system": "PWA/Webview - bottomsheet",
+        "template": "Image Centered"
+      },
+      "tree": {
+        "role": "system=PWA/Webview - bottomsheet, template=Image Centered",
+        "type": "SYMBOL",
+        "size": {
+          "x": 375.0,
+          "y": 812.0
+        },
+        "background": [
+          {
+            "type": "SOLID",
+            "opacity": 0.5,
+            "blendMode": "NORMAL",
+            "visible": true,
+            "color": "#000000",
+            "colorVariable": {
+              "value": {
+                "alias": {
+                  "assetRef": {
+                    "key": "d039cad36709dad4a0452b17a041e29f60b73518",
+                    "version": "10327:270"
+                  }
+                }
+              },
+              "dataType": "ALIAS",
+              "resolvedDataType": "COLOR"
+            }
+          }
+        ],
+        "children": [
+          {
+            "role": "container",
+            "type": "FRAME",
+            "size": {
+              "x": 375.0,
+              "y": 768.0
+            },
+            "topLeftRadius": 10.0,
+            "topRightRadius": 10.0,
+            "layout": "VERTICAL",
+            "background": [
+              {
+                "type": "SOLID",
+                "opacity": 1.0,
+                "blendMode": "NORMAL",
+                "visible": true,
+                "color": "#FFFFFF",
+                "colorVariable": {
+                  "value": {
+                    "alias": {
+                      "assetRef": {
+                        "key": "241ca726fafd57881fc16572cac2fe352b7f86f7",
+                        "version": "10327:21"
+                      }
+                    }
+                  },
+                  "dataType": "ALIAS",
+                  "resolvedDataType": "COLOR"
+                }
+              }
+            ],
+            "children": [
+              {
+                "role": "Image",
+                "type": "FRAME",
+                "size": {
+                  "x": 375.0,
+                  "y": 384.0
+                },
+                "topLeftRadius": 10.0,
+                "topRightRadius": 10.0,
+                "gap": 280.0,
+                "mainAxisAlignment": "CENTER",
+                "crossAxisAlignment": "CENTER",
+                "background": [
+                  {
+                    "type": "SOLID",
+                    "opacity": 1.0,
+                    "blendMode": "NORMAL",
+                    "visible": true,
+                    "color": "#FFFFFF",
+                    "colorVariable": {
+                      "value": {
+                        "alias": {
+                          "assetRef": {
+                            "key": "241ca726fafd57881fc16572cac2fe352b7f86f7",
+                            "version": "10327:21"
+                          }
+                        }
+                      },
+                      "dataType": "ALIAS",
+                      "resolvedDataType": "COLOR"
+                    }
+                  }
+                ],
+                "children": [
+                  {
+                    "role": "ImgContainer",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 375.0,
+                      "y": 384.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "verticalPadding": 24.0,
+                    "mainAxisAlignment": "CENTER",
+                    "crossAxisAlignment": "CENTER",
+                    "children": [
+                      {
+                        "role": "tui-illustrations-common / Light / phone-check",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 220.0,
+                          "y": 220.0
+                        },
+                        "usesComponent": "tui-illustrations-common / Light / phone-check"
+                      }
+                    ]
+                  },
+                  {
+                    "role": "Fade",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 375.0,
+                      "y": 64.0
+                    },
+                    "children": [
+                      {
+                        "role": "Mask",
+                        "type": "ROUNDED_RECTANGLE",
+                        "size": {
+                          "x": 375.0,
+                          "y": 64.0
+                        },
+                        "background": [
+                          {
+                            "type": "GRADIENT_LINEAR",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "stops": [
+                              {
+                                "position": 0.0,
+                                "color": "#00000000"
+                              },
+                              {
+                                "position": 1.0,
+                                "color": "#000000"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "role": "Color",
+                        "type": "ROUNDED_RECTANGLE",
+                        "size": {
+                          "x": 375.0,
+                          "y": 64.0
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#F6F7F8",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "b92a008ec386050bbcfef1be9cfaf754a02d18c7",
+                                    "version": "9800:71"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "role": "content",
+                "type": "FRAME",
+                "size": {
+                  "x": 375.0,
+                  "y": 384.0
+                },
+                "layout": "VERTICAL",
+                "gap": 8.0,
+                "verticalPadding": 8.0,
+                "children": [
+                  {
+                    "role": "tui-header [large]",
+                    "type": "INSTANCE",
+                    "size": {
+                      "x": 375.0,
+                      "y": 112.0
+                    },
+                    "layout": "VERTICAL",
+                    "gap": 16.0,
+                    "horizontalPadding": 16.0,
+                    "verticalPadding": 16.0,
+                    "paddingRight": 16.0,
+                    "paddingBottom": 24.0,
+                    "usesComponent": "system=iOS, show-description=on, text-align=start, skeleton=off, extended=off"
+                  },
+                  {
+                    "role": "Placeholder",
+                    "type": "INSTANCE",
+                    "size": {
+                      "x": 375.0,
+                      "y": 56.0
+                    },
+                    "layout": "VERTICAL",
+                    "gap": 10.0,
+                    "horizontalPadding": 16.0,
+                    "paddingRight": 16.0,
+                    "usesComponent": "padding=16, height=fixed"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "role": "tui-floating-container",
+            "type": "INSTANCE",
+            "size": {
+              "x": 375.0,
+              "y": 114.0
+            },
+            "layout": "VERTICAL",
+            "usesComponent": "system=iOS, content=action, background=off"
+          },
+          {
+            "role": "navbar",
+            "type": "FRAME",
+            "size": {
+              "x": 375.0,
+              "y": 56.0
+            },
+            "topLeftRadius": 10.0,
+            "topRightRadius": 10.0,
+            "layout": "VERTICAL",
+            "children": [
+              {
+                "role": "tui-app-bar",
+                "type": "INSTANCE",
+                "size": {
+                  "x": 375.0,
+                  "y": 56.0
+                },
+                "layout": "HORIZONTAL",
+                "crossAxisAlignment": "CENTER",
+                "usesComponent": "System=iOS, Middle=Progress, Left=Back, Right=None"
+              }
+            ]
+          },
+          {
+            "role": "system-status-bar",
+            "type": "INSTANCE",
+            "size": {
+              "x": 375.0,
+              "y": 44.0
+            },
+            "layout": "VERTICAL",
+            "gap": 10.0,
+            "usesComponent": "Appearance=Dark Bg, System=iOS (iPhone X)"
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "system": "PWA/Webview - fullscreen",
+        "template": "Image Centered"
+      },
+      "tree": {
+        "role": "system=PWA/Webview - fullscreen, template=Image Centered",
+        "type": "SYMBOL",
+        "size": {
+          "x": 375.0,
+          "y": 812.0
+        },
+        "background": [
+          {
+            "type": "SOLID",
+            "opacity": 1.0,
+            "blendMode": "NORMAL",
+            "visible": true,
+            "color": "#FFFFFF",
+            "colorVariable": {
+              "value": {
+                "alias": {
+                  "assetRef": {
+                    "key": "1a7832ae46bca46eedf2749ccbe2dda27e313d7a",
+                    "version": "10327:179"
+                  }
+                }
+              },
+              "dataType": "ALIAS",
+              "resolvedDataType": "COLOR"
+            }
+          }
+        ],
+        "children": [
+          {
+            "role": "container",
+            "type": "FRAME",
+            "size": {
+              "x": 375.0,
+              "y": 768.0
+            },
+            "layout": "VERTICAL",
+            "children": [
+              {
+                "role": "Image",
+                "type": "FRAME",
+                "size": {
+                  "x": 375.0,
+                  "y": 384.0
+                },
+                "gap": 280.0,
+                "mainAxisAlignment": "CENTER",
+                "crossAxisAlignment": "CENTER",
+                "background": [
+                  {
+                    "type": "SOLID",
+                    "opacity": 1.0,
+                    "blendMode": "NORMAL",
+                    "visible": true,
+                    "color": "#FFFFFF",
+                    "colorVariable": {
+                      "value": {
+                        "alias": {
+                          "assetRef": {
+                            "key": "1a7832ae46bca46eedf2749ccbe2dda27e313d7a",
+                            "version": "10327:179"
+                          }
+                        }
+                      },
+                      "dataType": "ALIAS",
+                      "resolvedDataType": "COLOR"
+                    }
+                  }
+                ],
+                "children": [
+                  {
+                    "role": "ImgContainer",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 375.0,
+                      "y": 384.0
+                    },
+                    "layout": "HORIZONTAL",
+                    "gap": 10.0,
+                    "verticalPadding": 24.0,
+                    "mainAxisAlignment": "CENTER",
+                    "crossAxisAlignment": "CENTER",
+                    "children": [
+                      {
+                        "role": "tui-illustrations-common / Light / phone-check",
+                        "type": "INSTANCE",
+                        "size": {
+                          "x": 220.0,
+                          "y": 220.0
+                        },
+                        "usesComponent": "tui-illustrations-common / Light / phone-check"
+                      }
+                    ]
+                  },
+                  {
+                    "role": "Fade",
+                    "type": "FRAME",
+                    "size": {
+                      "x": 375.0,
+                      "y": 64.0
+                    },
+                    "children": [
+                      {
+                        "role": "Mask",
+                        "type": "ROUNDED_RECTANGLE",
+                        "size": {
+                          "x": 375.0,
+                          "y": 64.0
+                        },
+                        "background": [
+                          {
+                            "type": "GRADIENT_LINEAR",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "stops": [
+                              {
+                                "position": 0.0,
+                                "color": "#00000000"
+                              },
+                              {
+                                "position": 1.0,
+                                "color": "#000000"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "role": "Color",
+                        "type": "ROUNDED_RECTANGLE",
+                        "size": {
+                          "x": 375.0,
+                          "y": 64.0
+                        },
+                        "background": [
+                          {
+                            "type": "SOLID",
+                            "opacity": 1.0,
+                            "blendMode": "NORMAL",
+                            "visible": true,
+                            "color": "#F6F7F8",
+                            "colorVariable": {
+                              "value": {
+                                "alias": {
+                                  "assetRef": {
+                                    "key": "b92a008ec386050bbcfef1be9cfaf754a02d18c7",
+                                    "version": "9800:71"
+                                  }
+                                }
+                              },
+                              "dataType": "ALIAS",
+                              "resolvedDataType": "COLOR"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "role": "content",
+                "type": "FRAME",
+                "size": {
+                  "x": 375.0,
+                  "y": 384.0
+                },
+                "layout": "VERTICAL",
+                "gap": 8.0,
+                "verticalPadding": 8.0,
+                "children": [
+                  {
+                    "role": "tui-header [large]",
+                    "type": "INSTANCE",
+                    "size": {
+                      "x": 375.0,
+                      "y": 112.0
+                    },
+                    "layout": "VERTICAL",
+                    "gap": 16.0,
+                    "horizontalPadding": 16.0,
+                    "verticalPadding": 16.0,
+                    "paddingRight": 16.0,
+                    "paddingBottom": 24.0,
+                    "usesComponent": "system=iOS, show-description=on, text-align=start, skeleton=off, extended=off"
+                  },
+                  {
+                    "role": "Placeholder",
+                    "type": "INSTANCE",
+                    "size": {
+                      "x": 375.0,
+                      "y": 56.0
+                    },
+                    "layout": "VERTICAL",
+                    "gap": 10.0,
+                    "horizontalPadding": 16.0,
+                    "paddingRight": 16.0,
+                    "usesComponent": "padding=16, height=fixed"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "role": "tui-floating-container",
+            "type": "INSTANCE",
+            "size": {
+              "x": 375.0,
+              "y": 114.0
+            },
+            "layout": "VERTICAL",
+            "usesComponent": "system=iOS, content=action, background=off"
+          },
+          {
+            "role": "navbar",
+            "type": "FRAME",
+            "size": {
+              "x": 375.0,
+              "y": 44.0
+            },
+            "layout": "VERTICAL",
+            "children": [
+              {
+                "role": "tui-app-bar",
+                "type": "INSTANCE",
+                "size": {
+                  "x": 375.0,
+                  "y": 44.0
+                },
+                "layout": "HORIZONTAL",
+                "crossAxisAlignment": "CENTER",
+                "usesComponent": "System=iOS, Middle=Progress, Left=Back, Right=None"
+              }
+            ]
+          },
+          {
+            "role": "system-status-bar",
+            "type": "INSTANCE",
+            "size": {
+              "x": 375.0,
+              "y": 44.0
+            },
+            "layout": "VERTICAL",
+            "gap": 10.0,
+            "usesComponent": "Appearance=Dark Bg, System=iOS (iPhone X)"
+          }
+        ]
+      }
+    }
+  ],
+  "guidance": [
+    "Onboarding-flow — используется для последовательной подачи информации на разных страницах"
+  ],
+  "implementationNames": {
+    "tui-onboarding-flow": [
+      "TuiOnboardingDialogFragment TuiOnboardingFlow"
+    ]
+  }
+}

@@ -3,10 +3,14 @@
   const api=document.querySelector('meta[name="myteam-api"]').content.replace(/\/$/,'');
   const root=document.querySelector('#app'),main=document.querySelector('#main'),nav=document.querySelector('#account-nav');
   const panel=document.querySelector('#panel'),panelBody=document.querySelector('#panel-content'),panelTitle=document.querySelector('#panel-title');
+  const screen=document.querySelector('#screen'),screenBody=document.querySelector('#screen-content'),screenTitle=document.querySelector('#screen-title'),back=document.querySelector('#screen-back'),barTitle=document.querySelector('#appbar-title');
+  const mobileOS=/Android/i.test(navigator.userAgent)?'android':(/iPhone|iPad|iPod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1))?'ios':'generic';
+  document.documentElement.dataset.platform=mobileOS;
   const storage='myteam.session',hint='myteam.authenticated',stageHint='myteam.stage';
   let token=sessionStorage.getItem(storage),csrf=null,phase='intro',authenticated=Boolean(token&&sessionStorage.getItem(hint)!=='false');
   let authVersion=0,mainVersion=0,panelVersion=0,loginVersion=0,introStep=0,mainReady=false;
   let mainAbort,panelAbort,loginAbort,pollTimer,polling=false,closeTarget='/',introAuthenticated=false;
+  let screenVersion=0,screenAbort,screenKind=null,activityScroll=0;
   let intendedRoute=/^\/(profile|history)\/$|^\/meetings\/[a-f0-9-]{36}\/feedback\/(?:\?from=history)?$/i.test(location.hash.slice(1))?location.hash.slice(1):'/';
   if(window.top!==window.self){main.textContent='Откройте МАЙТИМ в отдельной вкладке.';return;}
   const steps=[
@@ -20,7 +24,7 @@
   function element(tag,text,className){const node=document.createElement(tag);node.textContent=text;if(className)node.className=className;return node;}
   const day=value=>new Intl.DateTimeFormat('ru-RU',{day:'numeric',month:'long',timeZone:'Europe/Moscow'}).format(new Date(value));
   const dates=(a,b)=>day(a)+' — '+day(b);
-  const stars=value=>'★'.repeat(value)+'☆'.repeat(5-value);
+  function ratingResult(value){const fragment=clone('rating-result'),node=$(fragment,'.stars-result');node.setAttribute('aria-label',`Оценка ${value} из 5`);node.querySelectorAll('svg').forEach((star,index)=>star.classList.toggle('selected',index<value));return node;}
   function telegramLink(link,value){try{const url=new URL(value);if(url.protocol!=='https:'||url.hostname!=='t.me')throw Error();link.href=url.href;return true;}catch{link.hidden=true;return false;}}
   class ApiError extends Error{constructor(code,status=0,data={}){super(code);this.code=code;this.status=status;this.data=data;}}
   async function request(path,{method='GET',data,signal}={}){
@@ -53,13 +57,23 @@
   function go(path){if(route()===path)routeChanged();else location.hash=path;}
   function closePanel(){panelVersion++;panelAbort?.abort();if(panel.open)panel.close();panelBody.replaceChildren();}
   function stopLogin(){loginVersion++;clearTimeout(pollTimer);loginAbort?.abort();polling=false;}
-  function clearViews(){mainVersion++;mainAbort?.abort();stopLogin();closePanel();mainReady=false;}
+  function clearViews(){hideScreen();main.hidden=false;chrome('');mainVersion++;mainAbort?.abort();stopLogin();closePanel();mainReady=false;}
+  function chrome(title){
+    const secondary=Boolean(title);back.hidden=!secondary;barTitle.hidden=phase!=='app';barTitle.textContent=title||'Активности';document.querySelector('.appbar').dataset.secondary=String(secondary);
+    document.querySelector('.brand').hidden=secondary;nav.hidden=phase!=='app'||secondary;
+    document.title=title?title+' · МАЙТИМ':'МАЙТИМ';
+  }
+  function hideScreen(){screenVersion++;screenAbort?.abort();screenAbort=null;screen.hidden=true;screenKind=null;screenBody.replaceChildren();}
+  function returnActivities(){
+    const wasScreen=!screen.hidden;hideScreen();main.hidden=false;chrome('');
+    if(wasScreen){window.scrollTo(0,activityScroll);main.querySelector('h1')?.focus({preventScroll:true});}
+  }
   function showIntro(step=0,alreadyAuthenticated=false){
     clearViews();phase='intro';introStep=step;introAuthenticated=alreadyAuthenticated;nav.hidden=true;hash('/');
-    const fragment=clone('intro');put(fragment,'[data-step]',`Знакомство · ${step+1} из 3`);put(fragment,'[data-heading]',steps[step][0]);put(fragment,'[data-body]',steps[step][1]);
+    const fragment=clone('intro');$(fragment,'progress').value=step+1;put(fragment,'[data-step]',`Знакомство · ${step+1} из 3`);put(fragment,'[data-heading]',steps[step][0]);put(fragment,'[data-body]',steps[step][1]);
     const button=$(fragment,'[data-intro-next]');button.textContent=step===2?(alreadyAuthenticated?'Продолжить':'Войти через Telegram'):'Дальше';
     button.onclick=()=>step<2?showIntro(step+1,alreadyAuthenticated):startLogin(alreadyAuthenticated);
-    main.replaceChildren(fragment);
+    main.replaceChildren(fragment);window.scrollTo(0,0);
   }
   function fail(target,retry,message){const fragment=clone('error');if(message)put(fragment,'[role="alert"]',message);$(fragment,'[data-retry]').onclick=retry;target.replaceChildren(fragment);}
   function loading(target){target.replaceChildren(clone('loading'));}
@@ -107,7 +121,7 @@
     if(version===loginVersion&&phase==='login')pollTimer=setTimeout(()=>pollLogin(version),2000);
   }
   function enterAccount(body){authenticated=true;sessionStorage.setItem(hint,'true');stopLogin();if(!acceptAccount(body))return;showApp();hash(intendedRoute);intendedRoute='/';loadActivities();routeChanged();}
-  function showApp(){phase='app';nav.hidden=false;main.replaceChildren(clone('activities'));mainReady=false;}
+  function showApp(){phase='app';hideScreen();main.hidden=false;chrome('');main.replaceChildren(clone('activities'));mainReady=false;}
   function showSetup(body){clearViews();phase='setup';nav.hidden=true;hash('/');main.replaceChildren(element('h1','Давайте познакомимся'),element('p','Заполни три поля, чтобы перейти к активностям.','muted'));const target=element('div','', 'setup');main.append(target);renderProfile(target,body,true);}
   async function loadSetup(){
     clearViews();phase='setup-loading';nav.hidden=true;hash('/');main.replaceChildren(element('h1','Давайте познакомимся'));
@@ -134,7 +148,7 @@
       telegramLink($(active,'[data-contacts]'),current.contacts_url);$(active,'[data-feedback]').onclick=()=>go('/meetings/'+current.meeting_id+'/feedback/');body.append(active);
     }else if(current.kind==='completed'){
       const yes=current.answer.outcome==='yes';body.append(element('h2',yes?'Спасибо за участие!':'Спасибо за ответ'),element('p',yes?current.activity_title+' — результат сохранён.':'На этой неделе не получилось провести активность. Мы сохранили твой ответ.'));
-      if(yes&&current.answer.rating){const rating=element('p',stars(current.answer.rating),'stars-result');rating.setAttribute('aria-label',`Оценка ${current.answer.rating} из 5`);body.append(rating);}
+      if(yes&&current.answer.rating){body.append(ratingResult(current.answer.rating));}
       body.append(element('p','На следующей неделе будет новая возможность поучаствовать.','muted'));
     }else{
       const messages={new:['Добро пожаловать!','Ты только присоединился. Запись на текущую неделю уже завершена, поэтому активной встречи пока нет.'],skipped:['Эту неделю ты пропускаешь','На текущую неделю ты не записался. Всё в порядке — участие добровольное.'],preparing:['Ты записан на эту неделю','Готовим состав и инструкции. Они появятся здесь после публикации.'],unmatched:['В этот раз без активности','Ты записался, но участников не хватило для формирования группы.'],expired:['Активность не состоялась','На этой неделе не удалось запустить активность. Можно записаться на следующую неделю.']};
@@ -159,12 +173,16 @@
     document.querySelector('#panel-close').setAttribute('aria-label',back==='/history/'?'Вернуться к истории':'Вернуться к активностям');
     return panelVersion;
   }
-  async function loadPanel(kind){
-    const version=openPanel(kind==='profile'?'Профиль':'История активностей');
+  async function loadScreen(kind){
+    const previousScroll=!screen.hidden&&screenKind===kind?window.scrollY:0;
+    closePanel();
+    if(screen.hidden)activityScroll=window.scrollY;
+    screenVersion++;screenAbort?.abort();screenAbort=new AbortController();const version=screenVersion;
+    screenKind=kind;main.hidden=true;screen.hidden=false;screenTitle.textContent=kind==='profile'?'Профиль':'История активностей';chrome(screenTitle.textContent);loading(screenBody);window.scrollTo(0,previousScroll);screenTitle.focus({preventScroll:true});
     try{
-      const body=await request('/api/'+kind+'/',{signal:panelAbort.signal});if(version!==panelVersion)return;if(!acceptAccount(body))return;
-      if(kind==='profile')renderProfile(panelBody,body,false);else renderHistory(body.entries);
-    }catch(error){if(version===panelVersion)catchLoad(error,panelBody,()=>loadPanel(kind));}
+      const body=await request('/api/'+kind+'/',{signal:screenAbort.signal});if(version!==screenVersion)return;if(!acceptAccount(body))return;
+      if(kind==='profile')renderProfile(screenBody,body,false);else renderHistory(body.entries);window.scrollTo(0,previousScroll);
+    }catch(error){if(version===screenVersion)catchLoad(error,screenBody,()=>loadScreen(kind));}
   }
   function clearErrors(form){form.querySelectorAll('[data-field-error]').forEach(node=>{node.hidden=true;node.textContent='';});form.querySelectorAll('[aria-invalid]').forEach(node=>node.removeAttribute('aria-invalid'));$(form,'[data-form-message]').replaceChildren();}
   function formError(form,error,retry){
@@ -181,27 +199,27 @@
     else data.achievements.forEach(award=>awards.append(element('p',award.title,'badge'),element('p',award.description)));
     $(fragment,'[data-logout]').onclick=logout;
     form.onsubmit=async event=>{
-      event.preventDefault();if(form.dataset.busy||!form.reportValidity())return;clearErrors(form);form.dataset.busy='true';const button=$(form,'[data-submit]'),label=button.textContent;button.disabled=true;button.textContent='Сохраняем…';const version=authVersion,view=panelVersion;
+      event.preventDefault();if(form.dataset.busy||!form.reportValidity())return;clearErrors(form);form.dataset.busy='true';const button=$(form,'[data-submit]'),label=button.textContent;button.disabled=true;button.textContent='Сохраняем…';const version=authVersion;
       try{
         const body=await request('/api/profile/',{method:'POST',data:Object.fromEntries(new FormData(form))});
         if(version!==authVersion||!document.contains(form))return;
         if(setup){enterAccount(body);return;}
-        if(view!==panelVersion)return;const notice=element('p','Профиль сохранён.','notice');notice.setAttribute('role','status');$(form,'[data-form-message]').append(notice);
+        const notice=element('p','Профиль сохранён.','notice');notice.setAttribute('role','status');$(form,'[data-form-message]').append(notice);
       }catch(error){if(document.contains(form))formError(form,error,()=>form.requestSubmit());}
       finally{delete form.dataset.busy;button.disabled=false;button.textContent=label;}
     };
     target.replaceChildren(fragment);
   }
   function renderHistory(entries){
-    panelBody.replaceChildren();
-    if(!entries.length){const card=element('section','', 'card');card.append(element('p','Здесь появятся недели, в которых ты участвовал. Пропущенные недели в историю не попадают.','muted'));panelBody.append(card);return;}
+    screenBody.replaceChildren();
+    if(!entries.length){const card=element('section','', 'card');card.append(element('p','Здесь появятся недели, в которых ты участвовал. Пропущенные недели в историю не попадают.','muted'));screenBody.append(card);return;}
     entries.forEach(entry=>{
       const item=clone('history-item');put(item,'[data-title]',entry.activity_title);put(item,'[data-dates]',dates(entry.starts_at,entry.ends_at));const result=$(item,'[data-result]');
       if(entry.answer?.final){
-        if(entry.answer.outcome==='yes'&&entry.answer.rating){const rating=element('p',stars(entry.answer.rating),'stars-result');rating.setAttribute('aria-label',`Оценка ${entry.answer.rating} из 5`);result.append(rating);}
+        if(entry.answer.outcome==='yes'&&entry.answer.rating){result.append(ratingResult(entry.answer.rating));}
         else result.append(element('p',entry.answer.outcome==='yes'?'Активность проведена. Ответ сохранён.':'Не получилось провести активность.'));
       }else if(entry.can_rate){const button=element('button','Оценить активность','secondary');button.type='button';button.onclick=()=>go('/meetings/'+entry.meeting_id+'/feedback/?from=history');result.append(button);}
-      panelBody.append(item);
+      screenBody.append(item);
     });
   }
   async function loadFeedback(meetingId,fromHistory){
@@ -228,10 +246,14 @@
   function routeChanged(){
     if(phase!=='app'){if(phase==='intro'&&route()!=='/')showIntro(0,introAuthenticated);return;}
     const path=route();
-    if(path==='/profile/'||path==='/history/'){loadPanel(path==='/profile/'?'profile':'history');return;}
+    if(path==='/profile/'||path==='/history/'){loadScreen(path==='/profile/'?'profile':'history');return;}
     const match=path.match(/^\/meetings\/([a-f0-9-]{36})\/feedback\/(?:\?(.*))?$/i);
-    if(match){loadFeedback(match[1],new URLSearchParams(match[2]||'').get('from')==='history');return;}
-    closePanel();hash('/');if(!mainReady&&!mainAbort)loadActivities();
+    if(match){
+      const fromHistory=new URLSearchParams(match[2]||'').get('from')==='history';
+      if(!fromHistory)returnActivities();
+      else if(screen.hidden||screenKind!=='history')loadScreen('history');
+      loadFeedback(match[1],new URLSearchParams(match[2]||'').get('from')==='history');return;}
+    closePanel();returnActivities();hash('/');if(!mainReady&&!mainAbort)loadActivities();
   }
   function logout(){
     const oldToken=token,oldCsrf=csrf;intendedRoute='/';clearViews();resetCredentials();showIntro(0);
@@ -249,6 +271,8 @@
     };
     revoke();
   }
+  back.onclick=()=>go('/');
+  let scrollPending=false;window.addEventListener('scroll',()=>{if(scrollPending)return;scrollPending=true;requestAnimationFrame(()=>{root.classList.toggle('scrolled',window.scrollY>48);scrollPending=false;});},{passive:true});
   nav.querySelectorAll('[data-open]').forEach(button=>button.onclick=()=>go('/'+button.dataset.open+'/'));
   document.querySelector('#panel-close').onclick=()=>go(closeTarget);
   panel.addEventListener('cancel',event=>{event.preventDefault();go(closeTarget);});

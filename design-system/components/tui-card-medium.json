@@ -1,0 +1,1618 @@
+{
+  "componentSet": "tui-card-medium",
+  "sources": [
+    "tui-card-medium.fig"
+  ],
+  "units": "Figma px (verify platform-specific dp/pt mapping)",
+  "components": [
+    "tui-card-medium"
+  ],
+  "variantCount": 103,
+  "variants": [
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "image-placeholder"
+      },
+      "appearance": "d337497df"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text",
+        "skeleton": "on",
+        "text-position": "bottom",
+        "background": "image-placeholder"
+      },
+      "appearance": "4c9f89ca1"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "fill"
+      },
+      "appearance": "d337497df"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "image-placeholder"
+      },
+      "appearance": "d337497df"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "fill"
+      },
+      "appearance": "d337497df"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "image-placeholder"
+      },
+      "appearance": "51dc49735"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "fill"
+      },
+      "appearance": "51dc49735"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "image-placeholder"
+      },
+      "appearance": "51dc49735"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "fill"
+      },
+      "appearance": "51dc49735"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+avatar",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "image-placeholder"
+      },
+      "appearance": "d337497df"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+avatar",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "fill"
+      },
+      "appearance": "d337497df"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+avatar",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "image-placeholder"
+      },
+      "appearance": "d337497df"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+avatar",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "fill"
+      },
+      "appearance": "d337497df"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+avatar",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "image-placeholder"
+      },
+      "appearance": "51dc49735"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+avatar",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "fill"
+      },
+      "appearance": "51dc49735"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+avatar",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "image-placeholder"
+      },
+      "appearance": "51dc49735"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+avatar",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "fill"
+      },
+      "appearance": "51dc49735"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+avatar-stack",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "image-placeholder"
+      },
+      "appearance": "d337497df"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+avatar-stack",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "fill"
+      },
+      "appearance": "d337497df"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+avatar-stack",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "image-placeholder"
+      },
+      "appearance": "d337497df"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+avatar-stack",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "fill"
+      },
+      "appearance": "d337497df"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+avatar-stack",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "image-placeholder"
+      },
+      "appearance": "51dc49735"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+avatar-stack",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "fill"
+      },
+      "appearance": "51dc49735"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+avatar-stack",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "image-placeholder"
+      },
+      "appearance": "51dc49735"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+avatar-stack",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "fill"
+      },
+      "appearance": "51dc49735"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+badge",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "image-placeholder"
+      },
+      "appearance": "d337497df"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+badge",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "fill"
+      },
+      "appearance": "d337497df"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+badge",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "image-placeholder"
+      },
+      "appearance": "d337497df"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+badge",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "fill"
+      },
+      "appearance": "d337497df"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+badge",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "image-placeholder"
+      },
+      "appearance": "51dc49735"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+badge",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "fill"
+      },
+      "appearance": "51dc49735"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+badge",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "image-placeholder"
+      },
+      "appearance": "51dc49735"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+badge",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "fill"
+      },
+      "appearance": "51dc49735"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+icon",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "image-placeholder"
+      },
+      "appearance": "d337497df"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+icon",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "fill"
+      },
+      "appearance": "d337497df"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+icon",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "image-placeholder"
+      },
+      "appearance": "d337497df"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+icon",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "fill"
+      },
+      "appearance": "d337497df"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+icon",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "image-placeholder"
+      },
+      "appearance": "51dc49735"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+icon",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "fill"
+      },
+      "appearance": "51dc49735"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+icon",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "image-placeholder"
+      },
+      "appearance": "51dc49735"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+icon",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "fill"
+      },
+      "appearance": "51dc49735"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "image-placeholder"
+      },
+      "appearance": "67a067610"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text",
+        "skeleton": "on",
+        "text-position": "bottom",
+        "background": "image-placeholder"
+      },
+      "appearance": "8f658c8b0"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "fill"
+      },
+      "appearance": "67a067610"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "image-placeholder"
+      },
+      "appearance": "67a067610"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "fill"
+      },
+      "appearance": "67a067610"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "image-placeholder"
+      },
+      "appearance": "6d91b6598"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "fill"
+      },
+      "appearance": "6d91b6598"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "image-placeholder"
+      },
+      "appearance": "6d91b6598"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "fill"
+      },
+      "appearance": "6d91b6598"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+avatar",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "image-placeholder"
+      },
+      "appearance": "67a067610"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+avatar",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "fill"
+      },
+      "appearance": "67a067610"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+avatar",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "image-placeholder"
+      },
+      "appearance": "67a067610"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+avatar",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "fill"
+      },
+      "appearance": "67a067610"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+avatar",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "image-placeholder"
+      },
+      "appearance": "6d91b6598"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+avatar",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "fill"
+      },
+      "appearance": "6d91b6598"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+avatar",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "image-placeholder"
+      },
+      "appearance": "6d91b6598"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+avatar",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "fill"
+      },
+      "appearance": "6d91b6598"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+avatar-stack",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "image-placeholder"
+      },
+      "appearance": "67a067610"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+avatar-stack",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "fill"
+      },
+      "appearance": "67a067610"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+avatar-stack",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "image-placeholder"
+      },
+      "appearance": "67a067610"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+avatar-stack",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "fill"
+      },
+      "appearance": "67a067610"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+avatar-stack",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "image-placeholder"
+      },
+      "appearance": "6d91b6598"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+avatar-stack",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "fill"
+      },
+      "appearance": "6d91b6598"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+avatar-stack",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "image-placeholder"
+      },
+      "appearance": "6d91b6598"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+avatar-stack",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "fill"
+      },
+      "appearance": "6d91b6598"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+badge",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "image-placeholder"
+      },
+      "appearance": "67a067610"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+badge",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "fill"
+      },
+      "appearance": "67a067610"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+badge",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "image-placeholder"
+      },
+      "appearance": "67a067610"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+badge",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "fill"
+      },
+      "appearance": "67a067610"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+badge",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "image-placeholder"
+      },
+      "appearance": "6d91b6598"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+badge",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "fill"
+      },
+      "appearance": "6d91b6598"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+badge",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "image-placeholder"
+      },
+      "appearance": "6d91b6598"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+badge",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "fill"
+      },
+      "appearance": "6d91b6598"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+icon",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "image-placeholder"
+      },
+      "appearance": "67a067610"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+icon",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "fill"
+      },
+      "appearance": "67a067610"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+icon",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "image-placeholder"
+      },
+      "appearance": "67a067610"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+icon",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "fill"
+      },
+      "appearance": "67a067610"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+icon",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "image-placeholder"
+      },
+      "appearance": "6d91b6598"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "iOS",
+        "content": "text+icon",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "fill"
+      },
+      "appearance": "6d91b6598"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+icon",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "image-placeholder"
+      },
+      "appearance": "6d91b6598"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "system": "Android",
+        "content": "text+icon",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "fill"
+      },
+      "appearance": "6d91b6598"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "content": "text",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "tui-surface (image)"
+      },
+      "appearance": "d32afdb1d"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "content": "text",
+        "skeleton": "on",
+        "text-position": "bottom",
+        "background": "tui-surface (image)"
+      },
+      "appearance": "80eba4069"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "content": "text",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "tui-surface (fill)"
+      },
+      "appearance": "d32afdb1d"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "content": "text",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "tui-surface (image)"
+      },
+      "appearance": "5477a2177"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "content": "text",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "tui-surface (fill)"
+      },
+      "appearance": "5477a2177"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "content": "text+avatar",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "tui-surface (image)"
+      },
+      "appearance": "d32afdb1d"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "content": "text+avatar",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "tui-surface (fill)"
+      },
+      "appearance": "d32afdb1d"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "content": "text+avatar",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "tui-surface (image)"
+      },
+      "appearance": "5477a2177"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "content": "text+avatar",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "tui-surface (fill)"
+      },
+      "appearance": "5477a2177"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "content": "text+avatar-stack",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "tui-surface (image)"
+      },
+      "appearance": "d32afdb1d"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "content": "text+avatar-stack",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "tui-surface (fill)"
+      },
+      "appearance": "d32afdb1d"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "content": "text+avatar-stack",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "tui-surface (image)"
+      },
+      "appearance": "5477a2177"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "content": "text+avatar-stack",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "tui-surface (fill)"
+      },
+      "appearance": "5477a2177"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "content": "text+badge",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "tui-surface (image)"
+      },
+      "appearance": "d32afdb1d"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "content": "text+badge",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "tui-surface (fill)"
+      },
+      "appearance": "d32afdb1d"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "content": "text+badge",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "tui-surface (image)"
+      },
+      "appearance": "5477a2177"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "content": "text+badge",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "tui-surface (fill)"
+      },
+      "appearance": "5477a2177"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "content": "text+icon",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "tui-surface (image)"
+      },
+      "appearance": "d32afdb1d"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "content": "text+icon",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "tui-surface (fill)"
+      },
+      "appearance": "d32afdb1d"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "content": "text+icon",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "tui-surface (image)"
+      },
+      "appearance": "5477a2177"
+    },
+    {
+      "component": "tui-card-medium",
+      "properties": {
+        "content": "text+icon",
+        "skeleton": "off",
+        "text-position": "top",
+        "background": "tui-surface (fill)"
+      },
+      "appearance": "5477a2177"
+    }
+  ],
+  "appearancePresets": {
+    "d337497df": {
+      "size": {
+        "x": 140.0,
+        "y": 140.0
+      },
+      "radius": 12.0,
+      "topLeftRadius": 12.0,
+      "topRightRadius": 12.0,
+      "bottomLeftRadius": 12.0,
+      "bottomRightRadius": 12.0,
+      "layout": "VERTICAL",
+      "gap": 12.0,
+      "horizontalPadding": 12.0,
+      "verticalPadding": 12.0,
+      "paddingRight": 12.0,
+      "paddingBottom": 10.0,
+      "background": [
+        {
+          "type": "SOLID",
+          "opacity": 1.0,
+          "blendMode": "NORMAL",
+          "visible": true,
+          "color": "#F6F7F8"
+        }
+      ]
+    },
+    "4c9f89ca1": {
+      "size": {
+        "x": 140.0,
+        "y": 140.0
+      },
+      "radius": 12.0,
+      "topLeftRadius": 12.0,
+      "topRightRadius": 12.0,
+      "bottomLeftRadius": 12.0,
+      "bottomRightRadius": 12.0,
+      "layout": "VERTICAL",
+      "gap": 12.0,
+      "horizontalPadding": 12.0,
+      "paddingRight": 12.0,
+      "background": [
+        {
+          "type": "SOLID",
+          "opacity": 0.03,
+          "blendMode": "NORMAL",
+          "visible": true,
+          "color": "#001024"
+        }
+      ]
+    },
+    "51dc49735": {
+      "size": {
+        "x": 140.0,
+        "y": 140.0
+      },
+      "radius": 12.0,
+      "topLeftRadius": 12.0,
+      "topRightRadius": 12.0,
+      "bottomLeftRadius": 12.0,
+      "bottomRightRadius": 12.0,
+      "layout": "VERTICAL",
+      "gap": 12.0,
+      "horizontalPadding": 12.0,
+      "verticalPadding": 10.0,
+      "paddingRight": 12.0,
+      "paddingBottom": 12.0,
+      "background": [
+        {
+          "type": "SOLID",
+          "opacity": 1.0,
+          "blendMode": "NORMAL",
+          "visible": true,
+          "color": "#F6F7F8"
+        }
+      ]
+    },
+    "67a067610": {
+      "size": {
+        "x": 140.0,
+        "y": 140.0
+      },
+      "radius": 12.0,
+      "topLeftRadius": 12.0,
+      "topRightRadius": 12.0,
+      "bottomLeftRadius": 12.0,
+      "bottomRightRadius": 12.0,
+      "layout": "VERTICAL",
+      "gap": 12.0,
+      "horizontalPadding": 12.0,
+      "verticalPadding": 12.0,
+      "paddingRight": 12.0,
+      "paddingBottom": 10.0,
+      "background": [
+        {
+          "type": "SOLID",
+          "opacity": 1.0,
+          "blendMode": "NORMAL",
+          "visible": true,
+          "color": "#F6F7F8",
+          "colorVariable": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "b92a008ec386050bbcfef1be9cfaf754a02d18c7",
+                  "version": "1574:375"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          }
+        }
+      ]
+    },
+    "8f658c8b0": {
+      "size": {
+        "x": 140.0,
+        "y": 140.0
+      },
+      "radius": 12.0,
+      "topLeftRadius": 12.0,
+      "topRightRadius": 12.0,
+      "bottomLeftRadius": 12.0,
+      "bottomRightRadius": 12.0,
+      "layout": "VERTICAL",
+      "gap": 12.0,
+      "horizontalPadding": 12.0,
+      "paddingRight": 12.0,
+      "background": [
+        {
+          "type": "SOLID",
+          "opacity": 0.03,
+          "blendMode": "NORMAL",
+          "visible": true,
+          "color": "#001024",
+          "colorVariable": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "d468661b4928f785ef8034b99adad89be04d911a",
+                  "version": "1574:387"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          }
+        }
+      ]
+    },
+    "6d91b6598": {
+      "size": {
+        "x": 140.0,
+        "y": 140.0
+      },
+      "radius": 12.0,
+      "topLeftRadius": 12.0,
+      "topRightRadius": 12.0,
+      "bottomLeftRadius": 12.0,
+      "bottomRightRadius": 12.0,
+      "layout": "VERTICAL",
+      "gap": 12.0,
+      "horizontalPadding": 12.0,
+      "verticalPadding": 10.0,
+      "paddingRight": 12.0,
+      "paddingBottom": 12.0,
+      "background": [
+        {
+          "type": "SOLID",
+          "opacity": 1.0,
+          "blendMode": "NORMAL",
+          "visible": true,
+          "color": "#F6F7F8",
+          "colorVariable": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "b92a008ec386050bbcfef1be9cfaf754a02d18c7",
+                  "version": "1574:375"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          }
+        }
+      ]
+    },
+    "d32afdb1d": {
+      "size": {
+        "x": 140.0,
+        "y": 140.0
+      },
+      "radius": 12.0,
+      "topLeftRadius": 12.0,
+      "topRightRadius": 12.0,
+      "bottomLeftRadius": 12.0,
+      "bottomRightRadius": 12.0,
+      "layout": "VERTICAL",
+      "gap": 12.0,
+      "horizontalPadding": 12.0,
+      "verticalPadding": 12.0,
+      "paddingRight": 12.0,
+      "paddingBottom": 10.0,
+      "background": [
+        {
+          "type": "SOLID",
+          "opacity": 0.06,
+          "blendMode": "NORMAL",
+          "visible": true,
+          "color": "#244A7F",
+          "colorVariable": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "d468661b4928f785ef8034b99adad89be04d911a",
+                  "version": "10997:880"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          }
+        }
+      ]
+    },
+    "80eba4069": {
+      "size": {
+        "x": 140.0,
+        "y": 140.0
+      },
+      "radius": 12.0,
+      "topLeftRadius": 12.0,
+      "topRightRadius": 12.0,
+      "bottomLeftRadius": 12.0,
+      "bottomRightRadius": 12.0,
+      "layout": "VERTICAL",
+      "gap": 12.0,
+      "horizontalPadding": 12.0,
+      "paddingRight": 12.0
+    },
+    "5477a2177": {
+      "size": {
+        "x": 140.0,
+        "y": 140.0
+      },
+      "radius": 12.0,
+      "topLeftRadius": 12.0,
+      "topRightRadius": 12.0,
+      "bottomLeftRadius": 12.0,
+      "bottomRightRadius": 12.0,
+      "layout": "VERTICAL",
+      "gap": 12.0,
+      "horizontalPadding": 12.0,
+      "verticalPadding": 10.0,
+      "paddingRight": 12.0,
+      "paddingBottom": 12.0,
+      "background": [
+        {
+          "type": "SOLID",
+          "opacity": 0.06,
+          "blendMode": "NORMAL",
+          "visible": true,
+          "color": "#244A7F",
+          "colorVariable": {
+            "value": {
+              "alias": {
+                "assetRef": {
+                  "key": "d468661b4928f785ef8034b99adad89be04d911a",
+                  "version": "10997:880"
+                }
+              }
+            },
+            "dataType": "ALIAS",
+            "resolvedDataType": "COLOR"
+          }
+        }
+      ]
+    }
+  },
+  "anatomyExamples": [
+    {
+      "variant": {
+        "system": "iOS",
+        "content": "text",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "image-placeholder"
+      },
+      "tree": {
+        "role": "system=iOS, content=text, skeleton=off, text-position=bottom, background=image-placeholder",
+        "type": "SYMBOL",
+        "size": {
+          "x": 140.0,
+          "y": 140.0
+        },
+        "radius": 12.0,
+        "topLeftRadius": 12.0,
+        "topRightRadius": 12.0,
+        "bottomLeftRadius": 12.0,
+        "bottomRightRadius": 12.0,
+        "layout": "VERTICAL",
+        "gap": 12.0,
+        "horizontalPadding": 12.0,
+        "verticalPadding": 12.0,
+        "paddingRight": 12.0,
+        "paddingBottom": 10.0,
+        "background": [
+          {
+            "type": "SOLID",
+            "opacity": 1.0,
+            "blendMode": "NORMAL",
+            "visible": true,
+            "color": "#F6F7F8"
+          }
+        ],
+        "children": [
+          {
+            "role": "image-placeholder",
+            "type": "INSTANCE",
+            "size": {
+              "x": 140.0,
+              "y": 140.0
+            },
+            "topLeftRadius": 12.0,
+            "topRightRadius": 12.0,
+            "bottomLeftRadius": 12.0,
+            "bottomRightRadius": 12.0,
+            "usesComponent": ".tui-surface"
+          },
+          {
+            "role": "tui-header [card-medium]",
+            "type": "INSTANCE",
+            "size": {
+              "x": 116.0,
+              "y": 118.0
+            },
+            "layout": "VERTICAL",
+            "gap": 4.0,
+            "mainAxisAlignment": "MAX",
+            "usesComponent": "system=iOS, show-badge=off"
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "system": "Android",
+        "content": "text",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "image-placeholder"
+      },
+      "tree": {
+        "role": "system=Android, content=text, skeleton=off, text-position=bottom, background=image-placeholder",
+        "type": "SYMBOL",
+        "size": {
+          "x": 140.0,
+          "y": 140.0
+        },
+        "radius": 12.0,
+        "topLeftRadius": 12.0,
+        "topRightRadius": 12.0,
+        "bottomLeftRadius": 12.0,
+        "bottomRightRadius": 12.0,
+        "layout": "VERTICAL",
+        "gap": 12.0,
+        "horizontalPadding": 12.0,
+        "verticalPadding": 12.0,
+        "paddingRight": 12.0,
+        "paddingBottom": 10.0,
+        "background": [
+          {
+            "type": "SOLID",
+            "opacity": 1.0,
+            "blendMode": "NORMAL",
+            "visible": true,
+            "color": "#F6F7F8"
+          }
+        ],
+        "children": [
+          {
+            "role": "image-placeholder",
+            "type": "INSTANCE",
+            "size": {
+              "x": 140.0,
+              "y": 140.0
+            },
+            "topLeftRadius": 12.0,
+            "topRightRadius": 12.0,
+            "bottomLeftRadius": 12.0,
+            "bottomRightRadius": 12.0,
+            "usesComponent": ".tui-surface"
+          },
+          {
+            "role": "tui-header [card-medium]",
+            "type": "INSTANCE",
+            "size": {
+              "x": 116.0,
+              "y": 118.0
+            },
+            "layout": "VERTICAL",
+            "gap": 4.0,
+            "mainAxisAlignment": "MAX",
+            "usesComponent": "system=Android, show-badge=off"
+          }
+        ]
+      }
+    },
+    {
+      "variant": {
+        "content": "text",
+        "skeleton": "off",
+        "text-position": "bottom",
+        "background": "tui-surface (image)"
+      },
+      "tree": {
+        "role": "content=text, skeleton=off, text-position=bottom, background=tui-surface (image)",
+        "type": "SYMBOL",
+        "size": {
+          "x": 140.0,
+          "y": 140.0
+        },
+        "radius": 12.0,
+        "topLeftRadius": 12.0,
+        "topRightRadius": 12.0,
+        "bottomLeftRadius": 12.0,
+        "bottomRightRadius": 12.0,
+        "layout": "VERTICAL",
+        "gap": 12.0,
+        "horizontalPadding": 12.0,
+        "verticalPadding": 12.0,
+        "paddingRight": 12.0,
+        "paddingBottom": 10.0,
+        "background": [
+          {
+            "type": "SOLID",
+            "opacity": 0.06,
+            "blendMode": "NORMAL",
+            "visible": true,
+            "color": "#244A7F",
+            "colorVariable": {
+              "value": {
+                "alias": {
+                  "assetRef": {
+                    "key": "d468661b4928f785ef8034b99adad89be04d911a",
+                    "version": "10997:880"
+                  }
+                }
+              },
+              "dataType": "ALIAS",
+              "resolvedDataType": "COLOR"
+            }
+          }
+        ],
+        "children": [
+          {
+            "role": "image-placeholder",
+            "type": "INSTANCE",
+            "size": {
+              "x": 140.0,
+              "y": 140.0
+            },
+            "radius": 12.0,
+            "topLeftRadius": 12.0,
+            "topRightRadius": 12.0,
+            "bottomLeftRadius": 12.0,
+            "bottomRightRadius": 12.0,
+            "usesComponent": "preset=image"
+          },
+          {
+            "role": "tui-header [card-medium]",
+            "type": "INSTANCE",
+            "size": {
+              "x": 116.0,
+              "y": 118.0
+            },
+            "layout": "VERTICAL",
+            "gap": 4.0,
+            "mainAxisAlignment": "MAX",
+            "usesComponent": "system=iOS, show-badge=off"
+          }
+        ]
+      }
+    }
+  ],
+  "guidance": [
+    "Карточка — контейнер со скруглениями, который можно использовать отдельно или внутри tui-card-large",
+    "Решение 3: равномерно увеличили высоту и ширину карточки, сохранив контент",
+    "Решение 3: равномерно увеличили высоту и ширину карточки, сохранив контент и пропорции карточки",
+    "Решение 4: увеличили ширину карточки, сохранив контент"
+  ]
+}

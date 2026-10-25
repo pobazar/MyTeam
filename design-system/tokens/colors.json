@@ -1,0 +1,7310 @@
+[
+  {
+    "name": "! Not in tokens/Map/Dark",
+    "fills": [
+      {
+        "type": "IMAGE",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "imageScaleMode": "FILL",
+        "image": "IMAGE"
+      }
+    ]
+  },
+  {
+    "name": "! Not in tokens/Map/Light",
+    "fills": [
+      {
+        "type": "IMAGE",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "imageScaleMode": "FILL",
+        "image": "IMAGE"
+      }
+    ]
+  },
+  {
+    "name": "#D9D9D9",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#D9D9D9"
+          },
+          {
+            "position": 1.0,
+            "color": "#737373"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": ".Local/Private gradient",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#A1A1B2"
+          },
+          {
+            "position": 0.469,
+            "color": "#D4D1D8"
+          },
+          {
+            "position": 0.672,
+            "color": "#F7FAFA"
+          },
+          {
+            "position": 0.833,
+            "color": "#D4D1D8"
+          },
+          {
+            "position": 0.932,
+            "color": "#A1A1B2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "100% Black",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "_light/color/background/base",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "_light/color/background/neutral",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.031,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "_light/color/foreground/positiveAccent",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#00B92D"
+      }
+    ]
+  },
+  {
+    "name": "_light/color/foreground/warningAccent",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FAB619"
+      }
+    ]
+  },
+  {
+    "name": "_Local/Divider",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.29,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#3C3C43"
+      }
+    ]
+  },
+  {
+    "name": "black",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#333333"
+      }
+    ]
+  },
+  {
+    "name": "blue-grad",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.24,
+            "color": "#428BF9"
+          },
+          {
+            "position": 1.0,
+            "color": "#0336FE"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Brand/purple-02",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#CACFFF",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "25e778b2eb0bb549fe0a1a4e85cc02846218ce2e",
+                "version": "6496:24"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Brand/tinkoff",
+    "description": "Фоны акцентных кнопок, бейджей и т.д.",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFDD2D"
+      }
+    ]
+  },
+  {
+    "name": "bubble",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#DBE3ED"
+          },
+          {
+            "position": 1.0,
+            "color": "#DBE3ED33"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cashback",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#3ED7C8"
+          },
+          {
+            "position": 1.0,
+            "color": "#22A699"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Chart/categorical-02",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#C277F8"
+      }
+    ]
+  },
+  {
+    "name": "Chart/categorical-05",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFB74C"
+      }
+    ]
+  },
+  {
+    "name": "Chart/categorical-13",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFA51F"
+      }
+    ]
+  },
+  {
+    "name": "Chart/categorical-20",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#36C578"
+      }
+    ]
+  },
+  {
+    "name": "corochka",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#DBE3ED"
+          },
+          {
+            "position": 1.0,
+            "color": "#8EA5BE"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Dark - Background / base Android",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#121212"
+      }
+    ]
+  },
+  {
+    "name": "Dark - Background / base iOS",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Dark - Background / elevation1",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#1C1C1E"
+      }
+    ]
+  },
+  {
+    "name": "Dark - Background / elevation2",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#2C2C2E"
+      }
+    ]
+  },
+  {
+    "name": "Dark/Background/accent",
+    "description": "Контейнеры интерактивных элементов. Заменяет цвет engaging",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Dark/Background/elevation-1",
+    "description": "Фон шторок, модальных экранов и карточек, лежащих на фонe base",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#1C1C1E"
+      }
+    ]
+  },
+  {
+    "name": "Dark/Background/highlight",
+    "description": "Риппл-эффект для элементов с фонами base, elevation, neutral, engaging",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.1,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Dark/Background/neutral-1",
+    "description": "Прозрачные контейнеры с минимальным контрастом на фонах base, elevation и neutral. Второстепенные кнопки, карточки без тени, задизейбленные кнопки и т.д.",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.1,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Dark/Background/neutral-1-on-light",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.03,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Dark/Background/neutral-1-opaque",
+    "description": "Непрозрачные контейнеры кнопок закрытия и удаления элементов",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#333333"
+      }
+    ]
+  },
+  {
+    "name": "Dark/Background/neutral-2",
+    "description": "Прозрачные контейнеры со слабым контрастом на фонах base, elevation и neutral. Нажатое состояние элементов фоном neutral-1. Пустая полоска прогресс-баров",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.15,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Dark/Background/neutral-4-on-dark",
+    "description": "Прозрачные контейнеры со средним контрастом на темных цветных фонах. Контейнер аватара с иконкой или текстом. Нажатое состояние элементов с цветом neutral-3",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.3,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Dark/Background/neutral-6-on-light",
+    "description": "Прозрачные контейнеры с большим контрастом на светлых цветных фонах",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.4,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Dark/Background/opposite",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Dark/Background/primary-on-dark",
+    "description": "Контрастные контейнеры на темных фонах",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Dark/Text/accent",
+    "description": "Текст и иконки интерактивных элементов на фонах base, elevation и neutral. Заменяет цвет engaging",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Dark/Text/primary-on-light",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.9,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Dark/Text/primaryOnDark",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Dark/Text/secondary",
+    "description": "Второстепенный текст на фонах base, elevation, neutral",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#9299A2"
+      }
+    ]
+  },
+  {
+    "name": "Day / Base / accent",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Day / Base / base-01",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Day / Base / base-04",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#DDDFE0"
+      }
+    ]
+  },
+  {
+    "name": "Day / Base / base-05",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#C7C9CC"
+      }
+    ]
+  },
+  {
+    "name": "Day / Base / base-08",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#333333"
+      }
+    ]
+  },
+  {
+    "name": "Day / Base / base-09",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Day / Base / clear",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.08,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Day / Base / primary",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFDD2D"
+      }
+    ]
+  },
+  {
+    "name": "Day / Base / secondary",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#ECF1F7"
+      }
+    ]
+  },
+  {
+    "name": "Day / Text / text-01",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.8,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Day / Text / text-01 (inverse)",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Day / Text / text-negative",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#E31C1C"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/accent-1",
+    "description": "Фоны акцентных кнопок, бейджей и т.д.",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFDD2D",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "ef357c4f74488894f5e2ada1a4acfdc960ffe339",
+                "version": "6528:994"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/accent-1-hover",
+    "description": "Только для веба. Фоны акцентных кнопок, бейджей и т.д. при наведении",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FCC521"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/accent-1-pressed",
+    "description": "Фоны акцентных кнопок, бейджей и т.д. при нажатии",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FAB619"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/accent-2",
+    "description": "Фоны акцентных кнопок, бейджей и т.д.",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "b65a03dbf32d4bdf36bc382a6bade10cf4570b9f",
+                "version": "1574:399"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/accent-2-hover",
+    "description": "Только для веба. Фоны акцентных кнопок, бейджей и т.д. при нажатии",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#1464CC"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/accent-2-pressed",
+    "description": "Фоны акцентных кнопок, бейджей и т.д.",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#0953B3"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/accent-on-dark",
+    "description": "Контрастные контейнеры на темных фонах, не меняется при смене темы",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/accent-on-dark-hover",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#404040"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/accent-on-dark-pressed",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#EAECEE"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/accent-on-light",
+    "description": "Контрастные контейнеры на светлых фонах, не меняется при смене темы",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "ab675708e6a4a7b24709868b9645ded50124f125",
+                "version": "6528:165"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/accent-on-light-hover",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#292929"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/accent-on-light-pressed",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#383838"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/accent-opposite",
+    "description": "Фон, противоположный base: в белой теме — черный, в темной теме — белый",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "44c17047e4c8d3497547e5078584860a64be6c87",
+                "version": "13139:17"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/accent-opposite-hover",
+    "description": "Только для веба. Фон, противоположный base при наведении: в белой теме — черный, в темной теме — белый",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#333333"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/accent-opposite-pressed",
+    "description": "Фон, противоположный base при нажатии: в белой теме — черный, в темной теме — белый",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#5C636B"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/base",
+    "description": "Основной фон приложений. Отличается на iOS, Android и Desktop",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/base-alt",
+    "description": "Альтернативный основной фон",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#F2F4F7"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/base-android",
+    "description": "Основной фон приложений. Отличается на iOS, Android и Desktop",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "1a7832ae46bca46eedf2749ccbe2dda27e313d7a",
+                "version": "1574:411"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/base-ios",
+    "description": "Основной фон приложений. Отличается на iOS, Android и Desktop",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "1a7832ae46bca46eedf2749ccbe2dda27e313d7a",
+                "version": "1574:411"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/elevation-1",
+    "description": "Фон шторок, модальных экранов и карточек, лежащих на фонe base",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "241ca726fafd57881fc16572cac2fe352b7f86f7",
+                "version": "1574:376"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/elevation-2",
+    "description": "Фон карточек, лежащих на фонe elevation-1",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "3e2d5c827b15f7186b729ff141b36c0ad2602411",
+                "version": "1574:354"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/neutral-1",
+    "description": "Прозрачные контейнеры с минимальным контрастом на фонах base, elevation и neutral. Второстепенные кнопки, карточки без тени, задизейбленные кнопки и т.д.",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.03,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#001024",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "d468661b4928f785ef8034b99adad89be04d911a",
+                "version": "6528:871"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/neutral-1-hover",
+    "description": "Только для веба. Cостояние элементов c фоном neutral-1 при наведении",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.08,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#244A7F"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/neutral-1-on-dark",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.1,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/neutral-1-on-light",
+    "description": "Прозрачные контейнеры с минимальным контрастом на светлых цветных фонах",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.03,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/neutral-1-opaque",
+    "description": "Непрозрачные контейнеры кнопок закрытия и удаления элементов",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#F6F7F8"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/neutral-1-pressed",
+    "description": "Нажатое состояние элементов с фоном neutral-1",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.06,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#001024",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "0db84cc31aa0800d5e2efb834727004b34f45fbf",
+                "version": "1574:362"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/neutral-1-pressed-on-dark",
+    "description": "Нажатое состояние элементов с фоном neutral-1-on-dark, не меняется при смене темы",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.1,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/neutral-2",
+    "description": "Для нейтральных контейнеров маленького размера",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.06,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#001024",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "c61cafce9088cd9a299da63f2f515032ed12acde",
+                "version": "1574:344"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/neutral-2-hover",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.1,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#2C4577"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/neutral-3",
+    "description": "Прозрачные контейнеры со средним контрастом. Нажатое состояние элементов с цветом neutral-2",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.12,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#001024",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "dc66573240af9cac2a0bd02e89b3fa735ac2452c",
+                "version": "13139:68"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/neutral-3-on-dark",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.2,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/neutral-3-on-light",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.12,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/neutral-4",
+    "description": "Прозрачные контейнеры со средним контрастом. Контейнер аватара с иконкой или текстом",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.22,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#001024",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "41741ce63d57c0c5e0b65e59ca1e7e3b20c8264e",
+                "version": "13139:74"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/neutral-4-on-dark",
+    "description": "Вместо него использовать Background/Overlay Glass On Dark",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.3,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "a031597190608af6af0d580bdbb26c56a35c6802",
+                "version": "13139:80"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/neutral-4-on-light",
+    "description": "Прозрачные контейнеры со средним контрастом на светлых цветных фонах. Контейнер аватара с иконкой или текстом. Нажатое состояние элементов с цветом neutral-3",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.22,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#001024"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/neutral-6",
+    "description": "Прозрачные контейнеры со средним контрастом. Контейнер аватара с иконкой или текстом",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.56,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#001024"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/neutral-6-on-dark",
+    "description": "Прозрачные контейнеры с большим контрастом на темных цветных фонах",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.5,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/neutral-6-on-light",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.4,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "4bb8cf76627ce2fe1e17d275fa1802b6564df15d",
+                "version": "86:2263"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Background/progress-bar",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.06,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#001024"
+      }
+    ]
+  },
+  {
+    "name": "Day/Base/accent",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Day/Base/accent-active",
+    "description": "Для подсветки акцентных интерактивных элементов при наведении",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#0953B3"
+      }
+    ]
+  },
+  {
+    "name": "Day/Base/accent-hover",
+    "description": "Для подсветки акцентных интерактивных элементов при наведении",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#1464CC"
+      }
+    ]
+  },
+  {
+    "name": "Day/Base/base-01",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Day/Base/base-02",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#F6F7F8"
+      }
+    ]
+  },
+  {
+    "name": "Day/Base/base-03",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#EAECEE"
+      }
+    ]
+  },
+  {
+    "name": "Day/Base/base-04",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#DDDFE0"
+      }
+    ]
+  },
+  {
+    "name": "Day/Base/base-05",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#C7C9CC"
+      }
+    ]
+  },
+  {
+    "name": "Day/Base/base-06",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#9299A2"
+      }
+    ]
+  },
+  {
+    "name": "Day/Base/base-07",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#5C636B"
+      }
+    ]
+  },
+  {
+    "name": "Day/Base/base-08",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#333333"
+      }
+    ]
+  },
+  {
+    "name": "Day/Base/base-09",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Day/Base/clear",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.04,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Day/Base/clear-active",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.12,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Day/Base/clear-hover",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.08,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Day/Base/elevation-01",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Day/Base/primary",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFDD2D"
+      }
+    ]
+  },
+  {
+    "name": "Day/Base/primary-active",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FAB619"
+      }
+    ]
+  },
+  {
+    "name": "Day/Base/primary-hover",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FCC521"
+      }
+    ]
+  },
+  {
+    "name": "Day/Base/secondary",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#ECF1F7"
+      }
+    ]
+  },
+  {
+    "name": "Day/Base/secondary-active",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#DDE4ED"
+      }
+    ]
+  },
+  {
+    "name": "Day/Base/secondary-hover",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#E4EBF3"
+      }
+    ]
+  },
+  {
+    "name": "Day/Border/darkmode-only",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "c80596d38b2649e307b45305accad58f78124edf",
+                "version": "9800:187"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Border/focus",
+    "description": "Только для веба. Бордеры при фокусировании с клавиатуры",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.44,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#001024"
+      }
+    ]
+  },
+  {
+    "name": "Day/Border/hover",
+    "description": "Только для веба. Бордеры при наведении",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#C7C9CC"
+      }
+    ]
+  },
+  {
+    "name": "Day/Border/normal",
+    "description": "Линейки на основных фонах",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.21,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "0cfc5f7af22f7ef1aff10400678e046d071206e4",
+                "version": "1574:311"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Border/on-dark",
+    "description": "Обводка, отделяющая цветные элементы от темных фонов",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.1,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Day/Border/on-light",
+    "description": "Обводка, отделяющая цветные элементы от светлого фонов",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.03,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Day/Brand/tinkoff",
+    "description": "Фирменный цвет Тинькофф. Используется, например, в бейдже подписки Team",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFDD2D",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "1062ba7867f5e574e14aaca14683f2c30c9517a8",
+                "version": "2150:16"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Brand/tinkoff-all-airlines-gradient",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#009EDC"
+          },
+          {
+            "position": 1.0,
+            "color": "#57D0FF"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Day/Brand/tinkoff-insurance",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#27AFA5",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "f2ab4331dab6d865d0c50c56fd9930f53d6fc709",
+                "version": "79:1043"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Brand/tinkoff-mobile",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#5848C3"
+      }
+    ]
+  },
+  {
+    "name": "Day/Brand/tinkoff-premium",
+    "description": "Цвет подписки Tinkoff Premium. для фонов кнопок, бейджей и т.д.",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#4972CF"
+      }
+    ]
+  },
+  {
+    "name": "Day/Brand/tinkoff-private",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#A1A1B2"
+          },
+          {
+            "position": 0.649,
+            "color": "#FFFFFF"
+          },
+          {
+            "position": 1.0,
+            "color": "#A1A1B2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Day/Brand/tinkoff-pro",
+    "description": "Цвет подписки Tinkoff PRO. для фонов кнопок, бейджей и т.д.",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#AFF218"
+      }
+    ]
+  },
+  {
+    "name": "Day/Component/badge-notification",
+    "description": "Контейнеры нотификационных бейджей. Временный компонентный токен, существует пока не зарелизятся токены 2.0.",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#F52222",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "319b769813950427432128bee50f6fdc65475efa",
+                "version": "1574:364"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Component/button-glass-on-dark",
+    "description": "Фон стеклянной кнопки на темных фонах, не меняется при смене темы. Временный компонентный токен, существует пока не зарелизятся токены 2.0.",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.3,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Day/Component/button-glass-on-dark-hover",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.55,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Day/Component/button-glass-on-light",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.4,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Day/Component/button-glass-on-light-hover",
+    "description": "Фон стеклянной кнопки на темных фонах, не меняется при смене темы. Временный компонентный токен, существует пока не зарелизятся токены 2.0.",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.7,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Day/Component/button-vertical",
+    "description": "Фон tui-button [vertical]. Временный компонентный токен, существует пока не зарелизятся токены 2.0.",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.08,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Day/Component/toggle",
+    "description": "Прозрачные контейнеры со средним контрастом. Нажатое состояние элементов с цветом neutral-2",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.12,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#001024"
+      }
+    ]
+  },
+  {
+    "name": "Day/Icon/negative",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#E31C1C"
+      }
+    ]
+  },
+  {
+    "name": "Day/Icon/primary-on-dark",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Day/Service/focus",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.48,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#333333"
+      }
+    ]
+  },
+  {
+    "name": "Day/Service/map-light",
+    "description": "[не в токенах]",
+    "fills": [
+      {
+        "type": "IMAGE",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "imageScaleMode": "FILL",
+        "image": "IMAGE"
+      }
+    ]
+  },
+  {
+    "name": "Day/Service/navbar",
+    "description": "[не в токенах] Стиль для системного навбара iOS",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.8,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "68bafdbea58755f77896837f5591aeedf60690c8",
+                "version": "13139:305"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Service/notification",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#F52222",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "319b769813950427432128bee50f6fdc65475efa",
+                "version": "1574:364"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Service/ripple",
+    "description": "Только для android. Риппл-эффект для элементов с фонами base, elevation, neutral, engaging",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.04,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Day/Service/ripple-on-dark",
+    "description": "Только для android. Риппл-эффект для элементов с цветными темными фонами",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.13,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Day/Service/ripple-on-light",
+    "description": "Только для android. Риппл-эффект для элементов с цветными светлыми фонами",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.04,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Day/Service/ripple-on-opposite",
+    "description": "Только для android. Риппл-эффект для элементов с фоном opposite",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.13,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Day/Service/ripple-on-tinkoff",
+    "description": "Только для android. Риппл на фонах с цветом tinkoff",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.4,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FAB619"
+      }
+    ]
+  },
+  {
+    "name": "Day/Service/skeleton",
+    "description": "Цвет для шиммеров, отображаемых при загрузке экрана",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.03,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "ff8fa430139a9fc0ffcd9efef1128cad55015f56",
+                "version": "1574:284"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Service/tabbar",
+    "description": "[не в токенах] Стиль для системного таббара iOS",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.8,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#F6F7F8",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "ac3f443749217feee4315f4a59698e79486d050a",
+                "version": "1574:323"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Service/underline",
+    "description": "подчеркивание для ссылок",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.64,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Day/Service/underline-on-light",
+    "description": "Подчеркивание для ссылок на светлом фоне. не меняется при смене темы",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.24,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/error-bg",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.12,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#E01F19"
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/error-bg-hover",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.16,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#E01F19"
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/error-fill",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#F52222"
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/info",
+    "description": "Акцентный цвет для информационных блоков",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "62d5abe4d5a2f46b7001a3ce9e3ed4f7cb082fa5",
+                "version": "1574:279"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/info-bg",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.12,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/info-bg-hover",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.24,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/info-fill",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/info-pale",
+    "description": "Контейнеры нейтральных блоков",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.12,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/negative",
+    "description": "Акцентный цвет для негативных блоков",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#F52222"
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/negative-pale",
+    "description": "Контейнеры негативных блоков",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.12,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#E01F19"
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/negative-pale-hover",
+    "description": "Только для веба. Контейнеры негативных блоков при наведении",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.16,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#E01F19"
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/neutral",
+    "description": "Акцентный цвет для нейтральных фонах",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#79818C"
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/neutral-bg",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.12,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#79818C"
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/neutral-bg-hover",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.24,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#79818C"
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/neutral-fill",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#79818C"
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/neutral-pale",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.08,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#001024",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "7f41a3576df4cdd6eebbca1d91bca4fb27321b63",
+                "version": "9800:57"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/positive",
+    "description": "Акцентный цвет для позитивных блоков",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#00B92D"
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/positive-pale",
+    "description": "Контейнеры позитивных блоков",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.12,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#00B92D"
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/success-bg",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.12,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#00B92D"
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/success-bg-hover",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.24,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#00B92D"
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/sucess-fill",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#00B92D"
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/warning",
+    "description": "Акцентный цвет для предупреждающих блоков",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFCD33",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "63e0841c69c71b23efe9534b9c99910fd6cfb058",
+                "version": "86:2060"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/warning-bg",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.12,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FAB619"
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/warning-bg-hover",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.24,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FAB619"
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/warning-fill",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FAB619"
+      }
+    ]
+  },
+  {
+    "name": "Day/Status/warning-pale",
+    "description": "Контейнеры предупреждающих блоков",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.12,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FAB619"
+      }
+    ]
+  },
+  {
+    "name": "Day/System/Focus",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.48,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#333333"
+      }
+    ]
+  },
+  {
+    "name": "Day/System/Overlay",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.75,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Day/System/Selection",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.32,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFDD2D"
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/action",
+    "description": "Текст и иконки интерактивного текста на фонах base, elevation и neutral. Заменяет цвет engaging и accent",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/action-pressed",
+    "description": "Нажатое состояние интерактивного текста. Заменяет цвет engaging-pressed",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#156ED4"
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/link",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#336FEE"
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/link-hover",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#1F50BA"
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/negative",
+    "description": "Текст негативного лейбла, например падение цены акций или ошибка",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#F52222",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "70e49e0ddcbb84b3700edcdbc1b7e46b9764c073",
+                "version": "1574:254"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/negative-hover",
+    "description": "Только для веба. Текст негативного лейбла при наведении на вебе",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#A00707"
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/positive",
+    "description": "Текст позитивного лейбла, например пополнение счета или рост цены акций",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#00B92D"
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/primary",
+    "description": "Текст на фонах base, elevation, neutral",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.8,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/primary-fade",
+    "description": "[не в токенах] используется чтобы показать фейд. в коде используем просто primary",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#333333"
+          },
+          {
+            "position": 1.0,
+            "color": "#33333300"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/primary-hover",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.7,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/primary-on-accent-1",
+    "description": "Текст на фоне accent-1",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#333333",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "236218e08131742a19118642f00ff45b48942627",
+                "version": "1574:246"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/primary-on-accent-2",
+    "description": "Текст на фоне accent-2",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/primary-on-dark",
+    "description": "Текст на темных фонах. Не меняется при смене темы",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "7b0b6cc10f74a823d78af60e69d27c002ed6bc07",
+                "version": "1574:243"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/primary-on-light",
+    "description": "Текст на светлых фонах, не меняется при смене темы",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.9,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "4f4d912073432090376ddf6dff32b88b8a14043e",
+                "version": "1574:242"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/primary-on-opposite",
+    "description": "Текст на фоне opposite",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "dff2ae5b233066263db9984816409b3be07eac79",
+                "version": "1574:241"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/secondary",
+    "description": "Второстепенный текст на фонах base, elevation, neutral",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#9299A2",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "1d9c58c03e13b7dd66735dc6bf82ea75c38234d2",
+                "version": "1574:379"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/secondary-fade",
+    "description": "[не в токенах] используется чтобы показать фейд. в коде используем просто secondary",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#00102470"
+          },
+          {
+            "position": 1.0,
+            "color": "#33333300"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/secondary-on-dark",
+    "description": "Второстепенный текст на темных фонах, не меняется при смене темы",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.7,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/secondary-on-light",
+    "description": "Второстепенный текст на светлых фонах, не меняется при смене темы",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.48,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "ef2ed74c5b5c9a95c0f49437dfc3fe1c571e7aba",
+                "version": "1574:391"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/tertiary",
+    "description": "Лейблы задизейбленных кнопок, плейсхолдер в текстовых полях, дисклеймеры",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.22,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#001024",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "915e403c0985773ff8d5a559419a1bca89e80f8f",
+                "version": "1574:401"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/tertiary-hover",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.6,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/tertiary-on-dark",
+    "description": "Лейблы задизейбленных кнопок, плейсхолдер в текстовых полях, дисклеймеры на светлых фонах, не меняется при смене темы",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.3,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "17309c5fa3d62e5619f0c92ca709183bb16c83f6",
+                "version": "1574:390"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/tertiary-on-light",
+    "description": "Лейблы задизейбленных кнопок, плейсхолдер в текстовых полях, дисклеймеры на светлых фонах, не меняется при смене темы",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.22,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#001024"
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/tertiary-pressed",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.7,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/text-01",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.8,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/text-01 (inverse)",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/text-02",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.54,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/text-02 (inverse)",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.72,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/text-03",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.4,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/text-negative",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#E31C1C"
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/text-negative-hover",
+    "description": "Для подсветки негативных значений при наведении",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#A00707"
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/text-on-primary",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.8,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/text-positive",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#00A127"
+      }
+    ]
+  },
+  {
+    "name": "Day/Text/text-positive-hover",
+    "description": "Для подсветки позитивных значений при наведении",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#00701B"
+      }
+    ]
+  },
+  {
+    "name": "Dimension / Line",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FF8686"
+      }
+    ]
+  },
+  {
+    "name": "eagle",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#F8FAFB"
+          },
+          {
+            "position": 1.0,
+            "color": "#DBE3ED"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "face",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#8EA5BE"
+          },
+          {
+            "position": 1.0,
+            "color": "#DBE3ED"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "fake-liquid-on-light",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.6,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      },
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 0.05,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#000000CC"
+          },
+          {
+            "position": 0.28,
+            "color": "#FFFFFF00"
+          },
+          {
+            "position": 0.7,
+            "color": "#FFFFFF00"
+          },
+          {
+            "position": 1.0,
+            "color": "#00000080"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "fake-liquid-stroke-dark",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000",
+        "colorVariable": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "459e228d79d5ceadd4393cd3bcff7d0512fe3a2d",
+                "version": "6013:185"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        }
+      },
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 0.4,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.1,
+            "color": "#FFFFFF"
+          },
+          {
+            "position": 0.3,
+            "color": "#FFFFFF1F"
+          },
+          {
+            "position": 0.7,
+            "color": "#FFFFFF00"
+          },
+          {
+            "position": 0.9,
+            "color": "#FFFFFF"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Global / Black - N15",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Global / Blue 1 - N8",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Global / Gray 1 - N7",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#F6F7F8"
+      }
+    ]
+  },
+  {
+    "name": "Global / Gray 2 - N6",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#EAECEE"
+      }
+    ]
+  },
+  {
+    "name": "Global / Gray 3 - N5",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#DDDFE0"
+      }
+    ]
+  },
+  {
+    "name": "Global / Gray 4 - N4",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#C7C9CC"
+      }
+    ]
+  },
+  {
+    "name": "Global / Gray 5 - N3",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#9299A2"
+      }
+    ]
+  },
+  {
+    "name": "Global / Gray 7 - N1",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#333333"
+      }
+    ]
+  },
+  {
+    "name": "Global / Green 1 - N11",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#00B92D"
+      }
+    ]
+  },
+  {
+    "name": "Global / N14",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Global / N4",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#C7C9CC"
+      }
+    ]
+  },
+  {
+    "name": "Global / N5",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#DDDFE0"
+      }
+    ]
+  },
+  {
+    "name": "Global / N6",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#EAECEE"
+      }
+    ]
+  },
+  {
+    "name": "Global / N7",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#F6F7F8"
+      }
+    ]
+  },
+  {
+    "name": "Global / N8",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Global / N9 pressed",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFCD33"
+      }
+    ]
+  },
+  {
+    "name": "Global / Red 1 - N10",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#F52222"
+      }
+    ]
+  },
+  {
+    "name": "Global / White - N14",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Global / Yellow 1 - N9",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFDD2D"
+      }
+    ]
+  },
+  {
+    "name": "Global/Black - N15",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Brand/All Airlines",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#009EDC"
+          },
+          {
+            "position": 1.0,
+            "color": "#57D0FF"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Brand/All Airlines Debit",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#517FC3"
+          },
+          {
+            "position": 1.0,
+            "color": "#325991"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Brand/All Games",
+    "description": "Градиент для All Games Credit",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#362134"
+          },
+          {
+            "position": 1.0,
+            "color": "#684065"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Brand/All Games Debit",
+    "description": "Градиент для All Games Debit",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#172D96"
+          },
+          {
+            "position": 1.0,
+            "color": "#2242DD"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Brand/Black",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#333333"
+          },
+          {
+            "position": 1.0,
+            "color": "#5C5C5C"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Brand/Business",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#453829"
+          },
+          {
+            "position": 1.0,
+            "color": "#67533D"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Brand/Drive Plus",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.361,
+            "color": "#383636"
+          },
+          {
+            "position": 1.0,
+            "color": "#A0372C"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Brand/Platinum",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#556272"
+          },
+          {
+            "position": 1.0,
+            "color": "#939FAE"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Brand/Private",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#B7B7C4"
+          },
+          {
+            "position": 0.53,
+            "color": "#F5F5F7"
+          },
+          {
+            "position": 1.0,
+            "color": "#BEBEC9"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Brand/Pro",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#D0FF95"
+          },
+          {
+            "position": 1.0,
+            "color": "#85E808"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Brand/TS-Premium",
+    "description": "Градиент используется для кнопок, беджей T-Premium",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#F8E6AF"
+          },
+          {
+            "position": 1.0,
+            "color": "#FFB566"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Mask/Fade Bottom",
+    "description": "Градиент вниз для создания плавной маски",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#00000000"
+          },
+          {
+            "position": 0.067,
+            "color": "#00000002"
+          },
+          {
+            "position": 0.133,
+            "color": "#00000009"
+          },
+          {
+            "position": 0.2,
+            "color": "#00000015"
+          },
+          {
+            "position": 0.267,
+            "color": "#00000026"
+          },
+          {
+            "position": 0.333,
+            "color": "#0000003B"
+          },
+          {
+            "position": 0.4,
+            "color": "#00000055"
+          },
+          {
+            "position": 0.467,
+            "color": "#00000071"
+          },
+          {
+            "position": 0.533,
+            "color": "#0000008E"
+          },
+          {
+            "position": 0.6,
+            "color": "#000000AA"
+          },
+          {
+            "position": 0.667,
+            "color": "#000000C4"
+          },
+          {
+            "position": 0.733,
+            "color": "#000000D9"
+          },
+          {
+            "position": 0.8,
+            "color": "#000000EA"
+          },
+          {
+            "position": 0.867,
+            "color": "#000000F6"
+          },
+          {
+            "position": 0.933,
+            "color": "#000000FD"
+          },
+          {
+            "position": 1.0,
+            "color": "#000000"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Mask/Fade Left",
+    "description": "Градиент влево для создания плавной маски",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#00000000"
+          },
+          {
+            "position": 0.067,
+            "color": "#00000002"
+          },
+          {
+            "position": 0.133,
+            "color": "#00000009"
+          },
+          {
+            "position": 0.2,
+            "color": "#00000015"
+          },
+          {
+            "position": 0.267,
+            "color": "#00000026"
+          },
+          {
+            "position": 0.333,
+            "color": "#0000003B"
+          },
+          {
+            "position": 0.4,
+            "color": "#00000055"
+          },
+          {
+            "position": 0.467,
+            "color": "#00000071"
+          },
+          {
+            "position": 0.533,
+            "color": "#0000008E"
+          },
+          {
+            "position": 0.6,
+            "color": "#000000AA"
+          },
+          {
+            "position": 0.667,
+            "color": "#000000C4"
+          },
+          {
+            "position": 0.733,
+            "color": "#000000D9"
+          },
+          {
+            "position": 0.8,
+            "color": "#000000EA"
+          },
+          {
+            "position": 0.867,
+            "color": "#000000F6"
+          },
+          {
+            "position": 0.933,
+            "color": "#000000FD"
+          },
+          {
+            "position": 1.0,
+            "color": "#000000"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Mask/Fade Right",
+    "description": "Градиент вправо для создания плавной маски",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#00000000"
+          },
+          {
+            "position": 0.067,
+            "color": "#00000002"
+          },
+          {
+            "position": 0.133,
+            "color": "#00000009"
+          },
+          {
+            "position": 0.2,
+            "color": "#00000015"
+          },
+          {
+            "position": 0.267,
+            "color": "#00000026"
+          },
+          {
+            "position": 0.333,
+            "color": "#0000003B"
+          },
+          {
+            "position": 0.4,
+            "color": "#00000055"
+          },
+          {
+            "position": 0.467,
+            "color": "#00000071"
+          },
+          {
+            "position": 0.533,
+            "color": "#0000008E"
+          },
+          {
+            "position": 0.6,
+            "color": "#000000AA"
+          },
+          {
+            "position": 0.667,
+            "color": "#000000C4"
+          },
+          {
+            "position": 0.733,
+            "color": "#000000D9"
+          },
+          {
+            "position": 0.8,
+            "color": "#000000EA"
+          },
+          {
+            "position": 0.867,
+            "color": "#000000F6"
+          },
+          {
+            "position": 0.933,
+            "color": "#000000FD"
+          },
+          {
+            "position": 1.0,
+            "color": "#000000"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Mask/Fade Top",
+    "description": "Градиент вверх для создания плавной маски",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#00000000"
+          },
+          {
+            "position": 0.067,
+            "color": "#00000002"
+          },
+          {
+            "position": 0.133,
+            "color": "#00000009"
+          },
+          {
+            "position": 0.2,
+            "color": "#00000015"
+          },
+          {
+            "position": 0.267,
+            "color": "#00000026"
+          },
+          {
+            "position": 0.333,
+            "color": "#0000003B"
+          },
+          {
+            "position": 0.4,
+            "color": "#00000055"
+          },
+          {
+            "position": 0.467,
+            "color": "#00000071"
+          },
+          {
+            "position": 0.533,
+            "color": "#0000008E"
+          },
+          {
+            "position": 0.6,
+            "color": "#000000AA"
+          },
+          {
+            "position": 0.667,
+            "color": "#000000C4"
+          },
+          {
+            "position": 0.733,
+            "color": "#000000D9"
+          },
+          {
+            "position": 0.8,
+            "color": "#000000EA"
+          },
+          {
+            "position": 0.867,
+            "color": "#000000F6"
+          },
+          {
+            "position": 0.933,
+            "color": "#000000FD"
+          },
+          {
+            "position": 1.0,
+            "color": "#000000"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Overlay/Both Vertical",
+    "description": "Градиент для оверлея с затемнением от центра вверх и вниз для наложения поверх картинок или других пестрых фонов",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#00000080"
+          },
+          {
+            "position": 0.5,
+            "color": "#00000000"
+          },
+          {
+            "position": 1.0,
+            "color": "#00000080"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Overlay/Bottom",
+    "description": "Градиент для оверлея с затемнением вниз для наложения поверх картинок или других пестрых фонов",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#00000000"
+          },
+          {
+            "position": 1.0,
+            "color": "#00000080"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Overlay/Bottom Left",
+    "description": "Градиент для оверлея с затемнением в нижний левый угол для наложения поверх картинок или других пестрых фонов",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#00000000"
+          },
+          {
+            "position": 1.0,
+            "color": "#000000CC"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Overlay/Full",
+    "description": "Полная заливка для наложения поверх картинок или других пестрых фонов",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.32,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Overlay/Top",
+    "description": "Градиент для оверлея с затемнением вверх для наложения поверх картинок или других пестрых фонов",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#00000080"
+          },
+          {
+            "position": 1.0,
+            "color": "#00000000"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Overlay/Top Right",
+    "description": "Градиент для оверлея с затемнением в верхний правый угол для наложения поверх картинок или других пестрых фонов",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#00000000"
+          },
+          {
+            "position": 1.0,
+            "color": "#000000CC"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Text/Action Fade",
+    "description": "Цвет с фейдом — это решение только для фигмы. В коде используем отдельные утилиты: — в ангуляре Fade — в реакте useLineFade",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#428BF9"
+          },
+          {
+            "position": 1.0,
+            "color": "#428BF900"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Text/Primary Fade",
+    "description": "Цвет с фейдом — это решение только для фигмы. В коде используем отдельные утилиты: — в ангуляре Fade — в реакте useLineFade",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#333333"
+          },
+          {
+            "position": 1.0,
+            "color": "#33333300"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Text/Primary On Dark Fade",
+    "description": "Цвет с фейдом — это решение только для фигмы. В коде используем отдельные утилиты: — в ангуляре Fade — в реакте useLineFade",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#FFFFFF"
+          },
+          {
+            "position": 1.0,
+            "color": "#FFFFFF00"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Text/Secondary Fade",
+    "description": "Цвет с фейдом — это решение только для фигмы. В коде используем отдельные утилиты: — в ангуляре Fade — в реакте useLineFade",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#9299A2"
+          },
+          {
+            "position": 1.0,
+            "color": "#9299A200"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gradient/Text/Secondary On Dark Fade",
+    "description": "Цвет с фейдом — это решение только для фигмы. В коде используем отдельные утилиты: — в ангуляре Fade — в реакте useLineFade",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#FFFFFFB2"
+          },
+          {
+            "position": 1.0,
+            "color": "#FFFFFF00"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Helper Red",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FF5500"
+      }
+    ]
+  },
+  {
+    "name": "Light - Background / base Android",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Light - Background / base iOS",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Light - Background / elevation1",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Light - Background / elevation2",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Light - Background / engaging",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Light - Background / grouped",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#F6F7F8"
+      }
+    ]
+  },
+  {
+    "name": "Light - Background / separator",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#C7C9CC"
+      }
+    ]
+  },
+  {
+    "name": "Light - Background / skeleton",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.03,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Light - Common / general",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Light - Common / opposite",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Light - Common / system3",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#9299A2"
+      }
+    ]
+  },
+  {
+    "name": "Light - Common / system4",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#C7C9CC"
+      }
+    ]
+  },
+  {
+    "name": "Light - Text / engaging",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Light - Text / primary",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#333333"
+      }
+    ]
+  },
+  {
+    "name": "Light - Text / secondary",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#9299A2"
+      }
+    ]
+  },
+  {
+    "name": "Light / On Surface",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/accent",
+    "description": "Контейнеры интерактивных элементов. Заменяет цвет engaging",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/accent-pressed",
+    "description": "Нажатое состояние цвета accent в iOS. Заменяет цвет engaging-pressed",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#156ED4"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/base-ios",
+    "description": "Основной фон приложений",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/brand",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFDD2D"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/brand-premium",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#4972CF"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/brand-pro",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#AFF218"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/brand-tinkoff",
+    "description": "Фоны акцентных кнопок, бейджей и т.д.",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFDD2D"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/brand-tinkoff-pressed",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFCD33"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/elevation-1",
+    "description": "Фон шторок, модальных экранов и карточек, лежащих на фонe base",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/engaging",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/engaging-pressed",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#156ED4"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/highlight",
+    "description": "Риппл-эффект для элементов с фонами base, elevation, neutral, engaging",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.08,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/info",
+    "description": "Контейнеры нейтральных нотификаций",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.16,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/negative",
+    "description": "Контейнеры негативных нотификаций",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.14,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#F52222"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/neutral",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.03,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/neutral-1",
+    "description": "Прозрачные контейнеры с минимальным контрастом на фонах base, elevation и neutral. Второстепенные кнопки, карточки без тени, задизейбленные кнопки и т.д.",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.03,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#001024"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/neutral-1-on-base",
+    "description": "Непрозрачные контейнеры с минимальным контрастом на фоне base, не имеющие тени в светлой теме",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#F6F7F8"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/neutral-1-on-dark",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.1,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/neutral-1-on-light",
+    "description": "Прозрачные контейнеры с минимальным контрастом на светлых цветных фонах",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.03,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/neutral-1-opaque",
+    "description": "Непрозрачные контейнеры кнопок закрытия и удаления элементов",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#F6F7F8"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/neutral-2",
+    "description": "Прозрачные контейнеры со слабым контрастом на фонах base, elevation и neutral. Нажатое состояние элементов фоном neutral-1. Пустая полоска прогресс-баров",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.06,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#001024"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/neutral-2-on-dark",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.15,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/neutral-3",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.12,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#001024"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/neutral-3-on-dark",
+    "description": "Прозрачные контейнеры со средним контрастом на светлых цветных фонах. Нажатое состояние элементов с цветом neutral-2",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.2,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/neutral-4",
+    "description": "Прозрачные контейнеры со средним контрастом. Контейнер аватара с иконкой или текстом. Нажатое состояние элементов с цветом neutral-3",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.22,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#001024"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/neutral-4-on-dark",
+    "description": "Прозрачные контейнеры со средним контрастом на темных цветных фонах. Контейнер аватара с иконкой или текстом. Нажатое состояние элементов с цветом neutral-3",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.3,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/neutral-4-on-light",
+    "description": "Прозрачные контейнеры со средним контрастом на светлых цветных фонах. Контейнер аватара с иконкой или текстом. Нажатое состояние элементов с цветом neutral-3",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.22,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#001024"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/neutral-6-on-dark",
+    "description": "Прозрачные контейнеры с большим контрастом на темных цветных фонах",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.5,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/neutral-6-on-light",
+    "description": "Прозрачные контейнеры с большим контрастом на светлых цветных фонах",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.4,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/neutral2",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.22,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#001024"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/neutralOnLight",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.03,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/notification",
+    "description": "Контейнеры нотификационных бейджей",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#F52222"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/opposite",
+    "description": "Фон, противоположный base: в белой теме — черный, в темной теме — белый",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/positive",
+    "description": "Контейнеры позитивных нотификаций",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.16,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#00B92D"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/primary-on-dark",
+    "description": "Контрастные контейнеры на темных фонах",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/primary-on-light",
+    "description": "Контрастные контейнеры на светлых фонах",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Light/Background/warning",
+    "description": "Контейнеры предупреждающий нотификаций",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.3,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFDD2D"
+      }
+    ]
+  },
+  {
+    "name": "Light/Brand/tinkoff",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFDD2D"
+      }
+    ]
+  },
+  {
+    "name": "Light/Foreground/border-darkmode",
+    "description": "Обводка, отделяющая цветные элементы от фона в темной теме",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Light/Foreground/border-on-light",
+    "description": "Обводка, отделяющая цветные элементы от светлого фонов",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.03,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Light/Foreground/brand-tinkoff-accent",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFDD2D"
+      }
+    ]
+  },
+  {
+    "name": "Light/Foreground/brandAccent",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFCD33"
+      }
+    ]
+  },
+  {
+    "name": "Light/Foreground/image-border",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Light/Foreground/info-accent",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Light/Foreground/infoAccent",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Light/Foreground/on-light",
+    "description": "Акцентные элементы на светлых фонах",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Light/Foreground/positive-accent",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#00B92D"
+      }
+    ]
+  },
+  {
+    "name": "Light/Foreground/separator",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.21,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Light/Foreground/skeleton",
+    "description": "undefined",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.03,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Light/Foreground/warning-accent",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FAB619"
+      }
+    ]
+  },
+  {
+    "name": "Light/Service/navbar",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.8,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Light/Text/accent",
+    "description": "Текст и иконки интерактивных элементов на фонах base, elevation и neutral. Заменяет цвет engaging",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Light/Text/accent-pressed",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#156ED4"
+      }
+    ]
+  },
+  {
+    "name": "Light/Text/engaging",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Light/Text/negative",
+    "description": "Текст и иконки ошибок",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#F52222"
+      }
+    ]
+  },
+  {
+    "name": "Light/Text/positive",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#00B92D"
+      }
+    ]
+  },
+  {
+    "name": "Light/Text/primary",
+    "description": "Текст на фонах base, elevation, neutral",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#333333"
+      }
+    ]
+  },
+  {
+    "name": "Light/Text/primary fade",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#333333"
+          },
+          {
+            "position": 1.0,
+            "color": "#33333300"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Light/Text/primary-on-brand",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#333333"
+      }
+    ]
+  },
+  {
+    "name": "Light/Text/primary-on-dark",
+    "description": "Текст на темных фонах",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Light/Text/primary-on-light",
+    "description": "Текст на светлых фонах",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.9,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Light/Text/primary-on-opposite",
+    "description": "Текст на фоне opposite",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Light/Text/primary-on-tinkoff",
+    "description": "Текст на фонах tinkoff",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#333333"
+      }
+    ]
+  },
+  {
+    "name": "Light/Text/primaryOnDark",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Light/Text/primaryOnLight",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.9,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Light/Text/secondary",
+    "description": "Второстепенный текст на фонах base, elevation, neutral",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#9299A2"
+      }
+    ]
+  },
+  {
+    "name": "Light/Text/secondary fade",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#00102470"
+          },
+          {
+            "position": 1.0,
+            "color": "#33333300"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Light/Text/secondary-on-dark",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.7,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Light/Text/secondary-on-light",
+    "description": "Второстепенный текст на светлых фонах",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.48,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Light/Text/tertiary",
+    "description": "Лейблы задизейбленных кнопок, плейсхолдер в текстовых полях, дисклеймеры",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.22,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#001024"
+      }
+    ]
+  },
+  {
+    "name": "Light/Text/tertiary-on-dark",
+    "description": "Лейблы задизейбленных кнопок, плейсхолдер в текстовых полях, дисклеймеры на светлых фонах",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.3,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Light/Text/tertiary-on-light",
+    "description": "Лейблы задизейбленных кнопок, плейсхолдер в текстовых полях, дисклеймеры на светлых фонах",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.22,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#001024"
+      }
+    ]
+  },
+  {
+    "name": "Night / Base / clear",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.32,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/accent-1",
+    "description": "Фоны акцентных кнопок, бейджей и т.д.",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFDD2D"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/accent-1-hover",
+    "description": "Только для веба. Фоны акцентных кнопок, бейджей и т.д. при наведении",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFCD33"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/accent-1-pressed",
+    "description": "Фоны акцентных кнопок, бейджей и т.д. при нажатии",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FAB619"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/accent-2",
+    "description": "Фоны акцентных кнопок, бейджей и т.д.",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/accent-on-dark",
+    "description": "Контрастные контейнеры на темных фонах",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/accent-on-dark-pressed",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#F6F7F8"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/accent-opposite",
+    "description": "Фон, противоположный base: в белой теме — черный, в темной теме — белый",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/accent-opposite-hover",
+    "description": "Только для веба. Фон, противоположный base при наведении: в белой теме — черный, в темной теме — белый",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#F6F7F8"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/base",
+    "description": "Основной фон приложений. Отличается на iOS, Android и Desktop",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#202020"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/base-ios",
+    "description": "Основной фон приложений. Отличается на iOS, Android и Desktop",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/clear",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.1,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/clear-active",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.2,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/clear-hover",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.16,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/elevation-1",
+    "description": "Фон шторок, модальных экранов и карточек, лежащих на фонe base",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#1C1C1E"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/elevation-2",
+    "description": "Фон карточек, лежащих на фонe elevation-1",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#2C2C2E"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/neutral-1",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.1,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/neutral-1-hover",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.16,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/neutral-1-on-base",
+    "description": "Непрозрачные контейнеры с минимальным контрастом на фоне base, не имеющие тени в светлой теме",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#1C1C1E"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/neutral-1-on-dark",
+    "description": "Прозрачные контейнеры с минимальным контрастом на темных цветных фонах",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.1,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/neutral-1-on-elevation-1",
+    "description": "Непрозрачные контейнеры с минимальным контрастом на фоне elevation-1, не имеющие тени в светлой теме",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#2C2C2E"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/neutral-1-presed",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.2,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/neutral-2",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.15,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/neutral-2-hover",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.2,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/neutral-3-on-dark",
+    "description": "Прозрачные контейнеры со средним контрастом на светлых цветных фонах. Нажатое состояние элементов с цветом neutral-2",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.2,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/neutral-4",
+    "description": "Прозрачные контейнеры со средним контрастом. Контейнер аватара с иконкой или текстом",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#C7C9CC"
+      }
+    ]
+  },
+  {
+    "name": "Night/Background/neutral-4-on-dark",
+    "description": "Прозрачные контейнеры со средним контрастом на темных цветных фонах. Контейнер аватара с иконкой или текстом. Нажатое состояние элементов с цветом neutral-3",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.3,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Base/accent",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Night/Base/base-01",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#121212"
+      }
+    ]
+  },
+  {
+    "name": "Night/Base/clear",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.1,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Base/clear-active",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.2,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Base/clear-hover",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.16,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Base/primary",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFDD2D"
+      }
+    ]
+  },
+  {
+    "name": "Night/Base/secondary",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.1,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Base/secondary-active",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.2,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Base/secondary-hover",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.16,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Border/normal",
+    "description": "Бордеры и сепараторы на основных фонах",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.15,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Brand/tinkoff",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFDD2D"
+      }
+    ]
+  },
+  {
+    "name": "Night/Status/error-bg",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.24,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#F55656"
+      }
+    ]
+  },
+  {
+    "name": "Night/Status/error-fill",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FB4040"
+      }
+    ]
+  },
+  {
+    "name": "Night/Status/info",
+    "description": "Акцентный цвет для информационных блоков",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Night/Status/info-bg",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.32,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Night/Status/info-fill",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Night/Status/info-pale",
+    "description": "Контейнеры нейтральных блоков",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.32,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Night/Status/negative",
+    "description": "Акцентный цвет для негативных блоков",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#F52222"
+      }
+    ]
+  },
+  {
+    "name": "Night/Status/negative-pale",
+    "description": "Контейнеры негативных блоков",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.24,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#F55656"
+      }
+    ]
+  },
+  {
+    "name": "Night/Status/neutral",
+    "description": "Акцентный цвет для нейтральных фонах",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#959BA4"
+      }
+    ]
+  },
+  {
+    "name": "Night/Status/neutral-bg",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.32,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#959BA4"
+      }
+    ]
+  },
+  {
+    "name": "Night/Status/neutral-fill",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#959BA4"
+      }
+    ]
+  },
+  {
+    "name": "Night/Status/neutral-pale",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.2,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Status/positive",
+    "description": "Акцентный цвет для позитивных блоков",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#00B92D"
+      }
+    ]
+  },
+  {
+    "name": "Night/Status/positive-pale",
+    "description": "Контейнеры позитивных блоков",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.28,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#10D952"
+      }
+    ]
+  },
+  {
+    "name": "Night/Status/success-bg",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.28,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#10D952"
+      }
+    ]
+  },
+  {
+    "name": "Night/Status/success-fill",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#10D952"
+      }
+    ]
+  },
+  {
+    "name": "Night/Status/warning",
+    "description": "Акцентный цвет для предупреждающих блоков",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FAB619"
+      }
+    ]
+  },
+  {
+    "name": "Night/Status/warning-bg",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.28,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FAB619"
+      }
+    ]
+  },
+  {
+    "name": "Night/Status/warning-fill",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FAB619"
+      }
+    ]
+  },
+  {
+    "name": "Night/Status/warning-pale",
+    "description": "Контейнеры предупреждающих блоков",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.28,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FAB619"
+      }
+    ]
+  },
+  {
+    "name": "Night/Text/action",
+    "description": "Текст и иконки интерактивного текста на фонах base, elevation и neutral. Заменяет цвет engaging и accent",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Night/Text/link",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#3D91FF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Text/link-hover",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#71AFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Text/primary",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.88,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Text/primary-on-dark",
+    "description": "Текст на темных фонах. Не меняется при смене темы",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Text/primary-on-light",
+    "description": "Текст на светлых фонах, не меняется при смене темы",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.8,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Night/Text/secondary",
+    "description": "Второстепенный текст на фонах base, elevation, neutral",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#9299A2"
+      }
+    ]
+  },
+  {
+    "name": "Night/Text/secondary-on-dark",
+    "description": "Второстепенный текст на темных фонах, не меняется при смене темы",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.7,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Text/tertiary",
+    "description": "Лейблы задизейбленных кнопок, плейсхолдер в текстовых полях, дисклеймеры",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.3,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Text/tertiary-on-dark",
+    "description": "Лейблы задизейбленных кнопок, плейсхолдер в текстовых полях, дисклеймеры на светлых фонах, не меняется при смене темы",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.3,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Text/text-01",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.88,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Text/text-02",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.72,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Text/text-03",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.5,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Night/Text/text-negative",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FB4040"
+      }
+    ]
+  },
+  {
+    "name": "Night/Text/text-positive",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#10D952"
+      }
+    ]
+  },
+  {
+    "name": "Opacity / black-400 8%",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.08,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Opacity / color-black-400 8%",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.08,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "Opacity / color-white 48%",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.48,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Opacity / white 24%",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.24,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Opacity / white 32%",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.32,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Other / Shade - Base Android [Dark]",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#12121200"
+          },
+          {
+            "position": 1.0,
+            "color": "#121212"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Other / Shade - Base Android [Light]",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#FFFFFF00"
+          },
+          {
+            "position": 1.0,
+            "color": "#FFFFFF"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Other / Shade - Base iOS [Dark]",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#00000000"
+          },
+          {
+            "position": 1.0,
+            "color": "#000000"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Other / Shade - Base iOS [Light]",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#FFFFFF00"
+          },
+          {
+            "position": 1.0,
+            "color": "#FFFFFF"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Other / Shade - Elevation1 [Dark]",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#1C1C1E00"
+          },
+          {
+            "position": 1.0,
+            "color": "#1C1C1E"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Other / Shade - Elevation1 [Light]",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#FFFFFF00"
+          },
+          {
+            "position": 1.0,
+            "color": "#FFFFFF"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Other / Shade - Elevation2 [Dark]",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#2C2C2E00"
+          },
+          {
+            "position": 1.0,
+            "color": "#2C2C2E"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Other / Shade - Elevation2 [Light]",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#FFFFFF00"
+          },
+          {
+            "position": 1.0,
+            "color": "#FFFFFF"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Other/Dark/Shade - Base iOS [Dark]",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#00000000"
+          },
+          {
+            "position": 1.0,
+            "color": "#000000"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Other/Dark/Shade - Elevation1 [Dark]",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#1C1C1E00"
+          },
+          {
+            "position": 1.0,
+            "color": "#1C1C1E"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Other/Dark/Shade - Elevation2 [Dark]",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#2C2C2E00"
+          },
+          {
+            "position": 1.0,
+            "color": "#2C2C2E"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Other/Light/Shade - Base Android [Light]",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#FFFFFF00"
+          },
+          {
+            "position": 1.0,
+            "color": "#FFFFFF"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Other/Light/Shade - Base iOS [Light]",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#FFFFFF00"
+          },
+          {
+            "position": 1.0,
+            "color": "#FFFFFF"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Other/Light/Shade - Elevation1 [Light]",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#FFFFFF00"
+          },
+          {
+            "position": 1.0,
+            "color": "#FFFFFF"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Other/Light/Shade - Elevation2 [Light]",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#FFFFFF00"
+          },
+          {
+            "position": 1.0,
+            "color": "#FFFFFF"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Other/Light/Shade - Grouped [Light]",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#F6F7F800"
+          },
+          {
+            "position": 1.0,
+            "color": "#F6F7F8"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Other/Light/tertiary (deprecated)",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 0.21,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "prem new",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#F8E6AF"
+          },
+          {
+            "position": 0.987,
+            "color": "#FFB566"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Service/Map Dark",
+    "fills": [
+      {
+        "type": "IMAGE",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "imageScaleMode": "FILL",
+        "image": "IMAGE"
+      }
+    ]
+  },
+  {
+    "name": "Service/Map Light",
+    "description": "Костыль для удобного использования карты в макетах. С токенами связи нет.",
+    "fills": [
+      {
+        "type": "IMAGE",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "imageScaleMode": "FILL",
+        "image": "IMAGE"
+      }
+    ]
+  },
+  {
+    "name": "Support/support-01",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFD450"
+      }
+    ]
+  },
+  {
+    "name": "Support/support-02",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFB74C"
+      }
+    ]
+  },
+  {
+    "name": "Support/support-03",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#F8A34D"
+      }
+    ]
+  },
+  {
+    "name": "Support/support-04",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FF8863"
+      }
+    ]
+  },
+  {
+    "name": "Support/support-05",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#EE805D"
+      }
+    ]
+  },
+  {
+    "name": "Support/support-06",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FF7B76"
+      }
+    ]
+  },
+  {
+    "name": "Support/support-07",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FF78A7"
+      }
+    ]
+  },
+  {
+    "name": "Support/support-08",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#D45D8C"
+      }
+    ]
+  },
+  {
+    "name": "Support/support-09",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#BC71C9"
+      }
+    ]
+  },
+  {
+    "name": "Support/support-10",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#A381FF"
+      }
+    ]
+  },
+  {
+    "name": "Support/support-11",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#8F75D1"
+      }
+    ]
+  },
+  {
+    "name": "Support/support-12",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#7CAEFF"
+      }
+    ]
+  },
+  {
+    "name": "Support/support-13",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#65A7E0"
+      }
+    ]
+  },
+  {
+    "name": "Support/support-14",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#4DC3F7"
+      }
+    ]
+  },
+  {
+    "name": "Support/support-15",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#4BD0E1"
+      }
+    ]
+  },
+  {
+    "name": "Support/support-16",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#4EB6C2"
+      }
+    ]
+  },
+  {
+    "name": "Support/support-17",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#4FBDB2"
+      }
+    ]
+  },
+  {
+    "name": "Support/support-18",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#4DA197"
+      }
+    ]
+  },
+  {
+    "name": "Support/support-19",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#73B077"
+      }
+    ]
+  },
+  {
+    "name": "Support/support-21",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#AED57F"
+      }
+    ]
+  },
+  {
+    "name": "System Background/Dark Base/Primary",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "System Bg Dark Base / Primary",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "name": "t-shield-on-yellow",
+    "description": "Логотип из BMS: https://bms.tcsbank.ru/brands/13421 https://bms.tcsbank.ru/brands/11256 https://bms.tcsbank.ru/brands/15911",
+    "fills": [
+      {
+        "type": "IMAGE",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "imageScaleMode": "FILL",
+        "image": "IMAGE"
+      }
+    ]
+  },
+  {
+    "name": "Text/Light/Primary-om-opposite",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Text/Primary Fade",
+    "description": "Цвет с фейдом — это решение только для фигмы. В коде используем отдельные утилиты: — в ангуляре Fade — в реакте useLineFade",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#333333"
+          },
+          {
+            "position": 1.0,
+            "color": "#33333300"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Text/Secondary Fade",
+    "description": "Цвет с фейдом — это решение только для фигмы. В коде используем отдельные утилиты: — в ангуляре Fade — в реакте useLineFade",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#9299A2"
+          },
+          {
+            "position": 1.0,
+            "color": "#9299A200"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "tinkoff-shield-white-on-yellow",
+    "description": "Логотип из BMS https://bms.tcsbank.ru/brands/13421",
+    "fills": [
+      {
+        "type": "IMAGE",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "imageScaleMode": "FILL",
+        "image": "IMAGE"
+      }
+    ]
+  },
+  {
+    "name": "title",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#DBE3ED"
+          },
+          {
+            "position": 1.0,
+            "color": "#8EA5BE"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "upper-corochka",
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "stops": [
+          {
+            "position": 0.0,
+            "color": "#F8FAFB"
+          },
+          {
+            "position": 1.0,
+            "color": "#DBE3ED"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Инвестиции / N8",
+    "fills": [
+      {
+        "type": "SOLID",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "color": "#428BF9"
+      }
+    ]
+  },
+  {
+    "name": "Лого партнеров/Dodo",
+    "fills": [
+      {
+        "type": "IMAGE",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "imageScaleMode": "FILL",
+        "image": "IMAGE"
+      }
+    ]
+  },
+  {
+    "name": "Лого партнеров/goods",
+    "fills": [
+      {
+        "type": "IMAGE",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "imageScaleMode": "FILL",
+        "image": "IMAGE"
+      }
+    ]
+  },
+  {
+    "name": "Лого партнеров/Пятерочка",
+    "fills": [
+      {
+        "type": "IMAGE",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "imageScaleMode": "FILL",
+        "image": "IMAGE"
+      }
+    ]
+  },
+  {
+    "name": "Лого партнеров/Старбакс",
+    "fills": [
+      {
+        "type": "IMAGE",
+        "opacity": 1.0,
+        "blendMode": "NORMAL",
+        "visible": true,
+        "imageScaleMode": "FILL",
+        "image": "IMAGE"
+      }
+    ]
+  }
+]

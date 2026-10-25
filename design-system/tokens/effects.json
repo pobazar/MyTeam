@@ -1,0 +1,976 @@
+[
+  {
+    "name": ".Blur/Glass",
+    "effects": [
+      {
+        "type": "BACKGROUND_BLUR",
+        "offset": {
+          "x": 0.0,
+          "y": 4.0
+        },
+        "radius": 32.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": false,
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.25
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 0.25
+        }
+      }
+    ]
+  },
+  {
+    "name": "[Deprecated]/shadow-medium",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "offset": {
+          "x": 0.0,
+          "y": 6.0
+        },
+        "radius": 34.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": true,
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.12
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 0.12
+        }
+      }
+    ]
+  },
+  {
+    "name": "[Deprecated]/shadow-medium-hover",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "offset": {
+          "x": 0.0,
+          "y": 18.0
+        },
+        "radius": 60.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": true,
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.18
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 0.18
+        }
+      }
+    ]
+  },
+  {
+    "name": "[Deprecated]/shadow-popup",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "offset": {
+          "x": 0.0,
+          "y": 20.0
+        },
+        "radius": 50.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": true,
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.2
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 0.2
+        }
+      }
+    ]
+  },
+  {
+    "name": "[Deprecated]/shadow-small",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "offset": {
+          "x": 0.0,
+          "y": 5.0
+        },
+        "radius": 20.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": true,
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.1
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 0.1
+        }
+      }
+    ]
+  },
+  {
+    "name": "bg blur",
+    "effects": [
+      {
+        "type": "BACKGROUND_BLUR",
+        "offset": {
+          "x": 0.0,
+          "y": 4.0
+        },
+        "radius": 10.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": true,
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.25
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 0.25
+        }
+      }
+    ]
+  },
+  {
+    "name": "bg blur - 10",
+    "effects": [
+      {
+        "type": "BACKGROUND_BLUR",
+        "offset": {
+          "x": 0.0,
+          "y": 4.0
+        },
+        "radius": 10.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": true,
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.25
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 0.25
+        }
+      }
+    ]
+  },
+  {
+    "name": "blur-navbar",
+    "effects": [
+      {
+        "type": "BACKGROUND_BLUR",
+        "offset": {
+          "x": 0.0,
+          "y": 4.0
+        },
+        "radius": 40.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": true,
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.25
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 0.25
+        }
+      }
+    ]
+  },
+  {
+    "name": "blur-tabbar",
+    "effects": [
+      {
+        "type": "BACKGROUND_BLUR",
+        "offset": {
+          "x": 0.0,
+          "y": 4.0
+        },
+        "radius": 10.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": true,
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.25
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 0.25
+        }
+      }
+    ]
+  },
+  {
+    "name": "Effect/BG Blur",
+    "effects": [
+      {
+        "type": "BACKGROUND_BLUR",
+        "offset": {
+          "x": 0.0,
+          "y": 4.0
+        },
+        "radius": 32.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": false,
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.25
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 0.25
+        }
+      }
+    ]
+  },
+  {
+    "name": "fake-liquid-effects",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "offset": {
+          "x": 0.0,
+          "y": 2.0
+        },
+        "radius": 20.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": false,
+        "radiusVar": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "84399b099dc3566a6558e0e1fb538fc6ea3cd4e6",
+                "version": "9800:70"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "FLOAT"
+        },
+        "colorVar": {
+          "value": {
+            "alias": {
+              "assetRef": {
+                "key": "0f0f141383bbf20d54895362a5911e748598faf4",
+                "version": "9800:224"
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        },
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.1
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 0.1
+        }
+      },
+      {
+        "type": "BACKGROUND_BLUR",
+        "offset": {
+          "x": 0.0,
+          "y": 4.0
+        },
+        "radius": 20.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": false,
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.25
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 0.25
+        }
+      }
+    ]
+  },
+  {
+    "name": "iOS Blur",
+    "effects": [
+      {
+        "type": "BACKGROUND_BLUR",
+        "offset": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "radius": 20.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": true,
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 1.0
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 1.0
+        }
+      }
+    ]
+  },
+  {
+    "name": "shadow-1",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "offset": {
+          "x": 0.0,
+          "y": 5.0
+        },
+        "radius": 20.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": true,
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.1
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 0.1
+        }
+      }
+    ]
+  },
+  {
+    "name": "shadow-2",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "offset": {
+          "x": 0.0,
+          "y": 6.0
+        },
+        "radius": 34.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": true,
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.12
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 0.12
+        }
+      }
+    ]
+  },
+  {
+    "name": "shadow-medium",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "offset": {
+          "x": 0.0,
+          "y": 6.0
+        },
+        "radius": 34.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": true,
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.12
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 0.12
+        }
+      }
+    ]
+  },
+  {
+    "name": "shadow-small",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "offset": {
+          "x": 0.0,
+          "y": 5.0
+        },
+        "radius": 20.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": true,
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.1
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 0.1
+        }
+      }
+    ]
+  },
+  {
+    "name": "Shadow/Medium",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "offset": {
+          "x": 0.0,
+          "y": 6.0
+        },
+        "radius": 34.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": false,
+        "radiusVar": {
+          "value": {
+            "alias": {
+              "guid": {
+                "sessionID": 2316,
+                "localID": 2247
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "FLOAT"
+        },
+        "colorVar": {
+          "value": {
+            "alias": {
+              "guid": {
+                "sessionID": 2316,
+                "localID": 2251
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        },
+        "yVar": {
+          "value": {
+            "alias": {
+              "guid": {
+                "sessionID": 2316,
+                "localID": 2249
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "FLOAT"
+        },
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.12
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 0.12
+        }
+      }
+    ]
+  },
+  {
+    "name": "Shadow/Medium Hover",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "offset": {
+          "x": 0.0,
+          "y": 18.0
+        },
+        "radius": 60.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": false,
+        "radiusVar": {
+          "value": {
+            "alias": {
+              "guid": {
+                "sessionID": 2361,
+                "localID": 2326
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "FLOAT"
+        },
+        "colorVar": {
+          "value": {
+            "alias": {
+              "guid": {
+                "sessionID": 2361,
+                "localID": 2325
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        },
+        "yVar": {
+          "value": {
+            "alias": {
+              "guid": {
+                "sessionID": 2361,
+                "localID": 2327
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "FLOAT"
+        },
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.18
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 0.18
+        }
+      }
+    ]
+  },
+  {
+    "name": "Shadow/Popup",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "offset": {
+          "x": 0.0,
+          "y": 10.0
+        },
+        "radius": 40.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": false,
+        "radiusVar": {
+          "value": {
+            "alias": {
+              "guid": {
+                "sessionID": 2361,
+                "localID": 2335
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "FLOAT"
+        },
+        "colorVar": {
+          "value": {
+            "alias": {
+              "guid": {
+                "sessionID": 2361,
+                "localID": 2334
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        },
+        "yVar": {
+          "value": {
+            "alias": {
+              "guid": {
+                "sessionID": 2361,
+                "localID": 2336
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "FLOAT"
+        },
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.14
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 0.14
+        }
+      }
+    ]
+  },
+  {
+    "name": "Shadow/shadow-small",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "offset": {
+          "x": 0.0,
+          "y": 5.0
+        },
+        "radius": 20.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": true,
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.1
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 0.1
+        }
+      }
+    ]
+  },
+  {
+    "name": "Shadow/shadow-small-hover",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "offset": {
+          "x": 0.0,
+          "y": 14.0
+        },
+        "radius": 42.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": true,
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.14
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 0.14
+        }
+      }
+    ]
+  },
+  {
+    "name": "Shadow/Small",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "offset": {
+          "x": 0.0,
+          "y": 5.0
+        },
+        "radius": 20.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": false,
+        "radiusVar": {
+          "value": {
+            "alias": {
+              "guid": {
+                "sessionID": 2361,
+                "localID": 2329
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "FLOAT"
+        },
+        "colorVar": {
+          "value": {
+            "alias": {
+              "guid": {
+                "sessionID": 2361,
+                "localID": 2328
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        },
+        "yVar": {
+          "value": {
+            "alias": {
+              "guid": {
+                "sessionID": 2361,
+                "localID": 2330
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "FLOAT"
+        },
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.1
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 0.1
+        }
+      }
+    ]
+  },
+  {
+    "name": "Shadow/Small Hover",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "offset": {
+          "x": 0.0,
+          "y": 14.0
+        },
+        "radius": 42.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": false,
+        "radiusVar": {
+          "value": {
+            "alias": {
+              "guid": {
+                "sessionID": 2361,
+                "localID": 2332
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "FLOAT"
+        },
+        "colorVar": {
+          "value": {
+            "alias": {
+              "guid": {
+                "sessionID": 2361,
+                "localID": 2331
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "COLOR"
+        },
+        "yVar": {
+          "value": {
+            "alias": {
+              "guid": {
+                "sessionID": 2361,
+                "localID": 2333
+              }
+            }
+          },
+          "dataType": "ALIAS",
+          "resolvedDataType": "FLOAT"
+        },
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.12
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 0.12
+        }
+      }
+    ]
+  },
+  {
+    "name": "Shadow/Tooltip",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "offset": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "radius": 2.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 2.0,
+        "showShadowBehindNode": true,
+        "color": {
+          "r": 0.867,
+          "g": 0.875,
+          "b": 0.878,
+          "a": 1.0
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.867,
+          "c1": 0.875,
+          "c2": 0.878,
+          "c3": 1.0
+        }
+      },
+      {
+        "type": "DROP_SHADOW",
+        "offset": {
+          "x": 0.0,
+          "y": 6.0
+        },
+        "radius": 15.0,
+        "visible": true,
+        "blendMode": "NORMAL",
+        "spread": 0.0,
+        "showShadowBehindNode": true,
+        "color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.2
+        },
+        "authoredColor": {
+          "space": "DEFAULT",
+          "c0": 0.0,
+          "c1": 0.0,
+          "c2": 0.0,
+          "c3": 0.2
+        }
+      }
+    ]
+  }
+]
