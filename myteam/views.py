@@ -89,8 +89,7 @@ def profile(request):
     form = ProfileForm(request.POST if request.method=='POST' else None, instance=request.person)
     notice = ''
     if request.method == 'POST' and form.is_valid():
-        with transaction.atomic():
-            form.save()
+        form.save()
         if initial_setup:return redirect('/')
         notice = 'Профиль сохранён.'
     return render(request, 'myteam/profile.html', {'person':request.person,'form':form,'notice':notice,'initial_setup':initial_setup,'navigation_allowed':not initial_setup})

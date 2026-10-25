@@ -19,10 +19,13 @@ class PagesSessionMiddleware:
                     response=JsonResponse({'error':'invalid_session'},status=401)
                 else:
                     from django.contrib.sessions.backends.db import SessionStore
-                    if not SessionStore().exists(token):
+                    session=SessionStore(session_key=token)
+                    # Load once; Django reuses the cached data for CSRF and the view.
+                    session.get('person_id')
+                    if session.session_key!=token:
                         response=JsonResponse({'error':'expired_session'},status=401)
                     else:
-                        request.COOKIES[settings.SESSION_COOKIE_NAME]=token
+                        request.session=session
                         response=self.get_response(request)
             else:response=self.get_response(request)
         response['Cache-Control']='no-store'
@@ -30,7 +33,7 @@ class PagesSessionMiddleware:
             response['Access-Control-Allow-Origin']=origin
             response['Access-Control-Allow-Methods']='GET, POST, OPTIONS'
             response['Access-Control-Allow-Headers']='Authorization, Content-Type, X-CSRFToken'
-            response['Access-Control-Expose-Headers']='X-Myteam-Session'
+            response['Access-Control-Expose-Headers']='X-Myteam-Session, Server-Timing'
             response['Access-Control-Max-Age']='600'
             if getattr(request,'session',None) is not None and request.session.session_key and (request.session.modified or request.path=='/bridge/bootstrap/'):
                 response['X-Myteam-Session']=request.session.session_key

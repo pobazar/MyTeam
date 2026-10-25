@@ -13,7 +13,7 @@ from .models import Notification, Round
 from .notifications import drain
 
 ISSUER='https://token.actions.githubusercontent.com'
-AUDIENCE='https://myteam-web.onrender.com'
+AUDIENCE='https://myteam-backend-eu.onrender.com'
 WORKFLOW='pobazar/MyTeam/.github/workflows/schedule.yml@refs/heads/main'
 KEYS=jwt.PyJWKClient(ISSUER+'/.well-known/jwks',cache_keys=True,lifespan=300,timeout=5)
 

@@ -1,6 +1,8 @@
 import re
 import unicodedata
 from django import forms
+from django.db import transaction
+from contextlib import nullcontext
 from .models import Person, TeamGroup
 
 CYR = dict(zip('абвгдеёзийклмнопрстуфхцыэ', ['a','b','v','g','d','e','e','z','i','i','k','l','m','n','o','p','r','s','t','u','f','h','c','y','e']))
@@ -50,6 +52,8 @@ class ProfileForm(forms.ModelForm):
         labels = {'full_name':'Как вас зовут','team':'Команда','city':'Город, где вы сейчас'}
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)
+        self._original_team=self.instance.team
+        self._original_confidence=self.instance.team_confidence
         if self.instance.pk:self.initial['full_name']=self.instance.display_name
         self.fields['full_name'].widget.attrs['autocomplete']='name'
         for field in self.fields.values():field.required=True
@@ -59,7 +63,10 @@ class ProfileForm(forms.ModelForm):
         return value
     def save(self,commit=True):
         p=super().save(commit=False)
-        p.team_group,p.team_confidence=team_identity(p.team)
-        p.city,p.city_key=self.city_normalized
-        if commit:p.save()
+        needs_team=p.team!=self._original_team or self._original_confidence=='unknown'
+        # A single profile UPDATE is already atomic. Team identity may need multiple writes.
+        with transaction.atomic() if needs_team else nullcontext():
+            if needs_team:p.team_group,p.team_confidence=team_identity(p.team)
+            p.city,p.city_key=self.city_normalized
+            if commit:p.save()
         return p
