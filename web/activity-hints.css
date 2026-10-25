@@ -16,7 +16,7 @@
   line-height: 20px;
   text-align: left;
   white-space: normal;
-  cursor: pointer;
+  cursor: default;
 }
 .activity-hint:hover,.activity-hint:active { background: #575b61; color: #fff; }
 .activity-hint::before { content: ''; position: absolute; left: var(--hint-arrow); width: 12px; height: 12px; background: inherit; transform: translateX(-50%) rotate(45deg); }
@@ -28,3 +28,6 @@
   .activity-hint { border-radius: 8px; font-size: 15px; background: var(--background-accent-2); }
   .activity-hint:hover,.activity-hint:active { background: var(--background-accent-2); }
 }
+
+.activity-hint-ok { display: block; min-height: 32px; margin: 8px 0 0 auto; padding: 4px 12px; border-radius: 8px; background: #ffffff24; color: #fff; font: inherit; cursor: pointer; }
+.activity-hint-ok:hover,.activity-hint-ok:active { background: #ffffff38; color: #fff; }
