@@ -52,7 +52,7 @@ const server = createServer((req,res) => {
         }
         else if(path==='/api/history/')data.entries=[{meeting_id:id,activity_title:'Random Coffee',starts_at:start,ends_at:end,answer,can_rate:!answer}];
         else if(path.includes('/enrollment/')) {enrolled=route.request().postDataJSON().action==='enroll';data.status='saved';}
-        else if(path.includes('/feedback/')) {if(method==='POST'){const body=route.request().postDataJSON();answer={outcome:body.outcome,rating:body.outcome==='yes'?Number(body.rating):null,final:true};}Object.assign(data,{activity_title:'Random Coffee',starts_at:start,ends_at:end,answer,readonly:false});}
+        else if(path.includes('/feedback/')) {if(method==='POST'){const body=route.request().postDataJSON();answer={outcome:body.outcome,rating:body.outcome==='yes'?Number(body.rating):null,final:true};data.status='saved';}Object.assign(data,{activity_title:'Random Coffee',starts_at:start,ends_at:end,answer,readonly:false});}
         else if(path==='/api/logout/')data={status:'logged_out'};
         else throw Error('Unexpected API '+path);
         await route.fulfill({contentType:'application/json',body:JSON.stringify(data)});
@@ -77,7 +77,7 @@ const server = createServer((req,res) => {
       await page.getByRole('button',{name:'Повторить',exact:true}).click();await page.getByLabel('Как вас зовут',{exact:true}).waitFor();await shot(page,platform+'-profile');
       await page.setViewportSize({width,height:600});await page.evaluate(()=>window.scrollTo(0,160));await page.waitForFunction(()=>document.querySelector('#app').classList.contains('scrolled'));assert.equal(await page.locator('#appbar-title').evaluate(n=>getComputedStyle(n).opacity),'1');await shot(page,platform+'-profile-scrolled');
       if(width<=720)assert.equal(await page.locator('#appbar-title').evaluate(n=>getComputedStyle(n).textAlign),platform==='ios'?'center':'left');await page.evaluate(()=>window.scrollTo(0,0));await page.setViewportSize({width,height:844});
-      await page.getByLabel('Команда',{exact:true}).fill('Продукт');await page.getByRole('button',{name:'Сохранить',exact:true}).click();await page.getByText('Профиль сохранён.',{exact:true}).waitFor();assert.equal(profile.team,'Продукт');
+      await page.getByLabel('Команда',{exact:true}).fill('Продукт');await page.getByRole('button',{name:'Сохранить',exact:true}).click();await page.getByText('Профиль обновлён',{exact:true}).waitFor();assert.equal(profile.team,'Продукт');
       const before=activityCalls;await page.goBack();await page.getByRole('heading',{name:'Активности',exact:true}).waitFor();assert.equal(activityCalls,before,'Back refetched activities');
       await page.getByRole('button',{name:'История',exact:true}).click();await page.getByRole('button',{name:'Оценить активность',exact:true}).waitFor();await shot(page,platform+'-history');
       await page.getByRole('button',{name:'Оценить активность',exact:true}).click();await page.getByRole('dialog').waitFor();await page.getByRole('radio',{name:'Да',exact:true}).check();

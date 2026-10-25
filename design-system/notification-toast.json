@@ -1,0 +1,306 @@
+{
+  "source": "tui-notification-toast.fig",
+  "sha256": "7e31228eaeab08b5df0883c4b87f6e7bb56839c8b712b565806cf03782f1f90e",
+  "decodedNodeCount": 51203,
+  "rules": {
+    "placement": "Top of screen; web offset enlarged",
+    "timeoutMs": 5000,
+    "mobile": "One at a time; next appears after preceding toast is hidden; swipe up dismisses",
+    "desktop": "New toast pushes preceding ones down; text max width 400px",
+    "accessibility": "Polite announcement, do not focus automatically; provide close action",
+    "content": "Keep short, recommend one or two lines"
+  },
+  "selectedMasters": [
+    {
+      "id": "18274:9270",
+      "type": "SYMBOL",
+      "name": "system=iOS, content=icon, accessory=none",
+      "size": {
+        "x": 375,
+        "y": 96
+      },
+      "stackMode": "VERTICAL",
+      "stackVerticalPadding": 48,
+      "children": [
+        {
+          "id": "18274:9271",
+          "type": "FRAME",
+          "name": "stack",
+          "size": {
+            "x": 140,
+            "y": 48
+          },
+          "cornerRadius": 24,
+          "stackMode": "HORIZONTAL",
+          "stackSpacing": 8,
+          "stackHorizontalPadding": 12,
+          "stackVerticalPadding": 12,
+          "stackPaddingRight": 16,
+          "stackPaddingBottom": 12,
+          "children": [
+            {
+              "id": "18274:9272",
+              "type": "FRAME",
+              "name": "icon",
+              "size": {
+                "x": 24,
+                "y": 24
+              },
+              "stackMode": "HORIZONTAL",
+              "stackSpacing": 10,
+              "children": [
+                {
+                  "id": "18274:9273",
+                  "type": "INSTANCE",
+                  "name": "tui-ic-fixed-color / check-circle-positive",
+                  "size": {
+                    "x": 24,
+                    "y": 24
+                  }
+                }
+              ]
+            },
+            {
+              "id": "18274:9274",
+              "type": "FRAME",
+              "name": "container",
+              "size": {
+                "x": 80,
+                "y": 18
+              },
+              "cornerRadius": 25,
+              "stackMode": "VERTICAL",
+              "children": [
+                {
+                  "id": "18274:9275",
+                  "type": "TEXT",
+                  "name": "title",
+                  "size": {
+                    "x": 80,
+                    "y": 18
+                  },
+                  "fontSize": 15
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "18275:2586",
+      "type": "SYMBOL",
+      "name": "system=Android, content=icon, accessory=none",
+      "size": {
+        "x": 360,
+        "y": 84
+      },
+      "stackMode": "VERTICAL",
+      "stackHorizontalPadding": 16,
+      "stackVerticalPadding": 36,
+      "stackPaddingRight": 16,
+      "children": [
+        {
+          "id": "18275:2587",
+          "type": "FRAME",
+          "name": "stack",
+          "size": {
+            "x": 133,
+            "y": 48
+          },
+          "cornerRadius": 24,
+          "stackMode": "HORIZONTAL",
+          "stackSpacing": 8,
+          "stackHorizontalPadding": 12,
+          "stackVerticalPadding": 12,
+          "stackPaddingRight": 16,
+          "stackPaddingBottom": 12,
+          "children": [
+            {
+              "id": "18275:2588",
+              "type": "FRAME",
+              "name": "icon",
+              "size": {
+                "x": 24,
+                "y": 24
+              },
+              "stackMode": "HORIZONTAL",
+              "stackSpacing": 10,
+              "children": [
+                {
+                  "id": "18275:2589",
+                  "type": "INSTANCE",
+                  "name": "tui-ic-fixed-color / check-circle-positive",
+                  "size": {
+                    "x": 24,
+                    "y": 24
+                  }
+                }
+              ]
+            },
+            {
+              "id": "18275:2590",
+              "type": "FRAME",
+              "name": "container",
+              "size": {
+                "x": 73,
+                "y": 16
+              },
+              "cornerRadius": 25,
+              "stackMode": "VERTICAL",
+              "children": [
+                {
+                  "id": "18275:2591",
+                  "type": "TEXT",
+                  "name": "title",
+                  "size": {
+                    "x": 73,
+                    "y": 16
+                  },
+                  "fontSize": 14
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "14640:11856",
+      "type": "SYMBOL",
+      "name": "content=icon",
+      "size": {
+        "x": 189,
+        "y": 56
+      },
+      "cornerRadius": 16,
+      "stackMode": "HORIZONTAL",
+      "stackHorizontalPadding": 12,
+      "stackPaddingRight": 12,
+      "children": [
+        {
+          "id": "14640:11866",
+          "type": "FRAME",
+          "name": "content",
+          "size": {
+            "x": 104,
+            "y": 40
+          },
+          "stackMode": "HORIZONTAL",
+          "stackSpacing": 4,
+          "children": [
+            {
+              "id": "14640:11867",
+              "type": "FRAME",
+              "name": "graphics",
+              "size": {
+                "x": 24,
+                "y": 24
+              },
+              "stackMode": "HORIZONTAL",
+              "stackSpacing": 10,
+              "children": [
+                {
+                  "id": "14640:11868",
+                  "type": "INSTANCE",
+                  "name": "tui-ic-fixed-color / info-circle-accent",
+                  "size": {
+                    "x": 24,
+                    "y": 24
+                  }
+                }
+              ]
+            },
+            {
+              "id": "14640:11869",
+              "type": "FRAME",
+              "name": "text",
+              "size": {
+                "x": 76,
+                "y": 40
+              },
+              "stackMode": "HORIZONTAL",
+              "stackSpacing": 10,
+              "stackHorizontalPadding": 4,
+              "stackVerticalPadding": 12,
+              "stackPaddingRight": 4,
+              "stackPaddingBottom": 12,
+              "children": [
+                {
+                  "id": "14640:11870",
+                  "type": "TEXT",
+                  "name": "Notification",
+                  "size": {
+                    "x": 68,
+                    "y": 16
+                  },
+                  "fontSize": 13
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "14640:11871",
+          "type": "FRAME",
+          "name": "action",
+          "size": {
+            "x": 61,
+            "y": 32
+          },
+          "stackMode": "VERTICAL",
+          "stackSpacing": 10,
+          "stackHorizontalPadding": 4,
+          "stackPaddingRight": 4,
+          "children": [
+            {
+              "id": "14640:11872",
+              "type": "INSTANCE",
+              "name": "tui-button",
+              "size": {
+                "x": 53,
+                "y": 32
+              },
+              "stackMode": "HORIZONTAL",
+              "stackSpacing": 2,
+              "stackHorizontalPadding": 8,
+              "stackVerticalPadding": 4,
+              "stackPaddingRight": 8,
+              "stackPaddingBottom": 4
+            }
+          ]
+        },
+        {
+          "id": "14640:11873",
+          "type": "FRAME",
+          "name": "CloseCont",
+          "size": {
+            "x": 24,
+            "y": 24
+          },
+          "stackMode": "HORIZONTAL",
+          "stackHorizontalPadding": 4,
+          "stackVerticalPadding": 4,
+          "stackPaddingRight": 4,
+          "stackPaddingBottom": 4,
+          "children": [
+            {
+              "id": "14640:11874",
+              "type": "INSTANCE",
+              "name": "Close",
+              "size": {
+                "x": 16,
+                "y": 16
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "webAdaptation": [
+    "Added keyboard-accessible dismiss button; current success/error notices have no business action.",
+    "Popover host remains within an open modal dialog and is moved to body on close so feedback errors stay visible and interactive.",
+    "Hover/focus pauses expiry. No clipping at enlarged text sizes."
+  ]
+}

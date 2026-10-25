@@ -6,6 +6,7 @@
   const screen=document.querySelector('#screen'),screenBody=document.querySelector('#screen-content'),screenTitle=document.querySelector('#screen-title'),back=document.querySelector('#screen-back'),barTitle=document.querySelector('#appbar-title');
   const mobileOS=/Android/i.test(navigator.userAgent)?'android':(/iPhone|iPad|iPod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1))?'ios':'generic';
   document.documentElement.dataset.platform=mobileOS;
+  const toast=window.MyTeamToasts;
   const storage='myteam.session',hint='myteam.authenticated',stageHint='myteam.stage';
   let token=sessionStorage.getItem(storage),csrf=null,phase='intro',authenticated=Boolean(token&&sessionStorage.getItem(hint)!=='false');
   let authVersion=0,mainVersion=0,panelVersion=0,loginVersion=0,introStep=0,mainReady=false;
@@ -51,11 +52,11 @@
       throw new ApiError(timedOut?'timeout':'network');
     }finally{clearTimeout(timeout);signal?.removeEventListener('abort',abort);}
   }
-  function resetCredentials(){authVersion++;token=null;csrf=null;authenticated=false;sessionStorage.removeItem(storage);sessionStorage.removeItem(hint);sessionStorage.removeItem(stageHint);}
+  function resetCredentials(){toast.clear();authVersion++;token=null;csrf=null;authenticated=false;sessionStorage.removeItem(storage);sessionStorage.removeItem(hint);sessionStorage.removeItem(stageHint);}
   function hash(path){history.replaceState(null,'',location.pathname+location.search+'#'+path);}
   function route(){const path=location.hash.slice(1)||'/';return path.startsWith('/')&&!path.startsWith('//')?path:'/';}
   function go(path){if(route()===path)routeChanged();else location.hash=path;}
-  function closePanel(){panelVersion++;panelAbort?.abort();if(panel.open)panel.close();panelBody.replaceChildren();}
+  function closePanel(){panelVersion++;panelAbort?.abort();if(panel.open)panel.close();toast.syncHost();panelBody.replaceChildren();}
   function stopLogin(){loginVersion++;clearTimeout(pollTimer);loginAbort?.abort();polling=false;}
   function clearViews(){hideScreen();main.hidden=false;chrome('');mainVersion++;mainAbort?.abort();stopLogin();closePanel();mainReady=false;}
   function chrome(title){
@@ -165,14 +166,25 @@
       else{
         if(next.enrolled)upcoming.append(element('p','Ты записан на следующую неделю.'));
         const button=element('button',next.enrolled?'Отменить запись':'Записаться','secondary');button.type='button';
-        button.onclick=async()=>{button.disabled=true;try{await request('/api/rounds/'+next.id+'/enrollment/',{method:'POST',data:{action:next.enrolled?'cancel':'enroll'}});await loadActivities();}catch(error){if(error.status===401){sessionLost();return;}button.disabled=false;const notice=element('p',error.data?.message||'Не удалось сохранить запись. Попробуй ещё раз.','error');notice.setAttribute('role','alert');upcoming.append(notice);}};
+        button.onclick=async()=>{
+          if(button.disabled)return;button.disabled=true;
+          try{
+            const result=await request('/api/rounds/'+next.id+'/enrollment/',{method:'POST',data:{action:next.enrolled?'cancel':'enroll'}});
+            if(result.status!=='saved'){acceptAccount(result);throw new ApiError('invalid_response');}
+            toast.success(next.enrolled?'Запись отменена':'Ты записан на активность');await loadActivities();
+          }catch(error){
+            if(error.code==='cancelled')return;
+            if(error.status===401)sessionLost();
+            toast.error(error.code==='enrollment_closed'?'Запись на эту неделю закрыта':next.enrolled?'Не удалось отменить запись. Попробуй ещё раз':'Не удалось записаться. Попробуй ещё раз');
+          }finally{button.disabled=false;}
+        };
         upcoming.append(button);
       }
     }else upcoming.append(element('p','Запись пока не открыта. Загляни позже.','muted'));
     target.replaceChildren(fragment);
   }
   function openPanel(title,back='/'){
-    panelVersion++;panelAbort?.abort();panelAbort=new AbortController();closeTarget=back;panelTitle.textContent=title;loading(panelBody);if(!panel.open)panel.showModal();requestAnimationFrame(fitAppbarTitles);
+    panelVersion++;panelAbort?.abort();panelAbort=new AbortController();closeTarget=back;panelTitle.textContent=title;loading(panelBody);if(!panel.open)panel.showModal();toast.syncHost();requestAnimationFrame(fitAppbarTitles);
     document.querySelector('#panel-close').setAttribute('aria-label','Закрыть оценку');
     return panelVersion;
   }
@@ -188,15 +200,23 @@
     }catch(error){if(version===screenVersion)catchLoad(error,screenBody,()=>loadScreen(kind));}
   }
   function clearErrors(form){form.querySelectorAll('[data-field-error]').forEach(node=>{node.hidden=true;node.textContent='';});form.querySelectorAll('[aria-invalid]').forEach(node=>node.removeAttribute('aria-invalid'));$(form,'[data-form-message]').replaceChildren();}
-  function formError(form,error,retry){
-    if(error.code==='cancelled')return;if(error.status===401){sessionLost();return;}
-    if(error.data?.fields){Object.entries(error.data.fields).forEach(([name,messages])=>{const node=form.querySelector(`[data-field-error="${name}"]`);if(node){node.textContent=messages.join(' ');node.hidden=false;form.querySelector(`[name="${name}"]`)?.setAttribute('aria-invalid','true');}else{const note=element('p',messages.join(' '),'error');note.setAttribute('role','alert');$(form,'[data-form-message]').append(note);}});form.querySelector('[aria-invalid]')?.focus();return;}
-    const target=$(form,'[data-form-message]');const text=element('p',error.data?.message||'Не удалось сохранить. Введённое осталось на месте.','error');text.setAttribute('role','alert');const button=element('button','Повторить','secondary');button.type='button';button.onclick=retry;target.replaceChildren(text,button);
+  function formError(form,error,message){
+    if(error.code==='cancelled')return;
+    if(error.status===401){sessionLost();toast.error('Сессия завершена. Войди снова');return;}
+    toast.error(error.data?.fields?'Проверь заполненные поля':message);
+    if(!document.contains(form))return;
+    if(error.data?.fields){
+      Object.entries(error.data.fields).forEach(([name,messages])=>{
+        const node=form.querySelector(`[data-field-error="${name}"]`);
+        if(node){node.textContent=messages.join(' ');node.hidden=false;form.querySelector(`[name="${name}"]`)?.setAttribute('aria-invalid','true');}
+      });
+      form.querySelector('[aria-invalid]')?.focus();
+    }
   }
   function renderProfile(target,data,setup){
     const fragment=clone('profile');
     if(setup){$(fragment,'[data-achievements]').hidden=true;$(fragment,'.profile-grid').classList.add('setup-profile');put(fragment,'[data-profile-heading]','Немного о тебе');put(fragment,'[data-submit]','Продолжить');}
-    const form=$(fragment,'[data-profile-form]');Object.entries(data.profile).forEach(([name,value])=>{if(form.elements[name])form.elements[name].value=value;});
+    const form=$(fragment,'[data-profile-form]');form.addEventListener('invalid',()=>toast.error('Проверь поля профиля'),true);Object.entries(data.profile).forEach(([name,value])=>{if(form.elements[name])form.elements[name].value=value;});
     const awards=$(fragment,'[data-awards]');
     if(!data.achievements?.length)awards.append(element('p','После первой состоявшейся встречи здесь появится «Первый кофе».','muted'));
     else data.achievements.forEach(award=>awards.append(element('p',award.title,'badge'),element('p',award.description)));
@@ -205,10 +225,12 @@
       event.preventDefault();if(form.dataset.busy||!form.reportValidity())return;clearErrors(form);form.dataset.busy='true';const button=$(form,'[data-submit]'),label=button.textContent;button.disabled=true;button.textContent='Сохраняем…';const version=authVersion;
       try{
         const body=await request('/api/profile/',{method:'POST',data:Object.fromEntries(new FormData(form))});
-        if(version!==authVersion||!document.contains(form))return;
+        if(version!==authVersion)return;
+        if(body.state!=='authenticated'){acceptAccount(body);toast.error('Не удалось сохранить профиль');return;}
+        toast.success(setup?'Профиль создан':'Профиль обновлён');
+        if(!document.contains(form))return;
         if(setup){enterAccount(body);return;}
-        const notice=element('p','Профиль сохранён.','notice');notice.setAttribute('role','status');$(form,'[data-form-message]').append(notice);
-      }catch(error){if(document.contains(form))formError(form,error,()=>form.requestSubmit());}
+      }catch(error){formError(form,error,'Не удалось сохранить профиль. Попробуй ещё раз');}
       finally{delete form.dataset.busy;button.disabled=false;button.textContent=label;}
     };
     target.replaceChildren(fragment);
@@ -232,14 +254,17 @@
       const fragment=clone('feedback');put(fragment,'[data-activity]',data.activity_title+' · '+dates(data.starts_at,data.ends_at));const form=$(fragment,'form');
       if(data.readonly){form.hidden=true;const note=$(fragment,'[data-readonly]');note.hidden=false;note.textContent='Срок изменения результата закончился.'+(data.answer?.rating?` Твоя оценка: ${data.answer.rating} из 5.`:'');}
       else{
+        form.addEventListener('invalid',()=>toast.error('Проверь поля оценки'),true);
         if(data.answer){const outcome=form.querySelector(`[name="outcome"][value="${data.answer.outcome==='yes'?'yes':data.answer.outcome==='no'?'no':''}"]`);if(outcome)outcome.checked=true;const rating=form.querySelector(`[name="rating"][value="${Number(data.answer.rating)}"]`);if(rating)rating.checked=true;form.elements.comment.value=data.answer.comment||'';}
         form.onsubmit=async event=>{
           event.preventDefault();if(form.dataset.busy||!form.reportValidity())return;clearErrors(form);form.dataset.busy='true';const button=$(form,'[data-submit]');button.disabled=true;button.textContent='Сохраняем…';
           try{
-            await request('/api/meetings/'+meetingId+'/feedback/',{method:'POST',data:Object.fromEntries(new FormData(form))});
+            const result=await request('/api/meetings/'+meetingId+'/feedback/',{method:'POST',data:Object.fromEntries(new FormData(form))});
+            if(result.status!=='saved'){acceptAccount(result);throw new ApiError('invalid_response');}
+            toast.success('Оценка отправлена');
             if(version!==panelVersion||!document.contains(form))return;
             loadActivities();go(fromHistory?'/history/':'/');
-          }catch(error){if(version===panelVersion)formError(form,error,()=>form.requestSubmit());}
+          }catch(error){formError(form,error,'Не удалось отправить оценку. Попробуй ещё раз');}
           finally{delete form.dataset.busy;button.disabled=false;button.textContent='Сохранить результат';}
         };
       }
