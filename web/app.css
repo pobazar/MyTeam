@@ -1,0 +1,25 @@
+#app { min-height: 100svh; display: flex; flex-direction: column; }
+#main { flex: 1; }
+#account-nav { gap: 8px; }
+.icon-button { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; min-height: 48px; padding: 12px; margin: 0; background: transparent; color: var(--text-primary); border: 1px solid var(--border-normal); }
+.icon-button svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.icon-button:hover { background: var(--background-neutral-1); }
+.text-button { background: transparent; color: var(--text-action); padding: 0; min-height: 40px; margin: 0 0 16px; font-weight: 400; }
+.text-button:hover { background: transparent; text-decoration: underline; }
+.loading-state { min-height: 120px; display: flex; align-items: center; gap: 12px; color: var(--text-secondary); }
+.spinner { width: 24px; height: 24px; border: 3px solid var(--border-normal); border-top-color: var(--text-primary); border-radius: 50%; animation: spin .8s linear infinite; flex: 0 0 auto; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .spinner { animation: none; } }
+#panel { width: min(780px, calc(100% - 32px)); max-height: calc(100svh - 32px); border: 1px solid var(--border-normal); border-radius: 24px; padding: clamp(20px, 4vw, 32px); color: var(--text-primary); background: var(--background-base-alt); }
+#panel::backdrop { background: rgb(0 0 0 / 35%); }
+.panel-header { display: flex; gap: 20px; align-items: start; justify-content: space-between; margin-bottom: 24px; }
+.panel-header h1 { margin: 0; font-size: clamp(26px, 5vw, 34px); }
+.panel-header .icon-button { flex-shrink: 0; }
+.profile-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 20px; }
+.profile-grid > .card { padding: 24px; }
+.profile-grid.setup-profile { display: block; }
+.history-entry .stars-result { white-space: nowrap; }
+[aria-invalid="true"] { border-color: var(--text-negative); }
+@media (max-width: 600px) { .profile-grid { grid-template-columns: 1fr; gap: 0; } #panel { width: calc(100% - 16px); max-height: calc(100svh - 16px); padding: 20px; } .icon-button, .text-button { width: auto; } }
+
+.panel-header { position: sticky; top: 0; z-index: 1; background: var(--background-base-alt); padding-bottom: 12px; }

@@ -4,7 +4,7 @@ from datetime import timedelta
 from functools import wraps
 from django.conf import settings
 from django.http import JsonResponse
-from django.middleware.csrf import get_token,rotate_token
+from django.middleware.csrf import get_token
 from django.views.decorators.http import require_http_methods,require_POST
 from .clock import Clock
 from .models import LoginAttempt,Round,Member,Feedback
@@ -38,7 +38,7 @@ def member(complete=True,achievements=False):
         @wraps(view)
         def wrapped(request,*args,**kwargs):
             request.person=get_person(request,achievements)
-            if not request.person:return response(request,{'error':'auth_required'},401)
+            if not request.person:return JsonResponse({'error':'auth_required'},status=401)
             state=account(request.person)
             if not request.person.onboarding_done or (complete and not request.person.complete):
                 return response(request,state,409)
@@ -77,14 +77,14 @@ def login_status(request):
 
 @require_POST
 def logout(request):
-    rotate_token(request)
+    # Flushing revokes the CSRF secret with the session; do not recreate an anonymous row.
     request.session.flush()
     return JsonResponse({'status':'logged_out'})
 
 @require_POST
 def onboarding(request):
     person=get_person(request)
-    if not person:return response(request,{'error':'auth_required'},401)
+    if not person:return JsonResponse({'error':'auth_required'},status=401)
     person.onboarding_done=True;person.save(update_fields=['onboarding_done'])
     return response(request,account(person))
 

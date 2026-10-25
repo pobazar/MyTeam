@@ -9,6 +9,7 @@ class PagesSessionMiddleware:
     def __call__(self,request):
         origin=request.headers.get('Origin','')
         allowed=origin in settings.FRONTEND_ORIGINS
+        logout_request=request.path=='/api/logout/' and request.method=='POST'
         if request.method=='OPTIONS' and request.headers.get('Access-Control-Request-Method'):
             response=HttpResponse(status=204 if allowed else 403)
         else:
@@ -16,18 +17,26 @@ class PagesSessionMiddleware:
             if authorization.startswith('Bearer '):
                 token=authorization.removeprefix('Bearer ')
                 if not re.fullmatch('[a-z0-9]{32}',token):
-                    response=JsonResponse({'status':'logged_out'}) if request.path=='/api/logout/' else JsonResponse({'error':'invalid_session'},status=401)
+                    response=JsonResponse({'status':'logged_out'}) if logout_request else JsonResponse({'error':'invalid_session'},status=401)
                 else:
                     from django.contrib.sessions.backends.db import SessionStore
                     session=SessionStore(session_key=token)
                     # Load once; Django reuses the cached data for CSRF and the view.
                     session.get('person_id')
                     if session.session_key!=token:
-                        response=JsonResponse({'status':'logged_out'}) if request.path=='/api/logout/' else JsonResponse({'error':'expired_session'},status=401)
+                        response=JsonResponse({'status':'logged_out'}) if logout_request else JsonResponse({'error':'expired_session'},status=401)
                     else:
                         request.session=session
                         response=self.get_response(request)
             else:response=self.get_response(request)
+        if request.path.startswith('/api/') and request.method!='OPTIONS' and not response.get('Content-Type','').startswith('application/json'):
+            # Framework 404/405/500 and accidental redirects also remain data-only.
+            status=response.status_code
+            code={404:'not_found',405:'method_not_allowed',403:'forbidden'}.get(status,'server_error')
+            if status<400:status=400 if status>=300 else 500
+            allowed_methods=response.get('Allow')
+            response=JsonResponse({'error':code},status=status)
+            if allowed_methods:response['Allow']=allowed_methods
         response['Cache-Control']='no-store'
         if allowed:
             response['Access-Control-Allow-Origin']=origin

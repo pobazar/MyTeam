@@ -1,15 +1,13 @@
 from datetime import timedelta
 from django.conf import settings
-from .models import Round,Enrollment,Member
+from .models import Round,Enrollment,Member,Unmatched
+from django.db.models import Exists,OuterRef
 from .activities import get_activity
 
 def dashboard_context(person,now):
     from .rounds import upcoming_start
-    from datetime import timedelta
-    from .models import Unmatched
     next_start=upcoming_start(now)
     week_start=next_start-timedelta(days=7)
-    from django.db.models import Exists,OuterRef
     rounds={item.starts_at:item for item in Round.objects.filter(starts_at__in=[week_start,next_start]).annotate(
         is_enrolled=Exists(Enrollment.objects.filter(person=person,round_id=OuterRef('pk'),active=True)),
         is_unmatched=Exists(Unmatched.objects.filter(person=person,round_id=OuterRef('pk'))))}

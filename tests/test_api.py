@@ -57,10 +57,12 @@ class DataApiTests(TestCase):
         self.assertEqual(self.call('/api/onboarding/',{}).json()['state'],'authenticated')
     def test_logout_is_idempotent_json_and_revokes_the_old_token(self):
         self.authenticate()
-        old=self.token
+        from django.contrib.sessions.models import Session
+        old=self.token;before=Session.objects.count()
         r=self.call('/api/logout/',{})
         self.assertEqual(r.status_code,200);self.assertEqual(r.json(),{'status':'logged_out'})
         self.assertNotIn('Location',r);self.assertFalse(SessionStore().exists(old))
+        self.assertEqual(Session.objects.count(),before-1)
         self.assertEqual(self.call('/api/logout/',{}).status_code,200)
         self.assertEqual(self.call('/api/activities/').status_code,401)
     def test_logout_still_requires_csrf_for_an_active_session(self):
@@ -92,3 +94,15 @@ class DataApiTests(TestCase):
         third=Person.objects.create(telegram_id=73,full_name='Другой',team='Т',city='М',city_key='m',onboarding_done=True)
         s=SessionStore(self.token);s['person_id']=str(third.id);s.save()
         self.assertEqual(self.call(f'/api/meetings/{meeting}/feedback/').status_code,404)
+    def test_unauthenticated_data_read_does_not_create_anonymous_sessions(self):
+        from django.contrib.sessions.models import Session
+        before=Session.objects.count()
+        response=Client().get('/api/activities/',HTTP_ORIGIN=self.origin)
+        self.assertEqual(response.status_code,401)
+        self.assertEqual(Session.objects.count(),before)
+    def test_unknown_api_path_and_wrong_method_are_json_not_html(self):
+        response=self.call('/api/unknown/')
+        self.assertEqual(response.status_code,404);self.assertEqual(response.json()['error'],'not_found')
+        response=self.call('/api/logout/')
+        self.assertEqual(response.status_code,405);self.assertEqual(response.json()['error'],'method_not_allowed')
+        self.assertIn('POST',response['Allow'])
