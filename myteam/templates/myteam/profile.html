@@ -1,7 +1,7 @@
 {% extends 'myteam/base.html' %}
 {% block content %}
 <h1>{% if initial_setup %}Давайте познакомимся{% else %}Твой профиль{% endif %}</h1>
-{% if initial_setup %}<p class="muted">Заполни три поля, чтобы перейти к активностям.</p>{% endif %}
+{% if initial_setup %}<p class="muted">Эти данные помогут нам точнее подбирать тебе участников для активностей.</p>{% endif %}
 <div class="{% if initial_setup %}setup{% else %}grid{% endif %}">
   <section class="card">
     <h2>{% if initial_setup %}Немного о тебе{% else %}Твои данные{% endif %}</h2>

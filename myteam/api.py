@@ -1,6 +1,6 @@
+from datetime import timedelta
 """Data-only API for the static Pages client. No templates or HTML redirects."""
 import json
-from datetime import timedelta
 from functools import wraps
 from django.conf import settings
 from django.http import JsonResponse
@@ -110,18 +110,22 @@ def answer_data(answer):
 def activities(request):
     c=dashboard_context(request.person,Clock().now())
     current=c['current'];week=c['week'];n=c['next_round']
-    if c['finished']:kind='completed'
+    if c['awaiting_publication']:kind='preparing' if c['current_enrolled'] else 'upcoming'
+    elif c['finished']:kind='completed'
     elif current:kind='active'
     elif c['unmatched']:kind='unmatched'
     elif c['current_enrolled']:kind='expired' if week.state=='expired' else 'preparing'
     else:kind='new' if c['new_here'] else 'skipped'
+    from .meeting_roles import organizer_id
+    organizer=organizer_id(current.meeting,c['members']) if current else None
     return response(request,{'state':'authenticated','current':{
         'kind':kind,'starts_at':c['week_start'],'ends_at':c['week_end'],
         'activity_title':week.activity_title if week else None,'meeting_id':str(current.meeting_id) if current else None,
         'answer':answer_data(c['answer']),
-        'participants':[{'name':m.snapshot.get('full_name') or f'{m.snapshot.get("first_name", "")} {m.snapshot.get("last_name", "")}'.strip(),'team':m.snapshot['team'],'city':m.snapshot['city']} for m in c['members']] if kind=='active' else [],
+        'participants':[{'name':m.snapshot.get('full_name') or f'{m.snapshot.get("first_name", "")} {m.snapshot.get("last_name", "")}'.strip(),'team':m.snapshot['team'],'city':m.snapshot['city'],'is_you':m.person_id==request.person.id,'is_organizer':str(m.person_id)==organizer,
+            'contacts_url':f'https://t.me/{settings.TELEGRAM_BOT_USERNAME}?start=c_{m.id}' if m.person_id!=request.person.id else None} for m in c['members']] if kind=='active' else [],
         'instructions':c['instructions'] if kind=='active' else None,
-        'contacts_url':c['contacts_url'] if kind=='active' else None,
+        'same_city':len({m.snapshot['city_key'] for m in c['members']})==1 if current else None,
     },'next':{'id':str(n.id) if n else None,'starts_at':c['next_start'],'ends_at':c['next_end'],
         'closes_at':n.closes_at if n else None,'activity_title':n.activity_title if n else None,
         'enrollment_count':n.enrollment_count if n else 0,
@@ -142,7 +146,7 @@ def enrollment(request,round_id):
 def history(request):
     return response(request,{'state':'authenticated','entries':[{
         'meeting_id':str(m.meeting_id),'activity_title':m.round.activity_title,
-        'starts_at':m.round.starts_at,'ends_at':m.round.ends_at,'answer':answer_data(m.answer),'can_rate':m.ratable,
+        'starts_at':m.round.starts_at,'ends_at':m.round.ends_at-timedelta(hours=12),'answer':answer_data(m.answer),'can_rate':m.ratable,
     } for m in history_entries(request.person,Clock().now())]})
 
 @require_http_methods(['GET','POST'])
@@ -151,7 +155,7 @@ def feedback(request,meeting_id):
     m=Member.objects.filter(person=request.person,meeting_id=meeting_id,round__published_at__isnull=False).select_related('round','feedback').first()
     if not m:return response(request,{'error':'not_found'},404)
     existing=getattr(m,'feedback',None)
-    readonly=bool(existing and existing.final and Clock().now()>=m.round.ends_at+timedelta(days=7))
+    readonly=bool(existing and existing.final)
     if request.method=='POST':
         data=payload(request)
         if data is None:return response(request,{'error':'invalid_request'},400)
@@ -161,5 +165,5 @@ def feedback(request,meeting_id):
         except RuleError as e:return response(request,{'error':'feedback_closed','message':str(e)},409)
         return response(request,{'status':'saved','answer':answer_data(existing)})
     return response(request,{'state':'authenticated','activity_title':m.round.activity_title,
-        'starts_at':m.round.starts_at,'ends_at':m.round.ends_at,'readonly':readonly,
+        'starts_at':m.round.starts_at,'ends_at':m.round.ends_at-timedelta(hours=12),'readonly':readonly,
         'answer':{**answer_data(existing),'comment':existing.comment} if existing else None})

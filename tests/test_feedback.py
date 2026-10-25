@@ -26,14 +26,14 @@ class FeedbackTests(TestCase):
         schedule_requests(self.r,FrozenClock(first+timedelta(hours=12)));self.assertEqual(Notification.objects.filter(kind='feedback_last').count(),0)
         self.assertEqual(Notification.objects.filter(kind='feedback_first').count(),2)
         schedule_requests(self.r,FrozenClock(self.r.ends_at));self.assertEqual(Notification.objects.filter(kind='feedback_last').count(),0)
-    def test_achievement_change_and_deadline(self):
+    def test_final_answer_is_immutable_and_retry_idempotent(self):
         now=FrozenClock(self.r.starts_at)
         data={'outcome':'yes','rating':5,'comment':''}
         for _ in range(2):save_feedback(self.people[0].id,self.meeting.id,data,now)
         self.assertEqual(Achievement.objects.count(),1)
         self.assertEqual(Feedback.objects.get().revision,1)
-        save_feedback(self.people[0].id,self.meeting.id,{'outcome':'no','comment':'Не удалось найти общее время.'},now)
-        self.assertEqual(Achievement.objects.count(),0)
+        with self.assertRaises(RuleError):save_feedback(self.people[0].id,self.meeting.id,{'outcome':'no','comment':'Не удалось найти общее время.'},now)
+        self.assertEqual(Achievement.objects.count(),1)
         self.assertTrue(Feedback.objects.get().final)
         with self.assertRaises(RuleError):save_feedback(self.people[0].id,self.meeting.id,{'outcome':'no','comment':'Не удалось найти общее время.'},FrozenClock(self.r.ends_at+timedelta(days=7)))
     def test_yes_requires_all_fields(self):
@@ -45,3 +45,7 @@ class FeedbackTests(TestCase):
         answer=save_feedback(self.people[0].id,self.meeting.id,{'outcome':'no'},FrozenClock(self.r.starts_at))
         self.assertTrue(answer.final);self.assertEqual(answer.comment,'');self.assertIsNone(answer.rating)
         self.assertFalse(Achievement.objects.filter(person=self.people[0]).exists())
+
+    def test_first_answer_has_no_deadline(self):
+        answer=save_feedback(self.people[0].id,self.meeting.id,{"outcome":"yes","rating":4},FrozenClock(self.r.ends_at+timedelta(days=365)))
+        self.assertTrue(answer.final)

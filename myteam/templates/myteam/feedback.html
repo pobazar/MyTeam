@@ -6,7 +6,7 @@
   <section class="card">
     <p>{{ round.activity_title }} · {{ round.starts_at|date:'j E' }} — {{ round.ends_at|date:'j E' }}</p>
     {% if readonly %}
-      <p class="notice">Срок изменения результата закончился.{% if form.initial.rating %} Твоя оценка: {{ form.initial.rating }} из 5.{% endif %}</p>
+      <p class="notice">Результат отправлен. Изменить его нельзя.{% if form.initial.rating %} Твоя оценка: {{ form.initial.rating }} из 5.{% endif %}</p>
     {% else %}
       <form method="post" data-activity-feedback>
         {% csrf_token %}<input type="hidden" name="return_to" value="{{ return_to }}">

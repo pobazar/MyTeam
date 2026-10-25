@@ -29,3 +29,16 @@ class PrivacyTests(TestCase):
         text=Notification.objects.get(kind='contacts').text
         self.assertIn('tg://user?id=2',text)
         self.assertNotIn('id=3',text)
+    def test_individual_contact_requires_shared_published_meeting(self):
+        from myteam.contacts import send_member_contact
+        target=Member.objects.get(meeting=self.meeting,person=self.people[1])
+        own=Member.objects.get(meeting=self.meeting,person=self.people[0])
+        self.assertFalse(send_member_contact(1,1,target.id,10))
+        publish(self.r.id,FrozenClock(self.r.starts_at))
+        self.assertFalse(send_member_contact(3,3,target.id,10))
+        self.assertFalse(send_member_contact(1,2,target.id,10))
+        self.assertFalse(send_member_contact(1,1,own.id,10))
+        self.assertTrue(send_member_contact(1,1,target.id,10))
+        self.assertTrue(send_member_contact(1,1,target.id,10))
+        self.assertEqual(Notification.objects.filter(kind='contacts').count(),1)
+        self.assertIn('tg://user?id=2',Notification.objects.get(kind='contacts').text)

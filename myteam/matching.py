@@ -52,7 +52,9 @@ def prepare(round_id,clock):
         for person in people:Unmatched.objects.create(round=r,person=person)
     for group in activity.build_groups(people,history):
         meeting=Meeting.objects.create(round=r,activity_data={'rules_version':r.rules_version})
-        for p in group:Member.objects.create(meeting=meeting,round=r,person=p,snapshot=snapshot(p))
+        members=[Member.objects.create(meeting=meeting,round=r,person=p,snapshot=snapshot(p)) for p in group]
+        from .meeting_roles import persist_organizer
+        persist_organizer(meeting,members)
     validate_draft(r)
     r.prepared_at=clock.now()
     r.state='prepared'

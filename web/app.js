@@ -128,7 +128,7 @@
   }
   function enterAccount(body){authenticated=true;sessionStorage.setItem(hint,'true');stopLogin();if(!acceptAccount(body))return;showApp();hash(intendedRoute);intendedRoute='/';loadActivities();routeChanged();}
   function showApp(){phase='app';hideScreen();main.hidden=false;chrome('');main.replaceChildren(clone('activities'));mainReady=false;}
-  function showSetup(body){clearViews();phase='setup';chrome('');nav.hidden=true;hash('/');main.replaceChildren(element('h1','Давайте познакомимся'),element('p','Заполни три поля, чтобы перейти к активностям.','muted'));const target=element('div','', 'setup');main.append(target);renderProfile(target,body,true);}
+  function showSetup(body){clearViews();phase='setup';chrome('');nav.hidden=true;hash('/');main.replaceChildren(element('h1','Давайте познакомимся'),element('p','Эти данные помогут нам точнее подбирать тебе участников для активностей.','muted'));const target=element('div','', 'setup');main.append(target);renderProfile(target,body,true);}
   async function loadSetup(){
     clearViews();phase='setup-loading';chrome('');nav.hidden=true;hash('/');main.replaceChildren(element('h1','Давайте познакомимся'));
     const target=element('div','', 'setup');main.append(target);loading(target);const version=++mainVersion;mainAbort=new AbortController();
@@ -150,14 +150,14 @@
     if(current.kind==='active'){
       const active=clone('active');put(active,'[data-title]',current.activity_title);put(active,'[data-instructions]',current.instructions);
       const list=$(active,'[data-participants]');
-      current.participants.forEach(person=>{const item=document.createElement('li');item.append(element('strong',person.name),element('span',person.team+' · '+person.city,'muted'));list.append(item);});
-      telegramLink($(active,'[data-contacts]'),current.contacts_url);$(active,'[data-feedback]').onclick=()=>go('/meetings/'+current.meeting_id+'/feedback/');body.append(active);
+      current.participants.forEach(person=>{const item=document.createElement('li');item.append(element('strong',person.name+(person.is_you?' (это ты)':'')),element('span',person.team+' · '+person.city,'muted'));if(person.is_organizer)item.append(element('span',person.is_you?'Ты организуешь встречу':'Организатор встречи','organizer-label'));if(!person.is_you&&person.contacts_url){const link=element('a','Связаться через Telegram','participant-contact');telegramLink(link,person.contacts_url);item.append(link);}list.append(item);});
+      $(active,'[data-feedback]').onclick=()=>go('/meetings/'+current.meeting_id+'/feedback/');body.append(active);
     }else if(current.kind==='completed'){
       const yes=current.answer.outcome==='yes';body.append(element('h2',yes?'Спасибо за участие!':'Спасибо за ответ'),element('p',yes?current.activity_title+' — результат сохранён.':'На этой неделе не получилось провести активность. Мы сохранили твой ответ.'));
       if(yes&&current.answer.rating){body.append(ratingResult(current.answer.rating));}
       body.append(element('p','На следующей неделе будет новая возможность поучаствовать.','muted'));
     }else{
-      const messages={new:['Добро пожаловать!','Ты только присоединился. Запись на текущую неделю уже завершена, поэтому активной встречи пока нет.'],skipped:['Эту неделю ты пропускаешь','На текущую неделю ты не записался. Всё в порядке — участие добровольное.'],preparing:['Ты записан на эту неделю','Готовим состав и инструкции. Они появятся здесь после публикации.'],unmatched:['В этот раз без активности','Ты записался, но участников не хватило для формирования группы.'],expired:['Активность не состоялась','На этой неделе не удалось запустить активность. Можно записаться на следующую неделю.']};
+      const messages={new:['Добро пожаловать!','Ты только присоединился. Запись на текущую неделю уже завершена, поэтому активной встречи пока нет.'],skipped:['Эту неделю ты пропускаешь','На текущую неделю ты не записался. Всё в порядке — участие добровольное.'],upcoming:['Скоро новая активность','Предыдущая активность завершена. Новая начнётся в среду в 09:00 МСК. На этот раунд ты не записался.'],preparing:['Скоро твоя активность','Ты записан. Готовим состав и инструкции — они появятся здесь после публикации в среду в 09:00 МСК.'],unmatched:['В этот раз без активности','Ты записался, но участников не хватило для формирования группы.'],expired:['Активность не состоялась','На этой неделе не удалось запустить активность. Можно записаться на следующую неделю.']};
       const [title,text]=messages[current.kind]||messages.skipped;body.append(element('h2',title),element('p',text),element('p','Начни со следующей недели — запишись в соседнем блоке.','muted'));
     }
     renderNextActivity($(fragment,'[data-next-body]'),next);
@@ -258,7 +258,7 @@
         const body=await request('/api/profile/',{method:'POST',data:Object.fromEntries(new FormData(form))});
         if(version!==authVersion)return;
         if(body.state!=='authenticated'){acceptAccount(body);toast.error('Не удалось сохранить профиль');return;}
-        toast.success(setup?'Профиль создан':'Профиль обновлён');
+        if(!setup)toast.success('Профиль обновлён');
         if(!document.contains(form))return;
         if(setup){enterAccount(body);return;}
       }catch(error){formError(form,error,'Не удалось сохранить профиль. Попробуй ещё раз');}
@@ -295,7 +295,7 @@
     try{
       const data=await request('/api/meetings/'+meetingId+'/feedback/',{signal:panelAbort.signal});if(version!==panelVersion)return;if(!acceptAccount(data))return;
       const fragment=clone('feedback');put(fragment,'[data-activity]',data.activity_title+' · '+dates(data.starts_at,data.ends_at));const form=$(fragment,'form');
-      if(data.readonly){form.hidden=true;const note=$(fragment,'[data-readonly]');note.hidden=false;note.textContent='Срок изменения результата закончился.'+(data.answer?.rating?` Твоя оценка: ${data.answer.rating} из 5.`:'');}
+      if(data.readonly){form.hidden=true;const note=$(fragment,'[data-readonly]');note.hidden=false;note.append(element('p','Результат отправлен. Изменить его нельзя.'),element('p',data.answer?.outcome==='yes'?'Активность проведена.':'Не получилось провести активность.'));if(data.answer?.rating)note.append(ratingResult(data.answer.rating));if(data.answer?.comment)note.append(element('p',data.answer.comment));}
       else{
         bindValidation(form,'Проверь поля оценки');
         if(data.answer){form.elements.outcome.value=['yes','no'].includes(data.answer.outcome)?data.answer.outcome:'';const rating=form.querySelector(`[name="rating"][value="${Number(data.answer.rating)}"]`);if(rating)rating.checked=true;form.elements.comment.value=data.answer.comment||'';}

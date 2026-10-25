@@ -132,3 +132,34 @@ class DataApiTests(TestCase):
         response=self.call('/api/logout/')
         self.assertEqual(response.status_code,405);self.assertEqual(response.json()['error'],'method_not_allowed')
         self.assertIn('POST',response['Allow'])
+
+    def test_coffee_roles_contacts_boundary_and_immutable_feedback(self):
+        p=self.authenticate()
+        start=datetime(2026,10,28,9,tzinfo=MOSCOW)
+        r=ensure_round(start)
+        people=[p]+[Person.objects.create(telegram_id=i,full_name=f'Участник {i}',team='Разработка',city='Москва',city_key='moskva',onboarding_done=True) for i in (72,73)]
+        for person in people:Enrollment.objects.create(person=person,round=r)
+        tick(FrozenClock(r.prepares_at));tick(FrozenClock(start))
+        with patch('myteam.clock.Clock.now',return_value=start):
+            current=self.call('/api/activities/').json()['current']
+            self.assertEqual(current['kind'],'active')
+            self.assertEqual(sum(x['is_organizer'] for x in current['participants']),1)
+            self.assertEqual(sum(bool(x['contacts_url']) for x in current['participants']),2)
+            self.assertIn('офлайн',current['instructions'])
+            self.assertIn('попутешествовать',current['instructions'])
+            self.assertNotIn('telegram_id',str(current))
+        boundary=r.ends_at-timedelta(hours=12)
+        with patch('myteam.clock.Clock.now',return_value=boundary-timedelta(seconds=1)):
+            self.assertEqual(self.call('/api/activities/').json()['current']['kind'],'active')
+        with patch('myteam.clock.Clock.now',return_value=boundary):
+            self.assertEqual(self.call('/api/activities/').json()['current']['kind'],'upcoming')
+            self.assertEqual(len(self.call('/api/history/').json()['entries']),1)
+        m=Member.objects.get(person=p,round=r)
+        path=f'/api/meetings/{m.meeting_id}/feedback/'
+        with patch('myteam.clock.Clock.now',return_value=r.ends_at+timedelta(days=365)):
+            data={'outcome':'yes','rating':5,'comment':'Спасибо'}
+            self.assertEqual(self.call(path,data).status_code,200)
+            self.assertTrue(self.call(path).json()['readonly'])
+            self.assertEqual(self.call(path,data).status_code,200)
+            self.assertEqual(self.call(path,{'outcome':'no'}).status_code,409)
+        self.assertEqual(Feedback.objects.get(member=m).revision,1)
