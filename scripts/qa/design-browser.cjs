@@ -12,7 +12,7 @@ const start = '2026-10-21T06:00:00Z', end = '2026-10-28T06:00:00Z';
 const server = createServer((req,res) => {
   const path = resolve(root, '.' + (req.url.split('?')[0] === '/' ? '/index.html' : req.url.split('?')[0]));
   if (!path.startsWith(root+'/')) {res.writeHead(403).end();return;}
-  try { res.setHeader('Content-Type', ({'.html':'text/html; charset=utf-8','.js':'text/javascript','.css':'text/css','.svg':'image/svg+xml'})[extname(path)] || 'application/octet-stream');res.end(readFileSync(path)); }
+  try { res.setHeader('Content-Type', ({'.html':'text/html; charset=utf-8','.js':'text/javascript','.css':'text/css','.svg':'image/svg+xml','.png':'image/png'})[extname(path)] || 'application/octet-stream');res.end(readFileSync(path)); }
   catch {res.writeHead(404).end();}
 });
 (async () => {
@@ -48,7 +48,7 @@ const server = createServer((req,res) => {
         else if(path==='/api/profile/') {
           profileCalls++;if(holdProfile)await holdProfile;
           if(failProfile&&method==='GET'&&profileReady){failProfile=false;await route.fulfill({status:503,contentType:'application/json',body:'{"error":"temporary"}'});return;}
-          if(method==='POST'){Object.assign(profile,route.request().postDataJSON());profileReady=true;}data.profile=profile;data.achievements=[{title:'Первый кофе',description:'Твоя первая подтверждённая встреча.'}];
+          if(method==='POST'){Object.assign(profile,route.request().postDataJSON());profileReady=true;}data.profile=profile;data.achievements=[{key:'first_coffee',title:'Первый кофе',description:'Твоя первая подтверждённая встреча.',earned_at:start}];
         }
         else if(path==='/api/history/')data.entries=[{meeting_id:id,activity_title:'Random Coffee',starts_at:start,ends_at:end,answer,can_rate:!answer}];
         else if(path.includes('/enrollment/')) {enrolled=route.request().postDataJSON().action==='enroll';data.status='saved';}
@@ -75,6 +75,9 @@ const server = createServer((req,res) => {
       await page.getByRole('button',{name:'Профиль',exact:true}).click();await page.getByRole('button',{name:'Повторить',exact:true}).waitFor();await shot(page,platform+'-profile-error');
       assert.equal(await page.getByRole('dialog').count(),0);assert.equal(await page.locator('#main').isVisible(),false);
       await page.getByRole('button',{name:'Повторить',exact:true}).click();await page.getByLabel('Как вас зовут',{exact:true}).waitFor();await shot(page,platform+'-profile');
+      const beforeAward=profileCalls,originalName=await page.getByLabel('Как вас зовут',{exact:true}).inputValue();await page.getByLabel('Как вас зовут',{exact:true}).fill('Несохранённое имя');
+      await page.getByRole('button',{name:'Первый кофе — подробнее',exact:true}).click();await page.locator('#achievement-dialog').waitFor();assert.equal(await page.locator('#achievement-date').isVisible(),true);await page.getByRole('button',{name:'Закрыть достижение',exact:true}).click();
+      assert.equal(profileCalls,beforeAward);assert.equal(await page.getByLabel('Как вас зовут',{exact:true}).inputValue(),'Несохранённое имя');await page.getByLabel('Как вас зовут',{exact:true}).fill(originalName);
       await page.setViewportSize({width,height:600});await page.evaluate(()=>window.scrollTo(0,160));await page.waitForFunction(()=>document.querySelector('#app').classList.contains('scrolled'));assert.equal(await page.locator('#appbar-title').evaluate(n=>getComputedStyle(n).opacity),'1');await shot(page,platform+'-profile-scrolled');
       if(width<=720)assert.equal(await page.locator('#appbar-title').evaluate(n=>getComputedStyle(n).textAlign),platform==='ios'?'center':'left');await page.evaluate(()=>window.scrollTo(0,0));await page.setViewportSize({width,height:844});
       await page.getByLabel('Команда',{exact:true}).fill('Продукт');await page.getByRole('button',{name:'Сохранить',exact:true}).click();await page.getByText('Профиль обновлён',{exact:true}).waitFor();assert.equal(profile.team,'Продукт');

@@ -98,7 +98,7 @@ def profile(request):
         if not form.is_valid():return response(request,{'error':'validation','fields':errors(form)},422)
         form.save()
     return response(request,{**account(request.person),'achievements':[
-        {'key':'first_coffee','title':'Первый кофе','description':'Твоя первая подтверждённая встреча.'}
+        {'key':'first_coffee','title':'Первый кофе','description':'Твоя первая подтверждённая встреча.','earned_at':request.person.first_coffee_earned_at}
     ] if request.person.has_first_coffee else []})
 
 def answer_data(answer):

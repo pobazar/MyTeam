@@ -96,7 +96,9 @@ class DataApiTests(TestCase):
             meeting=data['current']['meeting_id']
             self.assertEqual(self.call(f'/api/meetings/{meeting}/feedback/',{'outcome':'yes','rating':4}).status_code,200)
             self.assertEqual(self.call('/api/activities/').json()['current']['kind'],'completed')
-            self.assertEqual(self.call('/api/profile/').json()['achievements'][0]['key'],'first_coffee')
+            award=self.call('/api/profile/').json()['achievements'][0]
+            self.assertEqual(award['key'],'first_coffee')
+            self.assertEqual(datetime.fromisoformat(award['earned_at'].replace('Z','+00:00')),Achievement.objects.get(person=p,key='first_coffee').created_at)
         with patch('myteam.clock.Clock.now',return_value=r.ends_at):
             entries=self.call('/api/history/').json()['entries'];self.assertEqual(len(entries),1)
             self.assertEqual(entries[0]['answer']['rating'],4);self.assertFalse(entries[0]['can_rate'])

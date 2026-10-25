@@ -7,6 +7,7 @@
   const mobileOS=/Android/i.test(navigator.userAgent)?'android':(/iPhone|iPad|iPod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1))?'ios':'generic';
   document.documentElement.dataset.platform=mobileOS;
   const toast=window.MyTeamToasts;
+  const achievementDialog=document.querySelector('#achievement-dialog');
   const storage='myteam.session',hint='myteam.authenticated',stageHint='myteam.stage';
   let token=sessionStorage.getItem(storage),csrf=null,phase='intro',authenticated=Boolean(token&&sessionStorage.getItem(hint)!=='false');
   let authVersion=0,mainVersion=0,panelVersion=0,loginVersion=0,introStep=0,mainReady=false;
@@ -56,7 +57,7 @@
   function hash(path){history.replaceState(null,'',location.pathname+location.search+'#'+path);}
   function route(){const path=location.hash.slice(1)||'/';return path.startsWith('/')&&!path.startsWith('//')?path:'/';}
   function go(path){if(route()===path)routeChanged();else location.hash=path;}
-  function closePanel(){panelVersion++;panelAbort?.abort();if(panel.open)panel.close();toast.syncHost();panelBody.replaceChildren();}
+  function closePanel(){closeAchievement();panelVersion++;panelAbort?.abort();if(panel.open)panel.close();toast.syncHost();panelBody.replaceChildren();}
   function stopLogin(){loginVersion++;clearTimeout(pollTimer);loginAbort?.abort();polling=false;}
   function clearViews(){hideScreen();main.hidden=false;chrome('');mainVersion++;mainAbort?.abort();stopLogin();closePanel();mainReady=false;}
   function chrome(title){
@@ -186,6 +187,7 @@
     target.replaceChildren(fragment);
   }
   function openPanel(title,back='/'){
+    closeAchievement();
     panelVersion++;panelAbort?.abort();panelAbort=new AbortController();closeTarget=back;panelTitle.textContent=title;loading(panelBody);if(!panel.open)panel.showModal();toast.syncHost();requestAnimationFrame(fitAppbarTitles);
     document.querySelector('#panel-close').setAttribute('aria-label','Закрыть оценку');
     return panelVersion;
@@ -219,9 +221,9 @@
     const fragment=clone('profile');
     if(setup){$(fragment,'[data-achievements]').hidden=true;$(fragment,'[data-profile-actions]').hidden=true;$(fragment,'.profile-grid').classList.add('setup-profile');put(fragment,'[data-profile-heading]','Немного о тебе');put(fragment,'[data-submit]','Продолжить');}
     const form=$(fragment,'[data-profile-form]');form.addEventListener('invalid',()=>toast.error('Проверь поля профиля'),true);Object.entries(data.profile).forEach(([name,value])=>{if(form.elements[name])form.elements[name].value=value;});
-    const awards=$(fragment,'[data-awards]');
+    const awards=$(fragment,'[data-awards]');put(fragment,'[data-awards-count]',data.achievements?.length||0);
     if(!data.achievements?.length)awards.append(element('p','Здесь будут появляться ваши достижения.','muted'));
-    else data.achievements.forEach(award=>{const card=clone('achievement');put(card,'[data-award-title]',award.title);put(card,'[data-award-description]',award.description);awards.append(card);});
+    else data.achievements.forEach(award=>{const card=clone('achievement'),button=$(card,'button');button.setAttribute('aria-label',award.title+' — подробнее');button.title=award.title;if(award.key!=='first_coffee')$(card,'img').src='web/icons/star-active.svg';button.onclick=()=>openAchievement(award);awards.append(card);});
     $(fragment,'[data-logout]').onclick=logout;
     form.onsubmit=async event=>{
       event.preventDefault();if(form.dataset.busy||!form.reportValidity())return;clearErrors(form);form.dataset.busy='true';const button=$(form,'[data-submit]'),label=button.textContent;button.disabled=true;button.textContent='Сохраняем…';const version=authVersion;
@@ -237,6 +239,18 @@
     };
     target.replaceChildren(fragment);
   }
+  function closeAchievement(){if(achievementDialog.open){achievementDialog.close();toast.syncHost();}}
+  function openAchievement(award){
+    document.querySelector('#achievement-title').textContent=award.title;
+    document.querySelector('#achievement-description').textContent=award.description;
+    document.querySelector('#achievement-image').src=award.key==='first_coffee'?'web/images/achievements/first-coffee.png':'web/icons/star-active.svg';
+    const date=document.querySelector('#achievement-date'),earned=award.earned_at?new Date(award.earned_at):null;
+    date.hidden=!earned||!Number.isFinite(earned.getTime());
+    date.textContent=date.hidden?'':'Получено '+new Intl.DateTimeFormat('ru-RU',{day:'numeric',month:'long',year:'numeric',timeZone:'Europe/Moscow'}).format(earned);
+    achievementDialog.showModal();toast.syncHost();
+  }
+  document.querySelector('.achievement-close').onclick=closeAchievement;
+  achievementDialog.addEventListener('cancel',event=>{event.preventDefault();closeAchievement();});
   function renderHistory(entries){
     screenBody.replaceChildren();
     if(!entries.length){const card=element('section','', 'card');card.append(element('p','Здесь появятся недели, в которых ты участвовал. Пропущенные недели в историю не попадают.','muted'));screenBody.append(card);return;}
@@ -274,6 +288,7 @@
     }catch(error){if(version===panelVersion)catchLoad(error,panelBody,()=>loadFeedback(meetingId,fromHistory));}
   }
   function routeChanged(){
+    closeAchievement();
     if(phase!=='app'){if(phase==='intro'&&route()!=='/')showIntro(0,introAuthenticated);return;}
     const path=route();
     if(path==='/profile/'||path==='/history/'){loadScreen(path==='/profile/'?'profile':'history');return;}

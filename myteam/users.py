@@ -7,7 +7,7 @@ from django.db import transaction
 from django.shortcuts import redirect
 from django.utils import timezone
 from .models import Person, LoginAttempt, Achievement
-from django.db.models import Exists, OuterRef
+from django.db.models import Subquery, OuterRef
 
 def private_actor(sender,chat_id):
     value=sender.get('id')
@@ -20,8 +20,10 @@ def get_person(request,achievements=False):
     person_id=request.session.get('person_id')
     if not person_id:return None
     people=Person.objects.all()
-    if achievements:people=people.annotate(has_first_coffee=Exists(Achievement.objects.filter(person_id=OuterRef('pk'),key='first_coffee')))
-    return people.filter(pk=person_id).first()
+    if achievements:people=people.annotate(first_coffee_earned_at=Subquery(Achievement.objects.filter(person_id=OuterRef('pk'),key='first_coffee').values('created_at')[:1]))
+    person=people.filter(pk=person_id).first()
+    if person and achievements:person.has_first_coffee=person.first_coffee_earned_at is not None
+    return person
 
 def login_required(view):
     @wraps(view)

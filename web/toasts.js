@@ -6,7 +6,7 @@
   const isOpen=()=>hasPopover&&host.matches(':popover-open');
   let recent=null;
   function syncHost(){
-    const dialog=document.querySelector('#panel'),parent=dialog.open?dialog:document.body;
+    const dialog=document.querySelector('dialog[open]'),parent=dialog||document.body;
     if(host.parentNode!==parent){
       if(isOpen())host.hidePopover();
       parent.append(host);

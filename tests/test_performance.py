@@ -16,11 +16,12 @@ class RequestPerformanceTests(TestCase):
         Achievement.objects.create(person=self.person,key='first_coffee')
         # A newly earned badge appears without a stale cache or an extra SQL read.
         # Profile joins the badge test into the person query; history has one data query.
-        for path,count in (('/profile/',2),('/history/',3)):
+        for path,count in (('/profile/',2),('/history/',3),('/api/profile/',2)):
             with self.subTest(path=path),self.assertNumQueries(count):
                 response=self.client.get(path,**self.headers)
                 self.assertEqual(response.status_code,200)
             if path=='/profile/':self.assertContains(response,'<p class="badge">Первый кофе</p>',html=True)
+            if path=='/api/profile/':self.assertIsNotNone(response.json()['achievements'][0]['earned_at'])
             self.client.cookies.clear()
         self.assertIn('app;dur=',response['Server-Timing'])
         self.assertEqual(response['Timing-Allow-Origin'],'https://pobazar.github.io')

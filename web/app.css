@@ -228,3 +228,27 @@ legend { font-weight: 500; margin-bottom: 16px; }
   .profile-actions { margin-block: 24px; }
   .skeleton-button { width: 100%; }
 }
+
+/* Earned badges open a detail dialog; counts and dates come from the profile API. */
+.achievements-heading { display: flex; align-items: baseline; gap: 6px; font-size: 20px; line-height: 24px; }
+.achievements-heading [data-awards-count] { color: var(--text-secondary-on-light); font-weight: 500; }
+.achievements-grid { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 8px; }
+.achievements-grid > .muted { flex-basis: 100%; font-size: 15px; line-height: 20px; }
+.achievement-badge { display: grid; place-items: center; width: 112px; height: 112px; min-height: 112px; margin: 0; padding: 0; border-radius: 16px; background: transparent; }
+.achievement-badge:hover { background: var(--background-neutral-1); }
+.achievement-badge:active { background: var(--background-neutral-1-pressed); }
+.achievement-badge img { width: 112px; height: 112px; object-fit: contain; }
+.skeleton-badge { width: 112px; height: 112px; border-radius: 24px; }
+.skeleton-badge::after { content: none; }
+#achievement-dialog { width: min(600px, calc(100% - 32px)); max-width: calc(100% - 32px); max-height: calc(100dvh - 32px - env(safe-area-inset-top) - env(safe-area-inset-bottom)); padding: 40px 32px 28px; border: 0; border-radius: 28px; color: var(--text-primary); background: var(--background-base); text-align: center; overscroll-behavior: contain; }
+#achievement-dialog::backdrop { background: var(--background-neutral-6); }
+body:has(#achievement-dialog[open]) { overflow: hidden; }
+.achievement-close { position: absolute; top: 12px; right: 12px; width: 44px; height: 44px; min-height: 44px; background: var(--background-neutral-1); color: var(--text-secondary-on-light); border-radius: 50%; }
+#achievement-image { display: block; width: 176px; height: 176px; object-fit: contain; margin: 0 auto 24px; }
+#achievement-date { margin-bottom: 12px; font-size: 15px; line-height: 20px; }
+#achievement-title { margin: 0 0 12px; font-size: 26px; line-height: 32px; }
+#achievement-description { margin: 0; font-size: 17px; line-height: 24px; }
+@media (max-width: 480px) {
+  #achievement-dialog { padding: 48px 24px 28px; }
+  #achievement-title { font-size: 24px; line-height: 28px; }
+}
