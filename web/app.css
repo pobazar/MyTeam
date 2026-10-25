@@ -103,8 +103,10 @@ legend { font-weight: 500; margin-bottom: 16px; }
 .star-options { display: flex; gap: 16px; width: 264px; max-width: 100%; }
 .star-option { position: relative; display: block; width: 40px; height: 40px; margin: 0; flex: 0 0 40px; cursor: pointer; }
 .star-option input { position: absolute; inset: -2px; width: 44px; min-height: 44px; opacity: 0; cursor: pointer; margin: 0; padding: 0; }
-.star-option svg { width: 40px; height: 40px; fill: var(--background-neutral-3); }
-.star-option.selected svg { fill: var(--background-accent-1); }
+.star-option img { display: block; width: 40px; height: 40px; }
+.star-option .star-active { display: none; }
+.star-option.selected .star-idle { display: none; }
+.star-option.selected .star-active { display: block; }
 .star-option:has(input:focus-visible) { outline: 3px solid var(--border-focus); outline-offset: 3px; border-radius: 4px; }
 .stars-result { font-size: 28px; line-height: 36px; color: var(--text-primary); letter-spacing: 4px; white-space: nowrap; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
@@ -152,8 +154,10 @@ legend { font-weight: 500; margin-bottom: 16px; }
 }
 
 .stars-result { display: inline-flex; gap: 8px; margin-block: 8px; }
-.stars-result svg { width: 24px; height: 24px; fill: var(--background-neutral-3); }
-.stars-result svg.selected { fill: var(--background-accent-1); }
+.stars-result img { display: block; width: 24px; height: 24px; }
+.stars-result .star-active { display: none; }
+.stars-result .selected .star-idle { display: none; }
+.stars-result .selected .star-active { display: block; }
 #panel { max-width: calc(100% - 24px); }
 
 /* tui-onboarding-placeholders.fig: Image Centered, separate content and floating action. */
