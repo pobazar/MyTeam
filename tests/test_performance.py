@@ -16,7 +16,8 @@ class RequestPerformanceTests(TestCase):
         Achievement.objects.create(person=self.person,key='first_coffee')
         # A newly earned badge appears without a stale cache or an extra SQL read.
         # Profile joins the badge test into the person query; history has one data query.
-        for path,count in (('/profile/',2),('/history/',3),('/api/profile/',2)):
+        # Pages API adds one UPDATE to extend idle expiry, without rereading the session.
+        for path,count in (('/profile/',2),('/history/',3),('/api/profile/',3)):
             with self.subTest(path=path),self.assertNumQueries(count):
                 response=self.client.get(path,**self.headers)
                 self.assertEqual(response.status_code,200)
