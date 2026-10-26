@@ -1,4 +1,4 @@
-"""Publish only isolated screenshots and public QA metadata; no browser sessions/keys."""
+"""Build an isolated local review gallery outside the public repository."""
 import html
 import json
 import re
@@ -8,7 +8,9 @@ from pathlib import Path
 
 root = Path(__file__).resolve().parents[2]
 source = Path(sys.argv[1] if len(sys.argv)>1 else '/workspace/myteam-state-review')
-out = root/'docs/qa/review'
+out = Path(sys.argv[2] if len(sys.argv)>2 else '/tmp/myteam-review-gallery').resolve()
+if out == root or root in out.parents:
+    raise SystemExit('Keep review artifacts outside the repository.')
 out.mkdir(parents=True,exist_ok=True)
 manifest = json.loads((source/'manifest.json').read_text())
 result = json.loads((source/'result.json').read_text())

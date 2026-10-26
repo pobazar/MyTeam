@@ -1,7 +1,9 @@
 /* Focused game review. API bodies come from codenames-fixtures.py, never from production. */
 const {chromium}=require('playwright');
 const fs=require('node:fs'),http=require('node:http'),path=require('node:path'),assert=require('node:assert/strict');
-const root=path.resolve(__dirname,'../..'),out=path.join(root,'docs/qa/code-names');
+const root=path.resolve(__dirname,'../..'),out=path.resolve(process.env.MYTEAM_SCREENSHOTS||'/tmp/myteam-code-names-review');
+if(out===root||out.startsWith(root+path.sep))throw new Error('Keep review artifacts outside the repository.');
+fs.mkdirSync(out,{recursive:true});
 const fixtures=JSON.parse(fs.readFileSync('/tmp/myteam-codenames-preview.json','utf8'));
 const API='https://myteam-backend-eu.onrender.com',errors=[],shots=[];
 const server=http.createServer((req,res)=>{const file=path.resolve(root,'.'+(req.url.split('?')[0]==='/'?'/index.html':req.url.split('?')[0]));if(!file.startsWith(root+'/'))return res.writeHead(403).end();try{res.setHeader('Content-Type',({'.html':'text/html; charset=utf-8','.js':'text/javascript','.css':'text/css','.png':'image/png','.svg':'image/svg+xml'})[path.extname(file)]||'application/octet-stream');res.end(fs.readFileSync(file));}catch{res.writeHead(404).end();}});

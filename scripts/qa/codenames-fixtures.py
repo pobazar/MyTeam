@@ -55,7 +55,7 @@ try:
             result['completed']=get(client,'/api/activities/',headers,start+timedelta(days=2))
             result['history']=get(client,'/api/history/',headers,r.ends_at)
     Path('/tmp/myteam-codenames-preview.json').write_text(json.dumps(result,ensure_ascii=False,default=str))
-    out=root/'docs/qa/code-names';out.mkdir(parents=True,exist_ok=True)
+    out=Path('/tmp/myteam-code-names-review');out.mkdir(parents=True,exist_ok=True)
     (out/'instructions.txt').write_text('Code Names\n\n'+CodeNames().instructions(False)+'\n\nОткрыть игру: '+GAME_URL+'\n')
     print('Built backend-derived fixtures: groups of 4, 5 and 7; game feedback, award, completed state and history. No production writes or Telegram sends.')
 finally:teardown_databases(db,verbosity=0)
