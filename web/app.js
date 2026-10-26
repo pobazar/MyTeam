@@ -10,7 +10,16 @@
   const toast=window.MyTeamToasts;
   const hints=window.MyTeamActivityHints;
   const achievementDialog=document.querySelector('#achievement-dialog');
-  const storage='myteam.session',hint='myteam.authenticated',stageHint='myteam.stage';
+  const storage='myteam.session',hint='myteam.authenticated',stageHint='myteam.stage',sharedStorage='myteam.account';
+  // Share only confirmed accounts. Anonymous Telegram login attempts stay tab-local.
+  function readAccount(){try{return localStorage.getItem(sharedStorage);}catch{return null;}}
+  function decodeAccount(value){try{const account=JSON.parse(value);return account&&typeof account.token==='string'&&account.token.length>0&&account.token.length<=200&&['authenticated','needs_profile','needs_onboarding'].includes(account.stage)?account:null;}catch{return null;}}
+  const savedAccount=readAccount();
+  if(savedAccount!==null){
+    const account=decodeAccount(savedAccount);
+    for(const key of [storage,hint,stageHint])sessionStorage.removeItem(key);
+    if(account){sessionStorage.setItem(storage,account.token);sessionStorage.setItem(hint,'true');sessionStorage.setItem(stageHint,account.stage);}
+  }
   let token=sessionStorage.getItem(storage),csrf=null,phase='intro',authenticated=Boolean(token&&sessionStorage.getItem(hint)!=='false');
   let authVersion=0,mainVersion=0,panelVersion=0,loginVersion=0,introStep=0,mainReady=false;
   let mainAbort,panelAbort,loginAbort,pollTimer,polling=false,closeTarget='/',introAuthenticated=false;
@@ -45,7 +54,7 @@
       const body=await response.json();
       if(version!==authVersion)throw new ApiError('cancelled');
       const next=response.headers.get('X-Myteam-Session');
-      if(next){token=next;sessionStorage.setItem(storage,next);}
+      if(next){token=next;sessionStorage.setItem(storage,next);if(authenticated)rememberAccount();}
       if(body.csrf_token)csrf=body.csrf_token;
       if(!response.ok&&!body.state)throw new ApiError(body.error||'server_error',response.status,body);
       return body;
@@ -55,7 +64,12 @@
       throw new ApiError(timedOut?'timeout':'network');
     }finally{clearTimeout(timeout);signal?.removeEventListener('abort',abort);}
   }
-  function resetCredentials(){hints.reset();toast.clear();authVersion++;token=null;csrf=null;authenticated=false;sessionStorage.removeItem(storage);sessionStorage.removeItem(hint);sessionStorage.removeItem(stageHint);}
+  function rememberAccount(){
+    if(!authenticated||!token)return;
+    const account=JSON.stringify({token,stage:sessionStorage.getItem(stageHint)||'authenticated'});
+    try{if(localStorage.getItem(sharedStorage)!==account)localStorage.setItem(sharedStorage,account);}catch{/* Tab-local login still works when persistent storage is unavailable. */}
+  }
+  function resetCredentials(broadcast=true){if(broadcast){try{localStorage.setItem(sharedStorage,'null');}catch{}}hints.reset();toast.clear();authVersion++;token=null;csrf=null;authenticated=false;sessionStorage.removeItem(storage);sessionStorage.removeItem(hint);sessionStorage.removeItem(stageHint);}
   function hash(path){history.replaceState(null,'',location.pathname+location.search+'#'+path);}
   function route(){const path=location.hash.slice(1)||'/';return path.startsWith('/')&&!path.startsWith('//')?path:'/';}
   function go(path){if(route()===path)routeChanged();else location.hash=path;}
@@ -86,13 +100,13 @@
   function loading(target,kind='loading'){target.replaceChildren(clone(kind));}
   function sessionLost(){resetCredentials();showIntro(0);}
   function acceptAccount(body){
-    if(body.state==='needs_onboarding'){sessionStorage.setItem(stageHint,'needs_onboarding');authenticated=true;sessionStorage.setItem(hint,'true');showIntro(0,true);return false;}
+    if(body.state==='needs_onboarding'){sessionStorage.setItem(stageHint,'needs_onboarding');authenticated=true;sessionStorage.setItem(hint,'true');rememberAccount();showIntro(0,true);return false;}
     if(body.state==='needs_profile'){
-      sessionStorage.setItem(stageHint,'needs_profile');authenticated=true;sessionStorage.setItem(hint,'true');
+      sessionStorage.setItem(stageHint,'needs_profile');authenticated=true;sessionStorage.setItem(hint,'true');rememberAccount();
       if(phase!=='setup')showSetup(body);
       return false;
     }
-    sessionStorage.setItem(stageHint,'authenticated');return true;
+    sessionStorage.setItem(stageHint,'authenticated');rememberAccount();return true;
   }
   function catchLoad(error,target,retry){if(error.code==='cancelled')return;if(error.status===401){sessionLost();return;}fail(target,retry);}
   async function bootstrap(signal){
@@ -378,5 +392,16 @@
   window.addEventListener('hashchange',routeChanged);
   window.addEventListener('focus',()=>{if(phase==='login')pollLogin();});
   document.addEventListener('visibilitychange',()=>{if(!document.hidden&&phase==='login')pollLogin();});
-  if(authenticated){if(sessionStorage.getItem(stageHint)==='needs_profile')loadSetup();else if(sessionStorage.getItem(stageHint)==='needs_onboarding')showIntro(0,true);else{showApp();loadActivities();routeChanged();}}else showIntro(0);
+  function resumeAccount(){if(authenticated){if(sessionStorage.getItem(stageHint)==='needs_profile')loadSetup();else if(sessionStorage.getItem(stageHint)==='needs_onboarding')showIntro(0,true);else{showApp();loadActivities();routeChanged();}}else showIntro(0);}
+  window.addEventListener('storage',event=>{
+    if(event.storageArea!==localStorage||(event.key!==sharedStorage&&event.key!==null))return;
+    const account=decodeAccount(readAccount());
+    if(account&&account.token===token&&account.stage===sessionStorage.getItem(stageHint)&&authenticated)return;
+    clearViews();resetCredentials(false);intendedRoute='/';
+    if(account){token=account.token;authenticated=true;sessionStorage.setItem(storage,token);sessionStorage.setItem(hint,'true');sessionStorage.setItem(stageHint,account.stage);}
+    resumeAccount();
+  });
+  // Upgrade already authenticated tabs without asking users to sign in again.
+  if(savedAccount===null)rememberAccount();
+  resumeAccount();
 })();
