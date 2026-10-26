@@ -98,9 +98,7 @@ def profile(request):
         form=ProfileForm(data,instance=request.person)
         if not form.is_valid():return response(request,{'error':'validation','fields':errors(form)},422)
         form.save()
-    return response(request,{**account(request.person),'achievements':[
-        {'key':'first_coffee','title':'Первый кофе','description':'Твоя первая подтверждённая встреча.','earned_at':request.person.first_coffee_earned_at}
-    ] if request.person.has_first_coffee else []})
+    return response(request,{**account(request.person),'achievements':request.person.earned_achievements})
 
 def answer_data(answer):
     if not answer:return None
@@ -128,6 +126,7 @@ def activities(request):
         'participants':[{'name':m.snapshot.get('full_name') or f'{m.snapshot.get("first_name", "")} {m.snapshot.get("last_name", "")}'.strip(),'team':m.snapshot['team'],'city':m.snapshot['city'],'is_you':m.person_id==request.person.id,'is_organizer':str(m.person_id)==organizer,
             'contacts_url':participant_url(m.snapshot) if m.person_id!=request.person.id else None} for m in c['members']] if kind=='active' else [],
         'instructions':c['instructions'] if kind=='active' else None,
+        'game_url':getattr(get_activity(week.activity,week.rules_version),'game_url',None) if kind=='active' else None,
         'same_city':len({m.snapshot['city_key'] for m in c['members']})==1 if current else None,
     },'next':{'id':str(n.id) if n else None,'starts_at':c['next_start'],'ends_at':c['next_end'],
         'closes_at':n.closes_at if n else None,'activity_title':n.activity_title if n else None,

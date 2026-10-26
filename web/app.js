@@ -152,8 +152,10 @@
     put(fragment,'[data-current-dates]',dates(current.starts_at,current.ends_at));put(fragment,'[data-next-dates]',dates(next.starts_at,next.ends_at));
     if(current.kind==='active'){
       const active=clone('active');put(active,'[data-title]',current.activity_title);put(active,'[data-instructions]',current.instructions);
+      const game=$(active,'[data-game-link]');
+      if(current.game_url){try{const url=new URL(current.game_url);if(url.protocol==='https:'){game.href=url.href;game.textContent='Открыть '+current.activity_title;game.hidden=false;}}catch{}}
       const list=$(active,'[data-participants]');
-      current.participants.forEach(person=>{const item=document.createElement('li');item.append(element('strong',person.name+(person.is_you?' (это ты)':'')),element('span',person.team+' · '+person.city,'muted'));if(person.is_organizer)item.append(element('span',person.is_you?'Ты организуешь встречу':'Организатор встречи','organizer-label'));if(!person.is_you&&person.contacts_url){const link=element('a','Связаться через Telegram','participant-contact');telegramLink(link,person.contacts_url);item.append(link);}list.append(item);});
+      current.participants.forEach(person=>{const item=document.createElement('li');item.append(element('strong',person.name+(person.is_you?' (это ты)':'')),element('span',person.team+' · '+person.city,'muted'));if(person.is_organizer)item.append(element('span',person.is_you?'Ты организуешь активность':'Организатор активности','organizer-label'));if(!person.is_you&&person.contacts_url){const link=element('a','Связаться через Telegram','participant-contact');telegramLink(link,person.contacts_url);item.append(link);}list.append(item);});
       $(active,'[data-feedback]').onclick=()=>go('/meetings/'+current.meeting_id+'/feedback/');body.append(active);
     }else if(current.kind==='completed'){
       const yes=current.answer.outcome==='yes';body.append(element('h2',yes?'Спасибо за участие!':'Спасибо за ответ'),element('p',yes?current.activity_title+' — результат сохранён.':'На этой неделе не получилось провести активность. Мы сохранили твой ответ.'));
@@ -247,13 +249,14 @@
       form.querySelector('[aria-invalid]')?.focus();
     }
   }
+  function achievementImage(award){return /^[a-z0-9-]+\.png$/.test(award.image||'')?'web/images/achievements/'+award.image:award.key==='first_coffee'?'web/images/achievements/first-coffee.png':'web/icons/star-active.svg';}
   function renderProfile(target,data,setup){
     const fragment=clone('profile');
     if(setup){$(fragment,'[data-achievements]').hidden=true;$(fragment,'[data-profile-actions]').hidden=true;$(fragment,'.profile-grid').classList.add('setup-profile');put(fragment,'[data-profile-heading]','Немного о тебе');put(fragment,'[data-submit]','Продолжить');}
     const form=$(fragment,'[data-profile-form]');bindValidation(form,'Проверь поля профиля');Object.entries(data.profile).forEach(([name,value])=>{if(form.elements[name])form.elements[name].value=value;});
     const awards=$(fragment,'[data-awards]');put(fragment,'[data-awards-count]',data.achievements?.length||0);
     if(!data.achievements?.length)awards.append(element('p','Здесь будут появляться ваши достижения.','muted'));
-    else data.achievements.forEach(award=>{const card=clone('achievement'),button=$(card,'button');button.setAttribute('aria-label',award.title+' — подробнее');button.title=award.title;if(award.key!=='first_coffee')$(card,'img').src='web/icons/star-active.svg';button.onclick=()=>openAchievement(award);awards.append(card);});
+    else data.achievements.forEach(award=>{const card=clone('achievement'),button=$(card,'button');button.setAttribute('aria-label',award.title+' — подробнее');button.title=award.title;$(card,'img').src=achievementImage(award);button.onclick=()=>openAchievement(award);awards.append(card);});
     $(fragment,'[data-logout]').onclick=logout;
     form.onsubmit=async event=>{
       event.preventDefault();if(form.dataset.busy||!form.reportValidity())return;clearErrors(form);form.dataset.busy='true';const button=$(form,'[data-submit]'),label=button.textContent;button.disabled=true;button.textContent='Сохраняем…';const version=authVersion;
@@ -273,7 +276,7 @@
   function openAchievement(award){
     document.querySelector('#achievement-title').textContent=award.title;
     document.querySelector('#achievement-description').textContent=award.description;
-    document.querySelector('#achievement-image').src=award.key==='first_coffee'?'web/images/achievements/first-coffee.png':'web/icons/star-active.svg';
+    document.querySelector('#achievement-image').src=achievementImage(award);
     const date=document.querySelector('#achievement-date'),earned=award.earned_at?new Date(award.earned_at):null;
     date.hidden=!earned||!Number.isFinite(earned.getTime());
     date.textContent=date.hidden?'':'Получено '+new Intl.DateTimeFormat('ru-RU',{day:'numeric',month:'long',year:'numeric',timeZone:'Europe/Moscow'}).format(earned);

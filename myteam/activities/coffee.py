@@ -1,8 +1,9 @@
 from itertools import combinations
 import random
 import networkx as nx
+from .base import WeeklyActivity
 
-class RandomCoffee:
+class RandomCoffee(WeeklyActivity):
     key = 'random_coffee'
     version = 1
     title = 'Random Coffee'
@@ -14,14 +15,6 @@ class RandomCoffee:
     def valid_distribution(self,count,sizes,unmatched):
         if count<2:return not sizes and unmatched==count
         return unmatched==0 and all(s in (2,3) for s in sizes) and sum(sizes)==count and sizes.count(3)==count%2
-    def final_feedback(self,answer):
-        return answer.outcome=='no' or (answer.outcome=='yes' and bool(answer.rating or (answer.impression and answer.again)))
-    def achievement_earned(self,person_id):
-        from myteam.models import Feedback
-        return Feedback.objects.filter(member__person_id=person_id,member__round__activity=self.key,outcome='yes').exists()
-    def feedback_form(self,*args,**kwargs):
-        from myteam.feedback import FeedbackForm
-        return FeedbackForm(*args,**kwargs)
     def organizer_instructions(self):
         return 'Ты организуешь встречу: предложи участникам время и место или ссылку на звонок. '
     def instructions(self, same_city):

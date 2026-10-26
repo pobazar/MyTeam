@@ -51,11 +51,11 @@ class RotationTests(TestCase):
             Round.objects.filter(activity='c').update(starts_at=self.start-timedelta(weeks=20))
             self.assertEqual(choose(self.start,random.Random(1))[0].key,'c')
     def test_unready_excluded_and_empty_catalog_recovers_without_recreating_round(self):
-        self.assertFalse(ready('code_names',1))
+        self.assertTrue(ready('code_names',1))
         with patch.dict(ACTIVITIES,{},clear=True):
             r=ensure_round(self.start);self.assertEqual(r.activity,'unavailable')
         recovered=ensure_round(self.start)
-        self.assertEqual(recovered.id,r.id);self.assertEqual(recovered.activity,'random_coffee')
+        self.assertEqual(recovered.id,r.id);self.assertTrue(ready(recovered.activity,recovered.rules_version))
     def test_explicit_code_names_plan_is_preserved_without_entering_automatic_pool(self):
         r=ensure_round(datetime(2026,11,4,9,tzinfo=MOSCOW))
         self.assertEqual(r.activity,'code_names');self.assertEqual(r.selection['source'],'plan')
@@ -114,8 +114,11 @@ class RecoveryTests(TestCase):
     def test_unfinished_code_names_cancels_without_changing_announced_activity(self):
         game=ensure_round(self.r.ends_at)
         for p in self.people:Enrollment.objects.create(round=game,person=p)
-        self.assertEqual(execute('prepare',FrozenClock(game.prepares_at)).status,'blocked')
-        result=execute('publish',FrozenClock(game.starts_at))
+        from copy import copy
+        placeholder=copy(ACTIVITIES['code_names']);placeholder.signup_only=True
+        with patch.dict(ACTIVITIES,{'code_names':placeholder}):
+            self.assertEqual(execute('prepare',FrozenClock(game.prepares_at)).status,'blocked')
+            result=execute('publish',FrozenClock(game.starts_at))
         game.refresh_from_db();self.assertEqual(result.status,'cancelled')
         self.assertEqual(game.activity,'code_names');self.assertEqual(game.enrollments.count(),2)
         self.assertEqual(Notification.objects.filter(kind='round_cancelled',round=game).count(),2)
@@ -140,6 +143,7 @@ class RecoveryTests(TestCase):
 
     def test_system_placeholder_pause_releases_when_adapter_becomes_ready(self):
         game=ensure_round(self.r.ends_at)
+        game.publication_paused=True;game.selection={**game.selection,'pause_origin':'placeholder'};game.save()
         for p in self.people:Enrollment.objects.create(round=game,person=p)
         class ReadyFixture(RandomCoffee):
             key='code_names'

@@ -2,7 +2,10 @@
 from datetime import datetime
 from .clock import MOSCOW
 
-PLANNED_ACTIVITIES={datetime(2026,11,4,9,tzinfo=MOSCOW):('code_names',1)}
+PLANNED_ACTIVITIES={
+    datetime(2026,10,28,9,tzinfo=MOSCOW):('random_coffee',1),
+    datetime(2026,11,4,9,tzinfo=MOSCOW):('code_names',1),
+}
 
 
 def ensure_planned_rounds(now):

@@ -19,7 +19,10 @@ def assignment(r,meeting,members,organizer,recipient):
     own_instructions=getattr(activity,'organizer_instructions',lambda:'')() if str(recipient.person_id)==organizer else ''
     instructions=activity.instructions(len({m.snapshot['city_key'] for m in members})==1)
     text=escape(r.activity_title)+'\nТвоя активность на эту неделю!\n\nУчастники:\n'+'\n'.join(names)+'\n\n'+escape(own_instructions+instructions)
-    return text,link_button('Открыть активность',f'/meetings/{meeting.id}/')
+    payload=link_button('Открыть активность',f'/meetings/{meeting.id}/')
+    game_url=getattr(activity,'game_url',None)
+    if game_url:payload['reply_markup']['inline_keyboard'].append([{'text':'Открыть '+activity.title,'url':game_url}])
+    return text,payload
 
 def unmatched(r):
     return (escape(r.activity_title)+'\n\nНа этой неделе не собралось достаточно участников для активности. Попробуем в следующий раз!\n\nНа следующую неделю нужно записаться отдельно.',link_button('Открыть МАЙТИМ','/'))

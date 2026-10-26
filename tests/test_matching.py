@@ -1,9 +1,13 @@
 from datetime import datetime,timedelta
 from django.test import TestCase
+from unittest.mock import patch
+from myteam.activities import ACTIVITIES
+from myteam.activities.coffee import RandomCoffee
 from myteam.clock import FrozenClock,MOSCOW
 from myteam.models import Person,Enrollment,Member,Unmatched,TeamGroup
 from myteam.rounds import ensure_round,RuleError
 from myteam.matching import prepare,validate_draft,select_groups
+@patch.dict(ACTIVITIES,{'random_coffee':RandomCoffee()},clear=True)
 class MatchingTests(TestCase):
     def test_sizes_and_restart_preserve_manual_snapshot(self):
         for count in (0,1,2,3,4,5,8,9):
