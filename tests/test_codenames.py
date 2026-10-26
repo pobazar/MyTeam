@@ -81,7 +81,7 @@ class CodeNamesTests(TestCase):
         headers={'HTTP_AUTHORIZATION':'Bearer '+session.session_key}
         self.client.get('/api/profile/',**headers)  # Establish CSRF once, as in the existing performance contract.
         self.client.cookies.clear()
-        with self.assertNumQueries(2):response=self.client.get('/api/profile/',**headers)
+        with self.assertNumQueries(3):response=self.client.get('/api/profile/',**headers)
         awards=response.json()['achievements'];self.assertEqual([a['key'] for a in awards],['first_coffee','first_code_names'])
         self.assertEqual(awards[1]['image'],'first-code-names.png');self.assertIsNotNone(awards[1]['earned_at'])
         with patch('myteam.clock.Clock.now',return_value=self.start):

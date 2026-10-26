@@ -29,6 +29,21 @@ class PagesSessionMiddleware:
                         request.session=session
                         response=self.get_response(request)
             else:response=self.get_response(request)
+        # Sliding expiry for authenticated Pages requests. Ordinary reads need only
+        # one UPDATE, not a full session rewrite/transaction on every screen load.
+        # Modified sessions are saved (with the new expiry) by SessionMiddleware.
+        session=getattr(request,'session',None)
+        if (request.headers.get('Authorization','').startswith('Bearer ')
+                and request.path.startswith('/api/') and request.method!='OPTIONS'
+                and (200<=response.status_code<400 or response.status_code in (409,422))
+                and session is not None and not session.modified
+                and session.session_key and session.get('person_id')):
+            from django.contrib.sessions.models import Session
+            from django.db.models.functions import Greatest
+            from django.utils import timezone
+            # Update only a still-live row; concurrent logout must never recreate it.
+            Session.objects.filter(session_key=session.session_key,expire_date__gt=timezone.now()).update(
+                expire_date=Greatest('expire_date',session.get_expiry_date()))
         if request.path.startswith('/api/') and request.method!='OPTIONS' and not response.get('Content-Type','').startswith('application/json'):
             # Framework 404/405/500 and accidental redirects also remain data-only.
             status=response.status_code
