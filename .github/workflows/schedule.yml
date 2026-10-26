@@ -19,15 +19,19 @@ on:
         description: 'Optional Wednesday YYYY-MM-DD to recover a specific round within its allowed time window'
         type: string
         required: false
+      invite_at:
+        description: 'Optional one-off UTC time, e.g. 2026-10-26T15:00:00Z; invite only, within one hour'
+        type: string
+        required: false
 permissions:
   contents: read
   id-token: write
 concurrency:
-  group: myteam-weekly-events
+  group: ${{ inputs.invite_at && format('myteam-delayed-invite-{0}', github.run_id) || 'myteam-weekly-events' }}
   cancel-in-progress: false
 jobs:
   events:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && !inputs.invite_at
     runs-on: ubuntu-latest
     timeout-minutes: 80
     steps:
@@ -41,3 +45,23 @@ jobs:
           MYTEAM_SCHEDULE: ${{ github.event.schedule }}
           MYTEAM_EVENT: ${{ inputs.event || 'verify' }}
           MYTEAM_ROUND_DATE: ${{ inputs.round_date }}
+
+  delayed-invite:
+    if: github.event_name == 'workflow_dispatch' && inputs.invite_at != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    permissions:
+      contents: read
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Wait for requested time and dispatch the normal main invite event
+        run: python scripts/delayed_invite.py
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MYTEAM_EVENT: ${{ inputs.event }}
+          MYTEAM_ROUND_DATE: ${{ inputs.round_date }}
+          MYTEAM_INVITE_AT: ${{ inputs.invite_at }}
