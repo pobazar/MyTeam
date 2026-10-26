@@ -55,4 +55,4 @@ python scripts/serve_pages.py
 
 Актуальные дизайн-гайдлайны и платформенная адаптация: [design.md](docs/technical/design.md).
 
-Актуальные скриншоты для ревью: [71 состояние на desktop](https://pobazar.github.io/MyTeam/docs/qa/review/). Прогон: `scripts/qa/review-browser.cjs`; сборка галереи: `scripts/qa/build-review.py`.
+Скриншоты и галереи не храним в публичном репозитории. Локальные прогоны: `scripts/qa/review-browser.cjs`, `scripts/qa/codenames-browser.cjs`; сборка локальной галереи: `scripts/qa/build-review.py`. Результаты сохраняются за пределами репозитория.

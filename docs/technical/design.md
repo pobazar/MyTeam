@@ -78,7 +78,7 @@ NODE_PATH=/tmp/myteam-ui-tools/node_modules CHROMIUM_PATH=/usr/bin/chromium \
 
 Прямая проверка через ссылки DOM подтверждает: enroll/cancel не вызывают GET активностей и не заменяют текущую карточку либо саму кнопку. При успехе синхронизируются только текст/статус/локальный count, при ошибке всё сохраняется. Native validation заменена локализованной подсказкой у поля и тостом, без английского tooltip браузера. После восстановления временной ошибки проверки Telegram-кода возвращается нормальный текст ожидания.
 
-Снимки и публичные результаты: [docs/qa/review](../qa/review/index.html). Генерация: `MYTEAM_SCREENSHOTS=/workspace/myteam-state-review node scripts/qa/review-browser.cjs`, затем `python scripts/qa/build-review.py /workspace/myteam-state-review`. Старые изображения удалены по указанию владельца, исторические URL index имеют redirect к актуальной галерее. JSON metadata содержит только вымышленные данные и публичные результаты, не сессии браузера.
+Публичная галерея удалена перед релизом. Генерация: `MYTEAM_SCREENSHOTS=/workspace/myteam-state-review node scripts/qa/review-browser.cjs`, затем `python scripts/qa/build-review.py /workspace/myteam-state-review`. Перед релизом все публичные галереи и изображения удалены. Артефакты новых прогонов должны оставаться локальными.
 
 ### Подсказки после входа · 25.10.2026
 

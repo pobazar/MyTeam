@@ -7,3 +7,8 @@ staticfiles/
 .coverage
 playwright-report/
 test-results/
+
+# Private/local UI review artifacts; never publish galleries in this repository.
+docs/qa/
+qa-artifacts/
+screenshots/
