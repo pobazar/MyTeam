@@ -255,3 +255,5 @@ body:has(#achievement-dialog[open]) { overflow: hidden; }
 
 .participant-contact { align-self: flex-start; padding: 8px 0; }
 .organizer-label { color: var(--text-primary); font-weight: 600; }
+
+[data-instructions] { white-space: pre-line; }

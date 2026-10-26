@@ -20,9 +20,13 @@ def get_person(request,achievements=False):
     person_id=request.session.get('person_id')
     if not person_id:return None
     people=Person.objects.all()
-    if achievements:people=people.annotate(first_coffee_earned_at=Subquery(Achievement.objects.filter(person_id=OuterRef('pk'),key='first_coffee').values('created_at')[:1]))
+    if achievements:
+        from .achievements import CATALOG
+        people=people.annotate(**{key+'_earned_at':Subquery(Achievement.objects.filter(person_id=OuterRef('pk'),key=key).values('created_at')[:1]) for key in CATALOG})
     person=people.filter(pk=person_id).first()
-    if person and achievements:person.has_first_coffee=person.first_coffee_earned_at is not None
+    if person and achievements:
+        person.has_first_coffee=person.first_coffee_earned_at is not None
+        person.earned_achievements=[{'key':key,**meta,'earned_at':getattr(person,key+'_earned_at')} for key,meta in CATALOG.items() if getattr(person,key+'_earned_at') is not None]
     return person
 
 def login_required(view):

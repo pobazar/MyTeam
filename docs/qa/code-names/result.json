@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "viewport": "1440×1000 Chromium",
+  "screenshots": 5,
+  "jsErrors": [],
+  "productionWrites": 0,
+  "telegramSends": 0,
+  "fixtures": "real Django API responses from disposable local PostgreSQL"
+}

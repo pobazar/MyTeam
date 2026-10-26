@@ -44,6 +44,7 @@ def dashboard_context(person,now):
         'finished':bool(answer and answer.final),'members':members,'current_enrolled':current_enrolled,
         'unmatched':bool(week and week.is_unmatched),
         'new_here':person.created_at>=week_start,'enrolled':enrolled,'awaiting_publication':now<week_start,
+        'game_url':getattr(activity,'game_url',None),
         'activity_template':activity.card_template if activity else '',
         'instructions':activity.instructions(len({m.snapshot['city_key'] for m in members})==1) if current and activity else '',
         'registration_open':bool(r and r.activity!='unavailable' and r.state=='open' and now<r.closes_at),

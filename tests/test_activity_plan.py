@@ -18,7 +18,7 @@ class ActivityPlanTests(TestCase):
         ensure_planned_rounds(self.now);ensure_planned_rounds(self.now)
         game=Round.objects.get(starts_at=datetime(2026,11,4,9,tzinfo=MOSCOW))
         self.assertEqual(coffee.activity,'random_coffee');self.assertEqual(game.activity_title,'Code Names')
-        self.assertTrue(game.publication_paused)
+        self.assertFalse(game.publication_paused)
         context=dashboard_context(self.p,coffee.starts_at)
         self.assertEqual(context['next_round'].id,game.id);self.assertTrue(context['registration_open'])
         enroll(self.p.id,game.id,True,FrozenClock(coffee.starts_at))
@@ -30,7 +30,7 @@ class ActivityPlanTests(TestCase):
         schedule_invites(game,FrozenClock(invitation_window(game)[0]))
         invite=Notification.objects.get(kind='signup_invite')
         self.assertEqual(invite.person_id,other.id);self.assertTrue(invite.text.startswith('Code Names'))
-        with self.assertRaisesMessage(RuleError,'Пока доступна только запись'):prepare(game.id,FrozenClock(game.prepares_at))
+        prepare(game.id,FrozenClock(game.prepares_at))
         self.assertFalse(game.meetings.exists())
     def test_existing_open_round_keeps_id_and_enrollment_when_changing_title(self):
         game=ensure_round(datetime(2026,11,4,9,tzinfo=MOSCOW));game.activity='random_coffee';game.publication_paused=False;game.save()

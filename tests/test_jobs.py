@@ -6,7 +6,7 @@ from myteam.rounds import ensure_round
 from myteam.jobs import tick
 class JobTests(TestCase):
     def test_two_cycles_restart_and_pause(self):
-        r=ensure_round(datetime(2026,10,14,9,tzinfo=MOSCOW))
+        r=ensure_round(datetime(2026,10,14,9,tzinfo=MOSCOW));r.activity='random_coffee';r.save()
         for i in range(3):
             p=Person.objects.create(telegram_id=i+1,first_name='А',last_name='Б',team='Т',city='М',city_key='m',chat_id=i+1,delivery_verified_at=r.closes_at)
             Enrollment.objects.create(person=p,round=r)
