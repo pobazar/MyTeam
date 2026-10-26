@@ -97,3 +97,19 @@ class CodeNamesTests(TestCase):
         execute('publish',FrozenClock(self.start));m=Member.objects.get(person=people[0],round=r)
         save_feedback(people[0].id,m.meeting_id,{'outcome':'no'},FrozenClock(self.start))
         self.assertFalse(Achievement.objects.exists())
+
+    def test_assignment_fits_telegram_limit_with_seven_max_length_profiles(self):
+        from html.parser import HTMLParser
+        class VisibleText(HTMLParser):
+            def __init__(self):super().__init__();self.parts=[]
+            def handle_data(self,data):self.parts.append(data)
+        r=ensure_round(self.start);people=self.people(7)
+        for p in people:
+            p.full_name='😀'*250;p.team='😀'*200;p.save()
+            Enrollment.objects.create(round=r,person=p)
+        execute('publish',FrozenClock(self.start))
+        for n in Notification.objects.filter(round=r,kind='meeting'):
+            parser=VisibleText();parser.feed(n.text)
+            visible=''.join(parser.parts)
+            self.assertLessEqual(len(visible.encode('utf-16-le'))//2,4096)
+        self.assertEqual(Notification.objects.filter(round=r,kind='meeting').count(),7)

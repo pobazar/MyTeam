@@ -7,15 +7,18 @@ from .pages import web_url
 def link_button(text,path):
     return {'reply_markup':{'inline_keyboard':[[{'text':text,'url':web_url(path)}]]}}
 
+def preview(value,limit):
+    return value if len(value)<=limit else value[:limit-1]+'…'
+
 def assignment(r,meeting,members,organizer,recipient):
     activity=get_activity(r.activity,r.rules_version)
     names=[]
     for member in members:
         s=member.snapshot
-        name=escape(s.get('full_name') or (s.get('first_name','')+' '+s.get('last_name','')).strip())
+        name=escape(preview(s.get('full_name') or (s.get('first_name','')+' '+s.get('last_name','')).strip(),80))
         url=participant_url(s)
         if url:name=f'<a href="{escape(url,quote=True)}">{name}</a>'
-        names.append(name+' · '+escape(s['team'])+(' · организатор' if str(member.person_id)==organizer else ''))
+        names.append(name+' · '+escape(preview(s['team'],60))+(' · организатор' if str(member.person_id)==organizer else ''))
     own_instructions=getattr(activity,'organizer_instructions',lambda:'')() if str(recipient.person_id)==organizer else ''
     instructions=activity.instructions(len({m.snapshot['city_key'] for m in members})==1)
     text=escape(r.activity_title)+'\nТвоя активность на эту неделю!\n\nУчастники:\n'+'\n'.join(names)+'\n\n'+escape(own_instructions+instructions)
