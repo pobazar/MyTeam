@@ -4,6 +4,8 @@ on:
     # GitHub cron uses UTC; Moscow is UTC+3 year-round.
     - cron: '0 6 * * 2'   # Tue 09:00 MSK: one feedback request
     - cron: '0 18 * * 2'  # Tue 21:00 MSK: close + prepare + owner report
+    - cron: '15 18 * * 2' # Tue 21:15 MSK: idempotent preparation recovery
+    - cron: '30 18 * * 2' # Tue 21:30 MSK: second preparation recovery
     - cron: '0 6 * * 3'   # Wed 09:00 MSK: publish activities
     - cron: '30 6 * * 3'  # Wed 09:30 MSK: idempotent recovery if the first run was missed
     - cron: '5 12 * * 3'  # Wed 15:05 MSK: finalize failed publication and notify participants

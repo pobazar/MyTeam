@@ -9,7 +9,7 @@ import urllib.request
 
 API='https://myteam-backend-eu.onrender.com'
 ENDPOINT=API+'/internal/schedule/'
-SCHEDULES={'0 6 * * 2':'feedback','0 18 * * 2':'prepare','0 6 * * 3':'publish','30 6 * * 3':'publish','5 12 * * 3':'publish','0 6 * * 4':'invite'}
+SCHEDULES={'0 6 * * 2':'feedback','0 18 * * 2':'prepare','15 18 * * 2':'prepare','30 18 * * 2':'prepare','0 6 * * 3':'publish','30 6 * * 3':'publish','5 12 * * 3':'publish','0 6 * * 4':'invite'}
 
 def request(url,headers=None,data=None,timeout=45):
     # Never follow a redirect carrying the GitHub credential or signed identity.
