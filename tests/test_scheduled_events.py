@@ -86,3 +86,34 @@ class ScheduledEventTests(TestCase):
         old.refresh_from_db();stale.refresh_from_db()
         self.assertEqual(old.state,'completed');self.assertEqual(stale.state,'expired')
         self.assertFalse(Notification.objects.exists())
+
+    def test_three_off_peak_attempts_preserve_draft_deliver_once_and_show_instructions(self):
+        from django.contrib.sessions.backends.db import SessionStore
+        from django.test import Client
+        # Different Actions cron triggers can now overlap. Run the real transaction
+        # and outbox paths repeatedly, not just the runner's stubbed HTTP requests.
+        for minute in (7,23,47):
+            self.assertFalse(execute('prepare',FrozenClock(self.r.prepares_at+timedelta(minutes=minute))).error)
+        original={m.id:m.snapshot for m in Member.objects.filter(round=self.r)}
+        calls=[]
+        for minute in (7,23,47):
+            clock=FrozenClock(self.r.starts_at+timedelta(minutes=minute))
+            self.assertFalse(execute('publish',clock).error)
+            drain(clock,lambda *args:calls.append(args) or len(calls),force=True,kinds=notification_kinds('publish'),round_id=self.r.id)
+        self.assertEqual(len(calls),2)
+        self.assertEqual(original,{m.id:m.snapshot for m in Member.objects.filter(round=self.r)})
+        self.assertEqual(Notification.objects.filter(round=self.r,kind='meeting',status='sent').count(),2)
+        session=SessionStore();session['person_id']=str(self.people[0].id);session.create()
+        with patch('myteam.clock.Clock.now',return_value=self.r.starts_at+timedelta(minutes=47)):
+            response=Client().get('/api/activities/',HTTP_AUTHORIZATION='Bearer '+session.session_key)
+        self.assertEqual(response.status_code,200)
+        self.assertEqual(response.json()['current']['kind'],'active')
+        self.assertTrue(response.json()['current']['instructions'])
+        self.assertEqual(len(response.json()['current']['participants']),2)
+        # Backup invitations must not broadcast again to the same participants.
+        upcoming=ensure_round(self.r.ends_at)
+        for minute in (7,23,47):
+            clock=FrozenClock(upcoming.starts_at-timedelta(days=6)+timedelta(minutes=minute))
+            self.assertFalse(execute('invite',clock).error)
+            drain(clock,lambda *args:len(calls)+1,force=True,kinds=notification_kinds('invite'),round_id=upcoming.id)
+        self.assertEqual(Notification.objects.filter(round=upcoming,kind='signup_invite',status='sent').count(),2)

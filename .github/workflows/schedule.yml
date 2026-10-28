@@ -1,13 +1,21 @@
 name: Weekly MyTeam events
 on:
   schedule:
-    # GitHub cron uses UTC; Moscow is UTC+3 year-round.
-    - cron: '0 6 * * 2'   # Tue 09:00 MSK: one feedback request
-    - cron: '0 18 * * 2'  # Tue 21:00 MSK: close + prepare + owner report
-    - cron: '0 6 * * 3'   # Wed 09:00 MSK: publish activities
-    - cron: '30 6 * * 3'  # Wed 09:30 MSK: idempotent recovery if the first run was missed
-    - cron: '5 12 * * 3'  # Wed 15:05 MSK: finalize failed publication and notify participants
-    - cron: '0 6 * * 4'   # Thu 09:00 MSK: invite users not enrolled
+    # UTC, Moscow UTC+3. Avoid the busy start of the hour; all attempts use
+    # the same idempotent event. No polling, clock override or automatic enrollment.
+    - cron: '7 6 * * 2'    # Tue 09:07 MSK: feedback
+    - cron: '23 6 * * 2'   # Tue 09:23 MSK: feedback recovery
+    - cron: '47 6 * * 2'   # Tue 09:47 MSK: feedback recovery
+    - cron: '7 18 * * 2'   # Tue 21:07 MSK: close + prepare + owner report
+    - cron: '23 18 * * 2'  # Tue 21:23 MSK: preparation recovery
+    - cron: '47 18 * * 2'  # Tue 21:47 MSK: preparation recovery
+    - cron: '7 6 * * 3'    # Wed 09:07 MSK: publish
+    - cron: '23 6 * * 3'   # Wed 09:23 MSK: publication recovery
+    - cron: '47 6 * * 3'   # Wed 09:47 MSK: publication recovery
+    - cron: '7 12 * * 3'   # Wed 15:07 MSK: finalize missed publication
+    - cron: '7 6 * * 4'    # Thu 09:07 MSK: invite
+    - cron: '23 6 * * 4'   # Thu 09:23 MSK: invitation recovery
+    - cron: '47 6 * * 4'   # Thu 09:47 MSK: invitation recovery
   workflow_dispatch:
     inputs:
       event:
@@ -23,7 +31,9 @@ permissions:
   contents: read
   id-token: write
 concurrency:
-  group: myteam-weekly-events
+  # A slow/offline stage must not hold the backup or another event in the queue.
+  # Distinct triggers may overlap; backend transactions/outbox leases handle this.
+  group: myteam-weekly-${{ github.event.schedule || inputs.event || 'verify' }}
   cancel-in-progress: false
 jobs:
   events:
@@ -41,3 +51,5 @@ jobs:
           MYTEAM_SCHEDULE: ${{ github.event.schedule }}
           MYTEAM_EVENT: ${{ inputs.event || 'verify' }}
           MYTEAM_ROUND_DATE: ${{ inputs.round_date }}
+          MYTEAM_RUN_ID: ${{ github.run_id }}
+          PYTHONUNBUFFERED: '1'

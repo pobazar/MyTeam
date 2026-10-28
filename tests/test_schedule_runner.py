@@ -44,3 +44,26 @@ class ScheduleRunnerTests(SimpleTestCase):
         m=self.load()
         with patch.dict('os.environ',{'MYTEAM_SCHEDULE':'bad'}),patch.object(m,'request') as request:
             self.assertEqual(m.main(),1);request.assert_not_called()
+
+    def test_workflow_crons_match_runner_and_avoid_top_of_hour(self):
+        import re
+        workflow=(Path(__file__).parents[1]/'.github/workflows/schedule.yml').read_text()
+        crons=re.findall(r"cron: '([^']+)'",workflow)
+        self.assertEqual(set(crons),set(self.load().SCHEDULES))
+        self.assertEqual(len(crons),13)
+        self.assertTrue(all(cron.split()[0] in ('7','23','47') for cron in crons))
+        self.assertNotIn('group: myteam-weekly-events\n',workflow)
+        self.assertIn('PYTHONUNBUFFERED',workflow)
+
+    def test_trigger_delay_is_observable_for_delayed_and_midnight_runs(self):
+        from datetime import datetime,timezone
+        m=self.load()
+        result=m.schedule_context('7 6 * * 3',datetime(2026,10,28,6,37,tzinfo=timezone.utc))
+        self.assertEqual(result['trigger_delay_seconds'],30*60)
+        result=m.schedule_context('7 18 * * 2',datetime(2026,10,28,0,7,tzinfo=timezone.utc))
+        self.assertEqual(result['trigger_delay_seconds'],6*3600)
+
+    def test_outside_window_is_not_reported_as_success(self):
+        m=self.load()
+        with patch.object(m,'request',side_effect=[{}, {'status':'ok','skipped':'outside_window','pending':0}]),patch.object(m,'identity',return_value='isolated'),patch.dict('os.environ',{'MYTEAM_SCHEDULE':'','MYTEAM_EVENT':'publish','GITHUB_STEP_SUMMARY':''}):
+            self.assertEqual(m.main(),1)
