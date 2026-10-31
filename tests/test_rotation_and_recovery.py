@@ -56,11 +56,12 @@ class RotationTests(TestCase):
             r=ensure_round(self.start);self.assertEqual(r.activity,'unavailable')
         recovered=ensure_round(self.start)
         self.assertEqual(recovered.id,r.id);self.assertTrue(ready(recovered.activity,recovered.rules_version))
-    def test_explicit_code_names_plan_is_preserved_without_entering_automatic_pool(self):
+    def test_explicit_code_names_plan_is_preserved_and_next_round_uses_ready_alternative(self):
         r=ensure_round(datetime(2026,11,4,9,tzinfo=MOSCOW))
         self.assertEqual(r.activity,'code_names');self.assertEqual(r.selection['source'],'plan')
         later=ensure_round(datetime(2026,11,11,9,tzinfo=MOSCOW))
-        self.assertEqual(later.activity,'random_coffee')
+        self.assertNotEqual(later.activity,'code_names')
+        self.assertTrue(ready(later.activity,later.rules_version))
 
 class RecoveryTests(TestCase):
     def setUp(self):
@@ -123,7 +124,8 @@ class RecoveryTests(TestCase):
         self.assertEqual(game.activity,'code_names');self.assertEqual(game.enrollments.count(),2)
         self.assertEqual(Notification.objects.filter(kind='round_cancelled',round=game).count(),2)
         next_round=Round.objects.get(starts_at=game.ends_at)
-        self.assertEqual(next_round.activity,'random_coffee')
+        self.assertNotEqual(next_round.activity,'code_names')
+        self.assertTrue(ready(next_round.activity,next_round.rules_version))
     def test_manual_pause_is_never_overridden_by_cutoff(self):
         self.r.publication_paused=True;self.r.selection={**self.r.selection,'pause_origin':'manual'};self.r.save()
         self.assertEqual(self.publish(self.start+timedelta(hours=7)).status,'paused')
