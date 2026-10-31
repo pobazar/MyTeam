@@ -263,7 +263,7 @@
       form.querySelector('[aria-invalid]')?.focus();
     }
   }
-  function achievementImage(award){return /^[a-z0-9-]+\.(?:png|svg)$/.test(award.image||'')?'web/images/achievements/'+award.image:award.key==='first_coffee'?'web/images/achievements/first-coffee.png':'web/icons/star-active.svg';}
+  function achievementImage(award){return /^[a-z0-9-]+\.png$/.test(award.image||'')?'web/images/achievements/'+award.image:award.key==='first_coffee'?'web/images/achievements/first-coffee.png':'web/icons/star-active.svg';}
   function renderProfile(target,data,setup){
     const fragment=clone('profile');
     if(setup){$(fragment,'[data-achievements]').hidden=true;$(fragment,'[data-profile-actions]').hidden=true;$(fragment,'.profile-grid').classList.add('setup-profile');put(fragment,'[data-profile-heading]','Немного о тебе');put(fragment,'[data-submit]','Продолжить');}
