@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Мир в деталях: глобус и отметка места">
+  <defs>
+    <linearGradient id="ocean" x2="1" y2="1"><stop stop-color="#8ce3eb"/><stop offset="1" stop-color="#3687d9"/></linearGradient>
+    <linearGradient id="pin" x2="0" y2="1"><stop stop-color="#ffb54c"/><stop offset="1" stop-color="#f07832"/></linearGradient>
+  </defs>
+  <circle cx="128" cy="128" r="120" fill="#eef7ff"/>
+  <ellipse cx="128" cy="218" rx="73" ry="12" fill="#d5e5f5"/>
+  <circle cx="120" cy="132" r="80" fill="url(#ocean)"/>
+  <path d="M65 75 91 62 115 66 122 86 106 99 112 116 95 132 74 121 64 99Z M119 139 140 145 147 169 133 194 122 198 116 172 104 154Z M154 67 177 80 193 105 177 115 164 104 145 111 134 96Z" fill="#9be0a0"/>
+  <g fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="2">
+    <ellipse cx="120" cy="132" rx="40" ry="80"/>
+    <ellipse cx="120" cy="132" rx="80" ry="30"/>
+    <path d="M40 132h160M120 52v160"/>
+  </g>
+  <path d="M185 39c-23 0-40 17-40 39 0 29 40 64 40 64s40-35 40-64c0-22-17-39-40-39Z" fill="url(#pin)" stroke="#fff" stroke-width="6"/>
+  <circle cx="185" cy="78" r="14" fill="#fff"/>
+  <path d="m54 39 4 11 11 4-11 4-4 11-4-11-11-4 11-4Z M213 172l4 10 10 4-10 4-4 10-4-10-10-4 10-4Z" fill="#ffc857"/>
+</svg>
