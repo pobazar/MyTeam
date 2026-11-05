@@ -1,6 +1,6 @@
 # МАЙТИМ
 
-Добровольные знакомства коллег. Активности: Random Coffee, Code Names и GeoGuesser. На каждый раунд нужна отдельная запись.
+Добровольные знакомства коллег. Активности: Random Coffee, Code Names, GeoGuesser, Gartic Phone и Spyfall. На каждый раунд нужна отдельная запись.
 
 Python 3.12+, Django 5.2, PostgreSQL 16 (Supabase), JSON API и статический интерфейс Pages. Render запускает Gunicorn; фоновые команды работают отдельно от посещений сайта.
 
@@ -58,3 +58,5 @@ python scripts/serve_pages.py
 Скриншоты и галереи не храним в публичном репозитории. Локальные прогоны: `scripts/qa/review-browser.cjs`, `scripts/qa/codenames-browser.cjs`; сборка локальной галереи: `scripts/qa/build-review.py`. Результаты сохраняются за пределами репозитория.
 
 GeoGuesser: [правила группировки, совместная игра и достижение](docs/technical/geoguesser.md).
+
+[Gartic Phone и Spyfall: группы, инструкции и достижения](docs/technical/gartic-phone-spyfall.md).

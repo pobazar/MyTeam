@@ -15,7 +15,9 @@ class Activity(Protocol):
 from .coffee import RandomCoffee
 from .codenames import CodeNames
 from .geoguesser import GeoGuesser
-ACTIVITIES: dict[str, Activity] = {'random_coffee': RandomCoffee(),'code_names':CodeNames(),'geoguesser':GeoGuesser()}
+from .gartic_phone import GarticPhone
+from .spyfall import Spyfall
+ACTIVITIES: dict[str, Activity] = {'random_coffee': RandomCoffee(),'code_names':CodeNames(),'geoguesser':GeoGuesser(),'gartic_phone':GarticPhone(),'spyfall':Spyfall()}
 VERSIONS = {(activity.key,activity.version):activity for activity in ACTIVITIES.values()}
 def get_activity(key,version=None):
     current=ACTIVITIES.get(key)
