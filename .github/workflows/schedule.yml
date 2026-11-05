@@ -12,7 +12,7 @@ on:
     - cron: '7 6 * * 3'    # Wed 09:07 MSK: publish
     - cron: '23 6 * * 3'   # Wed 09:23 MSK: publication recovery
     - cron: '47 6 * * 3'   # Wed 09:47 MSK: publication recovery
-    - cron: '7 12 * * 3'   # Wed 15:07 MSK: finalize missed publication
+    - cron: '7 12 * * 3'   # Wed 15:07 MSK: recover delayed publication
     - cron: '7 6 * * 4'    # Thu 09:07 MSK: invite
     - cron: '23 6 * * 4'   # Thu 09:23 MSK: invitation recovery
     - cron: '47 6 * * 4'   # Thu 09:47 MSK: invitation recovery

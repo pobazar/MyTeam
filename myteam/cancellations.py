@@ -16,7 +16,8 @@ def cancel_round(round_id,reason,clock):
     # Preserve draft, registrations and all history. Never send obsolete assignments.
     Notification.objects.filter(round=r,kind__in=('meeting','unmatched'),status='pending').update(status='cancelled')
     if clock.now()<r.ends_at-timedelta(hours=12):
-        text=escape(r.activity_title)+'\n\nНа этой неделе активность не состоится: её не удалось подготовить. Запись на следующую активность открывается отдельно.'
+        explanation='её не удалось запустить вовремя' if r.cancellation_reason=='publication_missed' else 'её не удалось подготовить'
+        text=escape(r.activity_title)+'\n\nНа этой неделе активность не состоится: '+explanation+'. Запись на следующую активность открывается отдельно.'
         for e in Enrollment.objects.filter(round=r,active=True).select_related('person'):
             p=e.person
             enqueue(f'round_cancelled:{r.id}:{p.id}','round_cancelled',p.chat_id or p.telegram_id,text,p,r,clock.now(),payload=link_button('Открыть активности','/'))
