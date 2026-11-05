@@ -60,7 +60,7 @@ def eligible(notification, now):
             if not request_times(r)[0]<=now<request_times(r)[1]:return False
         f=Feedback.objects.filter(member__person_id=notification.person_id, member__round=r).first()
         return not (f and f.final) and Member.objects.filter(person_id=notification.person_id,round=r).exists()
-    if notification.kind in ('meeting','unmatched') and now>=notification.round.ends_at:
+    if notification.kind in ('meeting','unmatched') and now>=notification.round.ends_at-timedelta(hours=12):
         return False
     return True
 

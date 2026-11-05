@@ -117,3 +117,39 @@ class ScheduledEventTests(TestCase):
             self.assertFalse(execute('invite',clock).error)
             drain(clock,lambda *args:len(calls)+1,force=True,kinds=notification_kinds('invite'),round_id=upcoming.id)
         self.assertEqual(Notification.objects.filter(round=upcoming,kind='signup_invite',status='sent').count(),2)
+
+    def test_hours_and_days_late_publication_preserves_prepared_group_and_delivers_once(self):
+        prepare(self.r.id,FrozenClock(self.r.prepares_at))
+        original={m.id:m.snapshot for m in Member.objects.filter(round=self.r)}
+        calls=[]
+        # The actual incident: an eight-hour GitHub delay, followed by a next-day retry.
+        for late in (timedelta(hours=8,minutes=14),timedelta(days=1),timedelta(days=6,hours=11,minutes=59)):
+            clock=FrozenClock(self.r.starts_at+late)
+            result=execute('publish',clock,'2026-10-28')
+            self.assertEqual(result.status,'ok');self.assertFalse(result.error)
+            drain(clock,lambda *args:calls.append(args) or len(calls),force=True,kinds=notification_kinds('publish'),round_id=self.r.id)
+        self.r.refresh_from_db()
+        self.assertEqual(self.r.state,'published');self.assertIsNone(self.r.cancelled_at)
+        self.assertEqual(original,{m.id:m.snapshot for m in Member.objects.filter(round=self.r)})
+        self.assertEqual(len(calls),2)
+        self.assertFalse(Notification.objects.filter(round=self.r,kind='round_cancelled').exists())
+
+    def test_next_day_publication_recovers_missing_preparation_and_manual_pause_still_wins(self):
+        clock=FrozenClock(self.r.starts_at+timedelta(days=1))
+        self.r.publication_paused=True;self.r.selection={'pause_origin':'manual'};self.r.save()
+        self.assertEqual(execute('publish',clock,'2026-10-28').status,'paused')
+        self.assertFalse(Member.objects.filter(round=self.r).exists())
+        self.r.publication_paused=False;self.r.save()
+        self.assertEqual(execute('publish',clock,'2026-10-28').status,'ok')
+        self.r.refresh_from_db();self.assertIsNotNone(self.r.prepared_at);self.assertIsNotNone(self.r.published_at)
+
+    def test_closed_participant_week_blocks_direct_publication_and_outdated_delivery(self):
+        from myteam.rounds import RuleError
+        prepare(self.r.id,FrozenClock(self.r.prepares_at))
+        boundary=self.r.ends_at-timedelta(hours=12)
+        with self.assertRaises(RuleError):publish(self.r.id,FrozenClock(boundary))
+        publish(self.r.id,FrozenClock(boundary-timedelta(seconds=1)))
+        calls=[]
+        drain(FrozenClock(boundary),lambda *args:calls.append(args) or 1,force=True,kinds=('meeting',),round_id=self.r.id)
+        self.assertEqual(calls,[])
+        self.assertEqual(Notification.objects.filter(round=self.r,kind='meeting',status='cancelled').count(),2)

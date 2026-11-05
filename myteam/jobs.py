@@ -50,7 +50,7 @@ def publish(round_id,clock):
     if r.published_at:return r
     if r.publication_paused:raise RuleError('Публикация приостановлена владельцем.')
     if not r.prepared_at or r.state!='prepared':raise RuleError('Нет завершённой подготовки.')
-    if clock.now()<r.starts_at or clock.now()>=r.ends_at:raise RuleError('Публикация вне допустимого периода.')
+    if clock.now()<r.starts_at or clock.now()>=r.ends_at-timedelta(hours=12):raise RuleError('Публикация вне допустимого периода.')
     validate_draft(r)
     from .analytics import event
     for member in Member.objects.filter(round=r):
@@ -88,9 +88,9 @@ def tick(clock):
                         r.state='expired';r.save(update_fields=['state'])
                         record_incident(f'round:{r.id}','Пропущена публикация раунда. Устаревшие сообщения подавлены.',clock)
                     continue
-                if not r.published_at and now>=r.starts_at+timedelta(hours=6):
+                if not r.published_at and now>=r.ends_at-timedelta(hours=12):
                     r.state='expired';r.save(update_fields=['state'])
-                    record_incident(f'round:{r.id}','Публикация просрочена более чем на 6 часов. Нужна проверка.',clock)
+                    record_incident(f'round:{r.id}','Период участия завершён без публикации. Нужна проверка.',clock)
                     continue
                 if r.state=='open' and now>=r.closes_at:
                     r.state='closed';r.save(update_fields=['state']);complete_job('close',r,now)

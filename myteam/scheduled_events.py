@@ -21,7 +21,9 @@ def window(event,start):
     r=Round(starts_at=start,ends_at=start+timedelta(days=7),closes_at=start-timedelta(hours=12))
     if event=='feedback':return request_times(r)
     if event=='invite':return invitation_window(r)
-    return (r.closes_at if event=='prepare' else start),start+timedelta(hours=6)
+    # GitHub Actions can be delayed for hours. A round remains useful until
+    # the participant-facing week ends on Tuesday at 21:00 Moscow.
+    return (r.closes_at if event=='prepare' else start),r.ends_at-timedelta(hours=12)
 
 def target_start(event,now,round_date=None):
     if event not in EVENTS:raise ValueError('Unknown event')

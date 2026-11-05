@@ -105,13 +105,11 @@ class RecoveryTests(TestCase):
         self.assertFalse(Member.objects.exists());self.assertFalse(self.publish().error)
         self.r.refresh_from_db();self.assertIsNotNone(self.r.published_at)
     def test_missing_all_publication_runs_finalizes_failure_after_cutoff(self):
-        result=self.publish(self.start+timedelta(hours=6,minutes=5))
+        result=self.publish(self.r.ends_at-timedelta(hours=12))
         self.assertEqual(result.status,'cancelled');self.r.refresh_from_db()
         self.assertEqual(self.r.cancellation_reason,'publication_missed')
-        self.assertEqual(Notification.objects.filter(kind='round_cancelled').count(),2)
-        context=dashboard_context(self.people[0],self.start+timedelta(hours=7))
-        self.assertEqual(context['week'].state,'cancelled');self.assertTrue(context['registration_open'])
-        self.assertEqual(context['next_round'].activity,'code_names')
+        self.assertFalse(Notification.objects.filter(kind='round_cancelled').exists())
+        self.assertTrue(Round.objects.filter(starts_at=self.r.ends_at).exists())
     def test_unfinished_code_names_cancels_without_changing_announced_activity(self):
         game=ensure_round(self.r.ends_at)
         for p in self.people:Enrollment.objects.create(round=game,person=p)
