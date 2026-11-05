@@ -1,35 +1,8 @@
 """Code Names is played on an external site; MyTeam connects the group."""
-from itertools import combinations
-import random
 from .base import WeeklyActivity
+from .four_person import group_sizes,make_groups
 
 GAME_URL='https://codenames.game/'
-
-def group_sizes(count):
-    if count<4:return []
-    sizes=[4]*(count//4)
-    for i in range(count%4):sizes[i%len(sizes)]+=1
-    return sizes
-
-def make_groups(people,history,rng=None):
-    rng=rng or random.SystemRandom()
-    sizes=group_sizes(len(people))
-    if not sizes:return []
-    people=list(people)
-    best=None
-    # Bounded randomized search prefers new connections and different teams.
-    for _ in range(32):
-        rng.shuffle(people);groups=[];offset=0
-        for size in sizes:groups.append(people[offset:offset+size]);offset+=size
-        repeat=recency=teams=0
-        for group in groups:
-            for a,b in combinations(group,2):
-                pair=frozenset((a.id,b.id))
-                repeat+=int(pair in history);recency+=history.get(pair,0)
-                teams+=int(a.team_group_id is not None and a.team_group_id==b.team_group_id)
-        score=(repeat,recency,teams)
-        if best is None or score<best[0]:best=(score,groups)
-    return best[1]
 
 class CodeNames(WeeklyActivity):
     key='code_names'
